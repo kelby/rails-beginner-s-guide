@@ -62,7 +62,7 @@ AttributeAssignment
 
 包括 BeforeTypeCast、Dirty、PrimaryKey、Query、Read、Serialization、TimeZoneConversion、Write
 
-## 关系
+## 关联
 
 - Associations
 
