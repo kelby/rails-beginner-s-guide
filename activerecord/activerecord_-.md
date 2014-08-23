@@ -206,11 +206,12 @@ Article.featured.titles
 
 > **Note:** 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
 
-###NestedAttributes
+### NestedAttributes
 
 - 当你声明嵌套属性时，Rails会自动帮你定义属性的写方法。
 
-```ruby 摘录部分代码
+```ruby
+# 摘录部分代码
 def #{association_name}_attributes=(attributes)
   assign_nested_attributes_for_#{type}_association(:#{association_name}, attributes)
 end
@@ -669,12 +670,11 @@ end
 
 > **Note:** 一定要用锁的话，我推荐尽可能用乐观锁，但请从实际情况出发。
 
-###AttributeMethods
+### AttributeMethods
 
 太多了，真正涉及的时候再讲吧。
 
 ## 场外
-------
 
 array 是引用对象
 [1, 2, 3] 是值对象

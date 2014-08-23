@@ -422,9 +422,8 @@ ActionController include 了这些模块，而我们自定义的 Controller 又�
 
 ## 参考
 
-[Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)
-[Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)
-
-[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)
-[Rails Metal](http://railscasts.com/episodes/150-rails-metal)
+[Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)<br>
+[Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>
+[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)<br>
+[Rails Metal](http://railscasts.com/episodes/150-rails-metal)<br>
 [基于资源的HTTP Cache的实现介绍](http://robbinfan.com/blog/13/http-cache-implement)

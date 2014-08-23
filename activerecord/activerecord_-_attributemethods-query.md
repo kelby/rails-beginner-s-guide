@@ -1,4 +1,4 @@
-加后缀 '?' 进行询问。不过，对于数字类型的属性最好不要这么做。
+加后缀 '?' 进行询问。
 
 你还在用：
 
@@ -26,5 +26,7 @@
 ```
 
 Each attribute of ActiveRecord's model has a query method, so you don't need to use the present? or blank? for ActiveRecord's attributes.
+
+> Note: 对应着 ActiveModel::AttributeMethods::Query，原理是判断其值是否为 blank? 或 zero?
 
 [Use query attribute](http://rails-bestpractices.com/posts/56-use-query-attribute)

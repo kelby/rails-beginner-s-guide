@@ -55,11 +55,11 @@ class ApplicationController < ActionController::Base
   add_flash_types :warning
 end
 
-# in your controller
-redirect_to user_path(@user), warning: "Incomplete profile"
-
 # in your view
 <%= warning %>
+
+# in your controller
+redirect_to user_path(@user), warning: "Incomplete profile"
 ```
 
 两种效果：视图里可以直接有同名 warning 辅助方法，redirect_to 里可直接使用 warning。

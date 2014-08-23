@@ -1,6 +1,5 @@
 # Rails - 其它
 
-各个 release note 一定要认真看！
 
 比较有趣好玩，但现在还没想好如何放到文中。暂时记录在此。
 
@@ -10,7 +9,8 @@ You can use Rails modules independently.
 
 Start with Rack
 
-```ruby config.ru
+```ruby
+# config.ru
 require 'rubygems'
 require 'bundler/setup’ # Gemfile only lists ‘rack’
 
@@ -31,7 +31,8 @@ run Proc.new {|env|
 
 All you need is the routes, the controllers, the views, and everything else.
 
-```ruby config.ru
+```ruby
+# config.ru
 require 'action_dispatch'
 
 routes = ActionDispatch::Routing::RouteSet.new
@@ -42,7 +43,8 @@ routes.draw do
 end
 ```
 
-```ruby mainpage_controller.rb
+```ruby
+# mainpage_controller.rb
 require 'action_controller'
 
 class MainpageController < ActionController::Metal
@@ -72,12 +74,14 @@ Controller 里的 render 是为了返回 self.response_body
 
 在 Rails 里 metal 也属于 middleware，我们可以这么用：
 
-```ruby config/routes.rb
+```ruby
+# config/routes.rb
   get 'hello' => 'hello#index'
   ...
 ```
 
-```ruby app/controllers/hello_controller.rb
+```ruby
+# app/controllers/hello_controller.rb
 class HelloController < ActionController::Metal
   def index
     self.response_body = "Hello World!"
@@ -96,34 +100,6 @@ Started GET "/hello" for 127.0.0.1 at 2014-04-27 09:04:49 +0800
 Processing by HelloController#index as HTML
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
-> rake middleware
-
-```
-use Rack::Sendfile
-use ActionDispatch::Static
-use Rack::Lock
-use #<ActiveSupport::Cache::Strategy::LocalCache::Middleware:0x007fc0ef0c5aa0>
-use Rack::Runtime
-use Rack::MethodOverride
-use ActionDispatch::RequestId
-use Rails::Rack::Logger
-use ActionDispatch::ShowExceptions
-use ActionDispatch::DebugExceptions
-use ActionDispatch::RemoteIp
-use ActionDispatch::Reloader
-use ActionDispatch::Callbacks
-use ActiveRecord::Migration::CheckPending
-use ActiveRecord::ConnectionAdapters::ConnectionManagement
-use ActiveRecord::QueryCache
-use ActionDispatch::Cookies
-use ActionDispatch::Session::CookieStore
-use ActionDispatch::Flash
-use ActionDispatch::ParamsParser
-use Rack::Head
-use Rack::ConditionalGet
-use Rack::ETag
-run PolymorphicUrl001::Application.routes
-```
 
 --------
 ## Rendering empty responses
@@ -148,7 +124,6 @@ head :created, :location => person_url(@person)
 There, isn’t that beautiful?
 ------------
 
-黄志敏的 gem 'simple_cacheable' 应该属于对象缓存了。在对象级别做缓存！
 
 ------------
 

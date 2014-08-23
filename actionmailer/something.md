@@ -57,6 +57,10 @@ end
 
 ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。
 
+**DeliveryJob**
+
+继承于 ActiveJob，配置以便延迟发送邮件。
+
 **TestCase**
 
 测试样例。
