@@ -9,7 +9,6 @@
 * [ActionMailer](actionmailer/README.md)
    * [ActionMailer 使用 – 邮件发送、测试与接收](actionmailer/action_mailer.md)
    * [Action Mailer 概览](actionmailer/action_mailer_overview.md)
-   * [Others](actionmailer/others.md)
    * [ActionMailer - register_interceptor & add_delivery_method](actionmailer/actionmailer_-_register_interceptor_&_add_delivery_method.md)
    * [源码导读](actionmailer/something.md)
 * [AbstractController](abstractcontroller/README.md)
