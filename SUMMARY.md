@@ -5,7 +5,7 @@
    * [另一角度看 Rails](preface/rails.md)
    * [Rails 中级指南 1](preface/rails__1.md)
    * [Rails - 杂项](preface/rails_-.md)
-   * [Rails - 其它](rails_-.md)
+   * [Rails - 其它](preface/rails_-2.md)
 * [ActionMailer](actionmailer/README.md)
    * [ActionMailer 使用 – 邮件发送、测试与接收](actionmailer/action_mailer.md)
    * [Action Mailer 概览](action_mailer.md)
