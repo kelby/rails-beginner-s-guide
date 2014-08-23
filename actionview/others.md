@@ -1,0 +1,95 @@
+# Others
+render
+
+helper
+
+helper_method
+
+delegate
+
+调用
+
+---
+
+不同于其它几个模块，Base 类在这里并不是对外的接口，而是 ActionView 模块本身。因为视图对类和对象的概念没有那么重要。
+
+渲染是它的老本行。
+
+---
+
+lookup_context
+
+```
+ @cache=true,
+ @details=
+  {:locale=>[:en],
+   :formats=>[:html, :text, :js, :css, :xml, :json],
+   :variants=>[],
+   :handlers=>[:erb, :builder, :raw, :ruby]},
+ @details_key=nil,
+ @prefixes=[],
+ @rendered_format=nil,
+ @skip_default_locale=false,
+ @view_paths=
+  #<ActionView::PathSet:0x007ff7250a0fe0
+   @paths= ...
+```
+
+---
+
+You can create your own custom FormBuilder templates by subclassing this class. For example:
+
+class MyFormBuilder < ActionView::Helpers::FormBuilder
+  def div_radio_button(method, tag_value, options = {})
+    @template.content_tag(:div,
+      @template.radio_button(
+        @object_name, method, tag_value, objectify_options(options)
+      )
+    )
+  end
+The above code creates a new method div_radio_button which wraps a div around the a new radio button. Note that when options are passed in, you must called objectify_options in order for the model object to get correctly passed to the method. If objectify_options is not called, then the newly created helper will not be linked back to the model.
+
+The div_radio_button code from above can now be used as follows:
+
+<%= form_for @person, :builder => MyFormBuilder do |f| %>
+  I am a child: <%= f.div_radio_button(:admin, "child") %>
+  I am an adult: <%= f.div_radio_button(:admin, "adult") %>
+<% end -%>
+
+---
+
+如何處理Model中不存在的屬性
+
+使用form_for時，其中的欄位必須是Model有的屬性，那如果資料庫沒有這個欄位呢?這時候你依需要在Model程式中加上存取方法，例如：
+
+class Event < ActiveRecord::Base
+    #...
+    def custom_field
+        # 根據其他屬性的值或條件，來決定這個欄位的值
+    end
+
+    def custom_field=(value)
+        # 根據value，來調整其他屬性的值
+    end
+end
+這樣就可以在form_for裡使用custom_field了。
+
+<%= form_for @event do |f| %>
+    <%= f.text_field :custom_field %>
+    <%= f.submit %>
+<% end %>
+
+---
+
+## 为什么有的 helper 我不推荐？
+
+也有一些是我的经验之谈，仅供参考。
+
+- 基于其它 helper，并且功能上十分类似；
+- 使用它，写出来的代码反而很丑陋；
+- 和样式关联密切，或者CSS、JS也能做的；
+- 不实用、或者说不通用
+
+## 其它扯淡
+
+不要迷信这里提供的方法，有的用起来难读、难懂，还不如自己写。另忘了，设计软件的重点：好读、易维护、以全局观思考。

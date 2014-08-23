@@ -1,0 +1,146 @@
+ActionMailer 本质上是对 [Mail gem](https://github.com/mikel/mail) 的封装和现有 ActionPack 的有效利用。它使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
+
+ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
+
+## 邮件配置
+
+以 Gmail 为例：
+
+```
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            '<username>',
+  password:             '<password>',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+```
+
+## 生成 Mail 类和模板
+
+通过 `rails g mailer UserMailer welcome` 创建 mailer 类和视图：
+
+```
+create  app/mailers/user_mailer.rb
+invoke  erb
+create    app/views/user_mailer
+create    app/views/user_mailer/welcome.text.erb
+invoke  test_unit
+create    test/mailers/user_mailer_test.rb
+```
+
+### 设置默认值
+
+```ruby
+# app/mailers/user_mailer.rb
+class UserMailer < ActionMailer::Base
+  default from: "from@example.com"
+
+  def welcome
+    @greeting = "Hi"
+    mail to: "to@example.org"
+  end
+end
+```
+
+`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 `default_params`，默认已经有
+
+```ruby
+default_params = {
+  mime_version: "1.0",
+  charset:      "UTF-8",
+  content_type: "text/plain",
+  parts_order:  [ "text/plain", "text/enriched", "text/html" ]
+}
+```
+
+还有在 config/environments 目录下针对不同执行环境会有不同的邮件服务器设置：
+
+    config.action_mailer.default_options = { from: "no-reply@example.org" }
+
+前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了作用域稍有不同外，它们其实是一样的。
+
+    alias :default_options= :default
+
+### 创建消息并渲染邮件模板
+
+`mail(headers = {}, &block)` 可接收一个代码块做为参数，header(头部)可接受：
+
+```
+:subject - 主题
+:to - 收件人
+:from - 发件人
+:cc - 抄送
+:bcc - 密送
+:reply_to - 回邮地址
+:date - 时间
+```
+
+> **NOTE:** 想了解更多 header，点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
+
+前面提到过，mailer 类和普通的 controller 类似，你可以渲染相应的模板，也可以传递实例变量给它们。例如：
+
+```ruby
+def welcome(user)
+  @user = user
+
+  mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+end
+```
+
+### 发送邮件
+
+通常，我们都是创建邮件并发送
+
+```ruby
+# Creates the email and sends it immediately
+Notifier.welcome("david@loudthinking.com").deliver_now
+```
+
+也可以先创建邮件，稍后再发送
+
+```ruby
+message = Notifier.welcome("david@loudthinking.com") # => an ActionMailer::MessageDeliver object
+message.deliver_now                                  # sends the email
+```
+
+再或者，自动延迟发送
+
+```ruby
+Notifier.welcome(david).message     # => a Mail::Message object
+```
+
+> **NOTE:** 创建并发送邮件是个比较耗时的过程，也许你应该把它们放到 [Background_Jobs](https://www.ruby-toolbox.com/categories/Background_Jobs) 里。
+
+除了以上方法外，用得比较多的方法还有：
+
+```
+attachments() - 允许你添加附件到邮件
+headers(args = nil) - 定制邮件头部
+```
+
+## 辅助方法
+
+在相应的视图里，用得比较多的辅助方法：
+
+```
+attachments() - 邮件附件
+block_format(text) - 处理文本消息，行首空两格，每行长度不超过 72 个字符
+format_paragraph(text, len = 72, indent = 2)
+mailer() - 邮件
+message() - 邮件正文
+```
+
+## 邮件测试
+
+默认 Rails 提供两个 helper 方法用于测试：
+
+```
+assert_emails(number) - 断言已经发送的邮件数
+assert_no_emails(&block) - 断言没有邮件发送出去(可用 assert_emails 0 代替)
+```
+
+## 邮件接收
+
+Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，需要实现 `receive(raw_mail)` 方法。以接收到的邮件对象，作为唯一的参数。
