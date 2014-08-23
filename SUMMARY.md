@@ -67,7 +67,7 @@
 * [Rails](rails/README.md)
    * [Application](rails/application.md)
        * [Bootstrap](rails/bootstrap.md)
-       * [Configuration](configuration.md)
+       * [Configuration](rails/application/configuration.md)
        * [Finisher](rails/finisher.md)
    * [Engine](rails/engine.md)
        * [Configuration](rails/engine_-_configuration.md)
