@@ -4,9 +4,9 @@
 
 ---
 
-<tt>ActionController::Metal</tt> is the simplest possible controller, providing a valid Rack interface without the additional niceties provided by <tt>ActionController::Base</tt>.
+MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
-A sample metal controller might look like this:
+举个例子:
 
 ```
   class HelloController < ActionController::Metal
@@ -16,14 +16,14 @@ A sample metal controller might look like this:
   end
 ```
 
-And then to route requests to your metal controller, you would add something like this to <tt>config/routes.rb</tt>:
+在路由里添加相应代码，将请求转发到刚才的 HelloController#index 进行处理:
 
 ```
-  get 'hello', to: HelloController.action(:index)
+# in your config/routes.rb
+get 'hello', to: HelloController.action(:index)
 ```
 
-The +action+ method returns a valid Rack application for the \Rails
-router to dispatch to.
+The +action+ method returns a valid Rack application for the \Rails router to dispatch to.
 
 ## Rendering Helpers
 
@@ -65,3 +65,26 @@ You can refer to the modules included in <tt>ActionController::Base</tt> to see 
 不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
 
 另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
+
+---
+
+總而言之，如果你在 Rails3 中不需要全部的 Controller 的功能，想要盡量拉高效能，有幾種推薦作法：
+
+* 寫成 Rack Middleware，然後在 config/application.rb 中插入 config.middleware.use YourMiddleWare
+* 寫成 Rack App，在 config.route.rb 中將某個對應的網址指到這個 Rack App
+* 繼承自 ActionController::Metal 實作一個 Controller，其中的 action 也是一個 Rack App
+
+其中的差異就在於後兩者會在 Rails Route 之後（好處是統一由 route.rb 管理 URL 路徑），如果繼承自 ActionController::Metal 可以有彈性獲得更多 Controller 功能。原則上，我想我會推薦 ActionController::Metal，寫起來最為簡單，一致性跟維護性較高。
+
+---
+
+为什么能够连续调用，原因：
+
+你看每个 Rack Middleware 的 call 函数的最后一行，是不是都是 @app.call(env)
+这说明，它在调用下一个 middleware 啊
+
+它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都 走不通！
+
+顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
+
+> Note: @app 和 env 一直在变，但又一直没变。

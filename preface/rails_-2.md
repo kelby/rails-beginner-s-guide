@@ -122,8 +122,6 @@ head :created, :location => person_url(@person)
 ```
 
 There, isn’t that beautiful?
-------------
-
 
 ------------
 

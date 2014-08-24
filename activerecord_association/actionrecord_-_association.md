@@ -10,7 +10,7 @@ end
 **Singular associations (one-to-one)**
 
 |generated methods                 | belongs_to |  belongs_to :polymorphic | has_one|
-|----------------------------------|------------|--------------|---------|
+|----------------------------------|:----------:|:------------:|:-------:|
 |other                             |     X      |      X       |    X|
 |other=(other)                     |     X      |      X       |    X|
 |build_other(attributes={})        |     X      |              |    X|
@@ -21,7 +21,7 @@ end
 **Collection associations (one-to-many / many-to-many)**
 
 |generated methods                 | habtm | has_many | has_many :through|
-|----------------------------------|-------|----------|----------|
+|----------------------------------|:-----:|:--------:|:--------:|
 |others                            |   X   |    X     |    X|
 |others=(other,other,...)          |   X   |    X     |    X|
 |other_ids                         |   X   |    X     |    X|
@@ -132,7 +132,7 @@ a has_one :b
 规则：inverse_of 节约性能(不用二次数据库查询)，一致性(object_id是一样的)。不过有 automatic_inverse_of，当你设置了 :class_name, :foreign_key, :polymorphic, 或表名单复数不规则时用到。
 
 |                 | has_one | has_many | belongs_to | habtm |
-|----------------------------------|-------|----------|----------|-------------|
+|----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:class_name                           |   √   |    √     |    √  |  √|
 |:foreign_key                          |   √   |    √     |    √  |  √|
 |:validate                             |   √   |    √     |    √  |  √|

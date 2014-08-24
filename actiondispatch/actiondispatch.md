@@ -4,7 +4,6 @@ ActionDispatch 本身很复杂，但我们使用 Rails 进行开发的过程中�
 也就是路由机制这部分，它包括：Base、Concerns、HttpHelpers、Resources、Scoping
 
 ## Mapper
----------
 
 ### Base
 

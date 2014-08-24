@@ -16,6 +16,11 @@
 
 ## Middleware
 
+```ruby
+Rails.application.send :default_middleware_stack
+ => #<ActionDispatch::MiddlewareStack:0x007f922de455e0 @middlewares=[Rack::Sendfile, ActionDispatch::Static, Rack::Lock, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ParamsParser, Rack::Head, Rack::ConditionalGet, Rack::ETag]>
+```
+
 ## RouteSet
 
 - 物指 route_set.rb
@@ -28,3 +33,12 @@
 
 - 除 route_set.rb 外，routing 目录里的其它模块
 - 对外提供接口
+
+```ruby
+Mapper
+RoutesProxy
+UrlFor
+PolymorphicRoutes
+
+Redirection
+```
