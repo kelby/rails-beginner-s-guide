@@ -260,4 +260,12 @@ Enter Eager Loading
 
 Of course, guaranteeing support for Ruby 2.0 is not entirely sufficient for most programs still running on 1.9.x, and in some cases, 1.8.x, so you may need to use a more backward-compatible strategy. In Ruby on Rails, this was solved with an `eager_autoload` method that forcibly loads all modules marked to be lazily loaded. If you are running threaded code, it is recommended that you call this prior to launching threads. Note that in Rails 4.0, the framework will eager load all modules by default, which should help you avoid having to think about these threading issues.
 
+## Configurable
 
+- 实例方法 config (或类方法 config、configure)
+
+用 @_config 实例变量来`保存`配置信息
+
+- 类方法 config_accessor
+
+以声明的形式，同时`定`义类方法和实例方法

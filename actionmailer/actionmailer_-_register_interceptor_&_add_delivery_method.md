@@ -108,10 +108,10 @@ end
 
 ## 参考
 
-[Abort mail delivery with Rails 3 interceptors](http://thepugautomatic.com/2012/08/abort-mail-delivery-with-rails-3-interceptors/)
-[How to implement an email Interceptor for development](http://blog.crowdint.com/2012/02/23/how-to-implement-an-email-interceptor-for-development.html)
-[206: ActionMailer in Rails 3](http://cn.asciicasts.com/episodes/206-actionmailer-in-rails3)
+[Abort mail delivery with Rails 3 interceptors](http://thepugautomatic.com/2012/08/abort-mail-delivery-with-rails-3-interceptors/)<br>
+[How to implement an email Interceptor for development](http://blog.crowdint.com/2012/02/23/how-to-implement-an-email-interceptor-for-development.html)<br>
+[206: ActionMailer in Rails 3](http://cn.asciicasts.com/episodes/206-actionmailer-in-rails3)<br>
 [Tips for Implementing Emails in Rails](http://www.jacopretorius.net/2013/11/tips-for-implementing-emails-in-rails.html)
 
-[Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)
+[Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)<br>
 [Deliver Email With Amazon SES In A Rails app](http://robots.thoughtbot.com/deliver-email-with-amazon-ses-in-a-rails-app)

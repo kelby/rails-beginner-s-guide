@@ -14,6 +14,8 @@
 
 ## Http
 
+大部分为 Controller 所用。类似 Controller 的方法了，但却不是。
+
 ## Middleware
 
 ```ruby
@@ -31,14 +33,21 @@ Rails.application.send :default_middleware_stack
 
 ## Routing
 
+一切路由都可归结为: **map path to the Rack endpoint**
+
+What does "Rack endpoint" actually mean? Rack is a modular web server abstraction layer that unifies the API for the interaction of Ruby web application frameworks and application servers. It specifies a simple interface for Rack-compliant applications, and defines standard request and response objects and application server adapters to abstract dealing with the low level details of serving web requests. A Rack endpoint is just an application that adheres to the Rack spec.
+
+**Rack ~= Rack middleware ~= Rack endpoint ~= Rack** application 在这里不作讨论和区分，统一对待。
+
 - 除 route_set.rb 外，routing 目录里的其它模块
 - 对外提供接口
 
 ```ruby
 Mapper
 RoutesProxy
-UrlFor
-PolymorphicRoutes
 
 Redirection
+
+UrlFor
+PolymorphicRoutes
 ```

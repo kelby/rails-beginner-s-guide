@@ -43,6 +43,7 @@
    * [ActionDispatch - Callbacks](actiondispatch/actiondispatch_-_callbacks.md)
    * [源码导读](actiondispatch/others.md)
    * [Custom Middleware](actiondispatch/custom_middleware.md)
+   * [RouteSet](actiondispatch/routeset.md)
 * [ActiveSupport](activesupport/README.md)
    * [ActiveSupport 概览](activesupport/activesupport.md)
    * [ActiveSupport - core_ext](activesupport/activesupport_-_core_ext.md)
@@ -99,6 +100,7 @@
    * [LogSubscriber](others/logsubscriber.md)
    * [Logger](others/logger.md)
    * [Misc](others/misc.md)
+   * [Commonly used method](others/commonly_used_method.md)
 * [ActiveJob](activejob/README.md)
    * [Others](activejob/activejob_others.md)
 

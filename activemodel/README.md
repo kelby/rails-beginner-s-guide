@@ -31,7 +31,16 @@ validates_with(*args, &block) - 调用方式五(不需要属性，需要校验�
 ### HelperMethods
 
 ```ruby
-validates_absence_of, validates_acceptance_of, validates_confirmation_of, validates_exclusion_of, validates_format_of, validates_inclusion_of, validates_length_of, validates_numericality_of, validates_presence_of, validates_size_of
+validates_size_of
+validates_format_of
+validates_length_of
+validates_absence_of
+validates_presence_of
+validates_exclusion_of
+validates_inclusion_of
+validates_acceptance_of
+validates_confirmation_of
+validates_numericality_of
 ```
 
 封装 `validates_with` 而来，可当做类方法调用。由于具体实现时继承于 EachValidator，也可以当做 `validates` 的参数使用。

@@ -40,7 +40,7 @@ Controller 里的回调。
 
 **AssetPaths**
 
-一些 asset 相关的变量。
+以声明的形式，`定义`一些 assset 相关的类方法和实例方法。
 
 **RoutesHelpers**
 
