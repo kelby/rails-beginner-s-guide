@@ -7,3 +7,13 @@
 `ActionController::Renderers.add`
 
 上面的 `register` 中是登记，本身没有处理能力，这里添加渲染器进行处理。
+
+## HideActions
+
+Adds the ability to prevent public methods on a controller to be called as actions.
+
+提供方法：
+
+```ruby
+hide_action
+```

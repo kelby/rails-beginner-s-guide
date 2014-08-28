@@ -284,6 +284,8 @@ AssetUrlHelper
 
 AssetTagHelper
 
+> **Note:** 因为 Rails 背后会把所有 helper 方法(函数)都会被放进同一个 module 里，所以它们之间互相调用。
+
 ## 非渲染和辅助方法
 
 不属于渲染相关、不属于 Helper 的模块和方法。

@@ -1,4 +1,4 @@
-ActionMailer 本质上是对 [Mail gem](https://github.com/mikel/mail) 的封装和现有 ActionPack 的有效利用。它使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
+ActionMailer 使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
 
 ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
 
@@ -98,7 +98,7 @@ end
 Notifier.welcome("david@loudthinking.com").deliver_now
 ```
 
-也可以先创建邮件，稍后再发送
+也可以先创建邮件对象，稍后邮件对象调用方法发送邮件：
 
 ```ruby
 message = Notifier.welcome("david@loudthinking.com") # => an ActionMailer::MessageDeliver object

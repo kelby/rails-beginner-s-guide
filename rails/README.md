@@ -24,11 +24,13 @@
 
 ### 初始化
 
-主要是对它的使用，如 Application 的 bootstrap 和 finisher，以及我们项目 AppName 所涉及到的初始化。
+"初始化"这里是名词，主要是对它的使用，如 Application 的 bootstrap 和 finisher，以及我们项目 AppName 所涉及到的初始化。
 
 ### 启动！
 
 配置、初始化还不够，还有启动！
+
+参考"启动过程"独立章节。
 
 # 其它
 

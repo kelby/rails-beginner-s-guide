@@ -102,7 +102,7 @@ params()
 params=(value)
 ```
 
-但它封装的却是 Parameters 的实例对象，所以它有下列方法：
+但它其实是 Parameters 的实例对象，所以它有下列方法：
 
 ```ruby
 permitted?
@@ -130,12 +130,12 @@ Processing by PostsController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=", "post"=>{"title"=>"hello world"}, "commit"=>"Create Post"}
 
 params
-=> {"utf8"=>"✓",
- "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
- "post"=>{"title"=>"hello world"},
- "commit"=>"Create Post",
- "action"=>"create",
- "controller"=>"posts"}
+  => {"utf8"=>"✓",
+   "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
+   "post"=>{"title"=>"hello world"},
+   "commit"=>"Create Post",
+   "action"=>"create",
+   "controller"=>"posts"}
 ```
 
 我们也可以在 Rails之外 创建自己的 params
@@ -160,6 +160,12 @@ permitted.permitted? # => true
 
 Person.first.update!(permitted)
 # => #<Person id: 1, name: "Francesco", age: 22, role: "user">
+```
+
+配置默认的 permitted parameters
+
+```
+config.always_permitted_parameters = %w( controller action format )
 ```
 
 ## Caching::Fragments

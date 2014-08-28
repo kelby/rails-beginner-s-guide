@@ -72,17 +72,11 @@ config.action_mailer.perform_deliveries = true
 
 ```
 :subject - 主题
-
 :to - 收件人
-
 :from - 发件人
-
 :cc - 抄送
-
 :bcc - 密送
-
 :reply_to - 回邮地址
-
 :date - 时间
 ```
 
@@ -91,7 +85,6 @@ config.action_mailer.perform_deliveries = true
 Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件对象。
 
 `mailer_name()` 返回文件名，或者anonymous。
-
 
 和 Mail 有关联？
 
@@ -123,5 +116,5 @@ mail(headers = {}, &block) 返回 Mail对象本身
 
 格式化文本。*len* 为每行长度，*index* 为行首空格数。
 
-> **Note:** ActiveMailer 可以单独使用，并不绑定于 Rails<br/>
-> **Note:** C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C。所以 ActionMailer::Base 才会 include 一堆代码，尽管有的对它本身没有用。
+> Note: ActiveMailer 可以单独使用，并不绑定于 Rails<br/>
+> Note: C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C。所以 ActionMailer::Base 才会 include 一堆代码，尽管有的对它本身没有用。

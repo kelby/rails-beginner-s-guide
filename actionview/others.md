@@ -11,6 +11,16 @@ delegate
 
 ---
 
+ArticlesController.helpers
+
+和
+
+ArticlesController._helpers
+
+的区别是什么？
+
+---
+
 不同于其它几个模块，Base 类在这里并不是对外的接口，而是 ActionView 模块本身。因为视图对类和对象的概念没有那么重要。
 
 渲染是它的老本行。

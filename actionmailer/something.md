@@ -1,5 +1,4 @@
 # 源码导读
----
 
 **Base**
 
@@ -41,6 +40,8 @@ end
 
 也只有在这个时候，这里的 Collector 才有用到。
 
+> Note: 默认会发送和 mail 所在方法名同名的所有模板，不区分 Mime 格式。
+
 **DeliveryMethods**
 
 邮件发送方式 add_delivery_method.
@@ -49,9 +50,31 @@ end
 
 日志记录，继承于 ActiveSupport::LogSubscriber，执行哪个方法时想要记录日志，只需要创建和它同名方法，然后打印日志即可。LogSubscriber 章节会讲到。
 
-**Preview & Previews**
+**Previews & Preview**
 
 邮件预览相关。
+
+Previews，对于普通开发者来说主要是配置：
+
+Set the location of mailer previews through app configuration:
+
+    config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+
+Enable or disable mailer previews through app configuration:
+
+    config.action_mailer.show_previews = true
+
+Defaults to true for development environment
+
+Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发者察觉不到的方法，如：
+
+`preview_name` Returns the underscored name of the mailer preview without the suffix
+
+`emails` Returns all of the available email previews
+
+这里的预览，和 [MailCatcher](https://github.com/sj26/mailcatcher)、[Letter Opener](https://github.com/ryanb/letter_opener) 等提供的预览不同，它属于规范的测试，而后者更类似于人肉测试。
+
+> Note: 邮件预览，在 Rails 里也遵守 MVC. M 是 ActionMailer::Preview，V 是 rails/mailers/，C 是 Rails::MailersController
 
 **Railtie**
 

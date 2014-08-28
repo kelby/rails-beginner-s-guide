@@ -1,4 +1,4 @@
-ActionMailer 是 Rails 内建的组件，用来处理邮件相关业务。
+ActionMailer 是 Rails 内建的组件，用来处理邮件相关业务，并且简单好用。
 
 它依赖于 Rails 内建的其它组件 ActiveJob、ActionPack(主要用到的是 AbstractController)和 ActionView 以及外部 gem 'mail'.
 
@@ -26,6 +26,8 @@ mail.deliver!
 
 当然，上面的邮件并不能发送成功，因为有一些必须的配置还没有写，并且我们也没有 'body.txt' 文件和 '/somefile.png' 图片。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
 
+> Note: 单独发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
+
 ## 引入其它，为了更好用
 
 直接使用 gem 'mail'，基本功能是满足了，但并不好用。缺少灵活的配置，内容与模板没有分离等。ActionMailer 改善了它们，举例单独使用 action_mailer：
@@ -39,9 +41,9 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
   :port    => 587,
-  :domain  => "domain.com",
+  :domain  => "example.com",
   :authentication => :plain,
-  :user_name      => "test@domain.com",
+  :user_name      => "test@example.com",
   :password       => "passw0rd",
   :enable_starttls_auto => true
 }
@@ -52,7 +54,7 @@ class Mailer < ActionMailer::Base
   def daily_email
     @var = "var"
 
-    mail(to: "myemail@gmail.com", from: "test@domain.com", subject: "testing mail") do |format|
+    mail(to: "myemail@gmail.com", from: "test@example.com", subject: "testing mail") do |format|
       format.text
       format.html
     end
@@ -90,7 +92,7 @@ and this is a variable <%= @var %>
 
 ## 实现方式：汝果欲学诗, 功夫在诗外
 
-ActionMailer 本身并没有"实现"什么功能。最基本，也是最核心的部分由 gem 'mail' 完成；为了更好用、更实用，加载或封装了 ActionPack 和 ActionView。
+ActionMailer 本身并没有"实现"什么功能。最基本，也是最核心的部分由 gem 'mail' 完成；为了更好用、更实用，加载或封装了 ActiveJob、ActionPack 和 ActionView。
 
 为了做好、做得上层次，下面是在邮件处理外，ActionMailer "实现"的一些功能：
 
