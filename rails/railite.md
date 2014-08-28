@@ -1,7 +1,6 @@
 # Railite
 
-Railtie is the core of the Rails framework and provides several hooks to **extend
-Rails and/or modify the initialization process**.
+Railtie 是 Rails 的核心部分之一。通过它，可以扩展和/或修改 Rails 的初始化程序。
 
 Every major component of Rails (Action Mailer, Action Controller,
 Action View and Active Record) is a Railtie. Each of
@@ -9,11 +8,14 @@ them is responsible for their own initialization. This makes Rails itself
 absent of any component hooks, allowing other components to be used in
 place of any of the Rails defaults.
 
+每一个 Rails 组件(如：Action Mailer, Action Controller,
+Action View 和 Active Record等)都属于 Railtie. 因为它们都需要自己的初始化程序。
+
 Developing a Rails extension does _not_ require any implementation of
 Railtie, but if you need to interact with the Rails framework during
 or after boot, then Railtie is needed.
 
-For example, an extension doing any of the following would require Railtie:
+什么时候需要使用 Railtie? 当你的扩展符合下列情况时，可以考虑：
 
 * creating initializers
 * configuring a Rails framework for the application, like setting a generator
@@ -21,7 +23,7 @@ For example, an extension doing any of the following would require Railtie:
 * setting up a subscriber with ActiveSupport::Notifications
 * adding rake tasks
 
-== Creating your Railtie
+## Creating your Railtie
 
 To extend Rails using Railtie, create a Railtie class which inherits
 from Rails::Railtie within your extension's namespace. This class must be
@@ -40,7 +42,7 @@ The following example demonstrates an extension which can be used with or withou
   require 'my_gem/railtie' if defined?(Rails)
 ```
 
-== Initializers
+## Initializers
 
 To add an initialization step from your Railtie to Rails boot process, you just need
 to create an initializer block:
@@ -67,7 +69,7 @@ need to access some application specific configuration, like middleware:
 Finally, you can also pass <tt>:before</tt> and <tt>:after</tt> as option to initializer,
 in case you want to couple it with a specific step in the initialization process.
 
-== Configuration
+## Configuration
 
 Inside the Railtie class, you can access a config object which contains configuration
 shared by all railties and the application:
@@ -85,7 +87,7 @@ shared by all railties and the application:
   end
 ```
 
-== Loading rake tasks and generators
+## Loading rake tasks and generators
 
 If your railtie has rake tasks, you can tell Rails to load them through the method
 rake_tasks:
@@ -106,7 +108,7 @@ will load them during normal generators lookup:
       end
     end
 
-== Application and Engine
+## Application and Engine
 
 A Rails::Engine is nothing more than a Railtie with some initializers already set.
 And since Rails::Application is an engine, the same configuration described here

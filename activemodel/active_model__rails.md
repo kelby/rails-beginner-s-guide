@@ -2,20 +2,19 @@
 
 ## AttributeMethods
 
-Provides a way to add prefixes and suffixes to your methods as well as handling the creation of <tt>ActiveRecord::Base</tt>-like class methods such as +table_name+.
+AttributeMethods 给了我们大量的 accessor(访问器，读、写方法) 和 attribute 相关方法。用一种很方便的手法，为属性添加前缀、后缀。
 
-The requirements to implement <tt>ActiveModel::AttributeMethods</tt> are to:
+使用步骤:
 
-* <tt>include ActiveModel::AttributeMethods</tt> in your class.
-* Call each of its method you want to add, such as +attribute_method_suffix+
-  or +attribute_method_prefix+.
-* Call +define_attribute_methods+ after the other methods are called.
-* Define the various generic +_attribute+ methods that you have declared.
-* Define an +attributes+ method which returns a hash with each
-  attribute name in your model as hash key and the attribute value as hash value.
-  Hash keys must be strings.
+1. <tt>include ActiveModel::AttributeMethods</tt>
+2. 调用 `attribute_method_suffix` 或 `attribute_method_prefix`，指明添加什么前缀、后缀
+3. 在这之后，调用 `define_attribute_methods`，指明对哪些属性有效(默认是所有)
+4. 定义一个方法，用 `attribute` 加上刚才的前缀、后缀做为方法名，实现其内容
+5. 定义一个 `attributes` 方法。返回值是一个 hash，属性名做为 key，属性的值做为 value. 实际上可实现其读、写方法。
 
-A minimal implementation could be:
+使用 Rails，有的步骤默认已经做了，所以使用上可以减少几个步骤，但其中的 2，4 是无论如何都不可省。
+
+Rails 之外使用举例:
 
 ```ruby
   class Person
@@ -54,9 +53,27 @@ A minimal implementation could be:
   end
 ```
 
-主要用到的方法，都在示例里。ActiveRecord 基于它也实现了一个自己的 AttributeMethods。
+使用 Rails 举例：
 
-Conversion gives us useful methods including to_param and to_key. AttributeMethods gives us lots of accessor and attribute related goodness. And Validations gives us, well, validations.
+```ruby
+class Person < ActiveRecord::Base
+  attribute_method_affix :prefix => 'me_mateys_', :suffix => '_is_in_pirate?'
+
+  private
+
+  def me_mateys_attribute_is_in_pirate?(attr)
+    send(attr).to_s =~ /\bYAR\b/i
+  end
+end
+
+person = Person.find(1)
+person.name                               #=> 'Paul Gillard'
+person.profession                         #=> 'A Pirate, yar!'
+person.me_mateys_name_is_in_pirate?       #=> false
+person.me_mateys_profession_is_in_pirate? #=> true
+```
+
+主要用到的方法，都在示例里。ActiveRecord 基于它也实现了一个自己的 AttributeMethods.
 
 [Reading Rails - Attribute Methods](http://monkeyandcrow.com/blog/reading_rails_attribute_methods/)<br>
 [Building an Object Mapper: Override-able Accessors](http://www.railstips.org/blog/archives/2010/08/29/building-an-object-mapper-override-able-accessors/)

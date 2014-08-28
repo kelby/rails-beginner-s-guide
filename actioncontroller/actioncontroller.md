@@ -16,15 +16,19 @@ For this scenario, we’ve built a thin wrapper around the generic Rack middlewa
 
 ### MimeResponds & Responder
 
-in class
-`respond_to(*mimes)` - 类型(配合 in action respond_with)，可加 :only 或 :except 指定 actions
-
-in action
 `respond_to(*mimes, &block)` - 全部内容(包含类型和内容)
-`respond_with(*resources, &block)` - 内容(配合 in class respond_to)
 
+可以有变种：
 
-Defines mime types that are rendered by default when invoking respond_with.
+```ruby
+format.html.phone - variant inline syntax
+
+# 或
+
+format.html{ |variant| variant.phone } - variant block syntax
+```
+
+html 等响应格式由 Collector 处理，而变种由 VariantCollector 来处理。
 
 ### Redirecting
 

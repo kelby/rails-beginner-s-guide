@@ -4,12 +4,21 @@
 
 ## Metal 之外
 
-cache
 
-从 ActionView
-从 AbstractController
-从 ActionDispatch
-来的方法？
+### cache
+
+
+### 继承 AbstractController 的遗产
+
+直接继承而来
+
+### 使用 ActionDispatch 的资源
+
+有一些方法是 ActionDispatch::Http 直接调用
+
+### 协作 ActionView
+
+有很多类似的方法或丝丝关联。
 
 ![Action Dispatcher and Action Controller in Rails 4](http://dylanninin.com/assets/images/2013/rails/rails_mvc_c.png)
 
