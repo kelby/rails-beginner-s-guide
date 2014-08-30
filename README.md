@@ -1,6 +1,6 @@
-# Welcome to GitBook Editor!
+# Rails 使用指南及源码地图
 
-Here's what you need to know:
+您将会学到以下内容：
 
 1. This application is open source, you can contribute to it on [GitHub](https://github.com/GitbookIO/editor).
 

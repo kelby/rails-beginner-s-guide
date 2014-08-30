@@ -46,4 +46,4 @@ user.authenticate('mUc3m00RsqyRe')                    # => user
 [5] pry(main)> BCrypt::Password.new(password_digest) == unencrypted_password
 => true
 ```
-> **Note:** BCrypt::Password.create 加密，BCrypt::Password.new 解密
+> Note: BCrypt::Password.create 加密，BCrypt::Password.new 解密

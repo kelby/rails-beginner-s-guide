@@ -41,7 +41,7 @@ flash.alert
 flash.notice
 ```
 
-> **Note:** 其它 flash_type 默认不能这么写
+> Note: 其它 flash_type 默认不能这么写
 
 上面是由 ActionDispatch 提供，下面由 ActionController 提供 (基于上面)。
 

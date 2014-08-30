@@ -31,8 +31,7 @@ Defines both class and instance accessors for class attributes.
 `delegate`
 
 ```
-Provides a +delegate+ class method to easily expose contained objects'
-public methods as your own.
+Provides a +delegate+ class method to easily expose contained objects' public methods as your own.
 ```
 
 后面是个对象即可，而 Ruby 又号称"一切皆对象"。
@@ -56,8 +55,7 @@ Foo.new.hello # => "world"
 `config_accessor`
 
 ```
-Allows you to add shortcut so that you don't have to refer to attribute
-through config.
+Allows you to add shortcut so that you don't have to refer to attribute through config.
 ```
 
 `define_callbacks`
@@ -104,12 +102,12 @@ ActionController::Metal and ActionController::Base are defined as abstract
 ```
 
 我们自定义的 Controller 里的 public instance methods(公开实例方法) 都会被当做 action 来对待。因此，继承的时候要做一些处理，
-以避免父类的实例方法被当做 action. 目前，解决方法是把父类声明为：abstract = true 
+以避免父类的实例方法被当做 action. 目前，解决方法是把父类声明为：abstract = true
 
 `helper`
 
 ```
-The +helper+ class method can take a series of helper module names, a block, or both.
+The helper class method can take a series of helper module names, a block, or both.
 ```
 
 `helper_method`
@@ -117,7 +115,6 @@ The +helper+ class method can take a series of helper module names, a block, or 
 ```
 Declare a controller method as a helper.
 ```
-
 
 ## Railtie
 

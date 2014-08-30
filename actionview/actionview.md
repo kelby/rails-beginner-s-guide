@@ -25,15 +25,15 @@ The \Rails framework provides a large number of helpers for working with assets,
 
 > **NOTE:** 表单比重很大，所有可以参考[Form Helpers](http://edgeguides.rubyonrails.org/form_helpers.html)
 
-##布局及渲染
----------
+## 布局及渲染
 
-###layout
+### layout
 
 `layout(layout, conditions = {})` Specify the layout to use for this class.
 我们平时在 Controller 里使用的 layout 方法，其实就是在这里定义的。
 
-###render
+### render
+
 ```
 Returns the result of a render that's dictated by the options hash. The primary options are:
 
@@ -60,8 +60,7 @@ type of text/html from ActionDispatch::Response object.
 If no options hash is passed or :update specified, the default is to render a partial and use the second parameter as the locals hash.
 ```
 
-##其它
-------
+## 其它
 
 ActionView底层我们就不多说了，我们使用过程中接触到的东西并不多，除了上述 helper 外，说一些其它的方法凑数字吧。
 
@@ -90,7 +89,7 @@ Layouts 里的
 layout(layout, conditions = {})
 ```
 
-ActionView有4个render方法(不包含测试里的)，分别在：
+ActionView 有 4 个 render 方法(不包含测试里的)，分别在：
 
 - Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
 

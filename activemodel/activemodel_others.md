@@ -1,10 +1,12 @@
 # Others
 
 ## Available Callbacks
-Here is a list with all the available Active Record callbacks, listed in the same order in which they will get called during the respective operations:
 
-### Creating an Object
+每个操作，它所对应的回调(按顺序来的)。
 
+### 创建
+
+```
 before_validation
 after_validation
 before_save
@@ -14,9 +16,11 @@ around_create
 after_create
 after_save
 after_commit/after_rollback
+```
 
-### Updating an Object
+### 更新
 
+```
 before_validation
 after_validation
 before_save
@@ -26,17 +30,20 @@ around_update
 after_update
 after_save
 after_commit/after_rollback
+```
 
-### Destroying an Object
+### 删除
 
+```
 before_destroy
 around_destroy
 after_destroy
 after_commit/after_rollback
+```
 
-> **Note:** after_save runs both on create and update, but always after the more specific callbacks after_create and after_update, no matter the order in which the macro calls were executed.
+> Note: after_save runs both on create and update, but always after the more specific callbacks after_create and after_update, no matter the order in which the macro calls were executed.
 
-### after_initialize and after_find
+### after_initialize 和 after_find
 
 The after_initialize callback will be called whenever an Active Record object is instantiated, either by directly using new or when a record is loaded from the database. It can be useful to avoid the need to directly override your Active Record initialize method.
 

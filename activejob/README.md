@@ -90,8 +90,3 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 
 有利必有弊，可能面临以下问题：<br>
 原 gem 本身的特点没能充分利用，灵活性降低，和其它 gem 的配合会变复杂。
-
-拿 Sidekiq 举例：<br>
-[Sidekiq wiki](https://github.com/mperham/sidekiq/wiki) 里面好多功能都不能用了。<br>
-你想方设法终于使用上了这些特性，但这不是比原来的复杂了吗？<br>
-配合 [Sidetiq](https://github.com/tobiassvn/sidetiq) 或其它有关联的 gem

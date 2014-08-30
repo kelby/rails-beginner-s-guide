@@ -3,14 +3,14 @@
 In Rails 3.0, a Rails::Application object was introduced which is nothing more than
 an Engine but with the responsibility of coordinating the whole boot process.
 
-== Initialization
+## Initialization
 
 Rails::Application is responsible for executing all railties and engines
 initializers. It also executes some bootstrap initializers (check
 Rails::Application::Bootstrap) and finishing initializers, after all the others
 are executed (check Rails::Application::Finisher).
 
-== Configuration
+## Configuration
 
 Besides providing the same configuration as Rails::Engine and Rails::Railtie,
 the application object has several specific configurations, for example
@@ -19,16 +19,16 @@ the application object has several specific configurations, for example
 
 Check Rails::Application::Configuration to see them all.
 
-== Routes
+## Routes
 
 The application object is also responsible for holding the routes and reloading routes
 whenever the files change in development.
 
-== Middlewares
+## Middlewares
 
 The Application is also responsible for building the middleware stack.
 
-== Booting process
+## Booting process
 
 The application is also responsible for setting up and executing the booting
 process. From the moment you require "config/application.rb" in your app,
@@ -47,7 +47,7 @@ the booting process goes like this:
   10) Run config.before_eager_load and eager_load! if eager_load is true
   11) Run config.after_initialize callbacks
 
-== Multiple Applications
+## Multiple Applications
 
 If you decide to define multiple applications, then the first application
 that is initialized will be set to +Rails.application+, unless you override

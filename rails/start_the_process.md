@@ -7,23 +7,18 @@ require ::File.expand_path('../config/environment',  __FILE__)
 require File.expand_path('../application', __FILE__)
 
 3. application.rb
-
 require File.expand_path('../boot', __FILE__)
 
 4. boot.rb
-
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
 5. Gemfile
-
 gem ‘gem_name'
 
 6. boot.rb
-
 执行 bundle
 
 7. application.rb
-
 require ’something’ # like require ‘rails’
 
 AppName::Application < Rails::Application
@@ -31,7 +26,6 @@ AppName::Application < Rails::Application
 config your AppName
 
 8. enviroment.rb
-
 AppName::Application.initialize!
 
 ```ruby

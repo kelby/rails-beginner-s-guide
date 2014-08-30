@@ -20,11 +20,8 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 
 ## Middleware
 
-**middleware 在路由转发之前完成！**
+**middleware 在路由转发之后，Controller接收之前！**
 
-外部请求进来的第一道和第二道闸门。
-第一道：Middleware
-第二道：ActionDispatch
 
 ```ruby
 Rails.application.send :default_middleware_stack
@@ -89,7 +86,7 @@ run AppName::Application.routes
 
 ## RouteSet
 
-- 物指 route_set.rb
+- 特指 route_set.rb
 - 本身就充满魔法
 - 还是内外沟通的桥梁
 - 内指 Journey

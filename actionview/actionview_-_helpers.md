@@ -5,8 +5,6 @@ The Rails framework provides a large number of helpers for working with assets, 
 
 In addition to using the standard template helpers provided, creating custom helpers to extract complicated logic or reusable functionality is strongly encouraged. By default, each controller will include all helpers. These helpers are only accessible on the controller through `.helpers`
 
-In previous versions of Rails the controller will include a helper whose name matches that of the controller, e.g., `MyController` will automatically include `MyHelper`. To return old behavior set `config.action_controller.include_all_helpers` to `false`.
-
 ## UrlHelper
 
 可直接转化成 HTML：

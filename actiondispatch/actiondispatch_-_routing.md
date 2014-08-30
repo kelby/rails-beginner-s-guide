@@ -252,4 +252,4 @@ Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 
 [Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)
 
-[Rails3.2.8 Route源码分析](http://ruby-china.org/topics/5895)
+[Rails 3.2.8 Route 源码分析](http://ruby-china.org/topics/5895)

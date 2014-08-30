@@ -1,8 +1,3 @@
-依赖于 actionpack、actionview 和 mail。
-mail 本身就能生成、发送、接收和测试邮件，支持多类型的邮件和附件。actionmail 只是**借助** actionpack、actionview 提供的方法，**封装**了 mail 让我们用习惯的控制器/视图方式为我们服务。
-
-主要分为两部分，Controller里用到的Base，和View里用到的MailHelper
-
 ## Base
 
 也就是 ActionMailer::Base，我们继承的就是它。
@@ -20,7 +15,7 @@ attachments()
 mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
 ```
 
-Rails会自动获取文件名、文件类型，然后帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64编码的附件内容。
+Rails 会自动获取文件名、文件类型，然后帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64编码的附件内容。
 
 你也可以重写它们：
 

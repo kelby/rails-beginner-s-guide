@@ -125,9 +125,7 @@ skip_action_callback 意味着 skip: before, after, around
 
 ## Base
 
-Route 到 Controller 请求是如何转变的？答案在这 ...
-
-
+ActionDispatch -> Metal -> AbstractController -> ActionController 请求是如何转变的？部分答案在这 ...
 
 ---
 
