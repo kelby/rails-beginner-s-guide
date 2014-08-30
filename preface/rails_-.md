@@ -3,8 +3,6 @@
 - form_tag 和 form_for 的区别？
 前者必需对应着 model 对象，后者就是普通的表单。
 
-- helper 还有哪些好玩的地？
-可以在 model 里使用 include，然后使用 helper 方法。
 
 - 能和我说说 delegate 是怎么实现的吗？
 http://ruby-windy.iteye.com/blog/1195963

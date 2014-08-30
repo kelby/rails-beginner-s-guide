@@ -151,6 +151,25 @@ plural - 复数
 uncountable? - 不可数？
 ```
 
+方便我们把，字符串、符号、实例对象等转换成相关 model 进行处理。
+
+相关 ActionController::ModelNaming 和 ActionView::ModelNaming
+
+`model_name` 把"各种对象"转换成对应的"字符串"，而 View 要的正是"字符串"。
+
+```
+form_for
+
+button
+submit
+
+fields_for
+
+dom_id
+
+dom_class
+```
+
 ## Conversion
 
 ```ruby
@@ -161,6 +180,19 @@ to_partial_path
 ```
 
 `to_params` 默认用 id 做为 url 的一部分，这对用户体验和SEO都不友好，通常我们在 model 里覆盖此方法。
+
+
+使用到它的一些方法：
+
+```ruby
+url_for
+
+call
+
+initialize
+
+button_to
+```
 
 ## Translation
 

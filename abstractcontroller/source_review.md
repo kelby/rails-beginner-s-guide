@@ -22,7 +22,7 @@ I18n 相关的 translate(alias t) 和 localize(alias l) 方法。
 
 **Helpers**
 
-Helper 相关方法。如：helper_method、helper.
+不是指辅助方法！只是和 helper 有点关联，如方法：helper_method、helper.
 
 **Collector**
 
@@ -44,6 +44,9 @@ Controller 里的回调。
 
 **RoutesHelpers**
 
-引入 Route 相关的 helper(这里只是调用，定义在 RouteSet 里)。`routes.rb` 里定义的每一个路由规则都会有对应的 xxx_url 和 xxx_path 等 helper 方法可用，这里 include 了这些 helper。然后，ActionController 和 ActionMailer 的 Railtie 又 extend RoutesHelpers，所以可用。
+引入 Route 相关的 helper(这里只是调用，定义在 RouteSet 里)。
 
-> **Note:** 通过 include Rails.application.routes.url_helpers 然后调用这些 helper 方法。
+`routes.rb` 里定义的每一个路由规则都会有对应的 xxx_url 和 xxx_path 等 helper 方法可用，这里 include 了这些 helper. <br>
+然后，ActionController 和 ActionMailer 的 Railtie 又 extend RoutesHelpers，所以可用。
+
+> Note: 可以通过 `include Rails.application.routes.url_helpers` 然后调用和 Routing 相关的 helper 方法。

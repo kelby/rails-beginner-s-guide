@@ -9,11 +9,11 @@ MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除�
 举个例子:
 
 ```
-  class HelloController < ActionController::Metal
-    def index
-      self.response_body = "Hello World!"
-    end
+class HelloController < ActionController::Metal
+  def index
+    self.response_body = "Hello World!"
   end
+end
 ```
 
 在路由里添加相应代码，将请求转发到刚才的 HelloController#index 进行处理:
@@ -29,36 +29,66 @@ The +action+ method returns a valid Rack application for the \Rails router to di
 
 <tt>ActionController::Metal</tt> by default provides no utilities for rendering views, partials, or other responses aside from explicitly calling of <tt>response_body=</tt>, <tt>content_type=</tt>, and <tt>status=</tt>. To add the render helpers you're used to having in a normal controller, you can do the following:
 
-```
-  class HelloController < ActionController::Metal
-    include AbstractController::Rendering
-    include ActionView::Layouts
-    append_view_path "#{Rails.root}/app/views"
+```ruby
+class HelloController < ActionController::Metal
+  include AbstractController::Rendering
+  include ActionView::Layouts
+  append_view_path "#{Rails.root}/app/views"
 
-    def index
-      render "hello/index"
-    end
+  def index
+    render "hello/index"
   end
+end
 ```
 
 ## Redirection Helpers
 
 To add redirection helpers to your metal controller, do the following:
 
-```
-  class HelloController < ActionController::Metal
-    include ActionController::Redirecting
-    include Rails.application.routes.url_helpers
+```ruby
+class HelloController < ActionController::Metal
+  include ActionController::Redirecting
+  include Rails.application.routes.url_helpers
 
-    def index
-      redirect_to root_url
-    end
+  def index
+    redirect_to root_url
   end
+end
 ```
 
 ## Other Helpers
 
 You can refer to the modules included in <tt>ActionController::Base</tt> to see other features you can bring into your metal controller.
+
+## MiddlewareStack
+
+middleware 并不总是需要项目级别的，它也可以精确到某个 Controller，甚至是 action.
+
+Extend ActionDispatch middleware stack to make it aware of options
+allowing the following syntax in controllers:
+
+```ruby
+class PostsController < ApplicationController
+  use AuthenticationMiddleware, except: [:index, :show]
+end
+```
+
+`self.use` Pushes the given Rack middleware and its arguments to the bottom of the middleware stack.
+
+Metal 里的代码：
+
+```ruby
+# Returns a Rack endpoint for the given action name.
+def self.action(name, klass = ActionDispatch::Request)
+  if middleware_stack.any?
+    middleware_stack.build(name) do |env|
+      new.dispatch(name, klass.new(env))
+    end
+  else
+    lambda { |env| new.dispatch(name, klass.new(env)) }
+  end
+end
+```
 
 ## Others
 
@@ -88,3 +118,6 @@ You can refer to the modules included in <tt>ActionController::Base</tt> to see 
 顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
 
 > Note: @app 和 env 一直在变，但又一直没变。
+
+---
+

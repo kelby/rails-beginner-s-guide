@@ -2,6 +2,15 @@
 
 ## Metal 是重点
 
+属于 middleware
+
+包括但不限于 headers、response、request.
+(另 env、session、params)
+
+可直接继承使用
+
+middleware_stack (这个很重要，最终指向 ActionDispatch::MiddlewareStack)
+
 ## Metal 之外
 
 
@@ -14,17 +23,35 @@
 
 ### 使用 ActionDispatch 的资源
 
-有一些方法是 ActionDispatch::Http 直接调用
+主要是 ActionDispatch 的 http 和 middleware 下的内容。
+
+包括但不限于：
+
+处理 request、response 相关和 headers 相关。(Metal 也可以做，但这里得到了发扬)
 
 ### 协作 ActionView
 
 有很多类似的方法或丝丝关联。
 
-![Action Dispatcher and Action Controller in Rails 4](http://dylanninin.com/assets/images/2013/rails/rails_mvc_c.png)
+### 少量的 ActiveModel
+
+为了约定优于配置，很少的一部分方法和 ActiveModel 的 Naming 模块有关联
+
+包括但不限于：
+
+```
+wrap_parameters
+
+polymorphic_url
+polymorphic_path
+```
+
+---
 
 Controller Environment
 The controller sets up the environment for actions (and, by extension, for the views that they invoke). Many of these methods provide direct access to infor- mation contained in the URL or request.
 
+```
 action_name: the name of the action currently being processed.
 cookies: the cookies associated with the request, and setting values into this object stores cookies on the browser when the response is sent.
 headers: a hash of HTTP headers that will be used in the response.
@@ -33,3 +60,4 @@ request: the incoming request object.
 response: the response object, filled in during the handling of the request, normally managed for you by Rails.
 session: a hash-like object representing the current session data.
 logger
+```
