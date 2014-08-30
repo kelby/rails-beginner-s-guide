@@ -1,8 +1,5 @@
 由于时间关系，临时记录一点，待有时间再补充完整。
 
-- form_tag 和 form_for 的区别？
-前者必需对应着 model 对象，后者就是普通的表单。
-
 
 - 能和我说说 delegate 是怎么实现的吗？
 http://ruby-windy.iteye.com/blog/1195963

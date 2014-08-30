@@ -223,6 +223,9 @@ delegate :request_forgery_protection_token, :params, :session, :cookies, :respon
          :flash, :action_name, :controller_name, :controller_path, :to => :controller
 ```
 
+form_tag 和 form_for 的区别？
+前者必需对应着 model 对象，后者就是普通的表单。
+
 ----------
 
 此外，有一些 helper 很适用于 ActiveModel ...

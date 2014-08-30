@@ -4,9 +4,7 @@
 对内：RouteSet
 对外：除 RouteSet 外，routing 目录里的其它模块
 
-外部请求进来的第一道和第二道闸门。
-第一道：Middleware
-第二道：Http
+
 
 ---
 
@@ -23,6 +21,10 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 ## Middleware
 
 **middleware 在路由转发之前完成！**
+
+外部请求进来的第一道和第二道闸门。
+第一道：Middleware
+第二道：ActionDispatch
 
 ```ruby
 Rails.application.send :default_middleware_stack
@@ -92,6 +94,28 @@ run AppName::Application.routes
 - 还是内外沟通的桥梁
 - 内指 Journey
 - 外指对外的接口及 routing 目录里的其它内容
+
+```ruby
+require 'action_dispatch'
+
+routes = ActionDispatch::Routing::RouteSet.new
+
+routes.draw do
+  get '/' => 'mainpage#index'
+  get '/page/:id' => 'mainpage#show'
+end
+```
+
+从 ActionDispatch 转换站场到 ActionController.
+(准确点：ActionDispatch -> Metal -> AbstractController -> ActionController)
+
+```ruby
+def dispatch(controller, action, env)
+  controller.action(action).call(env)
+end
+```
+
+
 
 ## Routing
 

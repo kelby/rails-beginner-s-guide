@@ -1,5 +1,7 @@
 # Metal
 
+metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品。
+
 一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
 
 ---
@@ -8,7 +10,7 @@ MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除�
 
 举个例子:
 
-```
+```ruby
 class HelloController < ActionController::Metal
   def index
     self.response_body = "Hello World!"
@@ -18,7 +20,7 @@ end
 
 在路由里添加相应代码，将请求转发到刚才的 HelloController#index 进行处理:
 
-```
+```ruby
 # in your config/routes.rb
 get 'hello', to: HelloController.action(:index)
 ```

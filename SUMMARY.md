@@ -23,7 +23,6 @@
    * [源码导读](activemodel/activemodel_source_review.md)
 * [ActionController](actioncontroller/README.md)
    * [ActionController 概览](actioncontroller/actioncontroller.md)
-   * [Flash](actioncontroller/flash.md)
    * [Metal](actioncontroller/metal.md)
    * [Caching & Fragments](actioncontroller/caching_&_fragments.md)
    * [Rack 简介](actioncontroller/rack.md)
