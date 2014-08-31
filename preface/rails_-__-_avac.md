@@ -74,7 +74,7 @@ ERB.new( template ).result( binder )
 => "Helo, Kelby"
 ```
 
-> **Note:** 以上利用了中间变量 binder. binder 应为更高一级的变量(可以跨越 Controller#actions 和 View 两个环境)，Rails 也是如此设计的吗？
+> Note: 以上利用了中间变量 binder. binder 应为更高一级的变量(可以跨越 Controller#actions 和 View 两个环境)，Rails 也是如此设计的吗？
 
 ## Ruby 内建 Binding
 

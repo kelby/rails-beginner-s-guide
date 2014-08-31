@@ -9,17 +9,17 @@ Callbacks are hooks into the life cycle of an Active Record object that allow yo
 共 19 个：
 
 ```ruby
-    CALLBACKS = [
-      :after_initialize, :after_find, :after_touch, :before_validation, :after_validation,
-      :before_save, :around_save, :after_save, :before_create, :around_create,
-      :after_create, :before_update, :around_update, :after_update,
-      :before_destroy, :around_destroy, :after_destroy, :after_commit, :after_rollback
-    ]
+CALLBACKS = [
+  :after_initialize, :after_find, :after_touch, :before_validation, :after_validation,
+  :before_save, :around_save, :after_save, :before_create, :around_create,
+  :after_create, :before_update, :around_update, :after_update,
+  :before_destroy, :around_destroy, :after_destroy, :after_commit, :after_rollback
+]
 ```
 
 ## 怎么使用？
 
-There are four types of callbacks accepted by the callback macros: 
+There are four types of callbacks accepted by the callback macros:
 
 1. Method references (symbol), √
 2. callback objects, √

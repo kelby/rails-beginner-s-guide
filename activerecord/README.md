@@ -28,7 +28,7 @@ DatabaseTasks
 
 ## 数据库操作(增删查改问)
 
-Transactions
+
 
 - locking
 
@@ -76,11 +76,13 @@ AttributeAssignment
 
 - Aggregations
 
+- Reflection
+
 ## 约定、配置
 
 Timestamp
 
-Reflection
+
 
 ModelSchema
 
@@ -102,6 +104,8 @@ ModelSchema
 
 为了完成某项任务而生。
 
+Transactions
+
 - Validations
 
 包括 AssociatedValidator、PresenceValidator、UniquenessValidator
@@ -109,10 +113,6 @@ ModelSchema
 Translation
 
 Store
-
-
-
-
 
 
 
@@ -127,10 +127,6 @@ Integration
 - Inheritance
 
 model 之间的继承关系(用的是同一张表)
-
-
-
-
 
 
 

@@ -139,7 +139,7 @@ A minimal implementation could be:
 
 ## Serialization
 
-`serializable_hash(options = nil)` 序列化操作，经测试和 `as_json` 结果一致。
+`serializable_hash(options = nil)` 序列化操作，经测试和 `as_json` 结果一致。An `attributes` hash must be defined and should contain any attributes you need to be serialized.
 
 此外，还有 module 及方法：
 

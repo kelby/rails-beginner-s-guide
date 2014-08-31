@@ -177,6 +177,6 @@ Post.includes(:comments).where("comments.visible" => true)
 
 `explain()` 看看转化成 SQL 是什么样。
 
-> **Note:** 注意区分 Rails 里的 group 和 SQL 里的 group_by
+> Note: 注意区分 Rails 里的 group 和 SQL 里的 group_by
 
 相关SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)

@@ -123,3 +123,11 @@ delete / destroy，刪除很昂貴。確保你知道自己在幹什麼。
 
 [Rails SQL Injection](http://rails-sqli.org/)<br>
 [Active Record Queries](http://www.theodinproject.com/ruby-on-rails/active-record-queries)
+
+---
+
+## SchemaMigration
+
+## SchemaDumper
+
+## Schema

@@ -2,10 +2,6 @@
 
 Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作(好吧，其实就是各种复杂的读写操作)。
 
-## Transactions
-
-事务
-
 ## CounterCache
 
 加一、减一、重置、更新
@@ -24,21 +20,27 @@ update_counters(id, counters)
 
 ## Querying
 
-很重要
 
-##Relation
+```
+delegate :find, :take, :take!, :first, :first!, :last, :last!, :exists?, :any?, :many?, to: :all
+delegate :second, :second!, :third, :third!, :fourth, :fourth!, :fifth, :fifth!, :forty_two, :forty_two!, to: :all
+delegate :first_or_create, :first_or_create!, :first_or_initialize, to: :all
+delegate :find_or_create_by, :find_or_create_by!, :find_or_initialize_by, to: :all
+delegate :find_by, :find_by!, to: :all
+delegate :destroy, :destroy_all, :delete, :delete_all, :update, :update_all, to: :all
+delegate :find_each, :find_in_batches, to: :all
+delegate :select, :group, :order, :except, :reorder, :limit, :offset, :joins,
+         :where, :rewhere, :preload, :eager_load, :includes, :from, :lock, :readonly,
+         :having, :create_with, :uniq, :distinct, :references, :none, :unscope, to: :all
+delegate :count, :average, :minimum, :maximum, :sum, :calculate, to: :all
+delegate :pluck, :ids, to: :all
+```
+
+## Relation
 
 属于 ARel
 
-## Scoping
 
-```
-default_scope(scope = nil)
-unscoped
-
-all
-scope(name, body, &block)
-```
 
 
 ## Calculations
@@ -98,10 +100,9 @@ posts = Post.includes(:comments)
 ### 关键：后续是否需要对关联对象进行操作。
 ```
 
-> **Note:** 返回的多是 Relation，与SQL层面较亲；有 find 字样的绝对不是它。
+> Note: 返回的多是 Relation，与SQL层面较亲；有 find 字样的绝对不是它。
 
 ## FinderMethods & Batches
-------
 
 查表操作(数据库读操作)。大部分是SQL层面，一般不可多条件链式查询。
 
@@ -136,7 +137,23 @@ Ruby慢，人性化；SQL快，不易读写。
 
 Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链式查询可以很大程度的提高效率。更多请查看接口 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
 
-> **Note:** 这里部分是对多个对象的操作，对 Relation 的操作；不是查询操作。
+> Note: 这里部分是对多个对象的操作，对 Relation 的操作；不是查询操作。
+
+```ruby
+JoinOperation = Struct.new(:relation, :join_class, :on)
+
+MULTI_VALUE_METHODS  = [:includes, :eager_load, :preload, :select, :group,
+                        :order, :joins, :where, :having, :bind, :references,
+                        :extending, :unscope]
+
+SINGLE_VALUE_METHODS = [:limit, :offset, :lock, :readonly, :from, :reordering,
+                        :reverse_order, :distinct, :create_with, :uniq]
+INVALID_METHODS_FOR_DELETE_ALL = [:limit, :distinct, :offset, :group, :having]
+
+VALUE_METHODS = MULTI_VALUE_METHODS + SINGLE_VALUE_METHODS
+
+include FinderMethods, Calculations, SpawnMethods, QueryMethods, Batches, Explain, Delegation
+```
 
 ## Persistence
 
@@ -146,3 +163,102 @@ Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链�
 
 > **Note:** 这里大部分是对单个对象的操作。
 
+## Scoping
+
+虽然只有 4 个方法，但很实用。
+
+```ruby
+default_scope(scope = nil) - 设置默认 scope
+unscoped - 跳过之前设置的 scope
+
+all - all 方法，默认已经 scope
+scope(name, body, &block) - 命名一个 scope
+```
+
+`scope(name, body, &block)` 重点说说这个方法。
+
+Adds a class method for retrieving and querying objects. A scope represents a narrowing of a database query, such as where(color: :red).select('shirts.*').includes(:washing_instructions).
+
+```ruby
+class Shirt < ActiveRecord::Base
+  scope :red, -> { where(color: 'red') }
+  scope :dry_clean_only, -> { joins(:washing_instructions).where('washing_instructions.dry_clean_only = ?', true) }
+end
+```
+
+The above calls to scope define class methods Shirt.red and Shirt.dry_clean_only. Shirt.red, in effect, represents the query Shirt.where(color: 'red').
+
+You should always pass a callable object to the scopes defined with scope. This ensures that the scope is re-evaluated each time it is called.
+
+Note that this is simply 'syntactic sugar' for defining an actual class method:
+
+```ruby
+class Shirt < ActiveRecord::Base
+  def self.red
+    where(color: 'red')
+  end
+end
+```
+
+Unlike Shirt.find(...), however, the object returned by Shirt.red is not an Array; it resembles the association object constructed by a has_many declaration. For instance, you can invoke Shirt.red.first, Shirt.red.count, Shirt.red.where(size: 'small'). Also, just as with the association objects, named scopes act like an Array, implementing Enumerable; Shirt.red.each(&block), Shirt.red.first, and Shirt.red.inject(memo, &block) all behave as if Shirt.red really was an Array.
+
+These named scopes are composable. For instance, Shirt.red.dry_clean_only will produce all shirts that are both red and dry clean only. Nested finds and calculations also work with these compositions: Shirt.red.dry_clean_only.count returns the number of garments for which these criteria obtain. Similarly with Shirt.red.dry_clean_only.average(:thread_count).
+
+All scopes are available as class methods on the ActiveRecord::Base descendant upon which the scopes were defined. But they are also available to has_many associations. If,
+
+```ruby
+class Person < ActiveRecord::Base
+  has_many :shirts
+end
+```
+
+then elton.shirts.red.dry_clean_only will return all of Elton's red, dry clean only shirts.
+
+Named scopes can also have extensions, just as with has_many declarations:
+
+```ruby
+class Shirt < ActiveRecord::Base
+  scope :red, -> { where(color: 'red') } do
+    def dom_id
+      'red_shirts'
+    end
+  end
+end
+```
+
+Scopes can also be used while creating/building a record.
+
+```ruby
+class Article < ActiveRecord::Base
+  scope :published, -> { where(published: true) }
+end
+
+Article.published.new.published    # => true
+Article.published.create.published # => true
+```
+
+Class methods on your model are automatically available on scopes. Assuming the following setup:
+
+```ruby
+class Article < ActiveRecord::Base
+  scope :published, -> { where(published: true) }
+  scope :featured, -> { where(featured: true) }
+
+  def self.latest_article
+    order('published_at desc').first
+  end
+
+  def self.titles
+    pluck(:title)
+  end
+end
+```
+
+We are able to call the methods like this:
+
+```ruby
+Article.published.featured.latest_article
+Article.featured.titles
+```
+
+> Note: 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)

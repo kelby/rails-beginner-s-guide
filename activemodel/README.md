@@ -73,9 +73,9 @@ validators_on
 
 ## Validator
 
-自定义校验，两种方式，分别为 Validator 和 EachValidator
+自定义校验器，有两种方式，继承于 Validator 或 EachValidator.
 
-任何继承于 ActiveModel::Validator 的校验器都要实现 validate 方法，此方法接收要校验的 record 做为参数。然后，通过 `validates_with` 方法可以使用刚才定义的校验器。
+任何继承于 ActiveModel::Validator 的校验器都要实现 `validate` 方法，此方法接收要校验的 record 做为参数。然后，通过 `validates_with` 方法可以使用刚才定义的校验器。
 
 ```ruby
 class Person
@@ -92,7 +92,7 @@ class MyValidator < ActiveModel::Validator
 end
 ```
 
-直接继承于 Validator 的校验器在整个项目生命周期中只初始化一次。它对整个对象，并且自动校验。实际上，推荐使用更更灵活的 EachValidator. 任何继承于 ActiveModel::EachValidator 的校验器都要实现 validate_each 方法，此方法接收要校验的 record、attribute、value 做为参数。
+直接继承于 Validator 的校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动校验。实际上，推荐使用更更灵活的 EachValidator. 任何继承于 ActiveModel::EachValidator 的校验器都要实现 `validate_each` 方法，此方法接收要校验的 record、attribute、value 做为参数。
 
 ```ruby
 class TitleValidator < ActiveModel::EachValidator
@@ -122,7 +122,7 @@ end
 - 自定义校验器 - 继承 ActiveModel::Validator 然后实现 `validate` 方法。这种方式，由 `validates_with` 加校验器名字的方式进行调用。
 - 自定义校验 - 继承 ActiveModel::EachValidator 然后实现 `validate_each` 方法。这种方式，由 `validates` 里以参数的方式进行调用。
 
-> **Note:** EachValidator 也继承于 Validator. Rails 内建的校验方法(或者说校验器)，都是继承于 EachValidator.
+> Note: EachValidator 也继承于 Validator. Rails 内建的校验方法(或者说校验器)，都是继承于 EachValidator.
 
 ## Errors
 
@@ -196,9 +196,11 @@ button_to
 
 ## Translation
 
-不实用，如：
 `human_attribute_name(attribute, options = {})`
 
+根据属性名，自动转换成对人类阅读更加友好的字符串。如 "first_name" 转换成 "First name".
+
+使用场景非常非常有限。举例：View 根据字段，自动生成的内容；格式良好的 Errors 报错信息等。
 
 ## Lint::Tests
 

@@ -37,3 +37,32 @@ There are also some optional column names that will add additional features to A
 - (table_name)_count - Used to cache the number of belonging objects on associations. For example, a comments_count column in a Post class that has many instances of Comment will cache the number of existent comments for each post.
 
 > While these column names are optional, they are in fact reserved by Active Record. Steer clear of reserved keywords unless you want the extra functionality. For example, type is a reserved keyword used to designate a table using Single Table Inheritance (STI). If you are not using STI, try an analogous keyword like "context", that may still accurately describe the data you are modeling.
+
+## Timestamp
+
+Active Record automatically timestamps create and update operations if the
+table has fields named <tt>created_at/created_on</tt> or
+<tt>updated_at/updated_on</tt>.
+  
+Timestamping can be turned off by setting:
+  
+    config.active_record.record_timestamps = false
+  
+Timestamps are in UTC by default but you can use the local timezone by setting:
+  
+    config.active_record.default_timezone = :local
+  
+### Time Zone aware attributes
+  
+By default, ActiveRecord::Base keeps all the datetime columns time zone aware by executing following code.
+  
+    config.active_record.time_zone_aware_attributes = true
+  
+This feature can easily be turned off by assigning value <tt>false</tt> .
+
+If your attributes are time zone aware and you desire to skip time zone conversion to the current Time.zone
+when reading certain attributes then you can do following:
+  
+    class Topic < ActiveRecord::Base
+      self.skip_time_zone_conversion_for_attributes = [:written_on]
+    end
