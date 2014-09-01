@@ -6,7 +6,7 @@ ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常�
 
 以 Gmail 为例：
 
-```
+```ruby
 config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
@@ -77,7 +77,7 @@ default_params = {
 :date - 时间
 ```
 
-> **NOTE:** 想了解更多 header，点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
+> NOTE: 想了解更多 header，点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
 
 前面提到过，mailer 类和普通的 controller 类似，你可以渲染相应的模板，也可以传递实例变量给它们。例如：
 

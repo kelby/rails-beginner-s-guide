@@ -6,6 +6,55 @@
 
 ## 渲染相关(renderer & rendering)
 
+### 渲染器
+
+TemplateRenderer
+模板渲染器
+
+StreamingTemplateRenderer
+流模板渲染器
+
+Renderer
+XML 渲染器
+
+PartialIteration
+局部模板迭代
+
+PartialRenderer
+局部模板渲染器
+
+AbstractRenderer
+抽象出来的渲染器
+
+### 模板
+
+Type
+类型
+(也就是 format)
+
+Text & HTML
+(什么也不是)
+
+Resolver
+解析器
+
+PathResolver
+路径解析器
+
+FileSystemResolver
+文件系统解析器
+
+OptimizedFileSystemResolver
+优化的文件系统解析器
+
+FallbackFileSystemResolver
+回溯的文件系统解析器
+
+Error
+各种错误
+
+### 上下文
+
 ViewPaths
 视图文件所在目录
 
@@ -37,34 +86,8 @@ Context
 OutputBuffer & StreamingBuffer
 输出流
 
-### 模板
 
-Type
-类型
-(也就是 format)
-
-Text & HTML
-(什么也不是)
-
-Resolver
-解析器
-
-PathResolver
-路径解析器
-
-FileSystemResolver
-文件系统解析器
-
-OptimizedFileSystemResolver
-优化的文件系统解析器
-
-FallbackFileSystemResolver
-回溯的文件系统解析器
-
-Error
-各种错误
-
-#### 处理器
+#### 处理器*
 
 Handlers
 处理器
@@ -80,29 +103,6 @@ ERB 处理器
 
 Builder
 XML 处理器
-
-### 渲染器
-
-TemplateRenderer
-模板渲染器
-
-StreamingTemplateRenderer
-流模板渲染器
-
-Renderer
-XML 渲染器
-
-PartialIteration
-局部模板迭代
-
-PartialRenderer
-局部模板渲染器
-
-AbstractRenderer
-抽象出来的渲染器
-
-
-
 
 
 ## 辅助方法(Helper)
@@ -236,7 +236,7 @@ Provides a number of methods for creating form tags that don't rely on an Active
 
 名字 FormTagHelper 起得非常不合适
 
-### 通用元素
+### 通用元素(非表单元素)
 
 区别于表单元素，这里的 helper 不用束缚于表单，比较通用。
 
@@ -284,7 +284,7 @@ AssetUrlHelper
 
 AssetTagHelper
 
-> **Note:** 因为 Rails 背后会把所有 helper 方法(函数)都会被放进同一个 module 里，所以它们之间互相调用。
+> Note: 因为 Rails 背后会把所有 helper 方法(函数)都会被放进同一个 module 里，所以它们之间互相调用。
 
 ## 非渲染和辅助方法
 

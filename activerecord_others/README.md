@@ -6,3 +6,5 @@
 ```
 Rails.application.config.database_configuration
 ```
+
+## LogSubscriber

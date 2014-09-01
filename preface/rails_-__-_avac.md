@@ -74,6 +74,10 @@ ERB.new( template ).result( binder )
 => "Helo, Kelby"
 ```
 
+Rails 里的 lookup_context 概念及作用和这里的 binder 类似。
+
+**lookup_context:** LookupContext is the object responsible to hold all information required to lookup templates, i.e. view paths and details. Check ActionView::LookupContext for more information.
+
 > Note: 以上利用了中间变量 binder. binder 应为更高一级的变量(可以跨越 Controller#actions 和 View 两个环境)，Rails 也是如此设计的吗？
 
 ## Ruby 内建 Binding

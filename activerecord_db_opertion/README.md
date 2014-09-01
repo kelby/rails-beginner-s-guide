@@ -4,15 +4,21 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 ## CounterCache
 
-加一、减一、重置、更新
+按要求加减指定计数器的值、统计数目的加一、统计数目的减一、重置计数器的值。
 
 ```
+update_counters(id, counters)
+
+# 下面这两个方法基于 update_counters
 increment_counter(counter_name, id)
 decrement_counter(counter_name, id)
+
 reset_counters(id, *counters)
-update_counters(id, counters)
 ```
 
+这几条命令直接转化成 sql 语句，所以性能上要比普通的"给对象 的计数品赋值，然后保存对象"要快，并且准确性得到了更高的保证。
+
+之前没有统计数目，新增统计数目，或之前的统计数目存在错误，使用 reset_counters 你可以又快、又准确的得到统计数目。
 
 ## Persistence
 
@@ -36,11 +42,7 @@ delegate :count, :average, :minimum, :maximum, :sum, :calculate, to: :all
 delegate :pluck, :ids, to: :all
 ```
 
-## Relation
-
-属于 ARel
-
-
+## NullRelation
 
 
 ## Calculations

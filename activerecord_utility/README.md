@@ -78,6 +78,75 @@ attr_names由：一个或多个属性(association_name) 和 一个或多个可�
 :update_only
 ```
 
+- 当你声明嵌套属性时，Rails会自动帮你定义属性的写方法。
+
+```ruby
+# 摘录部分代码
+def #{association_name}_attributes=(attributes)
+  assign_nested_attributes_for_#{type}_association(:#{association_name}, attributes)
+end
+```
+
+`association_name` 就是你声明的属性，例如：
+
+```ruby
+class Book < ActiveRecord::Base
+  has_one :author
+  has_many :pages
+
+  accepts_nested_attributes_for :author, :pages
+end
+```
+
+生成 `author_attributes=(attributes)` 和 `pages_attributes=(attributes)`
+
+- 对于关联对象，会自动设置 `:autosave`
+
+```ruby 摘录部分代码
+reflection.autosave = true                     # 自动保存
+add_autosave_association_callbacks(reflection) # 回调在自动保存时仍然有效
+```
+
+-------- 我是分隔线 --------
+
+对于嵌套的属性，默认你可以执行写操作，但不能删除它们。如果你真的要这么做，也可以通过 `:allow_destroy` 来设置。如：
+
+```ruby
+class Member < ActiveRecord::Base
+  has_one :avatar
+  accepts_nested_attributes_for :avatar, allow_destroy: true
+end
+
+# 然后
+
+member.avatar_attributes = { id: '2', _destroy: '1' }
+member.avatar.marked_for_destruction? # => true
+member.save
+member.reload.avatar # => nil
+```
+
+自动保存多个嵌套属性，有的可能不符合校验，为了处理这种情况。你可以设置 `:reject_if`:
+
+```ruby
+class Member < ActiveRecord::Base
+  has_many :posts
+  accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
+end
+
+params = { member: {
+  name: 'joe', posts_attributes: [
+    { title: 'Kari, the awesome Ruby documentation browser!' },
+    { title: 'The egalitarian assumption of the modern citizen' },
+    { title: '' } # this will be ignored because of the :reject_if proc
+  ]
+}}
+
+member = Member.create(params[:member])
+member.posts.length # => 2
+member.posts.first.title # => 'Kari, the awesome Ruby documentation browser!'
+member.posts.second.title # => 'The egalitarian assumption of the modern citizen'
+```
+
 ## Store
 
 `store(store_attribute, options = {})` 以 JSON(也可以理解为Hash) 的形式存储数据。
@@ -162,3 +231,4 @@ Note that transactional fixtures do not play well with this feature. Please use 
 
 原理，和普通的回调类似。使用 ActiveSupport 提供的 `set_callback(name, *filter_list, &block)` 完成。
 
+## NoTouching
