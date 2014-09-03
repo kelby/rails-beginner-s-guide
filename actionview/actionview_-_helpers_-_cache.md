@@ -1,5 +1,6 @@
-ActionView::Helpers::CacheHelper#cache
-```
+1 ActionView::Helpers::CacheHelper#cache
+
+```ruby
   cache_fragment_name
     fragment_name_with_digest
           names  = Array(name.is_a?(Hash) ? controller.url_for(name).split("://").last : name)
@@ -14,9 +15,9 @@ ActionView::Helpers::CacheHelper#cache
       controller.write_fragment
 ```
 
-ActionController::Caching::Fragments
+2 ActionController::Caching::Fragments
 
-```
+```ruby
 Fragment caching is used for caching various blocks within
 views without caching the entire action as a whole. This is
 useful when certain elements of an action change frequently or
@@ -39,9 +40,9 @@ read_fragment(key, options = nil)
 write_fragment(key, content, options = nil)
 ```
 
-ActionController::Caching::ConfigMethods#cache_store
+3 ActionController::Caching::ConfigMethods#cache_store
 
-```
+```ruby
 \Caching is a cheap way of speeding up slow applications by keeping the result of
 calculations, renderings, and database calls around for subsequent requests.
 
@@ -64,9 +65,9 @@ Configuration examples (MemoryStore is the default):
   config.action_controller.cache_store = MyOwnStore.new('parameter’)
 ```
 
-Rails::Application::Configuration
+4 Rails::Application::Configuration
 
-```
+```ruby
   attr_accessor :cache_store
 
   # setting ...

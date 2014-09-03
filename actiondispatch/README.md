@@ -4,8 +4,6 @@
 对内：RouteSet
 对外：除 RouteSet 外，routing 目录里的其它模块
 
-
-
 ---
 
 四部分
@@ -118,7 +116,10 @@ end
 
 一切路由都可归结为: **map path to the Rack endpoint**
 
-What does "Rack endpoint" actually mean? Rack is a modular web server abstraction layer that unifies the API for the interaction of Ruby web application frameworks and application servers. It specifies a simple interface for Rack-compliant applications, and defines standard request and response objects and application server adapters to abstract dealing with the low level details of serving web requests. A Rack endpoint is just an application that adheres to the Rack spec.
+What does "Rack endpoint" actually mean?
+Rack is a modular web server abstraction layer that unifies the API for the interaction of Ruby web application frameworks and application servers.
+It specifies a simple interface for Rack-compliant applications, and defines standard request and response objects and application server adapters to abstract dealing with the low level details of serving web requests.
+A Rack endpoint is just an application that adheres to the Rack spec.
 
 **Rack ~= Rack middleware ~= Rack endpoint ~= Rack application** 在这里不作讨论和区分，统一对待。
 

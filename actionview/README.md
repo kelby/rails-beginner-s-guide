@@ -77,13 +77,13 @@ DetailsKey
 DetailsCache
 为 Details 做缓存
 
-OutputFlow & StreamingFlow
+~~OutputFlow & StreamingFlow~~
 输出流
 
-Context
+~~Context~~
 上下文
 
-OutputBuffer & StreamingBuffer
+~~OutputBuffer & StreamingBuffer~~
 输出流
 
 
@@ -293,6 +293,7 @@ AssetTagHelper
 Base
 
 RoutingUrlFor
+视图里的 url_for，极端情况下会用到 ActionDispatch 里的东西。
 
 RecordIdentifier
 
@@ -305,5 +306,7 @@ LogSubscriber
 Layouts
 
 Digestor
+对视图进行加密，仅是片段缓存的组成部分。
 
-DependencyTracker
+~~DependencyTracker~~
+供 Digestor 使用，digest 的时候可以以数组的形式传 dependencies 作为其可选参数。

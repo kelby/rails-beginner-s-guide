@@ -50,6 +50,6 @@ end
 
 ## 解析 queue_adapter 及其 API
 
-queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务的抽象。
+queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象而来。
 
 而 queue_adapter 所用的 API(enqueue_at、enqueue_in、enqueue 等)，也是从原延迟任务所提供的 API 抽象而来。

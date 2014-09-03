@@ -542,43 +542,43 @@ lookup_context 就是 binding 作用！！！
 这里的 render 及 view_context 是什么？为什么它又反过来需要 view_renderer
 
 ```ruby
-    def view_context
-      view_context_class.new(view_renderer, view_assigns, self)
+def view_context
+  view_context_class.new(view_renderer, view_assigns, self)
+end
+
+
+  def view_context_class
+    @view_context_class ||= begin
+      routes  = _routes  if respond_to?(:_routes)
+      helpers = _helpers if respond_to?(:_helpers)
+      ActionView::Base.prepare(routes, helpers)
     end
+  end
 
-
-      def view_context_class
-        @view_context_class ||= begin
-          routes  = _routes  if respond_to?(:_routes)
-          helpers = _helpers if respond_to?(:_helpers)
-          ActionView::Base.prepare(routes, helpers)
-        end
+  # This method receives routes and helpers from the controller
+  # and return a subclass ready to be used as view context.
+  def prepare(routes, helpers) #:nodoc:
+    Class.new(self) do
+      if routes
+        include routes.url_helpers
+        include routes.mounted_helpers
       end
 
-      # This method receives routes and helpers from the controller
-      # and return a subclass ready to be used as view context.
-      def prepare(routes, helpers) #:nodoc:
-        Class.new(self) do
-          if routes
-            include routes.url_helpers
-            include routes.mounted_helpers
-          end
-
-          if helpers
-            include helpers
-            self.helpers = helpers
-          end
-        end
+      if helpers
+        include helpers
+        self.helpers = helpers
       end
+    end
+  end
 ```
 
 **注意，渲染的结果是**
 
 ```ruby
-    def render(*args, &block)
-      options = _normalize_render(*args, &block)
-      self.response_body = render_to_body(options)
-    end
+def render(*args, &block)
+  options = _normalize_render(*args, &block)
+  self.response_body = render_to_body(options)
+end
 ```
 
 和
@@ -630,9 +630,9 @@ pry(#<BlogsController>)> self.view_paths
 模板有这些易于理解的属性：
 
 ```
-    attr_accessor :locals, :formats, :variants, :virtual_path
+attr_accessor :locals, :formats, :variants, :virtual_path
 
-    attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
+attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
 ```
 
 主要涉及：

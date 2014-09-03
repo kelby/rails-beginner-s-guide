@@ -1,4 +1,8 @@
-# Special Case
+# 几个比较重要/有意思的 helper
+
+**atom_feed**
+
+Adds easy defaults to writing Atom feeds with the Builder template engine (this does not work on ERB or any other template languages).
 
 **cache**
 
