@@ -36,3 +36,21 @@ new_template = ActionView::Template.new(body, "hello template", details.fetch(:h
 
 当然，这些我们平时都接触不到，知道有这么回事即可。
 
+## 其它
+
+搜索了一下，API 里 `render` 同名方法有 8 个，它们分别代表什么意思？
+
+而 ActionView 就有 6 个 render 方法(其中 2 个和测试有关)，分别在：
+
+- Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
+
+In order to use this module, all you need is to implement view_renderer that returns an ActionView::Renderer object.
+- PartialRenderer - render(context, options, block)
+
+Used for rendering partials
+- Renderer - render(context, options)
+
+Main render entry point shared by AV and AC.
+- Template - render(view, locals, buffer=nil, &block)
+
+剩下两个在 AbstractController::Rendering 和 ActionController::Instrumentation 里。

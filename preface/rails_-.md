@@ -6,10 +6,10 @@ http://ruby-windy.iteye.com/blog/1195963
 
 - Rails 4有哪些优点，我们可能没注意到？
 
-这个问题问得太好了。请看<br>
-eager_load - load all code before new threads are created.<br>
-scopes - 一律使用proc object取代原本model內的scope的參數，proc object或block取代原本model內的default_scope的參數。因為Model被cache的關係，會導致很多eager-load的scope只有在第一次載入的時候讀取正確的值(ex:時間)，這是Rails2和Rails3令人詬病的問題，而Rails4規定凡是eager-load的scope一律要使用proc object。
-none - 新增了.none去取代空陣列[]避免多餘的判斷，這東西非常實用。<br>
+这个问题问得太好了。请看  
+eager_load - load all code before new threads are created.  
+scopes - 一律使用proc object取代原本model內的scope的參數，proc object或block取代原本model內的default_scope的參數。因為Model被cache的關係，會導致很多eager-load的scope只有在第一次載入的時候讀取正確的值(ex:時間)，這是Rails2和Rails3令人詬病的問題，而Rails4規定凡是eager-load的scope一律要使用proc object。  
+none - 新增了.none去取代空陣列[]避免多餘的判斷，這東西非常實用。  
 not - 新增了.not去產生"IS NOT NULL"的query，這東西非常實用。<br>
 order - Rails4終於把default_scope的order調整成正常的順序，default_scope的order永遠會在最後而不像Rails3優先權永遠是最高的。同時order可以使用hash帶入，也不需要再用字串了。<br>
 references - 使用includes的時候會有參照table的問題，Rails4新增了一個references去明確指出參照的table，但如果在where的參數內是直接用hash的conditions，即可不用指定referen<br>

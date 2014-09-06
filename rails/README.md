@@ -1,22 +1,22 @@
+## 结构
 
-除了 Generators 外，其它模块几乎不能用于 Rails 之外。
+### Application
 
-
-# 体系结构
-
-## Application
+初始化为：Bootstrap 在前，Finisher 在后。
 
 与我们应用接头。
 
-## Engine
+实例方法，给 Rails.application 使用
+
+### Engine
 
 对 Rails 外围的扩展。
 
-## Railtie
+### Railtie
 
 对 Rails 本身的改造。
 
-# 作用
+## 内容
 
 ### 配置
 
@@ -32,24 +32,33 @@
 
 参考"启动过程"独立章节。
 
-# 其它
+## 其它
 
-## Generators
+### Generators
 
 所有 generator 相关，比较独立。
 
-### commands
+除了 Generators 外，其它模块几乎不能用于 Rails 之外。
 
-rails 命令行
+### Rails` 的类方法
 
-### tasks
+这里的 Rails` 指的是 class Rails. 因为它与框架同名，所以这里会加大它的重要指数，下面就说说它的类方法。
 
-rake 命令行
+```
+application
+backtrace_cleaner
+configuration
+env, env=
+groups
+public_path
+root
+```
 
-### Rails
+```
+attr_writer :application
+attr_accessor :app_class, :cache, :logger
+```
 
-Rails 对象的方法。其实它没有这么重要，但因为名字都是它，所以这里给它加大了比重。
-
-
-
-
+```
+delegate :initialize!, :initialized?, to: :application
+```
