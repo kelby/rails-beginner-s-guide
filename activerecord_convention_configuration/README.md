@@ -41,8 +41,8 @@ There are also some optional column names that will add additional features to A
 ## Timestamp
 
 Active Record automatically timestamps create and update operations if the
-table has fields named <tt>created_at/created_on</tt> or
-<tt>updated_at/updated_on</tt>.
+table has fields named `created_at/created_on` or
+`updated_at/updated_on`.
   
 Timestamping can be turned off by setting:
   
@@ -58,7 +58,7 @@ By default, ActiveRecord::Base keeps all the datetime columns time zone aware by
   
     config.active_record.time_zone_aware_attributes = true
   
-This feature can easily be turned off by assigning value <tt>false</tt> .
+This feature can easily be turned off by assigning value `false` .
 
 If your attributes are time zone aware and you desire to skip time zone conversion to the current Time.zone
 when reading certain attributes then you can do following:

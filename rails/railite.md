@@ -31,15 +31,15 @@ loaded during the Rails boot process.
 
 The following example demonstrates an extension which can be used with or without Rails.
 
-```
-  # lib/my_gem/railtie.rb
-  module MyGem
-    class Railtie < Rails::Railtie
-    end
+```ruby
+# lib/my_gem/railtie.rb
+module MyGem
+  class Railtie < Rails::Railtie
   end
+end
 
-  # lib/my_gem.rb
-  require 'my_gem/railtie' if defined?(Rails)
+# lib/my_gem.rb
+require 'my_gem/railtie' if defined?(Rails)
 ```
 
 ## Initializers
@@ -47,23 +47,23 @@ The following example demonstrates an extension which can be used with or withou
 To add an initialization step from your Railtie to Rails boot process, you just need
 to create an initializer block:
 
-```
-  class MyRailtie < Rails::Railtie
-    initializer "my_railtie.configure_rails_initialization" do
-      # some initialization behavior
-    end
+```ruby
+class MyRailtie < Rails::Railtie
+  initializer "my_railtie.configure_rails_initialization" do
+    # some initialization behavior
   end
+end
 ```
 
 If specified, the block can also receive the application object, in case you
 need to access some application specific configuration, like middleware:
 
-```
-  class MyRailtie < Rails::Railtie
-    initializer "my_railtie.configure_rails_initialization" do |app|
-      app.middleware.use MyRailtie::Middleware
-    end
+```ruby
+class MyRailtie < Rails::Railtie
+  initializer "my_railtie.configure_rails_initialization" do |app|
+    app.middleware.use MyRailtie::Middleware
   end
+end
 ```
 
 Finally, you can also pass <tt>:before</tt> and <tt>:after</tt> as option to initializer,
@@ -75,16 +75,16 @@ Inside the Railtie class, you can access a config object which contains configur
 shared by all railties and the application:
 
 ```ruby
-  class MyRailtie < Rails::Railtie
-    # Customize the ORM
-    config.app_generators.orm :my_railtie_orm
+class MyRailtie < Rails::Railtie
+  # Customize the ORM
+  config.app_generators.orm :my_railtie_orm
 
-    # Add a to_prepare block which is executed once in production
-    # and before each request in development
-    config.to_prepare do
-      MyRailtie.setup!
-    end
+  # Add a to_prepare block which is executed once in production
+  # and before each request in development
+  config.to_prepare do
+    MyRailtie.setup!
   end
+end
 ```
 
 ## Loading rake tasks and generators
@@ -92,21 +92,25 @@ shared by all railties and the application:
 If your railtie has rake tasks, you can tell Rails to load them through the method
 rake_tasks:
 
-    class MyRailtie < Rails::Railtie
-      rake_tasks do
-        load "path/to/my_railtie.tasks"
-      end
-    end
+```ruby
+class MyRailtie < Rails::Railtie
+  rake_tasks do
+    load "path/to/my_railtie.tasks"
+  end
+end
+```
 
 By default, Rails load generators from your load path. However, if you want to place
 your generators at a different location, you can specify in your Railtie a block which
 will load them during normal generators lookup:
 
-    class MyRailtie < Rails::Railtie
-      generators do
-        require "path/to/my_railtie_generator"
-      end
-    end
+```ruby
+class MyRailtie < Rails::Railtie
+  generators do
+    require "path/to/my_railtie_generator"
+  end
+end
+```
 
 ## Application and Engine
 

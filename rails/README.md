@@ -48,7 +48,7 @@
 application
 backtrace_cleaner
 configuration
-env, env=
+env
 groups
 public_path
 root

@@ -23,7 +23,7 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 
 ```ruby
 Rails.application.send :default_middleware_stack
- => #<ActionDispatch::MiddlewareStack:0x007f922de455e0 @middlewares=[Rack::Sendfile, ActionDispatch::Static, Rack::Lock, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ParamsParser, Rack::Head, Rack::ConditionalGet, Rack::ETag]>
+  => #<ActionDispatch::MiddlewareStack:0x007f922de455e0 @middlewares=[Rack::Sendfile, ActionDispatch::Static, Rack::Lock, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ParamsParser, Rack::Head, Rack::ConditionalGet, Rack::ETag]>
 ```
 
 middleware 的调用是一级级的：
@@ -56,30 +56,30 @@ run AppName::Application.routes
 ```
 
 ```
-  rack (1.5.2) lib/rack/etag.rb:26:in `call'
-  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
-  rack (1.5.2) lib/rack/head.rb:11:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
-  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
-  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
-  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
-  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
-  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
-  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
-  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
-  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
-  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
-  railties (4.1.0) lib/rails/engine.rb:514:in `call'
-  railties (4.1.0) lib/rails/application.rb:144:in `call'
-  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+rack (1.5.2) lib/rack/etag.rb:26:in `call'
+rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+rack (1.5.2) lib/rack/head.rb:11:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+railties (4.1.0) lib/rails/engine.rb:514:in `call'
+railties (4.1.0) lib/rails/application.rb:144:in `call'
+rack (1.5.2) lib/rack/lock.rb:17:in `call'
 ```
 
 ## RouteSet

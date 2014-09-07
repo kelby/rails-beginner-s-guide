@@ -17,40 +17,40 @@ AttributeMethods 给了我们大量的 accessor(访问器，读、写方法) 和
 Rails 之外使用举例:
 
 ```ruby
-  class Person
-    include ActiveModel::AttributeMethods
+class Person
+  include ActiveModel::AttributeMethods
 
-    # 前缀 + 后缀
-    attribute_method_affix  prefix: 'reset_', suffix: '_to_default!'
-    # 后缀
-    attribute_method_suffix '_contrived?'
-    # 前缀
-    attribute_method_prefix 'clear_'
-    # 要处理的属性
-    define_attribute_methods :name
+  # 前缀 + 后缀
+  attribute_method_affix  prefix: 'reset_', suffix: '_to_default!'
+  # 后缀
+  attribute_method_suffix '_contrived?'
+  # 前缀
+  attribute_method_prefix 'clear_'
+  # 要处理的属性
+  define_attribute_methods :name
 
-    attr_accessor :name
+  attr_accessor :name
 
-    # 供查询属性及值
-    def attributes
-      { 'name' => @name }
-    end
-
-    private
-    # 根据上面的加的前缀 & 后缀定义并实现这里的方法。
-
-    def attribute_contrived?(attr)
-      true
-    end
-
-    def clear_attribute(attr)
-      send("#{attr}=", nil)
-    end
-
-    def reset_attribute_to_default!(attr)
-      send("#{attr}=", 'Default Name')
-    end
+  # 供查询属性及值
+  def attributes
+    { 'name' => @name }
   end
+
+  private
+  # 根据上面的加的前缀 & 后缀定义并实现这里的方法。
+
+  def attribute_contrived?(attr)
+    true
+  end
+
+  def clear_attribute(attr)
+    send("#{attr}=", nil)
+  end
+
+  def reset_attribute_to_default!(attr)
+    send("#{attr}=", 'Default Name')
+  end
+end
 ```
 
 使用 Rails 举例：
@@ -110,29 +110,29 @@ The requirements for implementing ActiveModel::Dirty are:
 A minimal implementation could be:
 
 ```ruby
-  class Person
-    include ActiveModel::Dirty
+class Person
+  include ActiveModel::Dirty
 
-    define_attribute_methods :name
+  define_attribute_methods :name
 
-    def name
-      @name
-    end
-
-    def name=(val)
-      name_will_change! unless val == @name
-      @name = val
-    end
-
-    def save
-      # do persistence work
-      changes_applied
-    end
-
-    def reload!
-      reset_changes
-    end
+  def name
+    @name
   end
+
+  def name=(val)
+    name_will_change! unless val == @name
+    @name = val
+  end
+
+  def save
+    # do persistence work
+    changes_applied
+  end
+
+  def reload!
+    reset_changes
+  end
+end
 ```
 
 当然，它本身也包含了 AttributeMethods 子模块，要不然不能精确跟踪到某属性。

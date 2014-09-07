@@ -139,7 +139,7 @@ record.errors.class
 
 ## Naming
 
-内省机制。对于我们Web开发者来说不常用，但对于配合 ActionController, ActionView 工作很重要。
+内省机制，主要负责**将对象转换成对应的字符串**。对于我们Web开发者来说不常用，但对于配合 ActionController, ActionView 工作很重要。
 
 ```ruby
 model_name
@@ -181,7 +181,7 @@ to_param
 to_partial_path
 ```
 
-`to_params` 默认用 id 做为 url 的一部分，这对用户体验和SEO都不友好，通常我们在 model 里覆盖此方法。
+`to_params` 默认用 id 做为 url 的一部分，这对用户体验和 SEO 都不友好，通常我们在 model 里覆盖此方法。
 
 
 使用到它的一些方法：

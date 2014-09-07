@@ -18,12 +18,14 @@ class PeopleController < ActionController::Base
     def person_params
       params.require(:person).permit(:name, :age)
     end
+end
 ```
 
 ```ruby
 # app/models/people.rb
 class Person < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
+end
 ```
 
 ```ruby

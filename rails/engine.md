@@ -1,51 +1,43 @@
 # Engine
 
-`Rails::Engine` allows you to wrap a specific Rails application or subset of
-functionality and share it with other applications or within a larger packaged application.
-Since Rails 3.0, every `Rails::Application` is just an engine, which allows for simple
-feature and application sharing.
+Engine 下有 Railtie，上有 Application.  
+在 Engine 里，可以直接使用 Railtie 提供的方法；在 Application 里，可以直接使用 Engine 提供的方法。
 
-
-Any `Rails::Engine` is also a `Rails::Railtie`, so the same
-methods (like `rake_tasks` and +generators+) and configuration
-options that are available in railties can also be used in engines.
+可以把一个 Rails 项目当做一个组件，插入到另一个项目里。
 
 ## Creating an Engine
 
-In Rails versions prior to 3.0, your gems automatically behaved as engines, however,
-this coupled Rails to Rubygems. Since Rails 3.0, if you want a gem to automatically
-behave as an engine, you have to specify an +Engine+ for it somewhere inside
-your plugin's +lib+ folder (similar to how we specify a +Railtie+):
+1 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
 
-```
-  # lib/my_engine.rb
-  module MyEngine
-    class Engine < Rails::Engine
-    end
+```ruby
+# lib/my_engine.rb
+module MyEngine
+  class Engine < Rails::Engine
   end
+end
 ```
 
-Then ensure that this file is loaded at the top of your `config/application.rb`
-(or in your +Gemfile+) and it will automatically load models, controllers and helpers
-inside +app+, load routes at `config/routes.rb`, load locales at
-`config/locales`, and load tasks at `lib/tasks`.
+2 在 config/application.rb
+(或 Gemfile) 里加载本文件。
+
+Engine 相关的 model、controller 和 helper 会被加载到 app/ 里，route 会被加载到 config/routes.rb, locale 会被加载到 config/locales, tasks 会被加载到 lib/tasks.
 
 ## Configuration
 
-Besides the +Railtie+ configuration which is shared across the application, in a
+Besides the `Railtie` configuration which is shared across the application, in a
 `Rails::Engine` you can access `autoload_paths`, `eager_load_paths`
 and `autoload_once_paths`, which, differently from a `Railtie`, are scoped to
 the current engine.
 
 ```
-  class MyEngine < Rails::Engine
-    # Add a load path for this specific Engine
-    config.autoload_paths << File.expand_path("../lib/some/path", __FILE__)
+class MyEngine < Rails::Engine
+  # Add a load path for this specific Engine
+  config.autoload_paths << File.expand_path("../lib/some/path", __FILE__)
 
-    initializer "my_engine.add_middleware" do |app|
-      app.middleware.use MyEngine::Middleware
-    end
+  initializer "my_engine.add_middleware" do |app|
+    app.middleware.use MyEngine::Middleware
   end
+end
 ```
 
 ## Generators
@@ -53,23 +45,23 @@ the current engine.
 You can set up generators for engines with `config.generators` method:
 
 ```
-  class MyEngine < Rails::Engine
-    config.generators do |g|
-      g.orm             :active_record
-      g.template_engine :erb
-      g.test_framework  :test_unit
-    end
+class MyEngine < Rails::Engine
+  config.generators do |g|
+    g.orm             :active_record
+    g.template_engine :erb
+    g.test_framework  :test_unit
   end
+end
 ```
 
 You can also set generators for an application by using `config.app_generators`:
 
 ```
-  class MyEngine < Rails::Engine
-    # note that you can also pass block to app_generators in the same way you
-    # can pass it to generators method
-    config.app_generators.orm :datamapper
-  end
+class MyEngine < Rails::Engine
+  # note that you can also pass block to app_generators in the same way you
+  # can pass it to generators method
+  config.app_generators.orm :datamapper
+end
 ```
 
 ## Paths
@@ -83,36 +75,36 @@ For example, let's suppose you want to place your controllers in `lib/controller
 You can set that as an option:
 
 ```
-  class MyEngine < Rails::Engine
-    paths["app/controllers"] = "lib/controllers"
-  end
+class MyEngine < Rails::Engine
+  paths["app/controllers"] = "lib/controllers"
+end
 ```
 
 You can also have your controllers loaded from both `app/controllers` and
 `lib/controllers`:
 
 ```
-  class MyEngine < Rails::Engine
-    paths["app/controllers"] << "lib/controllers"
-  end
+class MyEngine < Rails::Engine
+  paths["app/controllers"] << "lib/controllers"
+end
 ```
 
 The available paths in an engine are:
 
 ```
-  class MyEngine < Rails::Engine
-    paths["app"]                 # => ["app"]
-    paths["app/controllers"]     # => ["app/controllers"]
-    paths["app/helpers"]         # => ["app/helpers"]
-    paths["app/models"]          # => ["app/models"]
-    paths["app/views"]           # => ["app/views"]
-    paths["lib"]                 # => ["lib"]
-    paths["lib/tasks"]           # => ["lib/tasks"]
-    paths["config"]              # => ["config"]
-    paths["config/initializers"] # => ["config/initializers"]
-    paths["config/locales"]      # => ["config/locales"]
-    paths["config/routes.rb"]    # => ["config/routes.rb"]
-  end
+class MyEngine < Rails::Engine
+  paths["app"]                 # => ["app"]
+  paths["app/controllers"]     # => ["app/controllers"]
+  paths["app/helpers"]         # => ["app/helpers"]
+  paths["app/models"]          # => ["app/models"]
+  paths["app/views"]           # => ["app/views"]
+  paths["lib"]                 # => ["lib"]
+  paths["lib/tasks"]           # => ["lib/tasks"]
+  paths["config"]              # => ["config"]
+  paths["config/initializers"] # => ["config/initializers"]
+  paths["config/locales"]      # => ["config/locales"]
+  paths["config/routes.rb"]    # => ["config/routes.rb"]
+end
 ```
 
 The `Application` class adds a couple more paths to this set. And as in your
@@ -122,24 +114,24 @@ If you have an `app/services` folder for example, it will be added by default.
 ## Endpoint
 
 An engine can be also a rack application. It can be useful if you have a rack application that
-you would like to wrap with +Engine+ and provide some of the +Engine+'s features.
+you would like to wrap with `Engine` and provide some of the `Engine`'s features.
 
 To do that, use the +endpoint+ method:
 
 ```
-  module MyEngine
-    class Engine < Rails::Engine
-      endpoint MyRackApplication
-    end
+module MyEngine
+  class Engine < Rails::Engine
+    endpoint MyRackApplication
   end
+end
 ```
 
 Now you can mount your engine in application's routes just like that:
 
 ```
-  Rails.application.routes.draw do
-    mount MyEngine::Engine => "/engine"
-  end
+Rails.application.routes.draw do
+  mount MyEngine::Engine => "/engine"
+end
 ```
 
 ## Middleware stack
@@ -148,11 +140,11 @@ As an engine can now be a rack endpoint, it can also have a middleware
 stack. The usage is exactly the same as in `Application`:
 
 ```
-  module MyEngine
-    class Engine < Rails::Engine
-      middleware.use SomeMiddleware
-    end
+module MyEngine
+  class Engine < Rails::Engine
+    middleware.use SomeMiddleware
   end
+end
 ```
 
 ## Routes
@@ -161,10 +153,10 @@ If you don't specify an endpoint, routes will be used as the default
 endpoint. You can use them just like you use an application's routes:
 
 ```
-  # ENGINE/config/routes.rb
-  MyEngine::Engine.routes.draw do
-    get "/" => "posts#index"
-  end
+# ENGINE/config/routes.rb
+MyEngine::Engine.routes.draw do
+  get "/" => "posts#index"
+end
 ```
 
 ## Mount priority
@@ -173,25 +165,25 @@ Note that now there can be more than one router in your application, and it's be
 passing requests through many routers. Consider this situation:
 
 ```
-  Rails.application.routes.draw do
-    mount MyEngine::Engine => "/blog"
-    get "/blog/omg" => "main#omg"
-  end
+Rails.application.routes.draw do
+  mount MyEngine::Engine => "/blog"
+  get "/blog/omg" => "main#omg"
+end
 ```
 
-+MyEngine+ is mounted at `/blog`, and `/blog/omg` points to application's
-controller. In such a situation, requests to `/blog/omg` will go through +MyEngine+,
-and if there is no such route in +Engine+'s routes, it will be dispatched to `main#omg`.
+`MyEngine` is mounted at `/blog`, and `/blog/omg` points to application's
+controller. In such a situation, requests to `/blog/omg` will go through `MyEngine`,
+and if there is no such route in `Engine`'s routes, it will be dispatched to `main#omg`.
 It's much better to swap that:
 
 ```
-  Rails.application.routes.draw do
-    get "/blog/omg" => "main#omg"
-    mount MyEngine::Engine => "/blog"
-  end
+Rails.application.routes.draw do
+  get "/blog/omg" => "main#omg"
+  mount MyEngine::Engine => "/blog"
+end
 ```
 
-Now, +Engine+ will get only requests that were not handled by +Application+.
+Now, `Engine` will get only requests that were not handled by +Application+.
 
 ## Engine name
 
@@ -205,11 +197,11 @@ Engine name is set by default based on class name. For `MyEngine::Engine` it wil
 `my_engine_engine`. You can change it manually using the `engine_name` method:
 
 ```
-  module MyEngine
-    class Engine < Rails::Engine
-      engine_name "my_engine"
-    end
+module MyEngine
+  class Engine < Rails::Engine
+    engine_name "my_engine"
   end
+end
 ```
 
 ## Isolated Engine
@@ -219,27 +211,27 @@ as if they were created inside the application itself. This means that all helpe
 named routes from the application will be available to your engine's controllers as well.
 
 However, sometimes you want to isolate your engine from the application, especially if your engine
-has its own router. To do that, you simply need to call +isolate_namespace+. This method requires
+has its own router. To do that, you simply need to call `isolate_namespace`. This method requires
 you to pass a module where all your controllers, helpers and models should be nested to:
 
 ```
-  module MyEngine
-    class Engine < Rails::Engine
-      isolate_namespace MyEngine
-    end
+module MyEngine
+  class Engine < Rails::Engine
+    isolate_namespace MyEngine
   end
+end
 ```
 
-With such an engine, everything that is inside the +MyEngine+ module will be isolated from
+With such an engine, everything that is inside the `MyEngine` module will be isolated from
 the application.
 
 Consider such controller:
 
 ```
-  module MyEngine
-    class FooController < ActionController::Base
-    end
+module MyEngine
+  class FooController < ActionController::Base
   end
+end
 ```
 
 If an engine is marked as isolated, +FooController+ has access only to helpers from +Engine+ and
@@ -250,9 +242,9 @@ your controllers, you also need to do namespace all your routes. With an isolate
 the namespace is applied by default, so you can ignore it in routes:
 
 ```
-  MyEngine::Engine.routes.draw do
-    resources :articles
-  end
+MyEngine::Engine.routes.draw do
+  resources :articles
+end
 ```
 
 The routes above will automatically point to `MyEngine::ArticlesController`. Furthermore, you don't
@@ -265,11 +257,11 @@ use the prefix "my_engine". In an isolated engine, the prefix will be omitted in
 form fields for convenience.
 
 ```
-  polymorphic_url(MyEngine::Article.new) # => "articles_path"
+polymorphic_url(MyEngine::Article.new) # => "articles_path"
 
-  form_for(MyEngine::Article.new) do
-    text_field :title # => <input type="text" name="article[title]" id="article_title" />
-  end
+form_for(MyEngine::Article.new) do
+  text_field :title # => <input type="text" name="article[title]" id="article_title" />
+end
 ```
 
 Additionally, an isolated engine will set its name according to namespace, so
@@ -278,26 +270,26 @@ to "my_engine_", changing the MyEngine::Article model to use the my_engine_artic
 
 ## Using Engine's routes outside Engine
 
-Since you can now mount an engine inside application's routes, you do not have direct access to +Engine+'s
-`url_helpers` inside +Application+. When you mount an engine in an application's routes, a special helper is
+Since you can now mount an engine inside application's routes, you do not have direct access to `Engine`'s
+`url_helpers` inside `Application`. When you mount an engine in an application's routes, a special helper is
 created to allow you to do that. Consider such a scenario:
 
 ```
-  # config/routes.rb
-  Rails.application.routes.draw do
-    mount MyEngine::Engine => "/my_engine", as: "my_engine"
-    get "/foo" => "foo#index"
-  end
+# config/routes.rb
+Rails.application.routes.draw do
+  mount MyEngine::Engine => "/my_engine", as: "my_engine"
+  get "/foo" => "foo#index"
+end
 ```
 
 Now, you can use the `my_engine` helper inside your application:
 
 ```
-  class FooController < ApplicationController
-    def index
-      my_engine.root_url # => /my_engine/
-    end
+class FooController < ApplicationController
+  def index
+    my_engine.root_url # => /my_engine/
   end
+end
 ```
 
 There is also a `main_app` helper that gives you access to application's routes inside Engine:
@@ -326,25 +318,25 @@ attributes for url:
 
 This code will use `my_engine.user_path(@user` to generate the proper route.
 
-== Isolated engine's helpers
+## Isolated engine's helpers
 
 Sometimes you may want to isolate engine, but use helpers that are defined for it.
 If you want to share just a few specific helpers you can add them to application's
 helpers in ApplicationController:
 
 ```
-  class ApplicationController < ActionController::Base
-    helper MyEngine::SharedEngineHelper
-  end
+class ApplicationController < ActionController::Base
+  helper MyEngine::SharedEngineHelper
+end
 ```
 
 If you want to include all of the engine's helpers, you can use #helper method on an engine's
 instance:
 
 ```
-  class ApplicationController < ActionController::Base
-    helper MyEngine::Engine.helpers
-  end
+class ApplicationController < ActionController::Base
+  helper MyEngine::Engine.helpers
+end
 ```
 
 It will include all of the helpers from engine's directory. Take into account that this does
@@ -360,7 +352,7 @@ To use engine's migrations in application you can use rake task, which copies th
 application's dir:
 
 ```
-  rake ENGINE_NAME:install:migrations
+rake ENGINE_NAME:install:migrations
 ```
 
 Note that some of the migrations may be skipped if a migration with the same name already exists
@@ -371,18 +363,18 @@ If your engine has migrations, you may also want to prepare data for the databas
 the `db/seeds.rb` file. You can load that data using the `load_seed` method, e.g.
 
 ```
-  MyEngine::Engine.load_seed
+MyEngine::Engine.load_seed
 ```
 
 ## Loading priority
 
-In order to change engine's priority you can use +config.railties_order+ in main application.
+In order to change engine's priority you can use `config.railties_order` in main application.
 It will affect the priority of loading views, helpers, assets and all the other files
 related to engine or application.
 
 ```
-  # load Blog::Engine with highest priority, followed by application and other railties
-  config.railties_order = [Blog::Engine, :main_app, :all]
+# load Blog::Engine with highest priority, followed by application and other railties
+config.railties_order = [Blog::Engine, :main_app, :all]
 ```
 
 ---

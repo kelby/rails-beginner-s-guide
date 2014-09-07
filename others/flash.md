@@ -1,7 +1,5 @@
 ActionDispatch 和 ActionController 都有 Flash 相关的代码，统一把它们放到这里来讲。
 
------------
-
 ## 基本使用
 类似 Hash，设置 flash
 
@@ -52,7 +50,7 @@ flash.notice
 ```
 # in application_controller.rb
 class ApplicationController < ActionController::Base
-  add_flash_types :warning
+  add_flash_types :warning, :success, :danger
 end
 
 # in your view
@@ -62,7 +60,7 @@ end
 redirect_to user_path(@user), warning: "Incomplete profile"
 ```
 
-两种效果：视图里可以直接有同名 warning 辅助方法，redirect_to 里可直接使用 warning。
+两种效果：视图里可以直接有同名 warning 辅助方法，redirect_to 里可直接使用 :warning.
 
 它们和 flash[:warning] 或 flash.warning 和 flash: { warning: "Incomplete profile" } 效果一样。
 
@@ -74,4 +72,9 @@ alert 和 notice 默认已经使用 add_flash_types
 
 也许，你还看过一种写法 flash.now[:flash_type]
 
-它和 flash[:flash_type] 看起来有一点点不同，但效果是一样的，在此不再对它做讲解，统一使用后者。
+flash[:flash_type] 消息的生命周期可到下一个 action. 所以，通常搭配 redirect_to 使用。  
+flash.now[:flash_type] 消息的生命周期仅限于本 action. 所以，通常搭配 render 使用。
+
+以 update 为例：如果成功则跳转到新页面，那么可用 flash[:flash_type]; 失败则停留在当前页面，那么可用 flash.now[:flash_type].
+
+另，当你意外的发现提醒消息在一个页面出现，在下一个页面还是出现，不妨改为 flash.now[:flash_type] 试试。

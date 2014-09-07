@@ -2,34 +2,78 @@
 
 ## 提示信息
 
-ApplicationController<br>
+ApplicationController  
 这里是 Rails 自身的 ApplicationController 不是我们项目里的那个。
 它是下面几个 Controller 的父类，它和 Application 联系不大，不要被名字欺骗了。
 
 但它继承于 ActionController::Base 这个功能可很强大。
 
-WelcomeController<br>
+WelcomeController  
 默认首页 index
 
-MailersController<br>
+MailersController  
 邮件预览的 index 和 preview 页面
 
 InfoController
 项目信息页面，包括：index、properties、routes
 
-## 命令行
+## 命令行(rake & rails)
 
-rake rdoc 生成 API 文档<br>
-rake test 测试
+### tasks.rb 及 tasks 目录
 
+都有单独的 rake 文件，`rake -T` 包含但不限于这下面的命令：
 
-**commands**
+Load Rails Rakefile extensions  
+annotations  
+documentation  
+framework  
+log  
+middleware  
+misc  
+routes  
+statistics  
+tmp  
+engine  
+rake db xxx  
 
-rails 命令行
+### SourceAnnotationExtractor
 
-**tasks**
+rake notes  
+rake notes:optimize
 
-rake 命令行
+### api
+
+rake rdoc
+
+### test_unit
+
+rake test
+
+### commands
+
+application  
+console  
+dbconsole  
+destroy  
+generate  
+plugin  
+runner  
+server  
+update
+
+commands_tasks
+
+The most common rails commands are:  
+  - generate
+  - console
+  - server
+  - dbconsole
+  - new
+
+In addition to those, there are:
+  - destroy
+  - plugin new
+  - runner
 
 
 ## BacktraceCleaner
