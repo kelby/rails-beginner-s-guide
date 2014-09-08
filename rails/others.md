@@ -12,6 +12,6 @@ Rails 启动是一个复杂的过程，你不必知道具体在哪一步执行 R
 
 查看本项目下，所有的 Railtie：
 
-```
+```ruby
 Rails.application.send(:ordered_railties)
 ```

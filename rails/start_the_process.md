@@ -1,31 +1,41 @@
-# 启动过程
+# Rails 应用启动过程
 
-1. config.ru
+1) config.ru
+
 require ::File.expand_path('../config/environment',  __FILE__)
 
-2. environment.rb
+2) environment.rb
+
 require File.expand_path('../application', __FILE__)
 
-3. application.rb
+3) application.rb
+
 require File.expand_path('../boot', __FILE__)
 
-4. boot.rb
+4) boot.rb
+
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
-5. Gemfile
+5) Gemfile
+
 gem ‘gem_name'
 
-6. boot.rb
+6) boot.rb
+
 执行 bundle
 
-7. application.rb
+7) application.rb
+
+
+```ruby
 require ’something’ # like require ‘rails’
 
 AppName::Application < Rails::Application
 
 config your AppName
+```
+8) enviroment.rb
 
-8. enviroment.rb
 AppName::Application.initialize!
 
 ```ruby
@@ -39,9 +49,9 @@ def initialize!(group=:default) #:nodoc:
 end
 ```
 
-9. 默认的 Railtie，Engine, Application
+9) 默认的 Railtie，Engine, Application
 
-10. 定制的 Railtie
+10) 定制的 Railtie
 
 Build the middleware stack and run to_prepare callbacks
 (这样查看 middleware Rails.application.send :middleware 顺序从前到后)
@@ -49,17 +59,23 @@ Build the middleware stack and run to_prepare callbacks
 
 Run config.before_eager_load and eager_load!
 
+```
 config.after_initialize
+```
+
+上面是我自己归纳的
 
 ---
 
-1)  require "config/boot.rb" to setup load paths
+下面是官方文档提供的
+
+1) require "config/boot.rb" to setup load paths
 
 ```ruby
 require File.expand_path('../boot', __FILE__)
 ```
 
-2)  require railties and engines
+2) require railties and engines
 
 ```ruby
 # Pick the frameworks you want:
@@ -73,17 +89,17 @@ require 'csv'
 require 'roo'
 ```
 
-3)  Define Rails.application as "class MyApp::Application < Rails::Application”
+3) Define Rails.application as "class MyApp::Application < Rails::Application”
 
 ```ruby
-module Console
+module AppName
   class Application < Rails::Application
     … …
   end
 end
 ```
 
-4)  Run config.before_configuration callbacks
+4) Run config.before_configuration callbacks
 
 ```ruby
 # First configurable block to run. Called before any initializers are run.
@@ -92,14 +108,14 @@ def before_configuration(&block)
 end
 ```
 
-5)  Load config/environments/ENV.rb
+5) Load config/environments/ENV.rb
 
-6)  Run config.before_initialize callbacks
+6) Run config.before_initialize callbacks
      # Second configurable block to run. Called before frameworks initialize.
       def before_initialize(&block)
         ActiveSupport.on_load(:before_initialize, yield: true, &block)
       end
-7)  Run Railtie#initializer defined by railties, engines and application.
+7) Run Railtie#initializer defined by railties, engines and application.
 
     # Sends the initializers to the +initializer+ method defined in the
     # Rails::Initializable module. Each Rails::Application class has its own
@@ -107,7 +123,7 @@ end
     def initializer(name, opts={}, &block)
       self.class.initializer(name, opts, &block)
     end
-8)  Custom Railtie#initializers added by railties,
+8) Custom Railtie#initializers added by railties,
 
 engines and applications are executed:
 Rails.application.initializers
@@ -118,7 +134,8 @@ initializer "action_mailer.logger" do
   ActiveSupport.on_load(:action_mailer) { self.logger ||= Rails.logger }
 end
 ```
-9)  Build the middleware stack and run to_prepare callbacks
+
+9) Build the middleware stack and run to_prepare callbacks
 
 ```ruby
 # Defines generic callbacks to run before #after_initialize. Useful for

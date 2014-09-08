@@ -63,6 +63,8 @@ This feature can easily be turned off by assigning value `false` .
 If your attributes are time zone aware and you desire to skip time zone conversion to the current Time.zone
 when reading certain attributes then you can do following:
   
-    class Topic < ActiveRecord::Base
-      self.skip_time_zone_conversion_for_attributes = [:written_on]
-    end
+```ruby
+class Topic < ActiveRecord::Base
+  self.skip_time_zone_conversion_for_attributes = [:written_on]
+end
+```

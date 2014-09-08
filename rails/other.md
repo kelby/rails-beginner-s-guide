@@ -12,7 +12,7 @@ WelcomeController
 MailersController  
 邮件预览的 index 和 preview 页面
 
-InfoController
+InfoController  
 项目信息页面，包括：index、properties、routes
 
 ## 命令行(rake & rails)
@@ -21,7 +21,6 @@ InfoController
 
 都有单独的 rake 文件，`rake -T` 包含但不限于这下面的命令：
 
-Load Rails Rakefile extensions  
 annotations  
 documentation  
 framework  
@@ -36,20 +35,22 @@ rake db xxx
 - CodeStatistics
 - CodeStatisticsCalculator
 
-### SourceAnnotationExtractor & Annotation
+### SourceAnnotationExtractor
 
 rake notes  
 rake notes:optimize
 
 ### api
 
-rake rdoc
+rake rdoc (Rails 自身的 API)
 
 ### test_unit
 
 rake test
 
 ### commands
+
+`rails` 可接以下命令：
 
 application  
 console  
@@ -93,10 +94,24 @@ bc.clean(exception.backtrace) # perform the cleanup
 
 Rails 里用 `Rails.backtrace_cleane` 替换上面的 `bc`.
 
-## Rails Root & Path
+## Paths
+
+包括 Root & Path，但只有 Root 对外提供接口。
 
 ```
 add, all_paths, autoload_once, autoload_paths
 eager_load
 load_paths
 ```
+
+## Rack
+
+2 个 Rack application.
+
+Debugger 和 Logger
+
+## rails console 里的小技巧
+
+app、new_session 和 reload!
+
+helper 和 controller

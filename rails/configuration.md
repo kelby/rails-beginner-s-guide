@@ -13,3 +13,5 @@ eager_load_namespaces
 to_prepare, to_prepare_blocks
 watchable_dirs, watchable_files
 ```
+
+另，自定义的 Railtie 和自定义的 Engine，也可以对外提供 `config` 接口。

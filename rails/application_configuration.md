@@ -19,3 +19,5 @@ attr_accessor :allow_concurrency, :asset_host, :assets, :autoflush_log,
 attr_writer :log_level
 attr_reader :encoding
 ```
+
+另，自定义的 Railtie 和自定义的 Engine，也可以对外提供 `config` 接口。

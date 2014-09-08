@@ -3,12 +3,14 @@
 重要的如下：
 
 ```
+# index
 add_index
 remove_index
 rename_index
 index_exists?
 index_name_exists?
 
+# column
 add_column
 rename_column
 change_column
@@ -16,17 +18,21 @@ remove_column
 remove_columns
 column_exists?
 
+# table
 create_table
 drop_table
 rename_table
 change_table
 table_exists?
+
+add_reference
+add_belongs_to
 ```
 
 其它
 
 ```
-add_belongs_to, add_foreign_key, add_reference, add_timestamps, assume_migrated_upto_version
+add_foreign_key, add_timestamps, assume_migrated_upto_version
 change_column_default, change_column_null, columns, create_join_table
 drop_join_table
 foreign_keys

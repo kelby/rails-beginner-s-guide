@@ -1,4 +1,4 @@
-## rails console 里的方法
+## rails console 里的小技巧
 
 1 `app`  
 集成测试会话实例。
