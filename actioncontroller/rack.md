@@ -125,6 +125,7 @@ What is really interesting is Rack’s simple architecture. Rack middleware modu
 
 Requiring 'rack/contrib' will add autoloads to the Rack modules for all of the components included. The following example shows what a simple rackup (config.ru) file might look like:
 
+```ruby
 require 'rack'
 require 'rack/contrib'
 
@@ -134,3 +135,4 @@ use Rack::ETag
 use Rack::MailExceptions
 
 run theapp
+```

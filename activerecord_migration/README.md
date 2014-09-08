@@ -1,9 +1,6 @@
 # ActiveRecord 迁移
 
-## Migrations
-
-不必专门学习 SQL，即可修改数据库表结构。
-
+## Migration
 
 ---
 
@@ -12,3 +9,17 @@
 ## SchemaDumper
 
 ## Schema
+
+---
+
+下面这 3 个模块，来源 ConnectionAdapters，它下面还有很多模块，在此忽略其它 ...
+
+## SchemaStatements
+
+## TableDefinition
+
+## Table
+
+---
+
+## DatabaseTasks

@@ -35,7 +35,6 @@ ActionView::Base 实例。
 
 ```ruby
 module UsersHelper
-
   def user_help_1(user_name)
     puts "I am June!"
   end

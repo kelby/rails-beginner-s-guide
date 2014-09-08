@@ -14,6 +14,4 @@ Adds the ability to prevent public methods on a controller to be called as actio
 
 提供方法：
 
-```ruby
-hide_action
-```
+`hide_action`

@@ -1,4 +1,4 @@
-# Metal use example
+# Metal 使用举例
 
 Controller 里的 render 是为了返回 self.response_body
 而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣
