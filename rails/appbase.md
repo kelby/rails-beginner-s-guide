@@ -1,6 +1,6 @@
 # AppBase
 
-## GemfileEntry
+## Gemfile Entry
 
 ```
 github

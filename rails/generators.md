@@ -22,4 +22,3 @@ hide_namespaces
 ```
 
 该目录下，还有 Rails 自带的 generator 的源代码，它们可供参考。
-

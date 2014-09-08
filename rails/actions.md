@@ -15,7 +15,7 @@ log
 quote
 ```
 
-## CreateMigration
+## Create Migration
 
 ```
 existing_migration, exists?

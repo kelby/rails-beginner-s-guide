@@ -3,10 +3,8 @@
 ## 提示信息
 
 ApplicationController  
-这里是 Rails 自身的 ApplicationController 不是我们项目里的那个。
-它是下面几个 Controller 的父类，它和 Application 联系不大，不要被名字欺骗了。
-
-但它继承于 ActionController::Base 这个功能可很强大。
+这里指的是 Rails 自带的 Rails::ApplicationController 不是我们项目里定义的。
+它是下面几个 Controller 的父类，它和 Application 没有对应关系。
 
 WelcomeController  
 默认首页 index
@@ -31,12 +29,14 @@ log
 middleware  
 misc  
 routes  
-statistics  
 tmp  
 engine  
 rake db xxx  
+**statistics**  
+- CodeStatistics
+- CodeStatisticsCalculator
 
-### SourceAnnotationExtractor
+### SourceAnnotationExtractor & Annotation
 
 rake notes  
 rake notes:optimize
@@ -61,7 +61,7 @@ runner
 server  
 update
 
-commands_tasks
+**commands_tasks**
 
 The most common rails commands are:  
   - generate
@@ -80,39 +80,23 @@ In addition to those, there are:
 
 是运用，而不是定义，定义于 ActiveSupport::BacktraceCleaner.
 
-- `Rails.backtrace_cleaner`
-
-```ruby
-def backtrace_cleaner
-  @backtrace_cleaner ||= begin
-    # Relies on Active Support, so we have to lazy load to postpone definition until AS has been loaded
-    require 'rails/backtrace_cleaner'
-    Rails::BacktraceCleaner.new
-  end
-end
-```
-
-- 有哪些方法?
+使用类似：
 
 ```ruby
 bc = BacktraceCleaner.new
+
 bc.add_filter   { |line| line.gsub(Rails.root.to_s, '') } # strip the Rails.root prefix
 bc.add_silencer { |line| line =~ /mongrel|rubygems/ } # skip any lines from mongrel or rubygems
+
 bc.clean(exception.backtrace) # perform the cleanup
 ```
 
+Rails 里用 `Rails.backtrace_cleane` 替换上面的 `bc`.
 
-- `config/initializers/backtrace_silencers.rb`
-
-You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
-
-```
-Rails.backtrace_cleaner.add_silencer { |line| line =~ /my_noisy_library/ }
-```
-
-You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+## Rails Root & Path
 
 ```
-Rails.backtrace_cleaner.remove_silencers!
+add, all_paths, autoload_once, autoload_paths
+eager_load
+load_paths
 ```
-

@@ -168,7 +168,7 @@ Person.first.update!(permitted)
 config.always_permitted_parameters = %w( controller action format )
 ```
 
-## Caching::Fragments
+## Caching Fragments
 
 Caching is a cheap way of speeding up slow applications by keeping the result of calculations, renderings, and database calls around for subsequent requests.
 
@@ -191,7 +191,6 @@ config.action_controller.cache_store = :memory_store
 config.action_controller.cache_store = :file_store, '/path/to/cache/directory'
 config.action_controller.cache_store = :mem_cache_store, 'localhost'
 config.action_controller.cache_store = :mem_cache_store, Memcached::Rails.new('localhost:11211')
-config.action_controller.cache_store = MyOwnStore.new('parameter')
 ```
 
 页面缓存、action缓存都被干掉了，留下很好的片段缓存。
@@ -260,13 +259,13 @@ http://www.codelearn.org/blog/rails-cache-with-examples
 ## 其它
 ------
 
-### RequestForgeryProtection
+### Request Forgery Protection
 
 ```ruby
 protect_from_forgery(options = {})
 ```
 
-### HttpAuthentication
+### Http Authentication
 
 有3类：Basic，Digest，Token
 

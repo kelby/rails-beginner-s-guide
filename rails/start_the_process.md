@@ -29,14 +29,14 @@ config your AppName
 AppName::Application.initialize!
 
 ```ruby
-    # Initialize the application passing the given group. By default, the
-    # group is :default
-    def initialize!(group=:default) #:nodoc:
-      raise "Application has been already initialized." if @initialized
-      run_initializers(group, self)
-      @initialized = true
-      self
-    end
+# Initialize the application passing the given group. By default, the
+# group is :default
+def initialize!(group=:default) #:nodoc:
+  raise "Application has been already initialized." if @initialized
+  run_initializers(group, self)
+  @initialized = true
+  self
+end
 ```
 
 9. 默认的 Railtie，Engine, Application
@@ -86,10 +86,10 @@ end
 4)  Run config.before_configuration callbacks
 
 ```ruby
-      # First configurable block to run. Called before any initializers are run.
-      def before_configuration(&block)
-        ActiveSupport.on_load(:before_configuration, yield: true, &block)
-      end
+# First configurable block to run. Called before any initializers are run.
+def before_configuration(&block)
+  ActiveSupport.on_load(:before_configuration, yield: true, &block)
+end
 ```
 
 5)  Load config/environments/ENV.rb
@@ -114,40 +114,40 @@ Rails.application.initializers
 
 
 ```ruby
-    initializer "action_mailer.logger" do
-      ActiveSupport.on_load(:action_mailer) { self.logger ||= Rails.logger }
-    end
+initializer "action_mailer.logger" do
+  ActiveSupport.on_load(:action_mailer) { self.logger ||= Rails.logger }
+end
 ```
 9)  Build the middleware stack and run to_prepare callbacks
 
 ```ruby
-      # Defines generic callbacks to run before #after_initialize. Useful for
-      # Rails::Railtie subclasses.
-      def to_prepare(&blk)
-        to_prepare_blocks << blk if blk
-      end
+# Defines generic callbacks to run before #after_initialize. Useful for
+# Rails::Railtie subclasses.
+def to_prepare(&blk)
+  to_prepare_blocks << blk if blk
+end
 ```
 10) Run config.before_eager_load and eager_load! if eager_load is true
 
 ```ruby
-    config.eager_load_paths += %W(
-      #{config.root}/app/workers
-      #{config.root}/app/mailers
-      #{config.root}/lib
-      #{config.root}/app/models/**/*
-      #{config.root}/app/models/concerns
-      #{config.root}/app/controllers/concerns
-    )
+config.eager_load_paths += %W(
+  #{config.root}/app/workers
+  #{config.root}/app/mailers
+  #{config.root}/lib
+  #{config.root}/app/models/**/*
+  #{config.root}/app/models/concerns
+  #{config.root}/app/controllers/concerns
+)
 ```
 
 11) Run config.after_initialize callbacks
 
 ```ruby
-    config.after_initialize do
-      if ActionMailer::Base.preview_path
-        ActiveSupport::Dependencies.autoload_paths << ActionMailer::Base.preview_path
-      end
-    end
+config.after_initialize do
+  if ActionMailer::Base.preview_path
+    ActiveSupport::Dependencies.autoload_paths << ActionMailer::Base.preview_path
+  end
+end
 ```
 
 ```ruby
@@ -164,6 +164,3 @@ Rails.application.send :default_middleware_stack
 Rails::Application - application.rb
 
 Rails::Railtie::Configuration - configuration.rb
-
-
-

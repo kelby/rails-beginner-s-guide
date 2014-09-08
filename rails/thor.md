@@ -1,6 +1,6 @@
 # Thor
 
-Thor is a toolkit for building powerful command-line interfaces.
+Thor 和 rake 类似，提供了功能强大的命令行接口。
 
 Thor is a simple and efficient tool for building self-documenting command line utilities. It removes the pain of parsing command line options, writing "USAGE:" banners, and can also be used as an alternative to the Rake build tool. The syntax is Rake-like, so it should be familiar to most Rake users.
 
@@ -98,7 +98,7 @@ Run a thor command.
 `uncomment_lines(path, flag, *args)`  
 Uncomment all lines matching a given regex.
 
-## Actions::ClassMethods
+## Actions ClassMethods
 
 `add_runtime_options!`  
 Add runtime options that help actions execution.

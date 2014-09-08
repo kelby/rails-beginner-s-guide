@@ -6,25 +6,22 @@ Application 继承于 Engine，负责协调整个启动过程，包括：配置�
 
 除了和 Engine、Railtie 有一样的配置项外，它新增了自己的配置项，如：cache_classes、consider_all_requests_local、filter_parameters、logger 等。
 
-```
-attr_accessor :allow_concurrency, :asset_host, :assets, :autoflush_log,
-              :cache_classes, :cache_store, :consider_all_requests_local, :console,
-              :eager_load, :exceptions_app, :file_watcher, :filter_parameters,
-              :force_ssl, :helpers_paths, :logger, :log_formatter, :log_tags,
-              :railties_order, :relative_url_root, :secret_key_base, :secret_token,
-              :serve_static_assets, :ssl_options, :static_cache_control, :session_options,
-              :time_zone, :reload_classes_only_on_change,
-              :beginning_of_week, :filter_redirect, :x
+和我们的配置直接相关：
 
-attr_writer :log_level
-attr_reader :encoding
+```ruby
+Rails.configuration == Rails.application.config
+ => true
+
+Rails.configuration.class                      
+ => Rails::Application::Configuration
 ```
+
+有以下方法：
 
 ```
 annotations
-colorize_logging, colorize_logging=
+colorize_logging
 database_configuration
-encoding=
 log_level
 paths
 session_store
@@ -32,31 +29,28 @@ session_store
 
 ## Initialization
 
-Rails::Application is responsible for executing all railties and engines
-initializers. It also executes some bootstrap initializers (check
-Rails::Application::Bootstrap) and finishing initializers, after all the others
-are executed (check Rails::Application::Finisher).
+Application 负责执行所有 Railtie 和 Engine 的初始化任务。可分为前期准备任务 Bootstrap，和后期收尾任务 Finisher.
 
-**Bootstrap**
+### Bootstrap
 
-~~Load environment hook~~  
-Load active support  
-Set eager load  
-Initialize logger  
-Initialize cache  
-Initialize dependency mechanism  
+~~加载 environment hook~~  
+加载 active support  
+设置 eager load  
+初始化 logger  
+初始化 cache  
+初始化 dependency mechanism  
 ~~Bootstrap hook~~
 
-**Finisher**
+### Finisher
 
-Add generator templates  
+添加 generator templates  
 Ensure autoload once paths as subset  
-Add builtin route  
-Build middleware stack  
-Define main app helper  
-Add to prepare blocks  
-Run prepare callbacks  
+添加 builtin route  
+构建 middleware stack  
+**定义 main_app helper**  
+添加 to prepare blocks  
+运行 prepare callbacks  
 Eager load!  
 ~~Finisher hook~~  
-Set routes reloader hook  
-Set clear dependencies hook
+设置 routes reloader hook  
+设置 clear dependencies hook

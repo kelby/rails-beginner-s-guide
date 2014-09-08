@@ -1,12 +1,10 @@
 # Misc
 
-它在哪被调用，和它类似或相关的模块之间是什么关系，有何不同？
-
 ## 心得：
 
 - C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C
 
----
+## 继承关系及 ancestors
 
 父类和模块都有此方法，子类没有(重写)此方法，执行顺序：模块按被加载的顺序逆序，最后到父类。
 
@@ -59,3 +57,35 @@ Child.new.do_something
 ```
 
 > Note: 以上参考 [modules.rb](https://gist.github.com/andrewberls/8090332)
+
+## inherited
+
+`inherited(subclass)`
+
+当前类定义子类时，就会触发此回调。
+(类比 Module.html#included)
+
+Example:
+
+```ruby
+class Foo
+  def self.inherited(subclass)
+    puts "New subclass: #{subclass}"
+  end
+end
+
+class Bar < Foo
+end
+
+class Baz < Bar
+end
+```
+
+produces:
+
+```
+New subclass: Bar
+New subclass: Baz
+```
+
+另：继承于一个类，父类的类方法就是子类的类方法，父类的实例方法就是子类的实例方法。

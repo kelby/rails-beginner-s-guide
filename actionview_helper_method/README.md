@@ -189,6 +189,7 @@ atom_feed
 ## AssetUrlHelper
 
 仅得到 asset 所在的路径。
+
 ```
 asset_path, asset_url, audio_path, audio_url
 compute_asset_extname, compute_asset_host, compute_asset_path
@@ -203,6 +204,7 @@ video_path, video_url
 ## AssetTagHelper
 
 得到的是包含 asset 在内的 HTML 代码。
+
 ```
 audio_tag, auto_discovery_link_tag
 favicon_link_tag

@@ -8,34 +8,10 @@ Rails 启动是一个复杂的过程，你不必知道具体在哪一步执行 R
 
 通常你的项目代码是单独存放的，raitie.rb 只是针对 Rails 项目初始化或配置工作，不推荐把项目代码放到这里。
 
----
+## 其它
 
-inherited(subclass)
-
-当前类定义子类时，就会触发此回调。
-(类比 Module.html#included)
-
-Example:
-
-```ruby
-class Foo
-  def self.inherited(subclass)
-    puts "New subclass: #{subclass}"
-  end
-end
-
-class Bar < Foo
-end
-
-class Baz < Bar
-end
-```
-
-produces:
+查看本项目下，所有的 Railtie：
 
 ```
-New subclass: Bar
-New subclass: Baz
+Rails.application.send(:ordered_railties)
 ```
-
-> Note: 另继承于一个类，父类的类方法就是子类的类方法，父类的实例方法就是子类的实例方法。

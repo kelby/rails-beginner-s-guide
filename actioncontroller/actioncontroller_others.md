@@ -8,7 +8,7 @@
 
 上面的 `register` 中是登记，本身没有处理能力，这里添加渲染器进行处理。
 
-## HideActions
+## Hide Actions
 
 Adds the ability to prevent public methods on a controller to be called as actions.
 

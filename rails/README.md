@@ -26,9 +26,9 @@
 
 "初始化"这里是名词，主要是对它的使用，如 Application 的 bootstrap 和 finisher，以及我们项目 AppName 所涉及到的初始化。
 
-### 启动！
+### 启动！*
 
-配置、初始化还不够，还有启动！
+没有额外的"启动"程序，把配置、初始化做好了以后，启动就是自然而然的事了。
 
 参考"启动过程"独立章节。
 
@@ -61,4 +61,21 @@ attr_accessor :app_class, :cache, :logger
 
 ```
 delegate :initialize!, :initialized?, to: :application
+```
+
+### 继承关系
+
+```ruby
+Rails.application.class.ancestors
+ => [AppName::Application,
+ Rails::Application,
+ Rails::Engine,
+ Rails::Railtie,
+ Rails::Initializable,
+ Object,
+ ... ...
+ ActiveSupport::Dependencies::Loadable,
+ ... ...
+ Kernel,
+ BasicObject] 
 ```
