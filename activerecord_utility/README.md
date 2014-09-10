@@ -2,31 +2,48 @@
 
 ## Validations
 
-和 Active Model 里的校验实现原理类似，但有一点不同：这里的校验需要从数据库'读'数据。
+和 Active Model 里的校验实现原理类似，但有一点不同：这里校验的属性要是关联对象或要从数据库'读'数据。
 
+1) `validates_associated(*attr_names)`
+
+校验是否存在关联(关系)。可以同时校验多个关联(关系)
+
+```ruby
+class Book < ActiveRecord::Base
+  has_many :pages
+  belongs_to :library
+
+  validates_associated :pages, :library
+end
 ```
-validates_associated(*attr_names)
-validates_presence_of(*attr_names)
-validates_uniqueness_of(*attr_names)
+
+2) `validates_presence_of(*attr_names)`
+
+校验(数据库里)是否存在着关联对象。
+
+3) `validates_uniqueness_of(*attr_names)`
+
+校验属性的值是否唯一。默认是对所有 record 进行校验，可以用 scope 或 conditions 指定约束条件。
+
+```ruby
+class Person < ActiveRecord::Base
+  validates_uniqueness_of :user_name
+end
+
+# 加 scope 约束条件
+# 同一 account 的 person, user_name 不能相同
+# 不同 account 的 person, user_name 可以相同
+class Person < ActiveRecord::Base
+  validates_uniqueness_of :user_name, scope: :account_id
+end
+
+# 加 conditions 约束条件
+# status 为 archived 的 article，title 不能相同
+# status 为其它值的 article，title 可以相同
+class Article < ActiveRecord::Base
+  validates_uniqueness_of :title, conditions: -> { where.not(status: 'archived') }
+end
 ```
-
-`include ActiveModel::Validations` 然后:
-实现相应的校验器，利用 `validates_with` 调用校验器，得到最终校验方法。
-
-`validates_associated(*attr_names)`
-
-Validates whether the associated object or objects are all valid.
-Works with any kind of association.
-
-`validates_presence_of(*attr_names)`
-
-Validates that the specified attributes are not blank (as defined by Object#blank?), and, if the attribute is an association, that the associated object is not marked for destruction. Happens by default on save.
-
-`validates_uniqueness_of(*attr_names)`
-
-The check for an existing value should be run from a class that isn't abstract. This means working down from the current class (self), to the first non-abstract class. Since classes don't know
-their subclasses, we have to build the hierarchy between self and the record's class.
-
 > Note: Persistence(持久化)里的 save、save! 方法，只管 create 或 update 数据，是没有校验功能的。所以，这里创建了同名方法，在做真正的"保存"之前用来做校验工作，这也是一种技巧。
 
 ## Callbacks
@@ -102,12 +119,11 @@ end
 
 - 对于关联对象，会自动设置 `:autosave`
 
-```ruby 摘录部分代码
+```ruby
+# 摘录部分代码
 reflection.autosave = true                     # 自动保存
 add_autosave_association_callbacks(reflection) # 回调在自动保存时仍然有效
 ```
-
--------- 我是分隔线 --------
 
 对于嵌套的属性，默认你可以执行写操作，但不能删除它们。如果你真的要这么做，也可以通过 `:allow_destroy` 来设置。如：
 

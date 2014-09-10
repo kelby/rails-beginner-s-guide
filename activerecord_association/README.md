@@ -2,47 +2,6 @@
 
 ## Associations
 
-```ruby
-has_many(name, scope = nil, options = {}, &extension)
-    def valid_options
-      super + [:primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache]
-    end
-has_one(name, scope = nil, options = {})
-    def valid_options
-      valid = super + [:order, :as]
-      valid += [:through, :source, :source_type] if options[:through]
-      valid
-    end
-belongs_to(name, scope = nil, options = {})
-    def valid_options
-      super + [:foreign_type, :polymorphic, :touch, :counter_cache]
-    end
-has_and_belongs_to_many(name, scope = nil, options = {}, &extension)
-
-#---------------------
-
-ActiveRecord::Associations::Builder::Association.build(model, name, scope, options, &block)
-  if model.dangerous_attribute_method?(name)
-    raise ArgumentError, "You tried to define an association named #{name} on the model #{model.name}, but " \
-                         "this will conflict with a method #{name} already defined by Active Record. " \
-                         "Please choose a different association name."
-  end
-
-  builder = create_builder model, name, scope, options, &block
-  reflection = builder.build(model)
-  define_accessors model, reflection
-  define_callbacks model, reflection
-  builder.define_extensions model
-  reflection
-end
-
-#---------------------
-
-ActiveRecord::Reflection.add_reflection(ar, name, reflection)
-  ar.reflections = ar.reflections.merge(name => reflection)
-end
-```
-
 Why do we need associations between models? Because they **make common operations simpler and easier** in your code.
 
 英文环境里：
@@ -55,19 +14,19 @@ a belongs_to :b
 a(前者) 为 associated
 b(后者) 为 association
 
-:class_name指定b的类名
-:foreign_key指定a_id
-:primary_key指定b的id
-:dependent对a进行操作，同时也对b进行操作
-:counter_cache记录b的个数的字段
-:as多态时，a相当于d
-:through指定a通过c来关联b
-:source与through配合，a直接对应的是b还是c
-:source_type与through配合
+:class_name指定b的类名  
+:foreign_key指定a_id  
+:primary_key指定b的id  
+:dependent对a进行操作，同时也对b进行操作  
+:counter_cache记录b的个数的字段  
+:as多态时，a相当于d  
+:through指定a通过c来关联b  
+:source与through配合，a直接对应的是b还是c  
+:source_type与through配合  
 :inverse_of从a查找b，与从b查找a是不同步的；有时候会引起错误，用此参数让它们一致。(为什么不始终使用？)对:through、 :polymorphic、 :as associations不起作用并且 对于 belongs_to 关联, has_many 反转关联会被自动忽略。
 （:conditions、:foreign_key也会被忽略）
 
-b belongs_to :a
+b belongs_to :a  
 :touch 修改b时，a也会被更新
 
 has_and_belongs_to_many 意味着中间表没有 model. 因此，不能通过 id 进行查询，也没有 validate、callback，更加不能直接读取&设置其值。唯一的方便之处是：通过 `<<` 即可创建中间表数据。
@@ -207,3 +166,15 @@ posts = blog.posts
 注意：posts 是死的，一经赋值，每一次调用值都一样；blog.posts 是活的，每一次调用值都有可能不同。
 
 > **Note:** 一定是关联表.
+
+## Reflection
+
+例如校验时就用到。
+
+指的关系！
+
+大明(父) --> 小明(子)
+
+那么构成一条关系。
+
+

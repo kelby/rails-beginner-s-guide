@@ -373,6 +373,6 @@ related to engine or application.
 config.railties_order = [Blog::Engine, :main_app, :all]
 ```
 
-main_app 表示我们的项目本身，在 Application::Finisher 里定义，all 表示所有其它的 Railtie.
+main_app 表示我们的项目本身，在 Application::Finisher 里定义，all 表示所有其它的 Railtie，在 Application::Configuration 里初始化时定义。
 
 > Note: 上面的例子，你也可以用其它手段完成，如 namespace 等。
