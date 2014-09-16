@@ -71,3 +71,7 @@ end
 重写了父类的 render_template 方法。
 
 StreamingTemplateRenderer 用得很少，不做过多介绍。
+
+## 最后
+
+You invoked render but did not give any of :partial, :template, :inline, :file or :text option.

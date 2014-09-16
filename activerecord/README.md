@@ -185,4 +185,9 @@ Sanitization
 
 包括 DatabaseTasks，MySQLDatabaseTasks、PostgreSQLDatabaseTasks、SQLiteDatabaseTasks
 
+对于 Association 你还有什么要说的？  
+http://jonathanhui.com/ruby-rails-3-model-association
+
+对 Association 里的 has_many 多讲解一点？  
+http://depthcoding.ybarthelemy.info/2012/07/30/under-the-hoods-of-activerecords-has_many-method/
 

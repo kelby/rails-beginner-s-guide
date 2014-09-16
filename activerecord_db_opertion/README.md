@@ -24,6 +24,30 @@ reset_counters(id, *counters)
 
 很重要
 
+```
+becomes, becomes!
+
+decrement, decrement!
+increment, increment!
+
+delete, destroy, destroy!, destroyed?
+
+new_record?
+persisted?
+
+reload
+
+save, save!
+
+toggle, toggle!
+
+touch
+
+update, update! (update_attributes, update_attributes!)
+update_attribute
+update_column, update_columns
+```
+
 ## Querying
 
 
@@ -44,6 +68,7 @@ delegate :pluck, :ids, to: :all
 
 ## NullRelation
 
+结合 `ActiveRecord::Relation#none` 可以用来表示和处理结果为空的 Relation.
 
 ## Calculations
 

@@ -1,4 +1,6 @@
-# Base
+# Base √
+
+include Rails::Generators::Actions
 
 ## Class Public methods
 

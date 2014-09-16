@@ -67,15 +67,15 @@ delegate :initialize!, :initialized?, to: :application
 
 ```ruby
 Rails.application.class.ancestors
- => [AppName::Application,
- Rails::Application,
- Rails::Engine,
- Rails::Railtie,
- Rails::Initializable,
- Object,
- ... ...
- ActiveSupport::Dependencies::Loadable,
- ... ...
- Kernel,
- BasicObject] 
+  => [AppName::Application,
+  Rails::Application,
+  Rails::Engine,
+  Rails::Railtie,
+  Rails::Initializable,
+  Object,
+  ... ...
+  ActiveSupport::Dependencies::Loadable,
+  ... ...
+  Kernel,
+  BasicObject] 
 ```

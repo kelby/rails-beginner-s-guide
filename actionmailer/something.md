@@ -56,15 +56,17 @@ end
 
 Previews，对于普通开发者来说主要是配置：
 
-Set the location of mailer previews through app configuration:
+```ruby
+# Set the location of mailer previews through app configuration:
 
-    config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 
-Enable or disable mailer previews through app configuration:
+# Enable or disable mailer previews through app configuration:
 
-    config.action_mailer.show_previews = true
+config.action_mailer.show_previews = true
 
-Defaults to true for development environment
+# Defaults to true for development environment
+```
 
 Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发者察觉不到的方法，如：
 

@@ -29,6 +29,7 @@ AbstractController::Callbacks 的
     before_action
     after_action
     around_action
+    
     # 以及
     prepend
     skip

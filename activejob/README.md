@@ -30,7 +30,7 @@ ActiveJob::Base.queue_adapter = :inline
 
 ```ruby
  queue_as :my_jobs
- ```
+```
 
 ## Enqueuing 入队与重试
 
@@ -88,5 +88,5 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 
 ## Others
 
-有利必有弊，可能面临以下问题：<br>
+有利必有弊，可能面临以下问题：  
 原 gem 本身的特点没能充分利用，灵活性降低，和其它 gem 的配合会变复杂。

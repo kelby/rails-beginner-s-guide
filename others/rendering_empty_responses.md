@@ -1,20 +1,17 @@
-## Rendering empty responses
+## 返回一个内容为空的 response
 
-Sometimes (and especially once you start dealing with writing web services) you’ll find yourself wanting to return an empty response, with only a status code and (possibly) a few headers set.
+有时候(作为 Web service 时)，响应内容可能只需要一个状态码，其它内容都不需要。
 
-You can do this easily enough using the render method:
+你可以使用 `render` 方法，这么做：
 
 ```ruby
 headers['Location'] = person_url(@person)
 render :nothing => true, :status => "201 Created"
 ```
 
-That, however, is unbearably verbose, especially when you find yourself needing to do it in multiple places.
-
-Enter the head method:
+但是，如果类似代码有很多地方的话，也会让人头疼。我们可以
+直接用 `head` 方法:
 
 ```ruby
 head :created, :location => person_url(@person)
 ```
-
-There, isn’t that beautiful?

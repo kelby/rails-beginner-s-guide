@@ -25,11 +25,11 @@ end
 get 'hello', to: HelloController.action(:index)
 ```
 
-The +action+ method returns a valid Rack application for the \Rails router to dispatch to.
+为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
 ## Rendering Helpers
 
-<tt>ActionController::Metal</tt> by default provides no utilities for rendering views, partials, or other responses aside from explicitly calling of <tt>response_body=</tt>, <tt>content_type=</tt>, and <tt>status=</tt>. To add the render helpers you're used to having in a normal controller, you can do the following:
+默认 <tt>ActionController::Metal</tt> 是没有提供渲染视图、模板或其它需要明确调用 <tt>response_body=</tt>, <tt>content_type=</tt>, 和 <tt>status=</tt> 的方法。如果你需要这些，可以引入它们：
 
 ```ruby
 class HelloController < ActionController::Metal
@@ -45,7 +45,7 @@ end
 
 ## Redirection Helpers
 
-To add redirection helpers to your metal controller, do the following:
+想使用重定向相关代码，你也需要引入它们：
 
 ```ruby
 class HelloController < ActionController::Metal

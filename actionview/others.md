@@ -49,6 +49,7 @@ lookup_context
 
 You can create your own custom FormBuilder templates by subclassing this class. For example:
 
+```ruby
 class MyFormBuilder < ActionView::Helpers::FormBuilder
   def div_radio_button(method, tag_value, options = {})
     @template.content_tag(:div,
@@ -57,37 +58,47 @@ class MyFormBuilder < ActionView::Helpers::FormBuilder
       )
     )
   end
+end
+```
+
 The above code creates a new method div_radio_button which wraps a div around the a new radio button. Note that when options are passed in, you must called objectify_options in order for the model object to get correctly passed to the method. If objectify_options is not called, then the newly created helper will not be linked back to the model.
 
 The div_radio_button code from above can now be used as follows:
 
+```ruby
 <%= form_for @person, :builder => MyFormBuilder do |f| %>
   I am a child: <%= f.div_radio_button(:admin, "child") %>
   I am an adult: <%= f.div_radio_button(:admin, "adult") %>
 <% end -%>
+```
 
 ---
 
-如何處理Model中不存在的屬性
+如何處理 Model 中不存在的屬性
 
-使用form_for時，其中的欄位必須是Model有的屬性，那如果資料庫沒有這個欄位呢?這時候你依需要在Model程式中加上存取方法，例如：
+使用 form_for 時，其中的欄位必須是 Model 有的屬性，那如果資料庫沒有這個欄位呢?這時候你依需要在 Model 程式中加上存取方法，例如：
 
+```ruby
 class Event < ActiveRecord::Base
-    #...
-    def custom_field
-        # 根據其他屬性的值或條件，來決定這個欄位的值
-    end
+  #...
+  def custom_field
+      # 根據其他屬性的值或條件，來決定這個欄位的值
+  end
 
-    def custom_field=(value)
-        # 根據value，來調整其他屬性的值
-    end
+  def custom_field=(value)
+      # 根據value，來調整其他屬性的值
+  end
 end
+```
+
 這樣就可以在form_for裡使用custom_field了。
 
+```ruby
 <%= form_for @event do |f| %>
-    <%= f.text_field :custom_field %>
-    <%= f.submit %>
+  <%= f.text_field :custom_field %>
+  <%= f.submit %>
 <% end %>
+```
 
 ---
 

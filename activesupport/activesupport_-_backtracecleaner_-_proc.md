@@ -47,14 +47,14 @@ Rails 配置文件
 并且，Rails 启动时就启动它：
 
 ```ruby
-    def backtrace_cleaner
-      @backtrace_cleaner ||= begin
-        # Relies on Active Support, so we have to lazy load to postpone definition until AS has been loaded
-        require 'rails/backtrace_cleaner'
-        # initialize 时就已经有行为了
-        Rails::BacktraceCleaner.new
-      end
-    end
+def backtrace_cleaner
+  @backtrace_cleaner ||= begin
+    # Relies on Active Support, so we have to lazy load to postpone definition until AS has been loaded
+    require 'rails/backtrace_cleaner'
+    # initialize 时就已经有行为了
+    Rails::BacktraceCleaner.new
+  end
+end
 ```
 
 ```

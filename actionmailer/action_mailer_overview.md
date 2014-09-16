@@ -91,24 +91,19 @@ mail(headers = {}, &block) 返回 Mail对象本身
 
 ## MailHelper
 
-`attachments()`
-
+`attachments()`  
 表示邮件内容里的附件。
 
-`mailer()`
-
+`mailer()`  
 表示邮件所在的Controller对象。
 
-`message()`
-
+`message()`  
 表示邮件本身。
 
-`block_format(text)`
-
+`block_format(text)`  
 格式化文本，行首空两格，每行长度不超过 72 个字符。(邮件的标准格式，就是这样的)
 
-`format_paragraph(text, len = 72, indent = 2)`
-
+`format_paragraph(text, len = 72, indent = 2)`  
 格式化文本。*len* 为每行长度，*index* 为行首空格数。
 
 > Note: ActiveMailer 可以单独使用，并不绑定于 Rails<br/>

@@ -1,5 +1,18 @@
 # 定制自己的 Engine
 
+```
+# your_engine/engine.rb
+module YourEngine
+  class Engine < Rails::Engine
+    # ... ...
+  end
+end
+```
+
+```
+require 'your_gem/engine'
+```
+
 ## 继承于 Engine
 
 1 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
@@ -46,7 +59,7 @@ end
 
 或者用 `config.app_generators` 方法:
 
-```
+```ruby
 class MyEngine < Rails::Engine
   # note that you can also pass block to app_generators in the same way you
   # can pass it to generators method
@@ -282,7 +295,7 @@ say that you want to create a form pointing to one of the engine's routes.
 All you need to do is pass the helper as the first element in array with
 attributes for url:
 
-```
+```ruby
   form_for([my_engine, @user])
 ```
 
@@ -294,7 +307,7 @@ Sometimes you may want to isolate engine, but use helpers that are defined for i
 If you want to share just a few specific helpers you can add them to application's
 helpers in ApplicationController:
 
-```
+```ruby
 class ApplicationController < ActionController::Base
   helper MyEngine::SharedEngineHelper
 end
@@ -303,7 +316,7 @@ end
 If you want to include all of the engine's helpers, you can use #helper method on an engine's
 instance:
 
-```
+```ruby
 class ApplicationController < ActionController::Base
   helper MyEngine::Engine.helpers
 end
@@ -332,7 +345,7 @@ migration in the application and rerun copying migrations.
 If your engine has migrations, you may also want to prepare data for the database in
 the `db/seeds.rb` file. You can load that data using the `load_seed` method, e.g.
 
-```
+```ruby
 MyEngine::Engine.load_seed
 ```
 
@@ -368,7 +381,7 @@ In order to change engine's priority you can use `config.railties_order` in main
 It will affect the priority of loading views, helpers, assets and all the other files
 related to engine or application.
 
-```
+```ruby
 # load Blog::Engine with highest priority, followed by application and other railties
 config.railties_order = [Blog::Engine, :main_app, :all]
 ```

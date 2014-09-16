@@ -1,5 +1,18 @@
 # 定制自己的 Railtie
 
+```
+# your_railtie/railtie.rb
+module YourRailtie
+  class Engine < Rails::Engine
+    # ... ...
+  end
+end
+```
+
+```
+require 'your_railtie/railtie'
+```
+
 ## 继承于 Rails::Railtie
 
 继承于 Rails::Railtie，即可创建自己的 Railtie. 在 Rails 启动的时候，它也会被执行。

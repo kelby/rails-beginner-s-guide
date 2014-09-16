@@ -1,4 +1,4 @@
-# Commonly used method
+# Rails 源代码里一些常用方法
 
 ## ActiveSupport
 

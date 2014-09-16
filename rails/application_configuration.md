@@ -6,7 +6,7 @@ Railtie、Engine、Application 都有自己的 Configuration 模块。
 
 ## 对外提供接口
 
-```
+```ruby
 attr_accessor :allow_concurrency, :asset_host, :assets, :autoflush_log,
               :cache_classes, :cache_store, :consider_all_requests_local, :console,
               :eager_load, :exceptions_app, :file_watcher, :filter_parameters,

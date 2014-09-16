@@ -28,6 +28,8 @@ class Person < ActiveRecord::Base
 end
 ```
 
+此模块用于遗留项目，这里破例讲解一次。它的使用，还需要安装 gem 'strong_parameters'
+
 ```ruby
 # 原理
 raise ActiveModel::ForbiddenAttributesError if attributes.respond_to?(:permitted?) && !attributes.permitted?

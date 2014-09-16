@@ -2,23 +2,33 @@
 
 1) config.ru
 
+```
 require ::File.expand_path('../config/environment',  __FILE__)
+```
 
 2) environment.rb
 
+```
 require File.expand_path('../application', __FILE__)
+```
 
 3) application.rb
 
+```
 require File.expand_path('../boot', __FILE__)
+```
 
 4) boot.rb
 
+```
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
+```
 
 5) Gemfile
 
+```
 gem ‘gem_name'
+```
 
 6) boot.rb
 
@@ -34,6 +44,7 @@ AppName::Application < Rails::Application
 
 config your AppName
 ```
+
 8) enviroment.rb
 
 AppName::Application.initialize!

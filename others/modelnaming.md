@@ -17,7 +17,7 @@ model_name_from_record_or_class
 
 `model_name` 把"各种对象"转换成对应的"字符串"，而 View 要的正是"字符串"。
 
-ActionView
+## ActionView
 
 ```
 form_for
@@ -32,13 +32,13 @@ dom_id
 dom_class
 ```
 
-ActionController
+## ActionController
 
 ```
 wrap_parameters
 ```
 
-ActionDispatch
+## ActionDispatch
 
 ```
 polymorphic_url

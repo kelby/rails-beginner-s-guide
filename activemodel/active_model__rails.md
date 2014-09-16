@@ -94,20 +94,17 @@ changes()
 previous_changes()
 ```
 
-Provides a way to track changes in your object in the same way as Active Record does.
+跟踪对象的变化情况。ActiveRecord 也有同名模块，它是对这里的 Dirty 的使用，并且它并没有对外提供 API.
 
-The requirements for implementing ActiveModel::Dirty are:
+使用 ActiveModel::Dirty，需要:
 
-* <tt>include ActiveModel::Dirty</tt> in your object.
-* Call <tt>define_attribute_methods</tt> passing each method you want to
-  track.
-* Call <tt>attr_name_will_change!</tt> before each change to the tracked
-  attribute.
-* Call <tt>changes_applied</tt> after the changes are persisted.
-* Call <tt>reset_changes</tt> when you want to reset the changes
-  information.
+* <tt>include ActiveModel::Dirty</tt>
+* 调用 <tt>define_attribute_methods</tt> 参数是你想跟踪的属性
+* 在改变属性的值之前，调用 <tt>attr_name_will_change!</tt> (把 attr_name 换成真正的属性名)
+* 在改变属性的值之后，调用 <tt>changes_applied</tt>
+* 如果你想重置上次改变的内容，调用 <tt>reset_changes</tt>
 
-A minimal implementation could be:
+举例:
 
 ```ruby
 class Person
@@ -135,11 +132,24 @@ class Person
 end
 ```
 
+来看看，都提供了什么方法：
+
+```
+# Instance Public methods 幂等方法
+changed, changed?, changed_attributes, changes, previous_changes
+
+# Instance Public methods 非幂等方法
+restore_attributes
+
+# Instance Private methods
+changes_applied, clear_changes_information
+```
+
 当然，它本身也包含了 AttributeMethods 子模块，要不然不能精确跟踪到某属性。
 
 ## Serialization
 
-`serializable_hash(options = nil)` 序列化操作，经测试和 `as_json` 结果一致。An `attributes` hash must be defined and should contain any attributes you need to be serialized.
+`serializable_hash(options = nil)` 序列化操作，经测试和 `as_json` 结果一致。使用 Serialization 需要 `record.respond_to? :attributes # => true` 因为转换的过程使用到相应 model 的 attributes 实例方法。
 
 此外，还有 module 及方法：
 

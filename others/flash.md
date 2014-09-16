@@ -19,7 +19,7 @@ end
 
 类似 Hash, 读取 flash
 
-```
+```ruby
 # show.html.erb
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
@@ -47,7 +47,7 @@ flash.notice
 
 觉得上面的写法还是不够简短，觉得 notice 和 alert 类型不够用？使用 **add_flash_types**
 
-```
+```ruby
 # in application_controller.rb
 class ApplicationController < ActionController::Base
   add_flash_types :warning, :success, :danger

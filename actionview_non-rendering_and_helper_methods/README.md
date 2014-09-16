@@ -15,8 +15,6 @@ dom_class(post, :edit)   # => "edit_post"
 dom_class(Person, :edit) # => "edit_person"
 ```
 
-
-
 ```ruby
 dom_id(Post.find(45))       # => "post_45"
 dom_id(Post.new)            # => "new_post"

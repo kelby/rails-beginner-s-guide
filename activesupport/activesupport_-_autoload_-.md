@@ -64,30 +64,30 @@ In **multi-process** servers, we may or may not want to eager load them. For ins
 The downside of eager loading is that we may eventually load code that your application never uses, increasing memory usage. This not a problem if your server uses fork or threads, it is exactly what we want (share and load the most we can), but in case you server doesn’t (for example, Thin) nothing bad is going to happen.
 
 ```ruby
-    def autoload(const_name, path = @_at_path)
-      unless path
-        full = [name, @_under_path, const_name.to_s].compact.join("::")
-        path = Inflector.underscore(full)
-      end
+def autoload(const_name, path = @_at_path)
+  unless path
+    full = [name, @_under_path, const_name.to_s].compact.join("::")
+    path = Inflector.underscore(full)
+  end
 
-      if @_eager_autoload
-        @_autoloads[const_name] = path
-      end
+  if @_eager_autoload
+    @_autoloads[const_name] = path
+  end
 
-      super const_name, path
-    end
+  super const_name, path
+end
 
-    def eager_autoload
-      old_eager, @_eager_autoload = @_eager_autoload, true
-      yield
-    ensure
-      @_eager_autoload = old_eager
-    end
+def eager_autoload
+  old_eager, @_eager_autoload = @_eager_autoload, true
+  yield
+ensure
+  @_eager_autoload = old_eager
+end
 
-    # 本质是 require
-    def eager_load!
-      @_autoloads.values.each { |file| require file }
-    end
+# 本质是 require
+def eager_load!
+  @_autoloads.values.each { |file| require file }
+end
 ```
 
 

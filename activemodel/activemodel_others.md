@@ -75,7 +75,7 @@ You have initialized an object!
 
 ### after_touch
 
-The after_touch callback will be called whenever an Active Record object is touched.
+对对象执行 touch 更新后，都会运行 after_touch 回调方法。我们可以指定其内容：
 
 ```ruby
 class User < ActiveRecord::Base
@@ -92,7 +92,7 @@ You have touched an object
 => true
 ```
 
-It can be used along with belongs_to:
+在 belongs_to 关联里，除 `touch: true` 外，使用 after_touch 可以做更多的操作。
 
 ```ruby
 class Employee < ActiveRecord::Base
@@ -121,3 +121,5 @@ Employee/Company was touched
 An Employee was touched
 => true
 ```
+
+> Note: after_touch 实际上运用得比较少。执行 touch 操作，除它之外，还会触发 after_commit 和 after_rollback 回调函数。

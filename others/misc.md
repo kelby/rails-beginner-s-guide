@@ -65,7 +65,7 @@ Child.new.do_something
 当前类定义子类时，就会触发此回调。
 (类比 Module.html#included)
 
-Example:
+举例:
 
 ```ruby
 class Foo
@@ -81,7 +81,7 @@ class Baz < Bar
 end
 ```
 
-produces:
+输出:
 
 ```
 New subclass: Bar
