@@ -94,6 +94,14 @@ sum(*args)
 
 ## QueryMethods
 
+none - 新增了 .none 去取代空陣列[]避免多餘的判斷，這東西非常實用。  
+
+not - 新增了 .not 去產生"IS NOT NULL"的 query，這東西非常實用。
+
+references - 使用 includes 的時候會有參照 table 的問題，Rails4 新增了一個 references 去明確指出參照的 table，但如果在 where 的參數內是直接用 hash 的 conditions，即可不用指定 referen<br>
+
+order - Rails4 終於把  default_scope 的 order 調整成正常的順序，default_scope 的 order 永遠會在最後而不像 Rails 3 優先權永遠是最高的。同時 order 可以使用 hash 帶入，也不需要再用字串了。<br>
+
 查表操作(数据库读操作)。大部分是Ruby层面，一般可多条件链式查询。
 
 和上面的 CollectionProxy 有类似，区别在于这是对本表操作，而不是对关系表。和下面的 FinderMethods 有类似，区别在于这返回的是 relation，可以链式查询，与 SQL 关联大。
@@ -204,7 +212,9 @@ scope(name, body, &block) - 命名一个 scope
 
 `scope(name, body, &block)` 重点说说这个方法。
 
-Adds a class method for retrieving and querying objects. A scope represents a narrowing of a database query, such as where(color: :red).select('shirts.*').includes(:washing_instructions).
+### 相当于类方法，可检索、查询对象
+
+可执行一系列的查询语句，如：where(color: :red).select('shirts.*').includes(:washing_instructions)
 
 ```ruby
 class Shirt < ActiveRecord::Base
@@ -253,7 +263,9 @@ class Shirt < ActiveRecord::Base
 end
 ```
 
-Scopes can also be used while creating/building a record.
+### scope 后可直接跟 creating/building 等方法
+
+用于创建 record
 
 ```ruby
 class Article < ActiveRecord::Base
@@ -264,7 +276,9 @@ Article.published.new.published    # => true
 Article.published.create.published # => true
 ```
 
-Class methods on your model are automatically available on scopes. Assuming the following setup:
+### scope 后可直接跟类方法
+
+定义如下：
 
 ```ruby
 class Article < ActiveRecord::Base
@@ -281,7 +295,7 @@ class Article < ActiveRecord::Base
 end
 ```
 
-We are able to call the methods like this:
+调用如下:
 
 ```ruby
 Article.published.featured.latest_article
@@ -289,3 +303,5 @@ Article.featured.titles
 ```
 
 > Note: 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
+
+scopes - 一律使用 proc object 取代原本model內的 scope 的參數，proc object 或 block 取代原本 model 內的 default_scope 的參數。因為 Model 被 cache 的關係，會導致很多 eager-load 的 scope 只有在第一次載入的時候讀取正確的值(ex:時間)，這是 Rails2 和 Rails3 令人詬病的問題，而 Rails4 規定凡是 eager-load 的 scope 一律要使用 proc object。  

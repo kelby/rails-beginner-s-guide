@@ -42,13 +42,13 @@ after_destroy
 after_commit/after_rollback
 ```
 
-> Note: after_save runs both on create and update, but always after the more specific callbacks after_create and after_update, no matter the order in which the macro calls were executed.
+> Note: 执行 create 和 update 操作，都会触发 after_save 回调。但它的顺序始终在 after_create 和 after_update 之后。即使在 model 里它定义在前面，效果一样。
 
 ### after_initialize 和 after_find
 
-The after_initialize callback will be called whenever an Active Record object is instantiated, either by directly using new or when a record is loaded from the database. It can be useful to avoid the need to directly override your Active Record initialize method.
+不管是直接 new 或其它途径，只要有对象被初始化，就会触发 after_initialize 回调。使用它，可以避免重写 initialize 方法。
 
-The after_find callback will be called whenever Active Record loads a record from the database. after_find is called before after_initialize if both are defined.
+只要从数据库里查找记录，就会触发 after_find 回调。并且，after_find 和 after_initialize 同时定义的时候，after_find 优先级要高于 after_initialize.
 
 The after_initialize and after_find callbacks have no before_* counterparts, but they can be registered just like the other Active Record callbacks.
 
@@ -72,6 +72,8 @@ You have found an object!
 You have initialized an object!
 => #<User id: 1>
 ```
+
+> Note: 上面例子已经证明，从数据库里查找记录，也会有新的对象创建，所以会有 initialize 过程。
 
 ### after_touch
 

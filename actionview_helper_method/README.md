@@ -109,15 +109,60 @@ telephone_field_tag, text_area_tag, text_field_tag, time_field_tag
 url_field_tag, utf8_enforcer_tag
 week_field_tag
 ```
+
 ## FormOptionsHelper
+
+### 不可或缺
+
+关键词：select
 ```
-collection_check_boxes, collection_radio_buttons, collection_select
-grouped_collection_select, grouped_options_for_select
-option_groups_from_collection_for_select, options_for_select, options_from_collection_for_select
-select
-time_zone_options_for_select, time_zone_select
+select(object, method, choices = nil, options = {}, html_options = {}, &block)
+
+collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
+
+# 子关键词：optgroup
+grouped_collection_select(object, method, collection, group_method, group_label_method, option_key_method, option_value_method, options = {}, html_options = {})
+
+# 和 time_zone 有关
+time_zone_select(object, method, priority_zones = nil, options = {}, html_options = {})
 ```
+
+关键词：option
+```
+options_for_select(container, selected = nil)
+
+options_from_collection_for_select(collection, value_method, text_method, selected = nil)
+```
+
+### 视情况而定
+
+关键词：option
+```
+# 和 time_zone 有关
+time_zone_options_for_select(selected = nil, priority_zones = nil, model = ::ActiveSupport::TimeZone)
+```
+
+关键词：optgroup
+```
+grouped_options_for_select(grouped_options, selected_key = nil, options = {})
+
+option_groups_from_collection_for_select(collection, group_method, group_label_method, option_key_method, option_value_method, selected_key = nil)
+```
+
+关键词：checkbox
+```
+collection_check_boxes(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block)
+```
+
+关键词：radio
+```
+collection_radio_buttons(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block)
+```
+
+collection_check_boxes 和 collection_radio_buttons 相比其它几个 helper, 是后来才提供的。
+
 ## FormHelper
+
 ```
 check_box
 color_field

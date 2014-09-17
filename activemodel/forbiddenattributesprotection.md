@@ -34,3 +34,11 @@ end
 # 原理
 raise ActiveModel::ForbiddenAttributesError if attributes.respond_to?(:permitted?) && !attributes.permitted?
 ```
+
+## 其它(下列内容为引用)
+
+Rails 4.1.5 开始 where 查询也有类似 Mass Assignment 保护了
+
+前两天将项目中的 Rails 生到了 4.1.5，跑了测试发现有几个查询相关的用例抛出了 ActiveModel::ForbiddenAttributesError 的异常，这个异常大家很熟悉，是防止 Mass Assignment 而在 Rails 4 中引入的一种保护机制。但是常用在创建或更新对象的逻辑中，突然在查询相关逻辑中抛出这样的异常，还是有些莫名奇妙。
+
+根据异常栈查看类 Rails 的源码，发现 4.1.5 where 查询确实进行了更新，新增了 opts = sanitize_forbidden_attributes(opts) 这步，而 sanitize_forbidden_attributes 本身就是 sanitize_for_mass_assignment 方法的别名。
