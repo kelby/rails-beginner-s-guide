@@ -7,7 +7,7 @@ ApplicationController
 它是下面几个 Controller 的父类，它和 Application 没有对应关系。
 
 WelcomeController  
-默认首页 index
+新建 Rails 项目时，默认首页 index
 
 MailersController  
 邮件预览的 index 和 preview 页面

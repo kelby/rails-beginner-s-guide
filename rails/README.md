@@ -54,9 +54,10 @@ public_path
 root
 ```
 
+除以上外，还有
+
 ```
-attr_writer :application
-attr_accessor :app_class, :cache, :logger
+attr_accessor :cache, :logger
 ```
 
 ```

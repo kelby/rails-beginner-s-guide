@@ -100,7 +100,7 @@ end
 
 ---
 
-總而言之，如果你在 Rails3 中不需要全部的 Controller 的功能，想要盡量拉高效能，有幾種推薦作法：
+總而言之，如果你在 Rails3中不需要全部的 Controller 的功能，想要盡量拉高效能，有幾種推薦作法：
 
 * 寫成 Rack Middleware，然後在 config/application.rb 中插入 config.middleware.use YourMiddleWare
 * 寫成 Rack App，在 config.route.rb 中將某個對應的網址指到這個 Rack App
@@ -120,6 +120,4 @@ end
 顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
 
 > Note: @app 和 env 一直在变，但又一直没变。
-
----
 

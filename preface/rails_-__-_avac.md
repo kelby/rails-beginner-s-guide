@@ -1,8 +1,6 @@
 Controller#actions 里定义实例变量，并通过 render 方法进行渲染。
 
-ActionView 渲染过程很复杂：渲染器、上下文、渲染。
-
-原理是否真的和以下类似。
+ActionView 渲染过程很复杂，涉及概念主要有：渲染器、上下文、渲染。
 
 ---
 
@@ -59,16 +57,16 @@ A well messages pattie, breaded and fried.
 
 ```ruby
 # Setting instance var
-@user = User.new( "Kelby" )
+@user = User.new("Kelby")
 
 # Get binding
-binder = self.send( :binding ) # calling a private method
+binder = self.send(:binding) # calling a private method
 
 # A simple template string
 template = "Hello, <%= @user.name %>"
 
 # Rendering template
-ERB.new( template ).result( binder )
+ERB.new(template).result(binder)
 
 # Result
 => "Helo, Kelby"
@@ -109,9 +107,10 @@ eval("@secret")       #=> nil
 Binding objects have no class-specific methods.
 
 ## ERB Public Class Methods
+
 new(str, safe_level=nil, trim_mode=nil, eoutvar='_erbout')
 
-Constructs a new ERB object with the template specified in str.
+创建一个新的 ERB 对象，需要以字符串的形式传递一个模板对象做为它的参数。
 
 ## ERB Public Instance Methods
 

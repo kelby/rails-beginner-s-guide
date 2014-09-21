@@ -10,7 +10,7 @@
 
 ## Hide Actions
 
-Adds the ability to prevent public methods on a controller to be called as actions.
+既是 public 方法，但不当做 action.
 
 提供方法：
 

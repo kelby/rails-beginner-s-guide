@@ -74,4 +74,4 @@ StreamingTemplateRenderer 用得很少，不做过多介绍。
 
 ## 最后
 
-You invoked render but did not give any of :partial, :template, :inline, :file or :text option.
+根据要渲染的内容，render 还有不少的可选参数，比如：:partial、:template、:inline、:file 和 :text，使用的时候需要根据情况挑选使用。

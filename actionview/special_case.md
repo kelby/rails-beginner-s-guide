@@ -2,7 +2,7 @@
 
 **atom_feed**
 
-Adds easy defaults to writing Atom feeds with the Builder template engine (this does not work on ERB or any other template languages).
+不同于其它信息，Atom 信息不能用 ERB 或其它模板语言创建。但通过这个方法，却能构建 Atom 订阅信息。
 
 **cache**
 

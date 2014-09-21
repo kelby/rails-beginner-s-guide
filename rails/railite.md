@@ -1,4 +1,4 @@
-# Railite
+# Railtie
 
 Railtie 是 Rails 的核心部分之一。通过它，可以扩展和/或修改 Rails 的初始化程序。
 
@@ -7,11 +7,8 @@ Action View 和 Active Record等)都属于 Railtie. 因为它们都需要自己�
 
 什么时候需要使用 Railtie? 当你的扩展符合下列情况时，可以考虑：
 
-* creating initializers
-* configuring a Rails framework for the application, like setting a generator
-* adding <tt>config.*</tt> keys to the environment
-* setting up a subscriber with ActiveSupport::Notifications
-* adding rake tasks
+* 替换默认组件
+* 底层配置
 
 ## Engine 和 Application
 

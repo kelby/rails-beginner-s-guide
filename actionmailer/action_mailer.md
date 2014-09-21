@@ -111,7 +111,7 @@ message.deliver_now                                  # sends the email
 Notifier.welcome(david).message     # => a Mail::Message object
 ```
 
-> **NOTE:** 创建并发送邮件是个比较耗时的过程，也许你应该把它们放到 [Background_Jobs](https://www.ruby-toolbox.com/categories/Background_Jobs) 里。
+> NOTE: 创建并发送邮件是个比较耗时的过程，也许你应该把它们放到 [Background_Jobs](https://www.ruby-toolbox.com/categories/Background_Jobs) 里。现在 Rails 已经默认有延迟发送的方法。
 
 除了以上方法外，用得比较多的方法还有：
 
@@ -119,6 +119,8 @@ Notifier.welcome(david).message     # => a Mail::Message object
 attachments() - 允许你添加附件到邮件
 headers(args = nil) - 定制邮件头部
 ```
+
+**创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 method_missing，而 Rails 里重写定义了 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则创建 Mailer 对象(并且把此方法当做参数对待)
 
 ## 辅助方法
 

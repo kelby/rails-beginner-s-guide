@@ -1,5 +1,7 @@
 # ActionDispatch Http
 
+和 Web 服务器已经很接近了，接收的是 request, 响应的是 response.
+
 ```ruby
 request =>
   @env = { key1: "value1", key2: value2", ... }

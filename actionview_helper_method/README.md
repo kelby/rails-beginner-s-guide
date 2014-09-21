@@ -1,285 +1,195 @@
-# ActionView 辅助方法
+# ActionView 辅助方法分类
 
-Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、number 和 model 对象等。默认它们可以在所有模板上使用。
+### 生成内容
 
-## UrlHelper
+生成 HTML 内容的为生成内容。
 
-可直接转化成 HTML：
+### 影响内容
 
-```
-button_to
-link_to
-mail_to
-```
+逻辑判断 + 生成内容或纯粹是逻辑，所有不能直观的看出生成什么 HTML 的元素
 
-涉及逻辑：
-```
-link_to_if
-link_to_unless
-link_to_unless_current
+### 单元素
 
-current_page?(options)
-```
+单独的 HTML 元素
 
-## TranslationHelper
+### 复合元素
 
-专有方法：
-```
-localize - Also aliased as: l
-translate - Also aliased as: t
-```
-## TextHelper
-```
-concat 求值
+生成的内容是 HTML 元素，再包含 HTML 元素
 
-current_cycle 循环内当前值
-cycle 循环
-reset_cycle 中断循环，从头开始
+因为表单实在是太重要了，所以区分一下是否表单元素
 
-excerpt 引用、摘录(只显示某个词及其附近的语句，其余用 ... 代替)
-highlight 高亮(默认是加 mark )
-pluralize 复数形式
+举例：
 
-safe_concat 在 ActiveSupport 里也提供了 safe_concat 方法，如果可用则用；否则用 concat
-simple_format 文本简单格式化
-truncate 截取某个长度的文本
-word_wrap 限制长度
-```
-## TagHelper
-```
-cdata_section
-content_tag
-escape_once
-tag
-```
-## SanitizeHelper
-```
-sanitize
-sanitize_css
+`link_to` 是生成内容，且是单元素
 
-strip_links
-strip_tags
-```
-## RenderingHelper
-```
-render
-```
-## RecordTagHelper
-```
-content_tag_for
+`button_to` 是生成内容，且是复合元素
 
-div_for
-```
-## OutputSafetyHelper
-```
-raw
-safe_join
-```
-## NumberHelper
-```
-number_to_currency
-number_to_human
-number_to_human_size
-number_to_percentage
-number_to_phone
-number_with_delimiter
-number_with_precision
-```
-## JavaScriptHelper
-```
-escape_javascript - Also aliased as: j
-javascript_tag
-```
-## FormTagHelper
-```
-button_tag
-check_box_tag, color_field_tag
-date_field_tag, datetime_field_tag, datetime_local_field_tag
-email_field_tag
-field_set_tag, file_field_tag, form_tag
-hidden_field_tag
-image_submit_tag
-label_tag
-month_field_tag
-number_field_tag
-password_field_tag, phone_field_tag
-radio_button_tag, range_field_tag
-search_field_tag, select_tag, submit_tag
-telephone_field_tag, text_area_tag, text_field_tag, time_field_tag
-url_field_tag, utf8_enforcer_tag
-week_field_tag
-```
+`link_to_unless_current` 和 `current_page?` 都属于影响内容。
 
-## FormOptionsHelper
+### 表单元素
 
-### 不可或缺
+四大金刚
 
-关键词：select
-```
-select(object, method, choices = nil, options = {}, html_options = {}, &block)
+FormBuilder 对 model 依赖最重，FormHelper 和 FormOptionsHelper 次之，FormTagHelper 依赖最轻。
 
-collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
+FormBuilder 和 FormHelper 在方法、函数上基本是对应的。
 
-# 子关键词：optgroup
-grouped_collection_select(object, method, collection, group_method, group_label_method, option_key_method, option_value_method, options = {}, html_options = {})
+FormBuilder 是面向对象，FormHelper 是面向函数。
 
-# 和 time_zone 有关
-time_zone_select(object, method, priority_zones = nil, options = {}, html_options = {})
-```
+**FormBuilder**
 
-关键词：option
-```
-options_for_select(container, selected = nil)
+A FormBuilder object is associated with a particular model object and allows you to generate fields associated with the model object.
 
-options_from_collection_for_select(collection, value_method, text_method, selected = nil)
-```
+你要修改的是 model 对象，途径是通过表单实现。
+所以，model 对象和表单就必需有某种联系。
+在这里，这种联系由 FormBuilder 及其实例对象完成。
 
-### 视情况而定
+The FormBuilder object can be thought of as serving as a proxy for the methods in the FormHelper module.
 
-关键词：option
-```
-# 和 time_zone 有关
-time_zone_options_for_select(selected = nil, priority_zones = nil, model = ::ActiveSupport::TimeZone)
-```
-
-关键词：optgroup
-```
-grouped_options_for_select(grouped_options, selected_key = nil, options = {})
-
-option_groups_from_collection_for_select(collection, group_method, group_label_method, option_key_method, option_value_method, selected_key = nil)
-```
-
-关键词：checkbox
-```
-collection_check_boxes(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-```
-
-关键词：radio
-```
-collection_radio_buttons(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-```
-
-collection_check_boxes 和 collection_radio_buttons 相比其它几个 helper, 是后来才提供的。
-
-## FormHelper
+3 个来源：
 
 ```
-check_box
-color_field
-date_field
-datetime_field
-datetime_local_field
-email_field
-
-fields_for
-
-file_field
-form_for
-hidden_field
-label
-month_field
-number_field
-password_field, phone_field
-radio_button, range_field
-search_field
-telephone_field, text_area, text_field, time_field
-url_field
-week_field
-```
-## FormBuilder
-```
-button
-check_box, collection_check_boxes, collection_radio_buttons, collection_select
-date_select, datetime_select
-emitted_hidden_id?
-fields_for, file_field
-grouped_collection_select
-hidden_field
-label
-multipart=
-new
-radio_button
-select, submit
-time_select, time_zone_select, to_model, to_partial_path
-```
-## DebugHelper
-```
-debug
+date_helper.rb
+form_helper.rb
+form_options_helper.rb
 ```
 
-## DateHelper
-```
-date_select, datetime_select, distance_of_time_in_words, distance_of_time_in_words_to_now
-select_date, select_datetime, select_day, select_hour, select_minute, select_month, select_second, select_time, select_year
-time_ago_in_words, time_select, time_tag
-```
+大部分是封装 @template
 
-## CsrfHelper
-```
-csrf_meta_tag, csrf_meta_tags
-```
-## CaptureHelper
-```
-capture, content_for, content_for?
-provide
-```
-## CacheHelper
-```
-cache, cache_fragment_name, cache_if, cache_unless
-```
-## AtomFeedHelper
-```
-atom_feed
-```
-## AssetUrlHelper
+大部分以 f.xxx 的形式调用
 
-仅得到 asset 所在的路径。
+> **Note:** f 就是 FormBuilder 的实例对象，所以可以调用 FormBuilder 的实例方法。
 
-```
-asset_path, asset_url, audio_path, audio_url
-compute_asset_extname, compute_asset_host, compute_asset_path
-font_path, font_url
-image_path, image_url
-javascript_path, javascript_url
-path_to_asset, path_to_audio, path_to_font, path_to_image, path_to_javascript, path_to_stylesheet, path_to_video
-stylesheet_path, stylesheet_url
-url_to_asset, url_to_audio, url_to_font, url_to_image, url_to_javascript, url_to_stylesheet, url_to_video
-video_path, video_url
-```
-## AssetTagHelper
-
-得到的是包含 asset 在内的 HTML 代码。
-
-```
-audio_tag, auto_discovery_link_tag
-favicon_link_tag
-image_alt, image_tag
-javascript_include_tag
-stylesheet_link_tag
-video_tag
-```
-## ~~ActiveModelInstanceTag~~
-
-```
-content_tag - 多了error_wrapping (继承于 TagHelper)
-error_message - 语法糖 error.messages
-error_wrapping - 根据 errors 决定是如何封装
-object
-tag
-```
-
-## 其它
-
-除了上述 helper 方法外，还有从 Controller delegate 过来的：
+构建器怎么来？
 
 ```ruby
-delegate :request_forgery_protection_token, :params, :session, :cookies, :response, :headers,
-         :flash, :action_name, :controller_name, :controller_path, :to => :controller
+# form_for 和 fields_for 调用 instantiate_builder
+
+# 再调用
+default_form_builder
+  builder = ActionView::Base.default_form_builder
+  ... ...
+end
+
+ActiveSupport.on_load(:action_view) do
+  cattr_accessor(:default_form_builder) { ::ActionView::Helpers::FormBuilder }
+end
+
+# 简单理解 builder = FormBuilder
+
+# 最后调用
+builder.new(object_name, object, self, options)
 ```
 
-form_tag 和 form_for 的区别？
-前者必需对应着 model 对象，后者就是普通的表单。
+**FormHelper**
 
-----------
+FormHelper 是面向函数
+函数(f对象，参数)
 
-此外，有一些 helper 可适用于 ActiveModel ...
+FormBuilder 是面向对象
+
+f对象.方法(参数)
+
+前者，更灵活。因为它没有限定对象，有时候我们'需要'这样做，而有时候我们没'必要'。
+
+form_for 和 fields_for 是另类
+
+大部分封装 Tags::Xxx
+
+名字 FormHelper 起得有一点不合适。
+
+**FormOptionsHelper**
+
+Provides a number of methods for turning different kinds of containers into a set of option tags.
+
+常见于两个对象之间
+
+分为目的 和 手段。
+
+比如：select_tag 是目的，options_for_select 是手段。
+
+名字 FormOptionsHelper 起得有一点不合适。
+
+**FormTagHelper**
+
+Provides a number of methods for creating form tags that don't rely on an Active Record object assigned to the template like FormHelper does. Instead, you provide the names and values manually.
+
+最接近 HTML 代码
+
+没有对象(不用对应 model)及类似概念
+
+封装 tag 或 content_tag 而来
+
+名字 FormTagHelper 起得非常不合适
+
+### 通用元素(非表单元素)
+
+区别于表单元素，这里的 helper 不用束缚于表单，比较通用。
+
+另，表单元素其实也可以脱离表单来使用。所以，上面有提到 FormXxx 模块名起得不太合适。
+
+**包含但不限于以下 Helper**
+
+UrlHelper
+
+TranslationHelper
+
+TextHelper
+
+TagHelper
+
+SanitizeHelper
+
+RenderingHelper
+
+RecordTagHelper
+
+OutputSafetyHelper
+
+NumberHelper
+
+JavaScriptHelper
+
+DebugHelper
+
+DateHelper
+
+DateTimeSelector
+
+CsrfHelper
+
+ControllerHelper
+
+CaptureHelper
+
+CacheHelper
+
+AtomFeedHelper
+
+AssetUrlHelper
+
+AssetTagHelper
+
+### 与 record 弱关联
+
+和后台数据关联不大，仅用于生成 HTML 元素。
+
+以 "_tag" 结尾的 helper 都属于这一类，如 AssetTagHelper、FormTagHelper.
+
+除此之外，还有其它，在此不一一列举。
+
+### 与 record 强关联
+
+和后台数据关系密切，需要有对象和/或其关联对象。
+
+最典型的如 form_for
+
+## 分类说明
+
+上面 helper 分类，只是为了方便理清它们的结构。实际过程中，可交叉使用，能达到目的即可，有时候直接写 HTML 也是允许的。
+
+有的方法根据其参数，可归于多个分类。
+
+因为 Rails 背后会把所有 helper 方法(函数)都会被放进同一个 module 里，所以它们之间互相调用。
+
+

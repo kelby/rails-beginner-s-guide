@@ -47,7 +47,7 @@ lookup_context
 
 ---
 
-You can create your own custom FormBuilder templates by subclassing this class. For example:
+你可以继承于 FormBuilder，然后构建和表单相关的 helper 方法，举例：
 
 ```ruby
 class MyFormBuilder < ActionView::Helpers::FormBuilder

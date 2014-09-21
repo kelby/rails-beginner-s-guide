@@ -1,9 +1,11 @@
-服务 ActionController 和 ActionMailer，将站场从 ActionDispatch 转移到具体的某个 action.
+服务 ActionController 和 ActionMailer，将站场从 ActionDispatch 转移到具体的某个 action 或 mailer 对象。
 
 AbstractController 无论是它自己定义的方法，还是封装 ActionView 和 ActionDispatch 得到的方法，最终都提供给 ActionController 和 ActionMailer 使用。  
 这些方法(或模块)包含但不限于渲染(模板或局部模板)、Helper相关、回调、Mime、UrlFor 等。
 
 AbstractController 起到了承上启下的作用(所以，有时候它的代码会让你觉得很迷惑)，及 ActionDispatch 到 ActionController 转换，并且也实现了一些重要的方法，如：Callbacks、Helpers.
+
+下面只挑选部分模块来讲解，其它的模块，可以参考"源码剖析"。
 
 ## Helpers
 
@@ -117,11 +119,95 @@ skip_action_callback 意味着 skip: before, after, around
 
 ## Rendering
 
-`render(*args, &block)`
-
-真正的渲染并不是它完成，起到一个承上启下的作用。
+`render(*args, &block)` Controller 里的渲染。
 
 封装了 ActionView 里的 TemplateRenderer 和 PartialRenderer，提供 render 给 ActionController, ActionMailer 渲染模板文件或局部模板。
+
+真正的渲染工作并不是它完成，它只是封装了 View 里的渲染方法。所以，使用过程中有疑问的，可以查看 View 里对应 render 方法的文档。
+
+1) 不想渲染任何东西，可以使用：
+
+```ruby
+render nothing: true
+```
+
+此时，默认 status = 200, 你也可以手动指定状态码。
+
+2) 不想渲染任何东西，还可以使用方法：
+
+`head 
+
+3) 不想渲染，只想查看结果可以使用 `render_to_string`  
+传递给它的参数和 render 一样，但它始终返回一个字符串。
+
+4) 一些常用可选参数
+
+明确指定要渲染的模板，用 template
+
+```
+render template: "products/show"
+```
+
+明确指定要渲染的文件，用 file
+
+```
+render file: "/u/apps/warehouse_app/current/app/views/products/show"
+```
+
+沉浸文件，默认是没有 layout 的，如果需要，你可以手动指定 `layout: true`
+
+5) 不用模板，但效果类似，用 inline
+
+```
+render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
+```
+
+默认后面的代码用 ERB 解析，如果需要，你可以手动指定 `type: :builder`
+
+inline 违背了 MVC 模式，实践起来并不友好，不推荐使用。
+
+6) 渲染纯文本，用 plain
+
+```
+render plain: "OK"
+```
+
+7) 不用模板，但效果类似，用 html
+
+```
+render html: "<strong>Not Found</strong>".html_safe
+```
+
+和 inline 一样，这违背了 MVC 模式，实践起来并不友好，不推荐使用。
+
+8) 渲染返回 json
+
+```
+render json: @product
+```
+
+这里的数据会自动转换成 json 格式，不需要调用 to_json
+
+9) 渲染返回 xml
+
+```
+render xml: @product
+```
+
+这里的数据会自动转换成 xml 格式，不需要调用 to_xml
+
+10) 渲染返回 js
+
+```
+render js: "alert('Hello Rails');"
+```
+
+11) 渲染，但不指定类型，用 body
+
+```
+render body: "raw"
+```
+
 
 ## Base
 
@@ -133,7 +219,7 @@ ActionDispatch -> Metal -> AbstractController -> ActionController 请求是如�
 
 `controller_path()` 返回当前 Controller 所在的路径(包括目录、文件名)。例如，MyApp::MyPostsController 返回"my_app/my_posts"。
 
-`action_methods()` 返回当前 Controller 所包含的 action。
+`action_methods()` 返回当前 Class 所包含的 action，默认等同于 public_instance_methods. 这里的 Class 可以是 Controller，也可以是 Mailer. 对于 AbstractController 来说，它们都是 Base 的子类，概念一样。
 
 那么，如何获取当前程序所有的 Controller 和 action ?
 

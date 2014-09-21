@@ -108,3 +108,39 @@ mail(headers = {}, &block) 返回 Mail对象本身
 
 > Note: ActiveMailer 可以单独使用，并不绑定于 Rails<br/>
 > Note: C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C。所以 ActionMailer::Base 才会 include 一堆代码，尽管有的对它本身没有用。
+
+## Base 方法列表
+
+```ruby
+attachments
+default, default_i18n_subject
+headers
+mail, mailer_name
+receive, register_interceptor, register_interceptors, register_observer, register_observers
+set_content_type, supports_path?
+```
+
+有一些，在上面已经介绍过了。
+
+另外，它包含了一些子模块，根据 Ruby 规则，它们也是可调用的。包括：
+
+ActionMailer::DeliveryMethods - 邮件发送
+ActionMailer::Previews - 邮件预览
+AbstractController::Rendering - 渲染
+AbstractController::Helpers - 引进、输出辅助方法
+AbstractController::Translation - I18n 相关
+AbstractController::Callbacks - 支持回调
+ActionView::Layouts - 视图布局等
+
+## MessageDelivery
+
+专用于邮件的发送。
+
+这个文件是重构 + 引入 DeliveryJob 后产生的。
+
+```
+deliver_now, deliver_now!
+deliver_later, deliver_later!
+
+message
+```

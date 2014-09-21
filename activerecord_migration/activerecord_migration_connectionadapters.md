@@ -3,14 +3,14 @@
 重要的如下：
 
 ```
-# index
+# index(索引)
 add_index
 remove_index
 rename_index
 index_exists?
 index_name_exists?
 
-# column
+# column(属性)
 add_column
 rename_column
 change_column
@@ -18,13 +18,14 @@ remove_column
 remove_columns
 column_exists?
 
-# table
+# table(表)
 create_table
 drop_table
 rename_table
 change_table
 table_exists?
 
+# 外键
 add_reference
 add_belongs_to
 ```
@@ -76,7 +77,6 @@ end
 ```
 
 The table definitions The Columns are stored as a ColumnDefinition in the columns attribute.
-
 
 ```
 belongs_to

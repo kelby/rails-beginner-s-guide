@@ -1,4 +1,4 @@
-# ActionView 非渲染和辅助方法
+# ActionView 非渲染 & 非辅助方法
 
 ## RecordIdentifier
 
@@ -25,3 +25,13 @@ dom_id(Post.new, :custom)    # => "custom_post"
 ```
 
 实现它们时用到了 ActiveModel::Model 里的方法。
+
+## RoutingUrlFor
+
+`url_for`
+
+视图里的 url_for，极端情况下会用到 ActionDispatch 里的东西。
+
+有多个 url_for 方法，这里指的是 View 里用到的。
+
+它生成的内容是 url，区别于 link_to 等生成的是链接。

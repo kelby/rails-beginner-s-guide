@@ -1,7 +1,5 @@
 # ConditionalGet
 
-Rails 3.1 Moved etag responsibility from ActionDispatch::Response to the middleware stack.
-
 ```ruby
 # 单独使用没意义
 etag(&etagger) - 追加元素到 etag
@@ -40,8 +38,14 @@ Cache-Control	private, max-age=0, must-revalidate
 
 > Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是Web服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
 
-什么也没改 f9d7568ac634fc9ad270f2348d5f3b41
-更改表态内容 d9cc40e9e225a3e738c68b01f17ef4b0
+什么也没改 
+
+f9d7568ac634fc9ad270f2348d5f3b41
+
+
+更改表态内容 
+
+d9cc40e9e225a3e738c68b01f17ef4b0
 update_columns 7128cbb34d84aa096ee62d69d1599a32
 update_attributes 98eac754b15c61f4c8b4f79b7f0a5645
 

@@ -1,14 +1,12 @@
-Controller 里的 public方法(也就是action) 会自动对应 Route 里的路由规则。当请求到来时，action接受请求并处理，最后渲染相应视图模板(Get-and-show)或重定向到另一action(do-and-redirect)。
+Controller 里的 public方法(也就是action) 会自动对应 Route 里的路由规则。当请求到来时，action 接受请求并处理，最后渲染相应视图模板(Get-and-show)或重定向到另一 action(do-and-redirect)。
 
-默认，只有 ApplicationController 直接继承于 ActionController::Base，其它的控制器继承于 ApplicationController。所以，如果你想在所有controller处理之前做一些什么，你可以把它们写在 ApplicationController 里。
+默认，只有 ApplicationController 直接继承于 ActionController::Base，其它的控制器继承于 ApplicationController。所以，如果你想在所有 controller 处理之前做一些什么，你可以把它们写在 ApplicationController 里。
 
 ## Metal
 
-**ActionController::Metal** is the simplest possible controller, providing a valid Rack interface without the additional niceties provided by **ActionController::Base**
+**ActionController::Metal** 本身是一个功能极简的 Controller, 但它符合 Rack 接口规范，所以也可以把它称之为 Rack application. 相比于 **ActionController::B*se* 它的功能真的很有限。
 
-If you have a Rails application that has service end points that need to be really, really fast. So fast that the few milliseconds that a trip through the Rails router and Action Controller path is too much.
-
-For this scenario, we’ve built a thin wrapper around the generic Rack middleware and given it a place in the hierarchy along with the name “Metal”.
+如你的 Rails 项目对性能要求比较高，或者说对实时性要求比较高，又或者你的项目做为 API 对外提供服务，那么你可以尝试直接继承使用 Metal.
 
 > Rails Metal is a subset of Rack middleware
 
@@ -18,7 +16,7 @@ For this scenario, we’ve built a thin wrapper around the generic Rack middlewa
 
 `respond_to(*mimes, &block)` - 全部内容(包含类型和内容)
 
-可以有变种：
+respond_to 可以指定 format, 如 html. 而在 format 里又可以指定 variant, 如：phone.
 
 ```ruby
 format.html.phone - variant inline syntax
@@ -182,9 +180,7 @@ config.action_controller.perform_caching = false
 
 **Caching stores**
 
-All the caching stores from ActiveSupport::Cache are available to be used as backends for Action Controller caching.
-
-Configuration examples (MemoryStore is the default):
+配置存储方式 (默认是 MemoryStore ):
 
 ```ruby
 config.action_controller.cache_store = :memory_store

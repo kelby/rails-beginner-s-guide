@@ -3,7 +3,7 @@
 ```
 # your_railtie/railtie.rb
 module YourRailtie
-  class Engine < Rails::Engine
+  class Railtie < Rails::Railtie
     # ... ...
   end
 end

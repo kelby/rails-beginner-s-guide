@@ -58,6 +58,8 @@ class MainpageController < ActionController::Metal
 end
 ```
 
+参考
+
 [A Rails App in a Single File ](http://rofish.net/rails_single_file.pdf)
 
 https://gist.github.com/ROFISH/11273048

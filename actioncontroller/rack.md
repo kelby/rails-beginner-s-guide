@@ -64,12 +64,11 @@ class YourRack
 end
 ```
 
----
-
-## Supported web servers
+## 标准的 web 服务器
 
 The included handlers connect all kinds of web servers to Rack:
 
+```
 Mongrel
 EventedMongrel
 SwiftipliedMongrel
@@ -79,11 +78,13 @@ CGI
 SCGI
 LiteSpeed
 Thin
+```
 
-## Supported web frameworks
+## 支持的 web 框架
 
 These frameworks include Rack adapters in their distributions:
 
+```
 Camping
 Coset
 Espresso
@@ -101,19 +102,22 @@ Vintage
 Waves
 Wee
 … and many others.
+```
 
-## Available middleware
+## 可用的 middleware
 
 Between the server and the framework, Rack can be customized to your applications needs using middleware, for example:
 
+```
 Rack::URLMap, to route to multiple applications inside the same process.
 Rack::CommonLogger, for creating Apache-style logfiles.
 Rack::ShowException, for catching unhandled exceptions and presenting them in a nice and helpful way with clickable backtrace.
 Rack::File, for serving static files.
 …many others!
 All these components use the same interface, which is described in detail in the Rack specification. These optional components can be used in any way you wish.
+```
 
----
+## 官方介绍
 
 Rack is more than interface that can be used to talk to web server. It’s used to group and order modules, which are usually Ruby classes, and specify dependency between them. Rack::Builder puts these modules on top of each other, creating stack-like structure of final web application.
 
@@ -121,7 +125,7 @@ If you are using Ruby on Rails, it is usually used as top-level module. In fact,
 
 What is really interesting is Rack’s simple architecture. Rack middleware module must only: – have constructor that takes next application in stack as parameter – respond to “call” method, that takes environment hash as a parameter. Returning value from this call is an array of: status code, environment hash and response body.
 
----
+## 使用举例
 
 Requiring 'rack/contrib' will add autoloads to the Rack modules for all of the components included. The following example shows what a simple rackup (config.ru) file might look like:
 

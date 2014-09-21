@@ -11,7 +11,9 @@ set_callback
 等
 
 中游 ActiveModele::Callbacks 的
-define_model_callbacks
+define_model_callbacks  
+和运用  
+define_callbacks :validation
 
 下游
 ActiveModele::Callbacks 的
@@ -23,9 +25,9 @@ ActiveRecord::Callbacks 的
     :save, :create, :update, :destroy
 对应的是 Model 里的回调(或过滤)
 
-
 AbstractController::Callbacks 的
 
+```
     before_action
     after_action
     around_action
@@ -34,6 +36,8 @@ AbstractController::Callbacks 的
     prepend
     skip
     append
+```
+
 对应的是 Controller 里的回调(或过滤)
 
 ActiveJob::Callbacks 的

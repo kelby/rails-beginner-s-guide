@@ -1,4 +1,5 @@
-# ActiveSupport - Class - 类属性 - 运用define_singleton_method
+# ActiveSupport - Class - 类属性 - 运用 define_singleton_method
+
 ## 作用
 
 defines one or more class-level attributes whose value is inheritable and overwritable by subclasses and instances

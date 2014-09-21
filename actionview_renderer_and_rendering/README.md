@@ -44,13 +44,16 @@ new_template = ActionView::Template.new(body, "hello template", details.fetch(:h
 
 - Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
 
-In order to use this module, all you need is to implement view_renderer that returns an ActionView::Renderer object.
+要使用这个模块，你需要实现 `view_renderer` 方法，这个方法返回一个 ActionView::Renderer 对象。
+
 - PartialRenderer - render(context, options, block)
 
-Used for rendering partials
+用于渲染局部模板。
+
 - Renderer - render(context, options)
 
-Main render entry point shared by AV and AC.
+ActionView 和 ActionController 渲染的主要入口。
+
 - Template - render(view, locals, buffer=nil, &block)
 
 剩下两个在 AbstractController::Rendering 和 ActionController::Instrumentation 里。
