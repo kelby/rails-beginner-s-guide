@@ -50,7 +50,7 @@ after_commit/after_rollback
 
 只要从数据库里查找记录，就会触发 after_find 回调。并且，after_find 和 after_initialize 同时定义的时候，after_find 优先级要高于 after_initialize.
 
-The after_initialize and after_find callbacks have no before_* counterparts, but they can be registered just like the other Active Record callbacks.
+initalize 和 find 只有 after_* 回调，也就是 after_initialize 和 after_find callbacks，没有对应的 before_* 回调。但它的用法和其它的回调一 样：
 
 ```ruby
 class User < ActiveRecord::Base

@@ -23,7 +23,7 @@ Rails 在改动，特别是一些模块的名字，但对外提供的 API 一般
 创建邮件实例  
 又因为 include 了下面的模块，所以这个实例可以使用其它下面模块所定义的方法。
 
-**MailHelper**
+**Mail Helper**
 
 几个邮件相关的 Helper 方法。如：attachments、mailer、message，还有不太实用的 block_format、format_paragraph.
 
@@ -51,11 +51,11 @@ end
 
 > Note: 默认会发送和 mail 所在方法名同名的所有模板，不区分 Mime 格式。这也是我们常用的。
 
-**DeliveryMethods**
+**Delivery Methods**
 
 配置邮件服务器，比如：邮件发送方式 add_delivery_method.
 
-**LogSubscriber**
+**Log Subscriber**
 
 日志记录，继承于 ActiveSupport::LogSubscriber，执行哪个方法时想要记录日志，只需要创建和它同名方法，然后打印日志即可。LogSubscriber 章节会讲到。
 
@@ -117,14 +117,14 @@ register_preview_interceptor, register_preview_interceptors
 
 ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。
 
-**DeliveryJob**
+**Delivery Job**
 
 使用 ActiveJob，配置以便延迟发送邮件。
 
-**TestCase**
+**Test Case**
 
 测试样例。
 
-**TestHelper**
+**Test Helper**
 
 测试方法 assert_emails 和 assert_no_emails，本质是封装 assert_equal.

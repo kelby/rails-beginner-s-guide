@@ -44,7 +44,7 @@ class UserMailer < ActionMailer::Base
 end
 ```
 
-`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 `default_params`，默认已经有
+`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有
 
 ```ruby
 default_params = {
@@ -57,25 +57,29 @@ default_params = {
 
 还有在 config/environments 目录下针对不同执行环境会有不同的邮件服务器设置：
 
-    config.action_mailer.default_options = { from: "no-reply@example.org" }
+```ruby
+config.action_mailer.default_options = { from: "no-reply@example.org" }
+```
 
-前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了作用域稍有不同外，它们其实是一样的。
+前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
 
-    alias :default_options= :default
+```ruby
+alias :default_options= :default
+```
 
 ### 创建消息并渲染邮件模板
 
 `mail(headers = {}, &block)` 可接收一个代码块做为参数，header(头部)可接受：
 
-```
-:subject - 主题
-:to - 收件人
-:from - 发件人
-:cc - 抄送
-:bcc - 密送
-:reply_to - 回邮地址
-:date - 时间
-```
+| 参数 | 含义 |
+| :-- | -- |
+| :subject | 主题 |
+| :to | 收件人 |
+| :from | 发件人 |
+| :cc | 抄送 |
+| :bcc | 密送 |
+| :reply_to | 回邮地址 |
+| :date |时间|
 
 > NOTE: 想了解更多 header，点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
 
@@ -95,13 +99,13 @@ end
 
 ```ruby
 # Creates the email and sends it immediately
-Notifier.welcome("david@loudthinking.com").deliver_now
+Notifier.welcome("helloworld@example.com").deliver_now
 ```
 
 也可以先创建邮件对象，稍后邮件对象调用方法发送邮件：
 
 ```ruby
-message = Notifier.welcome("david@loudthinking.com") # => an ActionMailer::MessageDeliver object
+message = Notifier.welcome("helloworld@example.com") # => an ActionMailer::MessageDeliver object
 message.deliver_now                                  # sends the email
 ```
 
@@ -115,10 +119,10 @@ Notifier.welcome(david).message     # => a Mail::Message object
 
 除了以上方法外，用得比较多的方法还有：
 
-```
-attachments() - 允许你添加附件到邮件
-headers(args = nil) - 定制邮件头部
-```
+| 方法| 解释 |
+|-----|------|
+|attachments() | 允许你添加附件到邮件|
+|headers(args = nil) | 定制邮件头部|
 
 **创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 method_missing，而 Rails 里重写定义了 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则创建 Mailer 对象(并且把此方法当做参数对待)
 
@@ -126,22 +130,22 @@ headers(args = nil) - 定制邮件头部
 
 在相应的视图里，用得比较多的辅助方法：
 
-```
-attachments() - 邮件附件
-block_format(text) - 处理文本消息，行首空两格，每行长度不超过 72 个字符
-format_paragraph(text, len = 72, indent = 2)
-mailer() - 邮件
-message() - 邮件正文
-```
+|方法|解释|
+|--|--|
+|mailer()|邮件对象|
+|message()|邮件|
+|attachments()|邮件附件|
+|format_paragraph(text, len = 72, indent = 2)|处理一段文本消息，行首空两格，每行长度不超过 72 个字符|
+|block_format(text)|使用 format_paragraph 处理大段的文本|
 
 ## 邮件测试
 
 默认 Rails 提供两个 helper 方法用于测试：
 
-```
-assert_emails(number) - 断言已经发送的邮件数
-assert_no_emails(&block) - 断言没有邮件发送出去(可用 assert_emails 0 代替)
-```
+|方法|解释|
+|--|--|
+|assert_emails(number) | 断言已经发送的邮件数|
+|assert_no_emails(&block) | 断言没有邮件发送出去(可用 assert_emails 0 代替)|
 
 ## 邮件接收
 

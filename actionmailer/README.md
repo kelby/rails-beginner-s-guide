@@ -63,7 +63,7 @@ end
 
 email = Mailer.daily_email
 puts email
-email.deliver
+email.deliver_now
 ```
 
 ```ruby

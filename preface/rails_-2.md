@@ -1,5 +1,6 @@
 # Rails - 其它
 
+用来理解原理，很好，但不实用。
 
 比较有趣好玩，但现在还没想好如何放到文中。暂时记录在此。
 
@@ -9,8 +10,7 @@
 
 ```ruby
 # config.ru
-require 'rubygems'
-require 'bundler/setup’ # Gemfile only lists 'rack'
+require 'bundler/setup' # Gemfile only lists 'rack'
 
 run Proc.new {|env|
  if env["PATH_INFO"] == "/"
@@ -20,6 +20,8 @@ run Proc.new {|env|
  end
 }
 ```
+
+可通过 `rackup config.ru` 运行以上代码，默认在 http://localhost:9292/ 可以查看运行结果。
 
 如果你需要 Route, Controller, View，还有其它：
 
@@ -63,3 +65,21 @@ end
 [A Rails App in a Single File ](http://rofish.net/rails_single_file.pdf)
 
 https://gist.github.com/ROFISH/11273048
+
+## 解读以上进化过程
+
+run 一个 Rack application.
+
+run 是应用服务器提供的。
+
+1. 纯 Rack 实现
+2. 引入 'action_dispatch', 使用 routes
+3. 纯手动实现 Controller#actions
+4. 引入 'action_controller'，使用 Metal
+5. 项目使用其它 middleware, Controller 包含其它模块
+6. Controller 里纯手工打造 View 渲染相关代码
+7. 引进 'action_view'
+ 
+
+8. 和 Rails 对比，没有使用 ActionMailer，ActiveJob, ActiveModel, ActiveRecord
+9. 和 Rails 对比，使用但没感受到 AbstractController，ActiveSupport, Railties

@@ -2,14 +2,12 @@
 
 也就是 ActionMailer::Base，我们继承的就是它。
 
-```
-default(value = nil) - value必需是Hash类型
-attachments()
-```
+|方法|解释|
+|--|--|
+|default(value = nil) | value必需是Hash类型|
+|attachments() | 允许你在邮件里添加附件|
 
-`attachments()`
-
-允许你在邮件里添加附件，例如：
+`attachments()` 使用举例：
 
 ```ruby
 mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
@@ -34,7 +32,7 @@ mail.attachments['filename.jpg']   # => Mail::Part object or nil
 mail.attachments[0]                # => Mail::Part (first attachment)
 ```
 
-`default(value = nil)`
+`default(value = nil)` 使用举例：
 
 ```ruby
 # 下面两者一样
@@ -59,11 +57,14 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.perform_deliveries = true
 ```
 
-设置默认值，和 配置文件里的 `default_options=` 一样。
+设置默认值，和配置文件里的 `default_options=` 一样。
 
-`mail(headers = {}, &block)`
+| 方法 | 解释 |
+| -- | -- |
+| mail(headers = {}, &block) | 表示邮件对象 |
+| receive(raw_mail) | 表示接收邮件 |
 
-可接收一个代码块做为参数，header(头部)可接受：
+`mail(headers = {}, &block)` header(头部)可接受以下参数，并且最后可接收一个代码块：
 
 ```
 :subject - 主题
@@ -107,7 +108,6 @@ mail(headers = {}, &block) 返回 Mail对象本身
 格式化文本。*len* 为每行长度，*index* 为行首空格数。
 
 > Note: ActiveMailer 可以单独使用，并不绑定于 Rails<br/>
-> Note: C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C。所以 ActionMailer::Base 才会 include 一堆代码，尽管有的对它本身没有用。
 
 ## Base 方法列表
 
@@ -144,3 +144,46 @@ deliver_later, deliver_later!
 
 message
 ```
+
+## 其它
+
+ActionMailer::Base 继承于类 AbstractController::Base,
+又包含，但不限于以下'外部'模块
+
+```
+AbstractController::Rendering
+
+AbstractController::Logger
+AbstractController::Helpers
+AbstractController::Translation
+AbstractController::AssetPaths
+AbstractController::Callbacks
+
+ActionView::Layouts
+```
+
+`Dar < Car < Bar` 
+
+有时候 Car 要 extend 前人 Bar，并不是为了 Car 自己使用，而是为了方便后人 Dar. ActionMailer::Base 部分代码充当的角色和 Car 一样，它自己却没有使用，而是为了方便我们自定义的 Mailer 类调用。
+
+如：
+
+Mailer 里：
+
+```
+before_action :add_inline_attachment!
+
+layout "mailer"
+
+helper :application
+```
+
+View 里：
+
+```
+<%= url_for(host: "example.com", controller: "welcome", action: "greeting") %>
+
+<%= users_url(host: "example.com") %>
+```
+
+

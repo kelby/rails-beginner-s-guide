@@ -250,7 +250,7 @@ http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/
 http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/
 http://www.codelearn.org/blog/rails-cache-with-examples
 
-> **Note:** 在 Controller 和 View 里写缓存相关的代码，这真的很丑陋。并且一个页面往往由很多元素组成，只能在它的 action 里管理显然很不方便。推荐 cells
+> Note: 在 Controller 和 View 里写缓存相关的代码，这真的很丑陋。并且一个页面往往由很多元素组成，只能在它的 action 里管理显然很不方便。推荐 cells
 
 ## 其它
 ------

@@ -1,6 +1,6 @@
 # Model 之外
 
-## AttributeMethods
+## Attribute Methods
 
 AttributeMethods 给了我们大量的 accessor(访问器，读、写方法) 和 attribute 相关方法。用一种很方便的手法，为属性添加前缀、后缀。
 
