@@ -4,32 +4,45 @@
 
 |方法|解释|
 |--|--|
-|default(value = nil) | value必需是Hash类型|
 |attachments() | 允许你在邮件里添加附件|
+|default(value = nil) | value必需是Hash类型|
 
-`attachments()` 使用举例：
+`attachments()`
+
+类型：
+
+```ruby
+a_mailer.attachments.class
+=> Mail::AttachmentsList
+
+# 类似数组
+a_mailer.attachments
+=> []
+```
+
+使用举例(定义)：
 
 ```ruby
 mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
 ```
 
-Rails 会自动获取文件名、文件类型，然后帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64编码的附件内容。
+只需要指定文件名、文件类型，然后Rails 会自动帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64编码的附件内容。
 
 你也可以重写它们：
 
 ```ruby
-mail.attachments['filename.jpg'] = {mime_type: 'application/x-gzip',
-                                    content: File.read('/path/to/filename.jpg')}
+mail.attachments['filename.jpg'] = { mime_type: 'application/x-gzip',
+                                     content: File.read('/path/to/filename.jpg') }
 ```
 
-你也要可以指定附件：
+使用举例(调用)：
 
 ```ruby
 # By Filename
-mail.attachments['filename.jpg']   # => Mail::Part object or nil
+mail.attachments['filename.jpg'] # => Mail::Part object or nil
 
 # or by index
-mail.attachments[0]                # => Mail::Part (first attachment)
+mail.attachments[0]              # => Mail::Part (first attachment)
 ```
 
 `default(value = nil)` 使用举例：
@@ -53,7 +66,10 @@ config.action_mailer.smtp_settings = {
   authentication: 'plain',
   enable_starttls_auto: true
 }
+
+# 默认是 false, 通常开发环境下可设置为 true
 config.action_mailer.raise_delivery_errors = true
+# 默认即是 true
 config.action_mailer.perform_deliveries = true
 ```
 
@@ -66,21 +82,21 @@ config.action_mailer.perform_deliveries = true
 
 `mail(headers = {}, &block)` header(头部)可接受以下参数，并且最后可接收一个代码块：
 
-```
-:subject - 主题
-:to - 收件人
-:from - 发件人
-:cc - 抄送
-:bcc - 密送
-:reply_to - 回邮地址
-:date - 时间
-```
+| 参数 | 含义 |
+| :-- | -- |
+| :subject | 主题 |
+| :from | 发件人 |
+| :to | 收件人 |
+| :cc | 抄送 |
+| :bcc | 密送 |
+| :reply_to | 回邮地址 |
+| :date |时间|
 
 `receive(raw_mail)`
 
 Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件对象。
 
-`mailer_name()` 返回文件名，或者anonymous。
+`mailer_name()` 返回文件名，或者 anonymous。
 
 和 Mail 有关联？
 
@@ -88,51 +104,30 @@ headers 返回 Mail对象的 headers 或 Mail对象本身
 attachments 返回 Mail对象的 attachments
 mail(headers = {}, &block) 返回 Mail对象本身
 
-[如何使用 Mail](https://github.com/mikel/mail#usage)
-
-## MailHelper
-
-`attachments()`  
-表示邮件内容里的附件。
-
-`mailer()`  
-表示邮件所在的Controller对象。
-
-`message()`  
-表示邮件本身。
-
-`block_format(text)`  
-格式化文本，行首空两格，每行长度不超过 72 个字符。(邮件的标准格式，就是这样的)
-
-`format_paragraph(text, len = 72, indent = 2)`  
-格式化文本。*len* 为每行长度，*index* 为行首空格数。
-
-> Note: ActiveMailer 可以单独使用，并不绑定于 Rails<br/>
-
-## Base 方法列表
+除了以上方法外，还有：
 
 ```ruby
-attachments
-default, default_i18n_subject
+default_i18n_subject
 headers
-mail, mailer_name
-receive, register_interceptor, register_interceptors, register_observer, register_observers
-set_content_type, supports_path?
+register_interceptor, register_interceptors
+register_observer, register_observers
+set_content_type
+supports_path?
 ```
 
-有一些，在上面已经介绍过了。
+[如何使用 Mail](https://github.com/mikel/mail#usage)
 
-另外，它包含了一些子模块，根据 Ruby 规则，它们也是可调用的。包括：
+## Mail Helper
 
-ActionMailer::DeliveryMethods - 邮件发送
-ActionMailer::Previews - 邮件预览
-AbstractController::Rendering - 渲染
-AbstractController::Helpers - 引进、输出辅助方法
-AbstractController::Translation - I18n 相关
-AbstractController::Callbacks - 支持回调
-ActionView::Layouts - 视图布局等
+| 方法 | 解释 |
+| -- | -- |
+| attachments() | 表示邮件内容里的附件。 |
+| mailer() | 表示邮件所在的Controller对象。 |
+| message() | 表示邮件本身。 |
+| block_format(text) | 格式化文本，行首空两格，每行长度不超过 72 个字符。(邮件的标准格式，就是这样的) |
+| format_paragraph(text, len = 72, indent = 2) | 格式化文本。*len* 为每行长度，*index* 为行首空格数。 |
 
-## MessageDelivery
+## Message Delivery
 
 专用于邮件的发送。
 
@@ -145,22 +140,22 @@ deliver_later, deliver_later!
 message
 ```
 
+deliver 直接调用了 gem 'mail' 提供的方法，或加入延迟任务再调用。
+
 ## 其它
 
 ActionMailer::Base 继承于类 AbstractController::Base,
-又包含，但不限于以下'外部'模块
+又包含但不限于以下'外部'模块，根据 Ruby 规则，它们也是可调用的。包括：
 
-```
-AbstractController::Rendering
-
-AbstractController::Logger
-AbstractController::Helpers
-AbstractController::Translation
-AbstractController::AssetPaths
-AbstractController::Callbacks
-
-ActionView::Layouts
-```
+| 模块 | 作用 |
+| -- | -- |
+| ActionMailer::DeliveryMethods | 邮件发送 |
+| ActionMailer::Previews | 邮件预览 |
+| AbstractController::Rendering | 渲染 |
+| AbstractController::Helpers | 引进、输出辅助方法 |
+| AbstractController::Translation | I18n 相关 |
+| AbstractController::Callbacks | 支持回调 |
+| ActionView::Layouts | 视图布局等 |
 
 `Dar < Car < Bar` 
 
@@ -170,7 +165,7 @@ ActionView::Layouts
 
 Mailer 里：
 
-```
+```ruby
 before_action :add_inline_attachment!
 
 layout "mailer"
@@ -180,7 +175,7 @@ helper :application
 
 View 里：
 
-```
+```ruby
 <%= url_for(host: "example.com", controller: "welcome", action: "greeting") %>
 
 <%= users_url(host: "example.com") %>

@@ -1,0 +1,1 @@
+# ActionDispatch Cookies

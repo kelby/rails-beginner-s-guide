@@ -1,6 +1,6 @@
 ## SchemaStatements
 
-重要的如下：
+重要的操作或问询如下：
 
 ```
 # index(索引)
@@ -30,37 +30,47 @@ add_reference
 add_belongs_to
 ```
 
-其它
+其它操作或问询：
 
 ```
-add_foreign_key, add_timestamps, assume_migrated_upto_version
-change_column_default, change_column_null, columns, create_join_table
-drop_join_table
-foreign_keys
+add_foreign_key, add_timestamps
+
+assume_migrated_upto_version
+
+change_column_default, change_column_null
+
 initialize_schema_migrations_table
+
+create_join_table
+drop_join_table
+
+columns
+foreign_keys
 native_database_types
-remove_belongs_to,  remove_foreign_key, remove_reference, remove_timestamps
+
+remove_belongs_to, remove_foreign_key, remove_reference, remove_timestamps
+
 table_alias_for
 ```
 
 ## Instance Protected methods
 
 ```
-add_index_sort_order
-index_name_for_remove
 options_include_default?
-quoted_columns_for_index
+
+add_index_sort_order
 rename_column_indexes
 rename_table_indexes
+
+index_name_for_remove
+quoted_columns_for_index
 ```
 
 ## TableDefinition
 
 **简单划分 create_table**
 
-Represents the schema of an SQL table in an abstract way. This class provides methods for manipulating the schema representation.
-
-Inside migration files, the t object in create_table is actually of this type:
+使用 create_table 时，传递给 block 的参数 `t` 就是此类型：  
 
 ```ruby
 class SomeMigration < ActiveRecord::Migration
@@ -76,24 +86,27 @@ class SomeMigration < ActiveRecord::Migration
 end
 ```
 
-The table definitions The Columns are stored as a ColumnDefinition in the columns attribute.
+而 `t` 所支持的数据类型通过 `column` 对外开放：
 
 ```
-belongs_to
-column, columns
+column
+
+remove_column
+
+columns
 index
 primary_key
-references, remove_column
 timestamps
+belongs_to & references
 ```
 
 ## Table
 
 **简单划分 change_table**
 
-Represents an SQL table in an abstract way for updating a table. Also see TableDefinition and ActiveRecord::ConnectionAdapters::SchemaStatements#create_table
+相关模块或方法：TableDefinition 和 SchemaStatements#create_table
 
-Available transformations are:
+支持的数据类型或操作有:
 
 ```ruby
 change_table :table do |t|
@@ -126,9 +139,18 @@ end
 ```
 
 ```
-belongs_to
-change, change_default, column, column_exists?
-index, index_exists?
-references, remove, remove_belongs_to, remove_index, remove_references, remove_timestamps, rename, rename_index
+column_exists?
+index_exists?
+
+change, change_default
+
+remove, remove_index, remove_timestamps
+remove_belongs_to & remove_references
+
+rename, rename_index
+
+column
+index
 timestamps
+belongs_to & references
 ```

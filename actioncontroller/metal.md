@@ -1,4 +1,4 @@
-# Metal
+# Metal 模块介绍
 
 metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品。
 
@@ -27,86 +27,11 @@ get 'hello', to: HelloController.action(:index)
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
-## Rendering Helpers
-
-默认 <tt>ActionController::Metal</tt> 是没有提供渲染视图、模板或其它需要明确调用 <tt>response_body=</tt>, <tt>content_type=</tt>, 和 <tt>status=</tt> 的方法。如果你需要这些，可以引入它们：
-
-```ruby
-class HelloController < ActionController::Metal
-  include AbstractController::Rendering
-  include ActionView::Layouts
-  append_view_path "#{Rails.root}/app/views"
-
-  def index
-    render "hello/index"
-  end
-end
-```
-
-## Redirection Helpers
-
-想使用重定向相关代码，你也需要引入它们：
-
-```ruby
-class HelloController < ActionController::Metal
-  include ActionController::Redirecting
-  include Rails.application.routes.url_helpers
-
-  def index
-    redirect_to root_url
-  end
-end
-```
-
-## Other Helpers
-
-You can refer to the modules included in <tt>ActionController::Base</tt> to see other features you can bring into your metal controller.
-
-## MiddlewareStack
-
-middleware 并不总是需要项目级别的，它也可以精确到某个 Controller，甚至是 action.
-
-Extend ActionDispatch middleware stack to make it aware of options
-allowing the following syntax in controllers:
-
-```ruby
-class PostsController < ApplicationController
-  use AuthenticationMiddleware, except: [:index, :show]
-end
-```
-
-`self.use` Pushes the given Rack middleware and its arguments to the bottom of the middleware stack.
-
-Metal 里的代码：
-
-```ruby
-# Returns a Rack endpoint for the given action name.
-def self.action(name, klass = ActionDispatch::Request)
-  if middleware_stack.any?
-    middleware_stack.build(name) do |env|
-      new.dispatch(name, klass.new(env))
-    end
-  else
-    lambda { |env| new.dispatch(name, klass.new(env)) }
-  end
-end
-```
-
 ## Others
 
 不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
 
 另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
-
----
-
-總而言之，如果你在 Rails3中不需要全部的 Controller 的功能，想要盡量拉高效能，有幾種推薦作法：
-
-* 寫成 Rack Middleware，然後在 config/application.rb 中插入 config.middleware.use YourMiddleWare
-* 寫成 Rack App，在 config.route.rb 中將某個對應的網址指到這個 Rack App
-* 繼承自 ActionController::Metal 實作一個 Controller，其中的 action 也是一個 Rack App
-
-其中的差異就在於後兩者會在 Rails Route 之後（好處是統一由 route.rb 管理 URL 路徑），如果繼承自 ActionController::Metal 可以有彈性獲得更多 Controller 功能。原則上，我想我會推薦 ActionController::Metal，寫起來最為簡單，一致性跟維護性較高。
 
 ---
 
@@ -121,3 +46,30 @@ end
 
 > Note: @app 和 env 一直在变，但又一直没变。
 
+## Metal 提供的方法：
+
+```
+# Class Public methods
+action(name, klass = ActionDispatch::Request)
+call(env)
+controller_name()
+middleware()
+new()
+use(*args, &block)
+
+# Instance Public methods
+_status_code()
+content_type()
+content_type=(type)
+controller_name()
+env()
+location()
+location=(url)
+params()
+params=(val)
+performed?()
+response_body=(body)
+status()
+status=(status)
+url_for(string)
+```

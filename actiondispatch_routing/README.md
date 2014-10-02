@@ -37,8 +37,7 @@ match 'photos/:id', to: 'photos#show'
 match 'photos/:id', controller: 'photos', action: 'show'
 ```
 
-A pattern can also point to a Rack endpoint i.e. anything that responds to call:
-模式匹配，也可以直接指向 Rack。只要它实现了 `call` 方法：
+模式匹配，也可以直接指向 Rack application. 因为它实现了 `call` 方法：
 
 ```ruby
 match 'photos/:id', to: lambda {|hash| [200, {}, ["Coming soon"]] }
@@ -223,7 +222,6 @@ SCOPE_OPTIONS = [:path, :shallow_path, :as, :shallow_prefix, :module,
 ```
 
 ## PolymorphicRoutes
-------------
 
 If you want to generate different urls according to different objects(例如，多态：`belongs_to :commentable, :polymorphic => true`), you should use the polymorphic_path/polymorphic_url to simplify the url generation.
 
@@ -243,7 +241,6 @@ polymorphic_url(Comment) # => "http://example.com/comments"
 除了 Mapper 外，还用到的就只剩：Redirection、PolymorphicRoutes、UrlFor
 
 ## 其它
--------
 
 ### Redirection
 
@@ -251,40 +248,12 @@ polymorphic_url(Comment) # => "http://example.com/comments"
 
 在路由里配置重定向，将发向某路径的请求，重定向到另一路径：
 
-```
+```ruby
 get "/stories" => redirect("/posts")
 ```
 
 你甚至可以在重定向的参数里使用 %{} 求值：
 
-```
+```ruby
 get 'docs/:article', to: redirect('/wiki/%{article}')
 ```
-Note that if you return a path without a leading slash then the url is prefixed with the current SCRIPT_NAME environment variable. This is typically '/' but may be different in a mounted engine or where the application is deployed to a subdirectory of a website.
-
-Alternatively you can use one of the other syntaxes:
-
-The block version of redirect allows for the easy encapsulation of any logic associated with the redirect in question. Either the params and request are supplied as arguments, or just params, depending of how many arguments your block accepts. A string is required as a return value.
-
-```ruby
-get 'jokes/:number', to: redirect { |params, request|
-  path = (params[:number].to_i.even? ? "wheres-the-beef" : "i-love-lamp")
-  "http://#{request.host_with_port}/#{path}"
-}
-```
-
-Note that the +do end+ syntax for the redirect block wouldn't work, as Ruby would pass the block to get instead of redirect. Use { ... } instead.
-
-The options version of redirect allows you to supply only the parts of the url which need to change, it also supports interpolation of the path similar to the first example.
-
-```
-get 'stores/:name',       to: redirect(subdomain: 'stores', path: '/%{name}')
-get 'stores/:name(*all)', to: redirect(subdomain: 'stores', path: '/%{name}%{all}')
-```
-
-Finally, an object which responds to call can be supplied to redirect, allowing you to reuse common redirect routes. The call method must accept two arguments, params and request, and return a string.
-
-```
-get 'accounts/:name' => redirect(SubdomainRedirector.new('api'))
-```
-

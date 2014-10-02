@@ -68,9 +68,7 @@ https://gist.github.com/ROFISH/11273048
 
 ## 解读以上进化过程
 
-run 一个 Rack application.
-
-run 是应用服务器提供的。
+`run` 由应用服务器提供，运行一个 Rack application.
 
 1. 纯 Rack 实现
 2. 引入 'action_dispatch', 使用 routes

@@ -61,37 +61,37 @@ end
 ```
 
 ```ruby
-    define_singleton_method(name) { nil }
-    define_singleton_method("#{name}?") { !!public_send(name) } if instance_predicate
+define_singleton_method(name) { nil }
+define_singleton_method("#{name}?") { !!public_send(name) } if instance_predicate
 
-    define_singleton_method("#{name}=") do |val|
-      singleton_class.class_eval do
-        define_method(name) { val }
-      end
+define_singleton_method("#{name}=") do |val|
+  singleton_class.class_eval do
+    define_method(name) { val }
+  end
 
-      if singleton_class?
-        class_eval do
-          define_method(name) do
-            if instance_variable_defined? ivar
-              instance_variable_get ivar
-            else
-              singleton_class.send name
-            end
-          end
-        end
-      end
-      val
-    end
-
-
-
+  if singleton_class?
+    class_eval do
       define_method(name) do
-        if instance_variable_defined?(ivar)
+        if instance_variable_defined? ivar
           instance_variable_get ivar
         else
-          self.class.public_send name
+          singleton_class.send name
         end
       end
-      define_method("#{name}?") { !!public_send(name) } if instance_predicate
+    end
+  end
+  val
+end
+
+
+
+define_method(name) do
+  if instance_variable_defined?(ivar)
+    instance_variable_get ivar
+  else
+    self.class.public_send name
+  end
+end
+define_method("#{name}?") { !!public_send(name) } if instance_predicate
 ```
 

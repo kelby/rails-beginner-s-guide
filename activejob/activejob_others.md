@@ -9,7 +9,7 @@
 
 当然，这都是自动完成的。
 
-## GlobalID support for Arguments
+## 参数支持 GlobalID
 
 一般入队列(enqueue_in、enqueue_at 和 enqueue) 只传能够标识对象的那部分参数(如：class、id)，出队列/执行的时候再根据这些参数获取对象。
 

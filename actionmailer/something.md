@@ -1,4 +1,4 @@
-# 源码剖析
+# 部分源码剖析
 
 Rails 在改动，特别是一些模块的名字，但对外提供的 API 一般不会变。
 
@@ -53,13 +53,13 @@ end
 
 **Delivery Methods**
 
-配置邮件服务器，比如：邮件发送方式 add_delivery_method.
+配置邮件邮件发送方式 add_delivery_method, 及不同方式的默认配置。
 
 **Log Subscriber**
 
 日志记录，继承于 ActiveSupport::LogSubscriber，执行哪个方法时想要记录日志，只需要创建和它同名方法，然后打印日志即可。LogSubscriber 章节会讲到。
 
-默认 Rails 侦听以下方法：
+目前 Rails 侦听以下方法：
 
 ```
 deliver - 发送
@@ -77,14 +77,17 @@ Previews，对于普通开发者来说主要是配置：
 
 ```ruby
 # 配置预览文件存放的位置，默认如下:
-
 config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 
 # 配置是否允许邮件预览:
-
-config.action_mailer.show_previews = true
-
 # 开发模式下，默认为 true
+config.action_mailer.show_previews = true
+```
+
+默认可以到以下 url, 查看预览邮件：
+
+```
+http://localhost:3000/rails/mailers/
 ```
 
 Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发者察觉不到的方法，如：
@@ -124,7 +127,3 @@ ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。
 **Test Case**
 
 测试样例。
-
-**Test Helper**
-
-测试方法 assert_emails 和 assert_no_emails，本质是封装 assert_equal.

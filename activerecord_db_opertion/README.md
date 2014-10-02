@@ -90,13 +90,13 @@ sum(*args)
 
 除了 `ids` 不需要，`count` 可选外，其余方法都至少要有一个属性。
 
-> **Note:** 它们都是直接返回结果。
+> Note: 它们都是直接返回结果。
 
 ## QueryMethods
 
-none - 新增了 .none 去取代空陣列[]避免多餘的判斷，這東西非常實用。  
+none - 返回一个空的 Relation，对后续操作很有用。可以充分利用 Relation 链式调用、延迟加载等特性。  
 
-not - 新增了 .not 去產生"IS NOT NULL"的 query，這東西非常實用。
+not - "与或非"里面的"非"，例如"IS NOT NULL"查询。
 
 references - 使用 includes 的時候會有參照 table 的問題，Rails4 新增了一個 references 去明確指出參照的 table，但如果在 where 的參數內是直接用 hash 的 conditions，即可不用指定 referen<br>
 

@@ -10,19 +10,19 @@ The API has the same methods as ActiveRecord, but each method returns a string t
 
 For example:
 
-```
-  ActiveRecord::Generators::ActiveModel.find(Foo, "params[:id]")
-  # => "Foo.find(params[:id])"
+```ruby
+ActiveRecord::Generators::ActiveModel.find(Foo, "params[:id]")
+# => "Foo.find(params[:id])"
 
-  DataMapper::Generators::ActiveModel.find(Foo, "params[:id]")
-  # => "Foo.get(params[:id])"
+DataMapper::Generators::ActiveModel.find(Foo, "params[:id]")
+# => "Foo.get(params[:id])"
 ```
 
 On initialization, the ActiveModel accepts the instance name that will receive the calls:
 
-```
-  builder = ActiveRecord::Generators::ActiveModel.new "@foo"
-  builder.save # => "@foo.save"
+```ruby
+builder = ActiveRecord::Generators::ActiveModel.new "@foo"
+builder.save # => "@foo.save"
 ```
 
 The only exception in ActiveModel for ActiveRecord is the use of self.build instead of self.new.

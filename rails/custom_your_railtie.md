@@ -58,8 +58,7 @@ end
 
 ## config
 
-Inside the Railtie class, you can access a config object which contains configuration
-shared by all railties and the application:
+你可以使用 config 对象，它在所有 Railtie 和你的应用里是共用的。
 
 ```ruby
 class MyRailtie < Rails::Railtie

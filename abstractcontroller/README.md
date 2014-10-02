@@ -1,4 +1,5 @@
-服务 ActionController 和 ActionMailer，将站场从 ActionDispatch 转移到具体的某个 action 或 mailer 对象。
+- 服务于 ActionController 和 ActionMailer
+- 将站场从 ActionDispatch 转移到 Controller 或 Mailer
 
 AbstractController 无论是它自己定义的方法，还是封装 ActionView 和 ActionDispatch 得到的方法，最终都提供给 ActionController 和 ActionMailer 使用。  
 这些方法(或模块)包含但不限于渲染(模板或局部模板)、Helper相关、回调、Mime、UrlFor 等。
@@ -208,14 +209,23 @@ render js: "alert('Hello Rails');"
 render body: "raw"
 ```
 
-
 ## Base
 
 ActionDispatch -> Metal -> AbstractController -> ActionController 请求是如何转变的？部分答案在这 ...
 
----
+有方法：
 
-其它一些可能有用的方法。
+```
+abstract!, action_methods, available_action?
+clear_action_methods!, controller_path
+hidden_actions
+internal_methods
+method_added
+process
+supports_path?
+```
+
+下面只讲解一些可能有用的方法。
 
 `controller_path()` 返回当前 Controller 所在的路径(包括目录、文件名)。例如，MyApp::MyPostsController 返回"my_app/my_posts"。
 

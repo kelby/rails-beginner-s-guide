@@ -165,7 +165,7 @@ posts = blog.posts
 `@owner` 表示 blog，`@target` 表示 posts，`@reflection` 表示 blog.posts
 注意：posts 是死的，一经赋值，每一次调用值都一样；blog.posts 是活的，每一次调用值都有可能不同。
 
-> **Note:** 一定是关联表.
+> Note: 一定是关联表.
 
 ## Reflection
 

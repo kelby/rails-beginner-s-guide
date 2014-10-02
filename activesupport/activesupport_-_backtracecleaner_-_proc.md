@@ -42,7 +42,9 @@ Inspired by the Quiet Backtrace gem by Thoughtbot.
 
 Rails 配置文件
 
-`config/initializers/backtrace_silencers.rb`
+```
+config/initializers/backtrace_silencers.rb
+```
 
 并且，Rails 启动时就启动它：
 

@@ -5,7 +5,7 @@
 etag(&etagger) - 追加元素到 etag
 
 # 决定是否改变。Rails 4 以后会对页面内容进行 MD5 求值，fresh_when 设置不合理的话，会得到旧数据。
-fresh_when(record_or_options, additional_options = {}) - 满足etag刷新条件，才执行后面操作
+fresh_when(record_or_options, additional_options = {}) - 满足 etag 刷新条件，才执行后面操作
 
 # 还有
 expires_in(seconds, options = {})
@@ -13,8 +13,20 @@ expires_now()
 stale?(record_or_options, additional_options = {})
 ```
 
-`fresh_when` 是实例方法，只当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
 `etag` 是类方法，对当前 Controller 下面的所有 action 都起作用。就相当于一个过滤器，把里面的元素加入到 record_or_options 里。同样影响 ETag 和 last_modify 的值。
+
+`fresh_when` 是实例方法，只当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
+
+
+`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 EtagWithTemplateDigest 进行处理)
+
+```ruby
+# We're going to render widgets/show, not posts/show
+fresh_when @post, template: 'widgets/show'
+
+# We're not going to render a template, so omit it from the ETag.
+fresh_when @post, template: false
+```
 
 ```
 X-Runtime	219
@@ -41,7 +53,6 @@ Cache-Control	private, max-age=0, must-revalidate
 什么也没改 
 
 f9d7568ac634fc9ad270f2348d5f3b41
-
 
 更改表态内容 
 

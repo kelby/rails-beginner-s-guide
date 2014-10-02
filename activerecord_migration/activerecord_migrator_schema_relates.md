@@ -19,7 +19,7 @@ version
 
 ## SchemaDumper
 
-This class is used to dump the database schema for some connection to some output format (i.e., ActiveRecord::Schema).
+导入数据库 schema
 
 ## Schema
 

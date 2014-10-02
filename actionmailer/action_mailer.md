@@ -7,17 +7,28 @@ ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常�
 以 Gmail 为例：
 
 ```ruby
-config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'example.com',
-  user_name:            '<username>',
-  password:             '<password>',
-  authentication:       'plain',
-  enable_starttls_auto: true  }
+# 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
+ActionMailer::Base.raise_delivery_errors = true
+
+# 发送方式
+ActionMailer::Base.delivery_method = :smtp
+# 根据不同发送方式，做不同配置
+ActionMailer::Base.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port    => 587,
+  # 可以填自己的域
+  :domain  => "example.com",
+  :authentication => :plain,
+  # 完整的邮箱地址
+  :user_name      => "test@example.com",
+  :password       => "passw0rd",
+  :enable_starttls_auto => true
+}
 ```
 
-## 生成 Mail 类和模板
+delivery_method 常见有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，也可以自定义。
+
+## 生成 Mailer 和模板
 
 通过 `rails g mailer UserMailer welcome` 创建 mailer 类和视图：
 
@@ -74,8 +85,8 @@ alias :default_options= :default
 | 参数 | 含义 |
 | :-- | -- |
 | :subject | 主题 |
-| :to | 收件人 |
 | :from | 发件人 |
+| :to | 收件人 |
 | :cc | 抄送 |
 | :bcc | 密送 |
 | :reply_to | 回邮地址 |
@@ -115,7 +126,7 @@ message.deliver_now                                  # sends the email
 Notifier.welcome(david).message     # => a Mail::Message object
 ```
 
-> NOTE: 创建并发送邮件是个比较耗时的过程，也许你应该把它们放到 [Background_Jobs](https://www.ruby-toolbox.com/categories/Background_Jobs) 里。现在 Rails 已经默认有延迟发送的方法。
+> NOTE: 现在 Rails 默认已经有延迟发送的方法。
 
 除了以上方法外，用得比较多的方法还有：
 
@@ -124,7 +135,7 @@ Notifier.welcome(david).message     # => a Mail::Message object
 |attachments() | 允许你添加附件到邮件|
 |headers(args = nil) | 定制邮件头部|
 
-**创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 method_missing，而 Rails 里重写定义了 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则创建 Mailer 对象(并且把此方法当做参数对待)
+**创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 里重新定义的 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则(把此方法当做参数对待)创建 Mailer 对象。
 
 ## 辅助方法
 
@@ -132,7 +143,7 @@ Notifier.welcome(david).message     # => a Mail::Message object
 
 |方法|解释|
 |--|--|
-|mailer()|邮件对象|
+|mailer()|当前 Mailer 对象，类似 Controller 对象|
 |message()|邮件|
 |attachments()|邮件附件|
 |format_paragraph(text, len = 72, indent = 2)|处理一段文本消息，行首空两格，每行长度不超过 72 个字符|
@@ -146,6 +157,8 @@ Notifier.welcome(david).message     # => a Mail::Message object
 |--|--|
 |assert_emails(number) | 断言已经发送的邮件数|
 |assert_no_emails(&block) | 断言没有邮件发送出去(可用 assert_emails 0 代替)|
+
+assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
 
 ## 邮件接收
 

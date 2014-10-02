@@ -64,77 +64,47 @@ ActionDispatch::Reloader 默认只在开发环境下启用，对应 `config.cach
 
 **Cookies**
 
+可以通过 ActionController#cookies 读/写 cookies 数据。
 
-  \Cookies are read and written through ActionController#cookies.
+写:
+
+```ruby
+# Sets a simple session cookie.
+# This cookie will be deleted when the user's browser is closed.
+cookies[:user_name] = "david"
+
+# Cookie values are String based. Other data types need to be serialized.
+cookies[:lat_lon] = JSON.generate([47.68, -122.37])
+
+# Sets a cookie that expires in 1 hour.
+cookies[:login] = { value: "XJ-122", expires: 1.hour.from_now }
+
+# Sets a signed cookie, which prevents users from tampering with its value.
+# The cookie is signed by your app's `secrets.secret_key_base` value.
+# It can be read using the signed method `cookies.signed[:name]`
+cookies.signed[:user_id] = current_user.id
+
+# Sets a "permanent" cookie (which expires in 20 years from now).
+cookies.permanent[:login] = "XJ-122"
+
+# You can also chain these methods:
+cookies.permanent.signed[:login] = "XJ-122"
+```
+
+读:
+
+```ruby
+cookies[:user_name]           # => "david"
+cookies.size                  # => 2
+JSON.parse(cookies[:lat_lon]) # => [47.68, -122.37]
+cookies.signed[:login]        # => "XJ-122"
+```
   
-  The cookies being read are the ones received along with the request, the cookies
-  being written will be sent out with the response. Reading a cookie does not get
-  the cookie object itself back, just the value it holds.
-  
-  Examples of writing:
-  
-    # Sets a simple session cookie.
-    # This cookie will be deleted when the user's browser is closed.
-    cookies[:user_name] = "david"
-  
-    # Cookie values are String based. Other data types need to be serialized.
-    cookies[:lat_lon] = JSON.generate([47.68, -122.37])
-  
-    # Sets a cookie that expires in 1 hour.
-    cookies[:login] = { value: "XJ-122", expires: 1.hour.from_now }
-  
-    # Sets a signed cookie, which prevents users from tampering with its value.
-    # The cookie is signed by your app's `secrets.secret_key_base` value.
-    # It can be read using the signed method `cookies.signed[:name]`
-    cookies.signed[:user_id] = current_user.id
-  
-    # Sets a "permanent" cookie (which expires in 20 years from now).
-    cookies.permanent[:login] = "XJ-122"
-  
-    # You can also chain these methods:
-    cookies.permanent.signed[:login] = "XJ-122"
-  
-  Examples of reading:
-  
-    cookies[:user_name]           # => "david"
-    cookies.size                  # => 2
-    JSON.parse(cookies[:lat_lon]) # => [47.68, -122.37]
-    cookies.signed[:login]        # => "XJ-122"
-  
-  Example for deleting:
-  
-    cookies.delete :user_name
-  
-  Please note that if you specify a :domain when setting a cookie, you must also specify the domain when deleting the cookie:
-  
-  cookies[:name] = {
-     value: 'a yummy cookie',
-     expires: 1.year.from_now,
-     domain: 'domain.com'
-  }
-  
-  cookies.delete(:name, domain: 'domain.com')
-  
-  The option symbols for setting cookies are:
-  
-  * <tt>:value</tt> - The cookie's value.
-  * <tt>:path</tt> - The path for which this cookie applies. Defaults to the root
-    of the application.
-  * <tt>:domain</tt> - The domain for which this cookie applies so you can
-    restrict to the domain level. If you use a schema like www.example.com
-    and want to share session with user.example.com set <tt>:domain</tt>
-    to <tt>:all</tt>. Make sure to specify the <tt>:domain</tt> option with
-    <tt>:all</tt> again when deleting cookies.
-  
-      domain: nil  # Does not sets cookie domain. (default)
-      domain: :all # Allow the cookie for the top most level
-                   # domain and subdomains.
-  
-  * <tt>:expires</tt> - The time at which this cookie expires, as a \Time object.
-  * <tt>:secure</tt> - Whether this cookie is only transmitted to HTTPS servers.
-    Default is +false+.
-  * <tt>:httponly</tt> - Whether this cookie is accessible via scripting or
-    only HTTP. Defaults to +false+.
+删除:
+
+```ruby
+cookies.delete :user_name
+```
 
 **Callbacks**
 

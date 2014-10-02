@@ -1,5 +1,3 @@
-参考官方文档 [Active Record Query Interface](http://edgeguides.rubyonrails.org/active_record_querying.html)
-
 介绍的方法都在 **ActiveRecord::QueryMethods**
 
 ```ruby
@@ -77,9 +75,9 @@ User.joins(:posts).where({ posts: { published: true } })
 
 `select(*fields)`
 
-By default, Model.find selects all the fields from the result set using select *.
+默认 find 查询所有属性，也就是 select *.
 
-To select only a subset of fields from the result set, you can specify the subset via the select method.
+如果只想查询部分属性，你可以自己指定：
 
 - 传递 block，返回数组
 
@@ -180,3 +178,5 @@ Post.includes(:comments).where("comments.visible" => true)
 > Note: 注意区分 Rails 里的 group 和 SQL 里的 group_by
 
 相关SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)
+
+参考官方文档 [Active Record Query Interface](http://edgeguides.rubyonrails.org/active_record_querying.html)

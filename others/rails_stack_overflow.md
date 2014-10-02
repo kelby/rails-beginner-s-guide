@@ -1,8 +1,6 @@
 # Rails Stack OverFlow
 
-## How can I rename a database column in a Rails migration?
-
-I wrongly named a column hased_password instead of hashed_password.
+## 如何使用 Rails migration 给表改列名？
 
 答：
 
@@ -22,31 +20,9 @@ def self.down
 end
 ```
 
-## How do I get the current absolute URL in Ruby on Rails?
-
-How can I get the current absolute URL in my Ruby on Rails view?
-
-The `request.request_uri` only returns the relative URL.
+## 简洁明了的对比一下 nil & empty & blank
 
 答：
-
-**For Rails 3.2 or Rails 4** You should use `request.original_url` to get the current URL. More detail.
-
-## A concise explanation of nil v. empty v. blank in Ruby on Rails
-
-I find myself repeatedly looking for a clear definition of the differences of nil?, blank?, and empty? in Ruby on Rails. Here's the closest I've come:
-
-blank? objects are false, empty, or a whitespace string. For example, "", " ", nil, [], and {} are blank.
-
-nil? objects are instances of NilClass.
-
-empty? objects are class-specific, and the definition varies from class to class. A string is empty if it has no characters, and an array is empty if it contains no items.
-
-Is there anything missing, or a tighter comparison that can be made?
-
-答：
-
-Here I made this useful table with all the cases
 
 |  | nil? | true( if condition) | empty?(string, array or hash) | blank? | present?(!blank?) |
 | -- | -- | -- | -- | -- | -- |
@@ -62,8 +38,17 @@ Here I made this useful table with all the cases
 | 0 | X | √ |   | X | √ |
 | 5 | X | √ |   | X | √ |
 
-It should be noted that blank? and present? are Rails-only.
+blank? 和 present? 是 Rails 特有的方法。
 
+除了 nil 本身外，其余元素 `nil?` 始终为 true
+
+除了 false 和 nil 外，其余元素 `false?` 始终为 true
+
+`empty?` 默认只能作用于 string、array、hash 对象
+
+`blank?`
+
+`blank?` 和 present? 是一对反义词
 
 
 

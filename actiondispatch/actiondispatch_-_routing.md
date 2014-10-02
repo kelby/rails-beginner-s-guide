@@ -1,5 +1,6 @@
-# ActionDispatch - Routing
-This is the first of three articles that will delve into the dark recesses of the routing code. It deals only with the implementation of the routing **DSL** (e.g., the part you use in config/routes.rb). The next two articles will deal with route **recognition**, and route **generation**, respectively.
+# Routing 三步曲
+
+路由三大块：DSL、recognition 和 generation.
 
 ## DSL
 
@@ -179,7 +180,8 @@ end
 ```
 
 
-```ruby  Segment#extraction_code
+```ruby
+# Segment#extraction_code
 def extraction_code
   s = extract_value
   vc = value_check
@@ -243,13 +245,14 @@ end
 
 Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 
-
 ## 参考：
 
 [Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)
+
 [Under the hood: route recognition in Rails](http://weblog.jamisbuck.org/2006/10/4/under-the-hood-route-recognition-in-rails)
+
 [Under the hood: route generation in Rails](http://weblog.jamisbuck.org/2006/10/16/under-the-hood-route-generation-in-rails)
 
-[Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)
+[Under the hood: Rails' routing DSL](http://weblog.jamisbuck.org/2006/10/2/under-the-hood-rails-routing-dsl)
 
 [Rails 3.2.8 Route 源码分析](http://ruby-china.org/topics/5895)

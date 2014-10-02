@@ -68,7 +68,7 @@ redirect_to user_path(@user), warning: "Incomplete profile"
 
 alert 和 notice 默认已经使用 add_flash_types
 
-## 最后
+## flash.now[:flash_type]
 
 也许，你还看过一种写法 flash.now[:flash_type]
 

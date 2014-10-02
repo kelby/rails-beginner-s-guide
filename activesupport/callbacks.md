@@ -1,7 +1,5 @@
 # Callbacks
-a方法 类别 b方法
 
-a方法 类别 (语法糖)
 ```ruby
 klazz.define_callbacks :restore
 
@@ -30,4 +28,4 @@ end
 alias :restore :restore!
 ```
 
-始终要用到3个方法。参考 [paranoia 的实现](https://github.com/radar/paranoia/blob/rails4/lib/paranoia.rb)
+至少要用到 3 个方法 define_callbacks、set_callback、run_callbacks 不能再少了，使用例子很多，例如 [paranoia 的实现](https://github.com/radar/paranoia/blob/rails4/lib/paranoia.rb)

@@ -1,7 +1,4 @@
-# Others
-
-
-## 回调的顺序
+## 回调及其顺序
 
 每个操作，它所对应的回调(按顺序来的)。
 
@@ -125,3 +122,29 @@ An Employee was touched
 ```
 
 > Note: after_touch 实际上运用得比较少。执行 touch 操作，除它之外，还会触发 after_commit 和 after_rollback 回调函数。
+
+### 查看某个记录关联的回调及其顺序
+
+以 save 举例：
+
+```
+after_save :回调 1, :回调 2
+```
+
+查看某个记录关联的回调及其顺序
+
+```
+a_record._save_callbacks.each{ |c| puts c.raw_filter }
+
+=>
+  你所定义的 save 回调 2
+  你所定义的 save 回调 1
+  ... ...
+  系统生成的 save 回调 2
+  系统生成的 save 回调 1
+```
+
+执行顺序从下往上。
+
+先是系统生成的方法，大多数是关联时就带有(autosave_associated_records、belongs_to_counter_cache、has_many_dependent)，之后是我们自己的方法。
+

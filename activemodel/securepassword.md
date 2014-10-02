@@ -1,8 +1,10 @@
 ## SecurePassword
 
-较独立，有时候压根我们就不用它。
+类方法：
 
-类方法：`has_secure_password(options = {})`
+```
+has_secure_password(options = {})
+```
 
 实例方法：
 

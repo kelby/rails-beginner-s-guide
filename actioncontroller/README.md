@@ -2,16 +2,35 @@
 
 ## Metal 是重点
 
-属于 middleware
-
-包括但不限于 headers、response、request.
-(另 env、session、params)
+属于 Rack application (或者称之为 middleware)
 
 可直接继承使用
 
 middleware_stack (这个很重要，最终指向 ActionDispatch::MiddlewareStack)
 
 self.action + dispatch
+
+有方法：
+
+```
+controller_name
+middleware
+action
+call
+use
+
+content_type, content_type=
+location, location=
+params, params=
+status, status=
+response_body=
+
+controller_name
+env
+url_for
+
+performed?
+```
 
 ## Metal 之外
 

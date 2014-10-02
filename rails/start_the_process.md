@@ -36,14 +36,11 @@ gem ‘gem_name'
 
 7) application.rb
 
+7.1) require ’something’ # like require ‘rails’
 
-```ruby
-require ’something’ # like require ‘rails’
+7.2) AppName::Application < Rails::Application
 
-AppName::Application < Rails::Application
-
-config your AppName
-```
+7.3) config your AppName
 
 8) enviroment.rb
 
@@ -60,13 +57,16 @@ def initialize!(group=:default) #:nodoc:
 end
 ```
 
-9) 默认的 Railtie，Engine, Application
+8.1) Bootstrap
+  8.1) 默认的 Railtie，Engine, Application
 
-10) 定制的 Railtie
+  8.2) 定制的 Railtie，Engine
 
 Build the middleware stack and run to_prepare callbacks
 (这样查看 middleware Rails.application.send :middleware 顺序从前到后)
 （Rails.application.send :default_middleware_stack 这样是默认的)
+
+8.4) Finisher
 
 Run config.before_eager_load and eager_load!
 

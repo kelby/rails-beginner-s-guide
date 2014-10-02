@@ -2,6 +2,7 @@
 
 ## Array
 
+```
 deep_dup
 extract_options!
 
@@ -28,28 +29,36 @@ to_sentence
 to_xml
 
 wrap
+```
 
 ## Benchmark
 
+```
 ms
+```
 
 ## BigDecimal
 
+```
 to_s
 _original_to_s
 to_formatted_s
 
 duplicable?
 encode_with
+```
 
 ## Class
 
+```
 class_attribute
 subclasses
 superclass_delegating_accessor
+```
 
 ## Date
 
+```
 <=>
 compare_without_coercion
 compare_with_coercion
@@ -97,9 +106,11 @@ to_time
 tomorrow
 xmlschema
 yesterday
+```
 
 ## DateTime
 
+```
 <=>
 
 acts_like_date?
@@ -160,20 +171,26 @@ getutc
 
 utc?
 utc_offset
+```
 
 ## Enumerable
 
+```
 exclude?
 index_by
 many?
 sum
+```
 
 ## File
 
+```
 atomic_write
+```
 
 ## Hash
 
+```
 assert_valid_keys
 compact, compact!
 deep_dup, deep_merge, deep_merge!, deep_stringify_keys, deep_stringify_keys!, deep_symbolize_keys, deep_symbolize_keys!
@@ -213,15 +230,19 @@ to_xml
 
 transform_keys
 transform_keys!
+```
 
 ## Integer
 
+```
 month, months, multiple_of?
 ordinal, ordinalize
 year, years
+```
 
 ## Kernel
 
+```
 breakpoint
 capture, class_eval, concern
 debugger
@@ -229,18 +250,24 @@ enable_warnings
 quietly
 silence, silence_stream, silence_warnings, suppress
 with_warnings
+```
 
 ## LoadError
 
+```
 is_missing?
 path
+```
 
 ## Marshal
 
+```
 load_with_autoloading
+```
 
 ## Module
 
+```
 alias_attribute
 alias_method_chain
 
@@ -278,13 +305,17 @@ qualified_const_set
 redefine_method
 
 remove_possible_method
+```
 
 ## NameError
 
+```
 missing_name, missing_name?
+```
 
 ## Numeric
 
+```
 ago
 byte, bytes
 day, days, duplicable?
@@ -300,9 +331,11 @@ second, seconds, since
 terabyte, terabytes, to_formatted_s
 until
 week, weeks
+```
 
 ## Object
 
+```
 acts_like?
 blank?
 create_fixtures
@@ -313,9 +346,11 @@ presence, presence_in, present?
 to_json_with_active_support_encoder, to_param, to_query, try, try!
 unescape
 with_options
+```
 
 ### HashWithIndifferentAccess
 
+```
 [],
 
 []=
@@ -348,19 +383,25 @@ to_hash, to_options!
 
 values_at
 with_indifferent_access
+```
 
 ## Range
 
+```
 include_with_range?
 overlaps?
 to_default_s, to_formatted_s, to_s
+```
 
 ## SecureRandom
 
+```
 uuid_from_hash, uuid_v3, uuid_v5
+```
 
 ## String
 
+```
 acts_like_string?, at
 blank?
 camelcase, camelize, classify, constantize
@@ -376,14 +417,18 @@ remove, remove!
 safe_constantize, singularize, squish, squish!, strip_heredoc
 tableize, titlecase, titleize, to, to_date, to_datetime, to_time, truncate
 underscore
+```
 
 ## Thread
 
+```
 freeze
 thread_variable?, thread_variable_get, thread_variable_set, thread_variables
+```
 
 ## Time
 
+```
 -
 minus_with_coercion
 minus_without_coercion
@@ -452,5 +497,4 @@ to_s
 use_zone
 zone
 zone=
-
-
+```

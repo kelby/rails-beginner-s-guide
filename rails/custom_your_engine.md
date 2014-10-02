@@ -1,6 +1,6 @@
 # 定制自己的 Engine
 
-```
+```ruby
 # your_engine/engine.rb
 module YourEngine
   class Engine < Rails::Engine
@@ -9,8 +9,8 @@ module YourEngine
 end
 ```
 
-```
-require 'your_gem/engine'
+```ruby
+require 'your_engine/engine'
 ```
 
 ## 继承于 Engine
@@ -170,14 +170,13 @@ end
 
 ## engine_name
 
-There are some places where an Engine's name is used:
+用几个场景可能会用到 engine name:
 
-* routes: when you mount an Engine with <tt>mount(MyEngine::Engine => '/my_engine')</tt>,
-  it's used as default <tt>:as</tt> option
-* rake task for installing migrations <tt>my_engine:install:migrations</tt>
+* routes: 当你使用 <tt>mount(MyEngine::Engine => '/my_engine')</tt>
+* rake task: 当你使用 <tt>my_engine:install:migrations</tt>
 
-Engine name is set by default based on class name. For `MyEngine::Engine` it will be
-`my_engine_engine`. You can change it manually using the `engine_name` method:
+Engine name 默认根据类名而来，如 `MyEngine::Engine` 对应有
+`my_engine_engine`. 你可以使用 `engine_name` 进行自定义:
 
 ```ruby
 module MyEngine

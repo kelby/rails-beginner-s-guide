@@ -2,7 +2,7 @@
 
 ## 心得：
 
-- C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C
+Dar < Car < Bar 有时候之所以 Car 要 extend Bar 并不是为了 Car 自己使用，而仅仅是为了方便 Dar
 
 ## 继承关系及 ancestors
 

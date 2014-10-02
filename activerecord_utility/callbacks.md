@@ -2,7 +2,7 @@
 
 ## 是什么？
 
-Callbacks are hooks into the life cycle of an Active Record object that allow you to trigger logic before or after an alteration of the object state.
+通过钩子的方式，影响对象的生命周期。
 
 ## 有哪些？
 
@@ -19,18 +19,15 @@ CALLBACKS = [
 
 ## 怎么使用？
 
-There are four types of callbacks accepted by the callback macros:
+调用方式主要有以下几种:
 
-1. Method references (symbol), √
-2. callback objects, √
-3. inline methods (using a proc), √
-4. and inline eval methods (using a string). X
-5. regular overwritable methods √
+1. 后面跟方法名，直接调用 √
+2. 传递一个可回调对象 √
+3. block 的形式，传递代码 √
+4. 以字符串的形式传递的代码(不推荐，应该废弃) X
+5. 覆盖方法名，重新定义方法内容 √
 
-Method references and callback objects are the recommended approaches,
-inline methods using a proc are sometimes appropriate (such as for creating mix-ins),
-and inline eval methods are deprecated.
-when you want to leave it up to each descendant to decide whether they want to call super and trigger the inherited callbacks.
+1、3 用得最多，第 5 次之，第 4 不推荐，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
 
 ```ruby
 # 1

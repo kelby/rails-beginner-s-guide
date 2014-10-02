@@ -30,13 +30,15 @@ mail.deliver!
 
 ## 引入其它，为了更好用
 
-直接使用 gem 'mail'，基本功能是满足了，但并不好用。缺少灵活的配置，内容与模板没有分离等。ActionMailer 改善了它们，举例单独使用 action_mailer：
+直接使用 gem 'mail'，创建、发送邮件等最最基本的功能是实现了，但并不好用。缺少灵活的配置，内容与模板没有分离等。ActionMailer 改善了它们，举例单独使用 action_mailer：
 
 ```ruby
 # mailer.rb
 require 'action_mailer'
 
+# 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
 ActionMailer::Base.raise_delivery_errors = true
+
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
@@ -54,6 +56,7 @@ class Mailer < ActionMailer::Base
   def daily_email
     @var = "var"
 
+    # 发件人是这里的 from，不是上面 smtp_settings 里设置的任何一个
     mail(to: "myemail@gmail.com", from: "test@example.com", subject: "testing mail") do |format|
       format.text
       format.html
