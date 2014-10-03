@@ -2,23 +2,68 @@
 
 ## Form Tag Helper
 
+这里的方法与表单及 record 对象都没有直接相关，也就是说它们并不依赖于表单元素和 record 对象。把它们放到此章节，完全是因为它们所在的模块名字带 "Form".
+
+
+**button 标签**
+
 ```
 button_tag
-check_box_tag, color_field_tag
+```
+
+**input 标签**
+
+```
+check_box_tag
+color_field_tag
 date_field_tag, datetime_field_tag, datetime_local_field_tag
 email_field_tag
-field_set_tag, file_field_tag, form_tag
+file_field_tag
 hidden_field_tag
 image_submit_tag
-label_tag
 month_field_tag
 number_field_tag
-password_field_tag, phone_field_tag
-radio_button_tag, range_field_tag
-search_field_tag, select_tag, submit_tag
-telephone_field_tag, text_area_tag, text_field_tag, time_field_tag
-url_field_tag, utf8_enforcer_tag
+password_field_tag
+phone_field_tag & telephone_field_tag
+radio_button_tag
+range_field_tag
+search_field_tag
+submit_tag
+text_field_tag
+time_field_tag
+url_field_tag
+utf8_enforcer_tag
 week_field_tag
+```
+
+**fieldset 标签**
+
+```
+field_set_tag
+```
+
+**label 标签**
+
+```
+label_tag
+```
+
+**select 标签**
+
+```
+select_tag
+```
+
+**textarea 标签**
+
+```
+text_area_tag
+```
+
+**form 标签**
+
+```
+form_tag
 ```
 
 ## Form Options Helper
@@ -76,8 +121,6 @@ collection_check_boxes(object, method, collection, value_method, text_method, op
 collection_radio_buttons(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block)
 ```
 
-collection_check_boxes 和 collection_radio_buttons 相比其它几个 helper, 是后来才提供的。
-
 ## Form Helper
 
 ```
@@ -108,16 +151,26 @@ week_field
 
 ```
 button
-check_box, collection_check_boxes, collection_radio_buttons, collection_select
-date_select, datetime_select
-emitted_hidden_id?
-fields_for, file_field
+check_box
+collection_check_boxes
+collection_radio_buttons
+collection_select
+date_select
+datetime_select
+fields_for
+file_field
 grouped_collection_select
 hidden_field
 label
-multipart=
-new
 radio_button
 select, submit
-time_select, time_zone_select, to_model, to_partial_path
+time_select
+time_zone_select
+
+multipart=
+
+emitted_hidden_id?
+
+to_model
+to_partial_path
 ```

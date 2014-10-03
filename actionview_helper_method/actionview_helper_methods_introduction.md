@@ -30,11 +30,14 @@ current_page?(options)
 ## TranslationHelper
 
 专有方法：
+
 ```
 localize - Also aliased as: l
 translate - Also aliased as: t
 ```
+
 ## TextHelper
+
 ```
 concat 求值
 
@@ -51,14 +54,18 @@ simple_format 文本简单格式化
 truncate 截取某个长度的文本
 word_wrap 限制长度
 ```
+
 ## TagHelper
+
 ```
 cdata_section
 content_tag
 escape_once
 tag
 ```
+
 ## SanitizeHelper
+
 ```
 sanitize
 sanitize_css
@@ -66,6 +73,9 @@ sanitize_css
 strip_links
 strip_tags
 ```
+
+这里的"消毒"，实际起作用的是 [Rails Html Sanitizers](https://github.com/rails/rails-html-sanitizer) 这里只是封装，并提供接口。
+
 ## RenderingHelper
 ```
 render
@@ -82,6 +92,7 @@ raw
 safe_join
 ```
 ## NumberHelper
+
 ```
 number_to_currency
 number_to_human
@@ -91,22 +102,31 @@ number_to_phone
 number_with_delimiter
 number_with_precision
 ```
+
 ## JavaScriptHelper
+
 ```
 escape_javascript - Also aliased as: j
 javascript_tag
 ```
 
 ## DebugHelper
+
 ```
 debug
 ```
 
 ## DateHelper
 ```
-date_select, datetime_select, distance_of_time_in_words, distance_of_time_in_words_to_now
+date_select, datetime_select
+time_select
+
+distance_of_time_in_words
+time_ago_in_words & distance_of_time_in_words_to_now
+
 select_date, select_datetime, select_day, select_hour, select_minute, select_month, select_second, select_time, select_year
-time_ago_in_words, time_select, time_tag
+
+time_tag
 ```
 
 ## CsrfHelper
@@ -120,8 +140,31 @@ provide
 ```
 ## CacheHelper
 ```
-cache, cache_fragment_name, cache_if, cache_unless
+cache
+cache_if, cache_unless
+
+cache_fragment_name
 ```
+
+使用片段缓存几点原则：
+
+1. 缓存由动态内容和静态内容两部分构成。
+
+2. 动态内容的 cache_key 由我们指定；
+  2. 没有嵌套的情况下，如果动态内容不指定 cache_key，则自己的动态内容永远不会更新(例外见最后)；
+  2. 有嵌套的情况下，如果动态内容不指定 cache_key，则自己的动态内容 & 孩子的动态内容永远不会更新(例外见最后)； 
+
+3. 没有嵌套的情况下，有且只有自己的 cache_key 更新，动态内容才更新；
+
+3. 有嵌套的情况下，有且只有自己的 cache_key 更新 & 父亲的 cache_key 更新，动态内容才更新；
+4. 动态内容的更新，不影响静态内容的部分；
+
+44. (各动态内容的 cache_key 是独立的，自己及其父亲、兄弟、孩子的 cache_key 没有依赖关系)
+
+5. 无论哪的静态内容更改，有且只有重启后更新，不存在(也不用考虑)嵌套的问题。
+6. 静态内容的更新，不影响动态内容的部分(例外见最后)；
+7. 例外：动态内容没有指定 cache_key，只有静态内容同时更新，并且重启，动态内容才会更新。
+
 ## AtomFeedHelper
 ```
 atom_feed

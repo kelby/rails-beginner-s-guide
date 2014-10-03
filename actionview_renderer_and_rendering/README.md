@@ -15,6 +15,8 @@ LookupContext 查找上下文，很重要概念。它携带着很多信息，如
 `append_view_path(path)`<br>
 追加路径到当前 Controller 所在的 view paths 里。当我们的自己创建或者使用的 gem 引入的文件目录结构和Rails默认不一样，但且希望渲染到视图里的模板(局部模板)，就会报错，此方法可以帮助我们。
 
+`prepend_view_path` 和 append_view_path 方法类似
+
 ## Template
 
 模板对象及其信息。

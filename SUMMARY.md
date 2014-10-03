@@ -51,6 +51,7 @@
    * [ActionView 渲染及相关概念](preface/rails_-__-_lookup_context.md)
 * [ActionView 辅助方法分类](actionview_helper_method/README.md)
    * [ActionView 与表单直接相关的辅助方法](actionview_helper_method/actionview.md)
+       * [使用和扩展 FormBuilder](actionview_helper_method/use_and_extend_formbuilder.md)
    * [ActionView 与表单不直接相关的辅助方法](actionview_helper_method/actionview_helper_methods_introduction.md)
    * [ActionView 与对象是否相关的辅助方法](actionview_helper_method/actionview_form_is_associated_with_helper_methods.md)
    * [ActionView 片段缓存相关模块](actionview/actionview_-_helpers_-_cache.md)
@@ -136,7 +137,7 @@
    * [Initializable](rails/initializable.md)
    * [Rails 应用启动过程](rails/start_the_process.md)
    * [AppName, Application. Engine, Railtie](others/appname,_application_engine,_railite.md)
-* [Others](others/README.md)
+* [其它](others/README.md)
    * [Rails.env.production?](others/railsenvproduction.md)
    * [Flash](others/flash.md)
    * [Callbacks](others/callbacks.md)
@@ -151,4 +152,5 @@
 * [Testing](testing/README.md)
    * [TestCase ActionMailer](testing/test_actionmailer.md)
    * [TestCase ActionController](testing/testcase_actioncontroller.md)
+   * [TestCase ActionView](testing/testcase_actionview.md)
 

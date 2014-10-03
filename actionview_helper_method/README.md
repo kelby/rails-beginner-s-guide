@@ -58,7 +58,7 @@ form_options_helper.rb
 
 大部分以 f.xxx 的形式调用
 
-> **Note:** f 就是 FormBuilder 的实例对象，所以可以调用 FormBuilder 的实例方法。
+> Note: f 就是 FormBuilder 的实例对象，所以可以调用 FormBuilder 的实例方法。
 
 构建器怎么来？
 
