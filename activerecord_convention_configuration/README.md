@@ -1,15 +1,10 @@
 # ActiveRecord 约定、配置
 
-## 类映射表，属性映射列
-
-使用 Rails 框架时，这个不由我们考些。
-
 ## Naming Conventions
 
-By default, Active Record uses some naming conventions to find out how the mapping between models and database tables should be created. Rails will pluralize your class names to find the respective database table. So, for a class Book, you should have a database table called books. The Rails pluralization mechanisms are very powerful, being capable to pluralize (and singularize) both regular and irregular words. When using class names composed of two or more words, the model class name should follow the Ruby conventions, using the CamelCase form, while the table name must contain the words separated by underscores. Examples:
+类映射表，属性映射列
 
-Database Table - Plural with underscores separating words (e.g., book_clubs).
-Model Class - Singular with the first letter of each word capitalized (e.g., BookClub).
+命名约定：
 
 |Model / Class |	Table / Schema|
 |:----:|:---:|
@@ -21,47 +16,52 @@ Model Class - Singular with the first letter of each word capitalized (e.g., Boo
 
 ## Schema Conventions
 
-Active Record uses naming conventions for the columns in database tables, depending on the purpose of these columns.
+命名约定：
 
- - **Foreign keys** - These fields should be named following the pattern singularized_table_name_id (e.g., item_id, order_id). These are the fields that Active Record will look for when you create associations between your models.
+| 属性 | 解释 |
+| -- | -- |
+| Foreign keys | 外键。前者 belongs_to 后者，根据后者所对应的表名，为前者生成"后者_id"属性 |
+| Primary keys | 主键。默认使用"id"属性，迁移时自动完成 |
 
-- **Primary keys** - By default, Active Record will use an integer column named id as the table's primary key. When using Active Record Migrations to create your tables, this column will be automatically created.
+除上述属性外，约定还有:
 
-There are also some optional column names that will add additional features to Active Record instances:
+| 属性 | 解释 |
+| -- | -- |
+| created_at | 创建 record 的时间 |
+| updated_at | 最后修改 record 的时间 |
+| lock_version | 使用乐观锁特性的时候会用到 |
+| type | 使用单表继承特性的时候会用到 |
+| (association_name)_type | 使用多态特性的时候会用到 |
+| (table_name)_count | 使用 counter_cache 特性的时候会用到 |
 
-- created_at - Automatically gets set to the current date and time when the record is first created.
-- updated_at - Automatically gets set to the current date and time whenever the record is updated.
-- lock_version - Adds optimistic locking to a model.
-- type - Specifies that the model uses Single Table Inheritance.
-- (association_name)_type - Stores the type for polymorphic associations.
-- (table_name)_count - Used to cache the number of belonging objects on associations. For example, a comments_count column in a Post class that has many instances of Comment will cache the number of existent comments for each post.
+尽管这些属性都是可更改的，但强烈建议不要更改它们，使用默认的即可。  
+另外，如果没有使用到上述特性，那么强烈建议不要使用上述属性。(实在需要的话，可以找同义词替代)
 
-> While these column names are optional, they are in fact reserved by Active Record. Steer clear of reserved keywords unless you want the extra functionality. For example, type is a reserved keyword used to designate a table using Single Table Inheritance (STI). If you are not using STI, try an analogous keyword like "context", that may still accurately describe the data you are modeling.
+## Timestamps
 
-## Timestamp
+时间戳包括 `created_at/created_on` 和 `updated_at/updated_on`
+  
+不想生成时间戳相关属性:
 
-Active Record automatically timestamps create and update operations if the
-table has fields named `created_at/created_on` or
-`updated_at/updated_on`.
-  
-Timestamping can be turned off by setting:
-  
-    config.active_record.record_timestamps = false
-  
-Timestamps are in UTC by default but you can use the local timezone by setting:
-  
-    config.active_record.default_timezone = :local
-  
-### Time Zone aware attributes
-  
-By default, ActiveRecord::Base keeps all the datetime columns time zone aware by executing following code.
-  
-    config.active_record.time_zone_aware_attributes = true
-  
-This feature can easily be turned off by assigning value `false` .
+```ruby
+config.active_record.record_timestamps = false
+```
 
-If your attributes are time zone aware and you desire to skip time zone conversion to the current Time.zone
-when reading certain attributes then you can do following:
+时间戳默认使用 UTC，如果你想使用本地时区：
+
+```ruby
+config.active_record.default_timezone = :local
+```
+
+默认，ActiveRecord 可以自动识别并转换时区：
+
+```ruby
+config.active_record.time_zone_aware_attributes = true
+```
+
+如果你想取消此特性，可以配置为 `false`
+
+如果你仍然想使用此特性，但同时又有需要忽略此特性，你可以手动设置，举例：
   
 ```ruby
 class Topic < ActiveRecord::Base

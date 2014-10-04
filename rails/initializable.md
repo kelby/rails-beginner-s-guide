@@ -19,6 +19,3 @@ run_initializers
 initializer, initializers, initializers_chain, initializers_for
 ```
 
-## 其它
-
-怎么存储，怎么运行？在此不再深入，感兴趣的可以自己看源代码。

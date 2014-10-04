@@ -1,6 +1,6 @@
 # 数据库操作之 AttributeMethods
 
-## BeforeTypeCast
+## Before Type Cast
 
 同样的数据，每个数据库存储多少有一点不同。
 我们'对象.属性'或'类.查询'得到的数据， 未必就是数据库里存放的数据(至少形式上不一样)。
@@ -32,7 +32,7 @@ ActiveModel 也有同名 Dirty 模块，这里是对它的使用，并且它并�
 
 文档可以参考 ActiveModel::Dirty
 
-## PrimaryKey
+## Primary Key
 
 `primary_key` 主键(又称主关键字)。
 

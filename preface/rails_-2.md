@@ -81,3 +81,7 @@ https://gist.github.com/ROFISH/11273048
 
 8. 和 Rails 对比，没有使用 ActionMailer，ActiveJob, ActiveModel, ActiveRecord
 9. 和 Rails 对比，使用但没感受到 AbstractController，ActiveSupport, Railties
+
+match 'products', :to => 'products#index'
+# same as
+match 'products', :to => ProductsController.action("index")

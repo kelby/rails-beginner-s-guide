@@ -1,4 +1,4 @@
-加后缀 '?' 进行询问。
+加后缀 '?' 进行 boolean 判断。
 
 你还在用：
 
@@ -25,8 +25,6 @@
 <% end %>
 ```
 
-Each attribute of ActiveRecord's model has a query method, so you don't need to use the present? or blank? for ActiveRecord's attributes.
+每一个 record 属性都有此方法，它可以让我们少敲几个按键。除非属性本身就是 boolean 类型，其它类型的判断结果有时候和想像中的不一样，请慎用。
 
-> Note: 对应着 ActiveModel::AttributeMethods::Query，原理是判断其值是否为 blank? 或 zero?
-
-[Use query attribute](http://rails-bestpractices.com/posts/56-use-query-attribute)
+> Note: 对应着 ActiveModel::AttributeMethods::Query，原理是判断其值是否为 blank? 或 zero? 

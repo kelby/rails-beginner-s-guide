@@ -48,8 +48,13 @@ update_attribute
 update_column, update_columns
 ```
 
-## Querying
+数据库写操作，包括{update, destroy, create, save ...}
 
+用原生 save 會有什麼問題呢？原生的 save 在資料儲存時，會經過一堆 validator 和 callbacks，即使你只是要簡單 update 一個欄位。
+
+> Note: 这里大部分是对单个对象的操作。
+
+## Querying
 
 ```
 delegate :find, :take, :take!, :first, :first!, :last, :last!, :exists?, :any?, :many?, to: :all
@@ -70,78 +75,42 @@ delegate :pluck, :ids, to: :all
 
 结合 `ActiveRecord::Relation#none` 可以用来表示和处理结果为空的 Relation.
 
-## Calculations
-
-取数据，并**统计**，有一点偏向数学：
-
-```ruby
-ids()
-calculate(operation, column_name, options = {})
-
-pluck(*column_names)
-
-count(column_name = nil, options = {})
-minimum(column_name, options = {})
-maximum(column_name, options = {})
-average(column_name, options = {})
-
-sum(*args)
-```
-
-除了 `ids` 不需要，`count` 可选外，其余方法都至少要有一个属性。
-
-> Note: 它们都是直接返回结果。
-
 ## QueryMethods
 
-none - 返回一个空的 Relation，对后续操作很有用。可以充分利用 Relation 链式调用、延迟加载等特性。  
+提供方法：
 
-not - "与或非"里面的"非"，例如"IS NOT NULL"查询。
-
-references - 使用 includes 的時候會有參照 table 的問題，Rails4 新增了一個 references 去明確指出參照的 table，但如果在 where 的參數內是直接用 hash 的 conditions，即可不用指定 referen<br>
-
-order - Rails4 終於把  default_scope 的 order 調整成正常的順序，default_scope 的 order 永遠會在最後而不像 Rails 3 優先權永遠是最高的。同時 order 可以使用 hash 帶入，也不需要再用字串了。<br>
-
-查表操作(数据库读操作)。大部分是Ruby层面，一般可多条件链式查询。
-
-和上面的 CollectionProxy 有类似，区别在于这是对本表操作，而不是对关系表。和下面的 FinderMethods 有类似，区别在于这返回的是 relation，可以链式查询，与 SQL 关联大。
-
-注意：参数带 block 的，代表已经进入SQL层面。
-
-要善于使用这里的语句，数据放在数据库和数据放在内存有很大的区别！另外，放在内存和是否返回也有很大的区别！
-
-joins 普通的查询条件，关联对象不需要放到内存。
-
-```ruby
-# 第一次调用，需要查询，花销一般；再次调用，也需要查询，花销一般。
-# 目的：查询主表，关联表仅做为查询条件之一
-
-posts = Post.joins(:comments)
-  Post Load (0.1ms)  SELECT "posts".* FROM "posts" INNER JOIN "comments" ON "comments"."commentable_id" = "posts"."id" AND "comments"."commentable_type" = 'Post'
-  posts.first.comments
-  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 1], ["commentable_type", "Post"]]
-```
-includes 两个查询都要做，关联对象也需要放到内存。
-
-```ruby
-# 第一次调用，需要查询，花销大；再次调用，不需要查询，花销为零。
-# 目的：查询主表和关联表
-
-posts = Post.includes(:comments)
-  Post Load (0.6ms)  SELECT "posts".* FROM "posts"
-  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Post' AND "comments"."commentable_id" IN (1, 3, 5, 6, 8, 9, 10, 11, 12)
-  posts.first.comments
-
-### 关键：后续是否需要对关联对象进行操作。
-```
-
-> Note: 返回的多是 Relation，与SQL层面较亲；有 find 字样的绝对不是它。
+|方法|解释|
+|--|--|
+| bind | 不知道干嘛用|
+| create_with | 没找到合适的使用场景|
+| distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
+| eager_load |后文解释|
+| extending | 给一个 scope 增加方法，返回的仍然是 scope. <br> 如果传递的是 block, 则可以直接调用 block 里面的方法, 如果传递的是 module, 则可以调用 module 里面的方法。<br> 不推荐直接使用，这会大大提高复杂度，但扩展时可以用。|
+| from | 从符合条件的 record 开始 |
+| group | 后文解释 |
+| having | having 是分组(group)后的筛选条件，分组后的数据组内再筛选; where 则是在分组前筛选 |
+| includes | 后文解释 |
+| joins | 后文解释 |
+| limit | 限制结果数目 |
+| lock | 锁定结果 |
+| none | 返回一个空的 Relation |
+| offset | 类似 from, 但它传递的是"第几条"，并且数据不够的话可循环；而后者传递的是查询条件，不符合条件返回空 |
+| order | 按条件排序 |
+| preload | 后文解释 |
+| readonly | 查询结果只读，不可写 |
+| references | 后文解释 |
+| reorder | 重新按条件排序。在这之前有排序的话，忽略它们 |
+| reverse_order | 反转之前的排序结果 |
+| rewhere | 重新按条件查询。在这之前的排序条件和它没有冲突的情况下，保留它们；有冲突的情况下，忽略它们 |
+| select | 后文解释 |
+| unscope | 查询条件可以有多个。使用 unscope 可以忽略其中的一个或多个 |
+| where | 后文解释 |
 
 ## FinderMethods & Batches
 
 查表操作(数据库读操作)。大部分是SQL层面，一般不可多条件链式查询。
 
-> **Note:** 返回的都是结果，不是 Relation。
+> Note: 返回的都是结果，不是 Relation。
 
 ## Relation(Arel)
 
@@ -189,14 +158,6 @@ VALUE_METHODS = MULTI_VALUE_METHODS + SINGLE_VALUE_METHODS
 
 include FinderMethods, Calculations, SpawnMethods, QueryMethods, Batches, Explain, Delegation
 ```
-
-## Persistence
-
-数据库写操作，包括{update, destroy, create, save ...}
-
-用原生 save 會有什麼問題呢？原生的 save 在資料儲存時，會經過一堆 validator 和 callbacks，即使你只是要簡單 update 一個欄位。
-
-> **Note:** 这里大部分是对单个对象的操作。
 
 ## Scoping
 
@@ -251,7 +212,9 @@ end
 
 then elton.shirts.red.dry_clean_only will return all of Elton's red, dry clean only shirts.
 
-Named scopes can also have extensions, just as with has_many declarations:
+### scope 后可直接跟 extensions
+
+和 has_many 类似的：
 
 ```ruby
 class Shirt < ActiveRecord::Base
@@ -305,3 +268,27 @@ Article.featured.titles
 > Note: 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
 
 scopes - 一律使用 proc object 取代原本model內的 scope 的參數，proc object 或 block 取代原本 model 內的 default_scope 的參數。因為 Model 被 cache 的關係，會導致很多 eager-load 的 scope 只有在第一次載入的時候讀取正確的值(ex:時間)，這是 Rails2 和 Rails3 令人詬病的問題，而 Rails4 規定凡是 eager-load 的 scope 一律要使用 proc object。  
+
+## Locking
+
+锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic)。会有专门章节介绍。
+
+## AttributeAssignment
+
+```
+assign_attributes & attributes=
+```
+
+不推荐直接使用，因为和直接赋值效果一样，但扩展时可以使用。
+
+使用举例：
+
+```ruby
+# 直接赋值
+cat = Cat.new(name: "Gorby", status: "yawning")
+cat.attributes # =>  { "name" => "Gorby", "status" => "yawning", "created_at" => nil, "updated_at" => nil}
+
+# 使用 Attribute Assignment
+cat.assign_attributes(status: "sleeping")
+cat.attributes # =>  { "name" => "Gorby", "status" => "sleeping", "created_at" => nil, "updated_at" => nil }
+```

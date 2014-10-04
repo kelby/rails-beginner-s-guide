@@ -94,7 +94,7 @@ changes()
 previous_changes()
 ```
 
-跟踪对象的变化情况。ActiveRecord 也有同名模块，它是对这里的 Dirty 的使用，并且它并没有对外提供 API.
+跟踪对象的变化情况。ActiveRecord 也有同名模块，它是对这里的 Dirty 的封装，并且它并没有对外提供 API.
 
 使用 ActiveModel::Dirty，需要:
 

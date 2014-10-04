@@ -29,38 +29,12 @@ helper :foo             # => requires 'foo_helper' and includes FooHelper
 helper 'resources/foo'  # => requires 'resources/foo_helper' and includes Resources::FooHelper
 ```
 
-此外，helper 可以接受并处理一个代码块。
-
-```ruby
-# One line
-helper { def hello() "Hello, world!" end }
-
-# Multi-line
-helper do
-  def foo(bar)
-    "#{bar} is the very best"
-  end
-end
-```
+此外，helper 可以接受并处理一个代码块。(用得不多，并且不推荐)
 
 最后要说的提，上述说的参数类型可以混合使用，你可以同时传递符号、字符串、模块和代码块给 helper 方法。
 
 ```ruby
 helper(:three, BlindHelper) { def mice() 'mice' end }
-```
-
-具体实现(使用说明完全是多余的)：
-
-```ruby
-def helper(*args, &block)
-  # String、Symbol，Module 先格式化
-  modules_for_helpers(args).each do |mod|
-    add_template_helper(mod) # => _helpers.module_eval { include mod }
-  end
-
-  # block
-  _helpers.module_eval(&block) if block_given?
-end
 ```
 
 `helper_method(*meths)` 把 Controller 方法变成 Helper 方法。
@@ -84,10 +58,10 @@ end
 在视图里:
 
 ```ruby
-<% if logged_in? -%>Welcome, <%= current_user.name %><% end -%>
+<% if logged_in? %>Welcome, <%= current_user.name %><% end %>
 ```
 
-具体实现(以元编程的形式定义定义同名方法，然后 send 调用原helper方法)
+具体实现(以元编程的形式定义定义同名方法，然后 send 调用原 helper 方法)
 
 ```ruby
 meths.each do |meth|
@@ -216,12 +190,18 @@ ActionDispatch -> Metal -> AbstractController -> ActionController 请求是如�
 有方法：
 
 ```
-abstract!, action_methods, available_action?
-clear_action_methods!, controller_path
+abstract!
+clear_action_methods!
+
+controller_path
 hidden_actions
 internal_methods
 method_added
+
+action_methods
 process
+
+available_action?
 supports_path?
 ```
 

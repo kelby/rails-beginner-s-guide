@@ -1,50 +1,35 @@
 介绍的方法都在 **ActiveRecord::QueryMethods**
 
-```ruby
-bind
-create_with
-distinct - Also aliased as: uniq
-eager_load
-extending
-from
-group
-having
-includes
-joins
-limit
-lock
-none - 没找到
-offset
-order
-preload
-readonly
-references - 没找到
-reorder
-reverse_order
-rewhere - 没找到
-select - 比较特殊，如果传递的参数里有 block，返回的是 Array，不是 Relation
-uniq
-unscope - 没找到
-where
-```
 
-```ruby
-where - provides conditions on the relation, what gets returned.
-select - choose what attributes of the models you wish to have returned from the database.
-group - groups the relation on the attribute supplied.
-having - provides an expression limiting group relations (GROUP BY constraint).
-joins - joins the relation to another table.
-clause - provides an expression limiting join relations (JOIN constraint).
-includes - includes other relations pre-loaded.
-order - orders the relation based on the expression supplied.
-limit - limits the relation to the number of records specified.
-lock - locks the records returned from the table.
-readonly - returns an read only copy of the data.
-from - provides a way to select relationships from more than one table.
-scope - (previously named_scope) return relations and can be chained together with the other relation methods.
-with_scope - and with_exclusive_scope now also return relations and so can be chained.
-default_scope - also works with relations.
-```
+提供方法：
+
+|方法|解释|
+|--|--|
+| bind | 不知道干嘛用|
+| create_with | 没找到合适的使用场景|
+| distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
+| eager_load |后文解释|
+| extending | 给一个 scope 增加方法，返回的仍然是 scope. <br> 如果传递的是 block, 则可以直接调用 block 里面的方法, 如果传递的是 module, 则可以调用 module 里面的方法。<br> 不推荐直接使用，这会大大提高复杂度，但扩展时可以使用。|
+| from | 从符合条件的 record 开始 |
+| group | 后文解释 |
+| having | having 是分组(group)后的筛选条件，分组后的数据组内再筛选; where 则是在分组前筛选 |
+| includes | 后文解释 |
+| joins | 后文解释 |
+| limit | 限制结果数目 |
+| lock | 锁定结果 |
+| none | 返回一个空的 Relation |
+| offset | 类似 from, 但它传递的是"第几条"，并且数据不够的话可循环；而后者传递的是查询条件，不符合条件返回空 |
+| order | 按条件排序 |
+| preload | 后文解释 |
+| readonly | 查询结果只读，不可写 |
+| references | 后文解释 |
+| reorder | 重新按条件排序。在这之前有排序的话，忽略它们 |
+| reverse_order | 反转之前的排序结果 |
+| rewhere | 重新按条件查询。在这之前的排序条件和它没有冲突的情况下，保留它们；有冲突的情况下，忽略它们 |
+| select | 后文解释 |
+| unscope | 查询条件可以有多个。使用 unscope 可以忽略其中的一个或多个 |
+| where | 后文解释 |
+
 
 `where(opts = :chain, *rest)`
 
@@ -126,9 +111,7 @@ User.limit(10).limit(20) # generated SQL has 'LIMIT 20'
 
 `readonly(value = true)`
 
-returns an read only copy of the data.注意是数据库返回的结果就是只读，和 `attr_readonly` 是两码事。
-
-Sets readonly attributes for the returned relation. If value is true (default), attempting to update a record will result in an error.
+注意是数据库返回的结果就是只读，和 `attr_readonly` 是两码事。
 
 ```ruby
 users = User.readonly
@@ -141,8 +124,6 @@ users.first.save
 重新排序。调用了其他人写的 query 方法，但对排序不满意的，可以重新排序。
 
 `joins(*args)`
-
-Active Record lets you use the names of the associations defined on the model as a shortcut for specifying JOIN clauses for those associations when using the joins method.
 
 如果要根据关联表来查询，joins 后面的 where 查询语句里要包含被 join 表的表名。
 
@@ -163,10 +144,6 @@ product.catalogs.joins(:catalogs_standard_products).where('catalogs_standard_pro
 
 `includes(*args)` 和 joins 类似，唯一的区别在于：它是预先加载，第一次执行会慢，后续不再执行。
 
-Even though Active Record lets you specify conditions on the eager loaded associations just like joins, the recommended way is to use joins instead.
-
-However if you must do this, you may use where as you would normally.
-
 ```ruby
 Post.includes(:comments).where("comments.visible" => true)
 ```
@@ -180,3 +157,48 @@ Post.includes(:comments).where("comments.visible" => true)
 相关SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)
 
 参考官方文档 [Active Record Query Interface](http://edgeguides.rubyonrails.org/active_record_querying.html)
+
+## 最后
+
+none - 返回一个空的 Relation，对后续操作很有用。可以充分利用 Relation 链式调用、延迟加载等特性。  
+
+not - "与或非"里面的"非"，例如"IS NOT NULL"查询。
+
+references - 使用 includes 的時候會有參照 table 的問題，Rails4 新增了一個 references 去明確指出參照的 table，但如果在 where 的參數內是直接用 hash 的 conditions，即可不用指定 referen<br>
+
+order - Rails4 終於把  default_scope 的 order 調整成正常的順序，default_scope 的 order 永遠會在最後而不像 Rails 3 優先權永遠是最高的。同時 order 可以使用 hash 帶入，也不需要再用字串了。<br>
+
+查表操作(数据库读操作)。大部分是Ruby层面，一般可多条件链式查询。
+
+和上面的 CollectionProxy 有类似，区别在于这是对本表操作，而不是对关系表。和下面的 FinderMethods 有类似，区别在于这返回的是 relation，可以链式查询，与 SQL 关联大。
+
+注意：参数带 block 的，代表已经进入SQL层面。
+
+要善于使用这里的语句，数据放在数据库和数据放在内存有很大的区别！另外，放在内存和是否返回也有很大的区别！
+
+joins 普通的查询条件，关联对象不需要放到内存。
+
+```ruby
+# 第一次调用，需要查询，花销一般；再次调用，也需要查询，花销一般。
+# 目的：查询主表，关联表仅做为查询条件之一
+
+posts = Post.joins(:comments)
+  Post Load (0.1ms)  SELECT "posts".* FROM "posts" INNER JOIN "comments" ON "comments"."commentable_id" = "posts"."id" AND "comments"."commentable_type" = 'Post'
+  posts.first.comments
+  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 1], ["commentable_type", "Post"]]
+```
+includes 两个查询都要做，关联对象也需要放到内存。
+
+```ruby
+# 第一次调用，需要查询，花销大；再次调用，不需要查询，花销为零。
+# 目的：查询主表和关联表
+
+posts = Post.includes(:comments)
+  Post Load (0.6ms)  SELECT "posts".* FROM "posts"
+  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Post' AND "comments"."commentable_id" IN (1, 3, 5, 6, 8, 9, 10, 11, 12)
+  posts.first.comments
+
+### 关键：后续是否需要对关联对象进行操作。
+```
+
+> Note: 返回的多是 Relation，与SQL层面较亲；有 find 字样的绝对不是它。

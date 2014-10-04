@@ -28,8 +28,6 @@ DatabaseTasks
 
 ## 数据库操作(增删查改问)
 
-
-
 - locking
 
 包括 Optimistic、Pessimistic
@@ -40,15 +38,13 @@ DatabaseTasks
 
 - Relation
 
-包括 SpawnMethods、QueryMethods、PredicateBuilder、Merger、FinderMethods、Delegation、Calculations、Batches
+包括 SpawnMethods、QueryMethods、~~PredicateBuilder~~、~~Merger~~、FinderMethods、~~Delegation~~、Calculations、Batches
 
 - Querying
 
 Persistence
 
 NullRelation
-
-
 
 - ~~DynamicMatchers~~
 
