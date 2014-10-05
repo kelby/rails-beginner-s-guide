@@ -1,67 +1,9 @@
 # ActiveRecord Migrator Others
-本身实现了：
 
-```
-up()
-down()
-migrate()
-```
-
-它下面的 **CommandRecorder** 实现了：
-
-```
-add_column
-add_index
-add_reference
-add_timestamps
-
-create_table
-create_join_table
-
-drop_table (must supply a block)
-drop_join_table (must supply a block)
-
-remove_timestamps
-remove_reference
-remove_column
-remove_columns
-remove_index
-
-rename_column
-rename_index
-rename_table
-
-change_column_default
-change_column
-change_column_null
-change_table
-
-transaction
-execute
-execute_block
-enable_extension
-```
 
 [Active Record Migrations](http://edgeguides.rubyonrails.org/migrations.html)
 
-## 迁移相关(migrate目录、schema.rb文件)
 
-Migration 提供的：
-
-```ruby
-up
-down
-
-migrate(direction)
-revert(*migration_classes)
-```
-
-SchemaMigration 提供的：
-
-```ruby
-create_table
-drop_table
-```
 
 引用：
 
@@ -93,16 +35,6 @@ end
 ALTER TABLE `users` ADD COLUMN `im_handle` varchar(255), ADD COLUMN `company_id` int(11), CHANGE `updated_at` `updated_at` datetime DEFAULT NULL
 
 這對已有不少資料量的資料庫來說，會有不少執行速度上的差異，可以減少資料庫因為修改被 Lock 鎖定的時間。
-```
-CommandRecorder 提供的：
-
-```ruby
-:create_table, :create_join_table, :rename_table, :add_column, :remove_column,
-:rename_index, :rename_column, :add_index, :remove_index, :add_timestamps, :remove_timestamps,
-:change_column_default, :add_reference, :remove_reference, :transaction,
-:drop_join_table, :drop_table, :execute_block, :enable_extension,
-:change_column, :execute, :remove_columns, :change_column_null
-及 :change_table
 ```
 
 **更高效的迁移**

@@ -138,32 +138,15 @@ csrf_meta_tag, csrf_meta_tags
 capture, content_for, content_for?
 provide
 ```
+
 ## CacheHelper
+
 ```
 cache
 cache_if, cache_unless
 
 cache_fragment_name
 ```
-
-使用片段缓存几点原则：
-
-1. 缓存由动态内容和静态内容两部分构成。
-
-2. 动态内容的 cache_key 由我们指定；
-  2. 没有嵌套的情况下，如果动态内容不指定 cache_key，则自己的动态内容永远不会更新(例外见最后)；
-  2. 有嵌套的情况下，如果动态内容不指定 cache_key，则自己的动态内容 & 孩子的动态内容永远不会更新(例外见最后)； 
-
-3. 没有嵌套的情况下，有且只有自己的 cache_key 更新，动态内容才更新；
-
-3. 有嵌套的情况下，有且只有自己的 cache_key 更新 & 父亲的 cache_key 更新，动态内容才更新；
-4. 动态内容的更新，不影响静态内容的部分；
-
-44. (各动态内容的 cache_key 是独立的，自己及其父亲、兄弟、孩子的 cache_key 没有依赖关系)
-
-5. 无论哪的静态内容更改，有且只有重启后更新，不存在(也不用考虑)嵌套的问题；
-6. 静态内容的更新，不影响动态内容的部分(例外见最后)；
-7. 例外：动态内容没有指定 cache_key，只有静态内容同时更新，并且重启，动态内容才会更新。
 
 ## AtomFeedHelper
 ```

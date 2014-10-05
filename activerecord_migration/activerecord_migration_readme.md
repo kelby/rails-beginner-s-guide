@@ -5,6 +5,8 @@
 ```
 up
 down
+
+reversible
 ```
 
 其它
@@ -19,15 +21,15 @@ load_schema_if_pending!
 reverting?
 
 # 详细说明
-reversible
 revert
-run
+run -> 
+migrate
+
+exec_migration
 
 announce
 connection
 copy
-exec_migration
-migrate
 next_migration_number
 proper_table_name
 say
@@ -35,4 +37,15 @@ say_with_time
 suppress_messages
 table_name_options
 write
+```
+
+```
+run 或 migrate
+
+     |
+     v
+ exec_migration
+     |
+     v
+ up 或 down
 ```

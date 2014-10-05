@@ -64,18 +64,19 @@ update
 
 **commands_tasks**
 
-The most common rails commands are:  
+常用的有:  
   - generate
   - console
   - server
   - dbconsole
   - new
 
-In addition to those, there are:
+还有:
   - destroy
   - plugin new
   - runner
 
+> Note: 迁移相关在 ActiveRecord 里的 databases.rake 里定义。
 
 ## BacktraceCleaner
 

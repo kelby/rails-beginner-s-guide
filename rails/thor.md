@@ -2,8 +2,6 @@
 
 Thor 和 rake 类似，提供了功能强大的命令行接口。
 
-Thor is a simple and efficient tool for building self-documenting command line utilities. It removes the pain of parsing command line options, writing "USAGE:" banners, and can also be used as an alternative to the Rake build tool. The syntax is Rake-like, so it should be familiar to most Rake users.
-
 因为 Rails 的 generator 实际上是封装了 Thor ，所以还有 [Thor Actions](http://rdoc.info/github/erikhuda/thor/master/Thor/Actions.html)
 
 ## Actions

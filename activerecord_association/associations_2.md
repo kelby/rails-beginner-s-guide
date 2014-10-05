@@ -1,4 +1,4 @@
-# Associations 2
+# Associations 架构图讲解
 
 ## 1) 4 个关联类方法：
 

@@ -1,4 +1,4 @@
-# ModelNaming
+# Model Naming
 
 View 和 Controller 里有时候要处理 Model 里的对象，为了方便使用，做了一些约定。影响了 ActionView、ActionController 和 ActionDispatch.
 
@@ -17,7 +17,7 @@ model_name_from_record_or_class
 
 `model_name` 把"各种对象"转换成对应的"字符串"，而 View 要的正是"字符串"。
 
-## ActionView
+**ActionView**
 
 ```
 form_for
@@ -32,13 +32,13 @@ dom_id
 dom_class
 ```
 
-## ActionController
+**ActionController**
 
 ```
 wrap_parameters
 ```
 
-## ActionDispatch
+**ActionDispatch**
 
 ```
 polymorphic_url

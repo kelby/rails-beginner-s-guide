@@ -1,4 +1,4 @@
-# ActionController Others
+# 其它
 
 `Mime::Type.register`
 

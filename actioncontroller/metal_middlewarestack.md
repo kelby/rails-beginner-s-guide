@@ -1,4 +1,4 @@
-## MiddlewareStack
+## Middleware Stack
 
 middleware 并不总是需要项目级别的，它也可以精确到某个 Controller，甚至是 action.
 

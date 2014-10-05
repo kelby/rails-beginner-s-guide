@@ -1,42 +1,44 @@
-# DatabaseTasks
+# Database Tasks
 
-ActiveRecord::Tasks::DatabaseTasks is a utility class, which encapsulates logic behind common tasks used to manage database and migrations.
-
-The tasks defined here are used with Rake tasks provided by Active Record.
-
-In order to use DatabaseTasks, a few config values need to be set. All the needed config values are set by Rails already, so it's necessary to do it only if you want to change the defaults or when you want to use Active Record outside of Rails (in such case after configuring the database tasks, you can also use the rake tasks defined in Active Record).
-
-The possible config values are:
-
-* +env+: current environment (like Rails.env).
-* +database_configuration+: configuration of your databases (as in +config/database.yml+).
-* +db_dir+: your +db+ directory.
-* +fixtures_path+: a path to fixtures directory.
-* +migrations_paths+: a list of paths to directories with migrations.
-* +seed_loader+: an object which will load seeds, it needs to respond to the +load_seed+ method.
-* +root+: a path to the root of the application.
-
-Example usage of DatabaseTasks outside Rails could look as such:
-
-```ruby
-include ActiveRecord::Tasks
-DatabaseTasks.database_configuration = YAML.load_file('my_database_config.yml')
-DatabaseTasks.db_dir = 'db'
-# other settings...
-
-DatabaseTasks.create_current('production')
-```
+rake db:migrate 等迁移命令，定义在 ActiveRecord 的 databases.rake 里。
+其中，大部分命令都是由 ActiveRecord::Tasks::DatabaseTasks 来处理，再或者转发到其它模块。
 
 提供接口如下：
 
 ```
-charset, charset_current, check_schema_file, collation, collation_current, create, create_all, create_current, current_config
-db_dir, drop, drop_all, drop_current
+create_current    # 对应 rake db:create
+create_all        # 对应 rake db:create:all
+
+drop_current      # 对应 rake db:drop
+drop_all          # 对应 rake db:drop:all
+
+purge_current     # 对应 rake db:purge
+purge_all         # 对应 rake db:purge:all
+
+migrate           # 对应 rake db:migrate
+
+charset_current   # 对应 rake db:charset
+collation_current # 对应 rake db:collation
+```
+
+其它接口，不在此一一列举：
+
+```
+charset
+check_schema_file
+collation
+create
+current_config
+db_dir
+drop
 env
 fixtures_path
-load_schema, load_schema_current, load_seed
-migrate, migrations_paths
-purge, purge_all, purge_current
-register_task, root
-seed_loader, structure_dump, structure_load
+load_schema, load_schema_current
+load_seed
+migrations_paths
+purge
+register_task
+root
+seed_loader
+structure_dump, structure_load
 ```

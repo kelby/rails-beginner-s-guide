@@ -4,13 +4,17 @@ include Rails::Generators::Actions
 
 ## Class Public methods
 
-base_root  
-default_source_root  
-desc  
-hide!, hook_for  
-namespace  
-remove_hook_for  
+```ruby
+base_root
+default_source_root
+desc
+hide!
+namespace
+remove_hook_for
+
+hook_for
 source_root
+```
 
 ## Class Protected methods
 

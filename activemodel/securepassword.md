@@ -1,4 +1,4 @@
-## SecurePassword
+## Secure Password
 
 类方法：
 
@@ -37,15 +37,19 @@ user.authenticate('mUc3m00RsqyRe')                    # => user
 下面是 Rails 里面默认的加密、解密实现：
 
 ```ruby
-[1] pry(main)> require 'bcrypt'
-=> true
-[2] pry(main)> cost = BCrypt::Engine.cost
-=> 10
-[3] pry(main)> unencrypted_password = "password"
-=> "password"
-[4] pry(main)> password_digest = BCrypt::Password.create(unencrypted_password, cost: cost)
-=> "$2a$10$GGtvADq0jfb9E2wy4Nq0je1ZrJbJrsRSigwtBMlAAfV5dbAEgjt7C"
-[5] pry(main)> BCrypt::Password.new(password_digest) == unencrypted_password
-=> true
+require 'bcrypt'
+# => true
+
+cost = BCrypt::Engine.cost
+# => 10
+
+unencrypted_password = "password"
+# => "password"
+
+password_digest = BCrypt::Password.create(unencrypted_password, cost: cost)
+# => "$2a$10$GGtvADq0jfb9E2wy4Nq0je1ZrJbJrsRSigwtBMlAAfV5dbAEgjt7C"
+
+BCrypt::Password.new(password_digest) == unencrypted_password
+# => true
 ```
 > Note: BCrypt::Password.create 加密，BCrypt::Password.new 解密

@@ -13,18 +13,36 @@ gem 'mail' 可用于邮件处理，包括创建、发送、和接收等。mail �
 ```ruby
 require 'mail'
 
+Mail.defaults do
+  delivery_method :smtp,
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "example.com",
+    :authentication       => :plain,
+    :user_name            => "user_name@gmail.com",
+    :password             => "gmail_password",
+    :enable_starttls_auto => true
+end
+
 mail = Mail.new do
-  from     'from@example.com'
-  to       'to@example.com'
-  subject  'Here is the image you wanted'
-  body     File.read('body.txt')
-  add_file :filename => 'somefile.png', :content => File.read('/somefile.png')
+  from     'no-reply@example.com'
+  to       'hello@world.com'
+  subject  'First multipart email sent with Mail'
+
+  text_part do
+    body 'This is plain text'
+  end
+
+  html_part do
+    content_type 'text/html; charset=UTF-8'
+    body '<h1>This is HTML</h1>'
+  end
 end
 
 mail.deliver!
 ```
 
-当然，上面的邮件并不能发送成功，因为有一些必须的配置还没有写，并且我们也没有 'body.txt' 文件和 '/somefile.png' 图片。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
+上面的例子使用了 gmail 做为邮件服务器，所以需要用到 gmail 用户名和密码，但实际上你也可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
 
 > Note: 单独发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
 
@@ -82,8 +100,6 @@ and this is a variable <%= @var %>
 ```
 
 配置部分可以抽取出来，模板和内容可以分开管理，创建和发送邮件也更加直观。
-
-> Note: 以上代码参考了：[ActionMailer 3 without Rails](http://stackoverflow.com/questions/4951310/actionmailer-3-without-rails)
 
 ## 引入其它，为了更实用
 

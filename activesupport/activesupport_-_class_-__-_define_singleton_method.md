@@ -83,8 +83,6 @@ define_singleton_method("#{name}=") do |val|
   val
 end
 
-
-
 define_method(name) do
   if instance_variable_defined?(ivar)
     instance_variable_get ivar

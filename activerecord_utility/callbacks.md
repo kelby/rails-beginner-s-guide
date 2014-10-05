@@ -1,5 +1,16 @@
 # Callbacks
 
+基于 ActionModel 提供的 `define_model_callbacks` 方法，共生成十几个过滤器方法。
+
+```ruby
+include ActiveModel::Validations::Callbacks
+
+define_model_callbacks :initialize, :find, :touch, :only => :after
+define_model_callbacks :save, :create, :update, :destroy
+```
+
+和 AbstractController::Callbacks::ClassMethods 用元编程生成过滤器的方法名，是两种手法(尽管最终都是基于ActiveSupport::Callbacks)。
+
 ## 是什么？
 
 通过钩子的方式，影响对象的生命周期。

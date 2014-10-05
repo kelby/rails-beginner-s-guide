@@ -1,131 +1,16 @@
-## Base
+ActionMailer 使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
 
-也就是 ActionMailer::Base，我们继承的就是它。
-
-|方法|解释|
-|--|--|
-|attachments() | 允许你在邮件里添加附件|
-|default(value = nil) | value必需是Hash类型|
-
-`attachments()`
-
-类型：
-
-```ruby
-a_mailer.attachments.class
-=> Mail::AttachmentsList
-
-# 类似数组
-a_mailer.attachments
-=> []
-```
-
-使用举例(定义)：
-
-```ruby
-mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
-```
-
-只需要指定文件名、文件类型，然后Rails 会自动帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64编码的附件内容。
-
-你也可以重写它们：
-
-```ruby
-mail.attachments['filename.jpg'] = { mime_type: 'application/x-gzip',
-                                     content: File.read('/path/to/filename.jpg') }
-```
-
-使用举例(调用)：
-
-```ruby
-# By Filename
-mail.attachments['filename.jpg'] # => Mail::Part object or nil
-
-# or by index
-mail.attachments[0]              # => Mail::Part (first attachment)
-```
-
-`default(value = nil)` 使用举例：
-
-```ruby
-# 下面两者一样
-config.action_mailer.default { from: "no-reply@example.org" }
-config.action_mailer.default_options = { from: "no-reply@example.org" }
-
-# 常见配置(开发模式下)
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-# 下面这些配置，在 Mail 里就有了
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  address: 'smtp.gmail.com',
-  port: 587,
-  domain: 'your_domain.com',
-  username: 'your_email@gmail.com',
-  password: 'your_password',
-  authentication: 'plain',
-  enable_starttls_auto: true
-}
-
-# 默认是 false, 通常开发环境下可设置为 true
-config.action_mailer.raise_delivery_errors = true
-# 默认即是 true
-config.action_mailer.perform_deliveries = true
-```
-
-设置默认值，和配置文件里的 `default_options=` 一样。
-
-| 方法 | 解释 |
-| -- | -- |
-| mail(headers = {}, &block) | 表示邮件对象 |
-| receive(raw_mail) | 表示接收邮件 |
-
-`mail(headers = {}, &block)` header(头部)可接受以下参数，并且最后可接收一个代码块：
-
-| 参数 | 含义 |
-| :-- | -- |
-| :subject | 主题 |
-| :from | 发件人 |
-| :to | 收件人 |
-| :cc | 抄送 |
-| :bcc | 密送 |
-| :reply_to | 回邮地址 |
-| :date |时间|
-
-`receive(raw_mail)`
-
-Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件对象。
-
-`mailer_name()` 返回文件名，或者 anonymous。
-
-和 Mail 有关联？
-
-headers 返回 Mail对象的 headers 或 Mail对象本身
-attachments 返回 Mail对象的 attachments
-mail(headers = {}, &block) 返回 Mail对象本身
-
-除了以上方法外，还有：
-
-```ruby
-default_i18n_subject
-headers
-register_interceptor, register_interceptors
-register_observer, register_observers
-set_content_type
-supports_path?
-```
-
-[如何使用 Mail](https://github.com/mikel/mail#usage)
+ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
 
 ## Mail Helper
 
 | 方法 | 解释 |
 | -- | -- |
-| attachments() | 表示邮件内容里的附件。 |
-| mailer() | 表示邮件所在的Controller对象。 |
-| message() | 表示邮件本身。 |
-| block_format(text) | 格式化文本，行首空两格，每行长度不超过 72 个字符。(邮件的标准格式，就是这样的) |
-| format_paragraph(text, len = 72, indent = 2) | 格式化文本。*len* 为每行长度，*index* 为行首空格数。 |
+| mailer() | 表示邮件所在的 Mailer 对象，类似 Controller 对象 |
+| message() | 表示邮件本 |
+| attachments() | 表示邮件里面的附件 |
+|format_paragraph(text, len = 72, indent = 2)|处理一段文本消息，行首空两格，每行长度不超过 72 个字符|
+|block_format(text)|使用 format_paragraph 处理大段的文本|
 
 ## Message Delivery
 
@@ -141,6 +26,28 @@ message
 ```
 
 deliver 直接调用了 gem 'mail' 提供的方法，或加入延迟任务再调用。
+
+通常，我们都是创建邮件并发送
+
+```ruby
+# Creates the email and sends it immediately
+Notifier.welcome("helloworld@example.com").deliver_now
+```
+
+也可以先创建邮件对象，稍后邮件对象调用方法发送邮件：
+
+```ruby
+message = Notifier.welcome("helloworld@example.com") # => an ActionMailer::MessageDeliver object
+message.deliver_now                                  # sends the email
+```
+
+再或者，自动延迟发送
+
+```ruby
+Notifier.welcome(david).message     # => a Mail::Message object
+```
+
+> NOTE: 现在 Rails 默认已经有延迟发送的方法。
 
 ## 其它
 
@@ -181,4 +88,31 @@ View 里：
 <%= users_url(host: "example.com") %>
 ```
 
+**生成 Mailer 和模板**
+
+通过 `rails g mailer UserMailer welcome` 创建 mailer 类和视图：
+
+```
+create  app/mailers/user_mailer.rb
+invoke  erb
+create    app/views/user_mailer
+create    app/views/user_mailer/welcome.text.erb
+invoke  test_unit
+create    test/mailers/user_mailer_test.rb
+```
+
+**邮件测试**
+
+默认 Rails 提供两个 helper 方法用于测试：
+
+|方法|解释|
+|--|--|
+|assert_emails(number) | 断言已经发送的邮件数|
+|assert_no_emails(&block) | 断言没有邮件发送出去(可用 assert_emails 0 代替)|
+
+assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
+
+**创建消息并渲染邮件模板**
+
+**创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 里重新定义的 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则(把此方法当做参数对待)创建 Mailer 对象。
 

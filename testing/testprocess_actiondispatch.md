@@ -1,6 +1,6 @@
 # ActionDispatch
 
-## TestProcess
+## Test Process
 
 ```
 assigns
@@ -11,7 +11,7 @@ redirect_to_url
 session
 ```
 
-## ResponseAssertions
+## Response Assertions
 
 ```
 assert_redirected_to

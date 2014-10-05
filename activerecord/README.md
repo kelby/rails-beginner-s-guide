@@ -8,13 +8,12 @@ Migration
 
 SchemaMigration
 
-SchemaDumper
 
 Schema
 
 ---
 
-下面这 3 个模块，来源 ConnectionAdapters，它下面还有很多模块，在此忽略其它 ...
+下面这 4 个模块，来源 ConnectionAdapters，它下面还有很多模块，在此忽略其它 ...
 
 SchemaStatements
 
@@ -22,9 +21,12 @@ TableDefinition
 
 Table
 
+DatabaseStatements
+
 ---
 
-DatabaseTasks
+ModelSchema*
+
 
 ## 数据库操作(增删查改问)
 
@@ -78,8 +80,6 @@ AttributeAssignment
 
 Timestamp
 
-
-
 ModelSchema
 
 - Core
@@ -106,15 +106,13 @@ Transactions
 
 包括 AssociatedValidator、PresenceValidator、UniquenessValidator
 
-Translation
+~~Translation~~
 
 Store
 
 NoTouching
 
 ReadonlyAttributes
-
-
 
 NestedAttributes
 
@@ -123,8 +121,6 @@ Integration
 - Inheritance
 
 model 之间的继承关系(用的是同一张表)
-
-
 
 - Enum
 
@@ -158,9 +154,6 @@ Sanitization
 
 - StatementCache
 
-
-
-
 ## 其它
 
 - type
@@ -180,10 +173,4 @@ Sanitization
 - tasks
 
 包括 DatabaseTasks，MySQLDatabaseTasks、PostgreSQLDatabaseTasks、SQLiteDatabaseTasks
-
-对于 Association 你还有什么要说的？  
-http://jonathanhui.com/ruby-rails-3-model-association
-
-对 Association 里的 has_many 多讲解一点？  
-http://depthcoding.ybarthelemy.info/2012/07/30/under-the-hoods-of-activerecords-has_many-method/
 

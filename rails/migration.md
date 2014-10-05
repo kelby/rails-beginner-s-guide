@@ -1,6 +1,6 @@
 # Migration
 
-require ‘actions/create_migration’
+require 'actions/create_migration'
 
 ```
 create_migration

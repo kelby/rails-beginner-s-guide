@@ -115,3 +115,62 @@ p2.save
 # 锁机制起效，保存报错
 # => Raises a ActiveRecord::StaleObjectError
 ```
+
+---
+
+`Optimistic`
+
+默认，使用 `lock_version` 做为乐观锁的版本。新增乐观锁：
+
+> add_column :posts, :lock_version, :integer, default: 0, null: false
+
+举例：当你保存时会自动更新 lock_version 的值。
+
+```ruby
+p1.save!
+   (0.1ms)  begin transaction
+   (0.4ms)  UPDATE "posts" SET "title" = 'xxoo ', "updated_at" = '2014-04-20 14:02:58.425646', "lock_version" = 1 WHERE ("posts"."id" = 1 AND "posts"."lock_version" = 0)
+   (8.1ms)  commit transaction
+=> true
+
+# 如果别人想再次更改，(脏数据)不会覆盖已经更新过的数据，而是会报错。
+ActiveRecord::StaleObjectError: Attempted to update a stale object: Post
+```
+
+你也可以更改名字：
+
+```ruby
+class Post < ActiveRecord::Base
+  self.locking_column = :lock_person
+end
+```
+
+通常用法：
+
+1. Add `:lock_version, :integer, default: 0` column to model
+2. Use that column in forms for your model
+3. Catch and resolve `StaleObjectError` on your model updates
+
+缺点：有可能脏读。
+
+它是应用级别的锁。
+
+`Pessimistic`
+
+例如 `Blog.find(1, lock: true)` 或 例如 `Blog.lock.find(1)`
+
+```ruby
+Blog.transaction do
+  b = Blog.find(2, :lock=> true)
+  b.title = 'How to Replace CLI-8 Chip2'
+  sleep(20)
+  b.save!
+end
+```
+
+缺点：锁表，一个地方执行写的时候，另一个地方不能同时执行写操作，这没问题；但问题是，你也不能执行读操作。
+缺点：一个地方读数据，并赋值给对象；另一个地方在这之后执行了写操作；这个对象(脏数据)会覆盖已经更新过的数据，而不会报错。
+
+它是数据库级别的锁。
+
+> Note: 一定要用锁的话，我推荐尽可能用乐观锁，但请从实际情况出发。

@@ -1,4 +1,4 @@
-# ActiveRecord Association Reflection
+# Association Reflection
 
 ## Reflection
 
@@ -21,7 +21,7 @@ reflect_on_all_associations, reflect_on_all_autosave_associations
 reflect_on_association, reflections
 ```
 
-### AssociationReflection
+### Association Reflection
 
 AssociationReflection 继承于 MacroReflection 又继承于 AbstractReflection
 
@@ -70,7 +70,7 @@ INVALID_AUTOMATIC_INVERSE_OPTIONS = [:conditions, :through, :polymorphic, :forei
 
 另，HasManyReflection、 HasOneReflection、BelongsToReflection 和 HasAndBelongsToManyReflection 都继承于 AssociationReflection. 它们这几个方法比较少，就不再一一列举。
 
-### ThroughReflection
+### Through Reflection
 
 另一个值得一提的就是：ThroughReflection. ThroughReflection 继承于 AbstractReflection，有下列方法：
 

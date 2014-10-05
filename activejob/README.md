@@ -8,7 +8,7 @@
 虽然这几个延迟任务 gem 使用上类似，但语法上多少有一点不同。
 新的 Active Job 组件统一了接口，使用和切换都会变得更容易。
 
-## QueueAdapter
+## Queue Adapter
 
 默认使用的 queue_adapter 是 :inline，你可以根据需要自己设置 queue_adapter.
 
@@ -22,7 +22,7 @@ ActiveJob::Base.queue_adapter = :inline
 # :qu, :que, :queue_classic, :resque, :sidekiq, :sneakers, :sucker_punch
 ```
 
-## QueueName
+## Queue Name
 
 默认使用的 queue_name 是 "default"
 
