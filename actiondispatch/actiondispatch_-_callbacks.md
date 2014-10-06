@@ -1,4 +1,4 @@
-# ActionDispatch - Callbacks
+# ActionSupport - Callbacks
 
 ```ruby
 # 默认过滤类型

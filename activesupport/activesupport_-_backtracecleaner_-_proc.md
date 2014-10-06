@@ -1,6 +1,4 @@
-# ActiveSupport - BacktraceCleaner - proc 的运用
 ## BacktraceCleaner
------------------
 
 管理跟踪系统。
 

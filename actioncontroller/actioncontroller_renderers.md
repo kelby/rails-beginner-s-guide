@@ -1,4 +1,4 @@
-# ActionController Renderers
+# Renderers
 
 ```
 add

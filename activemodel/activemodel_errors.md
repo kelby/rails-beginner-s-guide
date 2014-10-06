@@ -1,4 +1,4 @@
-# ActiveModel Errors
+# Errors
 
 常用以下方法
 

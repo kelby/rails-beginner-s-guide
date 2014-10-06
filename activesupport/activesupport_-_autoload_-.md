@@ -1,4 +1,4 @@
-# ActiveSupport - Autoload - 实例变量的运用
+# Autoload - 实例变量的运用
 
 ## Autoload
 
@@ -95,4 +95,49 @@ end
 [Threading with the AWS SDK for Ruby](http://ruby.awsblog.com/blog/tag/autoload)<br>
 [Ruby on Rails 线程安全代码](http://ruby-china.org/topics/10932)<br>
 [线程安全 - 概述](http://baike.baidu.com/view/1298606.htm#1)
+
+## Autoload
+
+自动加载和急加载。
+
+This module allows you to define autoloads based on Rails conventions (i.e. no need to define the path it is automatically guessed based on the filename) and also define a set of constants that needs to be eager loaded:
+
+```ruby
+module MyLib
+  extend ActiveSupport::Autoload
+
+  autoload :Model
+
+  eager_autoload do
+    autoload :Cache
+  end
+end
+```
+
+Then your library can be eager loaded by simply calling:
+
+```ruby
+MyLib.eager_load!
+```
+
+```ruby
+autoload, autoload_at, autoload_under, autoloads
+eager_autoload, eager_load!
+```
+
+1. 线程安全
+2. 有没有必要(不使用但也要加载？)
+3. 对性能的影响
+
+自动加载 和 线程安全
+
+Many libraries and frameworks (including Ruby on Rails) use a feature of Ruby known as autoload, which allows components of a library to be lazily loaded only when the constant is resolved in the code path of an executing program. The problem with this feature is that, historically, the implementation has not been thread-safe. In other words, if two threads tried to resolve an autoloaded constant at the same time, weird things would happen. This problem was finally tackled in Ruby 1.9.1 but then regressed in 1.9.2 and re-resolved in 1.9.3 (but only in a later patchlevel), causing a bit of confusion around whether `autoload` is actually safe to use in a threaded Ruby program.
+
+2.0 里面的线程安全
+
+For all intents and purposes, autoloading of modules should be considered thread-safe in Ruby 2.0.0p0, as the patch was officially merged into the 2.0 branch prior to release. Any thread-safety issues in Ruby 2.0 should be considered regressions, according to that ticket.
+
+进入 Eager Loading
+
+Of course, guaranteeing support for Ruby 2.0 is not entirely sufficient for most programs still running on 1.9.x, and in some cases, 1.8.x, so you may need to use a more backward-compatible strategy. In Ruby on Rails, this was solved with an `eager_autoload` method that forcibly loads all modules marked to be lazily loaded. If you are running threaded code, it is recommended that you call this prior to launching threads. Note that in Rails 4.0, the framework will eager load all modules by default, which should help you avoid having to think about these threading issues.
 

@@ -1,4 +1,4 @@
-# ActiveSupport Inflector
+# Inflector
 
 ## transliterate
 

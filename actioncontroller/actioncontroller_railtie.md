@@ -1,4 +1,4 @@
-# ActionController Railtie
+# Railtie
 
 ## initializer
 

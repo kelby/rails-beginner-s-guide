@@ -1,4 +1,4 @@
-# ActiveSupport - Gzip 与 JSON
+# Gzip 与 JSON
 A convenient wrapper for the zlib standard library that allows compression/decompression of strings with gzip.
 
 ```ruby
@@ -38,3 +38,16 @@ ActiveSupport::JSON.decode("{\"team\":\"rails\",\"players\":\"36\"}")
 ```
 
 什么原因，它们一个是模块方法，一个是类方法
+
+## Gzip
+
+A convenient wrapper for the [zlib](http://ruby-doc.org/stdlib-2.1.0/libdoc/zlib/rdoc/index.html) standard library that allows
+compression/decompression of strings with gzip.
+
+```ruby
+  gzip = ActiveSupport::Gzip.compress('compress me!')
+  # => "\x1F\x8B\b\x00o\x8D\xCDO\x00\x03K\xCE\xCF-(J-.V\xC8MU\x04\x00R>n\x83\f\x00\x00\x00"
+
+  ActiveSupport::Gzip.decompress(gzip)
+  # => "compress me!"
+```

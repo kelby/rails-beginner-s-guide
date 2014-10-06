@@ -1,6 +1,6 @@
 # ActionView 渲染相关(renderer & rendering)
 
-## ViewPaths
+## View Paths
 
 - lookup_context
 

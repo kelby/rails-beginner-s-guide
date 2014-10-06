@@ -1,4 +1,4 @@
-# ActionController Head
+# Head
 
 ## 返回一个内容为空的 response
 
