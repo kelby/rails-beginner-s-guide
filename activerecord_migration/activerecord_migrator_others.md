@@ -1,10 +1,6 @@
 # ActiveRecord Migrator Others
 
-
 [Active Record Migrations](http://edgeguides.rubyonrails.org/migrations.html)
-
-
-
 
 **更高效的迁移**
 

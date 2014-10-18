@@ -58,7 +58,6 @@ FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" =
 
 特点，SQL 查询语句始终只有一条。
 
-
 ## 其它 references
 
 includes 后面的查询条件，用的是 "关联表.属性"，有时候 Rails 不能推断出这个'关联表'到底是哪个，需要用 references 指明。

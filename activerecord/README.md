@@ -8,7 +8,6 @@ Migration
 
 SchemaMigration
 
-
 Schema
 
 ---
@@ -26,7 +25,6 @@ DatabaseStatements
 ---
 
 ModelSchema*
-
 
 ## 数据库操作(增删查改问)
 
@@ -86,11 +84,7 @@ ModelSchema
 
 配置 database.yml，及一些看不出来什么功能的东西
 
-
-
 ~~AttributeSet~~
-
-
 
 ~~AttributeDecorators~~
 

@@ -1,4 +1,3 @@
-
 ## Railtie
 
 获取 database.yml 的配置信息：

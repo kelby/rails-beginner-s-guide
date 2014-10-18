@@ -8,7 +8,7 @@ restore_delivery_method, restore_test_deliveries
 set_delivery_method, set_expected_mail
 ```
 
-## ClassMethods
+## Class Methods
 
 ```
 determine_default_mailer

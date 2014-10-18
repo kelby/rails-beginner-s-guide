@@ -8,7 +8,7 @@ render, rendered_views
 setup_with_controller
 ```
 
-### ClassMethods
+### Class Methods
 
 ```
 determine_default_helper_class
@@ -22,7 +22,7 @@ tests
 render
 ```
 
-### RenderedViewsCollection
+### Rendered Views Collection
 
 ```
 add
@@ -31,7 +31,7 @@ rendered_views
 view_rendered?
 ```
 
-## TestController
+## Test Controller
 
 ```
 controller_path=

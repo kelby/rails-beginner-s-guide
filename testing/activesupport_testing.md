@@ -39,7 +39,7 @@ class ExampleTest < ActiveSupport::TestCase
 end
 ```
 
-## TimeHelpers
+## Time Helpers
 
 ```
 travel, travel_back, travel_to

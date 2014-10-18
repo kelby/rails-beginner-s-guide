@@ -1,6 +1,5 @@
 介绍的方法都在 **ActiveRecord::QueryMethods**
 
-
 提供方法：
 
 |方法|解释|

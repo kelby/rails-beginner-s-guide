@@ -2,8 +2,6 @@
 
 ## connection_adapters
 
-
-
 ### 底层
 
 ~~StatementPool~~

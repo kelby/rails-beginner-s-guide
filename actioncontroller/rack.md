@@ -1,4 +1,4 @@
-# Rack: a Ruby Webserver Interface
+# Rack: Ruby Web server 接口
 
 用 Ruby 或"Ruby 实现的 Web 框架"创建的 app应用，想要提供 Web 服务，它们都要和 Web服务器打交道。而这个过程是非常复杂的，为了简化这个过程，我们可以使用 Rack.
 
