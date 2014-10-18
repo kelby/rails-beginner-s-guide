@@ -11,4 +11,4 @@
 
 Rails.logger 默认已经使用。
 
-实现：封装了 Logger 的实例对象，覆盖了它自带的 [Formatter](http://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger/Formatter.html)对象，并添加了 tagged 方法。
+实现：封装了 Logger 的实例对象，覆盖了它自带的 [Formatter](http://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger/Formatter.html) 对象，并添加了 tagged 方法。

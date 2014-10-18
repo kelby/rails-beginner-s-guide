@@ -1,18 +1,5 @@
 # 定制自己的 Railtie
 
-```
-# your_railtie/railtie.rb
-module YourRailtie
-  class Railtie < Rails::Railtie
-    # ... ...
-  end
-end
-```
-
-```
-require 'your_railtie/railtie'
-```
-
 ## 继承于 Rails::Railtie
 
 继承于 Rails::Railtie，即可创建自己的 Railtie. 在 Rails 启动的时候，它也会被执行。
@@ -100,10 +87,22 @@ end
 ## 其它
 
 ```
-abstract_railtie?
-config, configure, console
-generate_railtie_name, generators
-inherited, instance
-railtie_name, railtie_namespace, rake_tasks, respond_to_missing?, runner
+config # 名词
+configure # 动词
+
+console
+generators
+instance
+railtie_name
+railtie_namespace
+rake_tasks
+runner
 subclasses
+
+abstract_railtie? # 只有 Rails::Railtie、Rails::Engine 和 Rails::Application 是 abstract
+
+generate_railtie_name
 ```
+
+部分方法的解释，可以参考已有解释的方法，或参考 Engine 里的方法。
+

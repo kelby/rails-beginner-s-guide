@@ -3,9 +3,6 @@
 我们的响应格式。
 
 ```ruby
-# in your Controller
-respond_to :html, :xml, :json
-
 # in your actions
 respond_to do |format|
   format.html

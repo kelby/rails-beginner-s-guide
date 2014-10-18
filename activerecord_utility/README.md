@@ -268,7 +268,7 @@ member.posts.second.title # => 'The egalitarian assumption of the modern citizen
 
 ## Store
 
-`store(store_attribute, options = {})` 以 JSON(也可以理解为Hash) 的形式存储数据。
+`store(store_attribute, options = {})` 以 JSON(也可以理解为Hash) 的形式存储某字段。
 
 举例，我们数据库里有 `name` 字段，我们想这样存储：
 
@@ -280,7 +280,7 @@ class User < ActiveRecord::Base
 end
 
 u = User.new(last_name: 'Kelby', first_name: 'Lee')
-u.last_name                          # Accessor stored attribute
+u.last_name                    # Accessor stored attribute
 u.name[:last_name] = 'Denmark' # Any attribute, even if not specified with an accessor
 
 # There is no difference between strings and symbols for accessing custom attributes
@@ -302,6 +302,8 @@ end
 ```ruby
 User.stored_attributes[:name] # [:last_name, :first_name, :nickname]
 ```
+
+> Note: store 封装了 Serialization.serialize 方法
 
 ## Transactions
 

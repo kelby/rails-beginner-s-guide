@@ -1,61 +1,34 @@
-# OrderedHash 和 OrderedOptions
+# Ordered Options 和 Ordered Hash
 
-## OrderedOptions
+## Ordered Options
 
 普通 Hash
 
 ```ruby
 h = {}
-h[:boy] = 'John'
+h[:boy]  = 'John'
 h[:girl] = 'Mary'
 h[:boy]  # => 'John'
 h[:girl] # => 'Mary'
 ```
 
-使用 OrderedOptions
+使用 OrderedOptions 后，可以以方法的形式调用 key，读、写其 value.
 
 ```ruby
 h = ActiveSupport::OrderedOptions.new
-h.boy = 'John'
+h.boy  = 'John'
 h.girl = 'Mary'
 h.boy  # => 'John'
 h.girl # => 'Mary'
+
+# 原来的调用方式仍然有效
+
+h[:boy]  = 'John'
+h[:girl] = 'Mary'
+h[:boy]  # => 'John'
+h[:girl] # => 'Mary'
 ```
 
-**扩展 Hash**
+## ~~Ordered Hash~~
 
-可以把 Hash 的 key 当做方法，可以读写 value。`OrderedOptions` 扩展于 Hash
-
-普通的 Hash 是这样:
-
-```ruby
-  h = {}
-  h[:boy] = 'John'
-  h[:girl] = 'Mary'
-  h[:boy]  # => 'John'
-  h[:girl] # => 'Mary'
-```
-
-使用 OrderedOptions, Hash 的 key 可以当做方法，读写 value:
-
-```ruby
-  h = ActiveSupport::OrderedOptions.new
-  h.boy = 'John'
-  h.girl = 'Mary'
-  h.boy  # => 'John'
-  h.girl # => 'Mary'
-```
-
-默认 Hash 的 `keys` 方法，是没有排序的，使用 `OrderedHash` 后会进行排序
-
-```ruby
-oh = ActiveSupport::OrderedHash.new
-oh[:a] = 1
-oh[:c] = 3
-oh[:b] = 2
-oh.keys # => [:a, :b, :c]
-# Hash 默认的 keys 没有排序，这里显示的是 [:a, :c, :b]
-```
-
-实现：语法糖。
-
+默认 Ruby 的 Hash 已经按照加入的顺序进行排序。

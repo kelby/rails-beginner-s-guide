@@ -63,7 +63,7 @@ end
 
   8.3) 定制的 Railtie，Engine
 
-Build the middleware stack and run to_prepare callbacks
+构建 middleware stack
 (这样查看 middleware Rails.application.send :middleware 顺序从前到后)
 （Rails.application.send :default_middleware_stack 这样是默认的)
 

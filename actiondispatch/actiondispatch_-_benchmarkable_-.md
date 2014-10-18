@@ -29,3 +29,11 @@ class << Benchmark
   end
 end
 ```
+
+使用举例：
+
+```ruby
+<% benchmark 'Process data files', level: :info, silence: true do %>
+  <%= expensive_and_chatty_files_operation %>
+<% end %>
+```

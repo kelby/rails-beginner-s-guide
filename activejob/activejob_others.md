@@ -4,7 +4,7 @@
 
 接受的参数类型很广泛，需要先处理一下。
 
-进队列时参数需要 serialize
+进队列时参数需要 serialize，
 执行前参数需要 deserialize
 
 当然，这都是自动完成的。
@@ -38,15 +38,27 @@ end
 
 ## Railtie
 
-设置 logger 和默认 queue_adapter
+设置 logger 和配置(如：默认 queue_adapter)
 
-## QueueAdapters
+## Queue Adapters
 
-原来，不同的延迟任务 gem，现在：
+原来，不同的延迟任务 gem 有各自不同的 self.perform、perform、run、work，现在：
 
 都有同名的 self.enqueue 和 self.enqueue_at
 
-有各自不同的 self.perform、perform、run、work
+## Logging
+
+around_enqueue、around_perform 和 before_enqueue 有日志记录
+
+enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
+
+## Identifier
+
+每个任务都有全局唯一的 job_id
+
+## Configured Job
+
+配置实例，对应着 Core 的 set 类方法。
 
 ## 解析 queue_adapter 及其 API
 

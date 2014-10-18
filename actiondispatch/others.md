@@ -50,12 +50,6 @@ env["action_dispatch.parameter_filter"] = [:password]
 
 ## RouteSet
 
-- UrlFor
-
-对外提供 url_for，是封装了 HelperMethodBuilder (极端情况下才调用到)
-
-和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder (极端情况下才调用到)
-
 - 特指 route_set.rb
 - 本身就充满魔法
 - 还是内外沟通的桥梁

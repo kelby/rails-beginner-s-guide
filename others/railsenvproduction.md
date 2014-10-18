@@ -18,6 +18,3 @@ Rails.env == 'production'
 ```ruby
 Rails.env.production?
 ```
-
-实现原理：method_missing 然后检查方法最后是不是以 ? 结尾，再用 == 判断。
-评价：真的只是语法糖，并且局限于 Rails.env 对象，所以实际意义不大。

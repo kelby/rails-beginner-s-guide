@@ -39,7 +39,7 @@ calculate
 
 > Note: 它们都是直接返回结果。
 
-## Delegation
+## ~~Delegation~~
 
 ## FinderMethods
 
@@ -61,11 +61,13 @@ find_last, find_nth, find_nth_with_limit, find_one, find_some, find_take, find_w
 take, take!
 ```
 
-## HashMerger & Merger
+## ~~HashMerger & Merger~~
 
-## PredicateBuilder
+## ~~PredicateBuilder~~
 
 ## QueryMethods
+
+单独另讲
 
 ## SpawnMethods
 

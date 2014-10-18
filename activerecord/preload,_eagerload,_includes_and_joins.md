@@ -20,6 +20,8 @@ SELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "posts"."id" AS t1_r0,
        "posts"."user_id" AS t1_r2, "posts"."desc" AS t1_r3
 FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" = "users"."id"
 WHERE (posts.desc = "ruby is awesome")
+
+@customers = Customer.joins(:products).where("products.is_master = true")
 ```
 
 特点，生成一条还是两条 SQL 查询语句，取决于写法。

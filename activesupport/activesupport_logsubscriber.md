@@ -1,5 +1,30 @@
 # LogSubscriber
 
+继承于 Subscriber
+
+提供方法：
+
+```
+color
+
+finish, flush_all!
+log_subscribers, logger
+start
+```
+
+和
+
+```
+info
+debug
+warn
+error
+fatal
+unknown
+```
+
+使用举例：
+
 ```ruby
 module ActiveRecord
   class LogSubscriber < ActiveSupport::LogSubscriber
@@ -8,28 +33,6 @@ module ActiveRecord
     end
   end
 end
-```
 
-```ruby
 ActiveRecord::LogSubscriber.attach_to :active_record
-```
-
-## TestHelper
-
-```ruby
-class SyncLogSubscriberTest < ActiveSupport::TestCase
-  include ActiveSupport::LogSubscriber::TestHelper
-
-  def setup
-    ActiveRecord::LogSubscriber.attach_to(:active_record)
-  end
-
-  def test_basic_query_logging
-    Developer.all.to_a
-    wait
-    assert_equal 1, @logger.logged(:debug).size
-    assert_match(/Developer Load/, @logger.logged(:debug).last)
-    assert_match(/SELECT \* FROM "developers"/, @logger.logged(:debug).last)
-  end
-end
 ```

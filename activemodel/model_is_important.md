@@ -11,10 +11,10 @@
 在数据存入数据库存之前，有好几种方法可以做校验。包括客户端校验、Controller 级别的校验、Model 级别的校验和数据库本身做约束。
 
 ```ruby
-errors()
-invalid?(context = nil)
-valid?(context = nil)
-validate(context = nil) - Alias for: valid?
+errors
+
+invalid?
+valid? & validate
 validates_with(*args, &block) - 调用方式五(不需要属性，需要校验器；作用于某个具体对象，间接做校验)
 ```
 
@@ -76,6 +76,9 @@ after_validation
 
 自定义校验器，有两种方式，继承于 Validator 或 EachValidator.
 
+- 继承 ActiveModel::Validator 然后实现 `validate` 方法。这种方式，由 `validates_with` 加校验器名字的方式进行调用。
+- 继承 ActiveModel::EachValidator 然后实现 `validate_each` 方法。这种方式，由 `validates` 里以参数的方式进行调用。
+
 任何继承于 ActiveModel::Validator 的校验器都要实现 `validate` 方法，此方法接收要校验的 record 做为参数。然后，通过 `validates_with` 方法可以使用刚才定义的校验器。
 
 ```ruby
@@ -93,7 +96,7 @@ class MyValidator < ActiveModel::Validator
 end
 ```
 
-直接继承于 Validator 的校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动校验。实际上，推荐使用更更灵活的 EachValidator. 任何继承于 ActiveModel::EachValidator 的校验器都要实现 `validate_each` 方法，此方法接收要校验的 record、attribute、value 做为参数。
+**直接继承于 Validator** 的校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动校验。实际上，推荐使用**更灵活的 EachValidator**. 任何继承于 ActiveModel::EachValidator 的校验器都要实现 `validate_each` 方法，此方法接收要校验的 record、attribute、value 做为参数。
 
 ```ruby
 class TitleValidator < ActiveModel::EachValidator
@@ -104,26 +107,18 @@ class TitleValidator < ActiveModel::EachValidator
 end
 ```
 
-然后，通过 `validates` 方法可以使用刚才定义的校验。
+然后，通过 `validates` 方法(刚才定义的校验器做为参数之一)可以使用刚才定义的校验。
 
 ```ruby
 class Person
   include ActiveModel::Validations
-  attr_accessor :title
+  attr_accessor :name
 
-  validates :title, presence: true
+  validates :name, title: true
 end
 ```
 
-方式主要有两种
-
-一般自己写的校验方法比较少见，更别说自定义检验器了。出于习惯，我们往往会用 if...else 等语句来做判断；或者写成方法，以回调的形式调用。
-
-- validate - 这种方式，由 `validate(*args, &block)` 后面加校验代码或校验方法。
-- 自定义校验器 - 继承 ActiveModel::Validator 然后实现 `validate` 方法。这种方式，由 `validates_with` 加校验器名字的方式进行调用。
-- 自定义校验 - 继承 ActiveModel::EachValidator 然后实现 `validate_each` 方法。这种方式，由 `validates` 里以参数的方式进行调用。
-
-> Note: EachValidator 也继承于 Validator. Rails 内建的校验方法(或者说校验器)，都是继承于 EachValidator.
+> Note: EachValidator 也继承于 Validator. Rails 内建的所有校验方法(或者说校验器)，都是继承于 EachValidator.
 
 ## Errors
 

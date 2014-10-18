@@ -1,8 +1,8 @@
 # ActionDispatch
 
 路由相关是它的老本行。
-对内：RouteSet
-对外：除 RouteSet 外，routing 目录里的其它模块
+对内：RouteSet；
+对外：除 RouteSet 外，routing 目录里的其它模块。
 
 ---
 
@@ -54,6 +54,8 @@ use Rack::ConditionalGet
 use Rack::ETag
 run AppName::Application.routes
 ```
+
+从报错上也能看出来：
 
 ```
 rack (1.5.2) lib/rack/etag.rb:26:in `call'

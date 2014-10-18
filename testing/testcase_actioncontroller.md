@@ -1,6 +1,6 @@
-# TestCase ActionController
+# ActionController
 
-## Behavior
+## Test Case Behavior
 
 ```
 build_request

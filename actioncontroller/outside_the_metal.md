@@ -4,7 +4,7 @@
 
 提供了 `cookies` 方法，本质是 request.cookie_jar
 
-## DataStreaming
+## Data Streaming
 
 ```
 send_data # 封装了方法 render
@@ -27,7 +27,7 @@ config.action_controller.etag_with_template_digest = false
 
 对一般的 redirect_to 稍微做处理。在 Others#Flash 章节会有专门介绍。
 
-## ForceSSL
+## Force SSL
 
 ```
 force_ssl_redirect
@@ -74,7 +74,7 @@ ApplicationController.helpers.class
 
 控制台里的 helper 就是 ActionView::Base 的实例对象。
 
-## HideActions
+## Hide Actions
 
 ```
 action_methods  # 覆盖 AbstractController::Base#action_methods
@@ -82,12 +82,16 @@ hide_action     # 将 action 声明为 hide
 visible_action? # 判断 action 是否 hide?
 ```
 
-## ImplicitRender
+## ~~Implicit Render~~
+
+默认渲染，它的优先级很高。
 
 ```
+# AbstractController::Base 有同名方法，根据 Ruby 调用规则，这里会被优先调用
+send_action
+
 default_render
 method_for_action
-send_action
 ```
 
 ## Instrumentation
@@ -101,7 +105,7 @@ render
 send_data, send_file
 ```
 
-## ~~RackDelegation~~
+## ~~Rack Delegation~~
 
 ```
 dispatch

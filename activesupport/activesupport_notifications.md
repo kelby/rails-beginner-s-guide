@@ -2,16 +2,16 @@
 
 怎么使用？
 
-- subscribe - ask to receive instrument data
-- instrument - signal event or track data about operation(duration/exceptions)
+- subscribe - 订阅
+- instrument - 发布
 
 ```ruby
-# 发布
+# 发布消息
 ActiveSupport::Notifications.instrument "my.custom.event", this: :data do
   # do your custom stuff here
 end
 
-# 订阅
+# 订阅消息
 ActiveSupport::Notifications.subscribe "my.custom.event" do |name, started, finished, unique_id, data|
   puts data.inspect # {:this=>:data}
 end
@@ -27,11 +27,11 @@ Rails 默认有很多 Instrumentation，你可以不写 instrument 直接 subscr
 
 控制台里运行 `ActiveSupport::Notifications.instrumenter` 可以查看有哪些 Instrumentation
 
-Why would you do this yourself?
+有以下特点：
 
-- Non-invasive and lightweight.
-- No manipulations.
-- Everything in one place.
+- 低耦合，并且轻量化
+- 操作简单
+- 随处可用
 
 实现：运用中间变量 notifier
 
@@ -48,3 +48,16 @@ Why would you do this yourself?
 [ActiveSupport::Notifications, statistics and using facts to improve your site](http://www.reinteractive.net/posts/141-activesupport-notifications-statistics-and-using-facts-to-improve-your-site)
 
 [Active Support Instrumentation](http://edgeguides.rubyonrails.org/active_support_instrumentation.html)
+
+> Note: 直接查看 Rails 项目里有哪些 instrumenter 可运行命令
+`ActiveSupport::Notifications.instrumenter.instance_variable_get("@notifier").instance_variable_get("@subscribers").map { |s| s.instance_variable_get "@pattern" }`
+此命令不包含元编程创建的 instrumenter，如 ActionController 就有很多 instrumenter 没有包含在内。
+
+## 所有方法
+
+```
+instrument, instrumenter
+publish
+subscribe, subscribed
+unsubscribe
+```

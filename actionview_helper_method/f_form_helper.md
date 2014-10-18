@@ -1,0 +1,16 @@
+# Form Helper
+
+FormHelper 是面向函数
+函数(f对象，参数)
+
+FormBuilder 是面向对象
+
+f对象.方法(参数)
+
+前者，更灵活。因为它没有限定对象，有时候我们'需要'这样做，而有时候我们没'必要'。
+
+form_for 和 fields_for 是另类
+
+大部分封装 Tags::Xxx
+
+名字 FormHelper 起得有一点不合适。

@@ -1,6 +1,6 @@
-# StrongParameters & Parameters
+# Strong Parameters & Parameters
 
-## StrongParameters
+## Strong Parameters
 
 提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
 

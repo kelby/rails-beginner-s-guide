@@ -21,28 +21,30 @@ valid? (校验相关)
 
 ActiveRecord::Callbacks 的
 
-    :initialize, :find, :touch, :only => :after
-    :save, :create, :update, :destroy
+```
+:initialize, :find, :touch, :only => :after
+:save, :create, :update, :destroy
+```
 对应的是 Model 里的回调(或过滤)
 
 AbstractController::Callbacks 的
 
 ```
-    before_action
-    after_action
-    around_action
-    
-    # 以及
-    prepend
-    skip
-    append
+before_action
+after_action
+around_action
+
+# 以及
+prepend
+skip
+append
 ```
 
 对应的是 Controller 里的回调(或过滤)
 
 ActiveJob::Callbacks 的
 
-```ruby
+```
 before_enqueue
 around_enqueue
 after_enqueue

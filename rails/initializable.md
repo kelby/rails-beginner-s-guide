@@ -4,18 +4,23 @@
 
 我们常用的 `initializer` 方法，就是它定义的。
 
-被 Railtie 所调用，又由于继承关系，Engine、Application、YourApp 都可用。
+被 Railtie 所调用，又由于继承关系，Engine、Application、AppName 都可用。
 
 ## Instance Public methods
 
 ```
 initializers
+
 run_initializers
 ```
 
-## ClassMethods
+## Class Methods
 
 ```
-initializer, initializers, initializers_chain, initializers_for
+initializer
+initializers_for
+
+initializers
+initializers_chain
 ```
 

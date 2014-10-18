@@ -1,4 +1,4 @@
-# ParamsWrapper
+# Params Wrapper
 
 ```
 process_action

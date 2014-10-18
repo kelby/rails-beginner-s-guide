@@ -1,6 +1,6 @@
 # ActionView 非渲染 & 非辅助方法
 
-## RecordIdentifier
+## Record Identifier
 
 `dom_class` 和 `dom_id` 根据所传递的对象，生成能代表其身份的"字符串"，可配合其它 helper 一起使用。
 
@@ -26,7 +26,7 @@ dom_id(Post.new, :custom)    # => "custom_post"
 
 实现它们时用到了 ActiveModel::Model 里的方法。
 
-## RoutingUrlFor
+## Routing Url For
 
 `url_for`
 

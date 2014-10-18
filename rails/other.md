@@ -12,8 +12,8 @@ WelcomeController
 MailersController  
 邮件预览的 index 和 preview 页面
 
-InfoController  
-项目信息页面，包括：index、properties、routes
+InfoController & Info  
+项目信息页面，包括：index(同 routes) 和 properties
 
 ## 命令行(rake & rails)
 
@@ -21,21 +21,20 @@ InfoController
 
 都有单独的 rake 文件，`rake -T` 包含但不限于这下面的命令：
 
-annotations  
-documentation  
-framework  
+annotations(notes)  
+documentation(doc)  
+framework(rails)  
 log  
 middleware  
-misc  
+misc(secret、about、time)  
 routes  
 tmp  
-engine  
-rake db xxx  
-**statistics**  
-- CodeStatistics
-- CodeStatisticsCalculator
+engine(app、db)  
+**statistics**(stats)  
+- Code Statistics
+- Code Statistics Calculator
 
-### SourceAnnotationExtractor
+### Source Annotation Extractor
 
 rake notes  
 rake notes:optimize
@@ -78,7 +77,7 @@ update
 
 > Note: 迁移相关在 ActiveRecord 里的 databases.rake 里定义。
 
-## BacktraceCleaner
+## Backtrace Cleaner
 
 是运用，而不是定义，定义于 ActiveSupport::BacktraceCleaner.
 
@@ -95,12 +94,13 @@ bc.clean(exception.backtrace) # perform the cleanup
 
 Rails 里用 `Rails.backtrace_cleane` 替换上面的 `bc`.
 
-## Paths
+## 路径
 
 包括 Root & Path，但只有 Root 对外提供接口。
 
 ```
 add
+
 all_paths
 autoload_once
 autoload_paths

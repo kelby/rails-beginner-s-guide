@@ -1,15 +1,5 @@
 # 其它
 
-render
-
-helper
-
-helper_method
-
-delegate
-
-调用
-
 ---
 
 ArticlesController.helpers
@@ -48,40 +38,10 @@ lookup_context
 
 ---
 
-你可以继承于 FormBuilder，然后构建和表单相关的 helper 方法，举例：
-
-```ruby
-class MyFormBuilder < ActionView::Helpers::FormBuilder
-  def div_radio_button(method, tag_value, options = {})
-    @template.content_tag(:div,
-      @template.radio_button(
-        @object_name, method, tag_value, objectify_options(options)
-      )
-    )
-  end
-end
-```
-
-The above code creates a new method div_radio_button which wraps a div around the a new radio button. Note that when options are passed in, you must called objectify_options in order for the model object to get correctly passed to the method. If objectify_options is not called, then the newly created helper will not be linked back to the model.
-
-The div_radio_button code from above can now be used as follows:
-
-```ruby
-<%= form_for @person, :builder => MyFormBuilder do |f| %>
-  I am a child: <%= f.div_radio_button(:admin, "child") %>
-  I am an adult: <%= f.div_radio_button(:admin, "adult") %>
-<% end -%>
-```
-
----
-
----
-
 每次都要指定模板文件，并且说一遍渲染，不麻烦吗？<br>
 因为模板文件，都在同一目录下，所以我们不必这么麻烦。引进 ActionView 的子模块 Rendering 后我们设置默认的目录即可，并且能自动帮我们"说一遍渲染"。
 
 ---
-
 
 ## 为什么有的 helper 我不推荐？
 

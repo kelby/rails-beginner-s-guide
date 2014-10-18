@@ -17,7 +17,7 @@ session.class
 => ActionDispatch::Integration::Session
 ```
 
-- 可以使用的方法1：几乎所有的 path 和 url
+- 可以使用的方法1：所有的 path 和 url (这里不包含其它 helper)
 - 可以使用的方法2：request.methods
 - 可以使用的方法3：response.methods
 - 可以使用的方法4：相关的 asset_.methods
@@ -32,7 +32,7 @@ session.class
 
 4 `helper`  
 ActionView::Base 实例。
-通过它可以直接使用 view 的方法等，例如：helper 方法等。
+通过它可以直接使用 view 的方法等，例如：所有 helper 方法(这里不包含 path 和 url)。
 
 ```ruby
 module UsersHelper
@@ -45,6 +45,7 @@ module UsersHelper
   end
 end
 
+# 原理类似
 helper.send :extend, UsersHelper
 ```
 

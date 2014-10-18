@@ -156,9 +156,9 @@ delegate :pluck, :ids, to: :all
 
 对 Relation 的操作。哦，我们先理解概念。
 
-- 为什么不完全用Ruby或SQL？
+- 为什么不完全用 Ruby 或 SQL？
 
-Ruby慢，人性化；SQL快，不易读写。
+Ruby 慢，人性化；SQL 快，不易读写。
 
 - 如何充分利用两者优点，特别是我们要做复杂查询的时候？(复杂查询 = 简单的查询 + 简单的查询 + ...)
 
@@ -198,116 +198,6 @@ VALUE_METHODS = MULTI_VALUE_METHODS + SINGLE_VALUE_METHODS
 
 include FinderMethods, Calculations, SpawnMethods, QueryMethods, Batches, Explain, Delegation
 ```
-
-## Scoping
-
-虽然只有 4 个方法，但很实用。
-
-```ruby
-default_scope(scope = nil) - 设置默认 scope
-unscoped - 跳过之前设置的 scope
-
-all - all 方法，默认已经 scope
-scope(name, body, &block) - 命名一个 scope
-```
-
-`scope(name, body, &block)` 重点说说这个方法。
-
-### 相当于类方法，可检索、查询对象
-
-可执行一系列的查询语句，如：where(color: :red).select('shirts.*').includes(:washing_instructions)
-
-```ruby
-class Shirt < ActiveRecord::Base
-  scope :red, -> { where(color: 'red') }
-  scope :dry_clean_only, -> { joins(:washing_instructions).where('washing_instructions.dry_clean_only = ?', true) }
-end
-```
-
-The above calls to scope define class methods Shirt.red and Shirt.dry_clean_only. Shirt.red, in effect, represents the query Shirt.where(color: 'red').
-
-You should always pass a callable object to the scopes defined with scope. This ensures that the scope is re-evaluated each time it is called.
-
-Note that this is simply 'syntactic sugar' for defining an actual class method:
-
-```ruby
-class Shirt < ActiveRecord::Base
-  def self.red
-    where(color: 'red')
-  end
-end
-```
-
-Unlike Shirt.find(...), however, the object returned by Shirt.red is not an Array; it resembles the association object constructed by a has_many declaration. For instance, you can invoke Shirt.red.first, Shirt.red.count, Shirt.red.where(size: 'small'). Also, just as with the association objects, named scopes act like an Array, implementing Enumerable; Shirt.red.each(&block), Shirt.red.first, and Shirt.red.inject(memo, &block) all behave as if Shirt.red really was an Array.
-
-These named scopes are composable. For instance, Shirt.red.dry_clean_only will produce all shirts that are both red and dry clean only. Nested finds and calculations also work with these compositions: Shirt.red.dry_clean_only.count returns the number of garments for which these criteria obtain. Similarly with Shirt.red.dry_clean_only.average(:thread_count).
-
-All scopes are available as class methods on the ActiveRecord::Base descendant upon which the scopes were defined. But they are also available to has_many associations. If,
-
-```ruby
-class Person < ActiveRecord::Base
-  has_many :shirts
-end
-```
-
-then elton.shirts.red.dry_clean_only will return all of Elton's red, dry clean only shirts.
-
-### scope 后可直接跟 extensions
-
-和 has_many 类似的：
-
-```ruby
-class Shirt < ActiveRecord::Base
-  scope :red, -> { where(color: 'red') } do
-    def dom_id
-      'red_shirts'
-    end
-  end
-end
-```
-
-### scope 后可直接跟 creating/building 等方法
-
-用于创建 record
-
-```ruby
-class Article < ActiveRecord::Base
-  scope :published, -> { where(published: true) }
-end
-
-Article.published.new.published    # => true
-Article.published.create.published # => true
-```
-
-### scope 后可直接跟类方法
-
-定义如下：
-
-```ruby
-class Article < ActiveRecord::Base
-  scope :published, -> { where(published: true) }
-  scope :featured, -> { where(featured: true) }
-
-  def self.latest_article
-    order('published_at desc').first
-  end
-
-  def self.titles
-    pluck(:title)
-  end
-end
-```
-
-调用如下:
-
-```ruby
-Article.published.featured.latest_article
-Article.featured.titles
-```
-
-> Note: 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
-
-scopes - 一律使用 proc object 取代原本model內的 scope 的參數，proc object 或 block 取代原本 model 內的 default_scope 的參數。因為 Model 被 cache 的關係，會導致很多 eager-load 的 scope 只有在第一次載入的時候讀取正確的值(ex:時間)，這是 Rails2 和 Rails3 令人詬病的問題，而 Rails4 規定凡是 eager-load 的 scope 一律要使用 proc object。  
 
 ## Locking
 

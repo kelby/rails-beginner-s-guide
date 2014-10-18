@@ -86,7 +86,6 @@ DetailsCache
 ~~OutputBuffer & StreamingBuffer~~
 输出流
 
-
 #### 处理器*
 
 Handlers
@@ -148,7 +147,7 @@ FormBuilder 是面向对象，FormHelper 是面向函数。
 
 另，表单元素其实也可以脱离表单来使用。所以，上面有提到 FormXxx 模块名起得不太合适。
 
-### 与 record 弱关联
+### 与 model对象 弱关联
 
 和后台数据关联不大，仅用于生成 HTML 元素。
 
@@ -156,7 +155,7 @@ FormBuilder 是面向对象，FormHelper 是面向函数。
 
 除此之外，还有其它，在此不一一列举。
 
-### 与 record 强关联
+### 与 model对象 强关联
 
 和后台数据关系密切，需要有对象和/或其关联对象。
 

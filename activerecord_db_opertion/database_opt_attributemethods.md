@@ -85,7 +85,7 @@ ActiveModel 也有同名 Dirty 模块，这里是对它的使用，并且它并�
 
 `serialize` 指定某个字段的存储类型。
 
-这个类型是可序列化的，如：JSON、Hash
+这个类型是可序列化的，如：Array，JSON、Hash (此时请注意于 store 方法的区别)
 
 使用举例：
 

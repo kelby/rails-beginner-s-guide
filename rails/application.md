@@ -3,13 +3,19 @@
 Application 继承于 Engine，负责协调整个启动过程，包括：配置、初始化。
 
 ```
-call, config_for, console, create
+call
+
+config_for, console, create
 env_config
 generators
-inherited, initialized?, initializer, instance, isolate_namespace
+inherited, initializer, instance, isolate_namespace
 key_generator
 message_verifier
-rake_tasks, reload_routes!, runner
+rake_tasks, runner
+
+initialized?
+
+reload_routes!
 ```
 
 除了以上对外提供的接口外，它还有一些很有用的方法。但不属于对外提供接口，如：

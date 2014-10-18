@@ -65,3 +65,17 @@ views/a_post/posts/1-20140921032815201680000/9746fd05c8428f7999681aa804071e9a
 2 过期的内容可以由我们手动删除，如：Rails.cache.clear；或让数据库自动删除，如 
 `config.cache_store = :redis_store, 'redis://localhost:6379/5/cache', { expires_in: 90.minutes }`
 这里数据最多只能在 redis 里保存 redis 每隔 90 分钟，到期的缓存数据会被删除。(这里的到期等于被删除)
+
+## 几点建议
+
+缓存主要有两种方式过期。
+  1. 调用 cache(name = {}, options = nil, &block) 的时候把会引起数据变化的元素都放到 name 里
+  2. 后续更新一个对象的时候，touch 其关联对象
+
+- 嵌套太深不适合使用缓存(不超过 4 层)
+- model 对象太多不适合使用缓存
+- 弱关联(非 has_many, has_one, belongs_to)对象，不适合放在一起做缓存
+
+嵌套太深或 model 对象太多, 或几个对象之间属于弱关联，无论使用哪种缓存过期机制对于维护都是恶梦。
+
+> Note: 理由可以参考以上"使用片段缓存几点原则"和"说一说 Cache Key"

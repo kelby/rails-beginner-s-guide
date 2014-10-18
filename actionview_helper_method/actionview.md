@@ -68,6 +68,8 @@ form_tag
 
 ## Form Options Helper
 
+部分方法需要传递参数 "object"，并不是指 model 对象，可以是非 model 对象！
+
 ### 不可或缺
 
 关键词：select
@@ -123,6 +125,8 @@ collection_radio_buttons(object, method, collection, value_method, text_method, 
 
 ## Form Helper
 
+部分方法需要的参数 "object_name"，并不是指 model 对象，可以是非 model 对象！
+
 ```
 check_box
 color_field
@@ -148,6 +152,8 @@ week_field
 ```
 
 ## Form Builder
+
+专用于 f.x 调用。
 
 ```
 button

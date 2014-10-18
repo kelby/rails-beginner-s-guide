@@ -101,17 +101,6 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
-**邮件测试**
-
-默认 Rails 提供两个 helper 方法用于测试：
-
-|方法|解释|
-|--|--|
-|assert_emails(number) | 断言已经发送的邮件数|
-|assert_no_emails(&block) | 断言没有邮件发送出去(可用 assert_emails 0 代替)|
-
-assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
-
 **创建消息并渲染邮件模板**
 
 **创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 里重新定义的 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则(把此方法当做参数对待)创建 Mailer 对象。

@@ -1,13 +1,5 @@
 # ActiveSupport 概览
 
-
-
-
-
-
------------
-
-
 ## ~~Dependencies~~
 
 包括：ClassCache 和 WatchStack
@@ -27,12 +19,4 @@
 
 ## OptionMerger
 
-## OrderedHash
-
-```ruby
-oh = ActiveSupport::OrderedHash.new
-oh[:a] = 1
-oh[:b] = 2
-oh.keys # => [:a, :b], this order is guaranteed
-```
 

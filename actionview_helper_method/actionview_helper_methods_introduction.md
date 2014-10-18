@@ -8,7 +8,7 @@ Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、n
 
 当和 record 对象没有关联时，尽量使用 x_tag 的形式。(惨痛的教训，才得此经验)
 
-## UrlHelper
+## Url Helper
 
 可直接转化成 HTML：
 
@@ -27,16 +27,16 @@ link_to_unless_current
 current_page?(options)
 ```
 
-## TranslationHelper
+## Translation Helper
 
 专有方法：
 
 ```
-localize - Also aliased as: l
-translate - Also aliased as: t
+localize & l
+translate & t
 ```
 
-## TextHelper
+## Text Helper
 
 ```
 concat 求值
@@ -55,7 +55,7 @@ truncate 截取某个长度的文本
 word_wrap 限制长度
 ```
 
-## TagHelper
+## Tag Helper
 
 ```
 cdata_section
@@ -64,7 +64,7 @@ escape_once
 tag
 ```
 
-## SanitizeHelper
+## Sanitize Helper
 
 ```
 sanitize
@@ -76,22 +76,23 @@ strip_tags
 
 这里的"消毒"，实际起作用的是 [Rails Html Sanitizers](https://github.com/rails/rails-html-sanitizer) 这里只是封装，并提供接口。
 
-## RenderingHelper
+## Rendering Helper
 ```
 render
 ```
-## RecordTagHelper
+## Record Tag Helper
 ```
 content_tag_for
 
 div_for
 ```
-## OutputSafetyHelper
+## Output Safety Helper
 ```
 raw
 safe_join
 ```
-## NumberHelper
+
+## Number Helper
 
 ```
 number_to_currency
@@ -103,20 +104,20 @@ number_with_delimiter
 number_with_precision
 ```
 
-## JavaScriptHelper
+## JavaScript Helper
 
 ```
 escape_javascript - Also aliased as: j
 javascript_tag
 ```
 
-## DebugHelper
+## Debug Helper
 
 ```
 debug
 ```
 
-## DateHelper
+## Date Helper
 ```
 date_select, datetime_select
 time_select
@@ -129,17 +130,17 @@ select_date, select_datetime, select_day, select_hour, select_minute, select_mon
 time_tag
 ```
 
-## CsrfHelper
+## Csrf Helper
 ```
 csrf_meta_tag, csrf_meta_tags
 ```
-## CaptureHelper
+## Capture Helper
 ```
 capture, content_for, content_for?
 provide
 ```
 
-## CacheHelper
+## Cache Helper
 
 ```
 cache
@@ -148,7 +149,7 @@ cache_if, cache_unless
 cache_fragment_name
 ```
 
-## AtomFeedHelper
+## Atom Feed Helper
 ```
 atom_feed
 ```
@@ -167,7 +168,7 @@ stylesheet_path, stylesheet_url
 url_to_asset, url_to_audio, url_to_font, url_to_image, url_to_javascript, url_to_stylesheet, url_to_video
 video_path, video_url
 ```
-## AssetTagHelper
+## Asset Tag Helper
 
 得到的是包含 asset 在内的 HTML 代码。
 
@@ -179,7 +180,7 @@ javascript_include_tag
 stylesheet_link_tag
 video_tag
 ```
-## ~~ActiveModelInstanceTag~~
+## ~~ActiveModel Instance Tag~~
 
 ```
 content_tag - 多了error_wrapping (继承于 TagHelper)

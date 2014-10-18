@@ -148,7 +148,7 @@ end
 
 Engine 内容也可以是一个 Middleware. 当你的代码本身是 Middleware，而又想使用 Engine 的特性时，可以这么做：
 
-```
+```ruby
 module MyEngine
   class Engine < Rails::Engine
     # Engine 的内容就是 SomeMiddleware
@@ -161,7 +161,7 @@ end
 
 Engine 默认没有自己的 endpoint(入口)，使用 Engine 的应用用什么，它就用什么。需要的话，你也可以指定：
 
-```
+```ruby
 # ENGINE/config/routes.rb
 MyEngine::Engine.routes.draw do
   get "/" => "posts#index"
@@ -188,13 +188,9 @@ end
 
 ## isolate_namespace
 
-Normally when you create controllers, helpers and models inside an engine, they are treated
-as if they were created inside the application itself. This means that all helpers and
-named routes from the application will be available to your engine's controllers as well.
+默认 Engine 和应用是在一个环境里的，这意味着应用所有 helper 和命名路由都可以在 Engine 里使用。
 
-However, sometimes you want to isolate your engine from the application, especially if your engine
-has its own router. To do that, you simply need to call `isolate_namespace`. This method requires
-you to pass a module where all your controllers, helpers and models should be nested to:
+你可以使用 `isolate_namespace` 更改此项默认配置，将 Engine 和应用隔离出来。使用举例：
 
 ```ruby
 module MyEngine
@@ -204,10 +200,7 @@ module MyEngine
 end
 ```
 
-With such an engine, everything that is inside the `MyEngine` module will be isolated from
-the application.
-
-Consider such controller:
+此时 `MyEngine` 和应用是隔离了的，假设 MyEngine 有代码：
 
 ```
 module MyEngine
@@ -216,12 +209,9 @@ module MyEngine
 end
 ```
 
-If an engine is marked as isolated, +FooController+ has access only to helpers from `Engine` and
-`url_helpers` from `MyEngine::Engine.routes`.
+此时 +FooController+ 仅能使用 `Engine` 里提供的 helper，以及 `MyEngine::Engine.routes` 提供的 url helper.
 
-The next thing that changes in isolated engines is the behavior of routes. Normally, when you namespace
-your controllers, you also need to do namespace all your routes. With an isolated engine,
-the namespace is applied by default, so you can ignore it in routes:
+另外一个改变就是 Engine 里的路由不必再使用 namespace，举例：
 
 ```ruby
 MyEngine::Engine.routes.draw do
@@ -229,14 +219,9 @@ MyEngine::Engine.routes.draw do
 end
 ```
 
-The routes above will automatically point to `MyEngine::ArticlesController`. Furthermore, you don't
-need to use longer url helpers like `my_engine_articles_path`. Instead, you should simply use
-`articles_path` as you would do with your application.
+resources :articles 自动对应着 `MyEngine::ArticlesController`. 并且不必使用长长的 url helper，例如 `my_engine_articles_path` 可以直接使用 `articles_path`
 
-To make that behavior consistent with other parts of the framework, an isolated engine also has influence on
-`ActiveModel::Naming`. When you use a namespaced model, like `MyEngine::Article`, it will normally
-use the prefix "my_engine". In an isolated engine, the prefix will be omitted in url helpers and
-form fields for convenience.
+不受 isolate_namespace 影响的就是对于 model 的调用，仍然使用 engine_name 做为前缀。例如以下例子的 `MyEngine::Article`
 
 ```ruby
 polymorphic_url(MyEngine::Article.new) # => "articles_path"
@@ -246,11 +231,9 @@ form_for(MyEngine::Article.new) do
 end
 ```
 
-Additionally, an isolated engine will set its name according to namespace, so
-MyEngine::Engine.engine_name will be "my_engine". It will also set MyEngine.table_name_prefix
-to "my_engine_", changing the MyEngine::Article model to use the my_engine_articles table.
+另一个改变是对表名的更改。默认使用 engine_name (在这里是 "my_engine")做为表前缀，也就是说 MyEngine::Article 对应的表名应该是 my_engine_articles
 
-## mount as - Using Engine's routes outside Engine
+## mount as - 在 Engine 之外使用其路由
 
 Since you can now mount an engine inside application's routes, you do not have direct access to `Engine`'s
 `url_helpers` inside `Application`. When you mount an engine in an application's routes, a special helper is
@@ -264,7 +247,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Now, you can use the `my_engine` helper inside your application:
+Engine 外面，使用 `my_engine` 访问 Engine 里面的路由：
 
 ```ruby
 class FooController < ApplicationController
@@ -274,17 +257,18 @@ class FooController < ApplicationController
 end
 ```
 
-There is also a `main_app` helper that gives you access to application's routes inside Engine:
+Engine 里面，使用 `main_app` 访问 Engine 外面的路由：
 
 ```ruby
-  module MyEngine
-    class BarController
-      def index
-        main_app.foo_path # => /foo
-      end
+module MyEngine
+  class BarController
+    def index
+      main_app.foo_path # => /foo
     end
   end
+end
 ```
+
 Note that the `:as` option given to mount takes the `engine_name` as default, so most of the time
 you can simply omit it.
 
@@ -295,7 +279,7 @@ All you need to do is pass the helper as the first element in array with
 attributes for url:
 
 ```ruby
-  form_for([my_engine, @user])
+form_for([my_engine, @user])
 ```
 
 This code will use `my_engine.user_path(@user` to generate the proper route.
@@ -333,7 +317,7 @@ as in application: `db/migrate`
 To use engine's migrations in application you can use rake task, which copies them to
 application's dir:
 
-```
+```ruby
 rake ENGINE_NAME:install:migrations
 ```
 
