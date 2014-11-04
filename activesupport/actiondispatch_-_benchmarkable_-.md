@@ -37,3 +37,6 @@ end
   <%= expensive_and_chatty_files_operation %>
 <% end %>
 ```
+
+gem 'newrelic' 等大致定位，使用 benchmark 实现精确定位。
+

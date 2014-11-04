@@ -7,11 +7,11 @@ Railtie、Engine、Application 都有自己的 Configuration 模块。
 ## 对外提供接口
 
 ```
-autoload_once_paths, autoload_paths
+autoload_once_paths
+autoload_paths
 eager_load_paths
 middleware
 paths
-root=
 ```
 
 另，自定义的 Railtie 和自定义的 Engine，也可以对外提供 `config` 接口。

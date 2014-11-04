@@ -20,7 +20,7 @@ ActiveJob::Base.queue_adapter = :inline
 # 或
 Rails.application.config.active_job.queue_adapter = :test
 
-# 其它可用 adapter: :backburner, :delayed_job, :qu, :que, 
+# 所有可用 adapter: :backburner, :delayed_job, :qu, :que, 
 # :queue_classic, :resque, :sidekiq, :sneakers, :sucker_punch, :inline, :test
 ```
 
@@ -38,6 +38,8 @@ class MyJob < ActiveJob::Base
 end
 ```
 
+通过 `config.active_job.queue_name_prefix=` 可给所有队列名加前缀。
+
 ## Core
 
 ```
@@ -45,7 +47,7 @@ end
 serialize
 
 # 类方法
-set
+set # 常用
 deserialize
 ```
 
@@ -74,12 +76,14 @@ enqueue
 
 ```ruby
 my_job_instance.enqueue
+
+# 目前，只接受以下 3 种参数
 my_job_instance.enqueue wait: 5.minutes
 my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
 ```
 
-任务失败，还可以：
+执行任务失败，还可以：
 
 ```ruby
 retry_job
@@ -92,6 +96,7 @@ class SiteScrapperJob < ActiveJob::Base
   rescue_from(ErrorLoadingSite) do
     retry_job queue: :low_priority
   end
+
   def perform(*args)
     # raise ErrorLoadingSite if cannot scrape
   end
@@ -111,7 +116,7 @@ perform_later
 perform, perform_now
 
 # 类方法
-perform_now
+perform_now # 简单封装了实例方法 perform_now
 ```
 
 使用举例：
@@ -135,6 +140,26 @@ before_perform
 around_perform
 after_perform
 ```
+
+使用举例：
+
+```ruby
+class VideoProcessJob < ActiveJob::Base
+  queue_as :default
+
+  after_perform do |job|
+    UserMailer.notify_video_processed(job.arguments.first)
+  end
+
+  def perform(video_id)
+    Video.find(video_id).process
+  end
+end
+```
+
+其它几个方法类似。
+
+实现上，都是直接封装 `set_callback`
 
 ## Others
 

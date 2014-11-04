@@ -1,10 +1,28 @@
-## PolymorphicRoutes
-
-If you want to generate different urls according to different objects(例如，多态：`belongs_to :commentable, :polymorphic => true`), you should use the polymorphic_path/polymorphic_url to simplify the url generation.
+## Polymorphic Routes
 
 `polymorphic_url(record_or_hash_or_array, options = {})`
 
-Constructs a call to a named RESTful route for the given record and returns the resulting URL string. For example:
+1. 不仅仅是多态关联里的'多态'
+2. 可根据参数(model 对象)，自动计算生成 url
+3. 有几个常用方法是基于它实现的
+4. 不用指定具体的路由 helper 方法
+5. 对象类型不确定或嵌套对象
+6. 同样依赖于路由系统
+7. 不要滥用！
+8. 复杂度提高，难以理解。
+
+之前
+
+```ruby
+# parent may be a post or a news
+if Post === parent
+  post_comments_path(parent)
+elsif News === parent
+  news_comments_path(parent)
+end
+```
+
+之后
 
 ```ruby
 # calls post_url(post)
@@ -13,4 +31,65 @@ polymorphic_url([blog, post]) # => "http://example.com/blogs/1/posts/1"
 polymorphic_url([:admin, blog, post]) # => "http://example.com/admin/blogs/1/posts/1"
 polymorphic_url([user, :blog, post]) # => "http://example.com/users/1/blog/posts/1"
 polymorphic_url(Comment) # => "http://example.com/comments"
+```
+
+当然，多态关联也可用
+
+```ruby
+class Post < ActiveRecord::Base
+  has_many :comments
+end
+class News < ActiveRecord::Base
+  has_many :comments
+end
+class Comment < ActiveRecord::Base
+  belongs_to :commentable, :polymorphic => true
+end
+```
+
+```ruby
+polymorphic_path([parent, Comment]) # "/posts/1/comments" or "'news/1/comments"
+polymorphic_path(parent) # "http://example.com/posts/1/comments" or "http://example.com/news/1/comments"
+
+其它
+new_polymorphic_path(Post)    # "/posts/new"
+new_polymorphic_url(Post)    # "http://example.com/posts/new"
+edit_polymorphic_path(post)    # "/posts/1/edit"
+edit_polymorphic_url(post)    # "http://example.com/posts/1/edit"
+```
+
+### 与 url_for 的区别
+
+url_for 比较死板，从它接受的参数就知道了。它不能接受 model 对象 + 可选参数的形式。
+
+url_for 不能直接指定 host, 需要在另一个地方指定，它只有调用的份。如果你为了一个 url_for 而更改这个 host 其它方法或其它 url_for 会不会受影响？
+
+### 还有
+
+除上述外，还有方法：
+
+
+```
+new_polymorphic_url
+new_polymorphic_path
+
+edit_polymorphic_path
+edit_polymorphic_url
+```
+
+它们封装 polymorphic_url 或 polymorphic_path 而来，所以特点和使用类似。
+它们是元编程定义的，所以 API 里看不到。
+
+### 其它 action 和其它参数
+
+举例：
+
+```ruby
+# 使用 :aciton 可选参数
+polymorphic_path([@user, Document], :action => 'filter')
+# => "/users/:user_id/documents/filter"
+
+# 使用 :aciton 可选参数和其它参数
+polymorphic_path([@user, Document], :action => 'filter', :sort_order => 'this-order')
+# => "/users/:user_id/documents/filter?sort_order=this-order"
 ```

@@ -1,4 +1,4 @@
-# MimeResponds
+## Mime Responds
 
 ```
 respond_to

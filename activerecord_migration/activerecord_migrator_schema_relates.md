@@ -1,24 +1,3 @@
-## Schema Migration
-
-重要的如：
-
-```
-create_table
-drop_table
-```
-
-其它
-
-```
-index_name
-normalize_migration_number
-normalized_versions
-primary_key
-table_exists?
-table_name
-version
-```
-
 ## Schema
 
 继承于 Migration
@@ -42,4 +21,3 @@ end
 ```
 migrations_paths
 ```
-

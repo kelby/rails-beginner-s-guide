@@ -1,6 +1,14 @@
 ### Base
 
-- `match(path, options=nil)`
+常用方法：
+
+```
+match
+mount
+root
+```
+
+#### `match(path, options=nil)`
 
 匹配url到一个或多个路由。所有符号，都会对应着url里的参数，可用`params`获取：
 
@@ -9,7 +17,7 @@
 match ':controller/:action/:id'
 ```
 
-预留了两个符号，`:controller` 对应着Controller，`:action` 对应着Action。也可以接受模式匹配做为参数：
+预留了两个符号，`:controller` 对应着 Controller，`:action` 对应着 action. 也可以接受模式匹配做为参数：
 
 ```ruby
 match 'songs/*category/:title', to: 'songs#show'
@@ -40,7 +48,7 @@ match 'photos/:id', to: PhotosController.action(:show)
 
 通过HTTP请求，容易带来安全隐患，所以你可以使用 HtttpHelpers[rdoc-ref:HttpHelpers]，而不是 `match`
 
-- `mount(app, options = nil)` 挂载一个基于Rack的应用到我们的程序。
+#### `mount(app, options = nil)` 挂载一个基于Rack的应用到我们的程序。
 
 ```ruby
 match '/movies/search', => "movies#search"
@@ -106,7 +114,7 @@ mount(SomeRackApp => "some_route", as: "exciting")
 
 现在，你可以通过 `exciting_path` 或 `exciting_url` 访问到刚才挂载的应用。
 
-- `root(options = {})`
+#### `root(options = {})`
 
 实现：
 
@@ -119,3 +127,11 @@ end
 因为 root 实现基于 match，可以使用相同的可选参数。
 
 建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。
+
+#### 其它
+
+```
+default_url_options & default_url_options=
+has_named_route?
+with_default_scope
+```

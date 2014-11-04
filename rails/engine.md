@@ -11,7 +11,7 @@ Engine 可以当做一个不完整的应用，它依赖于 main_app (main_app �
 
 ```
 app
-call, config
+config
 eager_load!, endpoint, env_config
 find
 helpers, helpers_paths

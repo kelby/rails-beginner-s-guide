@@ -41,11 +41,7 @@ expire_fragment
 
 ## Caching Fragments
 
-Caching is a cheap way of speeding up slow applications by keeping the result of calculations, renderings, and database calls around for subsequent requests.
-
-You can read more about each approach by clicking the modules below.
-
-要使用，先配置。Note: To turn off all caching, set
+想要关闭片段缓存，可以配置(开发环境下默认就是 false)：
 
 ```ruby
 config.action_controller.perform_caching = false

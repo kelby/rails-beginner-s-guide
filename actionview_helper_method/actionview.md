@@ -66,6 +66,29 @@ text_area_tag
 form_tag
 ```
 
+上面并不是表单可以使用的所有方法，有一些是动态定义的。
+
+
+```ruby
+default_form_builder = ::ActionView::Helpers::FormBuilder 
+builder = default_form_builder
+
+object_name = 'product'
+object = nil 
+options = {} 
+
+f = builder.new(object_name, object, self, options)
+=> #<ActionView::Helpers::FormBuilder:0x007feaa896bc80
+ @default_options={},
+ @index=nil,
+ @multipart=nil,
+ @nested_child_index={},
+ @object=nil,
+ @object_name="product",
+ @options={},
+ @template=main>
+```
+
 ## Form Options Helper
 
 部分方法需要传递参数 "object"，并不是指 model 对象，可以是非 model 对象！

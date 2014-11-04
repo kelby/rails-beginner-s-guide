@@ -2,8 +2,8 @@
 
 Railtie 是 Rails 的核心部分之一。通过它，可以扩展和修改 Rails 的初始化程序。
 
-每一个 Rails 组件(如：Action Mailer, Action Controller,
-Action View 和 Active Record等)都属于 Railtie. 因为它们都需要自己的初始化程序。
+每一个 Rails 组件(如：ActionMailer, ActionController,
+ActionView 和 ActiveRecord等)都属于 Railtie. 因为它们都需要自己的初始化程序。
 
 什么时候需要使用 Railtie? 当你的扩展符合下列情况时，可以考虑：
 

@@ -1,6 +1,6 @@
 ActionMailer 是 Rails 内建的组件，用来处理邮件相关业务，并且简单好用。
 
-它依赖于 Rails 内建的其它组件 ActiveJob、ActionPack(主要用到的是 AbstractController)和 ActionView 以及外部 gem 'mail'.
+它依赖于 Rails 内建的其它组件 ActiveJob、AbstractController 和 ActionView 以及外部 gem 'mail'.
 
 因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。
 
@@ -90,7 +90,7 @@ email.deliver_now
 ```ruby
 # mailer/daily_email.html.erb
 <p>this is an html email</p>
-<p> and this is a variable <%= @var %> </p>
+<p> and this is a variable <%= @var %></p>
 ```
 
 ```ruby

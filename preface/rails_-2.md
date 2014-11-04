@@ -206,9 +206,13 @@ use ActionDispatch::DebugExceptions
 run routes
 ```
 
+对应以上代码，我们需要创建视图文件。
+
 ```ruby
 # app/views/mainpage/index.html.erb
 ```
+
+和
 
 ```ruby
 # app/views/mainpage/show.html.erb

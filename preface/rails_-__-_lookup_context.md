@@ -1,12 +1,18 @@
+## ActionView 渲染及相关概念
+
+查看应用根目录下文件及目录：
+
 ```
 ✗ ls
 Gemfile      README.rdoc  app          blorgh       config.ru    lib          public       tmp
 Gemfile.lock Rakefile     bin          config       db           log          test         vendor
 ```
 
+创建一个简单的 lookup_context
+
 ```ruby
 ✗ pry
-pry(main)> FIXTURE_LOAD_PATH = File.join(File.dirname(__FILE__), 'fixtures')
+pry(main)> FIXTURE_LOAD_PATH = File.join(File.dirname(__FILE__), '../fixtures')
 => "./fixtures"
 pry(main)> require 'action_view'
 => true
@@ -38,75 +44,7 @@ pry(main)> lookup_context = ActionView::LookupContext.new(FIXTURE_LOAD_PATH, {})
        ":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}">]>>
 ```
 
-```ruby
-=> #<ActionView::LookupContext:0x007ff014ed9548
- @cache=true,
- @details=
-  {:locale=>[:en],
-   :formats=>[:html],
-   :handlers=>[:erb, :builder, :coffee, :slim]},
- @details_key=
-  #<ActionView::LookupContext::DetailsKey:0x007ff039f99418
-   @hash=5136971279993015>,
- @prefixes=["standard_products", "application"],
- @rendered_format=:html,
- @skip_default_locale=false,
- @view_paths=
-  #<ActionView::PathSet:0x007ff014ed94d0
-   @paths=
-    [#<ActionView::OptimizedFileSystemResolver:0x007ff036ea4948
-      @cached=
-       {#<ActionView::LookupContext::DetailsKey:0x007ff039f99418
-         @hash=5136971279993015>=>
-         {"dashboard"=>
-           {"admin_sales"=>
-             {false=>{[]=>[app/views/admin_sales/dashboard.html.erb]}},
-            "layouts/nav_list"=>
-             {true=>
-               {["dashboard"]=>
-                 [app/views/layouts/nav_list/_dashboard.html.erb]}}},
-          "admin_sales"=>{"layouts"=>{false=>{[]=>[]}}},
-          "application"=>
-           {"layouts"=>
-             {false=>{[]=>[app/views/layouts/application.html.erb]}}},
-          "count_info"=>
-           {"admin_sales"=>
-             {true=>
-               {["count_info"]=>
-                 [app/views/admin_sales/_count_info.html.erb]}}},
-          "recent_sales_status"=>
-           {"admin_sales"=>
-             {true=>
-               {["recent_sales_status"]=>
-                 [app/views/admin_sales/_recent_sales_status.html.erb]}}},
-          "monthly_order_sales"=>
-           {"admin_sales"=>
-             {true=>
-               {["monthly_order_sales"]=>
-                 [app/views/admin_sales/_monthly_order_sales.html.erb]}}},
-          "welcome"=>
-
-          ... ...
-
-      @path="/Users/kelby/origin/console/app/views",
-      @pattern=":prefix/:action{.:locale,}{.:formats,}{.:handlers,}">,
-     #<ActionView::OptimizedFileSystemResolver:0x007ff036ea6180
-      @cached=
-       {#<ActionView::LookupContext::DetailsKey:0x007ff039f99418
-         @hash=5136971279993015>=>
-         {"admin_sales"=>{"layouts"=>{false=>{[]=>[]}}},
-          "promotion_pictures"=>{"layouts"=>{false=>{[]=>[]}}},
-          "printer_brand_sales"=>{"layouts"=>{false=>{[]=>[]}}},
-          "standard_products"=>{"layouts"=>{false=>{[]=>[]}}}}},
-      @path=
-       "/Users/kelby/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/switch_user-0.9.4/app/views",
-      @pattern=":prefix/:action{.:locale,}{.:formats,}{.:handlers,}">,
-     #<ActionView::OptimizedFileSystemResolver:0x007ff036ea7580
-      @cached=
-       {#<ActionView::LookupContext::DetailsKey:0x007ff039f99418
-
-     ... ...
-```
+真实情况远比这复杂，@view_paths 下有很多的内容。
 
 [Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
 

@@ -1,5 +1,20 @@
 # Preload, Eagerload, Includes 和 Joins
 
+延迟加载，如 Relation，scope
+预先加载，如 includes
+
+## N + 1
+
+```ruby
+# 一次查询
+doctors = Physician.all
+
+# N 次查询
+doctor.patients.each do |patient|
+  puts patient.name
+end
+```
+
 ## includes
 
 把关系表数据也查询出来。
@@ -26,6 +41,14 @@ WHERE (posts.desc = "ruby is awesome")
 
 特点，生成一条还是两条 SQL 查询语句，取决于写法。
 
+可分为 2 种不同情况，和 preload 一样、和 earge_load 一样。
+
+性能最慢。
+
+通过中间表的话，默认也加载。
+
+a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面符合条件的 bs
+
 ## joins
 
 ```ruby
@@ -45,7 +68,17 @@ User.preload(:addresses)
 => SELECT "users".* FROM "users"
 => SELECT "addresses".* FROM "addresses"  WHERE "addresses"."user_id" IN (1, 2)
 ```
-特点，SQL 查询语句始终是两条。
+特点，SQL 查询语句始终是两条(单独的数据库查询)。
+
+后续，不能以关联表做为查询条件。
+
+性能最快。
+
+通过中间表的话，默认也加载。
+
+a.preload(:bs).where(bs.x ...) preload 包含符合条件的 a 和 a 下面所有的 bs
+
+> Note: 实际应该是 a.joins(:bs).where(bs.x ...).preload(:bs)
 
 ## eager_load
 
@@ -56,11 +89,20 @@ FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" =
 "users"."id"
 ```
 
-特点，SQL 查询语句始终只有一条。
+特点，SQL 查询语句始终只有一条(使用了 LEFT JOIN)。
+
+性能中等。
+
+default_scope 不起作用。
+
+通过中间表的话，要明确指出才加载。
 
 ## 其它 references
 
-includes 后面的查询条件，用的是 "关联表.属性"，有时候 Rails 不能推断出这个'关联表'到底是哪个，需要用 references 指明。
+includes 后面的查询条件，用的是 "关联表.属性"，有时候 Rails 不能推断出这个'关联表'到底是哪个(可以 includes 多个关联表)，需要用 references 指明。
+
+Rails 3 比较'宽松'，includes 有时候不指定 references 也可以工作。
+Rails 4 比较'严格'，includes 需要指定 references 才能工作。
 
 举例：
 
@@ -71,3 +113,8 @@ User.includes(:posts).where("posts.name = 'foo'")
 User.includes(:posts).where("posts.name = 'foo'").references(:posts)
 # => Query now knows the string references posts, so adds a JOIN
 ```
+
+参考:
+
+[3 ways to do eager loading (preloading) in Rails 3 & 4](http://blog.arkency.com/2013/12/rails4-preloading/)  
+[eager loading in rails](http://codedecoder.wordpress.com/2014/07/23/eager-loading-eager_load-preload-includes/)

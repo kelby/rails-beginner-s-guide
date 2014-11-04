@@ -1,4 +1,4 @@
-# Migration
+## Migration
 
 重要的如：
 
@@ -6,23 +6,20 @@
 up
 down
 
+revert
 reversible
 ```
 
 其它
 
 ```
-# 感叹号类型
 check_pending!
 disable_ddl_transaction!
 load_schema_if_pending!
 
-# 问号类型
 reverting?
 
-# 详细说明
-revert
-run -> 
+run
 migrate
 
 exec_migration
@@ -41,7 +38,6 @@ write
 
 ```
 run 或 migrate
-
      |
      v
  exec_migration

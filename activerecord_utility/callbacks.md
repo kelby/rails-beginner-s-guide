@@ -1,12 +1,17 @@
 # Callbacks
 
-基于 ActionModel 提供的 `define_model_callbacks` 方法，共生成十几个过滤器方法。
+基于 ActionModel 提供的 `define_model_callbacks` 和 ActiveSupport 提供的 `define_callbacks` 方法，共生成十几个过滤器方法。
 
 ```ruby
-include ActiveModel::Validations::Callbacks
-
+# ActiveRecord::Callbacks
 define_model_callbacks :initialize, :find, :touch, :only => :after
 define_model_callbacks :save, :create, :update, :destroy
+
+# ActiveModel::Callbacks
+define_callbacks :validation
+
+# ActiveRecord::Transactions
+define_callbacks :commit, :rollback
 ```
 
 和 AbstractController::Callbacks::ClassMethods 用元编程生成过滤器的方法名，是两种手法(尽管最终都是基于ActiveSupport::Callbacks)。
@@ -21,10 +26,13 @@ define_model_callbacks :save, :create, :update, :destroy
 
 ```ruby
 CALLBACKS = [
-  :after_initialize, :after_find, :after_touch, :before_validation, :after_validation,
-  :before_save, :around_save, :after_save, :before_create, :around_create,
-  :after_create, :before_update, :around_update, :after_update,
-  :before_destroy, :around_destroy, :after_destroy, :after_commit, :after_rollback
+  :after_initialize, :after_find, :after_touch,
+  :before_save, :around_save, :after_save,
+  :before_create, :around_create, :after_create,
+  :before_update, :around_update, :after_update,
+  :before_destroy, :around_destroy, :after_destroy,
+  :before_validation, :after_validation, # => 需要定义
+  :after_commit, :after_rollback # => 需要定义
 ]
 ```
 
@@ -35,9 +43,9 @@ CALLBACKS = [
 1. 后面跟方法名，直接调用 √
 2. 传递一个可回调对象 √
 3. block 的形式，传递代码 √
-5. 覆盖方法名，重新定义方法内容 √
+4. 覆盖方法名，重新定义方法内容 √
 
-1、3 用得最多，第 5 次之，第 4 不推荐，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
+1、3 用得最多，第 4 次之，还有一种方法不推荐(以字符串的形式传递)，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
 
 ```ruby
 # 1
@@ -90,7 +98,7 @@ end
 ```
 
 ```ruby
-# 5
+# 4
 class Topic < ActiveRecord::Base
   def before_destroy() destroy_author end
 end

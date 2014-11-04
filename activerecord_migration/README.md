@@ -4,9 +4,6 @@
 
 ---
 
-## SchemaMigration
-
-
 ## Schema
 
 ---
@@ -23,5 +20,9 @@
 
 ---
 
-## ModelSchema*
+## 其它
+
+### ModelSchema*
+
+### ~~SchemaMigration~~
 

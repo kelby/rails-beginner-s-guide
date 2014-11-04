@@ -1,4 +1,4 @@
-# Metal 之外
+## Metal 之外
 
 ## Cookies
 
@@ -94,7 +94,7 @@ default_render
 method_for_action
 ```
 
-## Instrumentation
+## ~~Instrumentation~~
 
 当执行以下同名方法时，会有时间记录(以观察性能等指标)。
 

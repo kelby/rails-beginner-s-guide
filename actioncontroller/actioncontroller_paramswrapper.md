@@ -1,4 +1,4 @@
-# Params Wrapper
+## Params Wrapper
 
 ```
 process_action
@@ -12,12 +12,12 @@ inherited
 wrap_parameters
 ```
 
-### ParamsWrapper
+### Params Wrapper
 
 我们用 POST 请求数据时，可以看到在 params 里对象封装在一个 root 元素里，例如：
 
 ```
-"post"=>{"title"=>"hello world"}
+"post" => {"title"=>"hello world"}
 ```
 
 我们获取里面的某个属性，只能这样

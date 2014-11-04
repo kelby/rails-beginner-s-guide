@@ -1,26 +1,20 @@
 # 定制自己的 Engine
 
-```ruby
-# your_engine/engine.rb
-module YourEngine
-  class Engine < Rails::Engine
-    # ... ...
-  end
-end
-```
+Engine = Ruby gem + MVC stack elements
 
-```ruby
-require 'your_engine/engine'
-```
+生成命令 `rails plugin new`
+
+常用参数 `--full` 或 `--mountable`
 
 ## 继承于 Engine
 
 1 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
 
 ```ruby
-# lib/my_engine.rb
-module MyEngine
+# lib/your_engine.rb
+module YourEngine
   class Engine < Rails::Engine
+    # ... ...
   end
 end
 ```
@@ -29,6 +23,18 @@ end
 (或 Gemfile) 里加载本文件。
 
 Engine 相关的 model、controller 和 helper 会被加载到 app/ 里，route 会被加载到 config/routes.rb, locale 会被加载到 config/locales, tasks 会被加载到 lib/tasks.
+
+```ruby
+# config/application.rb
+require 'your_engine/engine'
+
+# 或者
+
+# Gemfile
+gem 'your_engine', path: "/path/to/your_engine"
+```
+
+3 在 routes.rb 里 mount Your::Engine
 
 ## config 和 initializer
 
@@ -235,9 +241,7 @@ end
 
 ## mount as - 在 Engine 之外使用其路由
 
-Since you can now mount an engine inside application's routes, you do not have direct access to `Engine`'s
-`url_helpers` inside `Application`. When you mount an engine in an application's routes, a special helper is
-created to allow you to do that. Consider such a scenario:
+mount(挂载)后 Engine 和应用之间的路由仍然是独立的，你仍然不能在应用里直接使用 Engine 里面的路由。举例：
 
 ```ruby
 # config/routes.rb
@@ -269,26 +273,19 @@ module MyEngine
 end
 ```
 
-Note that the `:as` option given to mount takes the `engine_name` as default, so most of the time
-you can simply omit it.
+`:as` 可选项默认使用的是 `engine_name`，所以通常你可以省略它。
 
-Finally, if you want to generate a url to an engine's route using
-`polymorphic_url`, you also need to pass the engine helper. Let's
-say that you want to create a form pointing to one of the engine's routes.
-All you need to do is pass the helper as the first element in array with
-attributes for url:
+还有一种情况，需要传递 engine_name 以便生成路由，举例：
 
 ```ruby
 form_for([my_engine, @user])
 ```
 
-This code will use `my_engine.user_path(@user` to generate the proper route.
+这里生成的路由规则类似 `my_engine.user_path(@user)`
 
 ## helper - Isolated engine's helpers
 
-Sometimes you may want to isolate engine, but use helpers that are defined for it.
-If you want to share just a few specific helpers you can add them to application's
-helpers in ApplicationController:
+有时候，你的 Engine 是 Isolated，但你又想使用 Engine 里面定义的 helper，你可以引入某个模块：
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -296,8 +293,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-If you want to include all of the engine's helpers, you can use #helper method on an engine's
-instance:
+或者，引入 Engine 里面所有的 helper 模块：
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -305,28 +301,21 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-It will include all of the helpers from engine's directory. Take into account that this does
-not include helpers defined in controllers with helper_method or other similar solutions,
-only helpers defined in the helpers directory will be included.
+> Note: 这里引入的只是 helpers 目录下的文件，在 Controller 里定义，然后使用 helper_method 的方法不包含在内。
 
 ## Migrations & seed data
 
-Engines can have their own migrations. The default path for migrations is exactly the same
-as in application: `db/migrate`
+Engine 也可以有自己的迁移文件，和普通应用一样，它们位于 `db/migrate` 下面。
 
-To use engine's migrations in application you can use rake task, which copies them to
-application's dir:
+你可以运行以下命令，将 Engine 里的迁移文件复制到应用里：
 
 ```ruby
 rake ENGINE_NAME:install:migrations
 ```
 
-Note that some of the migrations may be skipped if a migration with the same name already exists
-in application. In such a situation you must decide whether to leave that migration or rename the
-migration in the application and rerun copying migrations.
+Engine 也可以有自己的 seed 文件，它们位于 `db/seeds.rb` 下面。
 
-If your engine has migrations, you may also want to prepare data for the database in
-the `db/seeds.rb` file. You can load that data using the `load_seed` method, e.g.
+你可以运行以下命令，将 Engine 里的 seed 文件复制到应用里：
 
 ```ruby
 MyEngine::Engine.load_seed
@@ -334,13 +323,13 @@ MyEngine::Engine.load_seed
 
 ## railties_order
 
-I've my main project, and I want to implement part of it with differentes customizations, so I'm using Engine.
+场景
 
 ```
 - app
   - views
     - shared
-      - _header.html.erb     <-- This one is called
+      - _header.html.erb       <-- 实际渲染的却是这个
   - ...
 - config
 - ...
@@ -350,19 +339,16 @@ I've my main project, and I want to implement part of it with differentes custom
       - app
         - views
           - controller1
-            - action1.html.erb
+            - action1.html.erb <-- 在这里渲染
           - shared
-            - _header.html.erb       <--- I want to render this!
-But if from action1.html.erb I call
+            - _header.html.erb <-- 希望渲染的是这个
 
 <%= render 'shared/header' %>
 ```
 
 按照直观的理解，渲染的应该是第 2 个模板。但实际情况却不是，所以需要我们配置。
 
-In order to change engine's priority you can use `config.railties_order` in main application.
-It will affect the priority of loading views, helpers, assets and all the other files
-related to engine or application.
+你可以使用 `config.railties_order` 改变 Engine 以及应用的加载顺序：
 
 ```ruby
 # load Blog::Engine with highest priority, followed by application and other railties
@@ -372,3 +358,9 @@ config.railties_order = [Blog::Engine, :main_app, :all]
 main_app 表示我们的项目本身，在 Application::Finisher 里定义，all 表示所有其它的 Railtie，在 Application::Configuration 里初始化时定义。
 
 > Note: 上面的例子，你也可以用其它手段完成，如 namespace 等。
+
+## 迁移文件
+
+```
+rake my_engine:install:migrations
+```

@@ -25,6 +25,7 @@ require 'my_gem/railtie' if defined?(Rails)
 
 ```ruby
 class MyRailtie < Rails::Railtie
+  # initializer 来源于 
   initializer "my_railtie.configure_rails_initialization" do
     # some initialization behavior
   end
@@ -86,20 +87,25 @@ end
 
 ## 其它
 
+提供方法：
+
 ```
 config # 名词
 configure # 动词
 
+# 动词，接 block
+rake_tasks
 console
+runner
 generators
-instance
+
 railtie_name
 railtie_namespace
-rake_tasks
-runner
+
+instance
 subclasses
 
-abstract_railtie? # 只有 Rails::Railtie、Rails::Engine 和 Rails::Application 是 abstract
+abstract_railtie? # 默认是 Rails::Railtie、Rails::Engine 和 Rails::Application
 
 generate_railtie_name
 ```

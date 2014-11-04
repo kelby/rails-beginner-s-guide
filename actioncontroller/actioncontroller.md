@@ -78,8 +78,6 @@ redirect_to action: “show”, id: 5
 
 极端情况下，会发生 redirect_to -> url_for -> ActionController::UrlFor -> AbstractController::UrlFor -> ActionDispatch::Routing::UrlFor --> ActionDispatch::Routing::PolymorphicRoutes -> polymorphic_url
 
-## 其它
-
 ### Http Authentication
 
 有3类：Basic，Digest，Token

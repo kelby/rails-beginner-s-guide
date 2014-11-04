@@ -14,7 +14,7 @@
 config.middleware.use Magical::Unicorns
 ```
 
-`insert_before` (aliased as :insert)
+`insert_before & insert`
 
 ```
 config.middleware.insert_before ActionDispatch::Head, Magical::Unicorns

@@ -1,4 +1,6 @@
-# ActionView 非渲染 & 非辅助方法
+# ActionView 非渲染 & 非 helper 方法
+
+下面这些方法，和渲染没有直接关联，并且严格意义上讲不属于 helper 方法
 
 ## Record Identifier
 
@@ -38,6 +40,8 @@ dom_id(Post.new, :custom)    # => "custom_post"
 
 `layout`
 
+影响渲染的效果，但和渲染不直接相关。
+
 ```ruby
 # String
 class InformationController < BankController
@@ -67,7 +71,7 @@ class CommentsController < ApplicationController
 end
 ```
 
-此外，有继承关系：
+此外，layout 有继承关系：
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -79,12 +83,12 @@ class PostsController < ApplicationController
 end
 ```
 
-此外，没有 true (也就是说不相应 false):
+此外，只有 false 没有 true (要渲染可以直接指明 layout 或者不指明使用默认，但不能使用 true，会报错的):
 
 ```ruby
-# true
+# false
 class TillController < BankController
-  layout true
+  layout false
 end
 ```
 

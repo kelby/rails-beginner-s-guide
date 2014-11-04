@@ -16,7 +16,7 @@ render nothing: true
 
 2) 不想渲染任何东西，还可以使用方法：
 
-`head 
+`head `
 
 3) 不想渲染，只想查看结果可以使用 `render_to_string`  
 传递给它的参数和 render 一样，但它始终返回一个字符串。

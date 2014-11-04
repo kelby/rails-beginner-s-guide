@@ -52,3 +52,14 @@ helper.send :extend, UsersHelper
 5 `controller`  
 ApplicationController 实例。
 可以直接使用 ApplicationController 的方法等。
+
+### 其它
+
+在执行语句后面加分号，可去掉console执行回显
+
+方法 _ 返回上次表达式执行的结果
+
+Console 清屏 Ctrl + L
+
+
+

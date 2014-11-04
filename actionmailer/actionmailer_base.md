@@ -159,9 +159,11 @@ Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐�
 
 和 Mail 有关联？
 
-headers 返回 Mail对象的 headers 或 Mail对象本身
-attachments 返回 Mail对象的 attachments
-mail(headers = {}, &block) 返回 Mail对象本身
+| 方法 | 解释 |
+|--|--|
+|headers |返回 Mail对象的 headers 或 Mail对象本身|
+|attachments |返回 Mail对象的 attachments|
+|mail(headers = {}, &block) |返回 Mail对象本身|
 
 除了以上方法外，还有：
 

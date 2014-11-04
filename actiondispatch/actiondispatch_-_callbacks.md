@@ -26,6 +26,7 @@ define_callbacks(*names)
 | run_callbacks | 第二个参数是个 block，是真正要执行的操作，在执行这个 block 的前后会执行回调操作。执行什么回调？由第一个参数决定，并且这里的回调必须事前由 define_callbacks 声明过。执行这些回调操作的顺序？必须事前由 set_callback 声明过。 |
 
 例子：
+
 ```ruby
 1  class Report
 2    include ActiveSupport::Callbacks

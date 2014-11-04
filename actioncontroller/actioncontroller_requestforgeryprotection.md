@@ -1,4 +1,4 @@
-# Request Forgery Protection
+## Request Forgery Protection
 
 ```
 compare_with_real_token

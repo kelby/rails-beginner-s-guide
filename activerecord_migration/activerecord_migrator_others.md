@@ -1,4 +1,4 @@
-# ActiveRecord Migrator Others
+## Migrator 其它
 
 [Active Record Migrations](http://edgeguides.rubyonrails.org/migrations.html)
 

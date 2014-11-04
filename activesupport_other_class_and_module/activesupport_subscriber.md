@@ -2,13 +2,8 @@
 
 ```
 add_event_subscriber, attach_to
-F
 finish
-M
 method_added
-N
-new
-S
 start, subscribers
 ```
 

@@ -1,4 +1,4 @@
-# ConditionalGet
+## ConditionalGet
 
 ```ruby
 # 单独使用没意义

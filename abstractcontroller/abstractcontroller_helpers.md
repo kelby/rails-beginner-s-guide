@@ -55,16 +55,6 @@ end
 <% if logged_in? %>Welcome, <%= current_user.name %><% end %>
 ```
 
-具体实现(以元编程的形式定义同名方法，然后 send 调用原 helper 方法)
-
-```ruby
-meths.each do |meth|
-  _helpers.class_eval <<-ruby_eval, __FILE__, __LINE__ + 1
-    def #{meth}(*args, &blk)                               # def current_user(*args, &blk)
-      controller.send(%(#{meth}), *args, &blk)             #   controller.send(:current_user, *args, &blk)
-    end                                                    # end
-  ruby_eval
-end
-```
+实现方式：以元编程的形式定义同名方法，然后 send 调用原 helper 方法
 
 helper 和 helper_method 可以简单理解为一对作用相反的操作。

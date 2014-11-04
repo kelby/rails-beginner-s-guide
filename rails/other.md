@@ -47,6 +47,8 @@ rake rdoc (Rails 自身的 API)
 
 rake test
 
+还可再细分为 models、helpers、controllers、mailers、integration 和 jobs
+
 ### commands
 
 `rails` 可接以下命令：

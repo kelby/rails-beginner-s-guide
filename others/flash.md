@@ -1,6 +1,7 @@
 ActionDispatch 和 ActionController 都有 Flash 相关的代码，统一把它们放到这里来讲。
 
 ## 基本使用
+
 类似 Hash，设置 flash
 
 ```ruby
@@ -27,6 +28,7 @@ end
 ```
 
 ## alert 和 notice
+
 因为 alert 和 notice 类型的 flash 太常见，所以提供了语法糖，你还可以这么写：
 
 ```ruby

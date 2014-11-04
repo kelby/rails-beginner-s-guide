@@ -40,3 +40,5 @@ json
 >
 pdf
 zip
+
+(可以在 action_dispatch/http/mime_types.rb 查看目前支持的格式)

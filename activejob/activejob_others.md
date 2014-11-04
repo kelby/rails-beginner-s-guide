@@ -20,7 +20,7 @@
 ```ruby
 class TrashableCleanupJob
   def perform(trashable_class, trashable_id, depth)
-    # 出队列/执行的时候需要根据 trashable_id 获取 trashable
+    # 出队列/执行的时候需要根据 trashable_class 和 trashable_id 查询相应 trashable
     trashable = trashable_class.constantize.find(trashable_id)
     trashable.cleanup(depth)
   end
@@ -65,3 +65,29 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象而来。
 
 而 queue_adapter 所用的 API(enqueue_at、enqueue_in、enqueue 等)，也是从原延迟任务所提供的 API 抽象而来。
+
+## 命令行快捷生成
+
+```bash
+rails generate job NAME [options]
+```
+
+## 异常捕获与处理
+
+使用 ActiveSupport 的异常捕获方法 `rescue_from`
+
+
+```ruby
+class GuestsCleanupJob < ActiveJob::Base
+  queue_as :default
+ 
+  # 异常捕获
+  rescue_from(ActiveRecord::RecordNotFound) do |exception|
+   # 异常处理
+  end
+ 
+  def perform
+    # ...
+  end
+end
+```

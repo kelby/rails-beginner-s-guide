@@ -1,4 +1,4 @@
-# Model Naming
+## Model Naming
 
 View 和 Controller 里有时候要处理 Model 里的对象，为了方便使用，做了一些约定。影响了 ActionView、ActionController 和 ActionDispatch.
 
@@ -28,7 +28,6 @@ submit
 fields_for
 
 dom_id
-
 dom_class
 ```
 

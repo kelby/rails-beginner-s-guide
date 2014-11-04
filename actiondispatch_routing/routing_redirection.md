@@ -13,3 +13,5 @@ get "/stories" => redirect("/posts")
 ```ruby
 get 'docs/:article', to: redirect('/wiki/%{article}')
 ```
+
+在路由系统里就完成重定向了，不经过 ActionController 等处理。在浏览器里可以看到网址的跳转。
