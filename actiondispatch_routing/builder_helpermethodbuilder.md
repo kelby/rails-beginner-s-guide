@@ -1,4 +1,4 @@
-# builder HelperMethodBuilder
+## builder HelperMethodBuilder
 
 :action - Specifies the action prefix for the named route: :new or :edit. Default is no prefix.
 

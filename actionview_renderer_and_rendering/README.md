@@ -36,7 +36,39 @@ new_template = ActionView::Template.new(body, "hello template", details.fetch(:h
 
 概念 view_context & view_renderer
 
-当然，这些我们平时都接触不到，知道有这么回事即可。
+```ruby
+def view_context
+  view_context_class.new(view_renderer, view_assigns, self)
+end
+
+def view_renderer
+  @_view_renderer ||= ActionView::Renderer.new(lookup_context)
+end
+
+def view_context_class
+  @_view_context_class ||= self.class.view_context_class
+end
+
+# view_context_class 等价于 ActionView::Base
+def view_context_class
+  @view_context_class ||= begin
+    include_path_helpers = supports_path?
+    routes  = respond_to?(:_routes)  && _routes
+    helpers = respond_to?(:_helpers) && _helpers
+
+    Class.new(ActionView::Base) do
+      if routes
+        include routes.url_helpers(include_path_helpers)
+        include routes.mounted_helpers
+      end
+
+      if helpers
+        include helpers
+      end
+    end
+  end
+end
+```
 
 ## 其它
 

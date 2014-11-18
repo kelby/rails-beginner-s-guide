@@ -10,7 +10,6 @@ Controller 里的 public方法(也就是action) 会自动对应 Route 里的路�
 
 > Rails Metal is a subset of Rack middleware
 
-
 ## Metal 之外
 
 Metal 仅包含 metal.rb 这个文件，不包含其同名目录。下面对 metal/ 目录下面包含的东西，做一下简述：
@@ -72,9 +71,9 @@ redirect_to action: “show”, id: 5
 
 相关、类似功能：
 
-`url_for` Generate a url based on the options provided, default_url_options and the routes defined in routes.rb.
+`url_for` 根据给定的参数和 default_url_options 和 routes.rb 里的路由定义这 3 者，生成可用的 url.
 
-`polymorphic_url` Constructs a call to a named RESTful route for the given record and returns the resulting URL string。
+`polymorphic_url` 根据传递的 record 对象，构建可用的 url.
 
 极端情况下，会发生 redirect_to -> url_for -> ActionController::UrlFor -> AbstractController::UrlFor -> ActionDispatch::Routing::UrlFor --> ActionDispatch::Routing::PolymorphicRoutes -> polymorphic_url
 

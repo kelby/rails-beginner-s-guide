@@ -55,11 +55,28 @@ ApplicationController 实例。
 
 ### 其它
 
-在执行语句后面加分号，可去掉console执行回显
+以下内容并非 Rails 才有，但很实用，一并列出。
 
-方法 _ 返回上次表达式执行的结果
+- method 的使用
 
-Console 清屏 Ctrl + L
+```ruby
+# 方法定义的地方
+x.method(:method_name).source_location
+
+# 方法内容
+x.method(:method_name).source
+
+# 方法前面的注释说明
+x.method(:method_name).comment
+
+# x 可以是对象、类、模块等
+```
+
+- 在执行语句后面加分号( ; )可去掉 console 默认的输出结果。
+
+- 下划线( _ )可以显示上条正确命令执行的结果。
+
+- Console 清屏快捷键"Ctrl + L"
 
 
 

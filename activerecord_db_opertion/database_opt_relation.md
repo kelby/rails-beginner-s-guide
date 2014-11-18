@@ -63,13 +63,13 @@ take, take!
 
 ## ~~HashMerger & Merger~~
 
-## ~~PredicateBuilder~~
+## ~~Predicate Builder~~
 
-## QueryMethods
+## Query Methods
 
 单独另讲
 
-## SpawnMethods
+## Spawn Methods
 
 | 方法 | 解释 |
 | -- | -- |
@@ -78,3 +78,11 @@ take, take!
 | only | 查询方法有多个，并且可以链式调用。使用 only 指定只能使用的查询方法 |
 
 当参数是 Relation 时，merge 也和 joins、includes 等一样有联合查询的效果。
+
+除上述方法外，还有
+
+```
+spawn
+
+merge!
+```

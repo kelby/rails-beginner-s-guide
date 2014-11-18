@@ -1,4 +1,4 @@
-# 数据库操作之锁
+# 数据库操作之 Locking
 
 ## 悲观锁(Pessimistic)
 

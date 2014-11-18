@@ -5,7 +5,6 @@
 | helper | 把 Helper 方法变成 Controller 方法 |
 | helper_method | 把 Controller 方法变成 Helper 方法 |
 
-
 `helper(*args, &block)`
 
 参数类型，可分为 3 类：String、Symbol，Module，block。这些参数还可以混合使用。
@@ -19,8 +18,8 @@ helper FooHelper # => includes FooHelper
 - 而当参数是字符串或符号时，会根据约定 require 相关文件，并 include 相关模块。
 
 ```ruby
-helper :foo             # => requires 'foo_helper' and includes FooHelper
-helper 'resources/foo'  # => requires 'resources/foo_helper' and includes Resources::FooHelper
+helper :foo            # => requires 'foo_helper' and includes FooHelper
+helper 'resources/foo' # => requires 'resources/foo_helper' and includes Resources::FooHelper
 ```
 
 此外，helper 可以接受并处理一个代码块。(不推荐)
@@ -58,3 +57,10 @@ end
 实现方式：以元编程的形式定义同名方法，然后 send 调用原 helper 方法
 
 helper 和 helper_method 可以简单理解为一对作用相反的操作。
+
+除上述两方法外，还有：
+
+```
+clear_helpers
+modules_for_helpers
+```

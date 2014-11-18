@@ -1,4 +1,4 @@
-# ActionDispatch Request
+## ActionDispatch Request
 
 ```
 GET & query_parameters

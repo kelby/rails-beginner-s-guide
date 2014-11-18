@@ -1,4 +1,4 @@
-## BacktraceCleaner
+## Backtrace Cleaner
 
 报错或程序运行反馈信息过多、过杂，找不到关键点？你可以使用 BacktraceCleaner 过滤无用信息。
 
@@ -22,7 +22,7 @@ bc.clean(exception.backtrace) # perform the cleanup
 
 | 方法 | 参数 |
 |--|--|
-| filter | 与 clean 方法作用完全一样，参数是要处理的信息 |
+| filter & clean | 参数是要处理的信息 |
 | remove_filters! | 移除之前的过滤规则 |
 | remove_silencers! | 移除之前的过滤规则 | 
 

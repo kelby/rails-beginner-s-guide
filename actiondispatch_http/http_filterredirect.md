@@ -1,4 +1,4 @@
-# ~~Http FilterRedirect~~
+## ~~Filter Redirect~~
 
 ```
 filtered_location
@@ -10,7 +10,7 @@ filtered_location
 config.filter_redirect << ''www.rubyonrails.org'
 ```
 
-可以使用字符串，正则表达式，或者一个数组，包含字符串或正则表达式：
+可以使用字符串、正则表达式，或者一个数组(包含字符串或正则表达式)：
 
 ```ruby
 config.filter_redirect.concat [''www.rubyonrails.org', /private_path/]

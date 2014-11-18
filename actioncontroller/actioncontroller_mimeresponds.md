@@ -21,8 +21,8 @@ html 等响应格式由 Collector 处理，而变种由 VariantCollector 来处�
 ## ~~Collector~~
 
 ```
-all, any
+all & any
 custom
-negotiate_format, new
+negotiate_format
 response
 ```

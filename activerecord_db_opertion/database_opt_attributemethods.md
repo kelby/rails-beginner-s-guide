@@ -38,49 +38,6 @@ ActiveModel 也有同名 Dirty 模块，这里是对它的使用，并且它并�
 
 是表中的一个或多个字段，它的值用于惟一地标识表中的某一条记录。默认是 'id' 属性，一般不会更改。
 
-## Query
-
-属性名，加后缀 '?' 进行询问。
-
-你还在用：
-
-```ruby
-<% if @user.login.blank? %>
-  <%= link_to 'login', new_session_path %>
-<% end %>
-
-# Object#present? is the same thing as calling !obj.blank?.
-<% if @user.login.present? %>
-  <%= @user.login %>
-<% end %>
-```
-
-你 Out 了，直接：
-
-```ruby
-<% unless @user.login? %>
-  <%= link_to 'login', new_session_path %>
-<% end %>
-
-<% if @user.login? %>
-  <%= @user.login %>
-<% end %>
-```
-
-每一个 record 的属性都可用此方法，这可以让你少敲几字符(也就是 present? 或 blank?)
-
-> Note: 对应着 ActiveModel::AttributeMethods::Query，原理是判断其值是否为 blank? 或 zero?
-
-> Note: 除了 boolean 类型外，其它类型的属性不建议使用，不要为了少敲几个字符，增加犯错的几率。
-
-[Use query attribute](http://rails-bestpractices.com/posts/56-use-query-attribute)
-
-## Read
-
-`read_attribute` 根据属性名，获取其值。
-
-和 send() 调用、直接调用大同小异。
-
 ## Serialization
 
 `serialize` 指定某个字段的存储类型。

@@ -1,4 +1,4 @@
-# Callbacks
+## Callbacks 的使用
 
 基于 ActionModel 提供的 `define_model_callbacks` 和 ActiveSupport 提供的 `define_callbacks` 方法，共生成十几个过滤器方法。
 
@@ -40,10 +40,9 @@ CALLBACKS = [
 
 调用方式主要有以下几种:
 
-1. 后面跟方法名，直接调用 √
+1. 宏定义的方式，后面跟方法名进行调用 √
 2. 传递一个可回调对象 √
-3. block 的形式，传递代码 √
-4. 覆盖方法名，重新定义方法内容 √
+3. 以类方法的形式，传递一个 block √
 
 1、3 用得最多，第 4 次之，还有一种方法不推荐(以字符串的形式传递)，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
 
@@ -97,8 +96,13 @@ class Napoleon < ActiveRecord::Base
 end
 ```
 
+## 抽取封装回调方法
+
+覆盖方法名，重新定义方法内容(这 TMD 是实例方法啊，内容不会被执行，官方文档误导人，这是 bug !) √
+
+
 ```ruby
-# 4
+# .1
 class Topic < ActiveRecord::Base
   def before_destroy() destroy_author end
 end
@@ -106,7 +110,41 @@ end
 class Reply < Topic
   def before_destroy() destroy_readers end
 end
+
+# .2
+class PictureFileCallbacks
+  def after_destroy(picture_file)
+    if File.exist?(picture_file.filepath)
+      File.delete(picture_file.filepath)
+    end
+  end
+end
+
+class PictureFile < ActiveRecord::Base
+  after_destroy PictureFileCallbacks.new
+end
+
+# .3
+class PictureFileCallbacks
+  def self.after_destroy(picture_file)
+    if File.exist?(picture_file.filepath)
+      File.delete(picture_file.filepath)
+    end
+  end
+end
+
+class PictureFile < ActiveRecord::Base
+  after_destroy PictureFileCallbacks
+end
 ```
+
+## Conditional Callbacks
+
+:if 选项
+
+:unless 选项
+
+## 可选参数 :on
 
 ## 特殊情况，特殊处理。
 
@@ -141,5 +179,17 @@ class Topic < ActiveRecord::Base
     def log_children
       # Child processing
     end
+end
+```
+
+## 如何理解 around
+
+以 save举例：
+
+```ruby
+def around_save
+   # before save, do somethings ...
+   yield # do save
+   # after save, do other somethings ...
 end
 ```

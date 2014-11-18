@@ -34,7 +34,17 @@ HasAndBelongsToMany
 
 想更好的理解和使用 Association 提供的 4 个方法，强烈推荐阅读这里的代码。它所影响的是对外表现，包括：引进了哪些方法，表示什么意思；有什么参数，表示什么意思，使用后有什么效果。
 
-对比查看，还能知道各个关联之间有什么异同点，包括：HasOne 和 BelongsTo 共同属于 SingularAssociation，而 HasMany 和 HasAndBelongsToMany 共同属于 CollectionAssociation。而它们又共同属于 Association.
+对比查看，还能知道各个关联之间有什么异同点。
+
+```
+  HasOne   &   BelongsTo        HasMany   &   HasAndBelongsToMany
+           |                              |
+           V                              V
+    SingularAssociation      &     CollectionAssociation
+                             |
+                             V   
+                         Association.
+```
 
 ## 3) Association
 

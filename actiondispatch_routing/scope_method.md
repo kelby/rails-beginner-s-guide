@@ -38,11 +38,10 @@ end
 **path 和 as 参数**
 
 ```ruby
+# 影响中间 helper 方法 和 影响最外面的网址
 scope path: ":account_id", as: "account" do
   resources :projects
 end
-
-影响中间 helper 方法 和 影响最外面的网址
 ```
 
 **constraints 参数**

@@ -10,11 +10,13 @@ number_to_phone
 number_to_rounded
 ```
 
-      autoload :NumberConverter
-      autoload :NumberToRoundedConverter
-      autoload :NumberToDelimitedConverter
-      autoload :NumberToHumanConverter
-      autoload :NumberToHumanSizeConverter
-      autoload :NumberToPhoneConverter
-      autoload :NumberToCurrencyConverter
-      autoload :NumberToPercentageConverter
+```
+autoload :NumberConverter
+autoload :NumberToRoundedConverter
+autoload :NumberToDelimitedConverter
+autoload :NumberToHumanConverter
+autoload :NumberToHumanSizeConverter
+autoload :NumberToPhoneConverter
+autoload :NumberToCurrencyConverter
+autoload :NumberToPercentageConverter
+```

@@ -4,7 +4,7 @@ AbstractController 目前包含 10 个模块，部分在前面已经详细介绍
 
 下面对所有的模块做简单描述，以有利于你对源码的阅读。
 
-**UrlFor**
+**Url For**
 
 包含了 ActionDispatch::Routing::UrlFor，然后又被 ActionMailer 和 ActionController::UrlFor 所调用。
 
@@ -41,7 +41,8 @@ view_assigns
 
 ```
 clear_helpers
-helper, helper_method
+helper
+helper_method
 modules_for_helpers
 ```
 
@@ -59,11 +60,16 @@ Controller 里的回调。
 
 还有一些平时用得不多，但比较有趣的方法。
 
-**AssetPaths**
+**Asset Paths**
 
 以声明的形式，`定义`一些 assset 相关的类方法和实例方法。
 
-**RoutesHelpers**
+```
+config_accessor :asset_host, :assets_dir, :javascripts_dir,
+  :stylesheets_dir, :default_asset_host_protocol, :relative_url_root
+```
+
+**Routes Helpers**
 
 引入 Route 相关的 helper(这里只是调用，定义在 RouteSet 里)。
 

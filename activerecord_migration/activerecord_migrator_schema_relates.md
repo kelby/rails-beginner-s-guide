@@ -21,3 +21,5 @@ end
 ```
 migrations_paths
 ```
+
+> Note: 它里面不支持非 migration 语句，也就是说直接让它执行 SQL 语句是不行的。

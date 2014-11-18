@@ -1,6 +1,6 @@
-# 查看项目用了哪些 Middleware
+## 查看项目用了哪些 Middleware
 
-命令行里查看，项目有哪些 middleware:
+**命令行里查看**，项目有哪些 middleware:
 
 ```
 > rake middleware
@@ -31,7 +31,7 @@ use Rack::ETag
 run AppName::Application.routes
 ```
 
-控制台里查看，项目有哪些 middleware:
+**控制台里查看**，项目有哪些 middleware:
 
 ```ruby
 Rails.application.send :default_middleware_stack

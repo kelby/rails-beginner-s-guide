@@ -1,4 +1,42 @@
-# render
+## render
+
+```ruby
+ActionView::Base.new.render(text: 'hello')
+=> "hello"
+
+ActionView::Base.new.render(inline: '<%= "hello" %>')
+=> "hello"
+
+echo hello > hello.txt
+cp AD/http/mime_type.rb .
+
+require_relative 'mime_type'
+ActionView::Base.new.render(file: 'hello.txt')
+
+echo "<%= 'hello, erb!' %>" > hello.html.erb
+require_relative 'mime_type'
+ActionView::Base.new('.').render(template: 'hello.html.erb')
+ActionView::Base.new('.').render(template: 'hello')
+
+# 原理
+view_renderer.render(view_context, options)
+
+require_relative 'mime_type'
+view = Class.new(ActionView::Base).new('.')
+methods = view.public_methods
+view.render(template: 'hello')
+
+view.public_methods - methods
+
+echo "= 'hello, haml'" > hello.html.haml
+require_relative 'mime_type'
+require 'haml/template'
+view = Class.new(ActionView::Base).new('.')
+view.render(template: 'hello', handlers: 'haml')
+```
+
+Rails apps without ActionView
+Apps without rails/actionpack
 
 ```
 spacer_template # 配合 collection 和 partical. 在局部模板之间穿插的内容。(为什么不把它们放到局部模板里，而是用这种奇怪的方式？可能是 partical 还被其它人使用，不能直接添加吧)

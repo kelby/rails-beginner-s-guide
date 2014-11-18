@@ -2,98 +2,6 @@
 
 Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作(好吧，其实就是各种复杂的读写操作)。
 
-## Counter Cache
-
-按要求加减指定计数器的值、统计数目的加一、统计数目的减一、重置计数器的值。
-
-```
-update_counters(id, counters)
-
-# 下面这两个方法基于 update_counters
-increment_counter(counter_name, id)
-decrement_counter(counter_name, id)
-
-reset_counters(id, *counters)
-```
-
-这几条命令直接转化成 sql 语句，所以性能上要比普通的"给对象 的计数品赋值，然后保存对象"要快，并且准确性得到了更高的保证。
-
-之前没有统计数目，新增统计数目，或之前的统计数目存在错误，使用 reset_counters 你可以又快、又准确的得到统计数目。
-
-`update_counters(id, counters)`
-
-计数器实现。在它基础上通常有加一、减一操作，但也可以单独使用。
-考虑到并发，这里并不只是Rails层面的get，然后set。而是在SQL层面"真正执行时"才增量加减(但没有用锁机制)。下面的加一、减一方法都是这样。
-
-```ruby
-# 注意：跟的是字段名
-Post.update_counters 3, comments_count: +1
-  SQL (8.9ms)  UPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE "posts"."id" = 3
-=> 1
-
-# 新增计数器: 原来没有使用计数器的，现在我们希望添加一个计数器。因为数据已经存在了，我们需要设置正确的数目。
-# Post.update_counters 3, comments_count: post.comments.count
-```
-
-`increment_counter(counter_name, id)`
-
-给 `counter_name` 字段进行加一。
-
-`decrement_counter(counter_name, id)`
-
-给 `counter_name` 字段进行减一。
-
-`reset_counters(id, *counters)`
-
-上文提到的"新增计数器"，也可用此方法实现。
-
-```ruby
-# 注意：跟的关系表名(可以是多个)，但不是字段名
-Post.reset_counters(3, :comments)
-  Post Load (0.2ms)  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
-   (0.2ms)  SELECT COUNT(*) FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 3]]
-   (9.4ms)  UPDATE "posts" SET "comments_count" = 2 WHERE "posts"."id" = 3
-=> true
-```
-
-基于SQL层面，重置(理解为校正，而不是归零)一个或多个计数器的值。计数器有时候会不准，特别是我们用来计数关联对象的个数，而自己又手动删除它们。
-
-> Note: counter_cache 的 attribute 默认是 read_only
-
-## Persistence
-
-很重要
-
-```
-becomes, becomes!
-
-decrement, decrement!
-increment, increment!
-
-delete, destroy, destroy!, destroyed?
-
-new_record?
-persisted?
-
-reload
-
-save, save!
-
-toggle, toggle!
-
-touch
-
-update, update! (update_attributes, update_attributes!)
-update_attribute
-update_column, update_columns
-```
-
-数据库写操作，包括{update, destroy, create, save ...}
-
-用原生 save 會有什麼問題呢？原生的 save 在資料儲存時，會經過一堆 validator 和 callbacks，即使你只是要簡單 update 一個欄位。
-
-> Note: 这里大部分是对单个对象的操作。
-
 ## Querying
 
 ```
@@ -111,40 +19,20 @@ delegate :count, :average, :minimum, :maximum, :sum, :calculate, to: :all
 delegate :pluck, :ids, to: :all
 ```
 
+除上述 delegate 方法外，还有：
+
+```
+find_by_sql
+count_by_sql
+```
+
 ## NullRelation
 
 结合 `ActiveRecord::Relation#none` 可以用来表示和处理结果为空的 Relation.
 
 ## QueryMethods
 
-提供方法：
-
-|方法|解释|
-|--|--|
-| bind | 不知道干嘛用|
-| create_with | 没找到合适的使用场景|
-| distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
-| eager_load |后文解释|
-| extending | 给一个 scope 增加方法，返回的仍然是 scope. <br> 如果传递的是 block, 则可以直接调用 block 里面的方法, 如果传递的是 module, 则可以调用 module 里面的方法。<br> 不推荐直接使用，这会大大提高复杂度，但扩展时可以用。|
-| from | 从符合条件的 record 开始 |
-| group | 后文解释 |
-| having | having 是分组(group)后的筛选条件，分组后的数据组内再筛选; where 则是在分组前筛选 |
-| includes | 后文解释 |
-| joins | 后文解释 |
-| limit | 限制结果数目 |
-| lock | 锁定结果 |
-| none | 返回一个空的 Relation |
-| offset | 类似 from, 但它传递的是"第几条"，并且数据不够的话可循环；而后者传递的是查询条件，不符合条件返回空 |
-| order | 按条件排序 |
-| preload | 后文解释 |
-| readonly | 查询结果只读，不可写 |
-| references | 后文解释 |
-| reorder | 重新按条件排序。在这之前有排序的话，忽略它们 |
-| reverse_order | 反转之前的排序结果 |
-| rewhere | 重新按条件查询。在这之前的排序条件和它没有冲突的情况下，保留它们；有冲突的情况下，忽略它们 |
-| select | 后文解释 |
-| unscope | 查询条件可以有多个。使用 unscope 可以忽略其中的一个或多个 |
-| where | 后文解释 |
+有独立章节进行讲解。
 
 ## FinderMethods & Batches
 
@@ -202,23 +90,3 @@ include FinderMethods, Calculations, SpawnMethods, QueryMethods, Batches, Explai
 ## Locking
 
 锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic)。会有专门章节介绍。
-
-## AttributeAssignment
-
-```
-assign_attributes & attributes=
-```
-
-不推荐直接使用，因为和直接赋值效果一样，但扩展时可以使用。
-
-使用举例：
-
-```ruby
-# 直接赋值
-cat = Cat.new(name: "Gorby", status: "yawning")
-cat.attributes # =>  { "name" => "Gorby", "status" => "yawning", "created_at" => nil, "updated_at" => nil}
-
-# 使用 Attribute Assignment
-cat.assign_attributes(status: "sleeping")
-cat.attributes # =>  { "name" => "Gorby", "status" => "sleeping", "created_at" => nil, "updated_at" => nil }
-```

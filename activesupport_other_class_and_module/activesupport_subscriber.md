@@ -1,10 +1,12 @@
 # Subscriber
 
 ```
-add_event_subscriber, attach_to
+add_event_subscriber
+attach_to
 finish
 method_added
-start, subscribers
+start
+subscribers
 ```
 
 使用举例：

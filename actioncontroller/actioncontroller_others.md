@@ -7,11 +7,3 @@
 `ActionController::Renderers.add`
 
 上面的 `register` 中是登记，本身没有处理能力，这里添加渲染器进行处理。
-
-## Hide Actions
-
-既是 public 方法，但不当做 action.
-
-提供方法：
-
-`hide_action`

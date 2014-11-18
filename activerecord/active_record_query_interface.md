@@ -5,7 +5,7 @@
 |方法|解释|
 |--|--|
 | bind | 不知道干嘛用|
-| create_with | 没找到合适的使用场景|
+| create_with | 创建一个 record 对象，调用者是 Relation 对象. <br>没找到合适的使用场景<br>设置的是 create_with_value 的值，在很多地方会间接用到它|
 | distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
 | eager_load |后文解释|
 | extending | 给一个 scope 增加方法，返回的仍然是 scope. <br> 如果传递的是 block, 则可以直接调用 block 里面的方法, 如果传递的是 module, 则可以调用 module 里面的方法。<br> 不推荐直接使用，这会大大提高复杂度，但扩展时可以使用。|
@@ -28,7 +28,6 @@
 | select | 后文解释 |
 | unscope | 查询条件可以有多个。使用 unscope 可以忽略其中的一个或多个 |
 | where | 后文解释 |
-
 
 `where(opts = :chain, *rest)`
 

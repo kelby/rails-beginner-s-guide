@@ -10,6 +10,8 @@ has_secure_password(options = {})
 
 ```ruby
 authenticate(unencrypted_password)
+
+# 以下两方法和 attr_accessor 类似
 password=(unencrypted_password)
 password_confirmation=(unencrypted_password)
 ```
@@ -27,11 +29,11 @@ user.authenticate('notright')      # => false
 user.authenticate('mUc3m00RsqyRe') # => user
 
 user.password = 'mUc3m00RsqyRe'
-user.save                                             # => false, confirmation doesn't match
+user.save                          # => false, confirmation doesn't match
 user.password_confirmation = 'mUc3m00RsqyRe'
-user.save                                             # => true
-user.authenticate('notright')                         # => false
-user.authenticate('mUc3m00RsqyRe')                    # => user
+user.save                          # => true
+user.authenticate('notright')      # => false
+user.authenticate('mUc3m00RsqyRe') # => user
 ```
 
 下面是 Rails 里面默认的加密、解密实现：

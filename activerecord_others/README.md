@@ -5,3 +5,5 @@
 ```
 Rails.application.config.database_configuration
 ```
+
+... ... 还有，待续。

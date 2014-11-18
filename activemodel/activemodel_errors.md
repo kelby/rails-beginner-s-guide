@@ -1,5 +1,14 @@
 ## Errors
 
+对属性校验失败时的报错，是它的实例(不常用)。
+
+```ruby
+record.errors.class
+=> ActiveModel::Errors
+```
+
+自己写校验方法或者校验器的时候，请务必设置 errors 的值。
+
 常用以下方法
 
 | 方法 | 解释 |
@@ -18,15 +27,30 @@
 ```
 added?
 
-set, get
-size, count
-clear, delete
+set
+get
+
+size
+count
+
+clear
+delete
+
 has_key? & include?
-add_on_blank, add_on_empty
-to_a, to_hash, to_xml, as_json
+
+add_on_blank
+add_on_empty
+
+to_a
+to_hash
+to_xml
+as_json
 
 full_message
+full_messages_for
+
 initialize_dup
+
 generate_message
 ```
 
@@ -39,3 +63,5 @@ generate_message
   <%= @record.errors[:title].join('') %>
 <% end %>
 ```
+
+> Note: 因为 include Enumerable，所以可以看出很多与其同名的方法。

@@ -58,6 +58,21 @@ User.joins(:posts)
 
 特点，不会查询出关联表的数据，仅做为查询条件。
 
+**复杂的 joins**
+
+```ruby
+# has_and_belongs_to_many
+product has_and_belongs_to_many :devices
+
+Product.joins("join devices_products on products.id = devices_products.product_id").where(["devices_products.device_id = ?", params[:device_id]])
+
+# has_many :through
+has_many :catalogs_products
+has_many :catalogs, :through => :catalogs_products
+  
+Product.joins(:catalogs_products).where(:catalogs_products => {:catalog_id => params[:catalog_id]})
+```
+
 ## preload
 
 类似 includes 的子集。

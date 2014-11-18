@@ -12,7 +12,7 @@ Schema
 
 ---
 
-下面这 4 个模块，来源 ConnectionAdapters，它下面还有很多模块，在此忽略其它 ...
+下面这 4 个模块，来源 Connection Adapters，它下面还有很多模块，在此忽略其它 ...
 
 SchemaStatements
 
@@ -168,3 +168,4 @@ Sanitization
 
 包括 DatabaseTasks，MySQLDatabaseTasks、PostgreSQLDatabaseTasks、SQLiteDatabaseTasks
 
+- databases.rake (很重要)

@@ -11,7 +11,7 @@ response_body=
 set_response!
 ```
 
-## SSE (Server Sent Event)
+## 使用 SSE (Server Sent Event)
 
 提供方法：
 
@@ -39,7 +39,7 @@ class MyController < ActionController::Base
 end
 ```
 
-## 不明确使用 SSE
+## 不使用 SSE
 
 一般使用都不明确指定 SSE，而是使用默认的 Buffer，举例：
 

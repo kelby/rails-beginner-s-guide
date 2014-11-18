@@ -39,6 +39,10 @@ after_destroy
 after_commit/after_rollback
 ```
 
+**save = create + update**
+
+**commit = create + update + destroy** 当然也包含了 save 在内
+
 > Note: 执行 create 和 update 操作，都会触发 after_save 回调。但它的顺序始终在 after_create 和 after_update 之后。即使在 model 里它定义在前面，效果一样。
 
 ### after_initialize 和 after_find
@@ -134,7 +138,7 @@ after_save :回调 1, :回调 2
 查看某个记录关联的回调及其顺序
 
 ```
-a_record._save_callbacks.each{ |c| puts c.raw_filter }
+a_record._save_callbacks.map{ |c| puts c.raw_filter };
 
 =>
   你所定义的 save 回调 2

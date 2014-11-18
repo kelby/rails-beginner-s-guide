@@ -23,6 +23,7 @@ end
 ```ruby
 def show
   @csvable = Csvable.find(params[:id])
+
   respond_to do |format|
     format.html
     format.csv { render csv: @csvable, filename: @csvable.name }
@@ -40,4 +41,11 @@ ActionController::Renderers.remove(:csv)
 
 ```
 use_renderer & use_renderers
+```
+
+默认 ActionController 带着的渲染器:
+
+```ruby
+ActionController::Renderers::RENDERERS
+=> #<Set: {:json, :js, :xml}>
 ```

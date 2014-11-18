@@ -92,6 +92,7 @@ class CustomSmtpDelivery < ::Mail::SMTP
                      :openssl_verify_mode => nil
                     }.merge!(values)
   end
+
   attr_accessor :settings
 
   def deliver!(mail)

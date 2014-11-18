@@ -20,8 +20,14 @@ source_root
 
 ```
 add_shebang_option!  
-banner, base_name  
-default_aliases_for_option, default_for_option   default_generator_root, default_value_for_option  
+banner
+base_name  
+
+default_aliases_for_option
+default_for_option
+default_generator_root
+default_value_for_option
+
 generator_name  
 usage_path
 ```

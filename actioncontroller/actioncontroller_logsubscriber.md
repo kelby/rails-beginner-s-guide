@@ -6,7 +6,9 @@ halted_callback
 logger
 process_action
 redirect_to
-send_data, send_file, start_processing
+send_data
+send_file
+start_processing
 unpermitted_parameters
 
 write_fragment

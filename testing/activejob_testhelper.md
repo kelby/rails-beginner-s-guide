@@ -1,6 +1,6 @@
-# ActiveJob
+## ActiveJob
 
-## Test Helper
+### Test Helper
 
 ```
 assert_enqueued_with
@@ -23,5 +23,5 @@ queue_adapter
 以及
 
 ```ruby
-delegate :enqueued_jobs,  :enqueued_jobs=, :performed_jobs, :performed_jobs=, to: :queue_adapter
+delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, to: :queue_adapter
 ```

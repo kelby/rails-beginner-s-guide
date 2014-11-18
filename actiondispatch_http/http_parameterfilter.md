@@ -1,4 +1,4 @@
-# Http ParameterFilter & FilterParameters
+## Parameter Filter & Filter Parameters
 
 ```
 filter
@@ -8,7 +8,12 @@ filter
 
 ```
 env_filter
-filtered_env, filtered_parameters, filtered_path, filtered_query_string
+
+filtered_env
+filtered_parameters
+filtered_path
+filtered_query_string
+
 parameter_filter_for
 
 parameter_filter

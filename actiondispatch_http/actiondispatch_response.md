@@ -1,4 +1,4 @@
-# ActionDispatch Response 
+## ActionDispatch Response 
 
 ```
 _status_code

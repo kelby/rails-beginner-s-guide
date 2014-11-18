@@ -50,26 +50,34 @@ get 'hello', to: HelloController.action(:index)
 
 ```
 # Class Public methods
-action(name, klass = ActionDispatch::Request)
-call(env)
-controller_name()
-middleware()
-new()
-use(*args, &block)
+action
+controller_name
+middleware & middleware_stack
+use
 
 # Instance Public methods
-_status_code()
-content_type()
-content_type=(type)
-controller_name()
-env()
-location()
-location=(url)
-params()
-params=(val)
-performed?()
-response_body=(body)
-status()
-status=(status)
-url_for(string)
+content_type
+content_type=
+
+location
+location=
+
+params
+params=
+
+status
+status=
+
+performed?
+response_body=
+controller_name
+env
+url_for
+```
+
+除此之外，还有：
+
+```ruby
+class_attribute :middleware_stack
+self.middleware_stack = ActionController::MiddlewareStack.new
 ```

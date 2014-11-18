@@ -1,6 +1,6 @@
-# ActionMailer
+## ActionMailer
 
-## Test Case
+### Test Case
 
 除通常的测试方法外，还有
 
@@ -18,7 +18,27 @@ assert ActionMailer::Base.deliveries.any?
 assert_equal [user.email], email.to
 ```
 
-## TestHelper
+#### Behavior
+
+```
+initialize_test_deliveries
+
+restore_delivery_method
+restore_test_deliveries
+
+set_delivery_method
+set_expected_mail
+```
+
+#### ClassMethods
+
+```
+determine_default_mailer
+mailer_class
+tests
+```
+
+### TestHelper
 
 默认 Rails 提供两个 helper 方法用于测试：
 

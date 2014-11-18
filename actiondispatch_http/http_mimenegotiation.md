@@ -1,9 +1,11 @@
-# Http MimeNegotiation
+## MimeNegotiation
 
 ```
 accepts
-content_mime_type, content_type
-format, formats
+content_mime_type
+content_type
+format
+formats
 negotiate_mime
 
 format=

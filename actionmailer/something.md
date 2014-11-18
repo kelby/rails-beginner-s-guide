@@ -53,7 +53,7 @@ end
 
 **Delivery Methods**
 
-配置邮件邮件发送方式 add_delivery_method, 及不同方式的默认配置。
+配置邮件邮件发送方式 `add_delivery_method`, 及不同方式的默认配置。
 
 **Log Subscriber**
 
@@ -113,7 +113,8 @@ preview_name
 Previews 提供方法
 
 ```
-register_preview_interceptor, register_preview_interceptors
+register_preview_interceptor
+register_preview_interceptors
 ```
 
 **Railtie**

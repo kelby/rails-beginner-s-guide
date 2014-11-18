@@ -37,6 +37,6 @@ raise ActiveModel::ForbiddenAttributesError if attributes.respond_to?(:permitted
 
 ## 其它
 
-Rails 的 where 查询也有类似 Mass Assignment 保护
+Rails 的 where 查询也有类似 Mass Assignment 保护。
 
 

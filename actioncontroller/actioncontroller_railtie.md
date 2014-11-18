@@ -3,8 +3,8 @@
 ### initializer
 
 ```
-Assets config
-Set helpers path
+Assets config    # 配置 assets_dir，默认是 public/
+Set helpers path # 默认是 app/helpers/
 Parameters config
 Set configs
 Compile config methods

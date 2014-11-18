@@ -1,6 +1,6 @@
-# ActiveSupport
+## ActiveSupport
 
-## Test Case
+### Test Case
 
 ```
 assert_nothing_raised
@@ -9,7 +9,7 @@ test_order
 test_order=
 ```
 
-## Assertions
+### Assertions
 
 ```
 assert_difference
@@ -18,7 +18,7 @@ assert_no_difference
 assert_not
 ```
 
-## Setup And Teardown
+### Setup And Teardown
 
 ```
 setup
@@ -39,16 +39,19 @@ class ExampleTest < ActiveSupport::TestCase
 end
 ```
 
-## Time Helpers
+### Time Helpers
 
 ```
-travel, travel_back, travel_to
+travel
+travel_back
+travel_to
 ```
 
-## LogSubscriber Test Helper
+### LogSubscriber Test Helper
 
 ```
-set_logger, setup
+set_logger
+setup
 teardown
 wait
 ```

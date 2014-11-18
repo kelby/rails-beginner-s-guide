@@ -7,7 +7,7 @@ end
 ```
 
 ```
-    # 中间 helper 方法    # 最外面网址                    # 最里面 Controller#action
+    # 中间 helper 方法     # 最外面网址                     # 最里面 Controller#action
     admin_posts GET       /admin/posts(.:format)          admin/posts#index
     admin_posts POST      /admin/posts(.:format)          admin/posts#create
  new_admin_post GET       /admin/posts/new(.:format)      admin/posts#new
@@ -44,3 +44,18 @@ namespace :admin, as: "sekret" do
 end
 ```
 
+---
+
+相等性
+
+```ruby
+namespace "admin" do
+  resources :kks
+end
+
+# 等价于
+
+scope module: "admin", path: "/admin", as: "sekret" do
+  resources :lls
+end
+```

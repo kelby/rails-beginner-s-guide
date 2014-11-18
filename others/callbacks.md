@@ -1,4 +1,4 @@
-# Callbacks
+## Callbacks 相关的模块及方法
 
 Callbacks 跨度比较大。
 
@@ -52,4 +52,11 @@ after_enqueue
 before_perform
 around_perform
 after_perform
+```
+
+ActiveModel::Validations::Callbacks 的
+
+```
+before_validation
+after_validation
 ```

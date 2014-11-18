@@ -54,11 +54,35 @@ ActionDispatch::Reloader
 
 **~~Params Parser~~**
 
+解析请求过来的参数。
+
 **Flash**
 
 这里是 Flash 消息的实现，至于如何使用，可以查看"Flash"章节
 
 **~~Exception Wrapper~~**
+
+抛异常，该如何报错：
+
+```ruby
+ActionDispatch::ExceptionWrapper.rescue_responses
+
+=> {"ActionController::RoutingError"=>:not_found,
+  "AbstractController::ActionNotFound"=>:not_found,
+  "ActionController::MethodNotAllowed"=>:method_not_allowed,
+  "ActionController::NotImplemented"=>:not_implemented,
+  "ActionController::InvalidAuthenticityToken"=>:unprocessable_entity,
+  "ActiveRecord::RecordNotFound"=>:not_found,
+  "ActiveRecord::StaleObjectError"=>:conflict,
+  "ActiveRecord::RecordInvalid"=>:unprocessable_entity,
+  "ActiveRecord::RecordNotSaved"=>:unprocessable_entity}
+  
+ActionDispatch::ExceptionWrapper.rescue_templates
+=> {"ActionView::MissingTemplate"=>"missing_template",
+  "ActionController::RoutingError"=>"routing_error",
+  "AbstractController::ActionNotFound"=>"unknown_action",
+  "ActionView::Template::Error"=>"template_error"}
+```
 
 **Debug Exceptions**
 

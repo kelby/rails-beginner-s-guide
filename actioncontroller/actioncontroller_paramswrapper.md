@@ -7,8 +7,6 @@ process_action
 ## ClassMethods
 
 ```
-_set_wrapper_options
-inherited
 wrap_parameters
 ```
 
@@ -17,7 +15,7 @@ wrap_parameters
 我们用 POST 请求数据时，可以看到在 params 里对象封装在一个 root 元素里，例如：
 
 ```
-"post" => {"title"=>"hello world"}
+"post" => {"title" => "hello world"}
 ```
 
 我们获取里面的某个属性，只能这样
@@ -37,13 +35,13 @@ post.title
 # enables the parameter wrapper for XML format
 wrap_parameters format: :xml
 
-# wraps parameters into +params[:person]+ hash
+# wraps parameters into params[:person] hash
 wrap_parameters :person
 
 # wraps parameters by determining the wrapper key from Person class
 wrap_parameters Person
 
-# wraps only +:username+ and +:title+ attributes from parameters.
+# wraps only :username and :title attributes from parameters.
 wrap_parameters include: [:username, :title]
 
 # disables parameters wrapping for this controller altogether.

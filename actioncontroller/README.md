@@ -10,28 +10,6 @@ middleware_stack (这个很重要，最终指向 ActionDispatch::MiddlewareStack
 
 self.action + dispatch
 
-有方法：
-
-```
-controller_name
-middleware
-action
-call
-use
-
-content_type, content_type=
-location, location=
-params, params=
-status, status=
-response_body=
-
-controller_name
-env
-url_for
-
-performed?
-```
-
 ## Metal 之外
 
 有一些模块和 Metal 一样也有 `process_action` 方法，并且它们也被 include 进了 ActionController，并且我们自己定义的类没有这个方法(没有重写). 根据 Ruby 的代码执行规则，执行 process_action 时它们都会被执行(并且这个方法执行顺序先于 Metal 同名的方法)。

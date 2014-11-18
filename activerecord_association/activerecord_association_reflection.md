@@ -1,14 +1,19 @@
-# Association Reflection
-
 ## Reflection
 
 一个很重要的概念，包含了所有的关联信息。
 包括但不限于：用的是什么关联、关联对象名字、可选参数等。
 
+对于**一般关联和 aggregate 要区分**开来。前者用 _reflections，后者用 aggregate_reflections.
+
+提供方法
+
 ### self
 
 ```
 create
+可以创建 AggregateReflection，HasManyReflection、HasOneReflection 和 BelongsToReflection 4 种关联
+如果使用了 :through 则还会自动生成 ThroughReflection 关联
+
 add_reflection
 add_aggregate_reflection
 ```
@@ -16,84 +21,18 @@ add_aggregate_reflection
 ### ClassMethods
 
 ```
-reflect_on_aggregation, reflect_on_all_aggregations
-reflect_on_all_associations, reflect_on_all_autosave_associations
-reflect_on_association, reflections
+reflections # 所有正常的关联
+reflect_on_all_associations          # 指定 macro 的 reflections
+reflect_on_all_autosave_associations # 包含 autosave 的 reflections
+
+reflect_on_all_aggregations # 所有 aggregate 关联
+
+# 以下两方法要提供被关联对象名字
+reflect_on_association
+reflect_on_aggregation
 ```
 
-### Association Reflection
 
-AssociationReflection 继承于 MacroReflection 又继承于 AbstractReflection
-
-另，AggregateReflection 也继承于 MacroReflection
-
-```ruby
-:klass
-:table_name
-:quoted_table_name
-:foreign_type
-:type
-:primary_key_column
-:foreign_key
-:association_primary_key
-:association_foreign_key
-:active_record_primary_key
-:counter_cache_column
-:columns
-:through_reflection
-:source_reflection
-:chain
-:conditions
-:source_macro
-:inverse_of
-:polymorphic_inverse_of
-:association_class
-
-:build_association
-:reset_column_information
-:check_validity!
-:check_validity_of_inverse!
-
-:nested?
-:has_inverse?
-:collection?
-:validate?
-:belongs_to?
-```
-
-举例：可选参数 :inverse_of 可与哪些关联或不可与哪些可选参数一起使用。
-
-```
-VALID_AUTOMATIC_INVERSE_MACROS = [:has_many, :has_one, :belongs_to]
-INVALID_AUTOMATIC_INVERSE_OPTIONS = [:conditions, :through, :polymorphic, :foreign_key]
-```
-
-另，HasManyReflection、 HasOneReflection、BelongsToReflection 和 HasAndBelongsToManyReflection 都继承于 AssociationReflection. 它们这几个方法比较少，就不再一一列举。
-
-### Through Reflection
-
-另一个值得一提的就是：ThroughReflection. ThroughReflection 继承于 AbstractReflection，有下列方法：
-
-```ruby
-:foreign_key
-:foreign_type
-:association_foreign_key
-:active_record_primary_key
-:type
-:source_reflection
-:through_reflection
-:chain
-:conditions
-:source_macro
-:association_primary_key
-:source_reflection_names
-:source_options
-:through_options
-
-:check_validity!
-
-:nested?
-```
 
 ### 其它
 
