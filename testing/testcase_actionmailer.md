@@ -34,7 +34,9 @@ set_expected_mail
 
 ```
 determine_default_mailer
+
 mailer_class
+
 tests
 ```
 

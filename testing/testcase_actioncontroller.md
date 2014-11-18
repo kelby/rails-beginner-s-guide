@@ -17,6 +17,8 @@ put
 paramify_values
 setup_controller_request_and_response
 xhr & xml_http_request
+
+document_root_element
 ```
 
 ### Template Assertions
@@ -25,7 +27,9 @@ xhr & xml_http_request
 assert_template
 
 process
+
 reset_template_assertion
+
 setup_subscriptions
 teardown_subscriptions
 ```

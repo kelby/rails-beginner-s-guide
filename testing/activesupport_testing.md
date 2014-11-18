@@ -18,11 +18,41 @@ assert_no_difference
 assert_not
 ```
 
-### Setup And Teardown
+### Declarative
+
+```
+test
+```
+
+### Isolation
+
+```
+forking_env?
+
+run
+```
+
+**Forking**
+
+```
+run_in_isolation
+```
+
+**Subprocess**
+
+```
+run_in_isolation
+```
+
+### Setup And Teardown ClassMethods
 
 ```
 setup
 teardown
+
+# 文档没写，但还有：
+before_setup
+after_teardown
 ```
 
 使用举例：

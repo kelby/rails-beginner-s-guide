@@ -25,3 +25,11 @@ queue_adapter
 ```ruby
 delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, to: :queue_adapter
 ```
+
+### Test Adapter
+
+```
+enqueued_jobs
+
+performed_jobs
+```

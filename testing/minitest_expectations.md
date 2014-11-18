@@ -1,5 +1,7 @@
 ## ~~Expectations~~
 
+可以用 assert_x 和 refute_x 来代替这里的方法，文档和实现都一样。
+
 实例方法
 
 ```

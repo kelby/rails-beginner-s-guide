@@ -1,9 +1,10 @@
-# TestCase ActionView
+# ActionView
 
 ## Behavior
 
 ```
 config
+document_root_element
 render, rendered_views
 setup_with_controller
 ```

@@ -68,6 +68,8 @@ bench_range
 
 ## Benchmark
 
+这里的文档说看 Assertions 的文档即可。
+
 类方法
 
 ```
