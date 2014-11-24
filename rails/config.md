@@ -1,4 +1,4 @@
-# Configuration Middleware Stack
+# Configuration Middleware Stack Proxy
 
 这里指的是 Rails::Configuration，名字起得不是很好。
 

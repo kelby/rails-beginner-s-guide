@@ -1,4 +1,4 @@
-# 部分源码剖析
+## 部分源码剖析
 
 Rails 在改动，特别是一些模块的名字，但对外提供的 API 一般不会变。
 
@@ -104,10 +104,15 @@ Preview 提供方法：
 
 ```
 all
-call
-email_exists?, emails, exists?
-find
+emails
+
 preview_name
+
+call
+email_exists?
+
+find
+exists?
 ```
 
 Previews 提供方法

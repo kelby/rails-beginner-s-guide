@@ -1,4 +1,4 @@
-# 数据库操作之 Relation
+# Relation
 
 Ruby --翻译--> SQL语句 --执行--> 返回结果
 
@@ -61,8 +61,6 @@ find_last, find_nth, find_nth_with_limit, find_one, find_some, find_take, find_w
 take, take!
 ```
 
-## ~~HashMerger & Merger~~
-
 ## ~~Predicate Builder~~
 
 ## Query Methods
@@ -86,3 +84,9 @@ spawn
 
 merge!
 ```
+
+## ~~HashMerger & Merger~~
+
+是 SpawnMethods 里的 merge、merge! 方法的底层实现。
+
+在 merger 对象非 Array、非 Relation、非 proc 等情况下才使用到。

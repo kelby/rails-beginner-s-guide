@@ -1,13 +1,21 @@
-## AutosaveAssociation
+## Autosave Association
+
+负责处理自动保存相关一切任务。
+
+常用
+
+```
+mark_for_destruction
+marked_for_destruction?
+```
+
+除此之外，还有
 
 ```
 changed_for_autosave?
 
 destroyed_by_association
 destroyed_by_association=
-
-mark_for_destruction
-marked_for_destruction?
 
 reload
 ```

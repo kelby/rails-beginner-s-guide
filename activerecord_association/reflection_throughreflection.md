@@ -1,6 +1,6 @@
 ### Through Reflection
 
-继承于 AbstractReflection
+继承于 Abstract Reflection
 
 ```ruby
 delegate_reflection

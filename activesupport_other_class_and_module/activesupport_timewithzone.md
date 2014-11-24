@@ -1,4 +1,4 @@
-## TimeWithZone
+## Time With Zone
 
 类似 Ruby 内置的 [Time](http://ruby-doc.org/core-2.1.0/Time.html)，但 Ruby 内置的 Time 所创建的实例对象局限于 UTC 和系统的 ENV['TZ'] 时区。这里的实例没有此局限，你可以用你想用的时区。
 

@@ -1,4 +1,4 @@
-### AbstractReflection
+### Abstract Reflection
 
 ```
 :table_name

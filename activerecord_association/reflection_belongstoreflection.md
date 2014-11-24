@@ -1,6 +1,6 @@
-### BelongsToReflection
+### Belongs To Reflection
 
-继承于 AssociationReflection
+继承于 Association Reflection
 
 ```
 macro

@@ -1,4 +1,4 @@
-# Subscriber
+## Subscriber
 
 ```
 add_event_subscriber

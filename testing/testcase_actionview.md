@@ -5,7 +5,8 @@
 ```
 config
 document_root_element
-render, rendered_views
+render
+rendered_views
 setup_with_controller
 ```
 
@@ -13,7 +14,8 @@ setup_with_controller
 
 ```
 determine_default_helper_class
-helper_class, helper_method
+helper_class
+helper_method
 tests
 ```
 

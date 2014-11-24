@@ -18,7 +18,7 @@ add_reflection
 add_aggregate_reflection
 ```
 
-### ClassMethods
+### Class Methods
 
 ```
 reflections # 所有正常的关联
@@ -32,7 +32,18 @@ reflect_on_association
 reflect_on_aggregation
 ```
 
+### 结构图
 
+```
+AbstractReflection
+  MacroReflection
+    AssociationReflection
+      AggregateReflection
+      HasManyReflection
+      HasOneReflection
+      BelongsToReflection
+        ThroughReflection
+```
 
 ### 其它
 

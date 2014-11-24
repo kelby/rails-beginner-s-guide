@@ -1,3 +1,5 @@
+# AppName, Application, Engine, Railtie
+
 上层从到底层。
 
 AppName < Application < Engine < Railtie

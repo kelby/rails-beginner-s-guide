@@ -62,5 +62,6 @@ helper 和 helper_method 可以简单理解为一对作用相反的操作。
 
 ```
 clear_helpers
+
 modules_for_helpers
 ```

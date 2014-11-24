@@ -6,8 +6,6 @@ expect...not_to
 
 eq
 eql
-
-be
 equal
 
 >
@@ -17,11 +15,12 @@ equal
 be_within
 
 match
+match_array
 
-be_an_instance_of
-be_a
-be_an
+be
+be_a & be_an
 be_a_kind_of
+be_an_instance_of
 
 be_truthy
 be true
@@ -45,12 +44,24 @@ cover
 
 include
 start_with
-start_with
 contain_exactly
-match_array
 end_with
 
 should
+
+be_between
+be_within
+
+change
+exist
+
+have_attributes
+all
+
+output
+
+respond_to
+satisfy
 ```
 
 链接 [RSpec Expectations](http://www.rubydoc.info/github/rspec/rspec-expectations)

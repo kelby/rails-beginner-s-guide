@@ -1,6 +1,6 @@
 # ActiveRecord 工具
 
-## NoTouching
+## No Touching
 
 常用方法：
 
@@ -31,7 +31,7 @@ touch
 
 ## ~~Translation~~
 
-## ReadonlyAttributes
+## Readonly Attributes
 
 提供方法：
 

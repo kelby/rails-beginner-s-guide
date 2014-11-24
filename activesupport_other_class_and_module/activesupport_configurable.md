@@ -1,4 +1,4 @@
-# ActiveSupport Configurable
+## Configurable
 
 ```
 config

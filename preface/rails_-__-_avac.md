@@ -1,3 +1,5 @@
+# ActionView 渲染的原理
+
 Controller#actions 里定义实例变量，并通过 render 方法进行渲染。
 
 ActionView 渲染过程很复杂，涉及概念主要有：渲染器(名词)、上下文、渲染(动词)。

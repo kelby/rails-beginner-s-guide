@@ -1,4 +1,4 @@
-## MimeNegotiation
+## Mime Negotiation
 
 ```
 accepts

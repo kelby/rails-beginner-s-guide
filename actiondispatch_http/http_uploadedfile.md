@@ -1,4 +1,4 @@
-## UploadedFile
+## Uploaded File
 
 ```
 close

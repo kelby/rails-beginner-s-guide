@@ -1,4 +1,4 @@
-# ActionController
+# Action Controller
 
 ## Metal 是重点
 

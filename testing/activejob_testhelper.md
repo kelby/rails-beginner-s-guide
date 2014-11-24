@@ -7,8 +7,9 @@ assert_enqueued_with
 assert_performed_with
 
 assert_enqueued_jobs
-assert_performed_jobs
 assert_no_enqueued_jobs
+
+assert_performed_jobs
 assert_no_performed_jobs
 
 before_setup

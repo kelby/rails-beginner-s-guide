@@ -1,6 +1,6 @@
 ### Association Reflection
 
-AssociationReflection 继承于 MacroReflection 又继承于 AbstractReflection
+Association Reflection 继承于 Macro Reflection 又继承于 Abstract Reflection
 
 ```ruby
 klass

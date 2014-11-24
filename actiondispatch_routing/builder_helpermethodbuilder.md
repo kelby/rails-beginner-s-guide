@@ -1,4 +1,4 @@
-## builder HelperMethodBuilder
+## builder Helper Method Builder
 
 :action - Specifies the action prefix for the named route: :new or :edit. Default is no prefix.
 
@@ -6,7 +6,7 @@
 
 builder = ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder.plural '', 'url'
 
-```
+```ruby
 when Array
 builder.handle_list record # 拆分处理，方式雷同
   when String, Symbol

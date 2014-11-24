@@ -4,10 +4,10 @@ AttributeMethods 可以很方便给现有属性(可以是虚拟属性)添加前�
 
 使用步骤:
 
-1. <tt>include ActiveModel::AttributeMethods</tt>
+1. include ActiveModel::AttributeMethods
 2. 调用 `attribute_method_prefix` 添加前缀，调用 `attribute_method_suffix` 添加后缀，调用 `attribute_method_affix` 添加前缀 + 后缀
 3. 在这之后，调用 `define_attribute_methods`，指明对哪些属性有效(默认是所有)
-4. 定义一个 `attributes` 方法。返回值是一个 hash，属性的名字做为 key，属性的值做为 value. 实际上可实现其读、写方法。
+4. 定义一个 `attributes` 方法。返回值是一个 hash，属性的名字做为 key，属性的值做为 value. 实际上可实现其读、写方法，相当于 attr_accessor
 5. 用 attribute 加上刚才的前缀、后缀做为方法名，定义一个新的方法
 
 单独使用 AttributeMethods 举例:
@@ -34,7 +34,7 @@ class Person
   end
 
   private
-  # 根据上面的加的前缀 & 后缀定义并实现这里的方法。
+  # 用 attribute 代替上面要处理的属性，加上前缀、后缀得到新的方法名，然后实现它们
 
   def attribute_contrived?(attr)
     true
@@ -54,7 +54,7 @@ Rails 项目，有的步骤默认已经实现，所以使用上可以减少几�
 
 ```ruby
 class Person < ActiveRecord::Base
-  attribute_method_affix :prefix => 'me_mateys_', :suffix => '_is_in_pirate?'
+  attribute_method_affix prefix: 'me_mateys_', suffix: '_is_in_pirate?'
 
   private
 

@@ -81,9 +81,7 @@ member.posts.first.title # => 'Kari, the awesome Ruby documentation browser!'
 member.posts.second.title # => 'The egalitarian assumption of the modern citizen'
 ```
 
----
-
-重现 autosave 过程
+**重现 autosave 创建过程**
 
 ```ruby
 Book has_many :pages

@@ -18,7 +18,7 @@ render :nothing => true, :status => "201 Created"
 head :created, :location => person_url(@person)
 ```
 
-只是设置了 respond_body，但因为程序还没有结束，所以 Controller#action 层面的后续代码还是要执行的。
+注意：使用 head 只是设置了 respond_body，如果程序还没有结束，那么 Controller#action 层面的后续代码还是会执行的。
 
 > Note: 结果和使用 render 方法时 render nothing: true 类似。
 

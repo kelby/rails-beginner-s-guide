@@ -1,3 +1,5 @@
+## ActionController 概览
+
 Controller 里的 public方法(也就是action) 会自动对应 Route 里的路由规则。当请求到来时，action 接受请求并处理，最后渲染相应视图模板(Get-and-show)或重定向到另一 action(do-and-redirect)。
 
 默认，只有 ApplicationController 直接继承于 ActionController::Base，其它的控制器继承于 ApplicationController。所以，如果你想在所有 controller 处理之前做一些什么，你可以把它们写在 ApplicationController 里。
@@ -99,4 +101,3 @@ ActionController include 了这些模块，而我们自定义的 Controller 又�
 [Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>
 [Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)<br>
 [Rails Metal](http://railscasts.com/episodes/150-rails-metal)<br>
-[基于资源的HTTP Cache的实现介绍](http://robbinfan.com/blog/13/http-cache-implement)

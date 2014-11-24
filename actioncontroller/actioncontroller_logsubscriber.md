@@ -1,4 +1,4 @@
-## LogSubscriber
+## Log Subscriber
 
 ```
 deep_munge

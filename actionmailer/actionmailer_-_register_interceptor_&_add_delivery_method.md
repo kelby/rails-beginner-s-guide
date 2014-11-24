@@ -1,3 +1,5 @@
+## 邮件拦截器及配置发送
+
 为了"开发和测试尽量的接近生产环境"和"知道发送出去的邮件真正的样子"等目的，我们希望在非生产环境下，能够查看邮件发送情况。
 
 ## 解决方案
@@ -15,14 +17,14 @@
 也就是下面要介绍的。
 
 ```ruby
-# 注册拦截器
+# 注册拦截器(可指定条件)
 ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 
-# 注册拦截器
+# 注册拦截器(有时候需要先加载)
 require 'whitelist_interceptor'
 ActionMailer::Base.register_interceptor(WhitelistInterceptor)
 
-# 注册拦截器
+# 注册拦截器(有时候需要先加载)
 require 'environment_interceptor'
 ActionMailer::Base.register_interceptor(EnvironmentInterceptor)
 ```
@@ -31,7 +33,7 @@ ActionMailer::Base.register_interceptor(EnvironmentInterceptor)
 class DevelopmentMailInterceptor
   # 实现 delivering_email 方法
   # 在最后时刻替换掉发送到的邮箱
-  def self.delivering_email(message)
+  def self.delivering_email message
     message.subject = "[#{message.to}] #{message.subject}"
     message.to = "eifion@asciicasts.com"
   end
@@ -80,7 +82,7 @@ end
 require 'mail'
 
 class CustomSmtpDelivery < ::Mail::SMTP
-  # SMTP configuration (could be possible to pass the settings from the config file)
+  # SMTP 配置 (当然，也可以把它们放到配置文件里)
   def initialize(values)
     self.settings = {:address => "smtp.gmail.com",
                      :port => 587,
@@ -95,6 +97,7 @@ class CustomSmtpDelivery < ::Mail::SMTP
 
   attr_accessor :settings
 
+  # 重新实现 deliver! 方法
   def deliver!(mail)
     # Redirect all mail to your inbox
     mail['to'] = "youremail@domain.com"
@@ -114,5 +117,6 @@ end
 [206: ActionMailer in Rails 3](http://cn.asciicasts.com/episodes/206-actionmailer-in-rails3)<br>
 [Tips for Implementing Emails in Rails](http://www.jacopretorius.net/2013/11/tips-for-implementing-emails-in-rails.html)
 
-[Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)<br>
-[Deliver Email With Amazon SES In A Rails app](http://robots.thoughtbot.com/deliver-email-with-amazon-ses-in-a-rails-app)
+[Deliver Email With Amazon SES In A Rails app](http://robots.thoughtbot.com/deliver-email-with-amazon-ses-in-a-rails-app)<br>
+[Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)
+

@@ -20,31 +20,13 @@ I18n 相关的 translate(alias t) 和 localize(alias l) 方法。
 
 它其实是封装了 ActionView 里的渲染相关内容，然后又被 ActionController 所调用。
 
-有方法：
-
-```
-render
-render_to_body, render_to_string, rendered_format
-
-view_assigns
-```
-
 **~~Logger~~**
 
 日志相关。提供 logger 打印日志
 
 **Helpers**
 
-不是指辅助方法！只是和 helper 有点关联，如方法：helper_method、helper.
-
-有方法：
-
-```
-clear_helpers
-helper
-helper_method
-modules_for_helpers
-```
+不是指 helper 方法！但和 helper 有关联，如方法：helper_method、helper 等。
 
 **Collector**
 

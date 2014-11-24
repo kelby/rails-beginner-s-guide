@@ -71,22 +71,6 @@ Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链�
 
 > Note: 这里部分是对多个对象的操作，对 Relation 的操作；不是查询操作。
 
-```ruby
-JoinOperation = Struct.new(:relation, :join_class, :on)
-
-MULTI_VALUE_METHODS  = [:includes, :eager_load, :preload, :select, :group,
-                        :order, :joins, :where, :having, :bind, :references,
-                        :extending, :unscope]
-
-SINGLE_VALUE_METHODS = [:limit, :offset, :lock, :readonly, :from, :reordering,
-                        :reverse_order, :distinct, :create_with, :uniq]
-INVALID_METHODS_FOR_DELETE_ALL = [:limit, :distinct, :offset, :group, :having]
-
-VALUE_METHODS = MULTI_VALUE_METHODS + SINGLE_VALUE_METHODS
-
-include FinderMethods, Calculations, SpawnMethods, QueryMethods, Batches, Explain, Delegation
-```
-
 ## Locking
 
 锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic)。会有专门章节介绍。

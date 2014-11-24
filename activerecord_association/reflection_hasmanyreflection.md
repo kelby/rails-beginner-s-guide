@@ -1,6 +1,6 @@
-### HasManyReflection
+### HasMany Reflection
 
-继承于 AssociationReflection
+继承于 Association Reflection
 
 ```
 macro

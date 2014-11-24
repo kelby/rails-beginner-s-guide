@@ -1,4 +1,4 @@
-# ActiveModel
+## ActiveModel
 
 我们知道 MVC 结构里，Model(模型)层与数据库关系最紧密。现在我们是把 Model(模型层)再拆分一下，把对数据库真正有操作的这部分拆分成 ActiveRecord，把没有对数据库操作的这部分拆分成 ActiveModel。但它们都属于 Model(模型层)。
 

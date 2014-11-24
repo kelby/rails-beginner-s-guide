@@ -90,7 +90,7 @@ end
 提供方法：
 
 ```
-config # 名词
+config    # 名词
 configure # 动词
 
 # 动词，接 block

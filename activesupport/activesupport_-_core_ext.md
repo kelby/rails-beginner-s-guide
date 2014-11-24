@@ -108,7 +108,7 @@ xmlschema
 yesterday
 ```
 
-## DateTime
+## Date Time
 
 ```
 <=>
@@ -307,7 +307,7 @@ redefine_method
 remove_possible_method
 ```
 
-## NameError
+## Name Error
 
 ```
 missing_name, missing_name?
@@ -348,7 +348,7 @@ unescape
 with_options
 ```
 
-### HashWithIndifferentAccess
+### Has hWith Indifferent Access
 
 ```
 [],
@@ -393,7 +393,7 @@ overlaps?
 to_default_s, to_formatted_s, to_s
 ```
 
-## SecureRandom
+## Secure Random
 
 ```
 uuid_from_hash, uuid_v3, uuid_v5

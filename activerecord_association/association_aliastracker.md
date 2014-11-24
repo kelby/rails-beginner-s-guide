@@ -1,5 +1,5 @@
-## AliasTracker
+## Alias Tracker
 
-**作用**：为 JoinDependency 和 ThroughAssociationScope 服务。
+**作用**：为 Join Dependency 和 Through Association Scope 服务。
 
-实现：我再想想。。。
+实现对不规则表名的跟踪及相关处理。

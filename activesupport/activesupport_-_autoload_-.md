@@ -36,6 +36,44 @@ autoload 本质还是 require, 只是把"加载"细分为"声明 + 加载"。
 
 并且，很好的解决了 Ruby 旧版本不运行 autoload 的困境。
 
+### 相关方法
+
+常用的
+
+```
+autoload
+eager_autoload
+
+eager_load!
+```
+
+除上述方法外，还有
+
+```
+autoload_at
+autoload_under
+
+autoloads
+```
+
+使用举例：
+
+```ruby
+module MyLib
+  extend ActiveSupport::Autoload
+
+  autoload :Model
+
+  eager_autoload do
+    autoload :Cache
+  end
+end
+```
+
+```ruby
+MyLib.eager_load!
+```
+
 ## 延伸阅读
 
 [Eager loading for greater good](http://blog.plataformatec.com.br/2012/08/eager-loading-for-greater-good/)<br>

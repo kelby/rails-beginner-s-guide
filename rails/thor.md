@@ -114,3 +114,5 @@ Stores and return the source root for this class.
 
 `argument`  
 Adds an argument to the class and creates an attr_accessor for it.
+
+链接 [What Is Thor](http://whatisthor.com/)

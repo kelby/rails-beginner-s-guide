@@ -1,3 +1,5 @@
+## 和其它模块的关系及几个比较有意思的方法
+
 AbstractController 和 ActionMailer 有关联。ActionMailer::Base 继承于 AbstractController::Base
 
 AbstractController 和 ActionController 有关联。ActionController::Base 继承于 ActionController::Metal，然后 ActionController::Metal 又继承于 AbstractController::Base

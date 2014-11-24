@@ -68,14 +68,14 @@ end
 | :class_name | 解释同上 |
 | :foreign_key | 解释同上 |
 | :primary_key | 解释同上 |
-| :dependent | Controls what happens to the associated objects when their owner is destroyed. Note that these are implemented as callbacks, and Rails executes callbacks in order. Therefore, other similar callbacks may affect the :dependent behavior, and the :dependent behavior may affect other callbacks. |
-| :counter_cache | This option can be used to configure a custom named :counter_cache. You only need this option, when you customized the name of your :counter_cache on the belongs_to association. |
+| :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
+| :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :as | 解释参考 belongs_to |
-| :through | Specifies an association through which to perform the query. This can be any other type of association, including other :through associations. Options for :class_name, :primary_key and :foreign_key are ignored, as the association uses the source reflection. <br> If the association on the join model is a belongs_to, the collection can be modified and the records on the :through model will be automatically created and removed as appropriate. Otherwise, the collection is read-only, so you should manipulate the :through association directly. <br> If you are going to modify the association (rather than just read from it), then it is a good idea to set the :inverse_of option on the source association on the join model. This allows associated records to be built which will automatically create the appropriate join model records when they are saved. (See the 'Association Join Models' section above.) |
-| :source | Specifies the source association name used by has_many :through queries. Only use it if the name cannot be inferred from the association. has_many :subscribers, through: :subscriptions will look for either :subscribers or :subscriber on Subscription, unless a :source is given. |
+| :through | 指定中间表。优先级比 :class_name, :primary_key 和 :foreign_key 要高。<br> 如果对应的关联是 belongs_to 则，关联表会被自动更新、创建、删除。否则，关联表为只读状态，也就是说创建后你就只能手动维护，不会自动更新、删除。 <br> 如果你要更改关联，最好配置一下 :inverse_of 选项，以便被关联对象及时更新与其父亲的关系。 |
+| :source | 配合 :through 使用，当查询关联表数据时用哪张表的字段。例如 has_many :subscribers, through: :subscriptions，如果不指定，默认会查询 :subscribers 或 :subscriber 表 |
 | :source_type | 从后者的角度来看，后者与前者的关联应该是 belongs_to. 但如果恰好又是多态，那么后者保存有前者的 id 并指定某个类型. 如果你对按约定生成的类型不满意，可以用 :source_type 指明。 |
 | :validate | 同上。但默认是 true |
-| :autosave | If true, always save the associated objects or destroy them if marked for destruction, when saving the parent object. If false, never save or destroy the associated objects. By default, only save associated objects that are new records. This option is implemented as a before_save callback. Because callbacks are run in the order they are defined, associated objects may need to be explicitly saved in any user-defined before_save callbacks. <br> 使用 accepts_nested_attributes_for 会自动设置 :autosave 为 true. |
+| :autosave | 设置为 true，保存父亲对象时，其关联对象同时被保存。设置为 false, 对关联对象不做任何操作。默认，只有被关联对象为 new_record 时才会自动保存。<br> 使用 accepts_nested_attributes_for 会自动设置 :autosave 为 true. |
 | :inverse_of | 解释同上 |
 
 ### 注意事项。
@@ -87,8 +87,8 @@ end
 
   - :nullify 设置后者的"前者_id"属性为 nil. 不会触发回调。
 
-  - :restrict_with_exception causes an exception to be raised if there are any associated records.
+  - :restrict_with_exception 有关联对象则抛异常。并且后面与之的无关代码也不能再运行
 
-  - :restrict_with_error causes an error to be added to the owner if there are any associated objects.
+  - :restrict_with_error 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行
+- :autosave 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
 
-If using with the :through option, the association on the join model must be a belongs_to, and the records which get deleted are the join records, rather than the associated records.

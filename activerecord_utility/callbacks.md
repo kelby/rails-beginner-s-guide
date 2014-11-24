@@ -44,7 +44,7 @@ CALLBACKS = [
 2. 传递一个可回调对象 √
 3. 以类方法的形式，传递一个 block √
 
-1、3 用得最多，第 4 次之，还有一种方法不推荐(以字符串的形式传递)，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
+1、3 用得最多，第 2 次之，还有一种方法不推荐(以字符串的形式传递)，第 2 可以起到分离和复用的作用，但复杂度提高了，并且有其它实现手法可替代。
 
 ```ruby
 # 1
@@ -57,6 +57,8 @@ class Topic < ActiveRecord::Base
     end
 end
 ```
+
+回调是针对单个 record 对象而言的。当传递给回调的参数是一个实例对象时，把当前 record 对象当做参数，传递并执行实例对象里和回调同名的方法。创建实例对象的时候，你也可以传递参数。
 
 ```ruby
 # 2
@@ -86,19 +88,54 @@ class EncryptionWrapper
       # Secrecy is unveiled
     end
 end
+
+# 2
+class BankAccount < ActiveRecord::Base
+  before_save      EncryptionWrapper.new("credit_card_number")
+  after_save       EncryptionWrapper.new("credit_card_number")
+  after_initialize EncryptionWrapper.new("credit_card_number")
+end
+
+class EncryptionWrapper
+  def initialize(attribute)
+    @attribute = attribute
+  end
+
+  def before_save(record)
+    record.send("#{@attribute}=", encrypt(record.send("#{@attribute}")))
+  end
+
+  def after_save(record)
+    record.send("#{@attribute}=", decrypt(record.send("#{@attribute}")))
+  end
+
+  alias_method :after_initialize, :after_save
+
+  private
+    def encrypt(value)
+      # Secrecy is committed
+    end
+
+    def decrypt(value)
+      # Secrecy is unveiled
+    end
+end
 ```
 
 ```ruby
 # 3
 class Napoleon < ActiveRecord::Base
   before_destroy { logger.info "Josephine..." }
+  before_destroy do
+    # some code
+  end
   ...
 end
 ```
 
 ## 抽取封装回调方法
 
-覆盖方法名，重新定义方法内容(这 TMD 是实例方法啊，内容不会被执行，官方文档误导人，这是 bug !) √
+覆盖方法名，重新定义方法内容(注意：这里定义的是实例方法啊，内容不会被执行，其它类再继承才能执行!) √
 
 
 ```ruby

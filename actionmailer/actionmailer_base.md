@@ -1,13 +1,13 @@
 ## Base
 
-也就是 ActionMailer::Base，我们继承的就是它。
+也就是 ActionMailer::Base，我们的 Mailer 类继承的就是它。
 
 ### 邮件、附件
 
 |方法|解释|
 |--|--|
-| mail(headers = {}, &block) | 表示邮件对象 |
-|attachments() | 允许你在邮件里添加附件|
+| mail | 表示邮件对象 |
+|attachments | 允许你在邮件里添加附件|
 
 `mail(headers = {}, &block)` 可接收一个代码块做为参数，header(头部)可接受：
 
@@ -52,7 +52,7 @@ a_mailer.attachments
 # By Filename
 mail.attachments['filename.jpg'] # => Mail::Part object or nil
 
-# or by index
+# By index
 mail.attachments[0]              # => Mail::Part (first attachment)
 ```
 
@@ -69,7 +69,20 @@ mail.attachments['filename.jpg'] = { mime_type: 'application/x-gzip',
 
 | 方法 | 解释 |
 |--|--|
-|default(value = nil) & default_options= | 设置默认值，value 必需是 Hash 类型|
+|default & default_options= | 设置默认值，value 必需是 Hash 类型|
+
+`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有
+
+```ruby
+default_params = {
+  mime_version: "1.0",
+  charset:      "UTF-8",
+  content_type: "text/plain",
+  parts_order:  [ "text/plain", "text/enriched", "text/html" ]
+}
+```
+
+我们可以配置
 
 ```ruby
 # 下面两者一样
@@ -82,6 +95,7 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 # 下面这些配置，在 Mail 里就有了
 # 发送方式
 config.action_mailer.delivery_method = :smtp
+
 # 根据不同发送方式，做不同配置
 config.action_mailer.smtp_settings = {
   address: 'smtp.gmail.com',
@@ -96,15 +110,22 @@ config.action_mailer.smtp_settings = {
 
 # 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
 config.action_mailer.raise_delivery_errors = true
+
 # 默认即是 true
 config.action_mailer.perform_deliveries = true
 ```
 
 它和配置文件里的 `default_options=` 是一样。
 
+在 config/environments 目录下针对不同执行环境会有不同的邮件服务器设置：
+
+```ruby
+config.action_mailer.default_options = { from: "no-reply@example.org" }
+```
+
+前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
+
 > Note: delivery_method 常见有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，也可以自定义。
-
-
 
 ```ruby
 # app/mailers/user_mailer.rb
@@ -118,34 +139,11 @@ class UserMailer < ActionMailer::Base
 end
 ```
 
-`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有
-
-```ruby
-default_params = {
-  mime_version: "1.0",
-  charset:      "UTF-8",
-  content_type: "text/plain",
-  parts_order:  [ "text/plain", "text/enriched", "text/html" ]
-}
-```
-
-还有在 config/environments 目录下针对不同执行环境会有不同的邮件服务器设置：
-
-```ruby
-config.action_mailer.default_options = { from: "no-reply@example.org" }
-```
-
-前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
-
-```ruby
-alias :default_options= :default
-```
-
 ### 接收邮件
 
 | 方法 | 解释 |
 | -- | -- |
-| receive(raw_mail) | 表示接收邮件 |
+| receive | 表示接收邮件 |
 
 `receive(raw_mail)`
 

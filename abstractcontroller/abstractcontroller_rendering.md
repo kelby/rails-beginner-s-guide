@@ -4,7 +4,7 @@
 
 封装了 ActionView 里的 TemplateRenderer 和 PartialRenderer，提供 render 给 ActionController, ActionMailer 渲染模板文件或局部模板。
 
-真正的渲染工作并不是它完成，它只是封装了 View 里的渲染方法。所以，使用过程中有疑问的，可以查看 View 里对应 render 方法的文档。
+**真正的渲染工作并不是它做的**，它只是封装了 View 里的渲染方法。所以，使用过程中有疑问的，可以查看 View 里对应 render 方法的文档。
 
 1) 不想渲染任何东西，可以使用：
 
@@ -87,4 +87,17 @@ render js: "alert('Hello Rails');"
 
 ```
 render body: "raw"
+```
+
+---
+
+除 render 外，还有方法：
+
+```
+render_to_body
+render_to_string
+
+rendered_format
+
+view_assigns
 ```

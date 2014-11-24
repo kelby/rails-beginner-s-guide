@@ -120,9 +120,8 @@ ActionController::Metal 和 ActionController::Base 都声明为抽象的。(作�
 
 ## Railtie
 
-delegate :config, to: :instance
+delegate `:config`, to: :instance
 
 ## Initializable
 
-initializer
-
+`initializer`

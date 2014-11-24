@@ -1,4 +1,6 @@
-介绍的方法都在 **ActiveRecord::QueryMethods**
+# Relation 之 Query Methods
+
+介绍的方法都在 ActiveRecord::QueryMethods
 
 提供方法：
 

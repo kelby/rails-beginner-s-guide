@@ -1,4 +1,4 @@
-# engine full vs mountable
+# Engine full vs mountable
 
 生成命令 `rails plugin new`
 

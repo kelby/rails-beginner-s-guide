@@ -3,7 +3,7 @@
     Associations 文件下
       4 个关联类方法 -- (1)
 
-    本目录下
+    本目录下 -- 实现几个关联方法。
       builder -- (2)
         Association
           SingularAssociation
@@ -14,7 +14,7 @@
         HasAndBelongsToMany
         4 个关联类方法，直接调用
 
-      # 10 个 _Association 文件
+      # 10 个 _Association 文件。实现对关联对象的操作！
       Association -- (3)
         SingularAssociation --(3)
           HasOneAssociation
@@ -35,14 +35,14 @@
 
       AssociationScope -> CollectionAssociation + SingularAssociation + Association
 
-      JoinDependency(*) -> FinderMethods + QueryMethods
+      JoinDependency(实现 joins) -> FinderMethods + QueryMethods
         JoinPart
           JoinBase
           JoinAssociation
 
       AliasTracker -> AssociationScope + JoinDependency
 
-      Preloader --(忽略)
+      Preloader --(实现 includes, preload, eager_load)
         ThroughAssociation
         Association
           CollectionAssociation

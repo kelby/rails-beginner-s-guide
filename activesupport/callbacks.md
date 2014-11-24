@@ -15,7 +15,7 @@ klazz.define_singleton_method("after_restore") do |*args, &block|
   set_callback(:restore, :after, *args, &block)
 end
 ```
-# a方法
+# a 方法
 ```ruby
 def restore!(opts = {})
   ActiveRecord::Base.transaction do

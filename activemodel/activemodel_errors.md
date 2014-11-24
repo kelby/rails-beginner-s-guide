@@ -54,8 +54,6 @@ initialize_dup
 generate_message
 ```
 
-以上常用与非常用方法，由作者根据经验划分，仅供参考。
-
 视图里常用写法：
 
 ```ruby

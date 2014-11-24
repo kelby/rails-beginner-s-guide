@@ -1,4 +1,4 @@
-# 定制 Middleware
+## 定制 Middleware
 
 [Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)
 

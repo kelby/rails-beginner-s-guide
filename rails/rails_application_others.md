@@ -1,4 +1,4 @@
-# Application 其它
+# 其它
 
 ## Default Middleware Stack
 

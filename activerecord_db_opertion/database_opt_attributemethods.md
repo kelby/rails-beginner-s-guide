@@ -1,4 +1,4 @@
-# 数据库操作之 AttributeMethods
+# Attribute Methods
 
 ## Before Type Cast
 
@@ -67,7 +67,7 @@ post.title[:name]
 
 存储时，如果类型不符合，会报错。
 
-## ~~TimeZoneConversion~~
+## ~~Time Zone Conversion~~
 
 ## Write
 

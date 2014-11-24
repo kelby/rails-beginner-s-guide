@@ -1,3 +1,5 @@
+## ActionMailer
+
 ActionMailer 是 Rails 内建的组件，用来处理邮件相关业务，并且简单好用。
 
 它依赖于 Rails 内建的其它组件 ActiveJob、AbstractController 和 ActionView 以及外部 gem 'mail'.

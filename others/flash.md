@@ -1,3 +1,5 @@
+# Flash 的使用
+
 ActionDispatch 和 ActionController 都有 Flash 相关的代码，统一把它们放到这里来讲。
 
 ## 基本使用

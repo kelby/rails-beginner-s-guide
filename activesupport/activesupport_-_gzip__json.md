@@ -1,4 +1,4 @@
-# Gzip 与 JSON
+## Gzip 与 JSON
 
 封装了标准库 [zlib](http://ruby-doc.org/stdlib-2.1.0/libdoc/zlib/rdoc/index.html)，提供 gzip 压缩/解压缩字符串功能。
 

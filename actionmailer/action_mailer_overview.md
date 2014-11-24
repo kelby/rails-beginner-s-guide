@@ -1,3 +1,5 @@
+## ActionMailer 模块及方法介绍
+
 ActionMailer 使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
 
 ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
@@ -88,7 +90,7 @@ View 里：
 <%= users_url(host: "example.com") %>
 ```
 
-**生成 Mailer 和模板**
+**快速生成 Mailer 和模板**
 
 通过 `rails g mailer UserMailer welcome` 创建 mailer 类和视图：
 
@@ -101,7 +103,8 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
-**创建消息并渲染邮件模板**
+**创建邮件对象时的魔法**
 
-**创建邮件对象**：细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 里重新定义的 method_missing, 找不到方法时先检查方法名是否和 action_methods 一样，如果一样则(把此方法当做参数对待)创建 Mailer 对象。
+细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
 
+这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 method_missing 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 Mailer 对象。

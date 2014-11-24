@@ -1,5 +1,7 @@
-## JoinDependency
+## Join Dependency
 
-**作用**：为 FinderMethods 和 QueryMethods 服务。
+**作用**：为 Finder Methods 和 Query Methods 服务。
 
-实现：我再想想。。。
+实现 joins
+
+

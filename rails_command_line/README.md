@@ -17,11 +17,11 @@ session.class
 => ActionDispatch::Integration::Session
 ```
 
-- 可以使用的方法1：所有的 path 和 url (这里不包含其它 helper)
-- 可以使用的方法2：request.methods
-- 可以使用的方法3：response.methods
-- 可以使用的方法4：相关的 asset_.methods
-- 可以使用的方法5：ActionController::Base 引入的 private 等方法
+- 所有的 path 和 url (这里不包含其它 helper)
+- request.methods
+- response.methods
+- 相关的 asset_.methods
+- ActionController::Base 引入的 private 等方法
 
 2 `new_session`  
 返回一个新的集成测试会话实例
@@ -78,5 +78,17 @@ x.method(:method_name).comment
 
 - Console 清屏快捷键"Ctrl + L"
 
+- **定制自己的 console 方法**
 
+举例，我们使用 gem 'factory_girl'，在控制台里为了少敲几个字母，我们用 `fg` 代替 FactoryGirl，可以这么做：
 
+```ruby
+# config/environments/test.rb
+module Rails
+  module ConsoleMethods
+    def fg
+      @fg ||= FactoryGirl
+    end
+  end
+end
+```

@@ -141,14 +141,25 @@ after_save :回调 1, :回调 2
 a_record._save_callbacks.map{ |c| puts c.raw_filter };
 
 =>
-  你所定义的 save 回调 2
-  你所定义的 save 回调 1
+  save 回调 1
+  save 回调 2
   ... ...
-  系统生成的 save 回调 2
-  系统生成的 save 回调 1
+  save 回调 3
+  save 回调 4
 ```
 
-执行顺序从下往上。
+执行顺序从下往上，相当于越在上面的优先级越高(因为后面的可以覆盖前面的)。
 
-先是系统生成的方法，大多数是关联时就带有(autosave_associated_records、belongs_to_counter_cache、has_many_dependent)，之后是我们自己的方法。
+这里不区分是系统生成的方法(大多数是关联时就带有，如 autosave_associated_records、belongs_to_counter_cache、has_many_dependent)，还是我们自定义的方法。
 
+用 `:prepend` 参数可以更改回调在堆栈里的顺序，如：
+
+```ruby
+class Foo < ActiveRecord::Base
+  belongs_to :bar, autosave: true
+
+  before_save :modify_bar, prepend: true
+end
+```
+
+在这里，autosave 在 modify_bar 之前完成，也就是说 modify_bar 优先级高。

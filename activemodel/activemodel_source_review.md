@@ -19,8 +19,6 @@ end
 
 **Serialization**
 
-
-
 **Railtie & TestCase**
 
 基本上都是空的。

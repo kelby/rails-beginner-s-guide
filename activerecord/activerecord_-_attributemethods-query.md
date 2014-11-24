@@ -1,4 +1,4 @@
-## Query
+## Query 问询
 
 加后缀 '?' 进行 boolean 判断。
 

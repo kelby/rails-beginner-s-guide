@@ -1,4 +1,4 @@
-# ActiveSupport NumberHelper
+## Number Helper
 
 ```
 number_to_currency
