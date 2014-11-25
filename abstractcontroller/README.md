@@ -1,4 +1,4 @@
-## AbstractController
+## Abstract Controller
 
 - 服务于 ActionController 和 ActionMailer
 - 将站场从 ActionDispatch 转移到 Controller 或 Mailer

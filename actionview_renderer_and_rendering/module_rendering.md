@@ -1,11 +1,18 @@
 ## Rendering
 
-```ruby
+```
+view_context
+view_renderer
+
 render_to_body
 rendered_format
-view_context
 view_context_class
-view_renderer
+```
+
+以及类方法
+
+```
+view_context_class
 ```
 
 `view_renderer` 是 ActionView::Renderer 的实例对象。
@@ -53,14 +60,43 @@ module PostsHelper
 end
 ```
 
-其它手法
+当然，还有其它方法，但不在此列举。
 
-```
-view_context. (rails 3)
-ActionController::Base.helpers.your_helper_methord or ApplicationController.helpers.your_helper_methord or YourController.helpers.your_helper_method
-include helper in a singleton class and then singleton.helper
-include the helper in the controller (WARNING: will make all helper methods into controller actions)
-```
+---
 
-参考 [Rails - How to use a Helper Inside a Controller](http://stackoverflow.com/a/11161692/2174675)
+部分源代码
+
+```ruby
+def view_context
+  view_context_class.new(view_renderer, view_assigns, self)
+end
+
+def view_renderer
+  @_view_renderer ||= ActionView::Renderer.new(lookup_context)
+end
+
+def view_context_class
+  @_view_context_class ||= self.class.view_context_class
+end
+
+# view_context_class 等价于 ActionView::Base
+def view_context_class
+  @view_context_class ||= begin
+    include_path_helpers = supports_path?
+    routes  = respond_to?(:_routes)  && _routes
+    helpers = respond_to?(:_helpers) && _helpers
+
+    Class.new(ActionView::Base) do
+      if routes
+        include routes.url_helpers(include_path_helpers)
+        include routes.mounted_helpers
+      end
+
+      if helpers
+        include helpers
+      end
+    end
+  end
+end
+```
 

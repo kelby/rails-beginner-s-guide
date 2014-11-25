@@ -16,27 +16,6 @@ ArticlesController._helpers
 
 渲染是它的老本行。
 
----
-
-lookup_context
-
-```
- @cache=true,
- @details=
-  {:locale=>[:en],
-   :formats=>[:html, :text, :js, :css, :xml, :json],
-   :variants=>[],
-   :handlers=>[:erb, :builder, :raw, :ruby]},
- @details_key=nil,
- @prefixes=[],
- @rendered_format=nil,
- @skip_default_locale=false,
- @view_paths=
-  #<ActionView::PathSet:0x007ff7250a0fe0
-   @paths= ...
-```
-
----
 
 每次都要指定模板文件，并且说一遍渲染，不麻烦吗？<br>
 因为模板文件，都在同一目录下，所以我们不必这么麻烦。引进 ActionView 的子模块 Rendering 后我们设置默认的目录即可，并且能自动帮我们"说一遍渲染"。

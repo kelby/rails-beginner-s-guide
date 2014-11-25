@@ -18,7 +18,7 @@ valid_authenticity_token?, verified_request?
 
 ```
 
-## ClassMethods
+## Class Methods
 
 ```
 protect_from_forgery

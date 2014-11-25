@@ -1,45 +1,15 @@
-## Model Naming
+## Controller 和 View 里 Model Naming
 
-View 和 Controller 里有时候要处理 Model 里的对象，为了方便使用，做了一些约定。影响了 ActionView、ActionController 和 ActionDispatch.
+ActionController 和 ActionView 里都有 Model Naming 模块。
 
-ActionController::ModelNaming 和 ActionView::ModelNaming
+Controller 和 View 经常要处理 record 对象，比如得到单数、复数格式，得到 cache_key、route_key、param_key 等，这都需要用到 Model 里的方法。此时，可以把 record 对象转化得到 model_name，然后再进行后续操作。
 
-提供了：
+ActionController::ModelNaming 和 ActionView::ModelNaming 一样，都提供了：
 
-```ruby
+```
 convert_to_model
+
 model_name_from_record_or_class
 ```
 
-方便我们把，字符串、符号、实例对象等转换成相关 model 进行处理。
-
-相关 ActiveModel::Name 和 ActiveModel::Naming
-
-`model_name` 把"各种对象"转换成对应的"字符串"，而 View 要的正是"字符串"。
-
-**ActionView**
-
-```
-form_for
-
-button
-submit
-
-fields_for
-
-dom_id
-dom_class
-```
-
-**ActionController**
-
-```
-wrap_parameters
-```
-
-**ActionDispatch**
-
-```
-polymorphic_url
-polymorphic_path
-```
+方便我们把对象转换成 Model 或 model_name 进行处理。

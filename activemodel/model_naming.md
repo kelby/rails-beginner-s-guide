@@ -22,15 +22,33 @@ uncountable? # 不可数？
 
 方便我们把，字符串、符号、实例对象等转换成相关 model 进行处理。
 
-`model_name` 返回的是 Name 的实例对象。Name 和普通字符串类似，但提供方法：
+`model_name` 返回的是 **Name 的实例对象**。Name 和普通字符串类似，但提供方法：
 
 ```
 human
 ```
 
+和
+
+```
+singular
+plural
+element
+cache_key & collection
+
+singular_route_key
+route_key
+param_key
+i18n_key
+
+name
+```
+
 可将字符串转换成对用户更友好的形式展现。
 
 `model_name` 把"各种对象"转换成对应的"字符串"，而 View 要的正是"字符串"。比如以下几个方法：
+
+ActionView
 
 ```
 form_for
@@ -41,8 +59,20 @@ submit
 fields_for
 
 dom_id
-
 dom_class
+```
+
+ActionController
+
+```
+wrap_parameters
+```
+
+ActionDispatch
+
+```
+polymorphic_url
+polymorphic_path
 ```
 
 相关 ActionController::ModelNaming 和 ActionView::ModelNaming.

@@ -1,57 +1,10 @@
-## ActionMailer 模块及方法介绍
-
-ActionMailer 使用模板来创建邮件与 ActionController 使用模板渲染视图，原理类似。
-
-ActionMailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
-
-## Mail Helper
-
-| 方法 | 解释 |
-| -- | -- |
-| mailer() | 表示邮件所在的 Mailer 对象，类似 Controller 对象 |
-| message() | 表示邮件 |
-| attachments() | 表示邮件里面的附件 |
-|format_paragraph(text, len = 72, indent = 2)|处理一段文本消息，行首空两格，每行长度不超过 72 个字符|
-|block_format(text)|使用 format_paragraph 处理大段的文本|
-
-## Message Delivery
-
-专用于邮件的发送。
-
-这个文件是重构 + 引入 DeliveryJob 后产生的。
-
-```
-deliver_now, deliver_now!
-deliver_later, deliver_later!
-
-message
-```
-
-deliver 直接调用了 gem 'mail' 提供的方法，或加入延迟任务再调用。
-
-通常，我们都是创建邮件并发送
-
-```ruby
-# Creates the email and sends it immediately
-Notifier.welcome("helloworld@example.com").deliver_now
-```
-
-也可以先创建邮件对象，稍后邮件对象调用方法发送邮件：
-
-```ruby
-message = Notifier.welcome("helloworld@example.com") # => an ActionMailer::MessageDeliver object
-message.deliver_now                                  # sends the email
-```
-
-再或者，自动延迟发送
-
-```ruby
-Notifier.welcome(david).message     # => a Mail::Message object
-```
-
-> NOTE: 现在 Rails 默认已经有延迟发送的方法。
-
 ## 其它
+
+Action Mailer 使用模板来创建邮件与 Action Controller 使用模板渲染视图，原理类似。
+
+Action Mailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
+
+---
 
 ActionMailer::Base 继承于类 AbstractController::Base,
 又包含但不限于以下'外部'模块，根据 Ruby 规则，它们也是可调用的。包括：

@@ -124,26 +124,6 @@ response_body=
 
 很多模块都包含它，利用了它所提供的方法。
 
-## Redirecting
-
-```
-redirect_to
-```
-
-也就是重定向，运行多种参数，使用举例：
-
-```
-redirect_to action: "show", id: 5
-redirect_to post
-redirect_to "http://www.rubyonrails.org"
-redirect_to "/images/screenshot.jpg"
-redirect_to articles_url
-redirect_to :back
-redirect_to proc { edit_post_url(@post) }
-```
-
-根据参数情况，有可能会用到 ActionDispatch 提供的 url_for.
-
 ## Rendering
 
 对一般的 render_to_body 和 render_to_string 稍微做处理。

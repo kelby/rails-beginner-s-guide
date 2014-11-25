@@ -1,4 +1,4 @@
-# ActionView 与表单不直接相关的辅助方法
+# 与表单不直接相关的辅助方法
 
 Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、number 和 model 对象等。默认它们可以在所有模板上使用。
 

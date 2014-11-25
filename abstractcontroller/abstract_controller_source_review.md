@@ -12,7 +12,7 @@ AbstractController 目前包含 10 个模块，部分在前面已经详细介绍
 
 **Translation**
 
-I18n 相关的 translate(alias t) 和 localize(alias l) 方法。
+I18n 相关的 `translate`(alias t) 和 `localize`(alias l) 方法。
 
 **Rendering**
 
@@ -44,7 +44,7 @@ Controller 里的回调。
 
 **Asset Paths**
 
-以声明的形式，`定义`一些 assset 相关的类方法和实例方法。
+以声明的形式，定义一些 assset 相关的类方法和实例方法。
 
 ```
 config_accessor :asset_host, :assets_dir, :javascripts_dir,

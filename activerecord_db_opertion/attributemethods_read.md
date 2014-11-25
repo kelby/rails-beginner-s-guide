@@ -6,7 +6,9 @@
 
 ```ruby
 read_attribute(:name)
+
 # 等价于
+
 self[:name]
 ```
 

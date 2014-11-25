@@ -1,6 +1,6 @@
 ## Validations 相关的 Callbacks
 
-在执行校验之前、之后做校验。
+在执行校验之前、之后做某事。
 
 提供 before_validation、after_validation 这两个和校验有关的回调方法。
 

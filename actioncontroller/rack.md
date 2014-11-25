@@ -64,7 +64,7 @@ class YourRack
 end
 ```
 
-## 使用举例
+### 使用举例
 
 'rack/contrib' 可以自动加载 Rack 包含的所有组件，以下例子可用 `rackup config.ru` 运行：
 

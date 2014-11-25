@@ -1,9 +1,10 @@
 ## Capture Helper
 
 ```
-capture, content_for
-
+content_for
 content_for?
+
+capture
 
 provide
 ```

@@ -1,4 +1,4 @@
-# ActionView 辅助方法分类
+# Action View 提供的辅助方法
 
 ## 分类
 

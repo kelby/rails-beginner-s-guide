@@ -15,35 +15,35 @@ application/octet-stream（任意的二进制数据）
 5. :status (状态码，太常见了；默认是 200)
 
 ```
-     disposition := "Content-Disposition" ":"
-                    disposition-type
-                    *(";" disposition-parm)
+disposition := "Content-Disposition" ":"
+            disposition-type
+            *(";" disposition-parm)
 
-     disposition-type := "inline"
-                       / "attachment"
-                       / extension-token
-                       ; values are not case-sensitive
+disposition-type := "inline"
+               / "attachment"
+               / extension-token
+               ; values are not case-sensitive
 
-     disposition-parm := filename-parm
-                       / creation-date-parm
-                       / modification-date-parm
-                       / read-date-parm
-                       / size-parm
-                       / parameter
+disposition-parm := filename-parm
+               / creation-date-parm
+               / modification-date-parm
+               / read-date-parm
+               / size-parm
+               / parameter
 
-     filename-parm := "filename" "=" value
+filename-parm := "filename" "=" value
 
-     creation-date-parm := "creation-date" "=" quoted-date-time
+creation-date-parm := "creation-date" "=" quoted-date-time
 
-     modification-date-parm := "modification-date" "=" quoted-date-time
+modification-date-parm := "modification-date" "=" quoted-date-time
 
-     read-date-parm := "read-date" "=" quoted-date-time
+read-date-parm := "read-date" "=" quoted-date-time
 
-     size-parm := "size" "=" 1*DIGIT
+size-parm := "size" "=" 1*DIGIT
 
-     quoted-date-time := quoted-string
-                      ; contents MUST be an RFC 822 `date-time'
-                      ; numeric timezones (+HHMM or -HHMM) MUST be used
+quoted-date-time := quoted-string
+              ; contents MUST be an RFC 822 `date-time'
+              ; numeric timezones (+HHMM or -HHMM) MUST be used
 ```
 
 上面的消息头等就能看出它们其实差不多，可以从用途简单区分它们。

@@ -18,11 +18,11 @@ self.action + dispatch
 
 片段缓存相关。
 
-### 继承 AbstractController 的遗产
+### 继承 Abstract Controller 的遗产
 
 直接继承而来
 
-### 使用 ActionDispatch 的资源
+### 使用 Action Dispatch 的资源
 
 主要是 ActionDispatch 的 http 和 middleware 下的内容。
 
@@ -30,11 +30,11 @@ self.action + dispatch
 
 处理 request、response 相关和 headers 相关。(Metal 也可以做，但这里得到了发扬)
 
-### 协作 ActionView
+### 协作 Action View
 
 有很多类似的方法或丝丝关联。
 
-### 少量的 ActiveModel
+### 少量的 Active Model
 
 为了约定优于配置，很少的一部分方法和 ActiveModel 的 Naming 模块有关联
 

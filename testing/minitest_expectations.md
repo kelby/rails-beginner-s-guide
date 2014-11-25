@@ -9,8 +9,8 @@
 must_be
 must_be_close_to
 must_be_empty
-must_be_instance_of
-must_be_kind_of
+must_be_instance_of # 范围比 kind_of 小，子类的实例不行
+must_be_kind_of     # 范围比 instance_of 大，子类的实例也行
 must_be_nil
 must_be_same_as
 must_be_silent

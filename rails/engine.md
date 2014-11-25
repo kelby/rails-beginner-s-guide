@@ -23,8 +23,8 @@ load_config_initializer
 ```
 
 ```
-alias :isolated? :isolated
-alias :engine_name :railtie_name
+isolated? & isolated
+engine_name & railtie_name
 ```
 
 ## initializer

@@ -1,4 +1,4 @@
-## render
+## render 方法详解
 
 ```ruby
 ActionView::Base.new.render(text: 'hello')

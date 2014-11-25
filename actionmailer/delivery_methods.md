@@ -1,6 +1,9 @@
-## 邮件拦截器及配置发送
+## Delivery Methods 定制与新增
 
 为了"开发和测试尽量的接近生产环境"和"知道发送出去的邮件真正的样子"等目的，我们希望在非生产环境下，能够查看邮件发送情况。
+
+delivery_method 默认有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，也可以自定义。
+
 
 ## 解决方案
 
@@ -12,54 +15,7 @@
 
 比如，我们注册一些特殊账号或邮箱，然后发送给我们自己。
 
-- 用拦截器
-
-也就是下面要介绍的。
-
-```ruby
-# 注册拦截器(可指定条件)
-ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
-
-# 注册拦截器(有时候需要先加载)
-require 'whitelist_interceptor'
-ActionMailer::Base.register_interceptor(WhitelistInterceptor)
-
-# 注册拦截器(有时候需要先加载)
-require 'environment_interceptor'
-ActionMailer::Base.register_interceptor(EnvironmentInterceptor)
-```
-
-```ruby
-class DevelopmentMailInterceptor
-  # 实现 delivering_email 方法
-  # 在最后时刻替换掉发送到的邮箱
-  def self.delivering_email message
-    message.subject = "[#{message.to}] #{message.subject}"
-    message.to = "eifion@asciicasts.com"
-  end
-end
-
-class WhitelistInterceptor
-  # 实现 delivering_email 方法
-  # 白名单
-  def self.delivering_email message
-    unless message.to.join(' ') =~ /(@yourcompany.com|@thoughtworks.com)/i
-      message.subject = "#{message.to} #{message.subject}"
-      message.to = ENV['NOTIFICATIONS_EMAIL']
-    end
-  end
-end
-
-class EnvironmentInterceptor
-  # 实现 delivering_email 方法
-  # 有多个非生产环境，但它们都要发送邮件
-  def self.delivering_email message
-    message.subject = "[#{Rails.env.capitalize}] #{message.subject}" unless Rails.env.production?
-  end
-end
-```
-
-## 另外一种类似功能可以是运用 deliver!
+## 重新实现，并添加 delivery_method
 
 ``` ruby
 # 配置
@@ -110,13 +66,34 @@ end
 
 如果你使用的是第三方邮件服务，发送邮件的时候通常还要传递额外的信息供第三方验证，此时你可以用 add_delivery_method 实现方式
 
-## 参考
 
-[Abort mail delivery with Rails 3 interceptors](http://thepugautomatic.com/2012/08/abort-mail-delivery-with-rails-3-interceptors/)<br>
-[How to implement an email Interceptor for development](http://blog.crowdint.com/2012/02/23/how-to-implement-an-email-interceptor-for-development.html)<br>
-[206: ActionMailer in Rails 3](http://cn.asciicasts.com/episodes/206-actionmailer-in-rails3)<br>
-[Tips for Implementing Emails in Rails](http://www.jacopretorius.net/2013/11/tips-for-implementing-emails-in-rails.html)
+原理
+
+```ruby
+def add_delivery_method(symbol, klass, default_options={})
+  class_attribute(:"#{symbol}_settings") unless respond_to?(:"#{symbol}_settings")
+  send(:"#{symbol}_settings=", default_options)
+  self.delivery_methods = delivery_methods.merge(symbol.to_sym => klass).freeze
+end
+```
+
+使用
+
+```ruby
+add_delivery_method :sendmail, Mail::Sendmail,
+  location:  '/usr/sbin/sendmail',
+  arguments: '-i -t'
+```
+
+如何运行
+
+```ruby
+klass = delivery_methods[method]
+
+mail.delivery_method(klass, (send(:"#{method}_settings") || {}).merge(options || {}))
+````
+
+## 参考
 
 [Deliver Email With Amazon SES In A Rails app](http://robots.thoughtbot.com/deliver-email-with-amazon-ses-in-a-rails-app)<br>
 [Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)
-

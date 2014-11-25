@@ -1,4 +1,4 @@
-# ActionView 辅助方法中与表单相关的部分
+# 与表单直接相关的辅助方法
 
 ## Form Tag Helper
 

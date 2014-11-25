@@ -14,8 +14,10 @@ setup_with_controller
 
 ```
 determine_default_helper_class
+
 helper_class
 helper_method
+
 tests
 ```
 

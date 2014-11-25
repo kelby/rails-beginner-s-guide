@@ -47,3 +47,5 @@ Rails.application.eager_load!
 ```ruby
 PostsController.action_methods
 ```
+
+`process` routes.rb 里转发先到 ActionController::Metal::action 然后到 ActionController::Metal#dispatch 接着到 AbstractController::Base#process 也就是这里的 process 方法，然后进行后续处理。

@@ -1,4 +1,4 @@
-# Query Methods 读取设置查询条件
+# Query Methods 读取、设置查询条件
 
 在 Relation 文件下，有代码：
 

@@ -1,8 +1,8 @@
-## ActionMailer
+## Action Mailer
 
-ActionMailer 是 Rails 内建的组件，用来处理邮件相关业务，并且简单好用。
+Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
-它依赖于 Rails 内建的其它组件 ActiveJob、AbstractController 和 ActionView 以及外部 gem 'mail'.
+它依赖于 Rails 内建的其它组件，如：Active Job、Abstract Controller 和 Action View，以及外部 gem 'mail'.
 
 因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。
 
@@ -44,13 +44,13 @@ end
 mail.deliver!
 ```
 
-上面的例子使用了 gmail 做为邮件服务器，所以需要用到 gmail 用户名和密码，但实际上你也可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
+上面的例子使用了 Gmail 做为邮件服务器，所以需要用到 Gmail 用户名和密码，但实际上你也可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
 
 > Note: 单独发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
 
 ## 引入其它，为了更好用
 
-直接使用 gem 'mail'，创建、发送邮件等最最基本的功能是实现了，但并不好用。缺少灵活的配置，内容与模板没有分离等。ActionMailer 改善了它们，举例单独使用 action_mailer：
+直接使用 gem 'mail'，创建、发送邮件等最最基本的功能是实现了，但并不好用。缺少灵活的配置，内容与模板没有分离等。Action Mailer 改善了它们，举例单独使用 action_mailer：
 
 ```ruby
 # mailer.rb
@@ -113,9 +113,9 @@ and this is a variable <%= @var %>
 
 ## 实现方式：汝果欲学诗, 功夫在诗外
 
-ActionMailer 本身并没有"实现"什么功能。最基本，也是最核心的部分由 gem 'mail' 完成；为了更好用、更实用，加载或封装了 ActiveJob、ActionPack 和 ActionView。
+Action Mailer 本身并没有"实现"什么功能。最基本，也是最核心的部分由 gem 'mail' 完成；为了更好用、更实用，加载或封装了 Active Job、Action Pack 和 Action View.
 
-为了做好、做得上层次，下面是在邮件处理外，ActionMailer "实现"的一些功能：
+为了做好、做得上层次，下面是在邮件处理外，Action Mailer "实现"的一些功能：
 
 - 测试
 - 日志记录

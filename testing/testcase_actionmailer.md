@@ -1,4 +1,4 @@
-## ActionMailer
+## Action Mailer
 
 ### Test Case
 
@@ -30,7 +30,7 @@ set_delivery_method
 set_expected_mail
 ```
 
-#### ClassMethods
+#### Class Methods
 
 ```
 determine_default_mailer
@@ -40,7 +40,7 @@ mailer_class
 tests
 ```
 
-### TestHelper
+### Test Helper
 
 默认 Rails 提供两个 helper 方法用于测试：
 

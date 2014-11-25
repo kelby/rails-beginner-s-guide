@@ -1,54 +1,6 @@
 ## ActionView 渲染及相关概念
 
-查看应用根目录下文件及目录：
-
-```
-✗ ls
-Gemfile      README.rdoc  app          blorgh       config.ru    lib          public       tmp
-Gemfile.lock Rakefile     bin          config       db           log          test         vendor
-```
-
-创建一个简单的 lookup_context
-
-```ruby
-✗ pry
-pry(main)> FIXTURE_LOAD_PATH = File.join(File.dirname(__FILE__), '../fixtures')
-=> "./fixtures"
-pry(main)> require 'action_view'
-=> true
-pry(main)> lookup_context = ActionView::LookupContext.new(FIXTURE_LOAD_PATH, {})
-=> #<ActionView::LookupContext:0x007ff725058088
- @cache=true,
- @details=
-  {:locale=>[:en],
-   :formats=>[:html, :text, :js, :css, :xml, :json],
-   :variants=>[],
-   :handlers=>[:erb, :builder, :raw, :ruby]},
- @details_key=nil,
- @prefixes=[],
- @rendered_format=nil,
- @skip_default_locale=false,
- @view_paths=
-  #<ActionView::PathSet:0x007ff7250a0fe0
-   @paths=
-    [#<ActionView::OptimizedFileSystemResolver:0x007ff7250a0f68
-      @cache=
-       #<ActionView::Resolver::Cache:0x007ff7250a0f40
-        @data=
-         #<ActionView::Resolver::Cache::SmallCache:0x007ff7250a0ec8
-          @backend={},
-          @default_proc=
-           #<Proc:0x007ff72526d3a0@/Users/kelby/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/actionview-4.1.0/lib/action_view/template/resolver.rb:48 (lambda)>>>,
-      @path="/Users/kelby/rails4/polymorphic_url_001/fixtures",
-      @pattern=
-       ":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}">]>>
-```
-
-真实情况远比这复杂，@view_paths 下有很多的内容。
-
 [Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
-
-[Custom variable in Rails view filename](http://stackoverflow.com/questions/12204200/custom-variable-in-rails-view-filename)
 
 [Render template if exists in Rails](https://coderwall.com/p/ftbmsa)
 
@@ -63,14 +15,16 @@ template == 文件路径 + 文件名(包括类型) ？
 ```
 每一次渲染过后都有缓存的！
 渲染其实质就是 ActionView::Base.new(view_paths, {}).render(*args)
+
 有缓存：view_paths = ActionController::Base.view_paths
+
 无缓存：
-      path = ActionView::FileSystemResolver.new(FIXTURE_LOAD_PATH)
-      view_paths = ActionView::PathSet.new([path])
+path = ActionView::FileSystemResolver.new(FIXTURE_LOAD_PATH)
+view_paths = ActionView::PathSet.new([path])
 ```
 
 上下文包含格式
-上下文的view_paths是PathSet
+上下文的 view_paths 是 PathSet
 上下文的本地化
 上下文的变种
 上下文有缓存
@@ -111,10 +65,10 @@ end
 模板由上下文而来
 
 ```ruby
-    def find_template(path, locals)
-      prefixes = path.include?(?/) ? [] : @lookup_context.prefixes
-      @lookup_context.find_template(path, prefixes, true, locals, @details)
-    end
+def find_template(path, locals)
+  prefixes = path.include?(?/) ? [] : @lookup_context.prefixes
+  @lookup_context.find_template(path, prefixes, true, locals, @details)
+end
 ```
 
 ```ruby
@@ -363,76 +317,41 @@ pry(main)> BlogsController.new.view_context
 - AV::Renderer: renders templates
 - ActionView::Base: renders context
 
---------
-
-```ruby
-ERBHandler = ActionView::Template::Handlers::ERB.new
-
-  def new_template(body = "<%= hello %>", details = { format: :html })
-    ActionView::Template.new(body, "hello template", details.fetch(:handler) { ERBHandler }, {:virtual_path => "hello"}.merge!(details))
-  end
-
-   @template = new_template
-   @template = new_template("<%= apostrophe %>")
-   @template = new_template("<%= apostrophe %> <%== apostrophe %>", format: :text)
-   @template = new_template("<%= hello %>", :handler => ActionView::Template::Handlers::Raw.new)
-
-# 看看新建模板，要求是什么
-    def initialize(source, identifier, handler, details)
-      format = details[:format] || (handler.default_format if handler.respond_to?(:default_format))
-
-      @source            = source
-      @identifier        = identifier
-      @handler           = handler
-      @compiled          = false
-      @original_encoding = nil
-      @locals            = details[:locals] || []
-      @virtual_path      = details[:virtual_path]
-      @updated_at        = details[:updated_at] || Time.now
-      @formats           = Array(format).map { |f| f.respond_to?(:ref) ? f.ref : f  }
-      @variants          = [details[:variant]]
-      @compile_mutex     = Mutex.new
-    end
-```
-
-----------
-
 上面说的是 View 里的渲染，那么在 Controller 里的一样吗？
 
-
 ```ruby
-    # abstract_controller/rendering.rb
-    def render(*args, &block)
-      options = _normalize_render(*args, &block)
-      self.response_body = render_to_body(options)
-    end
+# abstract_controller/rendering.rb
+def render(*args, &block)
+  options = _normalize_render(*args, &block)
+  self.response_body = render_to_body(options)
+end
 ```
 
 下一步
 
 ```ruby
-    def _render_template(options) #:nodoc:
-      lookup_context.rendered_format = nil if options[:formats]
-      view_renderer.render(view_context, options)
-    end
+def _render_template(options) #:nodoc:
+  lookup_context.rendered_format = nil if options[:formats]
+  view_renderer.render(view_context, options)
+end
 ```
 
 再下一步
 
 ```ruby
-    # abstract_controller/view_paths.rb
-    def lookup_context
-      @_lookup_context ||=
-        ActionView::LookupContext.new(self.class._view_paths, details_for_lookup, _prefixes)
-    end
+# abstract_controller/view_paths.rb
+def lookup_context
+  @_lookup_context ||=
+    ActionView::LookupContext.new(self.class._view_paths, details_for_lookup, _prefixes)
+end
 ```
 
 正式进入 ActionView 的世界！
 
 ```ruby
-    def view_renderer
-      @_view_renderer ||= ActionView::Renderer.new(lookup_context)
-    end
+def view_renderer
+  @_view_renderer ||= ActionView::Renderer.new(lookup_context)
+end
 ```
 
 串起来就是：
@@ -441,37 +360,36 @@ ERBHandler = ActionView::Template::Handlers::ERB.new
 这上面的 `render`
 
 ```ruby
-    def render(context, options)
-      if options.key?(:partial)
-        render_partial(context, options)
-      else
-        render_template(context, options)
-      end
-    end
+def render(context, options)
+  if options.key?(:partial)
+    render_partial(context, options)
+  else
+    render_template(context, options)
+  end
+end
 ```
 
 ```ruby
-    # Direct accessor to template rendering.
-    def render_template(context, options) #:nodoc:
-      _template_renderer.render(context, options)
-    end
+# Direct accessor to template rendering.
+def render_template(context, options) #:nodoc:
+  _template_renderer.render(context, options)
+end
 
-    # Direct access to partial rendering.
-    def render_partial(context, options, &block) #:nodoc:
-      _partial_renderer.render(context, options, block)
-    end
+# Direct access to partial rendering.
+def render_partial(context, options, &block) #:nodoc:
+  _partial_renderer.render(context, options, block)
+end
 
-  private
+private
 
-    def _template_renderer #:nodoc:
-      @_template_renderer ||= TemplateRenderer.new(@lookup_context)
-    end
+def _template_renderer #:nodoc:
+  @_template_renderer ||= TemplateRenderer.new(@lookup_context)
+end
 
-    def _partial_renderer #:nodoc:
-      @_partial_renderer ||= PartialRenderer.new(@lookup_context)
-    end
+def _partial_renderer #:nodoc:
+  @_partial_renderer ||= PartialRenderer.new(@lookup_context)
+end
 ```
-
 
 lookup_context 就是 binding 作用！！！
 
@@ -484,30 +402,29 @@ def view_context
   view_context_class.new(view_renderer, view_assigns, self)
 end
 
+def view_context_class
+  @view_context_class ||= begin
+    routes  = _routes  if respond_to?(:_routes)
+    helpers = _helpers if respond_to?(:_helpers)
+    ActionView::Base.prepare(routes, helpers)
+  end
+end
 
-  def view_context_class
-    @view_context_class ||= begin
-      routes  = _routes  if respond_to?(:_routes)
-      helpers = _helpers if respond_to?(:_helpers)
-      ActionView::Base.prepare(routes, helpers)
+# This method receives routes and helpers from the controller
+# and return a subclass ready to be used as view context.
+def prepare(routes, helpers) #:nodoc:
+  Class.new(self) do
+    if routes
+      include routes.url_helpers
+      include routes.mounted_helpers
+    end
+
+    if helpers
+      include helpers
+      self.helpers = helpers
     end
   end
-
-  # This method receives routes and helpers from the controller
-  # and return a subclass ready to be used as view context.
-  def prepare(routes, helpers) #:nodoc:
-    Class.new(self) do
-      if routes
-        include routes.url_helpers
-        include routes.mounted_helpers
-      end
-
-      if helpers
-        include helpers
-        self.helpers = helpers
-      end
-    end
-  end
+end
 ```
 
 **注意，渲染的结果是**
@@ -567,7 +484,7 @@ pry(#<BlogsController>)> self.view_paths
 
 模板有这些易于理解的属性：
 
-```
+```ruby
 attr_accessor :locals, :formats, :variants, :virtual_path
 
 attr_reader :source, :identifier, :handler, :original_encoding, :updated_at

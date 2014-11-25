@@ -125,20 +125,6 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
 
-> Note: delivery_method 常见有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，也可以自定义。
-
-```ruby
-# app/mailers/user_mailer.rb
-class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
-
-  def welcome
-    @greeting = "Hi"
-    mail to: "to@example.org"
-  end
-end
-```
-
 ### 接收邮件
 
 | 方法 | 解释 |
@@ -153,25 +139,28 @@ Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐�
 
 ### 其它
 
-`mailer_name()` 返回文件名，或者 anonymous。
-
-和 Mail 有关联？
-
-| 方法 | 解释 |
-|--|--|
-|headers |返回 Mail对象的 headers 或 Mail对象本身|
-|attachments |返回 Mail对象的 attachments|
-|mail(headers = {}, &block) |返回 Mail对象本身|
-
 除了以上方法外，还有：
 
 ```ruby
 default_i18n_subject
-headers # 定制邮件头部
-register_interceptor, register_interceptors
-register_observer, register_observers
+
+headers
+
+mailer_name
+
+register_interceptor
+register_interceptors
+
+register_observer
+register_observers
+
 set_content_type
+
 supports_path?
 ```
+
+`headers` 设置 Mail对象的头部内容。(直接调用了 Mail::Message#headers 方法)
+
+`mailer_name` 返回文件名，或者 anonymous.
 
 [如何使用 Mail](https://github.com/mikel/mail#usage)
