@@ -1,4 +1,4 @@
-# Callbacks
+### Callbacks
 
 ```ruby
 klazz.define_callbacks :restore
@@ -15,7 +15,7 @@ klazz.define_singleton_method("after_restore") do |*args, &block|
   set_callback(:restore, :after, *args, &block)
 end
 ```
-# a 方法
+### a 方法
 ```ruby
 def restore!(opts = {})
   ActiveRecord::Base.transaction do
@@ -25,6 +25,7 @@ def restore!(opts = {})
     end
   end
 end
+
 alias :restore :restore!
 ```
 

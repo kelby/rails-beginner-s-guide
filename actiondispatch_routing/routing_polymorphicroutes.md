@@ -68,7 +68,6 @@ url_for 不能直接指定 host, 需要在另一个地方指定，它只有调�
 
 除上述外，还有方法：
 
-
 ```
 new_polymorphic_url
 new_polymorphic_path

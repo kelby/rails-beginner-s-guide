@@ -1,6 +1,6 @@
 ## Message Encryptor 和 Message Verifier
 
-**Message Verifier**
+### Message Verifier
 
 生成加密的文本，然后用于校验。这里的加密仅意味着"加签名、防篡改"，过程是可逆的，请注意使用场景。
 使用场景举例，生成"记住我"的 token，或生成"取消订阅"的链接。
@@ -20,7 +20,7 @@ verified == message #=> true
 
 主要是 `generate(value)` 和 `verify(signed_message)`，原理很简单，这里不多赘述。
 
-**Message Encryptor**
+### Message Encryptor
 
 使用类似:
 
@@ -50,9 +50,9 @@ decrypted == message
 
 Message Encryptor、Message Verifier 和 Key Generator 这三者使用类似，创建时可传递字符串做为参数，然后进行加密，生成的也是字符串。
 
-**实例参考**
+### 实例参考
 
-```
+```ruby
 salt  = SecureRandom.random_bytes(64) # 保存进数据库
 secret_key_base = '-- secret base --' # 保存到配置文件
 

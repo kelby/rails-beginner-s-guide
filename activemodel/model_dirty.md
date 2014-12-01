@@ -49,6 +49,8 @@ attribute_method_affix prefix: 'reset_', suffix: '!'
 attribute_method_affix prefix: 'restore_', suffix: '!'
 ```
 
+下面是对它们的解释
+
 ```
 x_changed?     # 返回 true/false, x 属性有没有更改？
 x_change       # 返回一个数组有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值

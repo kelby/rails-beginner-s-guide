@@ -52,10 +52,12 @@ quoted-date-time := quoted-string
 
 它们发送方式类似。
 
-但 send_data 可以发送非文件，也就是说即使是字符串也可发送。(比如动态生成的内容)
+但 `send_data` 可以发送非文件，也就是说即使是字符串也可发送。(比如动态生成的内容)
 
-而 send_file 只能先有文件，才能发送。
+而 `send_file` 只能先有文件，才能发送。
 
 当我们多次下载时，使用 send_file 比较好，应该它还可以充分利用 Web服务器，对性能友好。(比如'真正的'静态内容)
 
-参考 [Difference between rails send_data and send_file, with example](http://stackoverflow.com/questions/5535981/difference-between-rails-send-data-and-send-file-with-example)
+参考
+
+[Difference between rails send_data and send_file, with example](http://stackoverflow.com/questions/5535981/difference-between-rails-send-data-and-send-file-with-example)

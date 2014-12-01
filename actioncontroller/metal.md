@@ -27,35 +27,24 @@ get 'hello', to: HelloController.action(:index)
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
-## Others
-
-不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
-
-另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
-
----
-
-为什么能够连续调用，原因：
-
-你看每个 Rack Middleware 的 call 函数的最后一行，是不是都是 @app.call(env)
-这说明，它在调用下一个 middleware 啊
-
-它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都 走不通！
-
-顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
-
-> Note: @app 和 env 一直在变，但又一直没变。
-
 ## Metal 提供的方法：
 
-```
-# Class Public methods
-action
-controller_name
-middleware & middleware_stack
-use
+**类方法**
 
-# Instance Public methods
+```
+action
+
+use
+middleware & middleware_stack
+
+controller_name
+```
+
+**实例方法**
+
+```
+dispatch
+
 content_type
 content_type=
 
@@ -75,9 +64,35 @@ env
 url_for
 ```
 
+`self.action` 和 `dispatch` 为转移到下一站场起到了很大的作用。
+
 除此之外，还有：
 
 ```ruby
 class_attribute :middleware_stack
 self.middleware_stack = ActionController::MiddlewareStack.new
 ```
+
+## Others
+
+- 不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
+
+另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
+
+- 为什么能够连续调用，原因：
+
+你看每个 Rack Middleware 的 call 函数的最后一行，是不是都是 @app.call(env)
+这说明，它在调用下一个 middleware 啊
+
+它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都 走不通！
+
+顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
+
+> Note: @app 和 env 一直在变，但又一直没变。
+
+## 参考
+
+[Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)<br>
+[Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>
+[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)<br>
+[Rails Metal](http://railscasts.com/episodes/150-rails-metal)<br>

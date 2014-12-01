@@ -2,23 +2,33 @@
 
 继承于 Routing::Endpoint
 
-```
+**实例方法**
+
+```ruby
 dispatcher?
 serve
 prepare_params!
 controller
+```
+
+**私有方法**
+
+```ruby
+dispatch
 
 controller_reference
-dispatch
+
 normalize_controller!
 merge_default_action!
 ```
 
+`dispatch` 重要的转发方法，将战场切换到 Controller#action
+
+**每一条路由规则，对应着一个 Dispatcher 实例**
+
 每一个路由规则转换着 `draw` 对应一个 Dispatcher 实例。
 
-重要的转发方法 `dispatch`，将战场切换到 Controller#action
-
-### 用最简单的 get 方法举例
+用最简单的 get 方法举例
 
 ```ruby
 Rails4demo::Application.routes.draw do

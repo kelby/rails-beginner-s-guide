@@ -1,6 +1,6 @@
 ## Naming & Name
 
-内省机制，主要负责**将对象转换成对应的字符串**。对于我们 Web 开发者来说不常用，但对于配合 ActionController, ActionView 工作很重要。
+内省机制，主要负责**将对象转换成对应的字符串**。对于我们 Web 开发者来说不常用，但对于配合 Action Controller, Action View 工作很重要。
 
 实例方法
 

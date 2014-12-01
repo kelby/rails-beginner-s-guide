@@ -1,4 +1,4 @@
-## factory_girl
+## Factory Girl
 
 ### Syntax Methods
 

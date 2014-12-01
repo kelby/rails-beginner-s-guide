@@ -1,15 +1,41 @@
 # Actions
 
-```
-add_source, after_bundle, application
-capify!
-environment
-gem, gem_group, generate, git
-initializer
-lib
-rake, rakefile, readme, route
-vendor
+**实例方法**
 
+```
+add_source
+
+after_bundle
+
+environment & application
+
+capify!
+
+gem
+gem_group
+
+generate
+
+git
+
+initializer
+
+lib
+
+rake
+
+rakefile
+
+readme
+
+route
+
+vendor
+```
+
+**Instance Protected methods**
+
+```
 extify
 log
 quote
@@ -22,10 +48,13 @@ quote
 ### Instance Public methods
 
 ```
-existing_migration, exists?
+existing_migration
+exists?
 identical?
-migration_dir, migration_file_name
-relative_existing_migration, revoke!
+migration_dir
+migration_file_name
+relative_existing_migration
+revoke!
 ```
 
 ### Instance Protected methods

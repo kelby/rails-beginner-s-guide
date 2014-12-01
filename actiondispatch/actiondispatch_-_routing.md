@@ -58,3 +58,5 @@ Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 [Under the hood: Rails' routing DSL](http://weblog.jamisbuck.org/2006/10/2/under-the-hood-rails-routing-dsl)
 
 [Rails 3.2.8 Route 源码分析](http://ruby-china.org/topics/5895)
+
+[Rails 路由系统源码探索](https://ruby-china.org/topics/22726)

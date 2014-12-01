@@ -34,7 +34,7 @@ validate_options
 define_extensions
 ```
 
-### SingularAssociation
+### Singular Association
 
 ```
 define_accessors
@@ -46,7 +46,7 @@ define_validations
 valid_options
 ```
 
-### CollectionAssociation
+### Collection Association
 
 ```
 define_callbacks
@@ -62,7 +62,7 @@ block_extension
 define_extensions
 ```
 
-### HasOne
+### Has One
 
 ```
 valid_dependent_options
@@ -74,7 +74,7 @@ macro
 valid_options
 ```
 
-### BelongsTo
+### Belongs To
 
 ```
 valid_dependent_options
@@ -93,7 +93,7 @@ macro
 valid_options
 ```
 
-### HasMany
+### Has Many
 
 ```
 valid_dependent_options
@@ -104,7 +104,7 @@ macro
 valid_options
 ```
 
-### HasAndBelongsToMany
+### Has And Belongs To Many
 
 ```
 lhs_model

@@ -9,7 +9,6 @@
 | all | all 方法，默认已经 scope |
 | scope | 命名 scope |
 
-
 ### `scope(name, body, &block)`
 
 重点说说这个方法。

@@ -54,11 +54,14 @@ flunk
 ```
 capture_io
 capture_subprocess_io
+
 diff
+
 exception_details
+
 message
 
-mu_pp
+mu_pp # 表示 human-readable pretty_print
 mu_pp_for_diff
 
 

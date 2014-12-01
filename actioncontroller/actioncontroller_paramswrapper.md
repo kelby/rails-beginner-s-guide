@@ -4,7 +4,7 @@
 process_action
 ```
 
-## ClassMethods
+## Class Methods
 
 ```
 wrap_parameters

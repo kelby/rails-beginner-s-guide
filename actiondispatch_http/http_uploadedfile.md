@@ -5,6 +5,7 @@ close
 eof?
 open
 path
-read, rewind
+read
+rewind
 size
 ```

@@ -1,4 +1,4 @@
-# ActionView
+# Action View
 
 ## Behavior
 
@@ -10,7 +10,7 @@ rendered_views
 setup_with_controller
 ```
 
-### Class Methods
+### 类方法
 
 ```
 determine_default_helper_class

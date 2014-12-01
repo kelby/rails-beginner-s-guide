@@ -37,6 +37,16 @@ Parameters 继承于 HashWithIndifferentAccess，而 HashWithIndifferentAccess �
 提供 `params` 这个对象可以使用的方法(部分与 Hash 实例方法类似)：
 
 ```
+permit
+
+extract!
+permit!
+select!
+
+permitted?
+
+permitted=
+
 []
 delete, dup
 each & each_pair
@@ -47,16 +57,6 @@ slice
 transform_values
 converted_arrays
 require & required
-
-permit
-
-extract!
-permit!
-select!
-
-permitted?
-
-permitted=
 ```
 
 我们可以在 Rails 之外创建自己的 params 对象：

@@ -1,4 +1,4 @@
-## 几个比较有意思的 helper
+## 几个比较有意思的 helper 方法
 
 **atom_feed**
 

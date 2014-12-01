@@ -1,11 +1,6 @@
 # Inflector
 
-## transliterate
-
-```
-transliterate
-parameterize
-```
+String 扩展里的 inflections 全部是直接封装这里的方法而来。
 
 ## methods
 
@@ -28,6 +23,13 @@ ordinal
 ordinalize
 ```
 
+## transliterate
+
+```
+transliterate
+parameterize
+```
+
 ## inflections
 
 ```
@@ -38,23 +40,4 @@ irregular
 uncountable
 human
 clear
-```
-
-## String inflections
-```
-pluralize
-singularize
-constantize
-safe_constantize
-camelize
-titleize
-underscore
-dasherize
-demodulize
-deconstantize
-parameterize
-tableize
-classify
-humanize
-foreign_key
 ```

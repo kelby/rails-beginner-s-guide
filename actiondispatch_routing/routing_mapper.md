@@ -55,3 +55,25 @@ DELETE /aas/:id(.:format)
 默认，它们是一一对应着的。
 
 有时候，我们也会手动更改对应关系。
+
+---
+
+`draw` 的本质是：运用 Mapper，处理 config/routes.rb 里的代码。
+
+相关代码
+
+```ruby
+mapper = Mapper.new(self)
+if default_scope
+  mapper.with_default_scope(default_scope, &block)
+else
+  mapper.instance_exec(&block)
+end
+```
+
+---
+
+初始化的 Mapper 对象，包含：@set, @concerns, @nesting 和 @scope. 其中 @scope 为 Scope 实例对象。
+
+之后运用它下面包含的各个子模块，各自处理。
+

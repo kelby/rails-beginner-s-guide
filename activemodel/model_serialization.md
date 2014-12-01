@@ -6,7 +6,7 @@
 
 此外，还有相关 module 及方法：
 
-**ActiveModel::Serializers::JSON**
+### JSON
 
 ```ruby
 # 封装了上面的 serializable_hash，提供 :root 选项 
@@ -16,7 +16,7 @@ as_json
 from_json
 ```
 
-**ActiveModel::Serializers::Xml**
+### Xml
 
 ```ruby
 # 将对象转化成 xml 格式
@@ -26,9 +26,7 @@ to_xml
 from_xml
 ```
 
----
-
-注意几个转化成 json 方法之间的区别
+**注意几个转化成 json 方法之间的区别**
 
 ```ruby
 person = Person.new

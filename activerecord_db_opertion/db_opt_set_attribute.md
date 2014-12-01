@@ -24,4 +24,6 @@ update & update_attributes 封装了 assign_attributes
 
 update_column 直接封装了 update_columns
 
-参考 [Different Ways to Set Attributes in ActiveRecord](http://www.davidverhasselt.com/set-attributes-in-activerecord/)
+参考
+
+[Different Ways to Set Attributes in ActiveRecord](http://www.davidverhasselt.com/set-attributes-in-activerecord/)

@@ -92,8 +92,7 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 # 常见配置(开发模式下)
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-# 下面这些配置，在 Mail 里就有了
-# 发送方式
+# 配置发送方式
 config.action_mailer.delivery_method = :smtp
 
 # 根据不同发送方式，做不同配置
@@ -125,6 +124,36 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
 
+### 设置头部消息
+
+| 方法 | 解释 |
+| -- | -- |
+| headers | 设置头部消息 |
+
+使用 headers 可以设置邮件的头部消息，例如
+
+```ruby
+headers['X-Special-Domain-Specific-Header'] = "SecretValue"
+
+headers 'X-Special-Domain-Specific-Header' => "SecretValue",
+        'In-Reply-To' => incoming.message_id
+```
+
+直接调用了 Mail::Message#headers 方法，默认已经有选项
+
+```
+subject
+sender
+from
+to
+cc
+bcc
+reply-to
+orig-date
+message-id
+references
+```
+
 ### 接收邮件
 
 | 方法 | 解释 |
@@ -135,17 +164,11 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件对象。
 
-Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，需要实现 `receive(raw_mail)` 方法。以接收到的邮件对象，作为唯一的参数。
-
-### 其它
+### 其它方法
 
 除了以上方法外，还有：
 
 ```ruby
-default_i18n_subject
-
-headers
-
 mailer_name
 
 register_interceptor
@@ -156,11 +179,11 @@ register_observers
 
 set_content_type
 
+default_i18n_subject
+
 supports_path?
 ```
 
-`headers` 设置 Mail对象的头部内容。(直接调用了 Mail::Message#headers 方法)
-
-`mailer_name` 返回文件名，或者 anonymous.
+`mailer_name` 返回文件名，默认为 anonymous.
 
 [如何使用 Mail](https://github.com/mikel/mail#usage)

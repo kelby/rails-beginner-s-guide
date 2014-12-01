@@ -1,4 +1,4 @@
-## ModelSchema*
+## Model Schema*
 
 常用的如：
 

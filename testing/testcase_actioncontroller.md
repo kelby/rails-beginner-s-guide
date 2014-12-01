@@ -1,4 +1,4 @@
-## ActionController
+## Action Controller
 
 ### Test Case Behavior
 

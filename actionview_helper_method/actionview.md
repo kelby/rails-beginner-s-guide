@@ -4,7 +4,6 @@
 
 这里的方法与表单及 record 对象都没有直接相关，也就是说它们并不依赖于表单元素和 record 对象。把它们放到此章节，完全是因为它们所在的模块名字带 "Form".
 
-
 **button 标签**
 
 ```
@@ -67,7 +66,6 @@ form_tag
 ```
 
 上面并不是表单可以使用的所有方法，有一些是动态定义的。
-
 
 ```ruby
 default_form_builder = ::ActionView::Helpers::FormBuilder 

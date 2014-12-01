@@ -16,7 +16,6 @@ self[:name]
 
 不同于直接 self.name 它获取的是真实数据
 
-
 如果字段用于存储图片信息，并且我们有默认图片，则没有图片时：
 self.image 返回的是默认图片信息
 而 self[:image] 返回 nil 这才是真实信息
@@ -27,6 +26,7 @@ self.attributes 里的 image 信息一致
 因为性能，前者要把所有的属性都找出来，然后取 name 属性；
 而后者可以直接获取 name 属性。
 
+参考
 
 [Prefer self[:attribute] over read_attribute(:attribute)](https://github.com/bbatsov/rails-style-guide#read-attribute)
 
@@ -34,3 +34,8 @@ self.attributes 里的 image 信息一致
 
 [How Rails' Type Casting Works](http://robots.thoughtbot.com/how-rails-works-type-casting)
 
+## Write
+
+属性名，加后缀 '=' 进行赋值。
+
+区别于 attr_writer, 这里指的是和数据库操作有关的写。

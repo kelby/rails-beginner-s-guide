@@ -10,14 +10,14 @@ cache_key(*timestamp_names)
 
 `to_param()`
 
-默认，Rails 生成URL时用的是 `primary key`，也就是数据库里的 `id` 属性。例如：
+默认，Rails 生成 URL 时用的是 `primary key`，也就是数据库里的 `id` 属性。例如：
 
 ```ruby
 user = User.find_by(name: 'Phusion')
 user_path(user)  # => "/users/1"
 ```
 
-这对于SEO和人类识别都不是很友好。我们可以重写 `to_param` 方法，设置更友好的内容：
+这对于 SEO 和人类识别都不是很友好。我们可以重写 `to_param` 方法，设置更友好的内容：
 
 ```ruby
 class User < ActiveRecord::Base

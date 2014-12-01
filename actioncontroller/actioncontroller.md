@@ -14,17 +14,10 @@ Controller 里的 public方法(也就是action) 会自动对应 Route 里的路�
 
 ## Metal 之外
 
-Metal 仅包含 metal.rb 这个文件，不包含其同名目录。下面对 metal/ 目录下面包含的东西，做一下简述：
+Metal 仅包含 metal.rb 这个文件，不包含其同名目录。
 
 ## 其它
 
-ActionController include 了这些模块，而我们自定义的 Controller 又继承于 ActionController.
+ActionController include 了对 metal/ 目录下面包含的模块，而我们自定义的 Controller 又继承于 ActionController.
 
 自然的，它们的 ClassMethods 就会变成我们自定义 Controller 的类方法，而其它方法则类似实例方法，可运用于 action.
-
-## 参考
-
-[Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)<br>
-[Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>
-[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)<br>
-[Rails Metal](http://railscasts.com/episodes/150-rails-metal)<br>

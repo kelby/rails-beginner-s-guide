@@ -7,11 +7,16 @@ headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
 ```
 authenticate
 authentication_request
+
 encode_credentials
+
 params_array_from
-raw_params
+
 rewrite_param_values
+
 token_and_options
+
+raw_params
 token_params_from
 ```
 
@@ -21,7 +26,7 @@ token_params_from
 Authorization: Token token="abc", nonce="def"
 ```
 
-然后使用 token_and_options 获取这些数据。
+然后使用 `token_and_options` 获取这些数据。
 
 使用举例：
 
@@ -104,6 +109,8 @@ class ApplicationController < ActionController::Base
     end
 end
 ```
+
+**Token 验证的部分特点**
 
 1. 不能直接明文出现在 url 里
 2. 通过 curl -H 'Authorization: Token token="x"' 传递数据

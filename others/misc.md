@@ -1,10 +1,8 @@
-# Misc
-
-## 心得：
+## 继承心得
 
 Dar < Car < Bar 有时候之所以 Car 要 extend Bar 并不是为了 Car 自己使用，而仅仅是为了方便 Dar
 
-## 继承关系及 ancestors
+### 继承关系及 ancestors
 
 父类和模块都有此方法，子类没有(重写)此方法，执行顺序：模块按被加载的顺序逆序，最后到父类。
 
@@ -58,12 +56,12 @@ Child.new.do_something
 
 > Note: 以上参考 [modules.rb](https://gist.github.com/andrewberls/8090332)
 
-## inherited
+### inherited 方法
 
 `inherited(subclass)`
 
 当前类定义子类时，就会触发此回调。
-(类比 Module.html#included)
+(类似 Module.html#included)
 
 举例:
 

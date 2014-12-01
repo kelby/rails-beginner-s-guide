@@ -2,8 +2,6 @@
 
 本文对 Rails 的使用几乎没有帮助，但有利于剖析 Rails 源码，这符合本书的写作目标，故成文。
 
----
-
 你可以比较独立的使用 Rails 的各个模块。
 
 ## 1. 纯 Rack 实现
@@ -57,7 +55,7 @@ end
 run routes
 ```
 
-### 4. 引入 'action_controller'，使用 Metal
+## 4. 引入 'action_controller'，使用 Metal
 
 ```ruby
 # config.ru
@@ -85,7 +83,7 @@ end
 run routes
 ```
 
-### 5. 项目使用其它 middleware, Controller 包含其它模块 & 6. Controller 里纯手工打造 View 渲染相关代码
+## 5. 项目使用其它 middleware, Controller 包含其它模块 & 6. Controller 里纯手工打造 View 渲染相关代码
 
 ```ruby
 # config.ru
@@ -129,7 +127,7 @@ run routes
 Number is: <%= @local_var %>
 ```
 
-### 7. 引进 'action_view'
+## 7. 引进 'action_view'
 
 ```ruby
 # config.ru
@@ -176,7 +174,7 @@ Number is: <%= @local_var %>
 Content is: <pre><%= env['action_dispatch.request.path_parameters'][:id] %></pre>
 ```
 
-### 8. 直接使用 ActionController::Base
+## 8. 直接使用 ActionController::Base
 
 ```ruby
 # config.ru
@@ -218,10 +216,6 @@ run routes
 # app/views/mainpage/show.html.erb
 ```
 
-## 参考
-
-[A Rails App in a Single File ](http://rofish.net/rails_single_file.pdf)
-
 ## 解读以上进化过程
 
 `run` 由应用服务器提供，运行一个 Rack application.
@@ -237,3 +231,7 @@ run routes
 
 9. 没有使用 ActionMailer，ActiveJob, ActiveModel, ActiveRecord
 10. 使用但没感受到 AbstractController，ActiveSupport, Railties
+
+## 参考
+
+[A Rails App in a Single File ](http://rofish.net/rails_single_file.pdf)

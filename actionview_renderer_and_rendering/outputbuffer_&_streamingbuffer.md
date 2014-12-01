@@ -6,4 +6,6 @@ OutputBuffer 继承于 SafeBuffer，它封装了一些方法，Rails 视图里�
 
 基于种种原因，和 OutputBuffer 相对的引入了 StreamingBuffer，但它以'流'的形式传递数据到客户端，并且它不继承于 SafeBuffer，所以绕开了一些问题。
 
-参考 [YAGNI methods slow us down](http://tenderlovemaking.com/2014/06/04/yagni-methods-slow-us-down.html)
+参考
+
+[YAGNI methods slow us down](http://tenderlovemaking.com/2014/06/04/yagni-methods-slow-us-down.html)

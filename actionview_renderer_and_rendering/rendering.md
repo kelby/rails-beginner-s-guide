@@ -1,6 +1,6 @@
-## rendering 渲染器介绍
+## 渲染器介绍
 
-## Renderer
+### Renderer
 
 渲染的入口。
 
@@ -40,13 +40,13 @@ end
 
 > Note: 说明一下，StreamingTemplateRenderer 用得很少，本说明后文不再重复。
 
-## AbstractRenderer
+### AbstractRenderer
 
 具体某个渲染器的基类，定义了接口。
 
 目前，只有 3 个渲染器，TemplateRenderer、PartialRenderer 和 StreamingTemplateRenderer.
 
-## 1. TemplateRenderer
+### 1. TemplateRenderer
 
 普通的模板渲染器，直接继承于 AbstractRenderer.
 
@@ -56,7 +56,7 @@ end
 
 借助了 @lookup_context.
 
-## 2. PartialRenderer
+### 2. PartialRenderer
 
 局部模板渲染器，直接继承于 AbstractRenderer.
 
@@ -64,7 +64,7 @@ end
 
 借助了 @lookup_context.
 
-## 3. StreamingTemplateRenderer
+### 3. StreamingTemplateRenderer
 
 流模板渲染器，直接继承于 TemplateRenderer，间接继承于 AbstractRenderer.
 
@@ -72,6 +72,6 @@ end
 
 StreamingTemplateRenderer 用得很少，不做过多介绍。
 
-## 最后
+### 最后
 
 根据要渲染的内容，render 还有不少的可选参数，比如：:partial、:template、:inline、:file 和 :text，使用的时候需要根据情况挑选使用。

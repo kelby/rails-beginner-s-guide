@@ -8,6 +8,55 @@
 
 四部分
 
+## Routing
+
+一切路由规则都可归结为: **map path to the Rack endpoint**
+
+Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等不同又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
+
+**Rack ~= Rack middleware ~= Rack endpoint ~= Rack application** 
+
+- 除 route_set.rb 外，routing 目录里的其它模块
+- 对外提供接口
+
+```ruby
+Mapper
+RoutesProxy
+
+Redirection
+
+UrlFor
+PolymorphicRoutes
+```
+
+## RouteSet
+
+- 特指 route_set.rb
+- 本身就充满魔法
+- 还是内外沟通的桥梁
+- 内指 Journey
+- 外指对外的接口及 routing 目录里的其它内容
+
+```ruby
+require 'action_dispatch'
+
+routes = ActionDispatch::Routing::RouteSet.new
+
+routes.draw do
+  get '/' => 'mainpage#index'
+  get '/page/:id' => 'mainpage#show'
+end
+```
+
+从 ActionDispatch 转换站场到 ActionController.
+(准确点：ActionDispatch -> Metal -> AbstractController -> ActionController)
+
+```ruby
+def dispatch(controller, action, env)
+  controller.action(action).call(env)
+end
+```
+
 ## Http
 
 它影响的主要是 http 相关的部分(如：request, response)，和我们的业务逻辑没有直接关联。
@@ -19,7 +68,6 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 ## Middleware
 
 **middleware 在路由转发之后，Controller接收之前！**
-
 
 ```ruby
 Rails.application.send :default_middleware_stack
@@ -82,53 +130,4 @@ rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
 railties (4.1.0) lib/rails/engine.rb:514:in `call'
 railties (4.1.0) lib/rails/application.rb:144:in `call'
 rack (1.5.2) lib/rack/lock.rb:17:in `call'
-```
-
-## RouteSet
-
-- 特指 route_set.rb
-- 本身就充满魔法
-- 还是内外沟通的桥梁
-- 内指 Journey
-- 外指对外的接口及 routing 目录里的其它内容
-
-```ruby
-require 'action_dispatch'
-
-routes = ActionDispatch::Routing::RouteSet.new
-
-routes.draw do
-  get '/' => 'mainpage#index'
-  get '/page/:id' => 'mainpage#show'
-end
-```
-
-从 ActionDispatch 转换站场到 ActionController.
-(准确点：ActionDispatch -> Metal -> AbstractController -> ActionController)
-
-```ruby
-def dispatch(controller, action, env)
-  controller.action(action).call(env)
-end
-```
-
-## Routing
-
-一切路由规则都可归结为: **map path to the Rack endpoint**
-
-Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等不同又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
-
-**Rack ~= Rack middleware ~= Rack endpoint ~= Rack application** 
-
-- 除 route_set.rb 外，routing 目录里的其它模块
-- 对外提供接口
-
-```ruby
-Mapper
-RoutesProxy
-
-Redirection
-
-UrlFor
-PolymorphicRoutes
 ```

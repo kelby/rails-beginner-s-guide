@@ -1,5 +1,27 @@
 ## render 方法详解
 
+搜索了一下，API 里 `render` 同名方法有 8 个，它们分别代表什么意思？
+
+而 ActionView 就有 6 个 render 方法(其中 2 个和测试有关)，分别在：
+
+- Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
+
+要使用这个模块，你需要实现 `view_renderer` 方法，这个方法返回一个 ActionView::Renderer 对象。
+
+- PartialRenderer - render(context, options, block)
+
+用于渲染局部模板。
+
+- Renderer - render(context, options)
+
+ActionView 和 ActionController 渲染的主要入口。
+
+- Template - render(view, locals, buffer=nil, &block)
+
+剩下两个在 AbstractController::Rendering 和 ActionController::Instrumentation 里。
+
+---
+
 ```ruby
 ActionView::Base.new.render(text: 'hello')
 => "hello"

@@ -5,7 +5,6 @@
 Controller 里的 render 是为了返回 self.response_body
 而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣
 
-
 在 Rails 里 metal 也属于 middleware，我们可以这么用：
 
 ```ruby
@@ -39,7 +38,7 @@ Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
 ### 加入 Rendering 模块
 
-默认 <tt>ActionController::Metal</tt> 是没有提供渲染视图、模板或其它需要明确调用 <tt>response_body=</tt>, <tt>content_type=</tt>, 和 <tt>status=</tt> 的方法。如果你需要这些，可以引入它们：
+默认 ActionController::Metal 是没有提供渲染视图、模板或其它需要明确调用 response_body=, content_type=, 和 status= 的方法。如果你需要这些，可以引入它们：
 
 ```ruby
 class HelloController < ActionController::Metal
@@ -70,4 +69,4 @@ end
 
 ### 加入其它模块
 
-参考 <tt>ActionController::Base</tt> 引入其它模块，以达到目的。
+参考 ActionController::Base 引入其它模块，以达到目的。

@@ -46,45 +46,45 @@ FormBuilder 是面向对象，FormHelper 是面向函数。
 
 **包含但不限于以下 Helper**
 
-UrlHelper
+Url Helper
 
-TranslationHelper
+Translation Helper
 
-TextHelper
+Text Helper
 
-TagHelper
+Tag Helper
 
-SanitizeHelper
+Sanitize Helper
 
-RenderingHelper
+Rendering Helper
 
-RecordTagHelper
+Record Tag Helper
 
-OutputSafetyHelper
+Output Safety Helper
 
-NumberHelper
+Number Helper
 
-JavaScriptHelper
+JavaScript Helper
 
-DebugHelper
+Debug Helper
 
-DateHelper
+Date Helper
 
-DateTimeSelector
+DateTime Selector
 
-CsrfHelper
+Csrf Helper
 
-ControllerHelper
+Controller Helper
 
-CaptureHelper
+Capture Helper
 
-CacheHelper
+Cache Helper
 
-AtomFeedHelper
+Atom Feed Helper
 
-AssetUrlHelper
+Asset Url Helper
 
-AssetTagHelper
+Asset Tag Helper
 
 ### 与 model对象 弱关联
 

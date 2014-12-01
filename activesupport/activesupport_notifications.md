@@ -2,7 +2,7 @@
 
 怎么使用？
 
-- subscribe - 订阅
+- subscribe  - 订阅
 - instrument - 发布
 
 ```ruby
@@ -37,18 +37,6 @@ Rails 默认有很多 Instrumentation，你可以不写 instrument 直接 subscr
 
 > Note: 注意使用场景。这里并不是严格的发布者、订阅者模型，你从它们的方法名及默认参数就应该知道。
 
-相关：
-
-[Pssst... your Rails application has a secret to tell you](http://signalvnoise.com/posts/3091-pssst-your-rails-application-has-a-secret-to-tell-you)
-
-[Digging Deep with ActiveSupport::Notifications](https://speakerdeck.com/nextmat/digging-deep-with-activesupportnotifications)
-
-[#249 Notifications in Rails 3](http://railscasts.com/episodes/249-notifications-in-rails-3)
-
-[ActiveSupport::Notifications, statistics and using facts to improve your site](http://www.reinteractive.net/posts/141-activesupport-notifications-statistics-and-using-facts-to-improve-your-site)
-
-[Active Support Instrumentation](http://edgeguides.rubyonrails.org/active_support_instrumentation.html)
-
 > Note: 直接查看 Rails 项目里有哪些 instrumenter 可运行命令
 `ActiveSupport::Notifications.instrumenter.instance_variable_get("@notifier").instance_variable_get("@subscribers").map { |s| s.instance_variable_get "@pattern" }`
 此命令不包含元编程创建的 instrumenter，如 ActionController 就有很多 instrumenter 没有包含在内。
@@ -56,8 +44,25 @@ Rails 默认有很多 Instrumentation，你可以不写 instrument 直接 subscr
 ## 所有方法
 
 ```
-instrument, instrumenter
+instrument
+instrumenter
+
 publish
-subscribe, subscribed
+
+subscribe
+subscribed
 unsubscribe
 ```
+
+**参考**
+
+[Pssst... your Rails application has a secret to tell you](http://signalvnoise.com/posts/3091-pssst-your-rails-application-has-a-secret-to-tell-you)<br>
+
+[Digging Deep with ActiveSupport::Notifications](https://speakerdeck.com/nextmat/digging-deep-with-activesupportnotifications)<br>
+
+[#249 Notifications in Rails 3](http://railscasts.com/episodes/249-notifications-in-rails-3)<br>
+
+[ActiveSupport::Notifications, statistics and using facts to improve your site](http://www.reinteractive.net/posts/141-activesupport-notifications-statistics-and-using-facts-to-improve-your-site)<br>
+
+[Active Support Instrumentation](http://edgeguides.rubyonrails.org/active_support_instrumentation.html)
+

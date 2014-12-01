@@ -1,4 +1,4 @@
-## ActionDispatch
+## Action Dispatch
 
 ### Test Process
 
@@ -93,32 +93,47 @@ url_options
 **RequestHelpers**
 
 ```
-delete, delete_via_redirect
-F
+delete
+
+delete_via_redirect
+
 follow_redirect!
-G
-get, get_via_redirect
-H
+
+get
+
+get_via_redirect
+
 head
-P
-patch, patch_via_redirect, post, post_via_redirect, put, put_via_redirect
-R
+
+patch
+
+patch_via_redirect
+
+post
+
+post_via_redirect
+
+put
+
+put_via_redirect
+
 request_via_redirect
-X
-xhr, xml_http_request
+
+xhr & xml_http_request
 ```
 
 **Session**
 
 ```
 cookies
-H
-host, https!, https?
-N
-new
-R
+
+host
+
+https?
+https!
+
 reset!
-U
+
 url_options
 ```
 
@@ -126,12 +141,11 @@ url_options
 
 ```
 app
-D
-default_url_options, default_url_options=
-M
-method_missing
-O
+
+default_url_options
+default_url_options=
+
 open_session
-R
-reset!, respond_to?
+
+reset!
 ```

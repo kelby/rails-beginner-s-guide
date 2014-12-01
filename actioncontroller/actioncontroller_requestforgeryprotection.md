@@ -1,24 +1,6 @@
 ## Request Forgery Protection
 
-```
-compare_with_real_token
-form_authenticity_param, form_authenticity_token
-handle_unverified_request
-masked_authenticity_token
-real_csrf_token
-verify_authenticity_token, verify_same_origin_request
-xor_byte_strings
-
-mark_for_same_origin_verification!
-
-marked_for_same_origin_verification?
-non_xhr_javascript_response?
-protect_against_forgery?
-valid_authenticity_token?, verified_request?
-
-```
-
-## Class Methods
+### 类方法
 
 ```
 protect_from_forgery
@@ -38,3 +20,23 @@ class ApplicationController < ActionController::Base
   end
 end
 ```
+
+### Instance Protected methods
+
+```
+compare_with_real_token
+form_authenticity_param, form_authenticity_token
+handle_unverified_request
+masked_authenticity_token
+real_csrf_token
+verify_authenticity_token, verify_same_origin_request
+xor_byte_strings
+
+mark_for_same_origin_verification!
+
+marked_for_same_origin_verification?
+non_xhr_javascript_response?
+protect_against_forgery?
+valid_authenticity_token?, verified_request?
+```
+

@@ -85,7 +85,6 @@ class Mailer < ActionMailer::Base
 end
 
 email = Mailer.daily_email
-puts email
 email.deliver_now
 ```
 

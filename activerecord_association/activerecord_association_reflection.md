@@ -18,7 +18,7 @@ add_reflection
 add_aggregate_reflection
 ```
 
-### Class Methods
+### 类方法
 
 ```
 reflections # 所有正常的关联

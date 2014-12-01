@@ -128,7 +128,7 @@ end
 
 建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。
 
-#### 其它
+#### 其它方法
 
 ```
 default_url_options & default_url_options=

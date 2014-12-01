@@ -1,21 +1,8 @@
 ## Delivery Methods 定制与新增
 
-为了"开发和测试尽量的接近生产环境"和"知道发送出去的邮件真正的样子"等目的，我们希望在非生产环境下，能够查看邮件发送情况。
+delivery_method 默认有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，我们可以根据需求，定制它们或自定义新的发送方式。
 
-delivery_method 默认有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，也可以自定义。
-
-
-## 解决方案
-
-- (开发、测试)用邮件预览 gem
-
-我们可以使用 MailCatcher 或 Letter Opener 等 gem 实现。
-
-- (生产)只发送到特定的邮箱
-
-比如，我们注册一些特殊账号或邮箱，然后发送给我们自己。
-
-## 重新实现，并添加 delivery_method
+### 定制 delivery_method
 
 ``` ruby
 # 配置
@@ -64,8 +51,9 @@ class CustomSmtpDelivery < ::Mail::SMTP
 end
 ```
 
-如果你使用的是第三方邮件服务，发送邮件的时候通常还要传递额外的信息供第三方验证，此时你可以用 add_delivery_method 实现方式
+### 自定义新的发送方式
 
+如果你使用的是第三方邮件服务，发送邮件的时候通常还要传递额外的信息供第三方验证，此时你可以用 add_delivery_method 实现方式
 
 原理
 
@@ -77,7 +65,7 @@ def add_delivery_method(symbol, klass, default_options={})
 end
 ```
 
-使用
+初始化文件里
 
 ```ruby
 add_delivery_method :sendmail, Mail::Sendmail,
@@ -85,13 +73,11 @@ add_delivery_method :sendmail, Mail::Sendmail,
   arguments: '-i -t'
 ```
 
-如何运行
+配置文件里
 
 ```ruby
-klass = delivery_methods[method]
-
-mail.delivery_method(klass, (send(:"#{method}_settings") || {}).merge(options || {}))
-````
+config.action_mailer.delivery_method = :sendmail
+```
 
 ## 参考
 

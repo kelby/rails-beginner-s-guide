@@ -13,4 +13,4 @@ class MyModel
 end
 ```
 
-定义上，使用了 ActiveSupport 提供的回调相关方法；使用上，和 ActiveRecord 里的回调方法类似。
+定义上，使用了 Active Support 提供的回调相关方法；使用上，和 Active Record 里的回调方法类似。

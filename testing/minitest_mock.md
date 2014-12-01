@@ -34,5 +34,4 @@ assert user.verify
 `verify`  
 mock 出来的对象有时候并不是我们想要的(计算机不够聪明)，verify 验证是否真的执行了上述方法。RSpec 在这点上使用起来更简洁，但也相差不大。
 
-
 链接 [MiniTest::Mock](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/minitest/rdoc/MiniTest/Mock.html)

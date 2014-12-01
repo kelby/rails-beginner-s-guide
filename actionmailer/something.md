@@ -6,7 +6,7 @@ Rails 在改动，特别是一些模块的名字，但对外提供的 API 一般
 
 但请放心，它们一直包含在 ActionMailer::Base 里，而且我们不会直接通过模块名调用它们的方法。
 
-**Base**
+### Base
 
 我们 mailer 类继承的 ActionMailer::Base 在这里定义的，它继承于 AbstractController::Base，这也是 ActionMailer 依赖 AbstractController 的证据之一。
 
@@ -23,11 +23,11 @@ Rails 在改动，特别是一些模块的名字，但对外提供的 API 一般
 创建邮件实例  
 又因为 include 了下面的模块，所以这个实例可以使用其它下面模块所定义的方法。
 
-**Mail Helper**
+### Mail Helper
 
 几个邮件相关的 Helper 方法。如：attachments、mailer、message，还有不太实用的 block_format、format_paragraph.
 
-**Collector**
+### Collector
 
 和 AbstractController::Collector 相关，也就是和 Mime 相关。
 
@@ -51,11 +51,15 @@ end
 
 > Note: 默认会发送和 mail 所在方法名同名的所有模板，不区分 Mime 格式。这也是我们常用的。
 
-**Delivery Methods**
+### Delivery Methods
 
 配置邮件邮件发送方式 `add_delivery_method`, 及不同方式的默认配置。
 
-**Log Subscriber**
+### Delivery Job
+
+使用 ActiveJob，配置以便延迟发送邮件。
+
+### ~~Log Subscriber~~
 
 日志记录，继承于 ActiveSupport::LogSubscriber，执行哪个方法时想要记录日志，只需要创建和它同名方法，然后打印日志即可。LogSubscriber 章节会讲到。
 
@@ -69,67 +73,6 @@ process - 处理
 logger - 手动打印日志
 ```
 
-**Previews & Preview**
-
-邮件预览相关。
-
-Previews，对于普通开发者来说主要是配置：
-
-```ruby
-# 配置预览文件存放的位置，默认如下:
-config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
-
-# 配置是否允许邮件预览:
-# 开发模式下，默认为 true
-config.action_mailer.show_previews = true
-```
-
-默认可以到以下 url, 查看预览邮件：
-
-```
-http://localhost:3000/rails/mailers/
-```
-
-Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发者察觉不到的方法，如：
-
-`preview_name` 返回自定义类名，但把 "Preview" 后缀去掉。如 YourPreview 返回 "Your"
-
-`emails` 返回所有可预览的邮件
-
-这里的预览，和 [MailCatcher](https://github.com/sj26/mailcatcher)、[Letter Opener](https://github.com/ryanb/letter_opener) 等提供的预览不同，它属于规范的测试，而后者更类似于人肉测试。
-
-> Note: 邮件预览，在 Rails 里也遵守 MVC. M 是 ActionMailer::Preview，V 是 rails/mailers/，C 是 Rails::MailersController
-
-Preview 提供方法：
-
-```
-all
-emails
-
-preview_name
-
-call
-email_exists?
-
-find
-exists?
-```
-
-Previews 提供方法
-
-```
-register_preview_interceptor
-register_preview_interceptors
-```
-
-**Railtie**
+### ~~Railtie~~
 
 ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。
-
-**Delivery Job**
-
-使用 ActiveJob，配置以便延迟发送邮件。
-
-**Test Case**
-
-测试样例。

@@ -24,3 +24,5 @@ def self.action(name, klass = ActionDispatch::Request)
   end
 end
 ```
+
+> Note: 这里继承于 ActionDispatch::MiddlewareStack

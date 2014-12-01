@@ -16,9 +16,17 @@ ETag 过程如下：
 Last-Modified 过程如下：
 
 在浏览器第一次请求某一个 URL 时，服务器端的返回状态会是 200，内容是客户端请求的资源，同时有一个 Last-Modified 的属性标记此文件在服务期端最后被修改的时间，格式类似这样：  
+
+```
 Last-Modified : Fri , 12 May 2006 18:53:33 GMT  
+```
+
 客户端第二次请求此 URL 时，根据HTTP协议的规定，浏览器会向服务器传送 If-Modified-Since 报头，询问该时间之后文件是否有被修改过：  
+
+```
 If-Modified-Since : Fri , 12 May 2006 18:53:33 GMT  
+```
+
 如果服务器端的资源没有变化，则自动返回 HTTP 304（Not Changed.）状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。
 
 一个典型的 Response headers
@@ -43,8 +51,6 @@ Content-Length: 665
 ### Rails 里相关实现和使用
 
 ```ruby
-# 单独使用没意义
-# 追加元素到 etag
 etag
 
 # 决定是否改变。
@@ -60,7 +66,7 @@ expires_now
 stale?
 ```
 
-`etag` 是类方法，对当前 Controller 下面的所有 action 都起作用。就相当于一个过滤器，把里面的元素加入到 record_or_options 里。同样影响 ETag 和 last_modify 的值。
+`etag` 是类方法，对当前 Controller 下面的所有 action 都起作用(区别于 fresh_when)。就相当于一个过滤器，把里面的元素加入到 record_or_options 里。同样影响 ETag 和 last_modify 的值。
 
 `fresh_when` 是实例方法，只当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
 
@@ -76,7 +82,7 @@ fresh_when @post, template: false
 
 支持设置 HTTP header 里的 etag 和 last modified 就意味着当所请求的资源没有更改过时，Rails 可以返回一个的响应。这可以节省你的带宽资源和时间。
 
-和所有缓存一样，怎么生成 cache_key ？
+### 和所有缓存一样，怎么生成 cache_key ？
 
 最新，表示没有更改。
 
@@ -84,19 +90,21 @@ fresh_when @post, template: false
 
 什么也没改 
 
+```
 f9d7568ac634fc9ad270f2348d5f3b41
+```
 
 更改表态内容 
 
+```
 d9cc40e9e225a3e738c68b01f17ef4b0
 update_columns 7128cbb34d84aa096ee62d69d1599a32
 update_attributes 98eac754b15c61f4c8b4f79b7f0a5645
+```
 
 > Note: 默认 动态或静态内容有变，ETag 都会更新；都不改变，才不更新。如果手动设置了 fresh_when 反而会获取到旧数据。
 
-ETag 方面的知识，基于资源的HTTP Cache的实现介绍。感兴趣可以查看 [在你的 Rails App 中开启 ETag 加速页面载入同时节省资源](http://huacnlee.com/blog/use-etag-in-your-rails-app-to-speed-up-loading/)
-
-**如果 fresh_when 匹配，将直接返回结果给最终用户。但后面的代码并未退出，还会执行，只到遇到结束标识为止。也就是说 Controller#action 后续有代码的话，则还会执行，但 View 里的代码不会执行了**
+如果 fresh_when 匹配，将直接返回结果给最终用户。但后面的代码并未退出，还会执行，只到遇到结束标识为止。也就是说 Controller#action 后续有代码的话，则还会执行，但 View 里的代码不会执行了
 
 这里区别于响应
 
@@ -110,7 +118,7 @@ Completed 304 Not Modified in 3ms (ActiveRecord: 0.1ms)
 
 ### 相关代码
 
-fresh_when 方法：
+`fresh_when` 方法：
 
 ```ruby
 def fresh_when(record_or_options, additional_options = {})
@@ -126,7 +134,7 @@ def fresh_when(record_or_options, additional_options = {})
 end
 ```
 
-head 方法：
+`head` 方法：
 
 ```ruby
 def head(status, options = {})
@@ -144,7 +152,7 @@ def head(status, options = {})
 end
 ```
 
-request.fresh? 方法：
+`request.fresh?` 方法：
 
 ```ruby
 def fresh?(response)
@@ -163,3 +171,8 @@ end
 ### 其它
 
 fresh_when 可以通过工具(如：Chrome 插件"Advanced REST client")查看 ETag，检测是否起作用以及是否正确。
+
+参考
+
+[在你的 Rails App 中开启 ETag 加速页面载入同时节省资源](http://huacnlee.com/blog/use-etag-in-your-rails-app-to-speed-up-loading/)
+

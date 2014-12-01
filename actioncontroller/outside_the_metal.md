@@ -23,39 +23,6 @@ fresh_when 匹配的只是动态资源。静态资源怎么办？
 
 提供 add_flash_types 方法，并对 redirect_to 稍微做了处理。在 Others#Flash 章节会有专门介绍。
 
-## Force SSL
-
-```
-force_ssl_redirect
-```
-
-重定向到 https 链接, url 会改变。  
-重定向这部分用到了 redirect_to 方法，提供可选参数 :status, :flash, :alert, :notice
-
-如果没有(用参数)指定链接，则用当前链接，但是 https 协议访问。可用于注册、登录等页面。
-链接这部分用到了 url_for 方法，提供可选参数 :protocol, :host, :domain, :subdomain, :port, :path
-
-上面是实例方法，对单个 action 有用；  
-下面这是类方法，它封装了 force_ssl_redirect，对整个 Controller 有用。
-
-```
-force_ssl
-```
-
-可指定 action 跳转，可选参数 :only, :except；或根据条件跳转，可选参数 :if, :unless
-
-使用举例：
-
-```ruby
-class AccountsController < ApplicationController
-  force_ssl if: :ssl_configured?
-
-  def ssl_configured?
-    !Rails.env.development?
-  end
-end
-```
-
 ## Helpers
 
 ```
@@ -124,7 +91,7 @@ response_body=
 
 很多模块都包含它，利用了它所提供的方法。
 
-## Rendering
+## ~~Rendering~~
 
 对一般的 render_to_body 和 render_to_string 稍微做处理。
 

@@ -148,7 +148,7 @@ a_record._save_callbacks.map{ |c| puts c.raw_filter };
   save 回调 4
 ```
 
-执行顺序从下往上，相当于越在上面的优先级越高(因为后面的可以覆盖前面的)。
+执行顺序从下往上，所以回调之间有相同内容的话，上面的可以覆盖下面的。但如果下面的回调执行失败的话，也会影响到上面的。
 
 这里不区分是系统生成的方法(大多数是关联时就带有，如 autosave_associated_records、belongs_to_counter_cache、has_many_dependent)，还是我们自定义的方法。
 

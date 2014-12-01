@@ -1,6 +1,4 @@
-# 核心扩展之 Module
-
-## alias_method_chain
+## Module 之 alias_method_chain
 
 不修改原有接口和调用代码，给接口添加额外的行为。
 

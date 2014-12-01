@@ -22,10 +22,11 @@ Changes the mode of the given file or directory.
 Comment all lines matching a given regex.
 
 `copy_file(source, *args, &block)`  
-Examples.
+复制文件。(默认源文件放在 source_root 下)
 
 `create_file(destination, *args, &block) (also: #add_file)`  
 Create a new file relative to the destination root with the given data, which is the return value of a block or a data string.
+创建新文件。
 
 `create_link(destination, *args, &block) (also: #add_link)`  
 Create a new file relative to the destination root from the given source.
@@ -40,7 +41,7 @@ Sets the root for this thor class.
 Copies recursively the files from source directory to root directory.
 
 `empty_directory(destination, config = {})`  
-Creates an empty directory.
+创建一个空目录。
 
 `find_in_source_paths(file)`  
 Receives a file or directory and search for it in the source paths.
@@ -61,7 +62,8 @@ Extends initializer to add more configuration options.
 Injects text right after the class definition.
 
 `insert_into_file(destination, *args, &block) (also: #inject_into_file)`  
-Injects the given content into a file.
+Injects the given content into a file.  
+将内容插入到指定的文件内。(如：添加 js 文件后，一般会在 application.js 里插入 require 等代码)
 
 `inside(dir = '', config = {}, &block)`  
 Do something in the root or on a provided subfolder.
@@ -89,6 +91,7 @@ Holds source paths in instance so they can be manipulated.
 
 `template(source, *args, &block)`  
 Gets an ERB template at the relative source, executes it and makes a copy at the relative destination.
+复制示例模板文件，生成新的 ERB 文件。
 
 `thor(command, *args)`  
 Run a thor command.
@@ -114,5 +117,6 @@ Stores and return the source root for this class.
 
 `argument`  
 Adds an argument to the class and creates an attr_accessor for it.
+如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
 
 链接 [What Is Thor](http://whatisthor.com/)

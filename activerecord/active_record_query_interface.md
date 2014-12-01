@@ -152,6 +152,14 @@ Post.includes(:comments).where("comments.visible" => true)
 
 `explain()` 看看转化成 SQL 是什么样。
 
+`none` 返回一个空的 Relation，对后续操作很有用。可以充分利用 Relation 链式调用、延迟加载等特性。  
+
+`not` "与或非"里面的"非"，例如"IS NOT NULL"查询。
+
+`references` 使用 includes 可以预加载多个关联表，如果后续还有根据关联表进行查询的，需要用 references 指明用哪张关联表。否则，查询会出错。但如果后续的查询是以 hash 的形式提供的话，则不必使用 references 也可以。
+
+`order` 排序。它在 default_scope 之前执行，也就是说 default_scope 有可能会覆盖之前的排序。
+
 > Note: 注意区分 Rails 里的 group 和 SQL 里的 group_by
 
 相关SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)
@@ -160,14 +168,6 @@ Post.includes(:comments).where("comments.visible" => true)
 
 ### 最后
 
-none - 返回一个空的 Relation，对后续操作很有用。可以充分利用 Relation 链式调用、延迟加载等特性。  
-
-not - "与或非"里面的"非"，例如"IS NOT NULL"查询。
-
-references - 使用 includes 的時候會有參照 table 的問題，Rails4 新增了一個 references 去明確指出參照的 table，但如果在 where 的參數內是直接用 hash 的 conditions，即可不用指定 referen<br>
-
-order - Rails4 終於把  default_scope 的 order 調整成正常的順序，default_scope 的 order 永遠會在最後而不像 Rails 3 優先權永遠是最高的。同時 order 可以使用 hash 帶入，也不需要再用字串了。<br>
-
 查表操作(数据库读操作)。大部分是 Ruby 层面，一般可多条件链式查询。
 
 和上面的 CollectionProxy 有类似，区别在于这是对本表操作，而不是对关系表。和下面的 FinderMethods 有类似，区别在于这返回的是 relation，可以链式查询，与 SQL 关联大。
@@ -175,30 +175,5 @@ order - Rails4 終於把  default_scope 的 order 調整成正常的順序，def
 注意：参数带 block 的，代表已经进入 SQL 层面。
 
 要善于使用这里的语句，数据放在数据库和数据放在内存有很大的区别！另外，放在内存和是否返回也有很大的区别！
-
-joins 普通的查询条件，关联对象不需要放到内存。
-
-```ruby
-# 第一次调用，需要查询，花销一般；再次调用，也需要查询，花销一般。
-# 目的：查询主表，关联表仅做为查询条件之一
-
-posts = Post.joins(:comments)
-  Post Load (0.1ms)  SELECT "posts".* FROM "posts" INNER JOIN "comments" ON "comments"."commentable_id" = "posts"."id" AND "comments"."commentable_type" = 'Post'
-  posts.first.comments
-  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 1], ["commentable_type", "Post"]]
-```
-includes 两个查询都要做，关联对象也需要放到内存。
-
-```ruby
-# 第一次调用，需要查询，花销大；再次调用，不需要查询，花销为零。
-# 目的：查询主表和关联表
-
-posts = Post.includes(:comments)
-  Post Load (0.6ms)  SELECT "posts".* FROM "posts"
-  Comment Load (0.2ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Post' AND "comments"."commentable_id" IN (1, 3, 5, 6, 8, 9, 10, 11, 12)
-  posts.first.comments
-
-### 关键：后续是否需要对关联对象进行操作。
-```
 
 > Note: 返回的多是 Relation，与 SQL 层面较亲；有 find 字样的绝对不是它。

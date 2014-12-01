@@ -1,4 +1,4 @@
-# ActiveRecord 迁移
+# Active Record 迁移
 
 ## Migration
 

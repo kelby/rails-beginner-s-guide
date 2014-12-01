@@ -10,7 +10,7 @@
 |create_association(attributes={})       |     √      |              |    √    |
 |create_association!(attributes={})      |     √      |              |    √    |
 
-这些方法主要由 Association 和 SingularAssociation 提供。
+这些方法主要由 Association 和 Singular Association 提供。
 
 ### 一对多、多对多关系
 
@@ -32,5 +32,5 @@
 | collection.create(attributes = {}) | √ | √ | √ |
 | collection.create!(attributes = {}) | √ | √ | √ |
 
-这些方法主要由 Association 和 CollectionAssociation 提供。
-还有一些 CollectionProxy 提供的方法，不在此列举。
+这些方法主要由 Association 和 Collection Association 提供。
+还有一些 Collection Proxy 提供的方法，不在此列举。

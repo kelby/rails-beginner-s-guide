@@ -27,9 +27,10 @@ after
 除上述方法外，还有
 
 ```
-children
-register_spec_type
 spec_type
+register_spec_type
+
+children
 ```
 
 链接 [MiniTest::Spec::DSL](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/minitest/spec/rdoc/MiniTest/Spec/DSL.html)

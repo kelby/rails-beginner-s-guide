@@ -43,3 +43,19 @@ class Article < ActiveRecord::Base
 end
 ```
 > Note: Persistence(持久化)里的 save、save! 方法，只管 create 或 update 数据，是没有校验功能的。所以，这里创建了同名方法，在做真正的"保存"之前用来做校验工作，这也是一种技巧。
+
+---
+
+实例方法
+
+```
+raise_record_invalid
+
+save, save!
+
+valid?, validate, validate!
+```
+
+这里的 `save` 对持久化里的 save 方法做了一层包装，当传递 validate: false 时，可以跳转校验。
+
+其它方法意义不变。

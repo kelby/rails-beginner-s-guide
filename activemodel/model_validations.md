@@ -66,12 +66,10 @@ validates_with
 `valid?` 校验是否通过，只有一个判断规则：当前 record 对象的 errors 值是否为空 errors.empty?  
 所以自己写校验方法或者校验器的时候，请记得设置 errors 的值。
 
----
-
-调用方式比较：
+### 调用方式比较
 
 |           |    validate | validates 或 validates!  | validates_each | validates_with | validates_presence_of * |
-| --------: | --------:| :--: | :--: | :--: | :--: |
+| :-------- | :--------:| :--: | :--: | :--: | :--: |
 | 属性       | 不需要 |  需要   | 需要 | 不需要 | 需要 |
 | 校验器     |   不需要 |  需要  | 不需要 | 需要 | 不需要 |
 | 直接、间接  |    直接 | 间接  | 直接 | 间接 | 直接 |

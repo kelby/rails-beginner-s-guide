@@ -20,7 +20,6 @@ stub
 
 举例
 
-
 ```ruby
 DateTime.now
 # => 2014-11-17T22:16:15+08:00
@@ -35,40 +34,9 @@ end
 # => 2014-11-03
 ```
 
-## AbstractReporter
-
-实例方法
-
-```
-passed?
-record
-report
-start
-```
-
-## Assertion
-
-实例方法
-
-```
-location
-```
-
-## BenchSpec
-
-类方法
-
-```
-bench
-bench_performance_constant
-bench_performance_exponential
-bench_performance_linear
-bench_range
-```
-
 ## Benchmark
 
-这里的文档说看 Assertions 的文档即可。
+已经 mix 
 
 类方法
 
@@ -99,5 +67,33 @@ sigma
 validation_for_fit
 ```
 
+## BenchSpec
 
+类方法
 
+```
+bench
+bench_performance_constant
+bench_performance_exponential
+bench_performance_linear
+bench_range
+```
+
+## AbstractReporter
+
+实例方法
+
+```
+passed?
+record
+report
+start
+```
+
+## Assertion
+
+实例方法
+
+```
+location
+```

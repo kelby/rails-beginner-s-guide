@@ -112,13 +112,23 @@ end
 1. 不要使用动态内容做 key
 2. 关闭默认的加密
 
+也就是
+
+```
 cache 'all_available_products', skip_digest: true
+```
 
-expire_fragment('all_available_products') 才有用。
-
-http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/
-http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/
-http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/
-http://www.codelearn.org/blog/rails-cache-with-examples
+```
+expire_fragment('all_available_products')
+```
+才有用。
 
 > Note: 在 Controller 和 View 里写缓存相关的代码，这真的很丑陋。并且一个页面往往由很多元素组成，只能在它的 action 里管理显然很不方便。推荐 cells
+
+## 参考
+
+[Speed Up With Rails Cache](http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/)  
+[Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)  
+[Advanced Caching: Part 2 - Using Caching Strategies](http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/)  
+[Rails Cache for dummies](http://www.codelearn.org/blog/rails-cache-with-examples)
+

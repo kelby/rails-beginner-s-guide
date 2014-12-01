@@ -6,7 +6,7 @@
 
 - (开发、测试)用邮件预览 gem
 
-我们可以使用 MailCatcher 或 Letter Opener 等 gem 实现。
+我们可以使用 mailcatcher 或 letter_opener 等 gem 实现。
 
 - (生产)只发送到特定的邮箱
 

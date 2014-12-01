@@ -37,7 +37,7 @@ end
 ActionController::Renderers.remove(:csv)
 ```
 
-## Class Methods
+## 类方法
 
 ```
 use_renderer & use_renderers

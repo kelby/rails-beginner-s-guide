@@ -1,4 +1,4 @@
-## ActiveSupport
+## Active Support
 
 ### Test Case
 
@@ -44,7 +44,7 @@ run_in_isolation
 run_in_isolation
 ```
 
-### Setup And Teardown ClassMethods
+### Setup And Teardown Class Methods
 
 ```
 setup

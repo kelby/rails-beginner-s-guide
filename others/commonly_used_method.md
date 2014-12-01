@@ -1,6 +1,6 @@
 # Rails 源代码里一些常用方法
 
-## ActiveSupport
+## Active Support
 
 `eager_autoload` 和 `autoload`
 
@@ -92,7 +92,7 @@ Foo.new.hello # => "world"
 把可选参数里的 Hash 部分，萃取出来。
 ```
 
-## AbstractController
+## Abstract Controller
 
 `abstract!`
 

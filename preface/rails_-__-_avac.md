@@ -1,10 +1,8 @@
-# ActionView 渲染的原理
+# 渲染的原理
 
 Controller#actions 里定义实例变量，并通过 render 方法进行渲染。
 
-ActionView 渲染过程很复杂，涉及概念主要有：渲染器(名词)、上下文、渲染(动词)。
-
----
+Action View 渲染过程很复杂，涉及概念主要有：渲染器(名词)、上下文、渲染(动词)。
 
 ## 标准库 ERB 举例
 
@@ -83,7 +81,7 @@ render = ERB.new(template)
 # 渲染(动词)
 render.result(binder)
 
-# Result
+# 输出结果
 => "Helo, Kelby"
 ```
 
@@ -95,9 +93,8 @@ Rails 里: 渲染器(名词)对应着 render，上下文对应着 lookup_context
 
 Rails 用的是 gem 'erubis'，不是 Ruby 标准库里的 ERB，不过它们原理类似，不再深入。
 
-## 这里相关
+## 相关
 
 [Binding](http://ruby-doc.org/core-2.1.2/Binding.html)<br>
 [ERB](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/erb/rdoc/index.html)<br>
 [Erubis](https://github.com/genki/erubis)
-

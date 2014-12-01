@@ -31,8 +31,8 @@ CALLBACKS = [
   :before_create, :around_create, :after_create,
   :before_update, :around_update, :after_update,
   :before_destroy, :around_destroy, :after_destroy,
-  :before_validation, :after_validation, # => 需要定义
-  :after_commit, :after_rollback # => 需要定义
+  :before_validation, :after_validation,
+  :after_commit, :after_rollback
 ]
 ```
 
@@ -136,7 +136,6 @@ end
 ## 抽取封装回调方法
 
 覆盖方法名，重新定义方法内容(注意：这里定义的是实例方法啊，内容不会被执行，其它类再继承才能执行!) √
-
 
 ```ruby
 # .1

@@ -1,32 +1,6 @@
 # ActiveRecord
 
-## 迁移
-
-Migration
-
----
-
-SchemaMigration
-
-Schema
-
----
-
-下面这 4 个模块，来源 Connection Adapters，它下面还有很多模块，在此忽略其它 ...
-
-SchemaStatements
-
-TableDefinition
-
-Table
-
-DatabaseStatements
-
----
-
-ModelSchema*
-
-## 数据库操作(增删查改问)
+## 1 数据库操作(增删查改问)
 
 - locking
 
@@ -58,39 +32,7 @@ AttributeAssignment
 
 包括 BeforeTypeCast、Dirty、PrimaryKey、Query、Read、Serialization、TimeZoneConversion、Write
 
-## 关联
-
-- Associations
-
-包括 builder (又包括：Association、BelongsTo、CollectionAssociation、HasAndBelongsToMany、HasMany、HasOne、SingularAssociation)
-
-还包括 CollectionProxy
-
-- AutosaveAssociation
-
-~~AssociationRelation~~
-
-- Aggregations
-
-- Reflection
-
-## 约定、配置
-
-Timestamp
-
-ModelSchema
-
-- Core
-
-配置 database.yml，及一些看不出来什么功能的东西
-
-~~AttributeSet~~
-
-~~AttributeDecorators~~
-
-~~Attribute~~
-
-## 工具、影响数据库操作
+## 2 工具、影响数据库操作
 
 为了完成某项任务而生。
 
@@ -121,6 +63,64 @@ model 之间的继承关系(用的是同一张表)
 Callbacks
 
 ~~Attributes~~
+
+## 3 关联
+
+- Associations
+
+包括 builder (又包括：Association、BelongsTo、CollectionAssociation、HasAndBelongsToMany、HasMany、HasOne、SingularAssociation)
+
+还包括 CollectionProxy
+
+- AutosaveAssociation
+
+~~AssociationRelation~~
+
+- Aggregations
+
+- Reflection
+
+## 4 迁移
+
+Migration
+
+---
+
+SchemaMigration
+
+Schema
+
+---
+
+下面这 4 个模块，来源 Connection Adapters，它下面还有很多模块，在此忽略其它 ...
+
+SchemaStatements
+
+TableDefinition
+
+Table
+
+DatabaseStatements
+
+---
+
+ModelSchema*
+
+## 约定、配置
+
+Timestamp
+
+ModelSchema
+
+- Core
+
+配置 database.yml，及一些看不出来什么功能的东西
+
+~~AttributeSet~~
+
+~~AttributeDecorators~~
+
+~~Attribute~~
 
 ## 底层
 

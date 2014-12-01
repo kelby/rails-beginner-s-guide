@@ -1,7 +1,7 @@
 ## 在 Model 里快速定义 Callbacks
 
 `define_model_callbacks(*callbacks)` 
-一般的，ORM 都会提供大量的回调函数，并且有的回调函数之间还存在共性。直接使用 ActiveSupport 那一套回调机制的话，略显麻烦，还会有重复代码。所以，ActiveModel 封装了 ActiveSupport，使得定义回调函数变得简单方便。
+一般的，ORM 都会提供大量的回调函数，并且有的回调函数之间还存在共性。直接使用 ActiveSupport 那一套回调机制的话，略显麻烦，还会有重复代码。所以，Active Model 封装了 Active Support，使得定义回调函数变得简单方便。
 
 使用举例：
 

@@ -1,12 +1,19 @@
 ## Template
 
+模板对象及其信息。
+
 ```ruby
 ERBHandler = ActionView::Template::Handlers::ERB.new
 
-def new_template(body = "<%= hello %>", details = { format: :html })
-  ActionView::Template.new(body, "hello template", details.fetch(:handler) { ERBHandler }, {:virtual_path => "hello"}.merge!(details))
-end
+body = "<%= hello %>"
+details = { format: :html }
 
+new_template = ActionView::Template.new(body, "hello template", details.fetch(:handler) { ERBHandler }, {:virtual_path => "hello"}.merge!(details))
+```
+
+当然，这些我们平时都接触不到，知道有这么回事即可。
+
+```ruby
 @template = new_template
 @template = new_template("<%= apostrophe %>")
 @template = new_template("<%= apostrophe %> <%== apostrophe %>", format: :text)

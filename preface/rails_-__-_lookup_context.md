@@ -1,4 +1,4 @@
-## ActionView 渲染及相关概念
+## 渲染及相关概念
 
 [Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
 

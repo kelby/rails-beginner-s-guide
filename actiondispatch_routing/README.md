@@ -1,4 +1,4 @@
-# ActionDispatch Routing
+# Action Dispatch Routing
 
 ActionDispatch 本身很复杂，但我们使用 Rails 进行开发的过程中接触到的主要就是 Mapper 这部分。
 

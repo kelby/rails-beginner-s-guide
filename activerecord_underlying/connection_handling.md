@@ -36,13 +36,13 @@ require 'benchmark'
 # This call creates a connection to our database.
 
 ActiveRecord::Base.establish_connection(
-    :adapter => "mysql",
-    :host => "127.0.0.1",
-    :username => "root", # Note that while this is the default setting for MySQL,
-    :password => "", # a properly secured system will have a different MySQL
-    # username and password, and if so, you'll need to
-    # change these settings.
-    :database => "test")
+  :adapter => "mysql",
+  :host => "127.0.0.1",
+  :username => "root", # Note that while this is the default setting for MySQL,
+  :password => "", # a properly secured system will have a different MySQL
+  # username and password, and if so, you'll need to
+  # change these settings.
+  :database => "test")
 
 # First, set up our database...
 class Category < ActiveRecord::Base
