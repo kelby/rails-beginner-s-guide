@@ -1,4 +1,4 @@
-## Action Controller 概览
+# Action Controller 概览
 
 Controller 里的 public方法(也就是action) 会自动对应 Route 里的路由规则。当请求到来时，action 接受请求并处理，最后渲染相应视图模板(Get-and-show)或重定向到另一 action(do-and-redirect)。
 
@@ -10,7 +10,7 @@ Controller 里的 public方法(也就是action) 会自动对应 Route 里的路�
 
 如你的 Rails 项目对性能要求比较高，或者说对实时性要求比较高，又或者你的项目做为 API 对外提供服务，那么你可以尝试直接继承使用 Metal.
 
-> Rails Metal is a subset of Rack middleware
+**Rails Metal is a subset of Rack middleware** 可以参考【Rack 简介】章节了解更多关于 Rack 的内容。
 
 ## Metal 之外
 

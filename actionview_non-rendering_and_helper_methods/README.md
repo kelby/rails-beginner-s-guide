@@ -10,8 +10,6 @@ Record Identifier
 
 Railtie
 
-Model Naming
-
 Log Subscriber
 
 Layouts

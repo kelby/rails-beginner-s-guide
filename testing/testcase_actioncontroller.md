@@ -1,6 +1,8 @@
 ## Action Controller
 
-### Test Case Behavior
+### Behavior
+
+**实例方法**
 
 ```
 build_request
@@ -16,9 +18,19 @@ put
 
 paramify_values
 setup_controller_request_and_response
-xhr & xml_http_request
 
-document_root_element
+xhr & xml_http_request
+```
+
+**类方法**
+
+```
+controller_class
+controller_class=
+
+determine_default_controller_class
+
+tests
 ```
 
 ### Template Assertions

@@ -1,10 +1,10 @@
-# ~~AppBase~~
+## ~~App Base~~
 
 继承于 Base.
 
 没有对外提供接口
 
-## ~~Gemfile Entry~~
+### ~~Gemfile Entry~~
 
 ```
 github

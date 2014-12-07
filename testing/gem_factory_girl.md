@@ -48,15 +48,15 @@ factory
 
 **Lazy Attributes**
 
-大括号 `{}` 的使用
+大括号 `{}` 的使用。
 
 **Aliases**
 
-可选参数 `:aliases` 的使用
+可选参数 `:aliases` 的使用。
 
 **Dependent Attributes**
 
-`{}` 大括号里面再求值
+`{}` 大括号里面再求值。
 
 **Transient Attributes**
 
@@ -74,7 +74,7 @@ association
 
 **Inheritance**
 
-嵌套使用 `factory`
+嵌套使用 `factory` 方法。
 
 以及 factory 的可选参数 `:parent`
 

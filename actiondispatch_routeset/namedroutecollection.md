@@ -32,7 +32,7 @@ length
 
 `define_url_helper` 我们使用的路由相关的 x_url 和 x_path 辅助方法就是由它而来的。
 
-### ~~UrlHelper~~
+### ~~Url Helper~~
 
 非常底层的实现，主要对外接口 `self.create`
 

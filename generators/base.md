@@ -1,8 +1,8 @@
-# Base √
+## Base √
 
 include Rails::Generators::Actions
 
-## Class Public methods
+### 类方法
 
 ```ruby
 base_root
@@ -22,7 +22,7 @@ source_root
 
 `desc` 终端里使用对应命令获取帮助(即 --help)会在最后显示此内容。
 
-## Class Protected methods
+### 其它类方法
 
 ```
 add_shebang_option!  
@@ -38,13 +38,13 @@ generator_name
 usage_path
 ```
 
-## Instance Protected methods
+### 实例方法
 
 ```
 extract_last_module
 ```
 
-## 其它
+### 其它
 
 ```
 filename_with_extensions

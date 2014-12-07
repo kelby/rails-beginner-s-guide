@@ -1,4 +1,4 @@
-# Configuration Middleware Stack Proxy
+## Configuration Middleware Stack Proxy
 
 这里指的是 Rails::Configuration，名字起得不是很好。
 
@@ -6,7 +6,7 @@
 
 被 Railtie 所调用，又由于继承关系，Engine、Application、YourApp 都可用。
 
-## 对外提供的接口
+### 对外提供的接口
 
 `use`
 

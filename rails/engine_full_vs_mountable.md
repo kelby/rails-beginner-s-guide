@@ -1,10 +1,10 @@
-# Engine full vs mountable
+## Engine full vs mountable
 
 生成命令 `rails plugin new`
 
 常用参数 `--full` 或 `--mountable`
 
-## full
+### full
 
 main_app 路由继承于 Engine，所以它们用的路由是同一套。
 
@@ -21,7 +21,7 @@ main_app 会继承 Engine 的 model、controller、routes 等。
 
 也就是说它们的环境是一样的。
 
-## mountable
+### mountable
 
 首先，从路由上讲它们是隔离开的：
 
@@ -54,10 +54,12 @@ model、controller、routes 等都是相互隔离的。
 
 也就是说它们的环境不是一样的。
 
-## 那么问题就来了
+### 那么问题就来了
 
 --full 仅做文件、目录上的分隔，实际上我们没必要使用，有其它方式实现(如：使用命名空间)。
 
 --mountable 才是推荐做法(从 Engine 存在的意义及文档上，可以看出这点)。
 
-其它更多信息，参考 [Rails Engine Patterns](http://www.slideshare.net/AndyMaleh/rails-engine-patterns)
+**参考**
+
+[Rails Engine Patterns](http://www.slideshare.net/AndyMaleh/rails-engine-patterns)

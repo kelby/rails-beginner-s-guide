@@ -1,18 +1,26 @@
 ## rspec-rails
 
-View Rendering
+**View Rendering**
 
 ```
 render_views
 ```
 
-View Assigns
+**View Assigns**
 
 ```
 assign
 ```
 
-Matchers
+定义一个实例变量并赋值。对应着在 Controlller 里定义实例变量并赋值，然后传递给 View 使用。
+
+使用举例：
+
+```ruby
+assign(:widget, Widget.new)
+```
+
+**Matchers**
 
 ```
 be_a_new
@@ -35,7 +43,7 @@ redirect_to
 route_to
 ```
 
-Examples
+**Examples**
 
 ```
 controller

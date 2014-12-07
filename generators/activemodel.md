@@ -1,8 +1,8 @@
-# ActiveModel
+## Active Model
 
 included by ResourceHelpers & ModelHelpers
 
-## Class Public methods
+### 类方法
 
 ```
 all
@@ -11,7 +11,7 @@ find
 new
 ```
 
-## Instance Public methods
+### 实例方法
 
 ```
 destroy

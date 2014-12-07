@@ -1,17 +1,5 @@
 ## Action Dispatch
 
-### Test Process
-
-```
-assigns
-cookies
-flash
-session
-
-fixture_file_upload
-redirect_to_url
-```
-
 ### Assertions
 
 ```
@@ -35,13 +23,25 @@ assert_routing
 with_routing
 ```
 
+### Test Process
+
+```
+assigns
+cookies
+flash
+session
+
+fixture_file_upload
+redirect_to_url
+```
+
 ### Test Request
 
 ```
 accept=
 action=
 
-cookies
+cookies & rack_cookies
 
 host=
 
@@ -51,7 +51,6 @@ if_none_match=
 path=
 port=
 
-rack_cookies
 remote_addr=
 request_method=
 request_uri=
@@ -64,20 +63,28 @@ user_agent=
 ```
 from_response
 
-# Was the response successful?
+# response successful?
 success? & successful?
 
-# Was the URL not found?
+# URL not found?
 missing? & not_found?
 
-# Were we redirected?
+# redirected?
 redirect? & redirection?
 
-# Was there a server-side error?
+# a server-side error?
 error? & server_error?
 ```
 
 ### Integration Test
+
+**类方法**
+
+```
+app
+```
+
+**实例方法**
 
 ```
 app
@@ -88,9 +95,7 @@ document_root_element
 url_options
 ```
 
-`app` 包含了类方法 & 实例方法
-
-**RequestHelpers**
+**Request Helpers**
 
 ```
 delete

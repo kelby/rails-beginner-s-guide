@@ -1,4 +1,4 @@
-# Migration
+## Migration
 
 require 'actions/create_migration'
 

@@ -1,6 +1,6 @@
 ## Attribute Methods
 
-AttributeMethods 可以很方便给现有属性(可以是虚拟属性)添加前缀、后缀或前缀 + 后缀，然后得到新的方法。
+Attribute Methods 可以很方便给现有属性(可以是虚拟属性)添加前缀、后缀或前缀 + 后缀，然后得到新的方法。
 
 使用步骤:
 
@@ -10,7 +10,7 @@ AttributeMethods 可以很方便给现有属性(可以是虚拟属性)添加前�
 4. 定义一个 `attributes` 方法。返回值是一个 hash，属性的名字做为 key，属性的值做为 value. 实际上可实现其读、写方法，相当于 attr_accessor
 5. 用 attribute 加上刚才的前缀、后缀做为方法名，定义一个新的方法
 
-单独使用 AttributeMethods 举例:
+单独使用 Attribute Methods 举例:
 
 ```ruby
 class Person
@@ -70,4 +70,4 @@ person.me_mateys_name_is_in_pirate?       # => false
 person.me_mateys_profession_is_in_pirate? # => true
 ```
 
-主要用到的方法，都在示例里。ActiveRecord 基于它也实现了一个自己的 AttributeMethods.
+主要用到的方法，都在示例里。Active Record 基于它也实现了一个自己的 Attribute Methods.

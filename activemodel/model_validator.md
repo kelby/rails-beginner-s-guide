@@ -22,7 +22,9 @@ class MyValidator < ActiveModel::Validator
 end
 ```
 
-**直接继承于 Validator** 的校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动校验。实际上，推荐使用**更灵活的 EachValidator**. 任何继承于 ActiveModel::EachValidator 的校验器都要实现 `validate_each` 方法，此方法接收要校验的 record、attribute、value 做为参数。
+**直接继承于 Validator** 的校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动校验。
+
+**更灵活的 EachValidator** 实际上，推荐使用这种方式。任何继承于 ActiveModel::EachValidator 的校验器都要实现 `validate_each` 方法，此方法接收要校验的 record、attribute、value 做为参数。
 
 ```ruby
 class TitleValidator < ActiveModel::EachValidator

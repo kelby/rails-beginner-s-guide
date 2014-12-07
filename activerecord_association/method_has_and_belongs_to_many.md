@@ -1,4 +1,4 @@
-## 4) has_and_belongs_to_many
+## has_and_belongs_to_many
 
 ### 方法本身表示什么意思。
 

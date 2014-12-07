@@ -18,6 +18,8 @@ after_teardown
 clear_enqueued_jobs
 clear_performed_jobs
 
+perform_enqueued_jobs
+
 queue_adapter
 ```
 
@@ -27,10 +29,8 @@ queue_adapter
 delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, to: :queue_adapter
 ```
 
-### Test Adapter
+除上述外方法外，测试环境下可以使用 TestAdapter 适配器。
 
-```
-enqueued_jobs
-
-performed_jobs
+```ruby
+Rails.application.config.active_job.queue_adapter = :test
 ```

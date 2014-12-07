@@ -4,10 +4,10 @@
 
 | 方法 | 解释 |
 | -- | -- |
+| scope | 命名 scope |
 | default_scope | 设置默认 scope |
 | unscoped | 跳过之前设置的 scope |
 | all | all 方法，默认已经 scope |
-| scope | 命名 scope |
 
 ### `scope(name, body, &block)`
 

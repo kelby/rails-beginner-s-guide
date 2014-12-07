@@ -1,4 +1,4 @@
-# ActiveRecord 约定、配置
+# Active Record 约定、配置
 
 ## Naming Conventions
 

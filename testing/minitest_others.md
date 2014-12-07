@@ -1,4 +1,4 @@
-# MiniTest Others
+其它多个类或模块，统一在此列举。
 
 ## Kernel
 
@@ -36,7 +36,7 @@ end
 
 ## Benchmark
 
-已经 mix 
+已经 mixed 进 TestCase.
 
 类方法
 
@@ -67,7 +67,7 @@ sigma
 validation_for_fit
 ```
 
-## BenchSpec
+## Bench Spec
 
 类方法
 
@@ -79,7 +79,7 @@ bench_performance_linear
 bench_range
 ```
 
-## AbstractReporter
+## Abstract Reporter
 
 实例方法
 

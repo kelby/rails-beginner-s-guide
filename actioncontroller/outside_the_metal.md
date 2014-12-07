@@ -21,7 +21,7 @@ fresh_when 匹配的只是动态资源。静态资源怎么办？
 
 ## Flash
 
-提供 add_flash_types 方法，并对 redirect_to 稍微做了处理。在 Others#Flash 章节会有专门介绍。
+提供 add_flash_types 方法，并对 redirect_to 稍微做了处理。在【其它#Flash 的使用】章节会有专门介绍。
 
 ## Helpers
 

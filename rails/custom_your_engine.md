@@ -1,4 +1,4 @@
-# 定制自己的 Engine
+## 定制自己的 Engine
 
 Engine = Ruby gem + MVC stack elements
 
@@ -6,7 +6,7 @@ Engine = Ruby gem + MVC stack elements
 
 常用参数 `--full` 或 `--mountable`
 
-## 继承于 Engine
+### 继承于 Engine
 
 1 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
 
@@ -36,7 +36,7 @@ gem 'your_engine', path: "/path/to/your_engine"
 
 3 在 routes.rb 里 mount Your::Engine
 
-## config 和 initializer
+### config 和 initializer
 
 和 Railtie 一样，你可以使用 config, initializer 方法。但不同点是，在 Engine 里的配置和初始化，它们的作用域仅限于当前 Engine.
 
@@ -73,7 +73,7 @@ class MyEngine < Rails::Engine
 end
 ```
 
-## paths
+### paths
 
 Engine 默认都有自己的文件、目录结构，如果你没有定制，那么就使用默认的：
 
@@ -127,7 +127,7 @@ end
 
 Application 在 Engine 之上，它又有自己的配置和初始化。它配置了 app/ 下的文件、目录会被自动加载，所以像 app/services 会被自动加载。
 
-## Engine 内容是 Rack Application
+### Engine 内容是 Rack Application
 
 Engine 内容也可以是一个 Rack Application. 当你的代码本身是 Rack Application，而又想使用 Engine 的特性时，可以这么做：
 
@@ -150,7 +150,7 @@ Rails.application.routes.draw do
 end
 ```
 
-## Engine 内容是 Middleware
+### Engine 内容是 Middleware
 
 Engine 内容也可以是一个 Middleware. 当你的代码本身是 Middleware，而又想使用 Engine 的特性时，可以这么做：
 
@@ -163,7 +163,7 @@ module MyEngine
 end
 ```
 
-## Engine 使用自己的 Routes*
+### Engine 使用自己的 Routes*
 
 Engine 默认没有自己的 endpoint(入口)，使用 Engine 的应用用什么，它就用什么。需要的话，你也可以指定：
 
@@ -174,7 +174,7 @@ MyEngine::Engine.routes.draw do
 end
 ```
 
-## engine_name
+### engine_name
 
 用几个场景可能会用到 engine name:
 
@@ -192,7 +192,7 @@ module MyEngine
 end
 ```
 
-## isolate_namespace
+### isolate_namespace
 
 默认 Engine 和应用是在一个环境里的，这意味着应用所有 helper 和命名路由都可以在 Engine 里使用。
 
@@ -239,7 +239,7 @@ end
 
 另一个改变是对表名的更改。默认使用 engine_name (在这里是 "my_engine")做为表前缀，也就是说 MyEngine::Article 对应的表名应该是 my_engine_articles
 
-## mount as - 在 Engine 之外使用其路由
+### mount as - 在 Engine 之外使用其路由
 
 mount(挂载)后 Engine 和应用之间的路由仍然是独立的，你仍然不能在应用里直接使用 Engine 里面的路由。举例：
 
@@ -283,7 +283,7 @@ form_for([my_engine, @user])
 
 这里生成的路由规则类似 `my_engine.user_path(@user)`
 
-## helper - Isolated engine's helpers
+### helper - Isolated engine's helpers
 
 有时候，你的 Engine 是 Isolated，但你又想使用 Engine 里面定义的 helper，你可以引入某个模块：
 
@@ -303,7 +303,7 @@ end
 
 > Note: 这里引入的只是 helpers 目录下的文件，在 Controller 里定义，然后使用 helper_method 的方法不包含在内。
 
-## Migrations & seed data
+### Migrations & seed data
 
 Engine 也可以有自己的迁移文件，和普通应用一样，它们位于 `db/migrate` 下面。
 
@@ -321,7 +321,7 @@ Engine 也可以有自己的 seed 文件，它们位于 `db/seeds.rb` 下面。
 MyEngine::Engine.load_seed
 ```
 
-## railties_order
+### railties_order
 
 场景
 
@@ -359,7 +359,7 @@ main_app 表示我们的项目本身，在 Application::Finisher 里定义，all
 
 > Note: 上面的例子，你也可以用其它手段完成，如 namespace 等。
 
-## 迁移文件
+### 迁移文件
 
 ```
 rake my_engine:install:migrations

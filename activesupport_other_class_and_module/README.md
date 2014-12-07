@@ -1,4 +1,4 @@
-# ActiveSupport 非 autoload 类和模块
+# Active Support 非 autoload 类和模块
 
 ```
 execute_hook

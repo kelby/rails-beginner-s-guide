@@ -1,8 +1,8 @@
-# Flash 的使用
+## Flash 相关使用
 
 ActionDispatch 和 ActionController 都有 Flash 相关的代码，统一把它们放到这里来讲。
 
-## 基本使用
+### 基本使用
 
 类似 Hash，设置 flash
 
@@ -29,7 +29,7 @@ end
 <% end %>
 ```
 
-## alert 和 notice
+### alert 和 notice
 
 因为 alert 和 notice 类型的 flash 太常见，所以提供了语法糖，你还可以这么写：
 
@@ -45,22 +45,22 @@ flash.notice
 
 > Note: 其它 flash_type 默认不能这么写
 
-上面是由 ActionDispatch 提供，下面由 ActionController 提供 (基于上面)。
+上面是由 Action Dispatch 提供，下面由 Action Controller 提供 (基于上面)。
 
-## add_flash_types
+### add_flash_types
 
 觉得上面的写法还是不够简短，觉得 notice 和 alert 类型不够用？使用 **add_flash_types**
 
 ```ruby
-# in application_controller.rb
+# cotrollars/pplication_controller.rb
 class ApplicationController < ActionController::Base
   add_flash_types :warning, :success, :danger
 end
 
-# in your view
+# View 代码
 <%= warning %>
 
-# in your controller
+# Controller 代码
 redirect_to user_path(@user), warning: "Incomplete profile"
 ```
 
@@ -68,11 +68,11 @@ redirect_to user_path(@user), warning: "Incomplete profile"
 
 它们和 flash[:warning] 或 flash.warning 和 flash: { warning: "Incomplete profile" } 效果一样。
 
-## 还是 alert 和 notice
+### 还是 alert 和 notice
 
 alert 和 notice 默认已经使用 add_flash_types
 
-## flash.now[:flash_type]
+### flash.now[:flash_type]
 
 也许，你还看过一种写法 flash.now[:flash_type]
 

@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### Instance Protected methods
+### 实例方法
 
 ```
 compare_with_real_token

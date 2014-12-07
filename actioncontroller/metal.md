@@ -27,7 +27,7 @@ get 'hello', to: HelloController.action(:index)
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
-## Metal 提供的方法：
+### Metal 提供的方法：
 
 **类方法**
 
@@ -73,7 +73,7 @@ class_attribute :middleware_stack
 self.middleware_stack = ActionController::MiddlewareStack.new
 ```
 
-## Others
+### 其它
 
 - 不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
 
@@ -90,7 +90,7 @@ self.middleware_stack = ActionController::MiddlewareStack.new
 
 > Note: @app 和 env 一直在变，但又一直没变。
 
-## 参考
+参考
 
 [Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)<br>
 [Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>

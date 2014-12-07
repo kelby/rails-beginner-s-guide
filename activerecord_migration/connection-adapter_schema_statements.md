@@ -26,13 +26,18 @@ change_table
 table_exists?
 
 # 外键
+add_foreign_key
+remove_foreign_key
+
+# 引用(区别于外键，多态也可用)
 add_reference & add_belongs_to
+remove_belongs_to & remove_reference
 ```
 
 其它操作或问询：
 
 ```
-add_foreign_key, add_timestamps
+add_timestamps
 
 assume_migrated_upto_version
 
@@ -47,7 +52,7 @@ columns
 foreign_keys
 native_database_types
 
-remove_belongs_to, remove_foreign_key, remove_reference, remove_timestamps
+remove_timestamps
 
 table_alias_for
 ```

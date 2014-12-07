@@ -1,4 +1,4 @@
-# ActiveRecord 底层
+# Active Record 底层
 
 ## Serialization
 

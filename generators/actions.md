@@ -1,6 +1,6 @@
-# Actions
+## Actions
 
-**实例方法**
+### 实例方法
 
 ```
 add_source
@@ -33,7 +33,7 @@ route
 vendor
 ```
 
-**Instance Protected methods**
+### 其它实例方法
 
 ```
 extify
@@ -41,11 +41,11 @@ log
 quote
 ```
 
-## ~~Create Migration~~
+### ~~Create Migration~~
 
 被 Migration 调用，但应该不能直接使用。
 
-### Instance Public methods
+**实例方法**
 
 ```
 existing_migration
@@ -57,7 +57,7 @@ relative_existing_migration
 revoke!
 ```
 
-### Instance Protected methods
+**其它实例方法**
 
 ```
 on_conflict_behavior

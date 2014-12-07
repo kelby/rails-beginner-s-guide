@@ -1,32 +1,32 @@
-# Rails 应用启动过程
+## Rails 应用启动过程
 
 1) 入口 config.ru
 
-```ruby
+```
 require ::File.expand_path('../config/environment',  __FILE__)
 ```
 
 2) 转入 environment.rb
 
-```ruby
+```
 require File.expand_path('../application', __FILE__)
 ```
 
 3) 转入 application.rb
 
-```ruby
+```
 require File.expand_path('../boot', __FILE__)
 ```
 
 4) 转入 boot.rb
 
-```ruby
+```
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 ```
 
 5) Gemfile
 
-```ruby
+```
 gem 'gem_name'
 ```
 
@@ -36,7 +36,7 @@ gem 'gem_name'
 
 7) application.rb
 
-7.1) require ’something’ # like require ‘rails’
+7.1) require 'something' # like require 'rails'
 
 7.2) AppName::Application < Rails::Application
 
@@ -63,13 +63,13 @@ end
 
   8.3) 定制的 Railtie，Engine
 
-构建 middleware stack
-(这样查看 middleware Rails.application.send :middleware 顺序从前到后)
-（Rails.application.send :default_middleware_stack 这样是默认的)
+构建 middleware stack.<br>
+(Rails.application.send :middleware 查看 middleware, 顺序从前到后)  
+(Rails.application.send :default_middleware_stack 查看 middleware, 顺序是默认)
 
 8.4) Finisher
 
-上面是我自己归纳的
+上面是我自己归纳的。
 
 ---
 

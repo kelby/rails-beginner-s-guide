@@ -2,7 +2,7 @@
 
 :action - Specifies the action prefix for the named route: :new or :edit. Default is no prefix.
 
-:routing_type - Allowed values are :path or :url. Default is :url.
+:routing_type - 生成 :path 还是 :url. 默认是 :url.
 
 builder = ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder.plural '', 'url'
 

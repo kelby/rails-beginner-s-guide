@@ -1,29 +1,4 @@
-## Caching Fragments
-
-对片段缓存的一些操作。
-
-你可以手动指定片段缓存过期的规则：
-
-```ruby
-expire_fragment(controller: 'products', action: 'recent', action_suffix: 'all_products')
-```
-
-提供了这么几个方法：
-
-```ruby
-fragment_cache_key
-
-fragment_exist?
-
-read_fragment
-write_fragment
-
-expire_fragment
-```
-
-操作这几个方法的是 controller，而这个几方法操作的是 cache_store.
-
-> Note: ActionView::Helpers::CacheHelper 里的 cache 方法用到了 read_fragment、write_fragment 和 fragment_cache_key
+由两部分组成：Caching 和 Caching Fragments.
 
 ## Caching
 
@@ -125,7 +100,34 @@ expire_fragment('all_available_products')
 
 > Note: 在 Controller 和 View 里写缓存相关的代码，这真的很丑陋。并且一个页面往往由很多元素组成，只能在它的 action 里管理显然很不方便。推荐 cells
 
-## 参考
+## Caching Fragments
+
+对片段缓存的一些操作。
+
+你可以手动指定片段缓存过期的规则：
+
+```ruby
+expire_fragment(controller: 'products', action: 'recent', action_suffix: 'all_products')
+```
+
+提供了这么几个方法：
+
+```ruby
+fragment_cache_key
+
+fragment_exist?
+
+read_fragment
+write_fragment
+
+expire_fragment
+```
+
+操作这几个方法的是 controller，而这个几方法操作的是 cache_store.
+
+> Note: ActionView::Helpers::CacheHelper 里的 cache 方法用到了 read_fragment、write_fragment 和 fragment_cache_key
+
+参考
 
 [Speed Up With Rails Cache](http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/)  
 [Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)  

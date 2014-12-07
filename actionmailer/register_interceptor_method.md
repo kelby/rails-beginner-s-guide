@@ -2,7 +2,7 @@
 
 为了"开发和测试尽量的接近生产环境"和"知道发送出去的邮件真正的样子"等目的，我们希望在非生产环境下，能够查看邮件发送情况。
 
-## 解决方案
+### 解决方案
 
 - (开发、测试)用邮件预览 gem
 
@@ -59,7 +59,7 @@ class EnvironmentInterceptor
 end
 ```
 
-## 参考
+参考
 
 [Abort mail delivery with Rails 3 interceptors](http://thepugautomatic.com/2012/08/abort-mail-delivery-with-rails-3-interceptors/)<br>
 [How to implement an email Interceptor for development](http://blog.crowdint.com/2012/02/23/how-to-implement-an-email-interceptor-for-development.html)<br>

@@ -11,7 +11,29 @@
 
 assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
 
-### Test Case
+### Behavior
+
+**实例方法**
+
+```
+initialize_test_deliveries
+
+restore_delivery_method
+restore_test_deliveries
+
+set_delivery_method
+set_expected_mail
+```
+
+**类方法**
+
+```
+determine_default_mailer
+
+mailer_class
+
+tests
+```
 
 除通常的测试方法外，还有
 
@@ -29,26 +51,4 @@ email = UserMailer.confirmation(user.id).deliver_now
 
 assert ActionMailer::Base.deliveries.any?
 assert_equal [user.email], email.to
-```
-
-#### Behavior
-
-```
-initialize_test_deliveries
-
-restore_delivery_method
-restore_test_deliveries
-
-set_delivery_method
-set_expected_mail
-```
-
-#### 类方法
-
-```
-determine_default_mailer
-
-mailer_class
-
-tests
 ```

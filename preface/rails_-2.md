@@ -1,10 +1,10 @@
-# 一步步分析从请求到响应涉及到 Rails 的哪些模块
+## 一步步分析从请求到响应涉及到 Rails 的哪些模块
 
 本文对 Rails 的使用几乎没有帮助，但有利于剖析 Rails 源码，这符合本书的写作目标，故成文。
 
 你可以比较独立的使用 Rails 的各个模块。
 
-## 1. 纯 Rack 实现
+### 纯 Rack 实现
 
 ```ruby
 # config.ru
@@ -12,7 +12,7 @@ require 'bundler/setup'
 
 run Proc.new {|env|
  if env["PATH_INFO"] == "/"
-   [200, {"Content-Type" => "text/html"}, ["<h1>Front Page</h1>"]]
+   [200, {"Content-Type" => "text/html"}, ["<h1>Hello World</h1>"]]
  else
    [404, {"Content-Type" => "text/html"}, ["<h1>Not Found</h1>"]]
  end
@@ -21,7 +21,7 @@ run Proc.new {|env|
 
 可通过 `rackup config.ru` 运行以上代码，默认在 http://localhost:9292/ 可以查看运行结果。
 
-## 2. 引入 ActionDispatch & 3. 纯手动实现 Controller#actions
+### 引入 ActionDispatch & 纯手动实现 Controller#actions
 
 ```ruby
 # config.ru
@@ -55,7 +55,7 @@ end
 run routes
 ```
 
-## 4. 引入 'action_controller'，使用 Metal
+### 引入 'action_controller'，使用 Metal
 
 ```ruby
 # config.ru
@@ -83,7 +83,7 @@ end
 run routes
 ```
 
-## 5. 项目使用其它 middleware, Controller 包含其它模块 & 6. Controller 里纯手工打造 View 渲染相关代码
+### 项目使用其它 middleware, Controller 包含其它模块 & Controller 里纯手工打造 View 渲染相关代码
 
 ```ruby
 # config.ru
@@ -127,7 +127,7 @@ run routes
 Number is: <%= @local_var %>
 ```
 
-## 7. 引进 'action_view'
+### 引进 'action_view'
 
 ```ruby
 # config.ru
@@ -174,7 +174,7 @@ Number is: <%= @local_var %>
 Content is: <pre><%= env['action_dispatch.request.path_parameters'][:id] %></pre>
 ```
 
-## 8. 直接使用 ActionController::Base
+### 直接使用 ActionController::Base
 
 ```ruby
 # config.ru
@@ -216,7 +216,7 @@ run routes
 # app/views/mainpage/show.html.erb
 ```
 
-## 解读以上进化过程
+### 汇总以上进化过程
 
 `run` 由应用服务器提供，运行一个 Rack application.
 
@@ -232,6 +232,6 @@ run routes
 9. 没有使用 ActionMailer，ActiveJob, ActiveModel, ActiveRecord
 10. 使用但没感受到 AbstractController，ActiveSupport, Railties
 
-## 参考
+参考
 
 [A Rails App in a Single File ](http://rofish.net/rails_single_file.pdf)

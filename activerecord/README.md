@@ -2,67 +2,7 @@
 
 ## 1 数据库操作(增删查改问)
 
-- locking
-
-包括 Optimistic、Pessimistic
-
-- Scoping
-
-包括 Default、Named
-
-- Relation
-
-包括 SpawnMethods、QueryMethods、~~PredicateBuilder~~、~~Merger~~、FinderMethods、~~Delegation~~、Calculations、Batches
-
-- Querying
-
-Persistence
-
-NullRelation
-
-- ~~DynamicMatchers~~
-
-将被废除 gem 'activerecord-deprecated_finders'
-
-- CounterCache
-
-AttributeAssignment
-
-- AttributeMethods
-
-包括 BeforeTypeCast、Dirty、PrimaryKey、Query、Read、Serialization、TimeZoneConversion、Write
-
 ## 2 工具、影响数据库操作
-
-为了完成某项任务而生。
-
-Transactions
-
-- Validations
-
-包括 AssociatedValidator、PresenceValidator、UniquenessValidator
-
-~~Translation~~
-
-Store
-
-NoTouching
-
-ReadonlyAttributes
-
-NestedAttributes
-
-Integration
-
-- Inheritance
-
-model 之间的继承关系(用的是同一张表)
-
-- Enum
-
-Callbacks
-
-~~Attributes~~
 
 ## 3 关联
 
@@ -81,30 +21,6 @@ Callbacks
 - Reflection
 
 ## 4 迁移
-
-Migration
-
----
-
-SchemaMigration
-
-Schema
-
----
-
-下面这 4 个模块，来源 Connection Adapters，它下面还有很多模块，在此忽略其它 ...
-
-SchemaStatements
-
-TableDefinition
-
-Table
-
-DatabaseStatements
-
----
-
-ModelSchema*
 
 ## 约定、配置
 

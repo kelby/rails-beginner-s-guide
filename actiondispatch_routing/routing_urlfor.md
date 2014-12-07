@@ -1,8 +1,6 @@
 ## Url For
 
-对外提供 `url_for`，是封装了 HelperMethodBuilder (极端情况下才调用到)
-
-和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder (极端情况下才调用到)
+对外提供 `url_for`，和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder (极端情况下才调用到)
 
 使用举例：
 
@@ -25,3 +23,5 @@ url_for controller: 'tasks', action: 'testing', host: 'somehost.org', script_nam
 url_for controller: 'tasks', action: 'testing', host: 'somehost.org', script_name: "/myapp", only_path: true
 # => '/myapp/tasks/testing'
 ```
+
+可选参数的类型可以是：nil、Hash、String、Symbol、Array、Class 等，根据不同参数，可能会用到 HelperMethodBuilder 里的东西。

@@ -1,16 +1,19 @@
-# Action View
+## Action View
 
-## Behavior
+### Behavior
+
+**实例方法**
 
 ```
 config
-document_root_element
+
 render
 rendered_views
+
 setup_with_controller
 ```
 
-### 类方法
+**类方法**
 
 ```
 determine_default_helper_class
@@ -21,22 +24,24 @@ helper_method
 tests
 ```
 
-### Locals
+**Locals**
 
 ```
 render
 ```
 
-### Rendered Views Collection
+**Rendered Views Collection**
 
 ```
 add
 locals_for
+
 rendered_views
+
 view_rendered?
 ```
 
-## Test Controller
+### Test Controller
 
 ```
 controller_path=

@@ -1,6 +1,6 @@
-# 其它
+## 其它
 
-## Default Middleware Stack
+### Default Middleware Stack
 
 `build_stack`
 
@@ -12,7 +12,7 @@
 Rails.application.send(:default_middleware_stack)
 ```
 
-## Routes Reloader*
+### Routes Reloader*
 
 开发环境下，对下面这条命令的处理
 

@@ -1,7 +1,8 @@
-# Duration
+## Duration
 
 ```
 ago & until
+
 from_now & since
 ```
 

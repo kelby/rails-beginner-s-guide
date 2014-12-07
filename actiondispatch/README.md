@@ -4,8 +4,6 @@
 对内：RouteSet；
 对外：除 RouteSet 外，routing 目录里的其它模块。
 
----
-
 四部分
 
 ## Routing
@@ -71,7 +69,28 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 
 ```ruby
 Rails.application.send :default_middleware_stack
-  => #<ActionDispatch::MiddlewareStack:0x007f922de455e0 @middlewares=[Rack::Sendfile, ActionDispatch::Static, Rack::Lock, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ParamsParser, Rack::Head, Rack::ConditionalGet, Rack::ETag]>
+
+=> #<ActionDispatch::MiddlewareStack:0x007f7f64f7d6c8
+ @middlewares=
+  [Rack::Sendfile,
+   ActionDispatch::Static,
+   Rack::Lock,
+   Rack::Runtime,
+   Rack::MethodOverride,
+   ActionDispatch::RequestId,
+   Rails::Rack::Logger,
+   ActionDispatch::ShowExceptions,
+   ActionDispatch::DebugExceptions,
+   ActionDispatch::RemoteIp,
+   ActionDispatch::Reloader,
+   ActionDispatch::Callbacks,
+   ActionDispatch::Cookies,
+   ActionDispatch::Session::CookieStore,
+   ActionDispatch::Flash,
+   ActionDispatch::ParamsParser,
+   Rack::Head,
+   Rack::ConditionalGet,
+   Rack::ETag]>
 ```
 
 middleware 的调用是一级级的：

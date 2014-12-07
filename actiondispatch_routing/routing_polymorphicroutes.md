@@ -26,11 +26,11 @@ end
 
 ```ruby
 # calls post_url(post)
-polymorphic_url(post) # => "http://example.com/posts/1"
-polymorphic_url([blog, post]) # => "http://example.com/blogs/1/posts/1"
+polymorphic_url(post)                 # => "http://example.com/posts/1"
+polymorphic_url([blog, post])         # => "http://example.com/blogs/1/posts/1"
 polymorphic_url([:admin, blog, post]) # => "http://example.com/admin/blogs/1/posts/1"
-polymorphic_url([user, :blog, post]) # => "http://example.com/users/1/blog/posts/1"
-polymorphic_url(Comment) # => "http://example.com/comments"
+polymorphic_url([user, :blog, post])  # => "http://example.com/users/1/blog/posts/1"
+polymorphic_url(Comment)              # => "http://example.com/comments"
 ```
 
 当然，多态关联也可用
@@ -49,13 +49,13 @@ end
 
 ```ruby
 polymorphic_path([parent, Comment]) # "/posts/1/comments" or "'news/1/comments"
-polymorphic_path(parent) # "http://example.com/posts/1/comments" or "http://example.com/news/1/comments"
+polymorphic_path(parent)            # "http://example.com/posts/1/comments" or "http://example.com/news/1/comments"
 
 其它
-new_polymorphic_path(Post)    # "/posts/new"
-new_polymorphic_url(Post)    # "http://example.com/posts/new"
-edit_polymorphic_path(post)    # "/posts/1/edit"
-edit_polymorphic_url(post)    # "http://example.com/posts/1/edit"
+new_polymorphic_path(Post)          # "/posts/new"
+new_polymorphic_url(Post)           # "http://example.com/posts/new"
+edit_polymorphic_path(post)         # "/posts/1/edit"
+edit_polymorphic_url(post)          # "http://example.com/posts/1/edit"
 ```
 
 ### 与 url_for 的区别
@@ -79,7 +79,7 @@ edit_polymorphic_url
 它们封装 polymorphic_url 或 polymorphic_path 而来，所以特点和使用类似。
 它们是元编程定义的，所以 API 里看不到。
 
-### 其它 action 和其它参数
+### :action 和其它参数
 
 举例：
 

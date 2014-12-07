@@ -38,7 +38,7 @@ class Person
 end
 ```
 
-运用 **AttributeMethods** 生成的方法，能精确跟踪到某属性：
+运用 **Attribute Methods** 生成的方法，能精确跟踪到某属性：
 
 ```
 attribute_method_suffix '_changed?', '_change', '_will_change!', '_was'
@@ -74,4 +74,4 @@ changes_applied
 clear_changes_information
 ```
 
-ActiveRecord 也有同名模块，它是对这里的 Dirty 的封装，并且它并没有对外提供 API.
+Active Record 也有同名模块，它是对这里的 Dirty 的封装，并且它并没有对外提供 API.

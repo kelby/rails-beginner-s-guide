@@ -1,10 +1,10 @@
 ## Renderers 增删渲染器
 
+**类方法**
+
 ```
 add
 remove
-
-render_to_body
 ```
 
 举例一，使用 add 添加渲染器：
@@ -37,7 +37,13 @@ end
 ActionController::Renderers.remove(:csv)
 ```
 
-## 类方法
+**实例方法**
+
+```
+render_to_body
+```
+
+### 类方法
 
 ```
 use_renderer & use_renderers

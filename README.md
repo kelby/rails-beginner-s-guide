@@ -22,8 +22,8 @@
 - Ruby 语法、Rails 入门
 - 和具体业务相关的问题或功能
 
-## 关于我
+## 联系我
 
-姓名：李真宽  
-邮件：leekelby@gmail.com  
+邮箱：leekelby@gmail.com  
+微博：@李真宽  
 微信：13737363654  

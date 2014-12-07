@@ -8,7 +8,11 @@
 
 ## Generator
 
-## ~~MountedHelpers~~
+## Journey
+
+包括：Routes、Router 和 Formatter.
+
+## ~~Mounted Helpers~~
 
 ### 路由已经定义，请求过来如何匹配？
 

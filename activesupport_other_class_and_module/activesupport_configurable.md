@@ -51,7 +51,7 @@ user.allowed_access # => true
 User.allowed_access # => false
 ```
 
-config_accessor 使用举例：
+config_accessor 再次举例：
 
 ```ruby
 class User

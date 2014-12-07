@@ -1,6 +1,6 @@
-## Strong Parameters & Parameters
+由两部分组成：Strong Parameters 和 Parameters.
 
-### Strong Parameters
+## Strong Parameters
 
 提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
 
@@ -30,7 +30,7 @@ params
    "controller"=>"posts"}
 ```
 
-### Parameters
+## Parameters
 
 Parameters 继承于 HashWithIndifferentAccess，而 HashWithIndifferentAccess 又继承于 Hash. 所以它的实例对象类似于 Hash 的实例对象。
 

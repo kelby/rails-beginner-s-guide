@@ -1,4 +1,4 @@
-## 1) belongs_to
+## belongs_to
 
 ### 方法本身表示什么意思。
 

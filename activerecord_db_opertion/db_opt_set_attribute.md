@@ -1,22 +1,20 @@
 ## 数据更新方法对比
 
-| 方法 | Uses Default Accessor | Saved to Database | Validations | Callbacks | Touches updated_at | Readonly check | 类、实例 | 单属性、多属性 |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| attribute= | Yes | No | n/a | n/a | n/a | n/a | 7:2 | |
-| write_attribute | No | No | n/a | n/a | n/a | n/a | 7:3 ||
-| update_attribute | Yes | Yes | No | Yes | Yes | Yes | 7:4 ||
-| attributes= | Yes | No | n/a | n/a | n/a | n/a | 7:5 ||
-| update & update_attributes | Yes | Yes | Yes | Yes | Yes |Yes | 7:6 ||
-| update_column | No | Yes | No | No | No | Yes | 7:7 ||
-| update_columns | No | Yes | No | No | No | Yes | 7:8 ||
-| User::update | Yes | Yes | Yes | Yes | Yes | Yes | 7:9 ||
-| User::update_all | No | Yes | No | No | No | No | 7:10 ||
+| 方法 | Uses Default Accessor | 是否会持久化对象 | Validations | Callbacks | Touches updated_at | Readonly check | 类、实例 | 单属性、多属性 |
+| -- | -- | -- | :--: | :--: | -- | -- | -- | -- |
+| x= | Yes | 否 | - | - | - | - | 实例 | 单 |
+| write_attribute | No | 否 | - | - | - | - | 实例 | 单 |
+| update_attribute | Yes | 是 | No | Yes | Yes | Yes | 实例 | 单 |
+| assign_attributes & attributes= | Yes | 否 | - | - | - | - | 实例 | 多 |
+| update & update_attributes | Yes | 是 | Yes | Yes | Yes |Yes | 实例 | 多 |
+| update_column | No | 是 | No | No | No | Yes | 实例 | 单 |
+| update_columns | No | 是 | No | No | No | Yes | 实例 | 多 |
+| User::update | Yes | 是 | Yes | Yes | Yes | Yes | 类 | 多 |
+| User::update_all | No | 是 | No | No | No | No | 类 | 多 |
 
-attribute= 表示直接赋值，其它几个是方法名
+x= 表示直接赋值，其它几个是方法名
 
-write_attribute(:name, x) 等价于 user[:name]= x
-
-user.attributes = 等价于 user.assign_attributes
+write_attribute(:name, ?) 等价于 user[:name]= ?
 
 User::update 是类方法，直接封装了 User#update 实例方法，效果是一样的。
 

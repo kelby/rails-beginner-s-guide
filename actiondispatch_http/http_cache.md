@@ -4,7 +4,7 @@
 
 一般来说，我们不会手动调用这里的方法。
 
-## Request 
+### Request 
 
 ```
 etag_matches?
@@ -18,7 +18,7 @@ if_none_match_etags
 not_modified?
 ```
 
-## Response
+### Response
 
 ```
 date

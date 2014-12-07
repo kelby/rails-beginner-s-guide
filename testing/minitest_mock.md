@@ -7,8 +7,8 @@ expect
 verify
 ```
 
-`expect`  
-第一个参数为方法名，第二个参数为执行此方法后返回的结果，第三个参数表示传递给此方法的参数，也可以传递一个 block
+`expect`
+第一个参数为方法名，第二个参数为执行此方法后返回的结果，第三个参数表示传递给此方法的参数，也可以传递一个 block.
 
 使用举例：
 
@@ -20,7 +20,7 @@ m.expect(:raiser, nil) do |args|
 end
 ```
 
-我们可以使用 Minitest::Mock.new 模拟一些不能直接调用的对象，如果需要联网然后返回的结果(假设我们网络链接有问题)。
+我们可以使用 Minitest::Mock.new 模拟一些不能(或不希望)直接调用的对象。
 
 ```ruby
 user = Minitest::Mock.new
@@ -31,7 +31,7 @@ UserDestoyer.new.delete_user(user)
 assert user.verify
 ```
 
-`verify`  
+`verify`
 mock 出来的对象有时候并不是我们想要的(计算机不够聪明)，verify 验证是否真的执行了上述方法。RSpec 在这点上使用起来更简洁，但也相差不大。
 
 链接 [MiniTest::Mock](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/minitest/rdoc/MiniTest/Mock.html)

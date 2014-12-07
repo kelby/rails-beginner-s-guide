@@ -92,3 +92,15 @@ module Rails
   end
 end
 ```
+
+---
+
+定制 config.console
+
+```ruby
+# config/application.rb
+config.console do
+  require 'pry'
+  config.console = Pry
+end
+```

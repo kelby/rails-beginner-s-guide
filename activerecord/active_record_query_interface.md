@@ -47,8 +47,13 @@
 
 - 传递哈希。
 
-包括用花括号 {} 或者祼哈希
+包括用花括号 {} 或者祼哈希。
 
+使用哈希，还有一个好处，可以很直接的使用范围，如：
+
+```ruby
+Comment.where(created_at: @the_date.beginning_of_day..@the_date.end_of_day)
+```
 - 配合 joins
 
 如果要 joins 其它表，where 里的查询语句参数和之前一样，但被 join 的表名要包含在查询条件里。

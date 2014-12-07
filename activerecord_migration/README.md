@@ -1,28 +1,15 @@
 # Active Record 迁移
 
-## Migration
+- Migration
 
----
+- Schema
 
-## Schema
+- Connection Adapters
 
----
+下面这 4 个模块，来源 Connection Adapters，它下面还有很多模块，在此忽略其它 ...
 
-下面这 4 个模块，来源 ConnectionAdapters，它下面还有很多模块，在此忽略其它 ...
+包括：Schema Statements、Table Definition、Table 和 Database Statements.
 
-## SchemaStatements
+- 其它
 
-## TableDefinition
-
-## Table
-
-## DatabaseStatements
-
----
-
-## 其它
-
-### ModelSchema*
-
-### ~~SchemaMigration~~
-
+包括：Model Schema*、~~Schema Migration~~ 和 Command Recorder.

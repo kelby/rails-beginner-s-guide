@@ -6,7 +6,7 @@
 
 与我们应用接头。
 
-实例方法，给 Rails.application 使用
+实例方法，给 Rails.application 使用。
 
 ### Engine
 
@@ -20,17 +20,17 @@
 
 ### 配置
 
-指的是 Railtie, Engine, Application 的 Configuration
+指的是 Railtie, Engine, Application 的 Configuration.
 
 ### 初始化
 
-"初始化"这里是名词，主要是对它的使用，如 Application 的 bootstrap 和 finisher，以及我们项目 AppName 所涉及到的初始化。
+"初始化"这里是名词，主要是对它的使用，如 Application 的 Bootstrap 和 Finisher，以及我们项目 AppName 所涉及到的初始化。
 
 ### 启动！*
 
 没有额外的"启动"程序，把配置、初始化做好了以后，启动就是自然而然的事了。
 
-参考"启动过程"独立章节。
+参考【启动过程】独立章节。
 
 ## 其它
 
@@ -49,15 +49,15 @@ application       # 代表我们的应用，它是 AppName::Application 的实�
 configuration     # 它是 Rails::Application::Configuration 的实例对象
 env               # 它是 ActiveSupport::StringInquirer 的实例对象
 backtrace_cleaner # 它是 Rails::BacktraceCleaner 的实例对象
-root        # 获取项目 root 路径
-public_path # 获取项目 public/ 路径
+root              # 获取项目 root 路径
+public_path       # 获取项目 public/ 路径
 groups
 ```
 
 除以上外，还有
 
 ```
-attr_accessor :cache, :logger
+attr_accessor :app_class, :cache, :logger
 ```
 
 ```

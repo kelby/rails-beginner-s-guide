@@ -1,6 +1,6 @@
-# Rails 源代码里一些常用方法
+## Rails 源代码里一些常用方法
 
-## Active Support
+### Active Support
 
 `eager_autoload` 和 `autoload`
 
@@ -92,7 +92,7 @@ Foo.new.hello # => "world"
 把可选参数里的 Hash 部分，萃取出来。
 ```
 
-## Abstract Controller
+### Abstract Controller
 
 `abstract!`
 
@@ -118,10 +118,10 @@ ActionController::Metal 和 ActionController::Base 都声明为抽象的。(作�
 将 Controller 里的方法转化为 helper 方法。
 ```
 
-## Railtie
+### Railtie
 
 delegate `:config`, to: :instance
 
-## Initializable
+### Initializable
 
 `initializer`

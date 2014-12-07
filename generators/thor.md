@@ -1,10 +1,10 @@
-# Thor
+## Thor
 
 Thor 和 rake 类似，提供了功能强大的命令行接口。
 
 因为 Rails 的 generator 实际上是封装了 Thor ，所以还有 [Thor Actions](http://rdoc.info/github/erikhuda/thor/master/Thor/Actions.html)
 
-## Actions
+### Actions
 
 `action(instance)`  
 Wraps an action object and call it accordingly to the thor class behavior.
@@ -90,7 +90,7 @@ Executes a ruby script (taking into account WIN32 platform quirks).
 Holds source paths in instance so they can be manipulated.
 
 `template(source, *args, &block)`  
-Gets an ERB template at the relative source, executes it and makes a copy at the relative destination.
+Gets an ERB template at the relative source, executes it and makes a copy at the relative destination.  
 复制示例模板文件，生成新的 ERB 文件。
 
 `thor(command, *args)`  
@@ -99,7 +99,7 @@ Run a thor command.
 `uncomment_lines(path, flag, *args)`  
 Uncomment all lines matching a given regex.
 
-## Actions ClassMethods
+### Actions 类方法
 
 `add_runtime_options!`  
 Add runtime options that help actions execution.
@@ -113,10 +113,10 @@ Returns the source paths in the following order:.
 `source_root(path = nil)`  
 Stores and return the source root for this class.
 
-## 其它
+### 其它
 
 `argument`  
-Adds an argument to the class and creates an attr_accessor for it.
+Adds an argument to the class and creates an attr_accessor for it.  
 如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
 
 链接 [What Is Thor](http://whatisthor.com/)

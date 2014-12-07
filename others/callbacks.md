@@ -2,7 +2,7 @@
 
 Callbacks 跨度比较大。
 
-----------
+---
 
 源头 ActiveSupport::Callbacks 的
 define_callbacks

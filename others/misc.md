@@ -9,21 +9,21 @@ Dar < Car < Bar 有时候之所以 Car 要 extend Bar 并不是为了 Car 自己
 ```ruby
 module A
   def do_something
-    puts 'A->do_something'
+    puts 'A -> do_something'
     super
   end
 end
 
 module B
   def do_something
-    puts 'B->do_something'
+    puts 'B -> do_something'
     super
   end
 end
 
 module C
   def do_something
-    puts 'C->do_something'
+    puts 'C -> do_something'
     super
   end
 end
@@ -31,7 +31,7 @@ end
 
 class Parent
   def do_something
-    puts 'Parent->do_something'
+    puts 'Parent -> do_something'
   end
 end
 
@@ -46,12 +46,12 @@ p Child.ancestors
 
 
 Child.new.do_something
-# Output =>
+# 输出 =>
 #
-# C->do_something
-# B->do_something
-# A->do_something
-# Parent->do_something
+# C -> do_something
+# B -> do_something
+# A -> do_something
+# Parent -> do_something
 ```
 
 > Note: 以上参考 [modules.rb](https://gist.github.com/andrewberls/8090332)

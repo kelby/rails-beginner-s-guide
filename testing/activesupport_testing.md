@@ -26,9 +26,15 @@ test
 
 ### Isolation
 
+类方法
+
 ```
 forking_env?
+```
 
+实例方法
+
+```
 run
 ```
 
@@ -44,7 +50,7 @@ run_in_isolation
 run_in_isolation
 ```
 
-### Setup And Teardown Class Methods
+### Setup 和 Teardown 相关类方法
 
 ```
 setup
@@ -77,12 +83,14 @@ travel_back
 travel_to
 ```
 
-### LogSubscriber Test Helper
+### Log Subscriber Test Helper
 
 ```
 set_logger
+
 setup
 teardown
+
 wait
 ```
 
