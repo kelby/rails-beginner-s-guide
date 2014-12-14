@@ -1,6 +1,6 @@
 ## Template
 
-模板对象及其信息。
+**模板对象的内容，及其所携带的信息。**
 
 ```ruby
 ERBHandler = ActionView::Template::Handlers::ERB.new
@@ -18,6 +18,12 @@ new_template = ActionView::Template.new(body, "hello template", details.fetch(:h
 @template = new_template("<%= apostrophe %>")
 @template = new_template("<%= apostrophe %> <%== apostrophe %>", format: :text)
 @template = new_template("<%= hello %>", :handler => ActionView::Template::Handlers::Raw.new)
+```
+
+```ruby
+attr_accessor :locals, :formats, :variants, :virtual_path
+
+attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
 
 # 看看新建模板，要求是什么
 def initialize(source, identifier, handler, details)

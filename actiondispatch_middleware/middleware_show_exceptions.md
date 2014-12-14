@@ -3,8 +3,8 @@
 程序抛异常时，用什么程序来处理。
 
 它只是接口，它关心的是用什么，而不是如何处理。(因为不是它处理的！)
-对内调用 ExceptionWrapper
-对外调用 PublicExceptions
+对内调用 Exception Wrapper
+对外调用 Public Exceptions
 
 ```
 # 对内

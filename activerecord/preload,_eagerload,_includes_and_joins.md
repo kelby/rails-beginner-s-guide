@@ -64,11 +64,15 @@ User.joins(:posts)
 # 目的：查询主表，关联表仅做为查询条件之一
 
 posts = Post.joins(:comments)
-# => Post Load (0.1ms)  SELECT "posts".* FROM "posts" INNER JOIN "comments" ON "comments"."commentable_id" = "posts"."id" AND "comments"."commentable_type" = 'Post'
+# => Post Load (0.1ms)  SELECT "posts".* FROM "posts" INNER JOIN
+     "comments" ON "comments"."commentable_id" = "posts"."id" AND
+     "comments"."commentable_type" = 'Post'
 
 # 再次调用，也需要查询，花销一般
 posts.first.comments
-# => Comment Load (0.2ms) SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? [["commentable_id", 1], ["commentable_type", "Post"]]
+# => Comment Load (0.2ms) SELECT "comments".* FROM "comments"
+     WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?
+     [["commentable_id", 1], ["commentable_type", "Post"]]
 ```
 
 特点，不会查询出关联表的数据，仅做为查询条件。
@@ -79,13 +83,15 @@ posts.first.comments
 # has_and_belongs_to_many
 product has_and_belongs_to_many :devices
 
-Product.joins("join devices_products on products.id = devices_products.product_id").where(["devices_products.device_id = ?", params[:device_id]])
+Product.joins("join devices_products on products.id = devices_products.product_id")
+       .where(["devices_products.device_id = ?", params[:device_id]])
 
 # has_many :through
 has_many :catalogs_products
 has_many :catalogs, :through => :catalogs_products
   
-Product.joins(:catalogs_products).where(:catalogs_products => {:catalog_id => params[:catalog_id]})
+Product.joins(:catalogs_products).where(catalogs_products:
+                                        {catalog_id: params[:catalog_id]})
 ```
 
 ### preload
@@ -144,7 +150,7 @@ User.includes(:posts).where("posts.name = 'foo'").references(:posts)
 # => Query now knows the string references posts, so adds a JOIN
 ```
 
-参考:
+参考
 
 [3 ways to do eager loading (preloading) in Rails 3 & 4](http://blog.arkency.com/2013/12/rails4-preloading/)  
 [eager loading in rails](http://codedecoder.wordpress.com/2014/07/23/eager-loading-eager_load-preload-includes/)

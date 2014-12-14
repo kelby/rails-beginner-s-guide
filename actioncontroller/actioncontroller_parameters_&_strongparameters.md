@@ -19,15 +19,18 @@ params == request.parameters
 
 ```ruby
 Processing by PostsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=", "post"=>{"title"=>"hello world"}, "commit"=>"Create Post"}
+Parameters: {"utf8"=>"✓",
+             "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
+             "post"=>{"title"=>"hello world"},
+             "commit"=>"Create Post"}
 
 params
-  => {"utf8"=>"✓",
-   "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
-   "post"=>{"title"=>"hello world"},
-   "commit"=>"Create Post",
-   "action"=>"create",
-   "controller"=>"posts"}
+=> {"utf8"=>"✓",
+    "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
+    "post"=>{"title"=>"hello world"},
+    "commit"=>"Create Post",
+    "action"=>"create",
+    "controller"=>"posts"}
 ```
 
 ## Parameters

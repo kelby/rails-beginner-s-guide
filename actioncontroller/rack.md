@@ -24,7 +24,7 @@ Rack 提供了一个"与 Web服务器打交道"最精简的接口，通过这个
 require 'rack'
 
 app = Proc.new do |env|
-  ['200', {'Content-Type' => 'text/html'}, ['A barebones rack app.']]
+  ['200', {'Content-Type' => 'text/html'}, ['A example rack app.']]
 end
 
 Rack::Handler::WEBrick.run app

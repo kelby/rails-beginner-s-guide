@@ -1,5 +1,7 @@
 ## Named Route Collection
 
+**向 Rails 其它组件提供路由相关 helper 方法。**
+
 include Enumerable，所以看到很多同名方法也就不奇怪了。它们意义和使用方式雷同，不再一一解释。
 
 ### 各个实例方法
@@ -34,9 +36,9 @@ length
 
 ### ~~Url Helper~~
 
-非常底层的实现，主要对外接口 `self.create`
+非常底层的实现，主要对外接口 self.create
 
-当调用 NamedRouteCollection 的私有方法 `define_url_helper` 时会用到，部分内容是
+当调用 Named Route Collection 的私有方法 define_url_helper 时会用到，部分内容是
 
 ```
 helper = UrlHelper.create(route, opts, route_key, url_strategy)

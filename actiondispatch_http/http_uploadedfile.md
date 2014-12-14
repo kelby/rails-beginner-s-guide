@@ -16,7 +16,8 @@ size
 Factory.define :image do |o|  
   file = File.new(Rails.root + 'spec/fixtures/images/rails.png')  
   file.rewind  
-  o.file ActionDispatch::Http::UploadedFile.new(:tempfile => file, :filename => File.basename(file))  
+  o.file ActionDispatch::Http::UploadedFile.new(:tempfile => file,
+                                                :filename => File.basename(file))  
 end  
   
 @image = Factory(:image)  

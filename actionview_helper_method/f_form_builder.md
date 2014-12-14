@@ -38,3 +38,33 @@ end
 # 最后调用
 builder.new(object_name, object, self, options)
 ```
+
+---
+
+专用于 f.x 调用。
+
+```
+button
+check_box
+collection_check_boxes
+collection_radio_buttons
+collection_select
+date_select
+datetime_select
+fields_for
+file_field
+grouped_collection_select
+hidden_field
+label
+radio_button
+select, submit
+time_select
+time_zone_select
+
+multipart=
+
+emitted_hidden_id?
+
+to_model
+to_partial_path
+```

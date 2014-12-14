@@ -1,17 +1,32 @@
 ## Rendering
 
+**承上启下的作用：**
+
+```
+          ActionController::Rendering
+                    ^
+                    |
+          AbstractController::Rendering
+                    ^
+                    |
+          ActionView::Rendering
+                    ^
+                    |
+          ActionView::Renderer
+```
+
+**Action Controller 和 Abstract Controller 可以调用这里渲染相关的方法。**
+
+**实例方法**
+
 ```
 view_context
 view_renderer
 
 render_to_body
+
 rendered_format
-view_context_class
-```
 
-以及类方法
-
-```
 view_context_class
 ```
 
@@ -19,7 +34,17 @@ view_context_class
 
 `view_context` 是 ActionView::Base 的实例对象。
 
+`render_to_body` 上面几个方法中，惟一的动词，会执行渲染程序。
+
+**类方法**
+
+```
+view_context_class
+```
+
 并且，ActionController 和 AbstactController 有同名方法，根据 Ruby 的继承规则，它们也可以调用这里的方法。
+
+---
 
 此外，通过 view_context 可以在 Controller 里调用 Helper 里的方法。
 
@@ -100,3 +125,6 @@ def view_context_class
 end
 ```
 
+---
+
+它和它下面的 I18nProxy，都是从 Abstract Controller 转移到 Action View.

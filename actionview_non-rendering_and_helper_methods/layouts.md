@@ -55,3 +55,16 @@ end
 ```
 
 此外，还有可选参数 `:only` 和 `:except`
+
+---
+
+从 abstract_controller 移除而来。
+
+注意，早期还有：
+
+    initializer "action_view.setup_action_controller" do |app|
+      ActiveSupport.on_load(:action_controller) do
+        ActionController::Base.send(:include, ActionView::Layouts)
+      end
+    end
+

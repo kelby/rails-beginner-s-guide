@@ -59,20 +59,6 @@ end
 
 使用 ActiveJob，配置以便延迟发送邮件。
 
-### ~~Log Subscriber~~
-
-日志记录，继承于 ActiveSupport::LogSubscriber，执行哪个方法时想要记录日志，只需要创建和它同名方法，然后打印日志即可。LogSubscriber 章节会讲到。
-
-目前 Rails 侦听以下方法：
-
-```
-deliver - 发送
-receive - 接收
-process - 处理
-
-logger - 手动打印日志
-```
-
 ### ~~Railtie~~
 
 ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。

@@ -16,7 +16,8 @@ config.action_controller.perform_caching = false
 config.action_controller.cache_store = :memory_store
 config.action_controller.cache_store = :file_store, '/path/to/cache/directory'
 config.action_controller.cache_store = :mem_cache_store, 'localhost'
-config.action_controller.cache_store = :mem_cache_store, Memcached::Rails.new('localhost:11211')
+config.action_controller.cache_store = :mem_cache_store,
+                                         Memcached::Rails.new('localhost:11211')
 ```
 
 ---
@@ -29,7 +30,8 @@ config.action_controller.cache_store = :mem_cache_store, Memcached::Rails.new('l
 config.action_controller.cache_store = :memory_store
 config.action_controller.cache_store = :file_store, '/path/to/cache/directory'
 config.action_controller.cache_store = :mem_cache_store, 'localhost'
-config.action_controller.cache_store = :mem_cache_store, Memcached::Rails.new('localhost:11211')
+config.action_controller.cache_store = :mem_cache_store,
+                                         Memcached::Rails.new('localhost:11211')
 config.action_controller.cache_store = MyOwnStore.new('parameter')
 ```
 
@@ -44,29 +46,42 @@ config.action_controller.cache_store = MyOwnStore.new('parameter')
 
 ```
 # 第一次访问
-  Cache digest for app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
-Read fragment views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.1ms)
-Write fragment views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (1.1ms)
+Cache digest for
+app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
+Read fragment
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.1ms)
+Write fragment
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (1.1ms)
 
 # 第二次访问
-  Cache digest for app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
-Read fragment views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.6ms)
+Cache digest for
+app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
+Read fragment
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.6ms)
 
 # post.cache_key
  => "posts/1-20140421062215459004000"
 
 # 更改静态内容(默认)
-  Cache digest for app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
-Read fragment views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
-Write fragment views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (1.4ms)
+Cache digest for
+app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
+Read fragment
+views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
+Write fragment
+views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (1.4ms)
 
 # 更改动态内容(在这里是update post)
-  Cache digest for app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
-Read fragment views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
-Write fragment views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (1.1ms)
+Cache digest for
+app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
+Read fragment
+views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
+Write fragment
+views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (1.1ms)
 
-Read fragment views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (0.2ms)
-Write fragment views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (9.0ms)
+Read fragment
+views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (0.2ms)
+Write fragment
+views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (9.0ms)
 
 怎么生成的？
 views/projects/123-20120806214154/7a1156131a6928cb0026877f8b749ac9
@@ -78,7 +93,9 @@ views/projects/123-20120806214154/7a1156131a6928cb0026877f8b749ac9
 ```ruby
 def fragment_name_with_digest(name) #:nodoc:
   names  = Array(name.is_a?(Hash) ? controller.url_for(name).split("://").last : name)
-  digest = Digestor.digest name: @virtual_path, finder: lookup_context, dependencies: view_cache_dependencies
+  digest = Digestor.digest name: @virtual_path,
+                           finder: lookup_context,
+                           dependencies: view_cache_dependencies
 
   [ *names, digest ]
 end

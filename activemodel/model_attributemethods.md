@@ -71,3 +71,23 @@ person.me_mateys_profession_is_in_pirate? # => true
 ```
 
 主要用到的方法，都在示例里。Active Record 基于它也实现了一个自己的 Attribute Methods.
+
+**类方法**
+
+```
+attribute_method_prefix
+attribute_method_suffix
+attribute_method_affix
+
+alias_attribute  # 起别名
+attribute_alias? # 起别名了？
+attribute_alias  # 原名字是...
+
+define_attribute_methods
+define_attribute_method
+undefine_attribute_methods
+
+generated_attribute_methods
+```
+
+> Note: ActiveRecord::AttributeMethods include ActiveModel::AttributeMethods 并修改了它的部分函数，所以使用 Rails 的话，这些方法是用不了的。

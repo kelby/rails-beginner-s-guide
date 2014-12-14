@@ -40,8 +40,10 @@ authenticate_or_request_with_http_digest
 require 'digest/md5'
 class PostsController < ApplicationController
   REALM = "SuperSecret"
-  USERS = {"dhh" => "secret", # plain text password
-           "dap" => Digest::MD5.hexdigest(["dap", REALM, "secret"].join(":"))} # ha1 digest password
+  USERS = {"dhh" => "secret",
+           # plain text password
+           # ha1 digest password
+           "dap" => Digest::MD5.hexdigest(["dap", REALM, "secret"].join(":"))}
 
   before_action :authenticate, except: :index
 

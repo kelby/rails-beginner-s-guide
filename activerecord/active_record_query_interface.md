@@ -79,7 +79,8 @@ User.joins(:posts).where({ posts: { published: true } })
 
 ```ruby
 User.select([:id, :name])
-=> [#<User id: 1, name: "Oscar">, #<User id: 2, name: "Oscar">, #<User id: 3, name: "Foo">
+=> [#<User id: 1, name: "Oscar">, #<User id: 2,
+           name: "Oscar">, #<User id: 3, name: "Foo">
 
 User.group(:name)
 => [#<User id: 3, name: "Foo", ...>, #<User id: 2, name: "Oscar", ...>]
@@ -142,9 +143,16 @@ Post.joins(:category, :comments)
   INNER JOIN categories ON posts.category_id = categories.id
   INNER JOIN comments ON comments.post_id = posts.id
 
-product = StandardProduct.first
-product.catalogs.joins(:catalogs_standard_products).where('catalogs_standard_products.is_default = ?', true)
-# => SELECT DISTINCT `catalogs`.* FROM `catalogs` INNER JOIN `catalogs_standard_products` `catalogs_standard_products_catalogs` ON `catalogs_standard_products_catalogs`.`catalog_id` = `catalogs`.`id` INNER JOIN `catalogs_standard_products` ON `catalogs`.`id` = `catalogs_standard_products`.`catalog_id` WHERE `catalogs_standard_products`.`standard_product_id` = 100011 AND (catalogs_standard_products.is_default = 1)
+product = Product.first
+product.catalogs.joins(:catalogs_products)
+  .where('catalogs_products.is_default = ?', true)
+# => SELECT DISTINCT `catalogs`.* FROM `catalogs` INNER JOIN `catalogs_products`
+     `catalogs_products_catalogs` ON
+     `catalogs_products_catalogs`.`catalog_id` = 
+     `catalogs`.`id` INNER JOIN `catalogs_products` ON `catalogs`.`id` = 
+     `catalogs_products`.`catalog_id` WHERE 
+     `catalogs_products`.`standard_product_id` = 100011 AND
+     (catalogs_products.is_default = 1)
 ```
 
 `includes(*args)` 和 joins 类似，唯一的区别在于：它是预先加载，第一次执行会慢，后续不再执行。

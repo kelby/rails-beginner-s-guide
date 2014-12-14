@@ -2,7 +2,6 @@
 
 Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作(好吧，其实就是各种复杂的读写操作)。
 
-
 - locking
 
 包括 Optimistic、Pessimistic
@@ -13,7 +12,7 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - Relation
 
-包括 SpawnMethods、QueryMethods、~~PredicateBuilder~~、~~Merger~~、FinderMethods、~~Delegation~~、Calculations、Batches
+包括 Spawn Methods、Query Methods、~~Predicate Builder~~、~~Merger~~、Finder Methods、~~Delegation~~、Calculations、Batches
 
 - Querying
 
@@ -21,14 +20,14 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - ~~NullRelation~~
 
-- ~~DynamicMatchers~~
+- ~~Dynamic Matchers~~
 
-将被废除 gem 'activerecord-deprecated_finders'
+即将被废除的 gem 'activerecord-deprecated_finders'
 
-- CounterCache
+- Counter Cache
 
-- AttributeAssignment
+- Attribute Assignment
 
-- AttributeMethods
+- Attribute Methods
 
 包括 BeforeTypeCast、Dirty、PrimaryKey、Query、Read、Serialization、TimeZoneConversion、Write

@@ -16,7 +16,7 @@ password=(unencrypted_password)
 password_confirmation=(unencrypted_password)
 ```
 
-依赖于 `gem 'bcrypt'`，需要 `password` 和 `password_digest` 属性，使用参考：
+依赖于 `gem 'bcrypt'`，必须有 `password_digest` 属性(可以没有 `password` 属性)，使用参考：
 
 ```ruby
 class User < ActiveRecord::Base
@@ -35,6 +35,8 @@ user.save                          # => true
 user.authenticate('notright')      # => false
 user.authenticate('mUc3m00RsqyRe') # => user
 ```
+
+使用 has_secure_password 后，还会自动帮我们添加校验 validates_length_of :password 和 validates_confirmation_of :password
 
 下面是 Rails 里面默认的加密、解密实现：
 

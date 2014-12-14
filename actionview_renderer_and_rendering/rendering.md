@@ -1,52 +1,40 @@
 ## 渲染器介绍
 
+**渲染器需要有上下文和模板，才能顺利的工作。**
+
+(但它不直接和模板打交道？谁和模板打交道？)
+
 ### Renderer
 
 渲染的入口。
 
-**render 或 render_body** 方法加上它们的**参数**，决定了使用 TemplateRenderer、PartialRenderer 还是 StreamingTemplateRenderer.
+render 或 render_body 方法加上它们的参数，决定了使用 TemplateRenderer、PartialRenderer 还是 StreamingTemplateRenderer.
 
 ```ruby
 # Main render entry point shared by AV and AC.
 def render(context, options)
-  if options.key?(:partial)
-    render_partial(context, options)
-  else
-    render_template(context, options)
-  end
-end
 
 # Render but returns a valid Rack body.
 def render_body(context, options)
-  if options.key?(:partial)
-    [render_partial(context, options)]
-  else
-    StreamingTemplateRenderer.new(@lookup_context).render(context, options)
-  end
-end
 
 # 下面这两个方法，没有对外提供的接口，不要直接使用它们！
 
 # Direct accessor to template rendering.
-def render_template(context, options) #:nodoc:
-  TemplateRenderer.new(@lookup_context).render(context, options)
-end
+def render_template(context, options)
 
 # Direct access to partial rendering.
-def render_partial(context, options, &block) #:nodoc:
-  PartialRenderer.new(@lookup_context).render(context, options, block)
-end
+def render_partial(context, options, &block)
 ```
 
 > Note: 说明一下，StreamingTemplateRenderer 用得很少，本说明后文不再重复。
 
-### AbstractRenderer
+### Abstract Renderer
 
 具体某个渲染器的基类，定义了接口。
 
-目前，只有 3 个渲染器，TemplateRenderer、PartialRenderer 和 StreamingTemplateRenderer.
+目前，只有 3 个渲染器，Template Renderer、Partial Renderer 和 Streaming Template Renderer.
 
-### 1. TemplateRenderer
+### Template Renderer
 
 普通的模板渲染器，直接继承于 AbstractRenderer.
 
@@ -56,7 +44,7 @@ end
 
 借助了 @lookup_context.
 
-### 2. PartialRenderer
+### Partial Renderer
 
 局部模板渲染器，直接继承于 AbstractRenderer.
 
@@ -64,7 +52,7 @@ end
 
 借助了 @lookup_context.
 
-### 3. StreamingTemplateRenderer
+### Streaming Template Renderer
 
 流模板渲染器，直接继承于 TemplateRenderer，间接继承于 AbstractRenderer.
 

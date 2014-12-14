@@ -1,5 +1,7 @@
 ## Mime Responds
 
+**实例方法**
+
 ```
 respond_to
 ```
@@ -16,9 +18,9 @@ format.html.phone - variant inline syntax
 format.html{ |variant| variant.phone } - variant block syntax
 ```
 
-html 等响应格式由 Collector 处理，而变种由 VariantCollector 来处理。
+html 等响应格式由 Collector 处理，而变种由 Variant Collector 来处理。
 
-## ~~Collector~~
+**~~Collector~~**
 
 ```
 all & any

@@ -12,13 +12,13 @@ AbstractController 目前包含 10 个模块，部分在前面已经详细介绍
 
 **Translation**
 
-I18n 相关的 `translate`(alias t) 和 `localize`(alias l) 方法。
+I18n 相关的 `translate & t` 和 `localize & l` 方法。
 
 **Rendering**
 
 我们自定义的 Controller#actions 里使用的 render 就是在这里定义的。
 
-它其实是封装了 ActionView 里的渲染相关内容，然后又被 ActionController 所调用。
+它其实是封装了 Action View 里的渲染相关内容，然后又被 Action Controller 所调用。
 
 **~~Logger~~**
 
@@ -48,7 +48,7 @@ Controller 里的回调。
 
 ```
 config_accessor :asset_host, :assets_dir, :javascripts_dir,
-  :stylesheets_dir, :default_asset_host_protocol, :relative_url_root
+                :stylesheets_dir, :default_asset_host_protocol, :relative_url_root
 ```
 
 **Routes Helpers**

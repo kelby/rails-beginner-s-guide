@@ -1,23 +1,26 @@
 ## 渲染相关(Renderer & Rendering)
 
+分为 3 大块：渲染器、模板和上下文。
+
 ### 渲染器
 
-TemplateRenderer  
+Template Renderer  
 模板渲染器
 
-StreamingTemplateRenderer  
-流模板渲染器
+Streaming Template Renderer  
+流模板渲染器  
+为了支持"streaming 流"！
 
 Renderer  
 XML 渲染器
 
-PartialIteration  
+Partial Iteration  
 局部模板迭代
 
-PartialRenderer  
+Partial Renderer  
 局部模板渲染器
 
-AbstractRenderer  
+Abstract Renderer  
 抽象出来的渲染器
 
 ### 模板(Template)
@@ -31,16 +34,16 @@ Text & HTML
 Resolver  
 解析器
 
-PathResolver  
+Path Resolver  
 路径解析器
 
-FileSystemResolver  
+File System Resolver  
 文件系统解析器
 
-OptimizedFileSystemResolver  
+Optimized File System Resolver  
 优化的文件系统解析器
 
-FallbackFileSystemResolver  
+Fallback File System Resolver  
 回溯的文件系统解析器
 
 Error  
@@ -48,7 +51,7 @@ Error
 
 ### 上下文
 
-ViewPaths  
+View Paths  
 视图文件所在目录
 
 Template  
@@ -58,9 +61,9 @@ Rendering
 渲染(动词)
 
 ~~PathSet~~  
-路径集(供 ViewPaths 使用)
+路径集(供 View Paths 使用)
 
-LookupContext  
+Lookup Context  
 查找上下文
 
 DetailsKey  
@@ -69,14 +72,18 @@ DetailsKey
 DetailsCache  
 为 Details 做缓存
 
-~~OutputFlow & StreamingFlow~~  
-输出流
-
 ~~Context~~  
-上下文
+上下文  
+为了 ActionController 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
+(从 Base 里抽取出来的)
+
+~~OutputFlow & StreamingFlow~~  
+输出流  
+为了支持"streaming 流"！
 
 ~~OutputBuffer & StreamingBuffer~~  
-输出流
+输出缓冲区  
+为了支持"streaming 流"！
 
 **处理器***
 

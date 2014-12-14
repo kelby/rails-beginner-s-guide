@@ -1,8 +1,8 @@
-# Routing 描述
+## Routing 描述
 
 路由三大块：DSL、recognition 和 generation.
 
-## 描述
+### 描述
 
 1. DSL --> Mapper(Base, Concerns, HttpHelpers, Resources, Scoping)
 2. 既然维护着一张路由表，如何向表里添加规则？
@@ -47,7 +47,7 @@ end
 
 Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 
-## 参考：
+参考
 
 [Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)
 

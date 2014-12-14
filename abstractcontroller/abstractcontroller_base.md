@@ -1,6 +1,6 @@
 ## Base
 
-ActionDispatch -> Metal -> AbstractController -> ActionController 请求是如何转变的？部分答案在这 ...
+Action Dispatch -> Metal -> Abstract Controller -> Action Controller 请求是如何转变的？部分答案在这 ...
 
 实例方法：
 

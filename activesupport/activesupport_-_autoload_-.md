@@ -74,7 +74,7 @@ autoload_under
 autoloads
 ```
 
-## 参考
+参考
 
 [Eager loading for greater good](http://blog.plataformatec.com.br/2012/08/eager-loading-for-greater-good/)<br>
 [Threading with the AWS SDK for Ruby](http://ruby.awsblog.com/blog/tag/autoload)<br>

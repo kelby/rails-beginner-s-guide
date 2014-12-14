@@ -6,7 +6,7 @@ Controller 里的 public方法(也就是action) 会自动对应 Route 里的路�
 
 ## Metal
 
-**ActionController::Metal** 本身是一个功能极简的 Controller, 但它符合 Rack 接口规范，所以也可以把它称之为 Rack application. 相比于 **ActionController::Base** 它的功能真的很有限。
+ActionController::Metal 本身是一个功能极简的 Controller, 但它符合 Rack 接口规范，所以也可以把它称之为 Rack application. 相比于 ActionController::Base 它的功能真的很有限。
 
 如你的 Rails 项目对性能要求比较高，或者说对实时性要求比较高，又或者你的项目做为 API 对外提供服务，那么你可以尝试直接继承使用 Metal.
 

@@ -18,8 +18,11 @@ helper FooHelper # => includes FooHelper
 - 而当参数是字符串或符号时，会根据约定 require 相关文件，并 include 相关模块。
 
 ```ruby
-helper :foo            # => requires 'foo_helper' and includes FooHelper
-helper 'resources/foo' # => requires 'resources/foo_helper' and includes Resources::FooHelper
+helper :foo
+# => requires 'foo_helper' and includes FooHelper
+
+helper 'resources/foo'
+# => requires 'resources/foo_helper' and includes Resources::FooHelper
 ```
 
 此外，helper 可以接受并处理一个代码块。(不推荐)

@@ -36,6 +36,6 @@
 
 使用原生 SQL 比使用 ActiveRecord 方法要快。(不解释)
 
-**参考**
+参考
 
 [Rails-with-massive-data](http://blog.xdite.net/posts/2012/08/22/rails-with-massive-data)

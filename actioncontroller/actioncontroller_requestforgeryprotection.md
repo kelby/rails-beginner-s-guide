@@ -1,6 +1,6 @@
 ## Request Forgery Protection
 
-### 类方法
+**类方法**
 
 ```
 protect_from_forgery
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### 实例方法
+**实例方法**
 
 ```
 compare_with_real_token

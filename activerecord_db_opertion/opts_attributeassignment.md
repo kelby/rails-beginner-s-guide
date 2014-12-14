@@ -11,11 +11,13 @@ assign_attributes & attributes=
 ```ruby
 # 直接赋值
 cat = Cat.new(name: "Gorby", status: "yawning")
-cat.attributes # =>  { "name" => "Gorby", "status" => "yawning", "created_at" => nil, "updated_at" => nil}
+cat.attributes # => { "name" => "Gorby", "status" => "yawning", "created_at" => nil, 
+                      "updated_at" => nil}
 
 # 使用 Attribute Assignment
 cat.assign_attributes(status: "sleeping")
-cat.attributes # =>  { "name" => "Gorby", "status" => "sleeping", "created_at" => nil, "updated_at" => nil }
+cat.attributes # => { "name" => "Gorby", "status" => "sleeping", "created_at" => nil,
+                      "updated_at" => nil }
 ```
 
 **对比**

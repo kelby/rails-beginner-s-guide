@@ -60,6 +60,6 @@ model、controller、routes 等都是相互隔离的。
 
 --mountable 才是推荐做法(从 Engine 存在的意义及文档上，可以看出这点)。
 
-**参考**
+参考
 
 [Rails Engine Patterns](http://www.slideshare.net/AndyMaleh/rails-engine-patterns)

@@ -64,11 +64,13 @@ book has_one :author
 
 book.author
 # 传递的值是 book.id
-# => Author Load (6.5ms)  SELECT  `authors`.* FROM `authors` WHERE `authors`.`book_id` = book.id LIMIT 1
+# => Author Load (6.5ms)  SELECT `authors`.* FROM `authors`
+                                  WHERE `authors`.`book_id` = book.id LIMIT 1
 
 book has_one :author, primary_key: :a_primary_id
 
 book.author
 # 传递的值是 book.a_primary_id
-# => Author Load (6.5ms)  SELECT  `authors`.* FROM `authors` WHERE `authors`.`book_id` = book.a_primary_id LIMIT 1
+# => Author Load (6.5ms)  SELECT `authors`.* FROM `authors`
+                                  WHERE `authors`.`book_id` = book.a_primary_id LIMIT 1
 ```

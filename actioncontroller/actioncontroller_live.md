@@ -1,6 +1,6 @@
 ## Live & Streaming
 
-## Live
+### Live
 
 ```
 log_error
@@ -11,7 +11,7 @@ response_body=
 set_response!
 ```
 
-## 使用 SSE (Server Sent Event)
+### 使用 SSE (Server Sent Event)
 
 提供方法：
 
@@ -39,7 +39,7 @@ class MyController < ActionController::Base
 end
 ```
 
-## 不使用 SSE
+### 不使用 SSE
 
 一般使用都不明确指定 SSE，而是使用默认的 Buffer，举例：
 
@@ -59,7 +59,7 @@ class MyController < ActionController::Base
 end
 ```
 
-## Streaming
+### Streaming
 
 Streaming 没有对外提供方法，但使用 `render` 的时候, 它对应着 :stream 参数
 
@@ -72,7 +72,7 @@ class PostsController
 end
 ```
 
-### Streaming & Live
+**Streaming & Live**
 
 Rails 默认的渲染过程先是模板，然后才是布局。完成模板，及需要的查询，最后才完成布局。
 

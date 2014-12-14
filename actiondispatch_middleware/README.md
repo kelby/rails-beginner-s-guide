@@ -1,4 +1,4 @@
-# ActionDispatch Middleware
+# Action Dispatch Middleware
 
 已经进入 Rails, 但还没正式进入我们应用，这时候需要做一些事。
 

@@ -16,5 +16,6 @@ Compile config methods
 
 ```ruby
 Rails.configuration.action_controller.keys
-# => [:perform_caching, :assets_dir, :logger, :cache_store, :javascripts_dir, :stylesheets_dir, :asset_host, :relative_url_root]
+# => [:perform_caching, :assets_dir, :logger, :cache_store, :javascripts_dir,
+      :stylesheets_dir, :asset_host, :relative_url_root]
 ```

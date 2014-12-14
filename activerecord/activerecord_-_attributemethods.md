@@ -39,10 +39,12 @@ end
 
 task = Task.new(title: nil, is_done: true, completed_on: '2012-10-21')
 task.attributes
-# => {"id"=>nil, "title"=>nil, "is_done"=>true, "completed_on"=>Sun, 21 Oct 2012, "created_at"=>nil, "updated_at"=>nil}
+# => {"id"=>nil, "title"=>nil, "is_done"=>true, "completed_on"=>Sun, 21 Oct 2012,
+      "created_at"=>nil, "updated_at"=>nil}
 
 task.attributes_before_type_cast
-# => {"id"=>nil, "title"=>nil, "is_done"=>true, "completed_on"=>"2012-10-21", "created_at"=>nil, "updated_at"=>nil}
+# => {"id"=>nil, "title"=>nil, "is_done"=>true, "completed_on"=>"2012-10-21", 
+     "created_at"=>nil, "updated_at"=>nil}
 ```
 
 再来看看个例子：
@@ -55,9 +57,14 @@ task = Task.new(id: '1', completed_on: '2012-10-21')
 task.id           # => 1
 task.completed_on # => Sun, 21 Oct 2012
 
-task.attributes_before_type_cast                     # => {"id"=>"1", "completed_on"=>"2012-10-21", ... }
-task.read_attribute_before_type_cast('id')           # => "1"
-task.read_attribute_before_type_cast('completed_on') # => "2012-10-21"
+task.attributes_before_type_cast
+# => {"id"=>"1", "completed_on"=>"2012-10-21", ... }
+
+task.read_attribute_before_type_cast('id')
+# => "1"
+
+task.read_attribute_before_type_cast('completed_on')
+# => "2012-10-21"
 ```
 
 ```ruby

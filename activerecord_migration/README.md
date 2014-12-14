@@ -13,3 +13,5 @@
 - 其它
 
 包括：Model Schema*、~~Schema Migration~~ 和 Command Recorder.
+
+`ActiveRecord::Base.connection.table_exists? 'kittens'`

@@ -77,7 +77,7 @@ class Mailer < ActionMailer::Base
     @var = "var"
 
     # 发件人是这里的 from，不是上面 smtp_settings 里设置的任何一个
-    mail(to: "myemail@gmail.com", from: "test@example.com", subject: "testing mail") do |format|
+    mail(to: "to@gmail.com", from: "test@example.com", subject: "test") do |format|
       format.text
       format.html
     end

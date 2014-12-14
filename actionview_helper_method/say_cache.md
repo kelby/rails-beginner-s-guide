@@ -1,6 +1,6 @@
-# 片段缓存和 Cache Key
+## 片段缓存和 Cache Key
 
-## 使用片段缓存几点原则
+### 使用片段缓存几点原则
 
 1. 缓存由动态内容和静态内容两部分构成。
 
@@ -19,7 +19,7 @@
 6. 静态内容的更新，不影响动态内容的部分(例外见最后)；
 7. 例外：动态内容没有指定 cache_key，只有静态内容同时更新，并且重启，动态内容才会更新。
 
-## 说一说 Cache Key
+### 说一说 Cache Key
 
 1) record 的 cache_key
 
@@ -66,7 +66,7 @@ views/a_post/posts/1-20140921032815201680000/9746fd05c8428f7999681aa804071e9a
 `config.cache_store = :redis_store, 'redis://localhost:6379/5/cache', { expires_in: 90.minutes }`
 这里数据最多只能在 redis 里保存 redis 每隔 90 分钟，到期的缓存数据会被删除。(这里的到期等于被删除)
 
-## 几点建议
+### 几点建议
 
 缓存主要有两种方式过期。
   1. 调用 cache(name = {}, options = nil, &block) 的时候把会引起数据变化的元素都放到 name 里

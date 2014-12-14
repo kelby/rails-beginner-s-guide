@@ -132,9 +132,11 @@ p2.save
 
 ```ruby
 p1.save!
-   (0.1ms)  begin transaction
-   (0.4ms)  UPDATE "posts" SET "title" = 'xxoo ', "updated_at" = '2014-04-20 14:02:58.425646', "lock_version" = 1 WHERE ("posts"."id" = 1 AND "posts"."lock_version" = 0)
-   (8.1ms)  commit transaction
+  (0.1ms) begin transaction
+  (0.4ms) UPDATE "posts" SET "title" = 'xxoo ',
+                 "updated_at" = '2014-04-20 14:02:58.425646', "lock_version" = 1
+                 WHERE ("posts"."id" = 1 AND "posts"."lock_version" = 0)
+  (8.1ms) commit transaction
 => true
 
 # 如果别人想再次更改，(脏数据)不会覆盖已经更新过的数据，而是会报错。

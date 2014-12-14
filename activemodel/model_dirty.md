@@ -55,7 +55,8 @@ attribute_method_affix prefix: 'restore_', suffix: '!'
 x_changed?     # 返回 true/false, x 属性有没有更改？
 x_change       # 返回一个数组有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值
 x_will_change! # 声明 x 元素已被更改，即使实际上它并没有更改。
-x_was          # 根据 x_changed? 而来。如果有更改则返回 changed_attributes 里 x 属性的部分，没有更改则返回 x 属性的值
+x_was          # 根据 x_changed? 而来。
+               # 如果有更改则返回 changed_attributes 里 x 属性的部分，没有更改则返回 x 属性的值
 
 restore_x!     # 消除对 x 属性的更改
 ```
@@ -65,8 +66,11 @@ restore_x!     # 消除对 x 属性的更改
 ```
 changed?       # 返回 true/false，整个对象有没有被更改？
 changed        # 返回一个数组，所有被更改的属性
-changes        # 返回一个 Hash. key 被更改的元素，value 是一个数组(有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值)
-previous_changes   # 类似 changes, 区别是更新成功之后才使用。返回一个 Hash. key 被更改的元素，value 是一个数组(有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值)
+changes        # 返回一个 Hash. key 被更改的元素，value 是一个数组
+               # (有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值)
+previous_changes   # 类似 changes, 区别是更新成功之后才使用。
+                   # 返回一个 Hash. key 被更改的元素，value 是一个数组
+                   # (有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值)
 changed_attributes # 返回一个 Hash. key 为被更改的元素，value 为其更改之前的值
 restore_attributes # 清除更改数据
 

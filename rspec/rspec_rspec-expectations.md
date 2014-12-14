@@ -1,4 +1,4 @@
-## rspec-expectations
+## rspec-expectations/matchers
 
 ```
 expect...to
@@ -62,6 +62,11 @@ output
 
 respond_to
 satisfy
+
+## Composable ##
+and & &
+or  & |
+===
 ```
 
 链接 [RSpec Expectations](http://www.rubydoc.info/github/rspec/rspec-expectations)

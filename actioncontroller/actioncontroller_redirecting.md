@@ -39,5 +39,7 @@ redirect_to({ action: 'atom' }, alert: "Something serious happened")
 极端情况下，才会发生
 
 ```
-redirect_to -> url_for -> ActionController::UrlFor -> AbstractController::UrlFor -> ActionDispatch::Routing::UrlFor --> ActionDispatch::Routing::PolymorphicRoutes -> polymorphic_url
+redirect_to -> url_for -> ActionController::UrlFor -> AbstractController::UrlFor ->
+ActionDispatch::Routing::UrlFor --> ActionDispatch::Routing::PolymorphicRoutes ->
+polymorphic_url
 ```

@@ -26,7 +26,9 @@ has_basic_credentials?
 def test_access_granted_from_xml
   get(
     "/notes/1.xml", nil,
-    'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Basic.encode_credentials(users(:dhh).name, users(:dhh).password)
+    'HTTP_AUTHORIZATION' =>
+     ActionController::HttpAuthentication::Basic.encode_credentials(users(:dhh).name,
+                                                                    users(:dhh).password)
   )
 
   assert_equal 200, status
@@ -59,7 +61,10 @@ class ApplicationController < ActionController::Base
       case request.format
       when Mime::XML, Mime::ATOM
         # 使用验证
-        if user = authenticate_with_http_basic { |u, p| @account.users.authenticate(u, p) } # <- 这里
+        if user = authenticate_with_http_basic do |u, p|
+            @account.users.authenticate(u, p) # <- 这里
+          end
+
           @current_user = user
         else
           # 使用验证
@@ -78,7 +83,7 @@ end
 
 authenticate_or_request_with_http_basic 简单的封装了其余两个方法。
 
-### Class Methods
+### 类方法
 
 提供方法：
 

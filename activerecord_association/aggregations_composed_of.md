@@ -59,7 +59,8 @@ class Money
   end
 
   def exchange_to(other_currency)
-    exchanged_amount = (amount * EXCHANGE_RATES["#{currency}_TO_#{other_currency}"]).floor
+    exchanged_amount = (amount *
+                        EXCHANGE_RATES["#{currency}_TO_#{other_currency}"]).floor
     Money.new(exchanged_amount, other_currency)
   end
 

@@ -1,6 +1,9 @@
 ## Polymorphic Routes
 
-`polymorphic_url(record_or_hash_or_array, options = {})`
+```
+polymorphic_url
+polymorphic_path
+```
 
 1. 不仅仅是多态关联里的'多态'
 2. 可根据参数(model 对象)，自动计算生成 url
@@ -48,14 +51,17 @@ end
 ```
 
 ```ruby
-polymorphic_path([parent, Comment]) # "/posts/1/comments" or "'news/1/comments"
-polymorphic_path(parent)            # "http://example.com/posts/1/comments" or "http://example.com/news/1/comments"
+polymorphic_path([parent, Comment])
+# "/posts/1/comments" 或 "'news/1/comments"
+
+polymorphic_url(parent)
+# "http://example.com/posts/1/comments" 或 "http://example.com/news/1/comments"
 
 其它
-new_polymorphic_path(Post)          # "/posts/new"
-new_polymorphic_url(Post)           # "http://example.com/posts/new"
-edit_polymorphic_path(post)         # "/posts/1/edit"
-edit_polymorphic_url(post)          # "http://example.com/posts/1/edit"
+new_polymorphic_path(Post)  # "/posts/new"
+new_polymorphic_url(Post)   # "http://example.com/posts/new"
+edit_polymorphic_path(post) # "/posts/1/edit"
+edit_polymorphic_url(post)  # "http://example.com/posts/1/edit"
 ```
 
 ### 与 url_for 的区别
@@ -66,14 +72,16 @@ url_for 不能直接指定 host, 需要在另一个地方指定，它只有调�
 
 ### 还有
 
-除上述外，还有方法：
+除上述外，还有方法(元编程生成，API 里查看不到)：
 
 ```
+# 封装 polymorphic_url 而来
 new_polymorphic_url
-new_polymorphic_path
-
-edit_polymorphic_path
 edit_polymorphic_url
+
+# 封装 polymorphic_path 而来
+new_polymorphic_path
+edit_polymorphic_path
 ```
 
 它们封装 polymorphic_url 或 polymorphic_path 而来，所以特点和使用类似。
@@ -92,3 +100,9 @@ polymorphic_path([@user, Document], :action => 'filter')
 polymorphic_path([@user, Document], :action => 'filter', :sort_order => 'this-order')
 # => "/users/:user_id/documents/filter?sort_order=this-order"
 ```
+
+### 其它
+
+原来这个模块是在 Action Controller 下面的，后面才移到 ActionDispatch::Routing.
+
+我们是可以直接使用这几个方法的。

@@ -34,7 +34,8 @@ Authorization: Token token="abc", nonce="def"
 def test_access_granted_from_xml
   get(
     "/notes/1.xml", nil,
-    'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(users(:dhh).token)
+    'HTTP_AUTHORIZATION' =>
+     ActionController::HttpAuthentication::Token.encode_credentials(users(:dhh).token)
   )
 
   assert_equal 200, status
@@ -93,7 +94,10 @@ class ApplicationController < ActionController::Base
       case request.format
       when Mime::XML, Mime::ATOM
         # 使用验证
-        if user = authenticate_with_http_token { |t, o| @account.users.authenticate(t, o) }
+        if user = authenticate_with_http_token do |t, o|
+          @account.users.authenticate(t, o)
+          end
+
           @current_user = user
         else
           # 使用验证

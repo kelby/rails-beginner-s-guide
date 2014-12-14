@@ -1,9 +1,10 @@
 ## Generator
 
+**url_for 方法的重要组成部分。**
+
 各个实例方法
 
 ```
-# 主要对外接口
 generate
 
 # 以下几个方法 initialize 时被调用
@@ -14,6 +15,8 @@ use_relative_controller!
 normalize_controller!
 normalize_action!
 ```
+
+initialize 和 `generate` 对外提供的接口。
 
 除上述外，还有
 

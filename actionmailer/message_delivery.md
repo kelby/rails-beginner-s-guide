@@ -30,8 +30,11 @@ Notifier.welcome("helloworld@example.com").deliver_now
 也可以先创建邮件对象，稍后邮件对象调用方法发送邮件：
 
 ```ruby
-message = Notifier.welcome("helloworld@example.com") # => an ActionMailer::MessageDeliver object
-message.deliver_now                                  # sends the email
+message = Notifier.welcome("helloworld@example.com")
+# => an ActionMailer::MessageDeliver object
+
+message.deliver_now
+# sends the email
 ```
 
 获取 Mail::Message 实例对象(deliver 操作其实是由它发出)

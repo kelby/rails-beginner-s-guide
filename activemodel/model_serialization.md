@@ -9,7 +9,7 @@
 ### JSON
 
 ```ruby
-# 封装了上面的 serializable_hash，提供 :root 选项 
+# 封装了上面的 serializable_hash，并提供 :root 选项 
 as_json
 
 # 调用了 attributes= 方法，给对象赋值

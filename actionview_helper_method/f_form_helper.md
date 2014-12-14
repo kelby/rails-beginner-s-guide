@@ -14,3 +14,49 @@ form_for 和 fields_for 是另类
 大部分封装 Tags::Xxx
 
 名字 FormHelper 起得有一点不合适。
+
+---
+
+部分方法需要的参数 "object_name"，并不是指 model 对象，可以是非 model 对象！
+
+```
+check_box
+color_field
+
+date_field
+datetime_field
+datetime_local_field
+
+email_field
+
+fields_for
+
+form_for
+
+label
+
+file_field
+
+hidden_field
+
+month_field
+
+number_field
+
+password_field
+phone_field
+
+radio_button
+range_field
+
+search_field
+
+telephone_field
+text_area
+text_field
+time_field
+
+url_field
+
+week_field
+```

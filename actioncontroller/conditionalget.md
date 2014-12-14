@@ -125,9 +125,9 @@ def fresh_when(record_or_options, additional_options = {})
   # ... 参数处理，略
 
   # 设置 response 部分属性
-  response.etag          = combine_etags(options)   if options[:etag] || options[:template]
-  response.last_modified = options[:last_modified]  if options[:last_modified]
-  response.cache_control[:public] = true            if options[:public]
+  response.etag          = combine_etags(options)  if options[:etag] || options[:template]
+  response.last_modified = options[:last_modified] if options[:last_modified]
+  response.cache_control[:public] = true           if options[:public]
 
   # 调用 head 方法，返回状态码 304
   head :not_modified if request.fresh?(response)

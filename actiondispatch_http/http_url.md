@@ -1,35 +1,67 @@
 ## URL
 
-```
-domain
+在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
 
+检测结果：
+
+```
+request.domain
+=> "example.com"
+
+request.host
+=> "blog.test.example.com"
+
+request.host_with_port # 取得带端口的主机名
+=> "blog.test.example.com:3000"
+
+request.optional_port
+=> 3000
+
+request.port
+=> 3000
+
+request.port_string
+=> ":3000"
+
+request.protocol # 取得当前使用网络协议
+=> "http://"
+
+request.raw_host_with_port # 代理服务器的主机名和端口
+=> "blog.test.example.com:3000"
+
+request.server_port
+=> 3000
+
+request.standard_port # 返回网络协议标准端口(http 为 80, https 为 443)
+=> 80
+
+request.standard_port? # 判断当前协议是否是标准端口
+=> false
+
+request.subdomain
+=> "blog.test"
+request.subdomain 2
+=> "blog"
+
+request.subdomains
+=> ["blog", "test"]
+request.subdomains 2
+=> ["blog"]
+
+request.url # 取得当前 requset 完整 url
+=> "http://blog.test.example.com:3000/users"
+```
+
+除上述方法外，还有：
+
+```
 extract_domain
 extract_subdomain
 extract_subdomains
 
 full_url_for
 
-host
-host_with_port
-
-optional_port
-
 path_for
 
-port
-port_string
-
-protocol
-
-raw_host_with_port
-server_port
-
-standard_port
-standard_port?
-
-subdomain
-subdomains
-
-url
 url_for
 ```

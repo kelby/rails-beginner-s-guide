@@ -43,7 +43,7 @@ ActionController::Renderers.remove(:csv)
 render_to_body
 ```
 
-### 类方法
+**其它类方法**
 
 ```
 use_renderer & use_renderers

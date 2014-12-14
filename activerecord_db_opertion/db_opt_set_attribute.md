@@ -1,12 +1,12 @@
 ## 数据更新方法对比
 
-| 方法 | Uses Default Accessor | 是否会持久化对象 | Validations | Callbacks | Touches updated_at | Readonly check | 类、实例 | 单属性、多属性 |
-| -- | -- | -- | :--: | :--: | -- | -- | -- | -- |
+| 方法 | 使用默认 <br>Accessor? | 持久化对象? | 校验 | 回调 | 更新 <br>updated_at | Readonly <br>检查 | 类、<br>实例 | 单属性、<br>多属性 |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | x= | Yes | 否 | - | - | - | - | 实例 | 单 |
 | write_attribute | No | 否 | - | - | - | - | 实例 | 单 |
 | update_attribute | Yes | 是 | No | Yes | Yes | Yes | 实例 | 单 |
-| assign_attributes & attributes= | Yes | 否 | - | - | - | - | 实例 | 多 |
-| update & update_attributes | Yes | 是 | Yes | Yes | Yes |Yes | 实例 | 多 |
+| assign_attributes & <br>attributes= | Yes | 否 | - | - | - | - | 实例 | 多 |
+| update & <br>update_attributes | Yes | 是 | Yes | Yes | Yes |Yes | 实例 | 多 |
 | update_column | No | 是 | No | No | No | Yes | 实例 | 单 |
 | update_columns | No | 是 | No | No | No | Yes | 实例 | 多 |
 | User::update | Yes | 是 | Yes | Yes | Yes | Yes | 类 | 多 |

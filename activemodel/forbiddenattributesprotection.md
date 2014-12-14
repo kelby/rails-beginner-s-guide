@@ -32,7 +32,9 @@ end
 
 ```ruby
 # 原理
-raise ActiveModel::ForbiddenAttributesError if attributes.respond_to?(:permitted?) && !attributes.permitted?
+if attributes.respond_to?(:permitted?) && !attributes.permitted?
+  raise ActiveModel::ForbiddenAttributesError
+end
 ```
 
 ### 其它

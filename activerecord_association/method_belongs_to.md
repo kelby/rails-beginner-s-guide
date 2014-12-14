@@ -70,10 +70,12 @@ belongs_to :level, ->(level) { where("game_level > ?", level.current) }
 author belongs_to :book
 
 author.book
-# => Book Load (0.8ms)  SELECT  `books`.* FROM `books` WHERE `books`.`id` = author.id LIMIT 1
+# => Book Load (0.8ms)  SELECT `books`.* FROM `books`
+                                WHERE `books`.`id` = author.id LIMIT 1
 
 author belongs_to :book, primary_key: :alias_book_id
 
 author.book
-# => Book Load (0.8ms)  SELECT  `books`.* FROM `books` WHERE `books`.`alias_book_id` = author.id LIMIT 1
+# => Book Load (0.8ms)  SELECT `books`.* FROM `books`
+                                WHERE `books`.`alias_book_id` = author.id LIMIT 1
 ```

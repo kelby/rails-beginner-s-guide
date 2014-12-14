@@ -1,15 +1,14 @@
 ## Mime Type register
 
-先看看 register 方法
+先看看 `register` 方法
 
-```
-register(string, symbol, mime_type_synonyms = [], extension_synonyms = [], skip_lookup = false)
+第 1，2 个参数容易理解<br>
+第 3 个为标准类型<br>
+第 4 个为扩展类型<br>
 
-第 1，2 个参数容易理解。
-第 3 个为标准类型
-第 4 个为扩展类型
+使用举例
 
-# 使用举例
+```ruby
 Mime::Type.register "text/html", :html, %w( application/xhtml+xml ), %w( xhtml )
 ```
 

@@ -1,5 +1,7 @@
 ## Dispatcher
 
+**处理向 Rails 其它组件转移。**
+
 继承于 Routing::Endpoint
 
 **实例方法**
@@ -45,7 +47,9 @@ app: #<ActionDispatch::Routing::RouteSet::Dispatcher:0x007fd05e0cf7e8
            @controller_class_names=#<ThreadSafe::Cache:0x007fd05e0cf7c0
            @backend={},
            @default_proc=nil>>
-conditions: {:path_info=>"/photos/:id(.:format)", :required_defaults=>[:controller, :action], :request_method=>["GET"]}
+conditions: {:path_info => "/photos/:id(.:format)",
+             :required_defaults => [:controller, :action],
+             :request_method => ["GET"]}
 requirements: {}
 defaults: {:format=>"jpg", :controller=>"photos", :action=>"show"}
 as: nil

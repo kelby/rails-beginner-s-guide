@@ -1,9 +1,5 @@
 # 其它
 
-## Null Relation
-
-结合 `ActiveRecord::Relation#none` 可以用来表示和处理结果为空的 Relation.
-
 ## Finder Methods & Batches
 
 查表操作(数据库读操作)。大部分是SQL层面，一般不可多条件链式查询。
@@ -40,3 +36,7 @@ Ruby 慢，人性化；SQL 快，不易读写。
 Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链式查询可以很大程度的提高效率。更多请查看接口 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
 
 > Note: 这里部分是对多个对象的操作，对 Relation 的操作；不是查询操作。
+
+## ~~Null Relation~~
+
+结合 `ActiveRecord::Relation#none` 可以用来表示和处理结果为空的 Relation.

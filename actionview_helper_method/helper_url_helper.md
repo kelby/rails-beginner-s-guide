@@ -15,5 +15,5 @@ link_to_if
 link_to_unless
 link_to_unless_current
 
-current_page?(options)
+current_page?
 ```

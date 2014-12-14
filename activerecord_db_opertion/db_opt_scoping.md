@@ -22,7 +22,8 @@
 ```ruby
 class Shirt < ActiveRecord::Base
   scope :red, -> { where(color: 'red') }
-  scope :dry_clean_only, -> { joins(:washing_instructions).where('washing_instructions.dry_clean_only = ?', true) }
+  scope :dry_clean_only, -> { joins(:washing_instructions)
+                              .where('washing_instructions.dry_clean_only = ?', true) }
 end
 ```
 

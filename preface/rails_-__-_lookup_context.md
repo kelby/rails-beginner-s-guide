@@ -1,13 +1,6 @@
 ## 渲染及相关概念
 
-[Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
-
-[Render template if exists in Rails](https://coderwall.com/p/ftbmsa)
-
---------------
-
-文件路径
-文件名，包括类型(也就是格式)
+文件路径文件名，包括类型(也就是格式)
 文件里的局部变量
 
 template == 文件路径 + 文件名(包括类型) ？
@@ -23,15 +16,16 @@ path = ActionView::FileSystemResolver.new(FIXTURE_LOAD_PATH)
 view_paths = ActionView::PathSet.new([path])
 ```
 
-上下文包含格式
-上下文的 view_paths 是 PathSet
-上下文的本地化
-上下文的变种
-上下文有缓存
+上下文包含格式  
+上下文的 view_paths 是 PathSet  
+上下文的本地化  
+上下文的变种  
+上下文有缓存 
 
-模板包含内容
+模板包含内容  
 源内容，格式
 
+```
 template = @lookup_context.find("hello", %w(test))
 
 @view = ActionView::Base.new(paths, @assigns)
@@ -51,6 +45,7 @@ pattern = ":prefix/{:formats/,}:action{.:formats,}{.:handlers,}"
 有 find_all
 
 @view_renderer = ActionView::Renderer.new(lookup_context)
+```
 
 **注意，这很重要**
 
@@ -62,7 +57,7 @@ end
 
 和 `ERB.new( template ).result( binder )` 是不是很像
 
-模板由上下文而来
+**模板由上下文而来**
 
 ```ruby
 def find_template(path, locals)
@@ -72,7 +67,7 @@ end
 ```
 
 ```ruby
-pry(main)> BlogsController.new.view_context
+BlogsController.new.view_context
 => #<#<Class:0x007ff084a6ba90>:0x007ff07b745518
  @_assigns={"_routes"=>nil},
  @_config={},
@@ -453,7 +448,7 @@ end
 让我们模拟一下。
 
 ```ruby
-pry(#<BlogsController>)> self.view_paths
+self.view_paths
 => #<ActionView::PathSet:0x007f9a0dcc2938
  @paths=
 
@@ -500,3 +495,9 @@ rendering.rb<br>
 renderer 目录<br>
 base.rb<br>
 又引出了不太重要的 context.rb, flows.rb
+
+参考
+
+[Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
+
+[Render template if exists in Rails](https://coderwall.com/p/ftbmsa)

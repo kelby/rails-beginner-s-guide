@@ -79,7 +79,7 @@ end
 config.middleware.use "ResponseTimer", "Load Time"
 ```
 
-**参考**
+参考
 
 [Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)
 

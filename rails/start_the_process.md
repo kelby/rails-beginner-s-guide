@@ -59,9 +59,9 @@ end
 
 8.1) Bootstrap
 
-  8.2) 默认的 Railtie，Engine, Application
+  8.2) 默认的 Railtie, Engine, Application
 
-  8.3) 定制的 Railtie，Engine
+  8.3) 定制的 Railtie, Engine
 
 构建 middleware stack.<br>
 (Rails.application.send :middleware 查看 middleware, 顺序从前到后)  

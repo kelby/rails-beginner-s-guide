@@ -1,23 +1,29 @@
 ## View Paths
 
-### 实例方法
+**把路径信息放到 PathSet，之后的 lookup_context 需要它们。**
+
+**实例方法**
 
 ```ruby
 append_view_path
-details_for_lookup
-lookup_context
 prepend_view_path
+
+details_for_lookup
+
+lookup_context
 ```
 
-### Class Methods
+**类方法**
 
 ```
 append_view_path
 prepend_view_path
-view_paths, view_paths=
+
+view_paths
+view_paths=
 ```
 
-### 其它
+**其它**
 
 ```
 delegate :template_exists?, :view_paths, :formats, :formats=,
@@ -41,3 +47,6 @@ LookupContext 查找上下文，很重要概念。它携带着很多信息，如
 
 `prepend_view_path` 和 append_view_path 方法类似
 
+---
+
+原来内容是放在 abstract_controller/rendering.rb 文件里的，后来单独成 view_paths.rb，再后来从 Abstract Controller 移到 Action View.

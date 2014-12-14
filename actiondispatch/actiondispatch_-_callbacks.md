@@ -122,6 +122,6 @@ end
 
 `send("_define_#{type}_model_callback", self, callback)`
 
-## 参考
+参考
 
 [Dig Deep Into Callbacks in Rails](http://ungsophy.github.io/blog/2012/05/28/dig-deep-into-callbacks-in-rails/)

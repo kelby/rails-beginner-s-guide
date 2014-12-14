@@ -54,7 +54,7 @@ subscribed
 unsubscribe
 ```
 
-**参考**
+参考
 
 [Pssst... your Rails application has a secret to tell you](http://signalvnoise.com/posts/3091-pssst-your-rails-application-has-a-secret-to-tell-you)<br>
 

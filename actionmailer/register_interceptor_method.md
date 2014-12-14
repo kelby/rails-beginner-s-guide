@@ -18,7 +18,9 @@
 
 ```ruby
 # 注册拦截器(可指定条件)
-ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+if Rails.env.development?
+  ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
+end
 
 # 注册拦截器(有时候需要先加载)
 require 'whitelist_interceptor'
@@ -54,7 +56,9 @@ class EnvironmentInterceptor
   # 实现 delivering_email 方法
   # 有多个非生产环境，但它们都要发送邮件
   def self.delivering_email message
-    message.subject = "[#{Rails.env.capitalize}] #{message.subject}" unless Rails.env.production?
+    unless Rails.env.production?
+      message.subject = "[#{Rails.env.capitalize}] #{message.subject}"
+    end
   end
 end
 ```

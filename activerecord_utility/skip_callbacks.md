@@ -14,7 +14,7 @@
 
 类似 update_columns，直接使用不会触发回调的方法进行操作。
 
-**参考**
+参考
 
 [How can I avoid running ActiveRecord callbacks?](http://stackoverflow.com/questions/632742/how-can-i-avoid-running-activerecord-callbacks)
 
