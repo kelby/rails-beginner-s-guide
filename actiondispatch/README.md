@@ -4,18 +4,18 @@
 对内：RouteSet；
 对外：除 RouteSet 外，routing 目录里的其它模块。
 
-四部分
+四部分：
 
 ## Routing
 
-一切路由规则都可归结为: **map path to the Rack endpoint**
+一切路由规则都可归结为: **map path to the Rack endpoint.**
 
 Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等不同又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
 
 **Rack ~= Rack middleware ~= Rack endpoint ~= Rack application** 
 
-- 除 route_set.rb 外，routing 目录里的其它模块
-- 对外提供接口
+- 除 route_set.rb 外，routing 目录里的其它模块。
+- 对外提供接口。
 
 ```ruby
 Mapper
@@ -26,7 +26,7 @@ UrlFor
 PolymorphicRoutes
 ```
 
-其它
+其它：
 
 ```
 Endpoint # Constraints、 Redirect 和 Dispatcher 的基类，它们都是 endpoint.
@@ -40,10 +40,10 @@ ConsoleFormatter   # 格式化控制台里的路由信息，给人阅读的。
 ## RouteSet
 
 - 特指 route_set.rb
-- 本身就充满魔法
-- 还是内外沟通的桥梁
-- 内指 Journey
-- 外指对外的接口及 routing 目录里的其它内容
+- 本身就充满魔法。
+- 还是内外沟通的桥梁。
+- 内指 Journey.
+- 外指对外的接口及 routing 目录里的其它内容。
 
 ```ruby
 require 'action_dispatch'
@@ -56,8 +56,8 @@ routes.draw do
 end
 ```
 
-从 ActionDispatch 转换站场到 ActionController.
-(准确点：ActionDispatch -> Metal -> AbstractController -> ActionController)
+从 Action Dispatch 转换站场到 Action Controller.
+(准确点：Action Dispatch -> Metal -> Abstract Controller -> Action Controller)
 
 ```ruby
 def dispatch(controller, action, env)
@@ -77,11 +77,11 @@ RoutesProxy # 从 RouteSet 里抽取而来
 
 虽然，大部分为 Controller 所用，但要区别开来。Controller 属于 MVC 里的 C，和我们的业务逻辑有着直接关联，而它不是这样的。
 
-Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要手段，另外还有很小一部分用其它方式实现。
+Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要方式，另外还有很小一部分用其它方式实现。
 
 ## Middleware
 
-**middleware 在路由转发之后，Controller接收之前！**
+**middleware 在路由转发之后，Controller 接收之前！**
 
 ```ruby
 Rails.application.send :default_middleware_stack

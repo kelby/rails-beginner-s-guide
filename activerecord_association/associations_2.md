@@ -6,8 +6,11 @@
 
 ```
 belongs_to
+
 has_and_belongs_to_many
+
 has_many
+
 has_one
 ```
 
@@ -27,8 +30,11 @@ has_one
 
 ```
 HasMany
+
 HasOne
+
 BelongsTo
+
 HasAndBelongsToMany
 ```
 
@@ -43,7 +49,7 @@ HasAndBelongsToMany
     SingularAssociation      &     CollectionAssociation
                              |
                              V   
-                         Association.
+                         Association
 ```
 
 ## 3) Association
@@ -52,7 +58,9 @@ HasAndBelongsToMany
 
 ```
 Association
+
 SingularAssociation
+
 CollectionAssociation
 ```
 

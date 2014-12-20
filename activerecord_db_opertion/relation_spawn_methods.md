@@ -1,0 +1,17 @@
+## Spawn Methods
+
+| 方法 | 解释 |
+| -- | -- |
+| except | 查询方法有多个，并且可以链式调用。使用 except 忽略之前的某个查询方法 |
+| merge | 参数是 Relation, 则做为查询条件，返回仍然是 Relation；参数是数组, 则返回前者的查询结果和此数组的交集 |
+| only | 查询方法有多个，并且可以链式调用。使用 only 指定只能使用的查询方法 |
+
+当参数是 Relation 时，merge 也和 joins、includes 等一样有联合查询的效果。
+
+除上述方法外，还有：
+
+```
+spawn
+
+merge!
+```

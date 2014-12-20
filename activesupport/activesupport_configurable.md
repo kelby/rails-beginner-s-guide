@@ -3,9 +3,9 @@
 ### 实例方法
 
 `config`
-用 @_config 实例变量来保存配置信息
+用 @_config 实例变量来保存配置信息。
 
-使用举例
+使用举例：
 
 ```ruby
 require 'active_support/configurable'
@@ -26,9 +26,9 @@ user.config.level          # => 1
 ### 类方法
 
 `config_accessor`
-以声明的形式，同时定义类方法和实例方法
+以声明的形式，同时定义类方法和实例方法。
 
-使用举例
+使用举例：
 
 ```ruby
 class User
@@ -41,17 +41,18 @@ User.allowed_access = false
 User.allowed_access # => false
 
 user = User.new
+
 user.allowed_access # => false
 user.allowed_access = true
 user.allowed_access # => true
-
 User.allowed_access # => false
 ```
 
-除此之外，还有
+除此之外，还有：
 
 ```
 config
+
 configure
 ```
 

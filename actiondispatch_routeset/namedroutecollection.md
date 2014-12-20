@@ -19,7 +19,7 @@ names
 path_helpers_module
 ```
 
-和 Enumerable 雷同的方法
+和 Enumerable 雷同的方法：
 
 ```
 get  针对的是 routes
@@ -30,15 +30,13 @@ each
 length
 ```
 
-另外，还有私有方法
-
-`define_url_helper` 我们使用的路由相关的 x_url 和 x_path 辅助方法就是由它而来的。
+另外，还有私有方法 `define_url_helper`<br> 我们使用的路由相关的 x_url 和 x_path 辅助方法就是由它而来的。
 
 ### ~~Url Helper~~
 
 非常底层的实现，主要对外接口 self.create
 
-当调用 Named Route Collection 的私有方法 define_url_helper 时会用到，部分内容是
+当调用 Named Route Collection 的私有方法 define_url_helper 时会用到，部分内容是：
 
 ```
 helper = UrlHelper.create(route, opts, route_key, url_strategy)

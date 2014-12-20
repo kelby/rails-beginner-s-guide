@@ -1,8 +1,8 @@
 ## Translation Helper
 
-专有方法：
-
 ```
-localize & l
 translate & t
+localize  & l
 ```
+
+翻译和本地化。

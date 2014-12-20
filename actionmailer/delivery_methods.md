@@ -55,7 +55,7 @@ end
 
 如果你使用的是第三方邮件服务，发送邮件的时候通常还要传递额外的信息供第三方验证，此时你可以用 add_delivery_method 实现方式
 
-原理
+原理：
 
 ```ruby
 def add_delivery_method(symbol, klass, default_options={})
@@ -65,7 +65,7 @@ def add_delivery_method(symbol, klass, default_options={})
 end
 ```
 
-初始化文件里
+初始化文件里：
 
 ```ruby
 add_delivery_method :sendmail, Mail::Sendmail,
@@ -73,7 +73,7 @@ add_delivery_method :sendmail, Mail::Sendmail,
   arguments: '-i -t'
 ```
 
-配置文件里
+配置文件里：
 
 ```ruby
 config.action_mailer.delivery_method = :sendmail

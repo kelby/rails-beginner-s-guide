@@ -1,4 +1,4 @@
-## Params Wrapper
+## ~~Params Wrapper 额外的 params[:x]~~
 
 **类方法**
 
@@ -26,21 +26,30 @@ post.title
 在不引起误解的情况下，我们希望是能够通过 `params[:title]` 直接获取这个元素。虽然这样的使用场景有限。
 
 ```ruby
-# enables the parameter wrapper for XML format
-wrap_parameters format: :xml
+# 默认
+wrap_parameters false
 
-# wraps parameters into params[:person] hash
+# 原 params 复制一份，使用 :person 为 root 元素
 wrap_parameters :person
 
-# wraps parameters by determining the wrapper key from Person class
+# 原 params 复制一份，使用 :person 为 root 元素
 wrap_parameters Person
 
-# wraps only :username and :title attributes from parameters.
+# 原 params 复制一份，转化成 XML 格式，使用默认的 root 元素
+wrap_parameters format: :xml
+
+# 原 params 复制一份，但只要 :username 和 :title 部分，使用默认的 root 元素
 wrap_parameters include: [:username, :title]
 
-# disables parameters wrapping for this controller altogether.
-wrap_parameters false
+# 原 params 复制一份，但排除 :title 部分，使用默认的 root 元素
+wrap_parameters :exclude => :title
 ```
+
+注意：**开发 API 等，我们希望传递的是 JSON 格式的数据。但处理时，我们又希望使用 params Hash，那 Rails 能不能自动帮我们转换呢？**
+
+只有请求格式为 'application/json'，上述描述才起作用！
+
+---
 
 `include_root_in_json`<br> 一个功能上恰好和它相反的配置方法(此外，一个在 Active Model，另一个在 Action Controller)。
 

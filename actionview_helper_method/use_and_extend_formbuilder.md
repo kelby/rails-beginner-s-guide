@@ -9,11 +9,11 @@
 <% end %>
 ```
 
-这里的 `f` 是 FormBuilder 的实例对象，所以可以直接调用 FormBuilder 提供的方法。
+这里的 `f` 是 Form Builder 的实例对象，所以可以直接调用 FormBuilder 提供的方法。
 
 **扩展:**
 
-你可以继承于 FormBuilder，然后构建和表单相关的 helper 方法，举例：
+你可以继承于 Form Builder，然后构建和表单相关的 helper 方法，举例：
 
 ```ruby
 class MyFormBuilder < ActionView::Helpers::FormBuilder

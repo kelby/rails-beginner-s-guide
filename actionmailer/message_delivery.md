@@ -23,7 +23,6 @@ message
 通常，我们都是创建邮件并发送
 
 ```ruby
-# Creates the email and sends it immediately
 Notifier.welcome("helloworld@example.com").deliver_now
 ```
 

@@ -47,7 +47,9 @@ puts "End do salute ..."
 它利用"猴子补丁"并且两次使用 `alias_method` 以达到效果，检验一下：
 
 ```ruby
-Klass.new.salute     # -> 调用代码一，第 2 行；但代码二，第 9 行更改了调用；实际运行的是代码二，第 2 行
+Klass.new.salute     # -> 调用代码一，第 2 行；
+                     # 但代码二，第 9 行更改了调用；
+                     # 实际运行的是代码二，第 2 行。
 
 # 输出：
 Before do salute ... # -> 对应代码二，第 3 行

@@ -4,9 +4,15 @@
 
 ```ruby
 logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-logger.tagged('BCX') { logger.info 'Stuff' }                            # Logs "[BCX] Stuff"
-logger.tagged('BCX', "Jason") { logger.info 'Stuff' }                   # Logs "[BCX] [Jason] Stuff"
-logger.tagged('BCX') { logger.tagged('Jason') { logger.info 'Stuff' } } # Logs "[BCX] [Jason] Stuff"
+
+logger.tagged('BCX') { logger.info 'Stuff' }
+# => Logs "[BCX] Stuff"
+
+logger.tagged('BCX', "Jason") { logger.info 'Stuff' }
+# Logs "[BCX] [Jason] Stuff"
+
+logger.tagged('BCX') { logger.tagged('Jason') { logger.info 'Stuff' } }
+# Logs "[BCX] [Jason] Stuff"
 ```
 
 Rails.logger 默认已经使用。

@@ -46,7 +46,7 @@ run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
 
 ---
 
-可以封装 Rack，得到我们自己的 YourRack，或
+可以封装 Rack，得到我们自己的 YourRack，或：
 
 ```ruby
 class YourRack

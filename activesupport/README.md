@@ -10,10 +10,6 @@
 
 包括：ClassCache 和 WatchStack
 
-## ~~DescendantsTracker~~
-
-## ~~FileUpdateChecker~~
-
 ## ~~ProxyObject~~
 
 ## JSON
@@ -23,5 +19,6 @@
     autoload :Chars
     autoload :Unicode
 
-## OptionMerger
+## Option Merger
 
+TODO

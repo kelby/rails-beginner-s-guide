@@ -7,7 +7,8 @@ module ActionView
     attr_internal :config, :assigns
 
     delegate :lookup_context, :to => :view_renderer
-    delegate :formats, :formats=, :locale, :locale=, :view_paths, :view_paths=, :to => :lookup_context
+    delegate :formats, :formats=, :locale, :locale=, :view_paths, :view_paths=,
+             :to => :lookup_context
 
     def initialize(context = nil, assigns = {}, controller = nil, formats = nil)
       @_config = ActiveSupport::InheritableOptions.new

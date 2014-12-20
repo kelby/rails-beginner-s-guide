@@ -6,17 +6,17 @@ Transactions
 
 - Validations
 
-包括 AssociatedValidator、PresenceValidator、UniquenessValidator
+包括 AssociatedValidator、PresenceValidator、UniquenessValidator.
 
 ~~Translation~~
 
 Store
 
-NoTouching
+No Touching
 
-ReadonlyAttributes
+Readonly Attributes
 
-NestedAttributes
+Nested Attributes
 
 Integration
 

@@ -22,4 +22,4 @@ select_second
 time_tag
 ```
 
-抽取出了 DateTimeSelector，用来处理这里和 select_x 相关的方法。
+抽取出了 DateTime Selector，用来处理这里和 select_x 相关的方法。

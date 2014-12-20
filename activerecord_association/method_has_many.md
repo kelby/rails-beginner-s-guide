@@ -66,6 +66,7 @@ end
 | -- | -- |
 | :class_name | 解释同上 |
 | :foreign_key | 解释同上 |
+| :foreign_type | 多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
 | :primary_key | 解释同上 |
 | :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
@@ -79,15 +80,15 @@ end
 
 ### 注意事项。
 
-- :dependent 可选参数
-  - :destroy 删除(destroy)所有被关联对象。
+- `:dependent` 可选参数
+  - `:destroy` 删除(destroy)所有被关联对象。
 
-  - :delete_all 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
+  - `:delete_all` 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
 
-  - :nullify 设置后者的"前者_id"属性为 nil. 不会触发回调。
+  - `:nullify` 设置后者的"前者_id"属性为 nil. 不会触发回调。
 
-  - :restrict_with_exception 有关联对象则抛异常。并且后面与之的无关代码也不能再运行
+  - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
 
-  - :restrict_with_error 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行
-- :autosave 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
-
+  - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
+- `:autosave` 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
+- `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。

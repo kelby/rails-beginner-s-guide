@@ -1,6 +1,6 @@
 ## Url For
 
-对外提供 `url_for`，和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder (极端情况下才调用到)
+对外提供 `url_for`，和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder. (极端情况下才调用到)
 
 使用举例：
 

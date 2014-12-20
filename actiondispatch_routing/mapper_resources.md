@@ -19,18 +19,22 @@ VALID_ON_OPTIONS = [:new, :collection, :member]
 RESOURCE_OPTIONS = [:as, :controller, :path, :only, :except, :param, :concerns]
 ```
 
-其它方法，不再介绍：
+其它方法(不再介绍)：
 
 ```
 nested
+
 new
+
 resources_path_names
+
 shallow
 shallow?
+
 using_match_shorthand?
 ```
 
-Instance Protected methods
+和
 
 ```
 set_member_mappings_for_resource

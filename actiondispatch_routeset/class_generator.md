@@ -2,7 +2,7 @@
 
 **url_for 方法的重要组成部分。**
 
-各个实例方法
+各个实例方法：
 
 ```
 generate
@@ -18,7 +18,7 @@ normalize_action!
 
 initialize 和 `generate` 对外提供的接口。
 
-除上述外，还有
+除上述外，还有：
 
 ```
 use_recall_for

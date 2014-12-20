@@ -2,13 +2,13 @@
 
 **一个罗卜一个坑**
 
-一个路由
+一个路由规则：
 
 ```
 resources :aas
 ```
 
-三部分：
+可拆分成 3 部分：
 
 1 最里面 Controller#action
 
@@ -60,10 +60,11 @@ DELETE /aas/:id(.:format)
 
 `draw` 的本质是：运用 Mapper，处理 config/routes.rb 里的代码。
 
-相关代码
+相关代码：
 
 ```ruby
 mapper = Mapper.new(self)
+
 if default_scope
   mapper.with_default_scope(default_scope, &block)
 else

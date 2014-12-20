@@ -66,7 +66,7 @@ belongs_to & references
 
 > Note: 这里有一些方法是通过元编程生成的，查文档找不到它们，可能通过 ActiveRecord::ConnectionAdapters::Table.public_instance_methods(false) 查看。
 
-列举如下
+列举如下：
 
 > 
 :column, :column_exists?, :index, :index_exists?, :rename_index, :timestamps, :change, :change_default, :remove, :remove_index, :remove_timestamps, :rename, :references, :belongs_to, :remove_references, :remove_belongs_to, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean

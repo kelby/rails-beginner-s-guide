@@ -6,7 +6,7 @@ path、constraints、shallow_path、shallow_prefix、defaults、as、module、co
 
 **defaults 参数**
 
-它是通用的，类型为 Hash
+它是通用的，类型为 Hash.
 
 **as 参数** 3 个很重要的参数之一
 
@@ -46,10 +46,10 @@ end
 
 **constraints 参数**
 
-对应着 constraints 方法
+对应着 constraints 方法。
 
 **controller 参数**
 
-对应着 controller 方法
+对应着 controller 方法。
 
 

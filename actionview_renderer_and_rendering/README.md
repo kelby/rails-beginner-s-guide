@@ -23,7 +23,7 @@ Partial Renderer
 Abstract Renderer  
 抽象出来的渲染器
 
-### 模板(Template)
+### 模板内容(Template)
 
 Type  
 类型(也就是 format)

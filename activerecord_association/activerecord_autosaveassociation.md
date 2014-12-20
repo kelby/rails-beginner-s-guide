@@ -2,14 +2,14 @@
 
 负责处理自动保存相关一切任务。
 
-常用
+常用：
 
 ```
 mark_for_destruction
 marked_for_destruction?
 ```
 
-除此之外，还有
+除此之外，还有：
 
 ```
 changed_for_autosave?

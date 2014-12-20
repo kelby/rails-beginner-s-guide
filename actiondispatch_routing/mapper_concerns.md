@@ -68,7 +68,7 @@ namespace :posts do
 end
 ```
 
-**一些疑问**
+**一些疑问？**
 
 即使是去除重复代码，也还有其它方法实现。如：
 
@@ -84,4 +84,6 @@ AppName::Application.routes.draw do
 end
 ```
 
-有必要使用 DSL 吗？在 [讨论](https://github.com/rails/rails/commit/0dd24728a088fcb4ae616bb5d62734aca5276b1b#commitcomment-1749011) 里 dhh 回答了此问题。
+有必要使用 DSL 吗？
+
+在 [讨论](https://github.com/rails/rails/commit/0dd24728a088fcb4ae616bb5d62734aca5276b1b#commitcomment-1749011) 里 dhh 回答了此问题。

@@ -1,6 +1,6 @@
 ## Schema Statements
 
-重要的操作或问询如下：
+重要的操作或问询如下(实例方法)：
 
 ```
 # index(索引)
@@ -34,7 +34,7 @@ add_reference & add_belongs_to
 remove_belongs_to & remove_reference
 ```
 
-其它操作或问询：
+其它操作或问询(实例方法)：
 
 ```
 add_timestamps
@@ -57,7 +57,7 @@ remove_timestamps
 table_alias_for
 ```
 
-## Instance Protected methods
+其它实例方法
 
 ```
 options_include_default?

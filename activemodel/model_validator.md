@@ -10,6 +10,7 @@
 ```ruby
 class Person
   include ActiveModel::Validations
+
   validates_with MyValidator
 end
 

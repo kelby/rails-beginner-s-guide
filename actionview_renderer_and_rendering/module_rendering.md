@@ -89,7 +89,7 @@ end
 
 ---
 
-部分源代码
+部分源代码：
 
 ```ruby
 def view_context

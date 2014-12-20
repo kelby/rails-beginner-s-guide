@@ -47,4 +47,4 @@ VALID_AUTOMATIC_INVERSE_MACROS = [:has_many, :has_one, :belongs_to]
 INVALID_AUTOMATIC_INVERSE_OPTIONS = [:conditions, :through, :polymorphic, :foreign_key]
 ```
 
-另，HasManyReflection、 HasOneReflection、BelongsToReflection 和 HasAndBelongsToManyReflection 都继承于 AssociationReflection. 它们这几个方法比较少，就不再一一列举。
+另，Has Many Reflection、 Has One Reflection、Belongs To Reflection 和 Has And Belongs To Many Reflection 都继承于 Association Reflection. 它们这几个方法比较少，就不再一一列举。

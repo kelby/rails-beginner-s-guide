@@ -6,7 +6,7 @@
 第 3 个为标准类型<br>
 第 4 个为扩展类型<br>
 
-使用举例
+使用举例：
 
 ```ruby
 Mime::Type.register "text/html", :html, %w( application/xhtml+xml ), %w( xhtml )
@@ -30,7 +30,6 @@ Mime::SET
   @symbol=:js,
   @synonyms=["application/javascript", "application/x-javascript"]>,
  #<Mime::Type:0x007fdf7f01d158 @string="text/css", @symbol=:css, @synonyms=[]>,
- ...
  ... ...
 ```
 

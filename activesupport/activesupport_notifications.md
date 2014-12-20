@@ -8,7 +8,7 @@
 ```ruby
 # 发布消息
 ActiveSupport::Notifications.instrument "my.custom.event", this: :data do
-  # do your custom stuff here
+  # ... 要执行的内容
 end
 
 # 订阅消息
@@ -41,7 +41,7 @@ Rails 默认有很多 Instrumentation，你可以不写 instrument 直接 subscr
 `ActiveSupport::Notifications.instrumenter.instance_variable_get("@notifier").instance_variable_get("@subscribers").map { |s| s.instance_variable_get "@pattern" }`
 此命令不包含元编程创建的 instrumenter，如 ActionController 就有很多 instrumenter 没有包含在内。
 
-## 所有方法
+所有方法:
 
 ```
 instrument
@@ -57,12 +57,8 @@ unsubscribe
 参考
 
 [Pssst... your Rails application has a secret to tell you](http://signalvnoise.com/posts/3091-pssst-your-rails-application-has-a-secret-to-tell-you)<br>
-
 [Digging Deep with ActiveSupport::Notifications](https://speakerdeck.com/nextmat/digging-deep-with-activesupportnotifications)<br>
-
 [#249 Notifications in Rails 3](http://railscasts.com/episodes/249-notifications-in-rails-3)<br>
-
 [ActiveSupport::Notifications, statistics and using facts to improve your site](http://www.reinteractive.net/posts/141-activesupport-notifications-statistics-and-using-facts-to-improve-your-site)<br>
-
 [Active Support Instrumentation](http://edgeguides.rubyonrails.org/active_support_instrumentation.html)
 

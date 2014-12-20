@@ -31,16 +31,25 @@
 
 ```
 eager_loading?
+
 encode_with
-initialize_copy, inspect
+
+initialize_copy
+
+inspect
+
 joined_includes_values
+
 pretty_print
 
 scope_for_create
+
 scoping
+
 size
 
 to_a
+
 to_sql
 
 uniq_value

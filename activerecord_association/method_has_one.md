@@ -16,7 +16,7 @@
 
 这里的解释参考了 `belongs_to`，不单它们的方法名是一样的。定们定义方法就也是一样的。
 
-另，belongs_to 和 has_one 都属于 SingularAssociation.
+另，belongs_to 和 has_one 都属于 Singular Association.
 
 ### 有什么参数，表示什么意思，使用后有什么效果。
 
@@ -39,6 +39,7 @@ has_one :dob, ->(dob) { where("Date.new(2000, 01, 01) > ?", dob) }
 | :class_name | 后者对应着的'类名'. 当按照"约定"找不到这个'类'的时候，用 :class_name 指明。 |
 | :dependent | 删除前者时，对后者进行什么操作。1) :destroy, 删除后者，会触发回调；2) :delete, 删除后者，不会触发回调；3) ::nullify, 把后者里的"前者_id"属性设置为 nil, 不会触发回调；4) :restrict_with_exception, 如果有后者的关联对象，报异常；5) :restrict_with_error 如果有后者的关联对象，报错。|
 | :foreign_key* | 前者的外键，默认是"前者_id"，这个属性是按照"约定"命名的，如果不符合"约定"，用 :foreign_key 指明。 |
+| :foreign_type | 多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
 | :primary_key* | 凡是通过前者查询后者。传递的是前者的主键所对应的值，也就是 id 字段的值，如果觉得不合适，可以用 :primary_key 指明字段。 |
 | :as | 多态时用到，声明多态的接口。通常和 belongs_to 里的 :polymorphic 配对使用。|
 | :through | 指定中间表。优先级比 :class_name、:primary_key 和 :foreign_key 要高。|
@@ -54,23 +55,24 @@ has_one :dob, ->(dob) { where("Date.new(2000, 01, 01) > ?", dob) }
 - `:foreign_key 和 primary_key` 针对的是前者。
 - `:through` 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
 - `:source_type` 影响的是数据，不是属性。
-
+- `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
+- 
 ### 对比
 
-使用 primary_key 前后对比
+使用 primary_key 前后对比：
 
 ```ruby
 book has_one :author
 
 book.author
 # 传递的值是 book.id
-# => Author Load (6.5ms)  SELECT `authors`.* FROM `authors`
-                                  WHERE `authors`.`book_id` = book.id LIMIT 1
+# => Author Load (6.5ms) SELECT `authors`.* FROM `authors` \n
+                         WHERE `authors`.`book_id` = book.id LIMIT 1
 
 book has_one :author, primary_key: :a_primary_id
 
 book.author
 # 传递的值是 book.a_primary_id
-# => Author Load (6.5ms)  SELECT `authors`.* FROM `authors`
-                                  WHERE `authors`.`book_id` = book.a_primary_id LIMIT 1
+# => Author Load (6.5ms) SELECT `authors`.* FROM `authors` \n
+                         WHERE `authors`.`book_id` = book.a_primary_id LIMIT 1
 ```

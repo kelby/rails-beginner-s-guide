@@ -1,6 +1,6 @@
 ## 其它
 
-加载 ActionModel 相关 I18n
+加载 Action Model 相关 I18n
 
 ```ruby
 ActiveSupport.on_load(:i18n) do

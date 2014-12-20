@@ -1,13 +1,13 @@
 ## TestCase
 
-实例方法
+实例方法：
 
 ```
 setup
 teardown
 ```
 
-除上述方法外，还有
+除上述方法外，还有：
 
 ```
 io
@@ -18,7 +18,7 @@ run
 passed?
 ```
 
-类方法
+类方法：
 
 ```
 i_suck_and_my_tests_are_order_dependent! # 让测试按照顺序执行！

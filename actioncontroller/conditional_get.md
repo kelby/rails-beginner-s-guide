@@ -1,4 +1,6 @@
-## Conditional Get
+## Conditional Get - HTTP Cache
+
+**页面相关的客户端缓存**
 
 根据 ETag 和 Last-Modified 来决定是否渲染页面，可充分利用客户端(例如浏览器)的缓存，在 Rails 里属于 Controller#action 层面的缓存。
 
@@ -8,9 +10,9 @@
 
 ETag 过程如下：
 
-客户端请求一个页面（A）。 服务器返回页面 A，并在给 A 加上一个 ETag。  
-客户端展现该页面，并将页面连同 ETag 一起缓存。  
-客户再次请求页面 A，并将上次请求时服务器返回的 ETag 一起传递给服务器。  
+客户端请求一个页面 A，服务器返回页面 A，并在给 A 加上一个 ETag.<br>
+客户端展现该页面，并将页面连同 ETag 一起缓存。<br>
+客户再次请求页面 A，并将上次请求时服务器返回的 ETag 一起传递给服务器。<br>
 服务器检查该 ETag，并判断出该页面自上次客户端请求之后还未被修改，直接返回响应 304（未修改——Not Modified）和一个空的响应体。
 
 Last-Modified 过程如下：
@@ -21,15 +23,15 @@ Last-Modified 过程如下：
 Last-Modified : Fri , 12 May 2006 18:53:33 GMT  
 ```
 
-客户端第二次请求此 URL 时，根据HTTP协议的规定，浏览器会向服务器传送 If-Modified-Since 报头，询问该时间之后文件是否有被修改过：  
+客户端第二次请求此 URL 时，根据 HTTP 协议的规定，浏览器会向服务器传送 If-Modified-Since 报头，询问该时间之后文件是否有被修改过：  
 
 ```
 If-Modified-Since : Fri , 12 May 2006 18:53:33 GMT  
 ```
 
-如果服务器端的资源没有变化，则自动返回 HTTP 304（Not Changed.）状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。
+如果服务器端的资源没有变化，则自动返回 HTTP 304 (Not Changed) 状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。
 
-一个典型的 Response headers
+一个典型的 Response headers:
 
 ```
 Last-Modified: Sun, 09 Nov 2014 05:25:32 GMT 
@@ -73,10 +75,10 @@ stale?
 `fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 EtagWithTemplateDigest 进行处理)
 
 ```ruby
-# We're going to render widgets/show, not posts/show
+# 默认传递 @post 给 posts/show 模板进行求值，我们希望改变这点，传递 @post 给 widges/show 求值
 fresh_when @post, template: 'widgets/show'
 
-# We're not going to render a template, so omit it from the ETag.
+# 只对 @post 求值，不带入模板内容
 fresh_when @post, template: false
 ```
 
@@ -86,7 +88,7 @@ fresh_when @post, template: false
 
 最新，表示没有更改。
 
-> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是Web服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
+> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是 Web 服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
 
 什么也没改 
 
@@ -125,7 +127,7 @@ def fresh_when(record_or_options, additional_options = {})
   # ... 参数处理，略
 
   # 设置 response 部分属性
-  response.etag          = combine_etags(options)  if options[:etag] || options[:template]
+  response.etag = combine_etags(options) if options[:etag] || options[:template]
   response.last_modified = options[:last_modified] if options[:last_modified]
   response.cache_control[:public] = true           if options[:public]
 
@@ -174,5 +176,5 @@ fresh_when 可以通过工具(如：Chrome 插件"Advanced REST client")查看 E
 
 参考
 
-[在你的 Rails App 中开启 ETag 加速页面载入同时节省资源](http://huacnlee.com/blog/use-etag-in-your-rails-app-to-speed-up-loading/)
-
+[在你的 Rails App 中开启 ETag 加速页面载入同时节省资源](http://huacnlee.com/blog/use-etag-in-your-rails-app-to-speed-up-loading/)<br>
+[基于资源的HTTP Cache的实现介绍](http://robbinfan.com/blog/13/http-cache-implement)

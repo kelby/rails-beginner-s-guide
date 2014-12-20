@@ -25,7 +25,7 @@ Comment all lines matching a given regex.
 复制文件。(默认源文件放在 source_root 下)
 
 `create_file(destination, *args, &block) (also: #add_file)`  
-Create a new file relative to the destination root with the given data, which is the return value of a block or a data string.
+Create a new file relative to the destination root with the given data, which is the return value of a block or a data string.<br>
 创建新文件。
 
 `create_link(destination, *args, &block) (also: #add_link)`  

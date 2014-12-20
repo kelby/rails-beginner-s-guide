@@ -116,7 +116,7 @@ end
 
 **Token 验证的部分特点**
 
-1. 不能直接明文出现在 url 里
-2. 通过 curl -H 'Authorization: Token token="x"' 传递数据
-3. 通常用于制作程序接口
-4. 不提供弹窗输入，其余两种验证方式提供
+1. 不能直接明文出现在 url 里。
+2. 通过 curl -H 'Authorization: Token token="x"' 传递数据。
+3. 通常用于制作程序接口。
+4. 不提供弹窗输入，其余两种验证方式提供。

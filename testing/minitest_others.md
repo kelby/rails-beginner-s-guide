@@ -2,7 +2,7 @@
 
 ## Kernel
 
-很常用的方法
+很常用的方法：
 
 ```
 describe
@@ -10,7 +10,7 @@ describe
 
 ## Object
 
-常用的方法
+常用的方法：
 
 ```
 stub
@@ -18,7 +18,7 @@ stub
 
 保存调用此方法的值，下次再调用此方法，直接使用该值，不用重新计算生成。
 
-举例
+举例：
 
 ```ruby
 DateTime.now
@@ -38,7 +38,7 @@ end
 
 已经 mixed 进 TestCase.
 
-类方法
+类方法：
 
 ```
 bench_exp
@@ -46,7 +46,7 @@ bench_linear
 bench_range
 ```
 
-实例方法
+实例方法：
 
 ```
 assert_performance
@@ -69,7 +69,7 @@ validation_for_fit
 
 ## Bench Spec
 
-类方法
+类方法：
 
 ```
 bench
@@ -81,7 +81,7 @@ bench_range
 
 ## Abstract Reporter
 
-实例方法
+实例方法：
 
 ```
 passed?
@@ -92,7 +92,7 @@ start
 
 ## Assertion
 
-实例方法
+实例方法：
 
 ```
 location

@@ -26,7 +26,8 @@ queue_adapter
 以及
 
 ```ruby
-delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, to: :queue_adapter
+delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, \n
+         to: :queue_adapter
 ```
 
 除上述外方法外，测试环境下可以使用 TestAdapter 适配器。

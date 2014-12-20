@@ -1,14 +1,16 @@
 ## Lookup Context
 
+"查找上下文"之前理解有误，它的重点在于"查找"，而不是"上下文"。
+
 **从其包含属性和行为来分析，它就是为了查找 Template.**
 
-先看官方解释
+先看官方解释：
 
-```
+> 
 LookupContext is the object responsible to hold all information required to lookup templates, i.e. view paths and details. 
 
+> 
 The LookupContext is also responsible to generate a key, given to view paths, used in the resolver cache lookup. Since this key is generated just once during the request, it speeds up all cache accesses.
-```
 
 在【渲染的原理】里，我们就讲了 lookup context 的作用，但那只是示例程序，只讲到了其中的一点。Rails 项目远比这复杂得多，所以 lookup context 的作用也远比这重要。
 
@@ -47,8 +49,8 @@ register_detail
 
 ```
 ✗ ls
-Gemfile      README.rdoc  app          blorgh       config.ru    lib          public       tmp
-Gemfile.lock Rakefile     bin          config       db           log          test         vendor
+Gemfile       README.rdoc  app  blorgh  config.ru  lib  public  tmp
+Gemfile.lock  Rakefile     bin  config  db         log  test    vendor
 ```
 
 创建一个简单的 lookup_context
@@ -83,8 +85,8 @@ lookup_context = ActionView::LookupContext.new(FIXTURE_LOAD_PATH, {})
          #<ActionView::Resolver::Cache::SmallCache:0x007ff7250a0ec8
           @backend={},
           @default_proc=
-           #<Proc:0x007ff72526d3a0@/Users/kelby/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/actionview-4.1.0/lib/action_view/template/resolver.rb:48 (lambda)>>>,
-      @path="/Users/kelby/rails4/polymorphic_url_001/fixtures",
+           #<Proc:......@/...b/action_view/template/resolver.rb:48 (lambda)>>>,
+      @path="/.../app_name/fixtures",
       @pattern=
        ":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}">]>>
 ```

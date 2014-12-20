@@ -34,7 +34,7 @@ delegate :template_exists?, :view_paths, :formats, :formats=,
 
 - lookup_context
 
-LookupContext 查找上下文，很重要概念。它携带着很多信息，如：view paths 和 details，查找模板需要这些东西。
+Lookup Context 查找上下文，很重要概念。它携带着很多信息，如：view paths 和 details，查找模板需要这些东西。
 当然，对我们平常使用没有影响，知道有这么回事即可。
 
 - _view_paths

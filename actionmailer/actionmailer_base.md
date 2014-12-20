@@ -49,10 +49,10 @@ a_mailer.attachments
 使用举例(定义)：
 
 ```ruby
-# By Filename
+# 文件名的方式
 mail.attachments['filename.jpg'] # => Mail::Part object or nil
 
-# By index
+# 索引的方式
 mail.attachments[0]              # => Mail::Part (first attachment)
 ```
 

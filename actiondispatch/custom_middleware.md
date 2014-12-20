@@ -66,7 +66,10 @@ class ResponseTimer
   end
 
   def each(&block)
-    block.call("<!-- #{@message}: #{@stop - @start} -->\n") if @headers["Content-Type"].include? "text/html"
+    if @headers["Content-Type"].include? "text/html"
+      block.call("<!-- #{@message}: #{@stop - @start} -->\n") 
+    end
+
     @response.each(&block)
   end
 end
@@ -81,10 +84,7 @@ config.middleware.use "ResponseTimer", "Load Time"
 
 参考
 
-[Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)
-
-[Where do you put your Rack middleware files and requires?](http://stackoverflow.com/questions/3428343/where-do-you-put-your-rack-middleware-files-and-requires)
-
-[Sanitizing POST params with custom Rack middleware](http://pivotallabs.com/sanitizing-post-params-with-custom-rack-middleware/)
-
+[Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)<br>
+[Where do you put your Rack middleware files and requires?](http://stackoverflow.com/questions/3428343/where-do-you-put-your-rack-middleware-files-and-requires)<br>
+[Sanitizing POST params with custom Rack middleware](http://pivotallabs.com/sanitizing-post-params-with-custom-rack-middleware/)<br>
 [#151 Rack Middleware](http://railscasts.com/episodes/151-rack-middleware)

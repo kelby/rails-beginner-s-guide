@@ -10,13 +10,13 @@ no_touching
 
 ```ruby
 ActiveRecord::Base.no_touching do
-  Project.first.touch # does nothing
-  Message.first.touch # does nothing
+  Project.first.touch # 不会执行 touch
+  Message.first.touch # 不会执行 touch
 end
 
 Project.no_touching do
-  Project.first.touch # does nothing
-  Message.first.touch # works, but does not touch the associated project
+  Project.first.touch # 不会执行 touch
+  Message.first.touch # 会对 message 执行 touch; 但它 touch: true 的关联对象不会被 touch
 end
 ```
 
@@ -24,5 +24,6 @@ end
 
 ```
 no_touching?
+
 touch
 ```

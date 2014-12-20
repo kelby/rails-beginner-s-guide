@@ -13,7 +13,7 @@ root
 匹配url到一个或多个路由。所有符号，都会对应着url里的参数，可用`params`获取：
 
 ```ruby
-# sets :controller, :action and :id in params
+# 对应着 params 里的 :controller, :action 和 :id
 match ':controller/:action/:id'
 ```
 
@@ -132,6 +132,8 @@ end
 
 ```
 default_url_options & default_url_options=
+
 has_named_route?
+
 with_default_scope
 ```

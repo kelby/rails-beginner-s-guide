@@ -52,7 +52,7 @@ validates_numericality_of
 由于封装 `validates_with` 而来，可当做类方法调用。
 又由于具体实现时继承于 EachValidator，又可以当做 `validates` 的参数使用。
 
-`validates_confirmation_of` 会为要校验的属性生成对应的读、写方法 x_confirmation、 x_confirmation=
+`validates_confirmation_of` 会为要校验的属性生成对应的读、写方法(x_confirmation、 x_confirmation=)
 
 如：校验 password，会生成 password_confirmation 读方法和 password_confirmation= 写方法。
 

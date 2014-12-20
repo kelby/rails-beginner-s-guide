@@ -1,6 +1,6 @@
 ## Locking
 
-锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic)。
+锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic).
 
 ### 悲观锁(Pessimistic)
 
@@ -24,7 +24,7 @@ select * from account where name="Erica" for update
 
 #### Rails 的悲观锁
 
-lock、lock! 和 with_lock
+lock、lock! 和 with_lock.
 
 其中，lock 和 with_lock 都是封装 lock! 而来。
 
@@ -88,7 +88,7 @@ end
 
 大多是基于数据版本(Version)记录机制实现。
 
-何谓数据版本？即为数据增加一个版本标识，在基于数据库表的版本解决方案中，一般是通过为数据库表增加一个 “version” 字段来实现。读取出数据时，将此版本号一同读出，之后更新时，对此版本号加一。此时，将提交数据的版本数据与数据库表对应记录的当前版本信息进行比对，如果提交的数据版本号大于数据库表当前版本号，则予以更新，否则认为是过期数据。
+何谓数据版本？即为数据增加一个版本标识，在基于数据库表的版本解决方案中，一般是通过为数据库表增加一个 "version" 字段来实现。读取出数据时，将此版本号一同读出，之后更新时，对此版本号加一。此时，将提交数据的版本数据与数据库表对应记录的当前版本信息进行比对，如果提交的数据版本号大于数据库表当前版本号，则予以更新，否则认为是过期数据。
 
 #### Rails 的乐观锁
 
@@ -153,9 +153,9 @@ end
 
 通常用法：
 
-1. Add `:lock_version, :integer, default: 0` column to model
-2. Use that column in forms for your model
-3. Catch and resolve `StaleObjectError` on your model updates
+1. 给表添加 `:lock_version, :integer, default: 0` 属性。
+2. 在表单里使用此属性。
+3. 如果更新的是脏数据，会报错 `StaleObjectError`，可根据这个做相应处理。
 
 缺点：有可能脏读。
 

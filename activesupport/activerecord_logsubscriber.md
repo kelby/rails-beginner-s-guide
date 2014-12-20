@@ -1,6 +1,6 @@
 ### Active Record Log Subscriber
 
-**类方法**
+类方法：
 
 ```
 runtime
@@ -9,7 +9,7 @@ runtime=
 reset_runtime
 ```
 
-**实例方法**
+实例方法：
 
 ```
 odd?

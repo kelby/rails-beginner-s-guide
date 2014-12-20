@@ -2,7 +2,7 @@
 
 ### Syntax Methods
 
-构建单个对象
+构建单个对象：
 
 ```
 build
@@ -11,7 +11,7 @@ attributes_for
 build_stubbed
 ```
 
-构建多个对象
+构建多个对象：
 
 ```
 build_list
@@ -26,7 +26,7 @@ build_stubbed_list
 
 **Linting Factories**
 
-类方法
+类方法：
 
 ```
 lint
@@ -34,13 +34,13 @@ lint
 
 **Defining factories**
 
-类方法
+类方法：
 
 ```
 define
 ```
 
-实例方法
+实例方法：
 
 ```
 factory
@@ -105,7 +105,7 @@ after(:stub)
 
 **Modifying factories**
 
-类方法
+类方法：
 
 ```
 modify

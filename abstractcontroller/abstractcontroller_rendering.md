@@ -89,9 +89,7 @@ render js: "alert('Hello Rails');"
 render body: "raw"
 ```
 
----
-
-除 render 外，还有方法：
+除上述方法外，还有：
 
 ```
 render_to_body

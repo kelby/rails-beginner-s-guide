@@ -7,7 +7,7 @@
 :routing_type - 生成 :path 还是 :url, 默认是 :url.
 
 ```ruby
-builder = ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder.plural 'edit', 'url'
+ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder.plural 'edit', 'url'
 
 when Array
 builder.handle_list record   # 拆分处理，方式雷同

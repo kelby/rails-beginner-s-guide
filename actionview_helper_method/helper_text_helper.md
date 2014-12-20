@@ -13,7 +13,7 @@ excerpt       引用、摘录(只显示某个词及其附近的语句，其余�
 highlight     高亮(默认是加 mark )
 pluralize     复数形式
 
-safe_concat   在 ActiveSupport 里也提供了 safe_concat 方法，如果可用则用；否则用 concat
+safe_concat   在 Active Support 里也提供了 safe_concat 方法，如果可用则用；否则用 concat
 simple_format 文本简单格式化
 word_wrap     限制长度
 ```

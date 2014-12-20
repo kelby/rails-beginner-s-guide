@@ -10,7 +10,7 @@ rewind
 size
 ```
 
-使用举例
+使用举例：
 
 ```ruby
 Factory.define :image do |o|  

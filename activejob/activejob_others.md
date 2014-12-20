@@ -9,13 +9,13 @@
 
 当然，这都是自动完成的。
 
-## 参数支持 GlobalID
+## 参数支持 Global ID
 
 一般入队列(enqueue_in、enqueue_at 和 enqueue) 只传能够标识对象的那部分参数(如：class、id)，出队列/执行的时候再根据这些参数获取对象。
 
 但因为 serialize_argument 支持的类型有多种，其中就包括 GlobalID::Identification. 所以我们可以传递一个"活的对象"进队列，而不只是它的一部分(如：class、id).
 
-使用 GlobalID 前后对比：
+使用 Global ID 前后对比：
 
 ```ruby
 class TrashableCleanupJob
@@ -75,7 +75,6 @@ rails generate job NAME [options]
 ## 异常捕获与处理
 
 使用 ActiveSupport 的异常捕获方法 `rescue_from`
-
 
 ```ruby
 class GuestsCleanupJob < ActiveJob::Base

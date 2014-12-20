@@ -2,17 +2,17 @@
 
 ## Metal 是重点
 
-属于 Rack application (或者称之为 middleware)
+属于 Rack application (或者称之为 middleware).
 
-可直接继承使用
+可直接继承使用。
 
-middleware_stack (这个很重要，最终指向 ActionDispatch::MiddlewareStack)
+middleware_stack (这个很重要，最终指向 ActionDispatch::MiddlewareStack).
 
 self.action + dispatch
 
 ## Metal 之外
 
-有一些模块和 Metal 一样也有 `process_action` 方法，并且它们也被 include 进了 Action Controller，并且我们自己定义的类没有这个方法(没有重写). 根据 Ruby 的代码执行规则，执行 process_action 时它们都会被执行(并且这个方法执行顺序先于 Metal 同名的方法)。
+有一些模块和 Metal 一样也有 `process_action` 方法，并且它们也被 include 进了 Action Controller，并且我们自己定义的类没有这个方法(没有重写)。根据 Ruby 的代码执行规则，执行 process_action 时它们都会被执行(并且这个方法执行顺序先于 Metal 同名的方法)。
 
 ### cache
 
@@ -36,7 +36,7 @@ self.action + dispatch
 
 ### 少量的 Active Model
 
-为了约定优于配置，很少的一部分方法和 Active Model 的 Naming 模块有关联
+为了约定优于配置，很少的一部分方法和 Active Model 的 Naming 模块有关联。
 
 包括但不限于：
 

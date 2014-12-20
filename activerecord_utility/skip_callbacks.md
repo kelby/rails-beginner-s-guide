@@ -16,6 +16,5 @@
 
 参考
 
-[How can I avoid running ActiveRecord callbacks?](http://stackoverflow.com/questions/632742/how-can-i-avoid-running-activerecord-callbacks)
-
+[How can I avoid running ActiveRecord callbacks?](http://stackoverflow.com/questions/632742/how-can-i-avoid-running-activerecord-callbacks)<br>
 [How to skip ActiveRecord callbacks?](http://stackoverflow.com/questions/1342761/how-to-skip-activerecord-callbacks)

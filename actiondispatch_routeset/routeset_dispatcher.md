@@ -26,19 +26,19 @@ merge_default_action!
 
 `dispatch` 重要的转发方法，将战场切换到 Controller#action
 
-**每一条路由规则，对应着一个 Dispatcher 实例**
+**每一条路由规则，对应着一个 Dispatcher 实例。**
 
 每一个路由规则转换着 `draw` 对应一个 Dispatcher 实例。
 
-用最简单的 get 方法举例
+用最简单的 get 方法举例：
 
 ```ruby
-Rails4demo::Application.routes.draw do
+AppName::Application.routes.draw do
   get 'photos/:id' => 'photos#show', :defaults => { :format => 'jpg' }
 end
 ```
 
-生成实例
+生成实例：
 
 ```ruby
 app: #<ActionDispatch::Routing::RouteSet::Dispatcher:0x007fd05e0cf7e8
@@ -62,7 +62,6 @@ anchor: true
 
 `defaults` 默认参数。
 
-`requirements` 对应方法里的 :constraints 参数
+`requirements` 对应方法里的 :constraints 参数。
 
-`as` 对应方法里的 :as 参数
-
+`as` 对应方法里的 :as 参数。

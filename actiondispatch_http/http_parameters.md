@@ -13,7 +13,7 @@ path_parameters
 ```
 request.parameters
 => {"utf8"=>"✓",
- "authenticity_token"=>"+yP70wctcWwaDNzbdQaRjxqfkax3FitPEFH3oYWoIa2kBdXQa1BwiHBS/hHj0C5Ao7CxXYwlejyghpNM3elUVw==",
+ "authenticity_token"=>"+.../hHj0C5Ao7CxXYwlejyghpNM3elUVw==",
  "user"=>{"name"=>"kelby", "email"=>""},
  "commit"=>"Create User",
  "controller"=>"users",

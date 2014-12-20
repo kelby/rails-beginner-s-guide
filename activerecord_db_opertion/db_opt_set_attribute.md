@@ -1,16 +1,16 @@
 ## 数据更新方法对比
 
-| 方法 | 使用默认 <br>Accessor? | 持久化对象? | 校验 | 回调 | 更新 <br>updated_at | Readonly <br>检查 | 类、<br>实例 | 单属性、<br>多属性 |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| x= | Yes | 否 | - | - | - | - | 实例 | 单 |
-| write_attribute | No | 否 | - | - | - | - | 实例 | 单 |
-| update_attribute | Yes | 是 | No | Yes | Yes | Yes | 实例 | 单 |
-| assign_attributes & <br>attributes= | Yes | 否 | - | - | - | - | 实例 | 多 |
-| update & <br>update_attributes | Yes | 是 | Yes | Yes | Yes |Yes | 实例 | 多 |
-| update_column | No | 是 | No | No | No | Yes | 实例 | 单 |
-| update_columns | No | 是 | No | No | No | Yes | 实例 | 多 |
-| User::update | Yes | 是 | Yes | Yes | Yes | Yes | 类 | 多 |
-| User::update_all | No | 是 | No | No | No | No | 类 | 多 |
+| 方法 | 使用默认<br>Accessor? | 持久化对象? | 校验 | 回调 | 更新 <br>updated_at | Readonly <br>检查 | 单属性<br>多属性 |
+| -- | -- | -- | -- | -- | :--: | :--: | -- |
+| x= | 是 | 否 | - | - | - | - | 单 |
+| write_attribute | 否 | 否 | - | - | - | - | 单 |
+| update_attribute | 是 | 是 | 否 | 是 | 是 | 是 | 单 |
+| assign_attributes & <br>attributes= | 是 | 否 | - | - | - | - | 多 |
+| update & <br>update_attributes | 是 | 是 | 是 | 是 | 是 |是 | 多 |
+| update_column | 否 | 是 | 否 | 否 | 否 | 是 | 单 |
+| update_columns | 否 | 是 | 否 | 否 | 否 | 是 | 多 |
+| User::update | 是 | 是 | 是 | 是 | 是 | 是 | 多 |
+| User::update_all | 否 | 是 | 否 | 否 | 否 | 否 | 多 |
 
 x= 表示直接赋值，其它几个是方法名
 

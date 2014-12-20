@@ -1,6 +1,6 @@
 ## Log Subscriber
 
-继承于 Subscriber
+继承于 Subscriber.
 
 提供方法：
 

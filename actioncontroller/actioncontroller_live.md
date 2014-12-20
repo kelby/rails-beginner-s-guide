@@ -17,6 +17,7 @@ set_response!
 
 ```
 close
+
 write
 ```
 
@@ -61,24 +62,11 @@ end
 
 ### Streaming
 
-Streaming 没有对外提供方法，但使用 `render` 的时候, 它对应着 :stream 参数
-
-```ruby
-class PostsController
-  def index
-    @posts = Post.all
-    render stream: true
-  end
-end
-```
-
-**Streaming & Live**
-
 Rails 默认的渲染过程先是模板，然后才是布局。完成模板，及需要的查询，最后才完成布局。
 
-Streaming 可以改变一下顺序，按布局来渲染。布局先显示，对于用户体验可能更好一点，还有就是这会使得JS和CSS的加载顺序比平时提前。
+Streaming 可以改变一下顺序，按布局来渲染。布局先显示，对于用户体验可能更好一点，还有就是这会使得 JS 和 CSS 的加载顺序比平时提前。
 
-使用很简单，在 `render` 的时候，加上 `:stream` 参数即可：
+Streaming 没有对外提供方法，在 `render` 的时候，加上 `:stream` 参数即可：
 
 ```ruby
 class PostsController
@@ -89,4 +77,4 @@ class PostsController
 end
 ```
 
-Live 用于构建实时聊天之类的。
+Live 可用于构建实时聊天之类等。

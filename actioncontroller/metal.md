@@ -21,7 +21,7 @@ end
 在路由里添加相应代码，将请求转发到刚才的 HelloController#index 进行处理:
 
 ```ruby
-# in your config/routes.rb
+# config/routes.rb
 get 'hello', to: HelloController.action(:index)
 ```
 
@@ -82,7 +82,7 @@ self.middleware_stack = ActionController::MiddlewareStack.new
 - 为什么能够连续调用，原因：
 
 你看每个 Rack Middleware 的 call 函数的最后一行，是不是都是 @app.call(env)
-这说明，它在调用下一个 middleware 啊
+这说明，它在调用下一个 middleware 啊。
 
 它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都 走不通！
 

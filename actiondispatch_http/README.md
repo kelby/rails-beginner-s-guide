@@ -1,4 +1,6 @@
-# Action Dispatch Http 重点是 request 和 response
+# Action Dispatch Http
+
+**重点是 request 和 response.**
 
 和 Web 服务器已经很接近了，接收的是 request, 响应的是 response.
 
@@ -31,7 +33,7 @@ response 为 ActionDispatch::Response 的实例对象。
 
 **Parameters**
 
-常用到的 params (也叫 parameters)
+常用到的 params (也叫 parameters).
 
 **Uploaded File**
 
@@ -50,11 +52,11 @@ env["action_dispatch.parameter_filter"] = [:password]
 
 **URL**
 
-前面 request 里带 url 或 path 的方法有几个和它相关
+前面 request 里带 url 或 path 的方法有几个和它相关。
 
 **Response**
 
-常用到的 response
+常用到的 response.
 
 **Rails Meta Store && Rails Entity Store**
 
@@ -62,7 +64,7 @@ env["action_dispatch.parameter_filter"] = [:password]
 
 **Mimes && Type**
 
-设置响应类型 Mime Type
+设置响应类型 Mime Type.
 
 **Filter Redirect**
 
@@ -71,4 +73,4 @@ env["action_dispatch.parameter_filter"] = [:password]
 HTTP Cache 相关。如：设置，检测 ETag、Cache-Control
 
 包含两部分：
-Request 和 Response
+Request 和 Response.

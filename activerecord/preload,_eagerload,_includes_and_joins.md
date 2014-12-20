@@ -1,4 +1,4 @@
-## Preload, Eagerload, Includes 和 Joins
+## Preload, Eagerload, Includes 和 Joins 等
 
 延迟加载，如 Relation，scope
 预先加载，如 includes
@@ -152,5 +152,5 @@ User.includes(:posts).where("posts.name = 'foo'").references(:posts)
 
 参考
 
-[3 ways to do eager loading (preloading) in Rails 3 & 4](http://blog.arkency.com/2013/12/rails4-preloading/)  
+[3 ways to do eager loading (preloading) in Rails 3 & 4](http://blog.arkency.com/2013/12/rails4-preloading/)<br>
 [eager loading in rails](http://codedecoder.wordpress.com/2014/07/23/eager-loading-eager_load-preload-includes/)

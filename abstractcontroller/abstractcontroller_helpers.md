@@ -19,10 +19,10 @@ helper FooHelper # => includes FooHelper
 
 ```ruby
 helper :foo
-# => requires 'foo_helper' and includes FooHelper
+# => requires 'foo_helper' 和 includes FooHelper
 
 helper 'resources/foo'
-# => requires 'resources/foo_helper' and includes Resources::FooHelper
+# => requires 'resources/foo_helper' 和 includes Resources::FooHelper
 ```
 
 此外，helper 可以接受并处理一个代码块。(不推荐)
@@ -57,7 +57,7 @@ end
 <% if logged_in? %>Welcome, <%= current_user.name %><% end %>
 ```
 
-实现方式：以元编程的形式定义同名方法，然后 send 调用原 helper 方法
+实现方式：以元编程的形式定义同名方法，然后 send 调用原 helper 方法。
 
 helper 和 helper_method 可以简单理解为一对作用相反的操作。
 

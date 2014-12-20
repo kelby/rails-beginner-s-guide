@@ -57,8 +57,8 @@ end
 
 ### Delivery Job
 
-使用 ActiveJob，配置以便延迟发送邮件。
+使用 Active Job，配置以便延迟发送邮件。
 
 ### ~~Railtie~~
 
-ActionMailer 的 Railtie 配置及初始化。Railtie 章节会讲到。
+Action Mailer 的 Railtie 配置及初始化。【Railtie】章节会讲到。

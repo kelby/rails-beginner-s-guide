@@ -4,7 +4,7 @@
 
 它只是接口，它关心的是用什么，而不是如何处理。(因为不是它处理的！)
 对内调用 Exception Wrapper
-对外调用 Public Exceptions
+对外调用 Public Exceptions.
 
 ```
 # 对内
@@ -17,7 +17,7 @@ response = @exceptions_app.call(env)
 
 ---
 
-默认显示 public/ 目录下的错误页面(参考 PublicExceptions)。相关 HTTP response 是 X-Cascade 标识。
+默认显示 public/ 目录下的错误页面(参考 Public Exceptions)。相关 HTTP response 是 X-Cascade 标识。
 
 `config.exceptions_app` 可以配置，Show Excepting 抛异常时如何处理。如：
 

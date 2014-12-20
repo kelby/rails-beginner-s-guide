@@ -28,7 +28,7 @@ end
 
 上述两种解决方法类似，但它们类型都是 integer ... 比如我们想要 string 呢，只能这样：
 
-1 使用 SQL 创建主键
+1) 使用 SQL 创建主键
 
 ```ruby
 execute "ALTER TABLE employees ADD PRIMARY KEY (emp_id);"
@@ -44,7 +44,7 @@ config.active_record.schema_format = :sql
 
 另一解法是：
 
-2 类似主键，但不是主键
+2) 类似主键，但不是主键
 
 ```ruby
 create_table :employees, :primary_key => :emp_id do |t|

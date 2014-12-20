@@ -1,6 +1,6 @@
 ## Mock
 
-类方法
+类方法：
 
 ```
 expect
@@ -13,7 +13,7 @@ verify
 使用举例：
 
 ```ruby
-Expect that method name is called, optionally with args or a blk, and returns retval.
+# Expect that method name is called, optionally with args or a blk, and returns retval.
 m = Minitest::Mock.new
 m.expect(:raiser, nil) do |args|
   raise RuntimeError, "this code path triggers an exception"

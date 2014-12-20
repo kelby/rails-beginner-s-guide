@@ -27,8 +27,10 @@ def test_access_granted_from_xml
   get(
     "/notes/1.xml", nil,
     'HTTP_AUTHORIZATION' =>
-     ActionController::HttpAuthentication::Basic.encode_credentials(users(:dhh).name,
-                                                                    users(:dhh).password)
+     ActionController::HttpAuthentication::Basic.encode_credentials(
+       users(:dhh).name,
+       users(:dhh).password
+     )
   )
 
   assert_equal 200, status

@@ -1,10 +1,10 @@
 ## Redirecting
 
 ```
-redirect_to(options = {}, response_status = {})
+redirect_to
 ```
 
-重要的部分就是可以根据不同的可选参数，计算出 url 路径。
+重要的部分就是可以根据不同的可选参数，计算出要重定向的 url.
 
 使用举例：
 
@@ -36,10 +36,29 @@ redirect_to({ action: 'atom' }, alert: "Something serious happened")
 
 `polymorphic_url` 根据传递的 record 对象，构建可用的 url.
 
-极端情况下，才会发生
+极端情况下，才会发生：
 
 ```
-redirect_to -> url_for -> ActionController::UrlFor -> AbstractController::UrlFor ->
-ActionDispatch::Routing::UrlFor --> ActionDispatch::Routing::PolymorphicRoutes ->
+ redirect_to
+     |
+     V
+  url_for
+     |
+     V
+ActionController::UrlFor
+     |
+     V
+AbstractController::UrlFor
+     |
+     V
+ActionDispatch::Routing::UrlFor
+     |
+     V
+ActionDispatch::Routing::PolymorphicRoutes
+     |
+     V
 polymorphic_url
+     |
+     V
+  ... ...
 ```

@@ -21,6 +21,10 @@ constantize
 safe_constantize
 ordinal
 ordinalize
+
+inflections
+parameterize
+transliterate
 ```
 
 ### transliterate
@@ -34,10 +38,16 @@ parameterize
 
 ```
 acronym
-plural
-singular
-irregular
-uncountable
-human
+
 clear
+
+human
+
+irregular
+
+plural
+
+singular
+
+uncountable
 ```

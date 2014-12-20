@@ -44,7 +44,7 @@ find
 exists?
 ```
 
-Previews 提供方法
+Previews 提供方法：
 
 ```
 register_preview_interceptor

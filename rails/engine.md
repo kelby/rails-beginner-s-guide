@@ -5,7 +5,7 @@ Engine 下有 Railtie，上有 Application.
 
 可以把一个 Rails 项目当做一个组件，插入到另一个项目里。
 
-Engine 可以当做一个不完整的应用，它依赖于 main_app (main_app 表示我们的项目本身，在 Application::Finisher 里定义).
+Engine 可以当做一个不完整的应用，它依赖于 main_app (main_app 表示我们的项目本身，在 Application::Finisher 里定义)。
 
 **Engine = Ruby Gem + MVC stack elements.**
 

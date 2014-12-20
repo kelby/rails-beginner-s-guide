@@ -1,4 +1,4 @@
-### Callbacks
+### Callbacks 使用举例
 
 ```ruby
 klazz.define_callbacks :restore

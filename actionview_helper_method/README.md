@@ -8,35 +8,35 @@
 
 ### 影响内容
 
-逻辑判断 + 生成内容或纯粹是逻辑，所有不能直观的看出生成什么 HTML 的元素
+逻辑判断 + 生成内容或纯粹是逻辑，所有不能直观的看出生成什么 HTML 的元素。
 
 ### 单元素
 
-单独的 HTML 元素
+单独的 HTML 元素。
 
 ### 复合元素
 
-生成的内容是 HTML 元素，再包含 HTML 元素
+生成的内容是 HTML 元素，再包含 HTML 元素。
 
-因为表单实在是太重要了，所以区分一下是否表单元素
+因为表单实在是太重要了，所以区分一下是否表单元素。
 
 举例：
 
-`link_to` 是生成内容，且是单元素
+`link_to` 是生成内容，且是单元素。
 
-`button_to` 是生成内容，且是复合元素
+`button_to` 是生成内容，且是复合元素。
 
 `link_to_unless_current` 和 `current_page?` 都属于影响内容。
 
 ### 表单元素
 
-四大金刚
+四大金刚：
 
-FormBuilder 对 model 依赖最重，FormHelper 和 FormOptionsHelper 次之，FormTagHelper 依赖最轻。
+Form Builder 对 model 依赖最重，Form Helper 和 Form Options Helper 次之，FormTagHelper 依赖最轻。
 
-FormBuilder 和 FormHelper 在方法、函数上基本是对应的。
+Form Builder 和 Form Helper 在方法、函数上基本是对应的。
 
-FormBuilder 是面向对象，FormHelper 是面向函数。
+Form Builder 是面向对象，Form Helper 是面向函数。
 
 ### 通用元素(非表单元素)
 
@@ -86,7 +86,7 @@ Asset Url Helper
 
 Asset Tag Helper
 
-### 与 model对象 弱关联
+### 与 record 对象弱关联
 
 和后台数据关联不大，仅用于生成 HTML 元素。
 
@@ -94,11 +94,11 @@ Asset Tag Helper
 
 除此之外，还有其它，在此不一一列举。
 
-### 与 model对象 强关联
+### 与 record 对象强关联
 
 和后台数据关系密切，需要有对象和/或其关联对象。
 
-最典型的如 form_for
+最典型的如 form_for.
 
 ## 分类说明
 
@@ -115,4 +115,4 @@ Asset Tag Helper
 1. 我们需要看 API，才知道怎么传递参数，有什么参数；
 2. 直接写 HTML，大脑不必转一圈；
 3. 前端工程师不懂 Ruby，就看不懂；
-4. 维护的时候也遇到上述 3 点困境
+4. 维护的时候也遇到上述 3 点困境。

@@ -1,4 +1,4 @@
-## Template
+## Template 内容
 
 **模板对象的内容，及其所携带的信息。**
 
@@ -8,7 +8,9 @@ ERBHandler = ActionView::Template::Handlers::ERB.new
 body = "<%= hello %>"
 details = { format: :html }
 
-new_template = ActionView::Template.new(body, "hello template", details.fetch(:handler) { ERBHandler }, {:virtual_path => "hello"}.merge!(details))
+new_template = ActionView::Template.new(body, "hello template",
+                                        details.fetch(:handler) { ERBHandler },
+                                        {:virtual_path => "hello"}.merge!(details))
 ```
 
 当然，这些我们平时都接触不到，知道有这么回事即可。
@@ -17,7 +19,8 @@ new_template = ActionView::Template.new(body, "hello template", details.fetch(:h
 @template = new_template
 @template = new_template("<%= apostrophe %>")
 @template = new_template("<%= apostrophe %> <%== apostrophe %>", format: :text)
-@template = new_template("<%= hello %>", :handler => ActionView::Template::Handlers::Raw.new)
+@template = new_template("<%= hello %>",
+                         :handler => ActionView::Template::Handlers::Raw.new)
 ```
 
 ```ruby
@@ -27,7 +30,9 @@ attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
 
 # 看看新建模板，要求是什么
 def initialize(source, identifier, handler, details)
-  format = details[:format] || (handler.default_format if handler.respond_to?(:default_format))
+  if handler.respond_to?(:default_format))
+    format = details[:format] || (handler.default_format
+  end
 
   @source            = source
   @identifier        = identifier

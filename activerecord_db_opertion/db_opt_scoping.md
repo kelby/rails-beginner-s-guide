@@ -9,7 +9,7 @@
 | unscoped | 跳过之前设置的 scope |
 | all | all 方法，默认已经 scope |
 
-### `scope(name, body, &block)`
+### scope
 
 重点说说这个方法。
 
@@ -17,7 +17,11 @@
 
 **scope 相当于类方法，可检索、查询对象**
 
-可执行一系列的查询语句，如：where(color: :red).select('shirts.*').includes(:washing_instructions)
+可执行一系列的查询语句，如：
+
+```
+where(color: :red).select('shirts.*').includes(:washing_instructions)
+```
 
 ```ruby
 class Shirt < ActiveRecord::Base
@@ -41,7 +45,7 @@ end
 
 不同的是 scope 返回的是 Relation，而不是数组. 所以，你可以调用 Shirt.red.first, Shirt.red.count, Shirt.red.where(size: 'small') 等. 但是 Relation 也可以有数组的行为, 如 Shirt.red.each(&block), Shirt.red.first, 和 Shirt.red.inject(memo, &block) 等。
 
-**scioe 可以链式调用**
+**scope 可以链式调用**
 
 Shirt.red.dry_clean_only 运行结果是 red 和 dry_clean_only 综合的结果。Shirt.red.dry_clean_only.count 返回的是 red 和 dry_clean_only 综合结果的数目。在这里和 Shirt.red.dry_clean_only.average(:thread_count) 类似。
 
@@ -108,20 +112,20 @@ Article.published.featured.latest_article
 Article.featured.titles
 ```
 
-### `default_scope`
+### default_scope
 
-1 一个参数，需要以 proc 的形式定义
+1) 一个参数，需要以 proc 的形式定义：
 
 ```ruby
 class Article < ActiveRecord::Base
   default_scope { where(published: true) }
 end
 ```
-2 始终起作用，不能覆盖，冲突时取合集。
+2) 始终起作用，不能覆盖，冲突时取合集。
 
-3 会影响 initialization 过程
+3) 会影响 initialization 过程。
 
-4 基于第2、3点请慎用
+4) 基于第2、3点请慎用。
 
 ---
 

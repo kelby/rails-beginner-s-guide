@@ -24,8 +24,9 @@ reset_counters(id, *counters)
 ```ruby
 # 注意：跟的是字段名
 Post.update_counters 3, comments_count: +1
-  SQL (8.9ms)  UPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE "posts"."id" = 3
-=> 1
+
+UPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 \n
+WHERE "posts"."id" = 3
 
 # 新增计数器: 原来没有使用计数器的，现在我们希望添加一个计数器。因为数据已经存在了，我们需要设置正确的数目。
 # Post.update_counters 3, comments_count: post.comments.count
@@ -46,10 +47,10 @@ Post.update_counters 3, comments_count: +1
 ```ruby
 # 注意：跟的关系表名(可以是多个)，但不是字段名
 Post.reset_counters(3, :comments)
-  Post Load (0.2ms)  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
-   (0.2ms)  SELECT COUNT(*) FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 3]]
-   (9.4ms)  UPDATE "posts" SET "comments_count" = 2 WHERE "posts"."id" = 3
-=> true
+  
+SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+SELECT COUNT(*) FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 3]]
+UPDATE "posts" SET "comments_count" = 2 WHERE "posts"."id" = 3
 ```
 
 基于SQL层面，重置(理解为校正，而不是归零)一个或多个计数器的值。计数器有时候会不准，特别是我们用来计数关联对象的个数，而自己又手动删除它们。

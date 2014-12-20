@@ -35,7 +35,7 @@ params
 
 ## Parameters
 
-Parameters 继承于 HashWithIndifferentAccess，而 HashWithIndifferentAccess 又继承于 Hash. 所以它的实例对象类似于 Hash 的实例对象。
+Parameters 继承于 Hash With Indifferent Access，而 Hash With Indifferent Access 又继承于 Hash. 所以它的实例对象类似于 Hash 的实例对象。
 
 提供 `params` 这个对象可以使用的方法(部分与 Hash 实例方法类似)：
 

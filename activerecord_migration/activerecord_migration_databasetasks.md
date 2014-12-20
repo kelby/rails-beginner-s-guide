@@ -1,6 +1,6 @@
 ## Database Tasks
 
-rake db:migrate 等迁移命令，定义在 ActiveRecord 的 databases.rake 里。
+rake db:migrate 等迁移命令，定义在 Active Record 的 databases.rake 里。
 其中，大部分命令都是由 ActiveRecord::Tasks::DatabaseTasks 来处理，再或者转发到其它模块。
 
 提供接口如下：

@@ -10,16 +10,7 @@ Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、n
 
 ## 其它
 
-除了本章节下介绍的 helper 方法外，还有从 Controller delegate 过来的方法：
-
-```ruby
-delegate :request_forgery_protection_token, :params, :session, :cookies, :response, :headers,
-         :flash, :action_name, :controller_name, :controller_path, :to => :controller
-```
-
-form_tag 和 form_for 的区别？
+- form_tag 和 form_for 的区别？
 前者必需对应着 model 对象，后者就是普通的表单。
 
-----------
-
-此外，有一些 helper 可适用于 ActiveModel，比如文本处理 ...
+- 此外，有一些 helper 可适用于 Active Model，比如文本处理 ...

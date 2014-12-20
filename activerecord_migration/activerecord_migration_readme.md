@@ -19,7 +19,7 @@ reversible
 
 `revert` 内部其它方法会调用，懒人复制、粘贴，不想改名字使用。
 
-其它
+其它：
 
 ```
 check_pending!

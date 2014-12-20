@@ -1,8 +1,8 @@
 ## Backtrace Cleaner
 
-报错或程序运行反馈信息过多、过杂，找不到关键点？你可以使用 BacktraceCleaner 过滤无用信息。
+报错或程序运行反馈信息过多、过杂，找不到关键点？你可以使用 Backtrace Cleaner 过滤无用信息。
 
-### 单独使用举例
+### 单独使用
 
 ```ruby
 bc = BacktraceCleaner.new
@@ -26,7 +26,7 @@ bc.clean(exception.backtrace) # perform the cleanup
 | remove_filters! | 移除之前的过滤规则 |
 | remove_silencers! | 移除之前的过滤规则 | 
 
-### 配合 Rails 使用
+### 结合 Rails 使用
 
 可以在以下配置文件，设置过虑条件：
 
@@ -36,7 +36,7 @@ config/initializers/backtrace_silencers.rb
 
 Rails 启动时就已使用 backtrace_cleaner.
 
-通过以下方式，可以查看
+通过以下方式，可以查看：
 
 ```ruby
 Rails.backtrace_cleaner

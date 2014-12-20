@@ -1,6 +1,6 @@
 ## Attributes
 
-提供方法
+提供方法：
 
 ```
 attribute
@@ -17,11 +17,11 @@ reset_column_information
 Book.columns.map{ |c| c.name }
 ```
 
-下面主要讲解 `attribute` 方法
+下面主要讲解 `attribute` 方法。
 
-1 **覆盖原有类型的行为**
+1) **覆盖原有类型的行为**
 
-使用举例
+使用举例：
 
 ```ruby
 # db/schema.rb
@@ -46,9 +46,9 @@ end
 store_listing.price_in_cents # => 10
 ```
 
-2 **重新定义类型**
+2) **重新定义类型**
 
-使用举例
+使用举例：
 
 ```ruby
 class MoneyType < ActiveRecord::Type::Integer

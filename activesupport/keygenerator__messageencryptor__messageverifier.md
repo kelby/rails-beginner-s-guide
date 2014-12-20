@@ -1,6 +1,6 @@
-## Message Encryptor 和 Message Verifier
+两部分: Message Verifier 和 Message Encryptor.
 
-### Message Verifier
+## Message Verifier
 
 生成加密的文本，然后用于校验。这里的加密仅意味着"加签名、防篡改"，过程是可逆的，请注意使用场景。
 使用场景举例，生成"记住我"的 token，或生成"取消订阅"的链接。
@@ -20,7 +20,7 @@ verified == message #=> true
 
 主要是 `generate(value)` 和 `verify(signed_message)`，原理很简单，这里不多赘述。
 
-### Message Encryptor
+## Message Encryptor
 
 使用类似:
 
@@ -72,4 +72,4 @@ decode_data    = crypt2.decrypt_and_verify(encrypted_data)
 source_data == decode_data
 ```
 
-> Note: 注意和下一章节"Key Generator 和 Caching Key Generator"的联系
+> Note: 注意和下一章节【Key Generator 和 Caching Key Generator】的联系。

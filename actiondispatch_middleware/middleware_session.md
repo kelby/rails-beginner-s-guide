@@ -19,6 +19,6 @@ development:
 
 (密钥除签名、加密 session 外，还有其它用途)
 
-运行 `rake secret`. 会生成随机字符串，你可以使用它们做为 secret_key
+运行 `rake secret`. 会生成随机字符串，你可以使用它们做为 secret_key.
 
 > Note: 如果你更改了 secret_key 的话，之前的 session 就不能使用了。因为 secret_key 还有其它用途，一般不建议更改。

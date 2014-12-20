@@ -4,8 +4,6 @@
 
 在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
 
-检测结果：
-
 **查询、请求参数**
 
 ```
@@ -78,7 +76,8 @@ method_symbol
 
 raw_post
 => ""
-=> "utf8=%E2%9C%93&authenticity_token=%2ByP70wctcWwaDNzbdQaRjxqfkax3FitPEFH3oYWoIa2kBdXQa1BwiHBS%2FhHj0C5Ao7CxXYwlejyghpNM3elUVw%3D%3D&user%5Bname%5D=kelby&user%5Bemail%5D=&commit=Create+User"
+=> "utf8=%E2%9C%93&authenticity_token=%...%...%3D%3D \n
+    &user%5Bname%5D=kelby&user%5Bemail%5D=&commit=Create+User"
 
 request_method
 => "GET"
@@ -180,7 +179,7 @@ session_options=
 parse_query
 ```
 
-除上述方法外，还有：
+**除上述方法外，还有：**
 
 ```
 include ActionDispatch::Http::Cache::Request

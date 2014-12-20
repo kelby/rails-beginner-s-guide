@@ -64,7 +64,10 @@ member.reload.avatar # => nil
 ```ruby
 class Member < ActiveRecord::Base
   has_many :posts
-  accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
+
+  accepts_nested_attributes_for :posts, reject_if: proc do |attributes|
+    attributes['title'].blank?
+  end
 end
 
 params = { member: {

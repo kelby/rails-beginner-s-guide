@@ -14,10 +14,10 @@ polymorphic_path
 7. 不要滥用！
 8. 复杂度提高，难以理解。
 
-之前
+之前：
 
 ```ruby
-# parent may be a post or a news
+# 在这里 parent 可以是 post 或 news
 if Post === parent
   post_comments_path(parent)
 elsif News === parent
@@ -25,10 +25,10 @@ elsif News === parent
 end
 ```
 
-之后
+之后：
 
 ```ruby
-# calls post_url(post)
+# 使用 post_url(post)
 polymorphic_url(post)                 # => "http://example.com/posts/1"
 polymorphic_url([blog, post])         # => "http://example.com/blogs/1/posts/1"
 polymorphic_url([:admin, blog, post]) # => "http://example.com/admin/blogs/1/posts/1"
@@ -36,7 +36,7 @@ polymorphic_url([user, :blog, post])  # => "http://example.com/users/1/blog/post
 polymorphic_url(Comment)              # => "http://example.com/comments"
 ```
 
-当然，多态关联也可用
+当然，多态关联也可用：
 
 ```ruby
 class Post < ActiveRecord::Base

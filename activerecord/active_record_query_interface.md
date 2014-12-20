@@ -1,4 +1,4 @@
-## Relation 之 Query Methods
+## Query Methods
 
 介绍的方法都在 ActiveRecord::QueryMethods
 
@@ -175,8 +175,7 @@ Post.includes(:comments).where("comments.visible" => true)
 
 > Note: 注意区分 Rails 里的 group 和 SQL 里的 group_by
 
-相关SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)
-
+相关 SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)<br>
 参考官方文档 [Active Record Query Interface](http://edgeguides.rubyonrails.org/active_record_querying.html)
 
 ### 最后

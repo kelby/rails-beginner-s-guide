@@ -172,7 +172,8 @@ composed_of :ip_address,
             class_name: 'IPAddr',
             mapping: %w(ip to_i),
             constructor: Proc.new { |ip| IPAddr.new(ip, Socket::AF_INET) },
-            converter: Proc.new { |ip| ip.is_a?(Integer) ? IPAddr.new(ip, Socket::AF_INET) : IPAddr.new(ip.to_s) }
+            converter: Proc.new { |ip| ip.is_a?(Integer) ? IPAddr.new(ip, \n
+                                       Socket::AF_INET) : IPAddr.new(ip.to_s) }
 
 constructor # 第一次调用 x.ip_address 如何初始化
 converter   # 调用 x.ip_address= 时，如何处理值对象

@@ -45,16 +45,19 @@ run_callbacks
 
 真正要执行的过滤代码。
 
-过滤代码支持:
+过滤代码支持类开:
+
 ```
-  Symbols:: A method to call.
-  Strings:: Some content to evaluate.
-  Procs::   A proc to call with the object.
-  Objects:: An object with a <tt>before_foo</tt> method on it to call. 以拼接的方式再把回调方法找出来，然后 send 调用.
-  其实，还有一种 Conditionals 直接跳过，所以不算。
+Symbols:: 方法名。
+Strings:: 可求值的字符串。
+Procs::   proc 对象。
+Objects:: 普通的对象，但必需有类似 before_x, around_x, after_x 等同名回调方法。
+          因为，之后会以拼接字符串的形式，找出对应的回调方法，然后 send 调用。
+
+其实，还有一种类型 Conditionals 但被直接跳过了，所以不算在内。
 ```
-All of these objects are converted into a lambda and handled
-the same after this point.
+
+这些不同类型的代码都会被转换成 lambda 对象，之后一视同仁，处理过程一致。
 
 - 属于哪条回调链(chain): 
 
@@ -70,7 +73,19 @@ the same after this point.
 
 上面提到的回调链，每一条链都是 CallbackChain 的实例对象。
 
-> Note: Rails 没有提供查看所有 callback chain 信息的接口，只能通过 hack 方式查看，如：`ObjectSpace.each_object(ActiveSupport::Callbacks::CallbackChain).select{|c| c.name.present?}` 或 `ClassName.methods.select{|c| c.to_s =~ /^_[a-z]+_callbacks$/ }`
+Rails 没有提供查看所有 callback chain 信息的接口，只能通过 hack 方式查看。
+
+比如：
+
+```
+ObjectSpace.each_object(ActiveSupport::Callbacks::CallbackChain).select do |cc|
+  cc.name.present?
+end
+
+或
+
+ClassName.methods.select{|c| c.to_s =~ /^_[a-z]+_callbacks$/ }
+```
 
 **Filters**
 
@@ -117,8 +132,8 @@ name 是 save
 filter.public_send method_to_call, target, &blk
 ```
 
-filter 就是实例对象
+filter 就是实例对象。
 
-method_to_call 根据回调链(chain_config)，拼接而来，也就是回调名字。也就是实例对象将要执行的方法
+method_to_call 根据回调链(chain_config)，拼接而来，也就是回调名字。也就是实例对象将要执行的方法。
 
-target 也就是调用回调时会影响到的对象。在这里做为参数供实例对象执行
+target 也就是调用回调时会影响到的对象。在这里做为参数供实例对象执行。

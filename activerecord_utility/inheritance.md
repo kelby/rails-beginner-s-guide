@@ -16,7 +16,8 @@ Computer 有 pc 和 mac
 单表，就是在数据库你只需要一张表。<br>
 继承，就是你的 model 之间存在着继承关系。
 
-上面的例子中，我们可以只用 employees 表，却有 model Manager 和 model Developer，它们都继承于 Employee.<br>
+上面的例子中：<br>
+我们可以只用 employees 表，却有 model Manager 和 model Developer，它们都继承于 Employee.<br>
 我们可以只用 computers 表，却有 model Pc 和 model Mac，它们都继承于 Computer.
 
 ### 选择
@@ -33,18 +34,18 @@ Computer 有 pc 和 mac
 
 ### 使用
 
-单表继承默认使用 `type` 做为标识字段，在表里面新增字段即可，当然，也可以用 inheritance_column 自定义标识字段。创建相应对象时，会根据所使用的模块名自动设置它的值。
+单表继承默认使用 `type` 做为标识字段，在表里面新增字段即可，当然，也可以用【Model Schema】里的 `inheritance_column` 自定义标识字段。创建相应对象时，会根据所使用的模块名自动设置它的值。
 
 ```ruby
 class Company < ActiveRecord::Base
-  # your code here
+  # ...
 end
 
 class Firm < Company
-  # your code here
+  # ...
 end
 
 class Client < Company
-  # your code here
+  # ...
 end
 ```

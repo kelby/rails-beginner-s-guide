@@ -1,15 +1,28 @@
-## Connection Handling
+## Connection Handling 连接数据库
 
 ```
-# 对外用得比较多的
+# 根据配置信息进行连接
 establish_connection
 
-# 其它
-connected?, connection, connection_config, connection_id, connection_id=, connection_pool
-remove_connection, retrieve_connection
+# 是否已连接
+connected?
+
+# 连接信息
+connection
+
+# 连接的配置信息
+connection_config
+
+connection_id
+connection_id=
+
+connection_pool
+
+remove_connection
+retrieve_connection
 ```
 
-通过它连接数据库，我们不必加载整个 Rails 环境，仅使用数据库操作这部分。举例：
+通过 `establish_connection` 连接数据库，我们不必加载整个 Rails 环境，仅使用数据库操作这部分。举例一：
 
 ```ruby
 require 'yaml'
@@ -25,7 +38,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-再举例(立即加载基准测试脚本)：
+举例二(立即加载基准测试脚本)：
 
 ```ruby
 require 'rubygems'
@@ -108,6 +121,8 @@ Benchmark.bm do |x|
 end
 ```
 
+举例三：
+
 ```ruby
 require 'active_record'
 
@@ -141,7 +156,13 @@ class Track < ActiveRecord::Base
 end
 ```
 
-另外一个使用 execute 方法举例：
+`connection` 使用举例：
+
+```ruby
+ActiveRecord::Base.connection.table_exists? 'some_table'
+```
+
+另外一个使用 `execute` 方法举例：
 
 ```ruby
 ActiveRecord::Base.connection.execute "ALTER TABLE some_table CHANGE COLUMN..."

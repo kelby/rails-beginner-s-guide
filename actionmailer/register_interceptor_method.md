@@ -45,7 +45,7 @@ class WhitelistInterceptor
   # 实现 delivering_email 方法
   # 白名单
   def self.delivering_email message
-    unless message.to.join(' ') =~ /(@yourcompany.com|@thoughtworks.com)/i
+    unless message.to.join(' ') =~ /(@yourcompany.com)/i
       message.subject = "#{message.to} #{message.subject}"
       message.to = ENV['NOTIFICATIONS_EMAIL']
     end

@@ -36,7 +36,15 @@ user.authenticate('notright')      # => false
 user.authenticate('mUc3m00RsqyRe') # => user
 ```
 
-使用 has_secure_password 后，还会自动帮我们添加校验 validates_length_of :password 和 validates_confirmation_of :password
+使用 has_secure_password 后，还会自动帮我们添加校验：
+
+```
+validates_length_of :password
+
+和
+
+validates_confirmation_of :password
+```
 
 下面是 Rails 里面默认的加密、解密实现：
 
@@ -56,4 +64,4 @@ password_digest = BCrypt::Password.create(unencrypted_password, cost: cost)
 BCrypt::Password.new(password_digest) == unencrypted_password
 # => true
 ```
-> Note: BCrypt::Password.create 加密，BCrypt::Password.new 解密
+> Note: BCrypt::Password.create 加密，BCrypt::Password.new 解密。

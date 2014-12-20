@@ -40,5 +40,3 @@ end
 ### 其它
 
 Rails 的 where 查询也有类似 Mass Assignment 保护。
-
-

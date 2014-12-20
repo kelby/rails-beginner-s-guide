@@ -43,9 +43,6 @@ end
 ```
 attribute_method_suffix '_changed?', '_change', '_will_change!', '_was'
 
-# reset_attribute! 不再推荐使用，使用 restore_attribute! 代替
-attribute_method_affix prefix: 'reset_', suffix: '!'
-
 attribute_method_affix prefix: 'restore_', suffix: '!'
 ```
 

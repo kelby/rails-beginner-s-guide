@@ -1,6 +1,6 @@
 ## Lifecycle Hooks
 
-实例方法
+实例方法：
 
 ```
 after_setup

@@ -1,4 +1,4 @@
-## 渲染及相关概念
+## ~~渲染及相关概念~~
 
 文件路径文件名，包括类型(也就是格式)
 文件里的局部变量
@@ -302,8 +302,7 @@ BlogsController.new.view_context
 
 -----------
 
-[Rendering Partials in Rails - Single Responsibility Principle](http://bl.ocks.org/wangjohn/5418350)
-
+[Rendering Partials in Rails - Single Responsibility Principle](http://bl.ocks.org/wangjohn/5418350)<br>
 [Rails 3 at RailsConf 2011](http://blog.endpoint.com/2011/05/rails-3-at-railsconf-2011.html)
 
 - View Path: holds resolvers
@@ -498,6 +497,5 @@ base.rb<br>
 
 参考
 
-[Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)
-
+[Design Principles behind - Oreillystatic](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)<br>
 [Render template if exists in Rails](https://coderwall.com/p/ftbmsa)

@@ -13,7 +13,7 @@ end
 Metal 里的代码：
 
 ```ruby
-# Returns a Rack endpoint for the given action name.
+# Action Dispatch 转发过来的请求，要先经过层层的 middleware 处理，才能到达指定的 action.
 def self.action(name, klass = ActionDispatch::Request)
   if middleware_stack.any?
     middleware_stack.build(name) do |env|

@@ -1,6 +1,6 @@
 ## Autoload
 
-常用方法
+常用方法：
 
 ```
 autoload
@@ -65,7 +65,7 @@ MyLib.eager_load!
 
 ### 其它方法
 
-除上述常用方法外，还有
+除上述常用方法外，还有：
 
 ```
 autoload_at

@@ -2,7 +2,7 @@
 
 搜索了一下，API 里 `render` 同名方法有 8 个，它们分别代表什么意思？
 
-而 ActionView 就有 6 个 render 方法(其中 2 个和测试有关)，分别在：
+而 Action View 就有 6 个 render 方法(其中 2 个和测试有关)，分别在：
 
 - Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
 
@@ -14,7 +14,7 @@
 
 - Renderer - render(context, options)
 
-ActionView 和 ActionController 渲染的主要入口。
+Action View 和 Action Controller 渲染的主要入口。
 
 - Template - render(view, locals, buffer=nil, &block)
 
@@ -101,19 +101,6 @@ location     # 对应着 HTTP Location header
 action # 渲染某个 action
 type # 配合 inline，可以渲染其它类型的代码(默认是 ERB)
 ```
-
-    * <tt>:partial</tt> - See <tt>ActionView::PartialRenderer</tt>.
-    * <tt>:file</tt> - Renders an explicit template file (this used to be the old default), add :locals to pass in those.
-    * <tt>:inline</tt> - Renders an inline template similar to how it's done in the controller.
-    * <tt>:text</tt> - Renders the text passed in out.
-    * <tt>:plain</tt> - Renders the text passed in out. Setting the content
-      type as <tt>text/plain</tt>.
-    * <tt>:html</tt> - Renders the HTML safe string passed in out, otherwise
-      performs HTML escape on the string first. Setting the content type as
-      <tt>text/html</tt>.
-    * <tt>:body</tt> - Renders the text passed in, and inherits the content
-      type of <tt>text/html</tt> from <tt>ActionDispatch::Response</tt>
-      object.
 
 ```ruby
 ActionController::Renderers::RENDERERS
@@ -265,9 +252,9 @@ Controller 里可以指定渲染 partial，但 View 里不可指定渲染 templa
 
 参考
 
-[method render](http://apidock.com/rails/ActionController/Base/render)  
-[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)  
-[Action View Partials](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)  
-[Rails View Rendering using Naming Convention](http://jonathanhui.com/ruby-rails-3-view)  
-[Render Options in Rails 3](https://blog.engineyard.com/2010/render-options-in-rails-3/)  
+[method render](http://apidock.com/rails/ActionController/Base/render)<br>
+[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)<br>
+[Action View Partials](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)<br>
+[Rails View Rendering using Naming Convention](http://jonathanhui.com/ruby-rails-3-view)<br>
+[Render Options in Rails 3](https://blog.engineyard.com/2010/render-options-in-rails-3/)<br>
 [Ruby on Rails - Render](http://www.tutorialspoint.com/ruby-on-rails/rails-render.htm)

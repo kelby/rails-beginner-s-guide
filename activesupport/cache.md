@@ -1,4 +1,4 @@
-## Cache
+## Cache 缓存的源头
 
 `expand_cache_key(key, namespace = nil)`
 

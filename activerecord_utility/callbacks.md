@@ -14,7 +14,7 @@ define_callbacks :validation
 define_callbacks :commit, :rollback
 ```
 
-和 AbstractController::Callbacks::ClassMethods 用元编程生成过滤器的方法名，是两种手法(尽管最终都是基于ActiveSupport::Callbacks)。
+和 AbstractController::Callbacks::ClassMethods 用元编程生成过滤器的方法名，是两种手法(尽管最终都是基于 ActiveSupport::Callbacks).
 
 ### 是什么？
 

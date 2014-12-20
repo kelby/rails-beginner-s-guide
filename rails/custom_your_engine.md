@@ -8,7 +8,7 @@ Engine = Ruby gem + MVC stack elements
 
 ### 继承于 Engine
 
-1 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
+1) 继承于 Rails::Engine，一般把它们放在 lib/ 目录下：
 
 ```ruby
 # lib/your_engine.rb
@@ -19,7 +19,7 @@ module YourEngine
 end
 ```
 
-2 在 config/application.rb
+2) 在 config/application.rb
 (或 Gemfile) 里加载本文件。
 
 Engine 相关的 model、controller 和 helper 会被加载到 app/ 里，route 会被加载到 config/routes.rb, locale 会被加载到 config/locales, tasks 会被加载到 lib/tasks.
@@ -34,7 +34,7 @@ require 'your_engine/engine'
 gem 'your_engine', path: "/path/to/your_engine"
 ```
 
-3 在 routes.rb 里 mount Your::Engine
+3) 在 routes.rb 里 mount Your::Engine
 
 ### config 和 initializer
 
@@ -131,7 +131,7 @@ Application 在 Engine 之上，它又有自己的配置和初始化。它配置
 
 Engine 内容也可以是一个 Rack Application. 当你的代码本身是 Rack Application，而又想使用 Engine 的特性时，可以这么做：
 
-1 在自己定义的 Engine 里，使用 `endpoint`:
+1) 在自己定义的 Engine 里，使用 `endpoint`:
 
 ```ruby
 module MyEngine
@@ -142,7 +142,7 @@ module MyEngine
 end
 ```
 
-2 和平常一样，在 route 里 `mount` 你的 Engine:
+2) 和平常一样，在 route 里 `mount` 你的 Engine:
 
 ```ruby
 Rails.application.routes.draw do

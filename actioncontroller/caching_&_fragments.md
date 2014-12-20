@@ -1,5 +1,7 @@
 由两部分组成：Caching 和 Caching Fragments.
 
+**页面相关的服务端缓存**
+
 ## Caching
 
 想要关闭片段缓存，可以配置(开发环境下默认就是 false)：
@@ -49,15 +51,15 @@ config.action_controller.cache_store = MyOwnStore.new('parameter')
 Cache digest for
 app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
 Read fragment
-views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.1ms)
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197
 Write fragment
-views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (1.1ms)
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197
 
 # 第二次访问
 Cache digest for
 app/views/posts/show.html.erb: a357e54a8e1fdeff463f2da17cdc8197
 Read fragment
-views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.6ms)
+views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197
 
 # post.cache_key
  => "posts/1-20140421062215459004000"
@@ -66,22 +68,22 @@ views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197 (0.6ms)
 Cache digest for
 app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
 Read fragment
-views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
+views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc
 Write fragment
-views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc (1.4ms)
+views/posts/1-20140421062215459004000/6e30019bd1127688840f7307cbe5cfbc
 
 # 更改动态内容(在这里是update post)
 Cache digest for
 app/views/posts/show.html.erb: 6e30019bd1127688840f7307cbe5cfbc
 Read fragment
-views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (0.1ms)
+views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc
 Write fragment
-views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc (1.1ms)
+views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc
 
 Read fragment
-views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (0.2ms)
+views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246
 Write fragment
-views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246 (9.0ms)
+views/localhost:3000/posts/1?action_suffix=post1/1a3c7591dece4354ee7da69dfc12f246
 
 怎么生成的？
 views/projects/123-20120806214154/7a1156131a6928cb0026877f8b749ac9
@@ -104,7 +106,7 @@ end
 1. 不要使用动态内容做 key
 2. 关闭默认的加密
 
-也就是
+也就是：
 
 ```
 cache 'all_available_products', skip_digest: true
@@ -124,7 +126,8 @@ expire_fragment('all_available_products')
 你可以手动指定片段缓存过期的规则：
 
 ```ruby
-expire_fragment(controller: 'products', action: 'recent', action_suffix: 'all_products')
+expire_fragment(controller: 'products', action: 'recent',
+                action_suffix: 'all_products')
 ```
 
 提供了这么几个方法：
@@ -142,12 +145,13 @@ expire_fragment
 
 操作这几个方法的是 controller，而这个几方法操作的是 cache_store.
 
-> Note: ActionView::Helpers::CacheHelper 里的 cache 方法用到了 read_fragment、write_fragment 和 fragment_cache_key
+> Note: ActionView::Helpers::CacheHelper 里的 cache 方法用到了 read_fragment、write_fragment 和 fragment_cache_key.
 
 参考
 
-[Speed Up With Rails Cache](http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/)  
-[Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)  
-[Advanced Caching: Part 2 - Using Caching Strategies](http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/)  
+[Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)
+
+[Speed Up With Rails Cache](http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/)<br>
+[Advanced Caching: Part 2 - Using Caching Strategies](http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/)<br>
 [Rails Cache for dummies](http://www.codelearn.org/blog/rails-cache-with-examples)
 

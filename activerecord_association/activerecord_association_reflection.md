@@ -3,9 +3,9 @@
 一个很重要的概念，包含了所有的关联信息。
 包括但不限于：用的是什么关联、关联对象名字、可选参数等。
 
-对于**一般关联和 aggregate 要区分**开来。前者用 _reflections，后者用 aggregate_reflections.
+一般关联和 aggregate 要区分开来。前者用 _reflections，后者用 aggregate_reflections.
 
-提供方法
+提供方法：
 
 ### self
 
@@ -50,5 +50,5 @@ AbstractReflection
 Reflection 虽然很重要，但对于普通 Web 开发者而言，使用场景有限，一般不会直接使用。下面是我想到的一些使用场景，供参考：
 
 1. 动态创建其关联对象的实例，如：在表单里点击按钮，创建一个嵌套对象(属性)。
-2. 查看使用 gem 后引进了什么关联
+2. 查看使用 gem 后引进了什么关联。
 3. 删除某个重要对象时，删除所有与之关联的对象。预防用 :dependent 或手动删除会有遗漏。

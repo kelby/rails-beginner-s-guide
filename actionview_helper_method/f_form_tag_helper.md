@@ -1,12 +1,12 @@
 ## Form Tag Helper
 
-最接近 HTML 代码
+最接近 HTML 代码。
 
-没有对象(不用对应 model)及类似概念
+没有对象(不用对应 model)及类似概念。
 
-封装 tag 或 content_tag 而来
+封装 tag 或 content_tag 而来。
 
-名字 FormTagHelper 起得非常不合适
+名字 Form Tag Helper 起得非常不合适。
 
 ---
 
@@ -22,24 +22,44 @@ button_tag
 
 ```
 check_box_tag
+
 color_field_tag
-date_field_tag, datetime_field_tag, datetime_local_field_tag
-email_field_tag
-file_field_tag
-hidden_field_tag
-image_submit_tag
-month_field_tag
-number_field_tag
-password_field_tag
-phone_field_tag & telephone_field_tag
-radio_button_tag
-range_field_tag
-search_field_tag
-submit_tag
-text_field_tag
+
+date_field_tag
 time_field_tag
+datetime_field_tag
+datetime_local_field_tag
+
+email_field_tag
+
+file_field_tag
+
+hidden_field_tag
+
+image_submit_tag
+
+month_field_tag
+
+number_field_tag
+
+password_field_tag
+
+phone_field_tag & telephone_field_tag
+
+radio_button_tag
+
+range_field_tag
+
+search_field_tag
+
+submit_tag
+
+text_field_tag
+
 url_field_tag
+
 utf8_enforcer_tag
+
 week_field_tag
 ```
 

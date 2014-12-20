@@ -33,4 +33,4 @@ t.is_a?(Time)                        # => true
 t.is_a?(ActiveSupport::TimeWithZone) # => true
 ```
 
-相关：Date, Time, DateTime, DateAndTime 以及 TimeZone
+相关：Date, Time, DateTime, DateAndTime 以及 TimeZone.
