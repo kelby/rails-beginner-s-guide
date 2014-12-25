@@ -220,12 +220,12 @@ end
 
 ### 如何理解 around
 
-以 save举例：
+用 around_save 举例：
 
 ```ruby
 def around_save
-   # before save, do somethings ...
-   yield # do save
-   # after save, do other somethings ...
+   # 类似 before save ...
+   yield # 执行 save
+   # 类似 after save ...
 end
 ```

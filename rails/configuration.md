@@ -7,18 +7,20 @@ Railtie、Engine、Application 都有自己的 Configuration 模块。
 ### 对外提供接口
 
 ```
-可以
 app_generators
 app_middleware
+
 eager_load_namespaces
+
 to_prepare
 to_prepare_blocks
+
 watchable_dirs
 watchable_files
 
 before_eager_load
-
 before_configuration
+
 after_initialize
 before_initialize
 ```

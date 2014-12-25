@@ -1,4 +1,4 @@
-### 配置 Middleware
+### Middleware
 
 通过 `config.middleware` 有什么方法可用？<br>
 参考【Configuration Middleware Stack Proxy】

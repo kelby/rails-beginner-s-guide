@@ -30,7 +30,7 @@ delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, \n
          to: :queue_adapter
 ```
 
-除上述外方法外，测试环境下可以使用 TestAdapter 适配器。
+除上述外方法外，测试环境下可以使用 Test Adapter 适配器。
 
 ```ruby
 Rails.application.config.active_job.queue_adapter = :test

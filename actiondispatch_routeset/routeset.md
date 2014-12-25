@@ -94,17 +94,21 @@ find_script_name # url_for 调用到
 url_for
 path_for # 简单封装 url_for
 
-# 入口
-# 浏览器里输入的网址，先经它处理
+# 浏览器里输入的网址，最先经过它解析
 # 关键部分是调用 @router.recognize
 recognize_path
+```
+
+`recognize_path` 使用举例：
+
+```ruby
+Rails.application.routes.recognize_path  "http://localhost:3000/users/1"
+# => {:controller=>"users", :action=>"show", :id=>"1"}
 ```
 
 ```
 # 使用 Journey 处理我们提供的路由规则，得到 path 这部分
 build_path
-
-
 ```
 
 `draw` 直接对外暴露的接口，初始化 Mapper 对象。然后交还各个模块处理。
@@ -129,4 +133,3 @@ Generator.new(route_key, options, recall, self).generate
 ```
 Routing::RouteSet::Dispatcher.new(defaults)
 ```
-

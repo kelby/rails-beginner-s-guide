@@ -1,4 +1,4 @@
-### 配置 Action Mailer
+### Action Mailer
 
 ```
 config.action_mailer.logger

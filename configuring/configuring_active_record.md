@@ -1,4 +1,4 @@
-### 配置 Active Record
+### Active Record
 
 ```
 config.active_record.logger

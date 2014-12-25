@@ -1,4 +1,4 @@
-## 前言
+## 后记
 
 一些建议：
 
@@ -26,6 +26,5 @@
 - 这是好东西？为什么没有大量使用？！
 - 底层原理你可以不懂，但自己写的代码要清楚怎么回事。
 - 和 API 及 Guides 区分开来！
-- 排版参考 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)
 
 目标读者: 普通 Rails Web 开发者。

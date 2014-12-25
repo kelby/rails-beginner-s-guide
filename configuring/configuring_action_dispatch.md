@@ -1,4 +1,4 @@
-### 配置 Action Dispatch
+### Action Dispatch
 
 ```
 config.action_dispatch.session_store

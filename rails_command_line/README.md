@@ -55,7 +55,7 @@ ApplicationController 实例。
 
 ### 其它
 
-以下内容并非 Rails 才有，但很实用，一并列出。
+以下有的内容并非 Rails 专有，但很实用，一并列出。
 
 - method 的使用
 
@@ -72,7 +72,7 @@ x.method(:method_name).comment
 # x 可以是对象、类、模块等
 ```
 
-- 在执行语句后面加分号( ; )可去掉 console 默认的输出结果。
+- 在执行语句后面加分号( ; )，可去掉 console 默认的打印输出。
 
 - 下划线( _ )可以显示上条正确命令执行的结果。
 
@@ -93,9 +93,7 @@ module Rails
 end
 ```
 
----
-
-定制 config.console
+- 使用 Pry 代替 IRB
 
 ```ruby
 # config/application.rb

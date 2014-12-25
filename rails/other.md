@@ -1,8 +1,8 @@
 ## 提示信息
 
 ApplicationController  
-这里指的是 Rails 自带的 Rails::ApplicationController 不是我们项目里定义的。
-它是下面几个 Controller 的父类，它和 Application 没有对应关系。
+这里指的是 Rails 自带的 Rails::ApplicationController, 不是我们应用里定义的。
+它是下面几个 Controller 的父类，并且它和 Application 没有对应关系。
 
 WelcomeController  
 新建 Rails 项目时，默认首页 index.
@@ -45,7 +45,7 @@ rake rdoc (Rails 自身的 API)
 
 rake test
 
-还可再细分为 models、helpers、controllers、mailers、integration 和 jobs
+还可再细分为 models、helpers、controllers、mailers、integration 和 jobs 等。
 
 ### commands
 
@@ -75,7 +75,7 @@ update
   - plugin new
   - runner
 
-> Note: 迁移相关在 ActiveRecord 里的 databases.rake 里定义。
+> Note: 迁移相关在 Active Record 里的 databases.rake 里定义。
 
 ## Backtrace Cleaner
 
@@ -86,10 +86,14 @@ update
 ```ruby
 bc = BacktraceCleaner.new
 
-bc.add_filter   { |line| line.gsub(Rails.root.to_s, '') } # strip the Rails.root prefix
-bc.add_silencer { |line| line =~ /mongrel|rubygems/ } # skip any lines from mongrel or rubygems
+# 定义：(部分)删除内容里的 Rails.root
+bc.add_filter   { |line| line.gsub(Rails.root.to_s, '') }
 
-bc.clean(exception.backtrace) # perform the cleanup
+# 定义：(整行)删除 mongrel 或 rubygems 里记录的内容
+bc.add_silencer { |line| line =~ /mongrel|rubygems/ }
+
+# 执行
+bc.clean(exception.backtrace)
 ```
 
 Rails 里用 `Rails.backtrace_cleane` 替换上面的 `bc`.

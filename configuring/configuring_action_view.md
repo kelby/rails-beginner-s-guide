@@ -1,4 +1,4 @@
-### 配置 Action View
+### Action View
 
 ```
 config.action_view.field_error_proc provides

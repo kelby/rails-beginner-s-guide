@@ -17,7 +17,7 @@
 一个典型的依赖数据库的悲观锁调用：
 
 ```sql
-select * from account where name="Erica" for update
+select * from account where name="Erica" for update;
 ```
 
 这条 sql 语句锁定了 account 表中所有符合检索条件（ name="Erica" ）的记录。 本次事务提交之前（事务提交时会释放事务过程中的锁），外界无法修改这些记录。
@@ -36,7 +36,7 @@ with_lock 和事务捆绑在一起，并且参数可以是代码块。
 ```ruby
 # 使用 lock，注意生成的 SQL
 Account.lock.find(1)
-# select * from accounts where id=1 for update
+# SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 1 LIMIT 1 FOR UPDATE
 
 # lock 结合 transaction 一起使用
 Account.transaction do

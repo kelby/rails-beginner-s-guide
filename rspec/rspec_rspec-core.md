@@ -28,13 +28,13 @@ described_class
 pending
 skip
 
-## MemoizedHelpers ##
+## Memoized Helpers ##
 is_expected
 should     # 必须配合 rspec-expectations 使用，可用 is_expected.to 代替
 should_not # 必须配合 rspec-expectations 使用，可用 is_expected.to_not 代替
 subject
 
-## ExampleGroup ##
+## Example Group ##
 fcontext
 fdescribe
 fexample
@@ -49,4 +49,8 @@ xspecify
 described_class
 ```
 
-链接 [rspec-core](http://www.rubydoc.info/github/rspec/rspec-core)
+链接
+
+[rspec-core](http://www.rubydoc.info/github/rspec/rspec-core)
+<br>
+[RSpec Core 3.1](https://relishapp.com/rspec/rspec-core/docs)

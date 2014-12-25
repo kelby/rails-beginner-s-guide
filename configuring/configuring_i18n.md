@@ -1,4 +1,4 @@
-### 配置 i18n
+### I18n
 
 ```
 config.i18n.available_locales

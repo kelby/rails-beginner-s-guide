@@ -63,4 +63,8 @@ should_not_receive
 unstub
 ```
 
-链接 [RSpec Mocks](http://www.rubydoc.info/github/rspec/rspec-mocks)
+链接
+
+[RSpec Mocks](http://www.rubydoc.info/github/rspec/rspec-mocks)
+<br>
+[RSpec Mocks 3.1](https://relishapp.com/rspec/rspec-mocks/docs)

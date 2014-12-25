@@ -1,4 +1,4 @@
-### 配置 Generators
+### Generators
 
 `config.generators`
 

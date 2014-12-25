@@ -1,5 +1,19 @@
 ## Delivery Methods 定制与新增
 
+```
+# 获取所有可用的 delivery_methods
+# 配置 delivery_method
+class_attribute :delivery_methods, :delivery_method
+
+# 对应 config.action_mailer.perform_deliveries
+cattr_accessor :perform_deliveries
+
+module ClassMethods
+  # 必须结合 delivery_method :test 使用，存放着已经 deliver 的邮件对象
+  delegate :deliveries, :deliveries=, to: Mail::TestMailer
+end
+```
+
 delivery_method 默认有 smtp(Mail::SMTP)、file(Mail::FileDelivery)、sendmail(Mail::Sendmail) 和 test(Mail::TestMailer)，我们可以根据需求，定制它们或自定义新的发送方式。
 
 ### 定制 delivery_method

@@ -14,7 +14,10 @@ autoload_once_paths
 
 middleware
 
+root
 root=
 ```
+
+除 root= 外，其余方法都是 get 获取数据，而不是 set 设置数据。
 
 另，自定义的 Railtie 和自定义的 Engine，也可以对外提供 `config` 接口。

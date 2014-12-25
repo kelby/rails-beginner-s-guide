@@ -1,4 +1,4 @@
-### 配置 Assets
+### Assets
 
 ```
 config.assets.enabled

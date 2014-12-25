@@ -1,4 +1,4 @@
-### 配置 Action Controller
+### Action Controller
 
 ```
 config.action_controller.asset_host

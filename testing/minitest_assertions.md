@@ -1,6 +1,6 @@
 ## Assertions
 
-实例方法
+实例方法：
 
 ```
 assert
@@ -49,7 +49,7 @@ skip
 flunk
 ```
 
-除上述方法外，还有
+除上述方法外，还有：
 
 ```
 capture_io
@@ -70,7 +70,7 @@ skipped?
 synchronize
 ```
 
-类方法
+类方法：
 
 ```
 diff

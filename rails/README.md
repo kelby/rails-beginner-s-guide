@@ -8,13 +8,13 @@
 
 实例方法，给 Rails.application 使用。
 
-### Engine
-
-对 Rails 外围的扩展。
-
 ### Railtie
 
 对 Rails 本身的改造。
+
+### Engine
+
+对 Rails 外围的扩展。
 
 ## 内容
 

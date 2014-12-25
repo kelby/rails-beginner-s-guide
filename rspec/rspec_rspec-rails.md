@@ -26,6 +26,7 @@ assign(:widget, Widget.new)
 be_a_new
 be_new_record
 be_valid
+
 be_routable
 
 get
@@ -36,10 +37,12 @@ delete
 options
 head
 
+## Controller specs ##
 have_http_status
 have_rendered & render_template
 
 redirect_to
+
 route_to
 ```
 
@@ -57,4 +60,16 @@ template
 response
 ```
 
-链接 [rspec-rails](http://www.rubydoc.info/github/rspec/rspec-rails/)
+**Render_views**
+
+```
+render_views
+
+bypass_rescue # 跳过程序里的 rescue_from 异常处理
+```
+
+链接
+
+[rspec-rails](http://www.rubydoc.info/github/rspec/rspec-rails/master)
+<br>
+[RSpec for Rails-3+](http://relishapp.com/rspec/rspec-rails)

@@ -75,6 +75,61 @@ end
 
 启动过程基本上都在：
 
-Rails::Application - application.rb
+```
+Rails::Application - config/application.rb
 
 Rails::Railtie::Configuration - configuration.rb
+```
+
+config/application.rb
+里先 require 再 config 最后 eager_load.
+
+相关代码：
+
+```
+AppName.initialize!
+```
+
+```
+run_initializers(group, self)
+
+
+initializers.tsort_each do |initializer|
+  initializer.run(*args) if initializer.belongs_to?(group)
+end
+
+
+@initializers ||= self.class.initializers_for(self)
+
+Collection.new(initializers_chain.map { |i| i.bind(binding) })
+
+def initializers_chain
+  initializers = Collection.new
+  ancestors.reverse_each do |klass|
+    next unless klass.respond_to?(:initializers)
+    initializers = initializers + klass.initializers
+  end
+  initializers
+end
+
+
+def run(*args)
+  @context.instance_exec(*args, &block)
+end
+```
+
+各样的钩子，如：
+
+```
+before_configuration
+
+before_eager_load
+
+before_initialize
+
+after_initialize
+```
+
+它们在 Railtie::Configuration 里定义，使用范围很广。
+
+最后才是 initializer!

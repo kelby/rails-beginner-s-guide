@@ -69,4 +69,8 @@ or  & |
 ===
 ```
 
-链接 [RSpec Expectations](http://www.rubydoc.info/github/rspec/rspec-expectations)
+链接
+
+[RSpec Expectations](http://www.rubydoc.info/github/rspec/rspec-expectations)
+<br>
+[RSpec Expectations 3.1](https://relishapp.com/rspec/rspec-expectations/docs)

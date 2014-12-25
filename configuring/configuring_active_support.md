@@ -1,4 +1,4 @@
-### 配置 Active Support
+### Active Support
 
 ```
 config.active_support.bare

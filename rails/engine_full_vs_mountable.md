@@ -54,12 +54,8 @@ model、controller、routes 等都是相互隔离的。
 
 也就是说它们的环境不是一样的。
 
-### 那么问题就来了
+### 推荐使用 mountable
 
---full 仅做文件、目录上的分隔，实际上我们没必要使用，有其它方式实现(如：使用命名空间)。
+`--full` 仅做文件、目录上的分隔，实际上我们没必要使用，有其它方式实现(如：使用命名空间)。
 
---mountable 才是推荐做法(从 Engine 存在的意义及文档上，可以看出这点)。
-
-参考
-
-[Rails Engine Patterns](http://www.slideshare.net/AndyMaleh/rails-engine-patterns)
+`--mountable` 才是推荐做法(从 Engine 存在的意义及文档上，可以看出这点)。
