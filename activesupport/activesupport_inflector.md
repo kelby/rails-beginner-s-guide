@@ -46,7 +46,6 @@ human
 irregular
 
 plural
-
 singular
 
 uncountable

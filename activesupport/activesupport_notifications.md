@@ -12,7 +12,8 @@ ActiveSupport::Notifications.instrument "my.custom.event", this: :data do
 end
 
 # 订阅消息
-ActiveSupport::Notifications.subscribe "my.custom.event" do |name, started, finished, unique_id, data|
+ActiveSupport::Notifications.subscribe "my.custom.event" do |name, started, finished,
+                                                             unique_id, data|
   puts data.inspect # {:this=>:data}
 end
 ```

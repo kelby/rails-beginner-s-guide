@@ -2,14 +2,10 @@
 
 也就是 ActionMailer::Base，我们的 Mailer 类继承的就是它。
 
-### 邮件、附件
+### 邮件(mail)、附件(attachments)
 
-|方法|解释|
-|--|--|
-| mail | 表示邮件对象 |
-|attachments | 允许你在邮件里添加附件|
-
-`mail(headers = {}, &block)` 可接收一个代码块做为参数，header(头部)可接受：
+`mail(headers = {}, &block)` 表示邮件对象。<br>
+可接收一个代码块做为参数，header(头部)可接受：
 
 | 参数 | 含义 |
 | :-- | -- |
@@ -33,7 +29,7 @@ def welcome(user)
 end
 ```
 
-`attachments()`
+`attachments()` 允许你在邮件里添加附件。
 
 类型：
 
@@ -65,13 +61,9 @@ mail.attachments['filename.jpg'] = { mime_type: 'application/x-gzip',
                                      content: File.read('/path/to/filename.jpg') }
 ```
 
-### 设置默认值
+### 设置默认值(default & default_options=)
 
-| 方法 | 解释 |
-|--|--|
-|default & default_options= | 设置默认值，value 必需是 Hash 类型|
-
-`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有
+`default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有：
 
 ```ruby
 default_params = {
@@ -82,7 +74,7 @@ default_params = {
 }
 ```
 
-我们可以配置
+我们可以配置(value 必需是 Hash 类型)：
 
 ```ruby
 # 下面两者一样
@@ -92,7 +84,7 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 # 常见配置(开发模式下)
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-# 配置发送方式
+# 配置邮件发送方式
 config.action_mailer.delivery_method = :smtp
 
 # 根据不同发送方式，做不同配置
@@ -124,13 +116,9 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
 
-### 设置头部消息
+### 设置头部消息 headers
 
-| 方法 | 解释 |
-| -- | -- |
-| headers | 设置头部消息 |
-
-使用 headers 可以设置邮件的头部消息，例如
+使用 `headers` 可以设置邮件的头部消息，例如
 
 ```ruby
 headers['X-Special-Domain-Specific-Header'] = "SecretValue"
@@ -154,34 +142,35 @@ message-id
 references
 ```
 
-### 接收邮件
+### 接收邮件 receive
 
-| 方法 | 解释 |
-| -- | -- |
-| receive | 表示接收邮件 |
-
-`receive(raw_mail)`
-
-Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件对象。
+Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件内容。<br>
+Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
 ### 其它方法
 
-除了以上方法外，还有：
+类方法：
 
 ```ruby
-mailer_name
+mailer_name & controller_path
 
-register_interceptor
-register_interceptors
+register_interceptor  # 简单封装 Mail.register_interceptor
+register_interceptors # 简单封装 register_interceptor
 
-register_observer
-register_observers
+register_observer     # 简单封装 Mail.register_observer
+register_observers    # 简单封装 register_observer
+```
 
-set_content_type
+其它类方法：
 
-default_i18n_subject
-
+```
 supports_path?
+```
+
+实例方法：
+
+```
+mailer_name
 ```
 
 `mailer_name` 返回文件名，默认为 anonymous.

@@ -42,11 +42,11 @@ Rails 启动时就已使用 backtrace_cleaner.
 Rails.backtrace_cleaner
 => #<Rails::BacktraceCleaner:0x007ff859bed328
  @filters=
-  [#<Proc:0x007ff859bed238@/Users/your_name/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/railties-3.2.17/lib/rails/backtrace_cleaner.rb:10>,
-   #<Proc:0x007ff859bed210@/Users/your_name/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/railties-3.2.17/lib/rails/backtrace_cleaner.rb:11>,
-   #<Proc:0x007ff859bed1c0@/Users/your_name/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/railties-3.2.17/lib/rails/backtrace_cleaner.rb:12>,
-   #<Proc:0x007ff859bec450@/Users/your_name/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/railties-3.2.17/lib/rails/backtrace_cleaner.rb:26>],
+  [#<Proc:0x007ff859bed238@/Users/.../lib/rails/backtrace_cleaner.rb:10>,
+   #<Proc:0x007ff859bed210@/Users/.../lib/rails/backtrace_cleaner.rb:11>,
+   #<Proc:0x007ff859bed1c0@/Users/.../lib/rails/backtrace_cleaner.rb:12>,
+   #<Proc:0x007ff859bec450@/Users/.../lib/rails/backtrace_cleaner.rb:26>],
  @silencers=
-  [#<Proc:0x007ff859bec428@/Users/your_name/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/gems/railties-3.2.17/lib/rails/backtrace_cleaner.rb:15>]>
+  [#<Proc:0x007ff859bec428@/Users/.../lib/rails/backtrace_cleaner.rb:15>]>
 ```
 

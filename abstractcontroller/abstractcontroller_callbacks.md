@@ -16,6 +16,8 @@ skip_around_action
 skip_action_callback & skip_filter
 ```
 
+这些回调方法参照物是 `process_action` 方法。
+
 具体实现：调用 ActiveSupport::Callbacks 的 `set_callback` 和 `skip_callback` 等方法。
 
 上面 before, after, around 的 append, prepend, skip 类似，明白其中一个，其它的可以贯通。

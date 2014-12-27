@@ -5,7 +5,7 @@
 ```ruby
 # 压缩
 gzip = ActiveSupport::Gzip.compress('compress me!')
-# => "\x1F\x8B\b\x00o\x8D\xCDO\x00\x03K\xCE\xCF-(J-.V\xC8MU\x04\x00R>n\x83\f\x00\x00\x00"
+# => "\x1F\x8B\b\x00o\x8D\...\x83\f\x00\x00\x00"
 
 # 解压缩
 ActiveSupport::Gzip.decompress(gzip)

@@ -1,5 +1,9 @@
 ## Delivery Methods 定制与新增
 
+**底层如何实现邮件"发送"？**
+
+Rails 本身没有实现此功能，但提供选择：调用底层邮件发送程序，使用已有邮件服务，定制与新增。
+
 ```
 # 获取所有可用的 delivery_methods
 # 配置 delivery_method
@@ -91,6 +95,18 @@ add_delivery_method :sendmail, Mail::Sendmail,
 
 ```ruby
 config.action_mailer.delivery_method = :sendmail
+```
+
+### ~~其它方法~~
+
+```
+# 类方法
+# 配置和 delivery 有关的参数，如：perform_deliveries、raise_delivery_errors
+wrap_delivery_behavior
+
+# 实例方法
+# 调用 mail 方法时会用到它，直接调用类方法 wrap_delivery_behavior
+wrap_delivery_behavior!
 ```
 
 参考

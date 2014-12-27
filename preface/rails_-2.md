@@ -48,7 +48,8 @@ class MainpageController
   end
 
   def show(env)
-    [200, {"Content-Type" => "text/html"}, ["<pre> #{env['action_dispatch.request.path_parameters'][:id]} #</pre>"]]
+    [200, {"Content-Type" => "text/html"},
+     ["<pre> #{env['action_dispatch.request.path_parameters'][:id]} #</pre>"]]
   end
 end
 
@@ -76,7 +77,8 @@ class MainpageController < ActionController::Metal
   
   def show
     self.status = 404
-    self.response_body = "<pre>#{env['action_dispatch.request.path_parameters'] [:id]}</pre>"
+    self.response_body =
+      "<pre>#{env['action_dispatch.request.path_parameters'] [:id]}</pre>"
   end
 end
 
@@ -109,7 +111,8 @@ class MainpageController < ActionController::Metal
 
   def show
     self.status = 404
-    self.response_body = "<pre>#{env['action_dispatch.request.path_parameters'] [:id]}</pre>"
+    self.response_body =
+      "<pre>#{env['action_dispatch.request.path_parameters'] [:id]}</pre>"
   end
 
   def render_to_body(*args)

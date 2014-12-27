@@ -1,4 +1,4 @@
-# Engine
+## Engine
 
 Engine 下有 Railtie，上有 Application.  
 在 Engine 里，可以直接使用 Railtie 提供的方法；在 Application 里，可以直接使用 Engine 提供的方法。

@@ -46,7 +46,7 @@ end
 
 ---
 
-相等性
+相等性：
 
 ```ruby
 namespace "admin" do

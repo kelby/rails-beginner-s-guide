@@ -1,6 +1,4 @@
-由两部分组成：Caching 和 Caching Fragments.
-
-**页面相关的服务端缓存**
+**页面相关的服务端缓存** 由两部分组成：Caching 和 Caching Fragments.
 
 ## Caching
 
@@ -24,7 +22,7 @@ config.action_controller.cache_store = :mem_cache_store,
 
 ---
 
-主要就是配置 ActionController 所使用的缓存。
+主要就是配置 Action Controller 所使用的缓存。
 
 配置举例(默认是 MemoryStore):
 

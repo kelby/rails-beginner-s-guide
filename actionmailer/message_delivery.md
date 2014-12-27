@@ -1,8 +1,8 @@
 ## Message Delivery
 
-专用于邮件的发送。(YourMailer#action 时已经使用，创建的就是 MessageDelivery 实例对象)
+**应用层面的邮件发送。**(YourMailer#action 时已经使用，创建的就是 Message Delivery 实例对象)
 
-这个文件是重构 + 引入 DeliveryJob 后产生的。
+这个文件是重构 + 引入 Delivery Job 后产生的。
 
 ```
 deliver_now
@@ -30,10 +30,10 @@ Notifier.welcome("helloworld@example.com").deliver_now
 
 ```ruby
 message = Notifier.welcome("helloworld@example.com")
-# => an ActionMailer::MessageDeliver object
+# => 得到 ActionMailer::MessageDeliver 实例对象
 
 message.deliver_now
-# sends the email
+# 执行发送邮件
 ```
 
 获取 Mail::Message 实例对象(deliver 操作其实是由它发出)
@@ -41,3 +41,5 @@ message.deliver_now
 ```ruby
 Notifier.welcome(david).message
 ```
+
+> Note: 这里的邮件"发送"，指的是我们应用层面的"发送"。至于 Rails 底层如何实现邮件"发送"，参考【Delivery Methods】章节。

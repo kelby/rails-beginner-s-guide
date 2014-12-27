@@ -1,7 +1,7 @@
 ## 各个实例方法
 
 ```
-inspect # alias :to_s
+inspect & to_s
 
 # attr_accessor，Journey::Formatter 的实例对象
 formatter

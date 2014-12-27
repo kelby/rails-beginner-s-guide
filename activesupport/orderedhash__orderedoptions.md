@@ -1,4 +1,4 @@
-两部分: Ordered Options 和 Ordered Hash.
+两部分: Ordered Options 和 ~~Ordered Hash~~.
 
 ## Ordered Options
 

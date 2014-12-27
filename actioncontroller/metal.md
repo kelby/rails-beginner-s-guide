@@ -1,4 +1,4 @@
-## Metal 介绍
+## Metal
 
 metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品。
 
@@ -26,52 +26,6 @@ get 'hello', to: HelloController.action(:index)
 ```
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
-
-### Metal 提供的方法：
-
-**类方法**
-
-```
-action
-
-use
-middleware & middleware_stack
-
-controller_name
-```
-
-**实例方法**
-
-```
-dispatch
-
-content_type
-content_type=
-
-location
-location=
-
-params
-params=
-
-status
-status=
-
-performed?
-response_body=
-controller_name
-env
-url_for
-```
-
-`self.action` 和 `dispatch` 为转移到下一站场起到了很大的作用。
-
-除此之外，还有：
-
-```ruby
-class_attribute :middleware_stack
-self.middleware_stack = ActionController::MiddlewareStack.new
-```
 
 ### 其它
 

@@ -12,7 +12,13 @@
 Mime::Type.register "text/html", :html, %w( application/xhtml+xml ), %w( xhtml )
 ```
 
-查看 Rails 支持什么类型的 MIME（Multipurpose Internet Mail Extensions，多用途互联网邮件扩展）
+`register` 只是登记，本身是没有处理能力的，还需要使用 Action Controller 添加渲染器并处理：
+
+```ruby
+ActionController::Renderers.add ...
+```
+
+查看 Rails 支持什么类型的 MIME(Multipurpose Internet Mail Extensions，多用途互联网邮件扩展)：
 
 ```ruby
 Mime::SET

@@ -33,7 +33,7 @@ end
 
 ```ruby
 class MyRailtie < Rails::Railtie
-  # Customize the ORM
+  # 配置使用什么 ORM
   config.app_generators.orm :my_railtie_orm
 
   # Add a to_prepare block which is executed once in production
