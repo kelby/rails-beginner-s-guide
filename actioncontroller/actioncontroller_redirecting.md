@@ -42,10 +42,10 @@ redirect_to({ action: 'atom' }, alert: "Something serious happened")
  redirect_to
      |
      V
-  url_for
+ActionController::UrlFor
      |
      V
-ActionController::UrlFor
+  url_for
      |
      V
 AbstractController::UrlFor

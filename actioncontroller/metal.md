@@ -4,8 +4,6 @@ metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品�
 
 一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
 
----
-
 MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
 举个例子:

@@ -1,5 +1,7 @@
 ## Helpers
 
+不是指 helper 方法！但和 helper 有关联，如方法：helper_method、helper 等。
+
 | 方法 | 解释 |
 | -- | -- |
 | helper | 把 Helper 方法变成 Controller 方法 |

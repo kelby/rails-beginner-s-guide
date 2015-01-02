@@ -1,6 +1,8 @@
-## Collector
+## ~~Collector~~
 
-我们的响应格式。
+我们的响应格式 Mime.
+
+Collector 是 Abstact Controller 实现的。Action Controller 有自己的扩展，Active Mailer 也有自己的扩展。
 
 ```ruby
 # action 里面

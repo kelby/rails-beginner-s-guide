@@ -1,6 +1,6 @@
-# Associations 架构图讲解
+## Associations 架构图讲解
 
-## 1) 4 个关联类方法：
+### 1) 4 个关联类方法：
 
 对外 API:
 
@@ -22,7 +22,7 @@ has_one
 
 注意事项。
 
-## 2) Builder
+### 2) Builder
 
 影响对外表现，而又不涉及枯燥的原理。
 
@@ -52,7 +52,7 @@ HasAndBelongsToMany
                          Association
 ```
 
-## 3) Association
+### 3) Association
 
 内部实现，如同名模块：
 
@@ -64,12 +64,12 @@ SingularAssociation
 CollectionAssociation
 ```
 
-## 4) through 参数
+### 4) through 参数
 
-## 5) 对象.关联对象 操作
+### 5) 对象.关联对象 操作
 
-## 6) 关联对象的 scope 参数(或查询)
+### 6) 关联对象的 scope 参数(或查询)
 
-## 7) join 方法
+### 7) join 方法
 
-## 8) 违背约定
+### 8) 违背约定

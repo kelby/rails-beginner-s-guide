@@ -40,6 +40,7 @@ autoload(:MyModule, "/usr/local/lib/modules/my_module.rb")
 ```
 module A
 end
+
 A.autoload(:B, "b")
 A::B.doit            # autoloads "b"
 ```
@@ -48,11 +49,7 @@ A::B.doit            # autoloads "b"
 <br>
 链接 http://www.ruby-doc.org/core-2.1.5/Module.html#method-i-autoload
 
----
-
-为了性能等原因，Rails 大量使用了 `autoload`.
-<br>
-为了"线程安全"等原因，Rails 在需要全局变量的地方，又使用了 `eager_autoload`.
+### 线程安全
 
 百度百科里对"线程安全"的描述：
 
@@ -64,9 +61,11 @@ A::B.doit            # autoloads "b"
 >
 若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则的话就可能影响线程安全。
 
-解决"线程安全"问题，有一个很简单的办法，那就是：**只生一个！**
+为了性能等原因，Rails 大量使用了 `autoload`.
+<br>
+为了"线程安全"等原因，Rails 在需要全局变量的地方，又使用了 `eager_autoload`.
 
----
+参考
 
 [Ruby 多线程](http://www.w3cschool.cc/ruby/ruby-multithreading.html)
 <br>

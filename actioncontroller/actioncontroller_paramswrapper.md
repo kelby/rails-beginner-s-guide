@@ -1,29 +1,36 @@
-## ~~Params Wrapper 额外的 params[:x]~~
+## Params Wrapper
 
-**类方法**
+**对请求过来的 params 进行预处理。**通过 API 发送请求的话，使用它，特别方便。
+
+**类方法：**
 
 ```
 wrap_parameters
 ```
 
-我们用 POST 请求数据时，可以看到在 params 里对象封装在一个 root 元素里，例如：
+比如，实际发送的是：
 
 ```
-"post" => {"title" => "hello world"}
+{"name": "Konata"}
 ```
 
-我们获取里面的某个属性，只能这样
+预处理过后，可以变成：
 
-```ruby
-params[:post][:title]
-
-# 或
-
-post = Post.new(params[:post])
-post.title
+```
+{"user": {"name": "Konata"}}
 ```
 
-在不引起误解的情况下，我们希望是能够通过 `params[:title]` 直接获取这个元素。虽然这样的使用场景有限。
+或变成：
+
+```
+{"name" => "Konata", "user" => {"name" => "Konata"}}
+```
+
+或变成其它样子，数据类型也可以改变。
+
+开放 API 时，此特性用得最多，此时请求格式一般为 'application/json'
+
+使用举例：
 
 ```ruby
 # 默认
@@ -45,13 +52,7 @@ wrap_parameters include: [:username, :title]
 wrap_parameters :exclude => :title
 ```
 
-注意：**开发 API 等，我们希望传递的是 JSON 格式的数据。但处理时，我们又希望使用 params Hash，那 Rails 能不能自动帮我们转换呢？**
-
-只有请求格式为 'application/json'，上述描述才起作用！
-
----
-
-`include_root_in_json`<br> 一个功能上恰好和它相反的配置方法(此外，一个在 Active Model，另一个在 Action Controller)。
+`include_root_in_json` 一个功能上恰好和它有类似之处的方法(一个在 Active Model，另一个在 Action Controller)。
 
 ```ruby
 Post.to_json

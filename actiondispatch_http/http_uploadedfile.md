@@ -1,5 +1,7 @@
 ## Uploaded File
 
+**上传文件时用到**，不过具体不清楚。
+
 ```
 close
 eof?

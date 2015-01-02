@@ -4,5 +4,6 @@
 
 ```
 macro
+
 has_one?
 ```

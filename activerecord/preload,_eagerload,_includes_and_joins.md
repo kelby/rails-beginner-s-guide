@@ -1,9 +1,9 @@
-## Preload, Eagerload, Includes 和 Joins 等
+### Preload, Eagerload, Includes 和 Joins 等
 
 延迟加载，如 Relation，scope
 预先加载，如 includes
 
-### N + 1
+#### N + 1
 
 ```ruby
 # 一次查询
@@ -15,7 +15,7 @@ doctor.patients.each do |patient|
 end
 ```
 
-### includes
+#### includes
 
 把关系表数据也查询出来。两个查询都要做，关联对象也需要放到内存。
 
@@ -52,7 +52,7 @@ WHERE (posts.desc = "ruby is awesome")
 
 a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面符合条件的 bs
 
-### joins
+#### joins
 
 普通的查询条件，关联对象不需要放到内存。
 
@@ -94,7 +94,7 @@ Product.joins(:catalogs_products).where(catalogs_products:
                                         {catalog_id: params[:catalog_id]})
 ```
 
-### preload
+#### preload
 
 类似 includes 的子集。
 
@@ -116,7 +116,7 @@ a.preload(:bs).where(bs.x ...) preload 包含符合条件的 a 和 a 下面所�
 
 > Note: 实际应该是 a.joins(:bs).where(bs.x ...).preload(:bs)
 
-### eager_load
+#### eager_load
 
 ```ruby
 User.eager_load(:posts)
@@ -133,7 +133,7 @@ default_scope 不起作用。
 
 通过中间表的话，要明确指出才加载。
 
-### references
+#### references
 
 includes 后面的查询条件，用的是 "关联表.属性"，有时候 Rails 不能推断出这个'关联表'到底是哪个(可以 includes 多个关联表)，需要用 references 指明。
 

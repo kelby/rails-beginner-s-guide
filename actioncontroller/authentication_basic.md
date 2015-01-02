@@ -2,44 +2,33 @@
 
 headers["WWW-Authenticate"] = %(Basic realm="#{realm.gsub(/"/, "")}")
 
-提供方法：
+### 类方法
 
 ```
-auth_param
-auth_scheme
-
-authenticate
-
-authentication_request
-
-decode_credentials
-encode_credentials
-
-user_name_and_password
-
-has_basic_credentials?
+http_basic_authenticate_with
 ```
 
 使用举例：
 
 ```ruby
-def test_access_granted_from_xml
-  get(
-    "/notes/1.xml", nil,
-    'HTTP_AUTHORIZATION' =>
-     ActionController::HttpAuthentication::Basic.encode_credentials(
-       users(:dhh).name,
-       users(:dhh).password
-     )
-  )
+class PostsController < ApplicationController
+  http_basic_authenticate_with name: "dhh", password: "secret", except: :index
 
-  assert_equal 200, status
+  def index
+    render plain: "Everyone can see me!"
+  end
+
+  def edit
+    render plain: "I'm only accessible if you know the password"
+  end
 end
 ```
 
-### Controller Methods
+`http_basic_authenticate_with` 除 :name 和 :password 选项外，一般还可设置 :realm 做为提示信息。它已经封装了 authenticate_or_request_with_http_basic 方法。
 
-提供方法：
+`http_basic_authenticate_with` 应该是最常用的验证方式了吧。
+
+### Controller Methods
 
 ```
 authenticate_with_http_basic
@@ -47,6 +36,8 @@ request_http_basic_authentication
 
 authenticate_or_request_with_http_basic
 ```
+
+`authenticate_or_request_with_http_basic` 简单的封装了其余两个方法。
 
 使用举例：
 
@@ -83,32 +74,37 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-authenticate_or_request_with_http_basic 简单的封装了其余两个方法。
-
-### 类方法
-
-提供方法：
+### 其它方法：
 
 ```
-http_basic_authenticate_with
+auth_param
+auth_scheme
+
+authenticate
+
+authentication_request
+
+decode_credentials
+encode_credentials
+
+user_name_and_password
+
+has_basic_credentials?
 ```
 
 使用举例：
 
 ```ruby
-class PostsController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: :index
+def test_access_granted_from_xml
+  get(
+    "/notes/1.xml", nil,
+    'HTTP_AUTHORIZATION' =>
+     ActionController::HttpAuthentication::Basic.encode_credentials(
+       users(:dhh).name,
+       users(:dhh).password
+     )
+  )
 
-  def index
-    render plain: "Everyone can see me!"
-  end
-
-  def edit
-    render plain: "I'm only accessible if you know the password"
-  end
+  assert_equal 200, status
 end
 ```
-
-http_basic_authenticate_with 除 :name 和 :password 选项外，一般还可设置 :realm 做为提示信息。
-
-> Note: Basic 提供的 authenticate_or_request_with_http_basic 应该是最常用的验证方式了吧。

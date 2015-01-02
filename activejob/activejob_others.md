@@ -1,6 +1,6 @@
 其它多个类或模块，统一在此列举。
 
-## Arguments 参数处理
+### Arguments 参数处理
 
 接受的参数类型很广泛，需要先处理一下。
 
@@ -9,7 +9,7 @@
 
 当然，这都是自动完成的。
 
-## 参数支持 Global ID
+### 参数支持 Global ID
 
 一般入队列(enqueue_in、enqueue_at 和 enqueue) 只传能够标识对象的那部分参数(如：class、id)，出队列/执行的时候再根据这些参数获取对象。
 
@@ -36,45 +36,45 @@ end
 
 > Note: 不规范的写法里，也可以直接传递对象。
 
-## Railtie
+### Railtie
 
 设置 logger 和配置(如：默认 queue_adapter)
 
-## Queue Adapters
+### Queue Adapters
 
 原来，不同的延迟任务 gem 有各自不同的 self.perform、perform、run、work，现在：
 
 都有同名的 self.enqueue 和 self.enqueue_at
 
-## Logging
+### Logging
 
 around_enqueue、around_perform 和 before_enqueue 有日志记录
 
 enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 
-## Identifier
+### Identifier
 
 每个任务都有全局唯一的 job_id
 
-## Configured Job
+### Configured Job
 
 配置实例，对应着 Core 的 set 类方法。
 
-## 解析 queue_adapter 及其 API
+### 解析 queue_adapter 及其 API
 
 queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象而来。
 
 而 queue_adapter 所用的 API(enqueue_at、enqueue_in、enqueue 等)，也是从原延迟任务所提供的 API 抽象而来。
 
-## 命令行快捷生成
+### 命令行快捷生成
 
 ```bash
 rails generate job NAME [options]
 ```
 
-## 异常捕获与处理
+### 异常捕获与处理
 
-使用 ActiveSupport 的异常捕获方法 `rescue_from`
+使用 Active Support 的异常捕获方法 `rescue_from`
 
 ```ruby
 class GuestsCleanupJob < ActiveJob::Base

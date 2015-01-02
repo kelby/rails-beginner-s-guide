@@ -1,5 +1,7 @@
 # Action Dispatch Middleware
 
+**middleware 在路由转发之后，Controller 接收之前！**
+
 已经进入 Rails, 但还没正式进入我们应用，这时候需要做一些事。
 
 Web 服务器已经处理过，转发过来了。做一些什么事呢？看一看下面的 middleware 都提供了什么功能就知道了。

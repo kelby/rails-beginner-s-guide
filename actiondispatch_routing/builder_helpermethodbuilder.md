@@ -19,4 +19,4 @@ builder.handle_class record  # 小写，复数形式
 builder.handle_model record  # 类型，小写，单数形式
 ```
 
-现在可以看到 Action View 和 Action Dispatch 里的 url_for 方法, 以及 Action Dispatch 里的 PolymorphicRoutes 相关方法都封装了它，在某些参数情况下会调用到它。其它地方，没有使用。
+现在可以看到 Action View 和 Action Dispatch 里的 url_for 方法, 以及 Action Dispatch 里的 Polymorphic Routes 相关方法都封装了它，在某些参数情况下会调用到它。其它地方，没有使用。

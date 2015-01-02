@@ -4,4 +4,4 @@
 
 有 Show Exceptions 的性质，但不同的是 Show Exceptions 比较通用。而 Debug Exceptions 用于本地开发，因为此时我们希望看到更多、更友好的错误信息。
 
-middleware/templates/ 目录下的文件，和它相关。
+**middleware/templates/** 目录下的文件，也和它相关。

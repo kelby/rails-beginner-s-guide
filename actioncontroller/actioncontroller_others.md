@@ -1,6 +1,12 @@
-包含了：Railties Helpers、Railtie、Middleware 等。
+## 其它
 
-## Railties Helpers
+### 更多关于 Action Controller
+
+ActionController include 了对 metal/ 目录下面包含的模块，而我们自定义的 Controller 又继承于 ActionController.
+
+自然的，它们的 ClassMethods 就会变成我们自定义 Controller 的类方法，而其它方法则类似实例方法，可运用于 action.
+
+### Railties Helpers
 
 根据配置及其它因素，决定是否给我们所定义的 Controller 加载所有可用的 helpers.
 
@@ -12,7 +18,7 @@ klass.helper :all
 
 > Note: 可通过 config.action_controller.include_all_helpers 进行配置只加载 application_helper 和当前 Controller 所对应的 x_helper.
 
-## Railtie
+### Railtie
 
 **initializer**
 
@@ -41,11 +47,3 @@ Rails.configuration.action_controller.keys
 # => [:perform_caching, :assets_dir, :logger, :cache_store, :javascripts_dir,
 #     :stylesheets_dir, :asset_host, :relative_url_root]
 ```
-
-## ~~Middleware~~
-
-继承于 Metal，最初就是从 Metal 分离而来的。
-
-这里的 Middleware<sup>1</sup> 不是 Middleware Stack 里面的 Middleware<sup>2</sup>，它们只是恰好同名而矣。
-
-证明了 Metal 本身也是一个 Middleware<sup>2</sup>，本身就是一个 Rack app 等。

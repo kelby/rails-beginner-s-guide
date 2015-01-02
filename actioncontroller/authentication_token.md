@@ -2,46 +2,6 @@
 
 headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
 
-提供方法：
-
-```
-authenticate
-authentication_request
-
-encode_credentials
-
-params_array_from
-
-rewrite_param_values
-
-token_and_options
-
-raw_params
-token_params_from
-```
-
-传递 token 时，可以传递额外的数据，如：
-
-```
-Authorization: Token token="abc", nonce="def"
-```
-
-然后使用 `token_and_options` 获取这些数据。
-
-使用举例：
-
-```ruby
-def test_access_granted_from_xml
-  get(
-    "/notes/1.xml", nil,
-    'HTTP_AUTHORIZATION' =>
-     ActionController::HttpAuthentication::Token.encode_credentials(users(:dhh).token)
-  )
-
-  assert_equal 200, status
-end
-```
-
 ### Controller Methods
 
 提供方法：
@@ -52,6 +12,8 @@ request_http_token_authentication
 
 authenticate_or_request_with_http_token
 ```
+
+`authenticate_or_request_with_http_token` 简单的封装了其余两个方法。  
 
 使用举例：
 
@@ -111,6 +73,46 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+end
+```
+
+### 其它方法：
+
+```
+authenticate
+authentication_request
+
+encode_credentials
+
+params_array_from
+
+rewrite_param_values
+
+token_and_options
+
+raw_params
+token_params_from
+```
+
+传递 token 时，可以传递额外的数据，如：
+
+```
+Authorization: Token token="abc", nonce="def"
+```
+
+然后使用 `token_and_options` 获取这些数据。
+
+使用举例：
+
+```ruby
+def test_access_granted_from_xml
+  get(
+    "/notes/1.xml", nil,
+    'HTTP_AUTHORIZATION' =>
+     ActionController::HttpAuthentication::Token.encode_credentials(users(:dhh).token)
+  )
+
+  assert_equal 200, status
 end
 ```
 

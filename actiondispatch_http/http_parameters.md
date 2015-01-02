@@ -1,5 +1,7 @@
 ## Parameters
 
+**常用到的 params (也叫 parameters)等。**
+
 ```
 parameters & params
 

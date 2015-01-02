@@ -1,16 +1,29 @@
 # Active Record 底层
 
-## Serialization
+知道有，但平时感受不到。
 
-`serializable_hash(options = nil)` 和 `as_json` 结果一样。
+- Connection Handling
 
-使用的是 super 提供的方法。
+用来建立和数据库的连接。(配置、建立连接、日志，其中的建立连接，连接适配不是它做的！)
 
-## StatementCache
+- Explain
 
-TODO
+explain 方法的底层实现(尽管是调用数据库的 explain...)
 
-## Sanitization
+- ExplainRegistry
 
-TODO
+- ExplainSubscriber
 
+- QueryCache
+
+- Result
+
+- RuntimeRegistry
+
+- Sanitization
+
+- Serialization
+
+包括 XmlSerializer
+
+- StatementCache

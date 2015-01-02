@@ -4,13 +4,15 @@
 
 ```
 match
+
 mount
+
 root
 ```
 
 #### match
 
-匹配url到一个或多个路由。所有符号，都会对应着url里的参数，可用`params`获取：
+匹配 url 到一个或多个路由。所有符号，都会对应着 url 里的参数，可用 `params` 获取：
 
 ```ruby
 # 对应着 params 里的 :controller, :action 和 :id
@@ -42,13 +44,14 @@ match 'photos/:id', controller: 'photos', action: 'show'
 ```ruby
 match 'photos/:id', to: lambda {|hash| [200, {}, ["Coming soon"]] }
 match 'photos/:id', to: PhotoRackApp
-# Yes, controller actions are just rack endpoints
+
+# YourController.action(:your_action) 也是 rack endpoint
 match 'photos/:id', to: PhotosController.action(:show)
 ```
 
-通过HTTP请求，容易带来安全隐患，所以你可以使用 HtttpHelpers[rdoc-ref:HttpHelpers]，而不是 `match`
+通过 HTTP 请求，容易带来安全隐患，所以你可以使用 HtttpHelpers[rdoc-ref:HttpHelpers]，而不是 `match`
 
-#### mount 挂载一个基于Rack的应用到我们的程序。
+#### mount 挂载一个基于 Rack 的应用到我们的程序。
 
 ```ruby
 match '/movies/search', => "movies#search"

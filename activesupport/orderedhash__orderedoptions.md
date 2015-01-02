@@ -2,6 +2,8 @@
 
 ## Ordered Options
 
+可以以方法的形式调用 Hash 的 key，读、写其 value.
+
 普通 Hash
 
 ```ruby
@@ -12,7 +14,7 @@ h[:boy]  # => 'John'
 h[:girl] # => 'Mary'
 ```
 
-使用 Ordered Options 后，可以以方法的形式调用 key，读、写其 value.
+使用 Ordered Options 后：
 
 ```ruby
 h = ActiveSupport::OrderedOptions.new

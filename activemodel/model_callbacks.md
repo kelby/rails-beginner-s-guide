@@ -1,4 +1,4 @@
-## 在 Model 里快速定义 Callbacks
+## Callbacks - 快速定义回调方法
 
 `define_model_callbacks(*callbacks)` 
 一般的，ORM 都会提供大量的回调函数，并且有的回调函数之间还存在共性。直接使用 Active Support 那一套回调机制的话，略显麻烦，还会有重复代码。所以，Active Model 封装了 Active Support，使得定义回调函数变得简单方便。

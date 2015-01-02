@@ -8,14 +8,14 @@
 
 ### 相关概念
 
-ETag 过程如下：
+1) ETag 过程如下：
 
 客户端请求一个页面 A，服务器返回页面 A，并在给 A 加上一个 ETag.<br>
 客户端展现该页面，并将页面连同 ETag 一起缓存。<br>
 客户再次请求页面 A，并将上次请求时服务器返回的 ETag 一起传递给服务器。<br>
 服务器检查该 ETag，并判断出该页面自上次客户端请求之后还未被修改，直接返回响应 304（未修改——Not Modified）和一个空的响应体。
 
-Last-Modified 过程如下：
+2) Last-Modified 过程如下：
 
 在浏览器第一次请求某一个 URL 时，服务器端的返回状态会是 200，内容是客户端请求的资源，同时有一个 Last-Modified 的属性标记此文件在服务期端最后被修改的时间，格式类似这样：  
 
@@ -31,7 +31,7 @@ If-Modified-Since : Fri , 12 May 2006 18:53:33 GMT
 
 如果服务器端的资源没有变化，则自动返回 HTTP 304 (Not Changed) 状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。
 
-一个典型的 Response headers:
+3) 一个典型的 Response headers:
 
 ```
 Last-Modified: Sun, 09 Nov 2014 05:25:32 GMT 
@@ -55,10 +55,6 @@ Content-Length: 665
 ```ruby
 etag
 
-# 决定是否改变。
-# Rails 4 以后会对页面内容进行 MD5 求值
-# fresh_when 设置不合理的话，会得到旧数据。
-# 满足 etag 刷新条件，才执行后面操作
 fresh_when
 
 # 还有
@@ -70,9 +66,9 @@ stale?
 
 `etag` 是类方法，对当前 Controller 下面的所有 action 都起作用(区别于 fresh_when)。就相当于一个过滤器，把里面的元素加入到 record_or_options 里。同样影响 ETag 和 last_modify 的值。
 
-`fresh_when` 是实例方法，只当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
+`fresh_when` 是实例方法，只对当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
 
-`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 EtagWithTemplateDigest 进行处理)
+`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 Etag With Template Digest 进行处理)
 
 ```ruby
 # 默认传递 @post 给 posts/show 模板进行求值，我们希望改变这点，传递 @post 给 widges/show 求值
@@ -87,8 +83,6 @@ fresh_when @post, template: false
 ### 和所有缓存一样，怎么生成 cache_key ？
 
 最新，表示没有更改。
-
-> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是 Web 服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
 
 什么也没改 
 
@@ -136,6 +130,8 @@ def fresh_when(record_or_options, additional_options = {})
 end
 ```
 
+可选参数 etag、template、last_modified 和 public.
+
 `head` 方法：
 
 ```ruby
@@ -173,6 +169,8 @@ end
 ### 其它
 
 fresh_when 可以通过工具(如：Chrome 插件"Advanced REST client")查看 ETag，检测是否起作用以及是否正确。
+
+> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是 Web 服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
 
 参考
 

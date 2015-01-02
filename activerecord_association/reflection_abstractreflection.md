@@ -2,6 +2,7 @@
 
 ```
 table_name
+
 build_association
 quoted_table_name
 primary_key_type

@@ -1,4 +1,4 @@
-两部分: Message Verifier 和 Message Encryptor.
+两部分: Message Verifier 和 Message Encryptor. 
 
 ## Message Verifier
 
@@ -9,20 +9,24 @@
 verifier = ActiveSupport::MessageVerifier.new('your-secret')
 message = "String that is prevented from tampering."
 
-# Sign the message...
+# 签名(加密)
 signed_message = verifier.generate(message)
-# and verify it.
+
+# 验证(解密)
 verified = verifier.verify(signed_message)
 
-# Verified message equals the original message
-verified == message #=> true
+# 比较
+verified == message
+# => true
 ```
 
 主要是 `generate(value)` 和 `verify(signed_message)`，原理很简单，这里不多赘述。
 
 ## Message Encryptor
 
-使用类似:
+和 Message Verifier 本质上没有区别。但使用上会更严格一点，会多一些步骤(相应地，也更安全了一点)，并且它也有调用到 Message Verifier.
+
+使用举例:
 
 ```ruby
 salt = SecureRandom.random_bytes(64)
@@ -36,12 +40,13 @@ encryptor2 = ActiveSupport::MessageEncryptor.new(key)
 
 message = "Encrypted string."
 
-# Encrypt the message...
+# 加密
 encrypted_message = encryptor1.encrypt_and_sign(message)
-# and decrypt it.
+
+# 解密
 decrypted = encryptor2.decrypt_and_verify(encrypted_message)
 
-# Decrypted message equals the original message
+# 比较
 decrypted == message
 # => true
 ```

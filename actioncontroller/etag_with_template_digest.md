@@ -1,8 +1,12 @@
 ## Etag With Template Digest
 
-**用 Digestor 给静态资源加密，构成 Etag 的一部分(页面相关的客户端缓存)。**
+**页面相关的客户端缓存。**
 
-为了配合生成 ETag，默认 Action View 静态内容，已经加密(区别于片段缓存里对静态内容的加密). 可以设置取消：
+用 Digestor 给当前静态模板(对应 controller_name/action_name)加密，使之构成 Etag 的一部分。
+
+默认是 true，也就是说 Action View 静态内容已经加密(区别于片段缓存里对静态内容的加密)。
+<br>
+可以设置取消(尽管我想不出什么场景需要取消)：
 
 ```ruby
 config.action_controller.etag_with_template_digest = false

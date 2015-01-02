@@ -8,8 +8,7 @@ Previews，对于普通开发者来说主要是配置：
 # 配置预览文件存放的位置，默认如下:
 config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 
-# 配置是否允许邮件预览:
-# 开发模式下，默认为 true
+# 配置是否允许邮件预览。开发模式下，默认为 true
 config.action_mailer.show_previews = true
 ```
 
@@ -19,7 +18,7 @@ config.action_mailer.show_previews = true
 http://localhost:3000/rails/mailers/
 ```
 
-Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发者察觉不到的方法，如：
+Preview，是我们自定义 YourPreview 的父类，提供一些普通 Web 开发者察觉不到的方法，如：
 
 `preview_name` 返回自定义类名，但把 "Preview" 后缀去掉。如 YourPreview 返回 "Your"
 
@@ -29,7 +28,7 @@ Preview，是我们自定义 YourPreview 的父类，提供一些普通Web开发
 
 > Note: 邮件预览，在 Rails 里也遵守 MVC. M 是 ActionMailer::Preview，V 是 rails/mailers/，C 是 Rails::MailersController
 
-Preview 提供类方法方法：
+Preview 提供类方法：
 
 ```
 all

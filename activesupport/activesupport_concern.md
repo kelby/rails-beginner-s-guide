@@ -6,6 +6,7 @@
 module M
   def self.included(base)
     base.extend ClassMethods
+
     base.class_eval do
       # 执行某些方法
       scope :disabled, -> { where(disabled: true) }

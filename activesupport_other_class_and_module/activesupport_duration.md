@@ -1,5 +1,7 @@
 ## Duration
 
+和 Date、Time、DateTime、TimeWithZone 等时间相关类的关系比较深。
+
 ```
 ago & until
 

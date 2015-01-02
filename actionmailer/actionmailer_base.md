@@ -2,6 +2,33 @@
 
 也就是 ActionMailer::Base，我们的 Mailer 类继承的就是它。
 
+### 作用
+
+我们 Mailer 类继承的 ActionMailer::Base 就是在这里定义的，它继承于 AbstractController::Base，这也是 Action Mailer 依赖 Abstract Controller 的证据之一。
+
+```
+     YourMailer
+         |
+         V
+  ActionMailer::Base
+         |
+         V
+AbstractController::Base
+```
+
+包含了一些自身及 Abstract Controller 的模块，尽管有的模块它并没有使用到，而是为了让它的子类(我们的 Mailer 类)能够"更好用、更实用"。
+
+包含了一些默认配置 default_params.
+
+注册拦截器(interceptor)或观察者(observer)。
+
+请求到邮件处理 process.
+
+定义了 attachments、default、headers、mail、receive 等常用方法。
+
+创建邮件实例
+(因为 Base include 了多个模块，所以这个实例可以使用这些模块所定义的方法)。
+
 ### 邮件(mail)、附件(attachments)
 
 `mail(headers = {}, &block)` 表示邮件对象。<br>
@@ -42,7 +69,7 @@ a_mailer.attachments
 => []
 ```
 
-使用举例(定义)：
+使用举例：
 
 ```ruby
 # 文件名的方式
@@ -130,16 +157,16 @@ headers 'X-Special-Domain-Specific-Header' => "SecretValue",
 直接调用了 Mail::Message#headers 方法，默认已经有选项
 
 ```
-subject
-sender
-from
-to
-cc
-bcc
-reply-to
-orig-date
-message-id
-references
+:subject
+:sender
+:from
+:to
+:cc
+:bcc
+:reply-to
+:orig-date
+:message-id
+:references
 ```
 
 ### 接收邮件 receive
@@ -155,10 +182,10 @@ Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 mailer_name & controller_path
 
 register_interceptor  # 简单封装 Mail.register_interceptor
-register_interceptors # 简单封装 register_interceptor
+register_interceptors # 简单封装上面的 register_interceptor
 
 register_observer     # 简单封装 Mail.register_observer
-register_observers    # 简单封装 register_observer
+register_observers    # 简单封装上面的 register_observer
 ```
 
 其它类方法：

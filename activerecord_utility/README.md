@@ -6,7 +6,7 @@ Transactions
 
 - Validations
 
-包括 AssociatedValidator、PresenceValidator、UniquenessValidator.
+包括 Associated Validator、Presence Validator、Uniqueness Validator.
 
 ~~Translation~~
 
@@ -24,7 +24,7 @@ Integration
 
 model 之间的继承关系(用的是同一张表)
 
-从 Base 抽取而来，一同被抽取出来的有：AttributeAssignment、DefaultScope、DynamicMatchers、Inheritance、Integration、ModelSchema、Querying、ReadonlyAttributes、Sanitization、Scoping、Translation
+从 Base 抽取而来，一同被抽取出来的有：Attribute Assignment、Default Scope、Dynamic Matchers、Inheritance、Integration、Model Schema、Querying、Readonly Attributes、Sanitization、Scoping、Translation
 
 - Enum
 

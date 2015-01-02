@@ -114,6 +114,18 @@ build_path
 `draw` 直接对外暴露的接口，初始化 Mapper 对象。然后交还各个模块处理。
 本质是：运用 Mapper，处理 config/routes.rb 里的代码。
 
+相关代码：
+
+```ruby
+mapper = Mapper.new(self)
+
+if default_scope
+  mapper.with_default_scope(default_scope, &block)
+else
+  mapper.instance_exec(&block)
+end
+```
+
 `initialize`用到了 NamedRouteCollection， 内容是
 
 ```

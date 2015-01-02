@@ -4,9 +4,13 @@
 
 ```ruby
 delete
+
 get
+
 patch
+
 post
+
 put
 ```
 

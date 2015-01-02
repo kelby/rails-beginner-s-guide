@@ -1,5 +1,16 @@
 ## Parameter Filter & Filter Parameters
 
+**过滤参数。**如：
+
+```ruby
+env["action_dispatch.parameter_filter"] = [:password]
+=> replaces the value to all keys matching /password/i with "[FILTERED]"
+```
+
+这就是为什么我们在日志里看不到 password 的值，而是显示 FILTERED 的原因。
+
+**实例方法：**
+
 ```
 filter
 ```

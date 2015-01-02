@@ -5,7 +5,8 @@
 提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
 
 ```
-params, params=
+params
+params=
 ```
 
 另外，要说明：
@@ -15,7 +16,7 @@ params == request.parameters
 => true
 ```
 
-这个对象的值是什么？- 表单数据或传递过来的，加上 Controller 和 action
+这个对象的值是什么？- 表单数据或传递过来的，加上 :controller 和 :action
 
 ```ruby
 Processing by PostsController#create as HTML
@@ -42,8 +43,12 @@ Parameters 继承于 Hash With Indifferent Access，而 Hash With Indifferent Ac
 ```
 permit
 
+require & required
+
 extract!
+
 permit!
+
 select!
 
 permitted?
@@ -51,15 +56,20 @@ permitted?
 permitted=
 
 []
+
 delete, dup
+
 each & each_pair
+
 fetch
+
 to_h
 
 slice
+
 transform_values
+
 converted_arrays
-require & required
 ```
 
 我们可以在 Rails 之外创建自己的 params 对象：

@@ -12,14 +12,14 @@
 | root | 嵌套于 resources，不再解释 |
 | namespace | 嵌套于 resources，不再解释 |
 
-其中
+此外：
 
-```
+```ruby
 VALID_ON_OPTIONS = [:new, :collection, :member]
 RESOURCE_OPTIONS = [:as, :controller, :path, :only, :except, :param, :concerns]
 ```
 
-其它方法(不再介绍)：
+其它方法：
 
 ```
 nested
@@ -32,14 +32,4 @@ shallow
 shallow?
 
 using_match_shorthand?
-```
-
-和
-
-```
-set_member_mappings_for_resource
-
-with_exclusive_scope
-
-with_scope_level
 ```

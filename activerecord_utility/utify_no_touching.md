@@ -26,4 +26,6 @@ end
 no_touching?
 
 touch
+# 优先级大于 Persistence 里的 touch 同名方法；
+# 如果 no_touching? => true 则不调用 Persistence 里的 touch 方法。
 ```

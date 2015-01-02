@@ -41,7 +41,7 @@ after_commit/after_rollback
 
 **save = create + update**
 
-**commit = create + update + destroy** 当然也包含了 save 在内
+**commit = create + update + destroy** 自然地也包含了 save 在内。
 
 > Note: 执行 create 和 update 操作，都会触发 after_save 回调。但它的顺序始终在 after_create 和 after_update 之后。即使在 model 里它定义在前面，效果一样。
 

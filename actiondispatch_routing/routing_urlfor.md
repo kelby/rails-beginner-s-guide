@@ -1,30 +1,28 @@
 ## Url For
 
-对外提供 `url_for`，和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 HelperMethodBuilder. (极端情况下才调用到)
+对外提供 `url_for`，和 ActionView::RoutingUrlFor 有得一拼，原理一样，封装了 Helper Method Builder. (极端情况下才调用到)
 
 使用举例：
 
 ```ruby
-url_for controller: 'tasks', action: 'testing', host: 'somehost.org',
-        port: '8080'
-# => 'http://somehost.org:8080/tasks/testing'
+url_for controller: 'tasks', action: 'testing', host: 'example.org', port: '8080'
+# => 'http://example.org:8080/tasks/testing'
 
-url_for controller: 'tasks', action: 'testing', host: 'somehost.org',
+url_for controller: 'tasks', action: 'testing', host: 'example.org',
         anchor: 'ok', only_path: true
 # => '/tasks/testing#ok'
 
 url_for controller: 'tasks', action: 'testing', trailing_slash: true
-# => 'http://somehost.org/tasks/testing/'
+# => 'http://example.org/tasks/testing/'
 
-url_for controller: 'tasks', action: 'testing', host: 'somehost.org',
-        number: '33'
-# => 'http://somehost.org/tasks/testing?number=33'
+url_for controller: 'tasks', action: 'testing', host: 'example.org', number: '33'
+# => 'http://example.org/tasks/testing?number=33'
 
-url_for controller: 'tasks', action: 'testing', host: 'somehost.org',
+url_for controller: 'tasks', action: 'testing', host: 'example.org',
         script_name: "/myapp"
-# => 'http://somehost.org/myapp/tasks/testing'
+# => 'http://example.org/myapp/tasks/testing'
 
-url_for controller: 'tasks', action: 'testing', host: 'somehost.org',
+url_for controller: 'tasks', action: 'testing', host: 'example.org',
         script_name: "/myapp", only_path: true
 # => '/myapp/tasks/testing'
 ```

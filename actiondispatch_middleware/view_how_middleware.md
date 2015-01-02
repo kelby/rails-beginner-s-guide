@@ -91,9 +91,4 @@ Rails.application.send :middleware
 
 在上面例子里，除默认 middleware 外，我们还额外使用了 4 个 middleware. 在实际项目中，你应该可以看到比这多得多的 middleware.
 
-另外：
-
-```ruby
-Rails.configuration.middleware == Rails.application.send(:middleware)
-# => true
-```
+另外，从应用的日常报错上，也能看出应用所使用的 middleware 及其顺序，在此就不贴示例了。

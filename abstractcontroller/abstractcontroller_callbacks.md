@@ -1,5 +1,7 @@
 ## Callbacks
 
+Controller 里的回调。
+
 ```ruby
 before_action & append_before_action
 prepend_before_action

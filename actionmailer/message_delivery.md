@@ -20,7 +20,7 @@ message
 
 执行 deliver 操作时，会得先到 message 对象，然后直接调用 gem 'mail' 提供的方法，或加入延迟任务再调用。
 
-通常，我们都是创建邮件并发送
+通常，我们都是创建邮件并发送：
 
 ```ruby
 Notifier.welcome("helloworld@example.com").deliver_now

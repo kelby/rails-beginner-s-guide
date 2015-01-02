@@ -1,8 +1,13 @@
 ## 渲染相关(Renderer & Rendering)
 
+渲染是它的老本行。
+
+每次都要指定模板文件，并且说一遍渲染，不麻烦吗？<br>
+因为模板文件，都在同一目录下，所以我们不必这么麻烦。引进 ActionView 的子模块 Rendering 后我们设置默认的目录即可，并且能自动帮我们"说一遍渲染"。
+
 分为 3 大块：渲染器、模板和上下文。
 
-### 渲染器
+### 1) 渲染器
 
 Template Renderer  
 模板渲染器
@@ -23,7 +28,7 @@ Partial Renderer
 Abstract Renderer  
 抽象出来的渲染器
 
-### 模板内容(Template)
+### 2) 模板内容(Template)
 
 Type  
 类型(也就是 format)
@@ -49,7 +54,7 @@ Fallback File System Resolver
 Error  
 各种错误
 
-### 上下文
+### 3) 上下文(view_context)
 
 View Paths  
 视图文件所在目录
@@ -74,14 +79,14 @@ DetailsCache
 
 ~~Context~~  
 上下文  
-为了 ActionController 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
-(从 Base 里抽取出来的)
+为了 Action Controller 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
+(从 Base 里抽取出来的，提供了 @output_buffer, @view_flow 和 @virtual_path)
 
-~~OutputFlow & StreamingFlow~~  
+~~Output Flow & Streaming Flow~~  
 输出流  
 为了支持"streaming 流"！
 
-~~OutputBuffer & StreamingBuffer~~  
+~~Output Buffer & Streaming Buffer~~  
 输出缓冲区  
 为了支持"streaming 流"！
 
@@ -102,3 +107,6 @@ ERB 处理器
 Builder  
 XML 处理器
 
+### 4) 查找上下文(lookup_context)
+
+TODO

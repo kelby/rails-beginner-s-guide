@@ -8,8 +8,6 @@
 define_callbacks :call
 ```
 
----
-
 任何一个 middleware (或者说 Rack)很重要的两个方法：
 
 ```ruby

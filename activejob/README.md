@@ -8,7 +8,7 @@
 虽然这几个延迟任务 gem 使用上类似，但语法上多少有一点不同。
 新的 ActiveJob 组件统一了接口，使用和切换都会变得更容易。
 
-## Queue Adapter
+### Queue Adapter
 
 默认使用的 queue_adapter 是 :inline，你可以根据需要自己设置 queue_adapter.
 
@@ -24,7 +24,7 @@ Rails.application.config.active_job.queue_adapter = :test
 # :queue_classic, :resque, :sidekiq, :sneakers, :sucker_punch, :inline, :test
 ```
 
-## Queue Name
+### Queue Name
 
 默认使用的 queue_name 是 "default"
 
@@ -40,7 +40,7 @@ end
 
 通过 `config.active_job.queue_name_prefix=` 可给所有队列名加前缀。
 
-## Core
+### Core
 
 ```
 # 实例方法
@@ -64,7 +64,7 @@ MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
 MyJob.set(wait: 1.week).perform_later(record)
 ```
 
-## Enqueuing 入队与重试
+### Enqueuing 入队与重试
 
 常用方法：
 
@@ -109,7 +109,7 @@ end
 perform_later
 ```
 
-## Execution 执行
+### Execution 执行
 
 ```ruby
 # 实例方法
@@ -127,7 +127,7 @@ MyJob.new(*args).perform_now
 MyJob.perform_now("mike")
 ```
 
-## Callbacks 回调
+### Callbacks 回调
 
 比某些延迟 gem 多做了一点点，除了队列&执行本身外，还可以有回调：
 
@@ -161,7 +161,7 @@ end
 
 实现上，都是直接封装 `set_callback`
 
-## 提示
+### 提示
 
 有利必有弊，可能面临以下问题：  
 原 gem 本身的特点没能充分利用，灵活性降低，和其它 gem 的集成会变复杂。

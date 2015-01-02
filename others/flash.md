@@ -1,6 +1,6 @@
-## Flash 相关使用
+## Flash
 
-Action Dispatch 和 Action Controller 都有 Flash 相关的代码，统一把它们放到这里来讲。
+Action Controller 和 Action Dispatch 都有 Flash 相关的代码。
 
 ### 基本使用
 
@@ -47,12 +47,12 @@ flash.notice
 
 上面是由 Action Dispatch 提供，下面由 Action Controller 提供 (基于上面)。
 
-### add_flash_types
+### add_flash_types 方法
 
-觉得上面的写法还是不够简短，觉得 notice 和 alert 类型不够用？使用 **add_flash_types**
+觉得上面的写法还是不够简短，觉得 notice 和 alert 类型不够用？使用 `add_flash_types`
 
 ```ruby
-# cotrollars/pplication_controller.rb
+# app/cotrollars/pplication_controller.rb
 class ApplicationController < ActionController::Base
   add_flash_types :warning, :success, :danger
 end
@@ -74,7 +74,7 @@ alert 和 notice 默认已经使用 add_flash_types
 
 ### flash.now[:flash_type]
 
-也许，你还看过一种写法 flash.now[:flash_type]
+也许，你还看过一种写法 `flash.now[:flash_type]`
 
 flash[:flash_type] 消息的生命周期可到下一个 action. 所以，通常搭配 redirect_to 使用。  
 flash.now[:flash_type] 消息的生命周期仅限于本 action. 所以，通常搭配 render 使用。

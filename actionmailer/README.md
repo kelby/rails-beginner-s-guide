@@ -1,4 +1,4 @@
-## Action Mailer
+# Action Mailer
 
 Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
@@ -8,7 +8,7 @@ Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
 ### 核心是 gem 'mail'
 
-既然是用来处理邮件相关业务，那么核心功能当然就是邮件处理，而这部分由 gem 'mail' 完成。
+既然是用来处理邮件相关业务，那么核心功能当然就是邮件处理，这部分由 gem 'mail' 完成。
 
 gem 'mail' 可用于邮件处理，包括创建、发送、和接收等。mail 可以直接拿来用:
 
@@ -21,14 +21,14 @@ Mail.defaults do
     :port                 => 587,
     :domain               => "example.com",
     :authentication       => :plain,
-    :user_name            => "user_name@gmail.com",
-    :password             => "gmail_password",
+    :user_name            => "<gmail_username>@gmail.com",
+    :password             => "<gmail_password>",
     :enable_starttls_auto => true
 end
 
 mail = Mail.new do
-  from     'no-reply@example.com'
-  to       'hello@world.com'
+  from     'from@example.com'
+  to       'to@example.org'
   subject  'First multipart email sent with Mail'
 
   text_part do
@@ -108,7 +108,9 @@ and this is a variable <%= @var %>
 
 运行下面命令即可自动生成邮件模板：
 
-`rails generate mailer Notifier welcome`
+```
+rails generate mailer Notifier welcome
+```
 
 ### 实现方式：汝果欲学诗, 功夫在诗外
 

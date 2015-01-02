@@ -1,30 +1,30 @@
-由以下几个部分组成。
+## Relation(Arel)
 
-## 概念
+对 Relation 的操作。哦，我们先理解概念。
 
-Ruby --翻译--> SQL语句 --执行--> 返回结果。
+- 为什么不完全用 Ruby 或 SQL？
 
-至少两个过程：翻译、执行。
+Ruby 慢，人性化；SQL 快，不易读写。
 
-Relation 就是这个翻译过程。
+- 如何充分利用两者优点，特别是我们要做复杂查询的时候？(复杂查询 = 简单的查询 + 简单的查询 + ...)
 
-翻译一句，执行一句；
-还是全部翻译完了，再一次执行。
+"(Ruby 查询 -> SQL 查询，Ruby 查询 -> SQL 查询) -> 结果" 比 "(Ruby 查询 + Ruby 查询 -> SQL 查询) -> 结果" 效率要低。所以尽量不要在 Ruby - SQL 两个层面之间转来转去，尽量把多个 Ruby 查询转化成相应的一个 SQL 查询。
 
-使用 Relation 就相当于选择了后者。
+- 如何实现？
 
-## ~~HashMerger & Merger~~
+运用中间状态，也就是 Relation. 每次查询并不是真正的查询(因为没走到 SQL 层面)，而是保存一个中间状态，当你所有的查询条件都写完了，才进入 SQL 的层面。理论上，这些简单的查询最后都能组合成 SQL 语句！
 
-是 Spawn Methods 里的 merge、merge! 方法的底层实现。
+- 好处？
 
-在 merger 对象非 Array、非 Relation、非 proc 等情况下才使用到。
+延迟加载。我们在 Controller 里有一个查询语句，结果赋值给一个实例变量，原本的意图是在 View 里显示的。某天需求更改了，我们不必再显示这个查询结果，但 Controller 里我们忘记删除这部分的代码(这都能忘？！)，结果每次都要做大量无用的查询工作。引入中间状态后，就能起到延迟加载的作用，不到万不得已，不做 SQL 查询(停留在 Ruby 层面)。
 
-## ~~Delegation~~
+链式查询，而且效率高。上面已经提到了"(Ruby 查询 -> SQL 查询，Ruby 查询 -> SQL 查询) -> 结果" 比 "(Ruby 查询 + Ruby 查询 -> SQL 查询) -> 结果" 效率要低。
 
-## ~~Predicate Builder~~
+- 如何区分？
 
-## Finder Methods & Batches 补充
+坏消息：还没有好的办法区分它们。
+好消息：大部分时间不必区分它们。
 
-查表操作(数据库读操作)。大部分是SQL层面，一般不可多条件链式查询。
+Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链式查询可以很大程度的提高效率。更多请查看接口 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
 
-> Note: 返回的都是结果，不是 Relation。
+> Note: 这里部分是对多个对象的操作，对 Relation 的操作；不是查询操作。

@@ -1,4 +1,6 @@
-## Autoload
+## autoload & eager_autoload
+
+**延迟加载(自动加载)和预加载。**
 
 常用方法：
 

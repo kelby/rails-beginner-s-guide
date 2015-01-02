@@ -1,5 +1,7 @@
 ## URL
 
+**前面 request 里带 url 或 path 的方法有几个和它相关。**
+
 在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
 
 检测结果：

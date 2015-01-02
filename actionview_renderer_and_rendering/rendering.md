@@ -1,6 +1,6 @@
 ## 渲染器介绍
 
-**渲染器需要有上下文和模板，才能顺利的工作。**
+**渲染器需要有上下文和模板对象，才能顺利的工作。**
 
 (但它不直接和模板打交道？谁和模板打交道？)
 
@@ -54,7 +54,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
          :formats, :to => :@lookup_context
 ```
 
-### Template Renderer
+### 1) Template Renderer
 
 普通的模板渲染器，直接继承于 Abstract Renderer.
 
@@ -64,7 +64,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
 
 借助了 @lookup_context.
 
-### Partial Renderer
+### 2) Partial Renderer
 
 局部模板渲染器，直接继承于 Abstract Renderer.
 
@@ -72,7 +72,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
 
 借助了 @lookup_context.
 
-### Streaming Template Renderer
+### 3) Streaming Template Renderer
 
 流模板渲染器，直接继承于 Template Renderer，间接继承于 Abstract Renderer.
 
@@ -98,6 +98,8 @@ Renderer(最外层的接口)
       V
 Template(最底层的处理)
 ```
+
+template/ 目录里的各个 handler，执行的是与 Rails 环境无关的解析、渲染工作。
 
 ### 最后
 

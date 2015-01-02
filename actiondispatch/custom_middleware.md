@@ -1,8 +1,8 @@
 ## 定制 Middleware
 
-**每一个 middleware 本质就是一个 Rack app.**
+**middleware 本质就是 Rack app，只是简单封装了一下。**
 
-Middleware 处理的是 @app 和 env，功能有限，并且仍然属于底层实现。
+所以，我们可以定制自己的 Middleware，用来处理 @app 和 env.
 
 **举例一**
 

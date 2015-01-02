@@ -1,6 +1,6 @@
 ## Mime Responds
 
-**实例方法：**
+### 实例方法
 
 ```
 respond_to
@@ -18,4 +18,27 @@ format.html.phone # 行内风格
 format.html{ |variant| variant.phone } # 代码块风格
 ```
 
-html 等响应格式由 Collector 处理，而变种由 Variant Collector 来处理。
+### Collector
+
+常用代码：
+
+```
+respond_to do |format|
+  # format.class => ActionController::MimeResponds::Collector
+  # ...
+end
+```
+
+可见，`format` 是其实例对象。
+
+```
+all & any
+
+custom
+
+negotiate_format
+
+response
+```
+
+此外，format.html 等对应着 Collector，而变种 format.html.phone 等对应着 Variant Collector.

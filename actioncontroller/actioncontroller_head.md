@@ -4,14 +4,6 @@
 
 有时候(作为 Web service 时)，响应内容可能只需要一个状态码，其它内容都不需要。
 
-你可以使用 `render` 方法，这么做：
-
-```ruby
-headers['Location'] = person_url(@person)
-render :nothing => true, :status => "201 Created"
-```
-
-但是，如果类似代码有很多地方的话，也会让人头疼。我们可以
 直接用 `head` 方法:
 
 ```ruby
@@ -20,7 +12,16 @@ head :created, :location => person_url(@person)
 
 注意：使用 head 只是设置了 respond_body，如果程序还没有结束，那么 Controller#action 层面的后续代码还是会执行的。
 
-> Note: 结果和使用 render 方法时 render nothing: true 类似。
+结果和使用 render nothing: true 类似，所以你也可以这么做：
+
+```ruby
+headers['Location'] = person_url(@person)
+render :nothing => true, :status => "201 Created"
+```
+
+当然，如果有多个地方使用到此功能的话，render 写起来还是挺让人头疼的。
+
+**附：对照表**
 
 |Response Class | HTTP Status Code |	Symbol |
 |--|--|--|

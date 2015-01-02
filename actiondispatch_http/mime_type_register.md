@@ -1,5 +1,7 @@
 ## Mime Type register
 
+**设置响应类型 Mime Type.**
+
 先看看 `register` 方法
 
 第 1，2 个参数容易理解<br>

@@ -1,4 +1,28 @@
-# Active Support 非 autoload 类和模块
+# Active Support autoload 的类和模块
+
+- Concern
+
+- Dependencies
+
+包括：Class Cache 和 Watch Stack
+
+- ~~Descendants Tracker~~
+
+- File Update Checker
+
+- Notifications
+
+- Subscriber
+
+- Log Subscriber
+
+- Rescuable
+
+- Safe Buffer
+
+- Test Case
+
+---
 
 ```
 execute_hook

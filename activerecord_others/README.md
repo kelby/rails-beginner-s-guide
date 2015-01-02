@@ -1,11 +1,19 @@
-# 其它
+# Active Record 其它
 
-## Railtie
+- type
 
-获取 database.yml 的配置信息：
+包括所有支持的数据类型
 
-```
-Rails.application.config.database_configuration
-```
+- Railtie
 
-... ... 还有，待续。
+- errors
+
+- Base
+
+- FixtureSet
+
+- tasks
+
+包括 DatabaseTasks，MySQLDatabaseTasks、PostgreSQLDatabaseTasks、SQLiteDatabaseTasks
+
+- databases.rake (很重要)

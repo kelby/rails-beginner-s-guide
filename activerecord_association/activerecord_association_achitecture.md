@@ -1,5 +1,6 @@
 # Associations 架构图(关联一)
 
+```
     Associations 文件下
       4 个关联类方法 -- (1)
 
@@ -54,3 +55,4 @@
             HasOne
             HasOneThrough
               include ThroughAssociation
+```

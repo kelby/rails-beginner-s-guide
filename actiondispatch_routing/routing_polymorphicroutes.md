@@ -1,5 +1,7 @@
 ## Polymorphic Routes
 
+### 实例方法
+
 ```
 polymorphic_url
 polymorphic_path
@@ -64,13 +66,27 @@ edit_polymorphic_path(post) # "/posts/1/edit"
 edit_polymorphic_url(post)  # "http://example.com/posts/1/edit"
 ```
 
+**:action 以及其它参数**
+
+举例：
+
+```ruby
+# 使用 :aciton 可选参数
+polymorphic_path([@user, Document], :action => 'filter')
+# => "/users/:user_id/documents/filter"
+
+# 使用 :aciton 可选参数和其它参数
+polymorphic_path([@user, Document], :action => 'filter', :sort_order => 'this-order')
+# => "/users/:user_id/documents/filter?sort_order=this-order"
+```
+
 ### 与 url_for 的区别
 
 url_for 比较死板，从它接受的参数就知道了。它不能接受 model 对象 + 可选参数的形式。
 
 url_for 不能直接指定 host, 需要在另一个地方指定，它只有调用的份。如果你为了一个 url_for 而更改这个 host 其它方法或其它 url_for 会不会受影响？
 
-### 还有
+### 其它方法
 
 除上述外，还有方法(元编程生成，API 里查看不到)：
 
@@ -86,20 +102,6 @@ edit_polymorphic_path
 
 它们封装 polymorphic_url 或 polymorphic_path 而来，所以特点和使用类似。
 它们是元编程定义的，所以 API 里看不到。
-
-### :action 和其它参数
-
-举例：
-
-```ruby
-# 使用 :aciton 可选参数
-polymorphic_path([@user, Document], :action => 'filter')
-# => "/users/:user_id/documents/filter"
-
-# 使用 :aciton 可选参数和其它参数
-polymorphic_path([@user, Document], :action => 'filter', :sort_order => 'this-order')
-# => "/users/:user_id/documents/filter?sort_order=this-order"
-```
 
 ### 其它
 

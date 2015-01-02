@@ -1,4 +1,8 @@
-### Middleware Stack
+## Middleware Stack
+
+继承于 ActionDispatch::MiddlewareStack (有 Middleware)
+<br>
+对应的，也有 Middleware
 
 middleware 并不总是需要项目级别的，它也可以精确到某个 Controller，甚至是 action.
 
@@ -8,21 +12,5 @@ class PostsController < ApplicationController
 end
 ```
 
-`self.use` 可以添加 middleware 到堆栈，它们在最后执行。
-
-Metal 里的代码：
-
-```ruby
-# Action Dispatch 转发过来的请求，要先经过层层的 middleware 处理，才能到达指定的 action.
-def self.action(name, klass = ActionDispatch::Request)
-  if middleware_stack.any?
-    middleware_stack.build(name) do |env|
-      new.dispatch(name, klass.new(env))
-    end
-  else
-    lambda { |env| new.dispatch(name, klass.new(env)) }
-  end
-end
-```
-
-> Note: 这里继承于 ActionDispatch::MiddlewareStack
+`self.use` 是前面 Metal 提供的方法，可以添加 middleware 到堆栈，它们在最后执行。<br>
+(这里的堆栈指的是 ActionController::MiddlewareStack，也是 ActionDispatch::MiddlewareStack).

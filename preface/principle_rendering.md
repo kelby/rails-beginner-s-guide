@@ -1,4 +1,4 @@
-## 渲染的原理
+## 非 Rails 是如何渲染的
 
 Controller#actions 里定义实例变量，并通过 render 方法进行渲染。
 
@@ -87,7 +87,9 @@ render.result(binder)
 
 在这里：渲染器(名词)对应着 render，上下文对应着 binder，渲染(动词)对应着 result.
 
-Rails 里: 渲染器(名词)对应着 render，上下文对应着 lookup_context，渲染(动词)对应着 render.
+Rails 里: 渲染器(名词)对应着 render，上下文对应着 view_context，渲染(动词)对应着 render.
+<br>
+Rails 多了一个 lookup_context，用于查找模板内容。
 
 ### Rails 使用的是 Erubis
 

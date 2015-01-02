@@ -1,28 +1,26 @@
-# Metal 其它
+## 其它
 
-## Cookies
+### Cookies
 
 提供了 `cookies` 方法，本质是 request.cookie_jar
 
-## Flash
-
-提供 `add_flash_types` 方法，并对 redirect_to 稍微做了处理。在【其它#Flash 的使用】章节会有专门介绍。
-
-## ~~Implicit Render~~
+### ~~Implicit Render~~
 
 默认渲染，它的优先级很高。
 
 ```
-# AbstractController::Base 有同名方法，根据 Ruby 调用规则，这里会被优先调用
 send_action
 
 default_render
+
 method_for_action
 ```
 
-## ~~Instrumentation~~
+假设，我们在 Controller#action 里，没有 render 模板或返回数据 ... 它们就有用了。
 
-当执行以下同名方法时，会有时间记录(以观察性能等指标)。
+### ~~Instrumentation~~
+
+当执行以下同名方法时，会发送消息，及有时间记录(以观察性能等指标)。
 
 ```
 process_action
@@ -35,7 +33,9 @@ send_data
 send_file
 ```
 
-## ~~Rack Delegation~~
+用到了 ActiveSupport::Notifications.instrument 和 Benchmark.ms
+
+### ~~Rack Delegation~~
 
 ```
 dispatch
@@ -45,18 +45,33 @@ reset_session
 response_body=
 ```
 
-很多模块都包含它，利用了它所提供的方法。
+`set_response!` 定义 response 为 ActionDispatch::Response 实例对象，并初始化。
 
-## ~~Rendering~~
+`reset_session` 重置 session.
+
+很多模块都包含了同名方法，有的是功能上的简单封装，有的是重写。
+
+另外，还有：
+
+```
+delegate :headers, :status=, :location=, :content_type=,
+         :status, :location, :content_type, :response_code, :to => "@_response"
+```
+
+### ~~Rendering~~
 
 对一般的 render_to_body 和 render_to_string 稍微做处理。
 
-## ~~Rescue~~
+### ~~Rescue~~
 
-配置是否 show_detailed_exceptions?
+执行到具体 action 抛异常时会检测是否需要抛异常，如果是的话，抛异常。
 
-如果是的话，有异常时除了执行 Active Support 的 rescue_with_handler 外，还额外执行本模块提供的 rescue_with_handler.
+有 process_action 同名方法。
 
-## ~~Url For~~
+show_detailed_exceptions? (默认是不 false，但本地请求的话是 true)，可配置 config.consider_all_requests_local
 
-提供 url_options 方法，不会直接使用, 但会影响到 `url_for` 的结果。
+rescue_with_handler(封装了 ActiveSupport::Rescuable 的同名方法)
+
+### ~~Url For~~
+
+定义了 url_options 方法，不会直接使用, 但会影响到 `url_for` 的结果。

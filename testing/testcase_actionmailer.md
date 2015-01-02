@@ -13,7 +13,17 @@ assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
 
 ### Behavior
 
-**实例方法**
+**类方法**
+
+```
+determine_default_mailer
+
+mailer_class
+
+tests
+```
+
+**~~实例方法~~**
 
 ```
 initialize_test_deliveries
@@ -25,19 +35,7 @@ set_delivery_method
 set_expected_mail
 ```
 
-**类方法**
-
-```
-determine_default_mailer
-
-mailer_class
-
-tests
-```
-
-除通常的测试方法外，还有
-
-`deliveries` 获取已经发送的邮件实例。
+除通常的测试方法外，还有 `deliveries` 方法获取已经发送的邮件实例。
 
 使用举例:
 
