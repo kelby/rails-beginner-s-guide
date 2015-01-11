@@ -22,7 +22,9 @@ remove_connection
 retrieve_connection
 ```
 
-通过 `establish_connection` 连接数据库，我们不必加载整个 Rails 环境，仅使用数据库操作这部分。举例一：
+通过 `establish_connection` 连接数据库，我们不必加载整个 Rails 环境，仅使用数据库操作这部分。
+
+举例一：
 
 ```ruby
 require 'yaml'

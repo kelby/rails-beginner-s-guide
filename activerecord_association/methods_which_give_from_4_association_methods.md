@@ -14,15 +14,24 @@
 
 ### 一对多、多对多关系
 
+最基本的：
+
 | 生成的方法                 | habtm | has_many | has_many :through|
 |----------------------------------|:-----:|:--------:|:--------:|
 | collection(force_reload = false) | √ | √ | √ |
-| collection<<(object, …) | √ | √ | √ |
-| collection.delete(object, …) | √ | √ | √ |
-| collection.destroy(object, …) | √ | √ | √ |
 | collection=objects | √ | √ | √ |
 | collection_singular_ids | √ | √ | √ |
 | collection_singular_ids=ids | √ | √ | √ |
+
+这些方法主要由 Association 和 Collection Association 提供。
+
+高阶一点的：
+
+| 生成的方法                 | habtm | has_many | has_many :through|
+|----------------------------------|:-----:|:--------:|:--------:|
+| collection<<(object, …) | √ | √ | √ |
+| collection.delete(object, …) | √ | √ | √ |
+| collection.destroy(object, …) | √ | √ | √ |
 | collection.clear | √ | √ | √ |
 | collection.empty? | √ | √ | √ |
 | collection.size | √ | √ | √ |
@@ -32,5 +41,4 @@
 | collection.create(attributes = {}) | √ | √ | √ |
 | collection.create!(attributes = {}) | √ | √ | √ |
 
-这些方法主要由 Association 和 Collection Association 提供。
-还有一些 Collection Proxy 提供的方法，不在此列举。
+上述方法都是 Collection Proxy 提供的。(除上述方法外，还有的未列出)

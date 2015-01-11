@@ -174,6 +174,12 @@ headers 'X-Special-Domain-Specific-Header' => "SecretValue",
 Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件内容。<br>
 Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
+### 创建邮件对象时的魔法
+
+细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
+
+这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 Mailer 对象。
+
 ### 其它方法
 
 类方法：

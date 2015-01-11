@@ -1,12 +1,14 @@
 ## 其它
 
-### 生成内容 vs 影响内容
+### 其它的分类方式
+
+#### 1) 生成内容 vs 影响内容
 
 生成 HTML 内容的为生成内容。
 
 逻辑判断 + 生成内容或纯粹是逻辑，所有不能直观的看出生成什么 HTML 的元素。
 
-### 单元素 vs 复合元素
+#### 2) 单元素 vs 复合元素
 
 单独的 HTML 元素。
 
@@ -22,7 +24,7 @@
 
 `link_to_unless_current` 和 `current_page?` 都属于影响内容。
 
-### 与 record 对象弱关联 vs 与 record 对象强关联
+#### 3) 与 record 对象弱关联 vs 与 record 对象强关联
 
 和后台数据关联不大，仅用于生成 HTML 元素。
 
@@ -36,17 +38,17 @@
 
 ### 在 Helper 和 View 之外，使用 helper 方法。
 
-1) 直接使用
+1) 直接使用：
 
-```
+```ruby
 OrdersController.helpers.order_number(@order)
 ApplicationController.helpers.helper_method
 ActionController::Base.helpers.sanitize(str)
 ```
 
-2) 先引入，再使用
+2) 先引入，再使用：
 
-```
+```ruby
 include ActionView::Helpers::DateHelper
 include ActionView::Helpers
 ```
@@ -60,9 +62,3 @@ include ActionView::Helpers
 3. 前端工程师不懂 Ruby，就看不懂；
 4. 维护的时候也遇到上述 3 点困境。
 
-### 其它
-
-- form_tag 和 form_for 的区别？
-前者必需对应着 model 对象，后者就是普通的表单。
-
-- 此外，有一些 helper 可适用于 Active Model，比如文本处理 ...

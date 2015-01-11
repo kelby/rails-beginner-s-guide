@@ -12,46 +12,18 @@ root
 
 #### match
 
-匹配 url 到一个或多个路由。所有符号，都会对应着 url 里的参数，可用 `params` 获取：
+这里的 match 只是个同名方法，是个空壳子，详细要看 Resources 里的。
 
-```ruby
-# 对应着 params 里的 :controller, :action 和 :id
-match ':controller/:action/:id'
+另外，mount 和 root 本质上，都是封装和扩展 `match` 方法。
+
+```
+mount 和 root
+      |
+      V
+    match
 ```
 
-预留了两个符号，`:controller` 对应着 Controller，`:action` 对应着 action. 也可以接受模式匹配做为参数：
-
-```ruby
-match 'songs/*category/:title', to: 'songs#show'
-
-# 'songs/rock/classic/stairway-to-heaven' sets
-#  params[:category] = 'rock/classic'
-#  params[:title] = 'stairway-to-heaven'
-```
-
-为了能够模式匹配，你需要分配一个名字给它们，如果没有分配，路由是不会自动解析的。
-
-使用模式匹配时，路由里的 :action 和 :controller 应该以 Hash 的形式传递过来比较好。例如：
-
-```ruby
-match 'photos/:id' => 'photos#show'
-match 'photos/:id', to: 'photos#show'
-match 'photos/:id', controller: 'photos', action: 'show'
-```
-
-模式匹配，也可以直接指向 Rack application. 因为它实现了 `call` 方法：
-
-```ruby
-match 'photos/:id', to: lambda {|hash| [200, {}, ["Coming soon"]] }
-match 'photos/:id', to: PhotoRackApp
-
-# YourController.action(:your_action) 也是 rack endpoint
-match 'photos/:id', to: PhotosController.action(:show)
-```
-
-通过 HTTP 请求，容易带来安全隐患，所以你可以使用 HtttpHelpers[rdoc-ref:HttpHelpers]，而不是 `match`
-
-#### mount 挂载一个基于 Rack 的应用到我们的程序。
+#### mount - 挂载一个基于 Rack 的应用到我们的程序。
 
 ```ruby
 match '/movies/search', => "movies#search"

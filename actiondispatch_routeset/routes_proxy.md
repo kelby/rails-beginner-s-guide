@@ -1,5 +1,26 @@
 ## ~~Routes Proxy~~
 
+```ruby
+module ActionDispatch
+  module Routing
+    class RouteSet
+      def define_mounted_helper(name)
+        # ...
+
+        routes = self
+        MountedHelpers.class_eval do
+          define_method "_#{name}" do
+            RoutesProxy.new(routes, _routes_context)
+          end
+        end
+
+        # ...
+      end
+    end
+  end
+end
+```
+
 ```
 mount SomeRackApp, at: "some_route"
 ```

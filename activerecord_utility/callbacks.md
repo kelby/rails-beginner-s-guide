@@ -1,6 +1,6 @@
 ## Callbacks 的使用
 
-基于 ActionModel 提供的 `define_model_callbacks` 和 ActiveSupport 提供的 `define_callbacks` 方法，共生成十几个过滤器方法。
+基于 Action Model 提供的 `define_model_callbacks` 和 Active Support 提供的 `define_callbacks` 方法，共生成十几个过滤器方法。
 
 ```ruby
 # ActiveRecord::Callbacks

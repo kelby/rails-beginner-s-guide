@@ -1,4 +1,4 @@
-## ~~Active Model Instance Tag~~
+### ~~Active Model Instance Tag~~
 
 ```
 content_tag

@@ -68,6 +68,33 @@ belongs_to & references
 
 列举如下：
 
-> 
-:column, :column_exists?, :index, :index_exists?, :rename_index, :timestamps, :change, :change_default, :remove, :remove_index, :remove_timestamps, :rename, :references, :belongs_to, :remove_references, :remove_belongs_to, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean
+```
+:column
+:column_exists?
+:index
+:index_exists?
+:rename_index
+:timestamps
+:change
+:change_default
+:remove
+:remove_index
+:remove_timestamps
+:rename
+:references
+:belongs_to
+:remove_references
+:remove_belongs_to
+:string
+:text
+:integer
+:float
+:decimal
+:datetime
+:timestamp
+:time
+:date
+:binary
+:boolean
+```
 

@@ -7,4 +7,3 @@
 | Routes Inspector     | 被 middleware Debug Exceptions 和 rake routes 调用。|
 | Html Table Formatter | 格式化 HTML 里的路由信息，给人阅读的。|
 | Console  Formatter   | 格式化控制台里的路由信息，给人阅读的。|
-

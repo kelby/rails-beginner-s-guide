@@ -2,7 +2,7 @@
 
 headers["WWW-Authenticate"] = %(Digest realm="#{realm}", qop="auth", algorithm=MD5, nonce="#{nonce}", opaque="#{opaque}")
 
-### Controller Methods
+### Controller 方法
 
 提供方法：
 

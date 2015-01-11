@@ -5,35 +5,33 @@
 ```
 exists?
 
-find, find_by, find_by!
+find
+find_by
+find_by!
 
-first, first!
-fifth, fifth!
-fourth, fourth!
-second, second!
-third, third!
-forty_two, forty_two!
-last, last!
+first
+first!
 
-take, take!
-```
+fifth
+fifth!
 
-**~~其它实例方法~~**
+fourth
+fourth!
 
-```
-find_last
+second
+second!
 
-find_nth, find_nth!
+third
+third!
 
-find_nth_with_limit
+forty_two
+forty_two!
 
-find_one
+last
+last!
 
-find_some
-
-find_take
-
-find_with_ids
+take
+take!
 ```
 
 上面的实例方法封装了它们。它们是 protected 方法，所以一般不会直接使用。

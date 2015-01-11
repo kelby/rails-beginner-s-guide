@@ -1,4 +1,4 @@
-## Atom Feed Helper
+### Atom Feed Helper
 
 ```
 atom_feed

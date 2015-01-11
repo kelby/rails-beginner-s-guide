@@ -1,5 +1,11 @@
 ## Serialization
 
-`serializable_hash(options = nil)` 和 `as_json` 结果一样。
+有 ActiveRecord::Serializers::JSON 提供：
 
-使用的是 super 提供的方法。
+`serializable_hash(options = nil)` 方法。
+<br>
+效果和 as_json 差不多。实际起作用的是 ActiveModel::Serialization 里的同名方法。
+
+有 ActiveRecord::Serializers::XmlSerializer 提供：
+
+`to_xml` 方法。实现方式：include and extend ActiveModel::Serializers::Xml，并且里面有同名方法。

@@ -4,14 +4,17 @@
 
 ```ruby
 delete
-
 get
-
 patch
-
 post
-
 put
+
+# 并且
+
+delete + get + patch + post + put
+             |
+             V
+           match
 ```
 
 只是语法糖，都是封装了 `match`，使用上：

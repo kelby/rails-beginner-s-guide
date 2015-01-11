@@ -1,4 +1,4 @@
-**Public Exceptions**
+### Public Exceptions
 
 负责'渲染'错误页面这个工作。默认从 public/ 目录中寻找对应的异常文件，如 500 则渲染 /public/500.html
 

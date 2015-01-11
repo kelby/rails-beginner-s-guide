@@ -1,4 +1,4 @@
-## Big Decimal
+### Big Decimal
 
 ```
 to_s

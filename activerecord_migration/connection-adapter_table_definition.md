@@ -35,5 +35,32 @@ belongs_to & references
 
 列举如下：
 
-> 
-:indexes, :indexes=, :name, :temporary, :options, :as, :columns, :primary_key, :[], :column, :remove_column, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean, :index, :timestamps, :references, :belongs_to, :new_column_definition
+```
+:indexes
+:indexes=
+:name
+:temporary
+:options
+:as
+:columns
+:primary_key
+:[]
+:column
+:remove_column
+:string
+:text
+:integer
+:float
+:decimal
+:datetime
+:timestamp
+:time
+:date
+:binary
+:boolean
+:index
+:timestamps
+:references
+:belongs_to
+:new_column_definition
+```

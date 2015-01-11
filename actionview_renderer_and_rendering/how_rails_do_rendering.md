@@ -6,19 +6,19 @@
 
 ```ruby
 self.respond_to? :render
-=> true
+# => true
 
 self.respond_to? :lookup_context
-=> true
+# => true
 
 self.respond_to? :view_renderer
-=> true
+# => true
 
 self.respond_to? :view_context
-=> true
+# => true
 
 self.respond_to? :view_assigns
-=> true
+# => true
 ```
 
 > Note: 在 YourMailer#your_action 里打断点，结果一样。
@@ -40,3 +40,8 @@ view_renderer.new(@lookup_context).render(context, options, block)
 `context` 指的是上下文。对应上面的 view_context.
 
 通过 `self.view_assigns` 或 `self.view_context.assigns` 可以查看，我们在 Controller 传递给 View 的实例变量(它们只是上下文内容里的一部分)。 
+
+参考
+
+[Design Principles
+behind](http://cdn.oreillystatic.com/en/assets/1/event/59/SOLID%20Design%20Principles%20Behind%20The%20Rails%203%20Refactoring%20Presentation.pdf)

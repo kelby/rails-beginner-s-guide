@@ -1,4 +1,4 @@
-## Output Safety Helper
+### Output Safety Helper
 
 ```
 raw

@@ -1,4 +1,9 @@
-## ~~Routing 描述~~
+## Routing 概述：生成、存储、识别
+
+**Routing 的概念**：
+
+- 除 route_set.rb 外，routing 目录里的其它模块。
+- 对外提供接口。
 
 路由三大块：DSL、recognition 和 generation.
 
@@ -47,11 +52,160 @@ end
 
 Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 
+### 路由的生成、存储、识别
+
+1) 路由对象的定义和调用方式：
+
+```ruby
+# 定义
+module Rails
+  class Engine < Railtie
+    def routes
+      @routes ||= ActionDispatch::Routing::RouteSet.new
+      @routes.append(&Proc.new) if block_given? # 调用时，也可以追加路由规则
+      @routes
+    end
+  end
+end
+
+# 调用方式
+Rails.application.routes
+Rails.application.routes { ... }
+```
+
+2) 调用路由对象，生成路由规则：
+
+```ruby
+Rails.application.routes.draw do
+  # ... block 内容
+end
+```
+
+3) 生成路由规则，本质是对 block 内容的求值：
+
+```ruby
+def draw(&block)
+  # ...
+  eval_block(block)
+  # ...
+  nil
+end
+```
+
+4) 怎么求值呢？借助了 Mapper 的实例对象：
+
+```ruby
+def eval_block(block)
+  # ...
+  mapper = Mapper.new(self)
+  # ...
+  mapper.instance_exec(&block)
+end
+```
+
+5) Mapper 的实例对象有什么内容？
+
+```ruby
+module ActionDispatch
+  module Routing
+    class Mapper
+      # 这里 set = Rails.application.routes
+      def initialize(set)
+        @set = set
+        @scope = Scope.new({ :path_names => @set.resources_path_names })
+        @concerns = {}
+        @nesting = []
+      end
+    end
+  end
+end
+```
+
+6) Mapper 实例对象有了，下一步就是执行 instance_exec. 也就是运行 block 里的各个方法。
+
+7) block 里的各个方法，是在 Mapper 下面的各个模块里定义的：
+
+```ruby
+module ActionDispatch
+  module Routing
+    class Mapper
+      # ...
+
+      class Constraints < Endpoint
+        # ...
+      end
+
+      class Mapping
+        # ...
+      end
+
+      class Scope
+        # ...
+      end
+
+      # ... 下面的各个模块
+      
+      module Base
+        # ...
+      end
+      
+      module HttpHelpers
+        # ...
+      end
+      
+      module Redirection
+        # ...
+      end
+      
+      module Scoping
+        # ...
+      end
+      
+      module Concerns
+        # ...
+      end
+      
+      module Resources
+        # ...
+      end
+
+      include Base
+      include HttpHelpers
+      include Redirection
+      include Scoping
+      include Concerns
+      include Resources
+    end
+  end
+end
+```
+
+在这里，不同的路由规则会有对应的模块进行处理，具体可以在对应的各个章节查看。
+
+8) 附：Mapper 的 ancestors
+
+```
+ActionDispatch::Routing::Mapper.ancestors
+=> [ActionDispatch::Routing::Mapper,
+
+ ActionDispatch::Routing::Mapper::Resources,
+ ActionDispatch::Routing::Mapper::Concerns,
+ ActionDispatch::Routing::Mapper::Scoping,
+ ActionDispatch::Routing::Redirection,
+ ActionDispatch::Routing::Mapper::HttpHelpers,
+ ActionDispatch::Routing::Mapper::Base,
+
+ Object,
+ ActiveSupport::Dependencies::Loadable,
+ PP::ObjectMixin,
+ JSON::Ext::Generator::GeneratorMethods::Object,
+ Kernel,
+ BasicObject]
+```
+
 参考
 
 [Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)<br>
 [Under the hood: route recognition in Rails](http://weblog.jamisbuck.org/2006/10/4/under-the-hood-route-recognition-in-rails)<br>
 [Under the hood: route generation in Rails](http://weblog.jamisbuck.org/2006/10/16/under-the-hood-route-generation-in-rails)<br>
 [Under the hood: Rails' routing DSL](http://weblog.jamisbuck.org/2006/10/2/under-the-hood-rails-routing-dsl)<br>
-[Rails 3.2.8 Route 源码分析](http://ruby-china.org/topics/5895)<br>
-[Rails 路由系统源码探索](https://ruby-china.org/topics/22726)

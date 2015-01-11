@@ -2,6 +2,7 @@
 
 ```
 find_each
+
 find_in_batches
 ```
 

@@ -1,4 +1,4 @@
-## Capture Helper
+### Capture Helper
 
 ```
 content_for

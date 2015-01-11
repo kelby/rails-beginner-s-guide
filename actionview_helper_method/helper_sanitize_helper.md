@@ -1,4 +1,4 @@
-## Sanitize Helper
+### Sanitize Helper
 
 ```
 sanitize

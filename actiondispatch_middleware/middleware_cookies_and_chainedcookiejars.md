@@ -1,4 +1,4 @@
-**Cookies & ChainedCookieJars**
+### Cookies & ChainedCookieJars
 
 可以通过 ActionController#cookies 读/写 cookies 数据。
 

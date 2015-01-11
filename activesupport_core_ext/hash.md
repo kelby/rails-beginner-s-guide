@@ -1,4 +1,4 @@
-## Hash
+### Hash
 
 ```
 assert_valid_keys

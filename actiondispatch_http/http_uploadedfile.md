@@ -1,6 +1,6 @@
 ## Uploaded File
 
-**上传文件时用到**，不过具体不清楚。
+**上传文件时用到**，默认文件放到 :tempfile 里，相关会用到它来处理。
 
 ```
 close
@@ -11,6 +11,8 @@ read
 rewind
 size
 ```
+
+在 Http Parameters 和 Metal Parameters 里有用到它，对应 params 里有 :tempfile 和 params.permit(:x) 里包含文件对象时处理。
 
 使用举例：
 

@@ -1,4 +1,4 @@
-## Text Helper
+### Text Helper
 
 ```
 truncate      截取某个长度的文本

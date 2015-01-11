@@ -18,7 +18,7 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - Persistence
 
-- ~~NullRelation~~
+- ~~Null Relation~~
 
 - ~~Dynamic Matchers~~
 
@@ -30,4 +30,4 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - Attribute Methods
 
-包括 BeforeTypeCast、Dirty、PrimaryKey、Query、Read、Serialization、TimeZoneConversion、Write
+包括 Before Type Cast、Dirty、Primary Key、Query、Read & Write、Serialization、Time Zone Conversion

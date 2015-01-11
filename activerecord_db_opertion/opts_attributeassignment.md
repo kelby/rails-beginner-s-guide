@@ -20,10 +20,4 @@ cat.attributes # => { "name" => "Gorby", "status" => "sleeping", "created_at" =>
                       "updated_at" => nil }
 ```
 
-**对比**
-
-| 方法 | 解释 |
-|--|--|
-| assign_attributes       | 就是 attributes= |
-| update | 就是 update_attributes |
-| update | 就是 assign_attributes + save |
+与其它方法的对比，可以查看【对比，然后使用合适的方法】。

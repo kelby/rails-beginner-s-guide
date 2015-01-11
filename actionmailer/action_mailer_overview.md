@@ -58,13 +58,6 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
-### 创建邮件对象时的魔法
-
-细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
-
-这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 method_missing 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 Mailer 对象。
-
-
 ### ~~Collector~~
 
 和 AbstractController::Collector 相关，也就是和 Mime 相关。

@@ -37,8 +37,5 @@ negotiate_mime
 format=
 formats=
 variant=
-
-use_accept_header
-valid_accept_header
 ```
 

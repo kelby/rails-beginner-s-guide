@@ -1,4 +1,4 @@
-## Form Helper
+### Form Helper
 
 Form Helper 是面向函数<br>
 函数(f对象, 参数)。
@@ -13,8 +13,6 @@ form_for 和 fields_for 是另类
 大部分封装 Tags::Xxx
 
 名字 Form Helper 起得有一点不合适。
-
----
 
 部分方法需要的参数 "object_name"，并不是指 record 对象，可以是非 record 对象！
 

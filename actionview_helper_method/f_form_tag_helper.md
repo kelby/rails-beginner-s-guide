@@ -1,4 +1,4 @@
-## Form Tag Helper
+### Form Tag Helper
 
 最接近 HTML 代码。
 
@@ -7,8 +7,6 @@
 封装 tag 或 content_tag 而来。
 
 名字 Form Tag Helper 起得非常不合适。
-
----
 
 这里的方法与表单及 record 对象都没有直接相关，也就是说它们并不依赖于表单元素和 record 对象。把它们放到此章节，完全是因为它们所在的模块名字带 "Form".
 

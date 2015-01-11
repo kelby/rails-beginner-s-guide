@@ -8,10 +8,17 @@
 
 当参数是 Relation 时，merge 也和 joins、includes 等一样有联合查询的效果。
 
+`except` 和 `unscope` 功能上类似。区别在于后者在使用上，可以选择更多类型。
+
 除上述方法外，还有：
 
 ```
 spawn
 
 merge!
+```
+
+```
+VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend, :order,
+                       :select, :readonly, :group, :having, :from, :lock ]
 ```

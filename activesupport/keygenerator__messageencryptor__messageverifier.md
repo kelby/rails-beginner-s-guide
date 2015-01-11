@@ -33,6 +33,7 @@ salt = SecureRandom.random_bytes(64)
 secret_key_base = '-- secret key base --'
 
 key_generator = ActiveSupport::KeyGenerator.new(secret_key_base)
+# 生成密钥
 key = key_generator.generate_key(salt)
 
 encryptor1 = ActiveSupport::MessageEncryptor.new(key)

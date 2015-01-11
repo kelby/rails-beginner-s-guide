@@ -2,14 +2,14 @@
 
 负责处理自动保存相关一切任务。
 
-常用：
+常用实例方法：
 
 ```
 mark_for_destruction
 marked_for_destruction?
 ```
 
-除此之外，还有：
+除此之外，还有实例方法：
 
 ```
 changed_for_autosave?
@@ -28,7 +28,3 @@ define_non_cyclic_method
 # 给指定的关联添加 autosave
 add_autosave_association_callbacks
 ```
-
----
-
-通过 `reflect_on_all_autosave_associations` 可以查看 autosave: true 的关联。

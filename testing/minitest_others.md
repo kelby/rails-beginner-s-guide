@@ -1,6 +1,8 @@
+## 其它
+
 其它多个类或模块，统一在此列举。
 
-## Kernel
+### Kernel
 
 很常用的方法：
 
@@ -8,7 +10,7 @@
 describe
 ```
 
-## Object
+### Object
 
 常用的方法：
 
@@ -34,7 +36,7 @@ end
 # => 2014-11-03
 ```
 
-## Benchmark
+### Benchmark
 
 已经 mixed 进 TestCase.
 
@@ -67,7 +69,7 @@ sigma
 validation_for_fit
 ```
 
-## Bench Spec
+### Bench Spec
 
 类方法：
 
@@ -79,7 +81,7 @@ bench_performance_linear
 bench_range
 ```
 
-## Abstract Reporter
+### Abstract Reporter
 
 实例方法：
 
@@ -90,7 +92,7 @@ report
 start
 ```
 
-## Assertion
+### Assertion
 
 实例方法：
 

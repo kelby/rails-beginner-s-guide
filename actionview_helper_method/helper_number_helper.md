@@ -1,4 +1,4 @@
-## Number Helper
+### Number Helper
 
 ```
 number_to_currency

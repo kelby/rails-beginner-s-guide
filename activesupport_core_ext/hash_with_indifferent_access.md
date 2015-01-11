@@ -1,4 +1,4 @@
-## Hash With Indifferent Access
+### Hash With Indifferent Access
 
 处理 Hash，使得 :foo 和 "foo" 所代表的意思是一样的。
 

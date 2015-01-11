@@ -1,8 +1,20 @@
-## Dispatcher
+## ~~Dispatcher~~
 
 **处理向 Rails 其它组件转移。**
 
 继承于 Routing::Endpoint
+
+```ruby
+module ActionDispatch
+  module Routing
+    class RouteSet
+      def dispatcher(defaults)
+        Routing::RouteSet::Dispatcher.new(defaults)
+      end
+    end
+  end
+end
+```
 
 **实例方法**
 

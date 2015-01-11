@@ -4,7 +4,7 @@
 
 在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
 
-检测结果：
+**检测结果(它们是实例方法)：**
 
 ```
 request.domain
@@ -54,7 +54,7 @@ request.url # 取得当前 requset 完整 url
 => "http://blog.test.example.com:3000/users"
 ```
 
-除上述方法外，还有：
+**除上述方法外，还有(模块方法)：**
 
 ```
 extract_domain
@@ -62,8 +62,17 @@ extract_subdomain
 extract_subdomains
 
 full_url_for
-
 path_for
-
 url_for
+```
+
+以 ActionDispatch::Http::URL.x 的形式调用它们。
+
+**数据来源**
+
+```
+env["HTTP_X_FORWARDED_HOST"]
+env['HTTP_HOST'], env['SERVER_NAME'], env['SERVER_ADDR'], env['SERVER_PORT']
+
+以及父类 Rack::Request (它也是从 env 里取数据，然后处理。具体不在此描述)
 ```

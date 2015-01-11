@@ -1,4 +1,4 @@
-## Translation Helper
+### Translation Helper
 
 ```
 translate & t

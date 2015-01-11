@@ -21,13 +21,9 @@ require 'my_gem/railtie' if defined?(Rails)
 
 ### 二，编写自己的 my_railtie/railtie.rb 文件内容
 
-~~TODO~~
-
 可用 Rails::Railtie 提供的方法。
 
 ### 三，编写 Railtie 内容
-
-~~TODO~~
 
 做了上述两步后，就是编写内容。该做什么事，做什么事；该完成什么功能，完成什么功能。
 

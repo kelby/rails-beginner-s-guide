@@ -1,4 +1,4 @@
-## Record Tag Helper
+### Record Tag Helper
 
 ```
 content_tag_for

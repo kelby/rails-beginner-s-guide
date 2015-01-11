@@ -1,4 +1,4 @@
-## JavaScript Helper
+### JavaScript Helper
 
 ```
 escape_javascript & j

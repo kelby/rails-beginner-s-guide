@@ -1,49 +1,44 @@
 ## Lookup Context
 
-"查找上下文"之前理解有误，它的重点在于"查找"，而不是"上下文"。
+**包含了一些基本信息，用于查找模板。**
 
-**从其包含属性和行为来分析，它就是为了查找 Template.**
+由原来的 Template::Lookup 更改而来，其实叫 Lookup Template Context 才更合适。
 
-先看官方解释：
+### lookup_context 内容
 
-> 
-LookupContext is the object responsible to hold all information required to lookup templates, i.e. view paths and details. 
+基本信息，包括以下 7 项内容：
 
-> 
-The LookupContext is also responsible to generate a key, given to view paths, used in the resolver cache lookup. Since this key is generated just once during the request, it speeds up all cache accesses.
+```ruby
+def initialize(view_paths, details = {}, prefixes = [])
+  @details, @details_key = {}, nil
+  @skip_default_locale = false
+  @cache = true
+  @prefixes = prefixes
+  @rendered_format = nil
 
-在【渲染的原理】里，我们就讲了 lookup context 的作用，但那只是示例程序，只讲到了其中的一点。Rails 项目远比这复杂得多，所以 lookup context 的作用也远比这重要。
+  self.view_paths = view_paths
+  initialize_details(details)
+end
 
-**类方法**
+# 也就是：
 
-```
-register_detail
-```
-
-放到 registered_details，并生成 default_x 方法。<br>
-默认已经注册有：formats、variants 和 handlers.
-
-**lookup_context 内容**
-
-只包含以下 7 项内容，至于怎么用不是它关心的。
-
-```
- @cache=true,
- @details=
-  {:locale=>[:en],
-   :formats=>[:html, :text, :js, :css, :xml, :json],
-   :variants=>[],
-   :handlers=>[:erb, :builder, :raw, :ruby]},
- @details_key=nil,
- @prefixes=[],
- @rendered_format=nil,
- @skip_default_locale=false,
- @view_paths=
-  #<ActionView::PathSet:0x007ff7250a0fe0
-   @paths= ...
+@cache=true,
+@details= { ... },
+@details_key=nil,
+@prefixes=[],
+@rendered_format=nil,
+@skip_default_locale=false,
+@view_paths= #<ActionView::PathSet:0x007ff7250a0fe0 ...
 ```
 
-**lookup_context 举例**
+在 ActionView::Base 里有：
+
+```ruby
+delegate :formats, :formats=, :locale, :locale=, :view_paths, :view_paths=,
+         :to => :lookup_context
+```
+
+### lookup_context 举例
 
 查看应用根目录下文件及目录：
 
@@ -57,85 +52,55 @@ Gemfile.lock  Rakefile     bin  config  db         log  test    vendor
 
 ```ruby
 FIXTURE_LOAD_PATH = File.join(File.dirname(__FILE__), '../fixtures')
-=> "./fixtures"
+# => "./fixtures"
 
 require 'action_view'
-=> true
+# => true
 
 # 仍然只包含 7 项内容
 lookup_context = ActionView::LookupContext.new(FIXTURE_LOAD_PATH, {})
 => #<ActionView::LookupContext:0x007ff725058088
  @cache=true,
- @details=
-  {:locale=>[:en],
-   :formats=>[:html, :text, :js, :css, :xml, :json],
-   :variants=>[],
-   :handlers=>[:erb, :builder, :raw, :ruby]},
+ @details= { ... },
  @details_key=nil,
  @prefixes=[],
  @rendered_format=nil,
  @skip_default_locale=false,
- @view_paths=
-  #<ActionView::PathSet:0x007ff7250a0fe0
-   @paths=
-    [#<ActionView::OptimizedFileSystemResolver:0x007ff7250a0f68
-      @cache=
-       #<ActionView::Resolver::Cache:0x007ff7250a0f40
-        @data=
-         #<ActionView::Resolver::Cache::SmallCache:0x007ff7250a0ec8
-          @backend={},
-          @default_proc=
-           #<Proc:......@/...b/action_view/template/resolver.rb:48 (lambda)>>>,
-      @path="/.../app_name/fixtures",
-      @pattern=
-       ":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}">]>>
+ @view_paths= #<ActionView::PathSet:0x007ff7250a0fe0 ...
 ```
 
-真实情况远比这复杂，@view_paths 下有很多的内容。
+真实情况远比这复杂，`@view_paths` 下有很多的内容。
 
-### View Paths
-
-```
-exists? & template_exists?
-find & find_template
-
-find_all
-
-view_paths=
-
-with_fallbacks
-```
-
-`find` 很重要的方法，用来查找模板(Template)。
+### 实例方法
 
 ```
-detail_args_for
+attr_accessor :prefixes, :rendered_format
+mattr_accessor :fallbacks
+mattr_accessor :registered_details
+
+formats=
+
+skip_default_locale!
+
+locale
+locale=
+
+with_layout_format 
 ```
 
-使用举例，在视图里检查局部模板是否存在：
+### 类方法
 
 ```
-template_exists?("form", "posts", true)
+register_detail
 ```
 
-### Details Cache
+放到变量 registered_details 里，并生成 default_x 等方法。
 
+```ruby
+# 默认已经注册有：locale、formats、variants 和 handlers.
+
+register_detail(:locale) { ... }
+register_detail(:formats) { ... }
+register_detail(:variants) { ... }
+register_detail(:handlers) { ... }
 ```
-details_key
-
-disable_cache
-```
-
-### DetailsKey
-
-```
-get
-
-clear
-```
-
----
-
-由原来的 Template::Lookup 改名而来 LookupContext.
-
-注意它在 Base 里的 delegate.

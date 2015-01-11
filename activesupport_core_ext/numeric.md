@@ -1,4 +1,4 @@
-## Numeric
+### Numeric
 
 ```
 byte & bytes

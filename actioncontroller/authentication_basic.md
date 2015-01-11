@@ -28,7 +28,7 @@ end
 
 `http_basic_authenticate_with` 应该是最常用的验证方式了吧。
 
-### Controller Methods
+### Controller 方法
 
 ```
 authenticate_with_http_basic

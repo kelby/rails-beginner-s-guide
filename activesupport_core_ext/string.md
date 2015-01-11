@@ -1,4 +1,4 @@
-## String
+### String
 
 ```
 acts_like_string?

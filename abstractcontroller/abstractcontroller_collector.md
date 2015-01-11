@@ -4,6 +4,8 @@
 
 Collector 是 Abstact Controller 实现的。Action Controller 有自己的扩展，Active Mailer 也有自己的扩展。
 
+对应：
+
 ```ruby
 # action 里面
 respond_to do |format|
@@ -12,7 +14,9 @@ respond_to do |format|
 end
 ```
 
-目前 Rails 支持的 MIME(多用途互联网邮件扩展)：
+这里的 html 和 xml.
+<br>
+目前 Rails 支持的 MIME(多用途互联网邮件扩展)，有：
 
 >html
 text
@@ -43,4 +47,4 @@ json
 pdf
 zip
 
-可以在 action_dispatch/http/mime_types.rb 查看目前支持的格式。
+可以在 action_dispatch/http/mime_types.rb 里查看。

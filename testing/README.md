@@ -10,9 +10,9 @@
 
 - Action Controller
 
-包含了：TestCase Behavior 和 TemplateAssertions
+包含了：Test Case Behavior 和 Template Assertions
 
-此外，还包含了：TestRequest、TestResponse、LiveTestResponse、TestSession.
+此外，还包含了：Test Request、Test Response、Live Test Response、Test Session.
 <br>
 这几个类作用上比较小，再此不做讲解。
 

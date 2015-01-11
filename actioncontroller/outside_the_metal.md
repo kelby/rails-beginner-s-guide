@@ -22,10 +22,6 @@
 
 - Http Authentication
 
-- ~~Implicit Render~~
-
-- ~~Instrumentation~~
-
 - Mime Responds
 
 - Params Wrapper
@@ -47,6 +43,10 @@
 - Strong Parameters
 
 - Testing
+
+- ~~Implicit Render~~
+
+- ~~Instrumentation~~
 
 - ~~Url For~~
 

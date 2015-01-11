@@ -6,24 +6,24 @@
 
 用来建立和数据库的连接。(配置、建立连接、日志，其中的建立连接，连接适配不是它做的！)
 
-- Explain
+- ~~Explain~~
 
 explain 方法的底层实现(尽管是调用数据库的 explain...)
 
-- ExplainRegistry
+- ~~Explain Registry~~
 
-- ExplainSubscriber
+- ~~Explain Subscriber~~
 
-- QueryCache
+- ~~Query Cache~~
 
-- Result
+- ~~Result~~
 
-- RuntimeRegistry
+- ~~Runtime Registry~~
 
-- Sanitization
+- ~~Sanitization~~
 
 - Serialization
 
 包括 XmlSerializer
 
-- StatementCache
+- Statement Cache

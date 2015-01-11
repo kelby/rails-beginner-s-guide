@@ -1,6 +1,6 @@
 ## Helpers
 
-不是指 helper 方法！但和 helper 有关联，如方法：helper_method、helper 等。
+这里的 helper 不是指辅助方法，尽管它们有直接联系。提供方法：helper_method、helper 等。
 
 | 方法 | 解释 |
 | -- | -- |

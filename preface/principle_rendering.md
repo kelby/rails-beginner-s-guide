@@ -1,8 +1,6 @@
 ## 非 Rails 是如何渲染的
 
-Controller#actions 里定义实例变量，并通过 render 方法进行渲染。
-
-Action View 渲染过程很复杂，涉及概念主要有：渲染器(名词)、上下文、渲染(动词)。
+先看例子，然后看看非 Rails 是如何渲染的，需要哪几个重要元素。
 
 ### 标准库 ERB 举例
 
@@ -17,7 +15,7 @@ class Listings
 
   attr_reader :product, :price
 
-  def initialize( product = "", price = "" )
+  def initialize(product = "", price = "")
     @product = product
     @price = price
   end
@@ -85,11 +83,11 @@ render.result(binder)
 => "Helo, Kelby"
 ```
 
-在这里：渲染器(名词)对应着 render，上下文对应着 binder，渲染(动词)对应着 result.
+在这里，重要元素有：渲染器(名词)对应着 render，上下文对应着 binder，渲染(动词)对应着 result.
 
-Rails 里: 渲染器(名词)对应着 render，上下文对应着 view_context，渲染(动词)对应着 render.
+Rails 里，对应的有：渲染器(名词)对应着 render，上下文对应着 view_context，渲染(动词)对应着 render.
 <br>
-Rails 多了一个 lookup_context，用于查找模板内容。
+Rails 里模板文件众多，而且可以嵌套使用，为了方便查找模板内容，引入了 lookup_context 的概念。
 
 ### Rails 使用的是 Erubis
 

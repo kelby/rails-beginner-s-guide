@@ -1,58 +1,75 @@
-# Associations 架构图(关联一)
+# Associations 关联
 
 ```
-    Associations 文件下
-      4 个关联类方法 -- (1)
+Associations 文件下
+    4 个关联类方法 -- (1)
 
-    本目录下 -- 实现几个关联方法。
-      builder -- (2)
-        Association
-          SingularAssociation
-            HasOne
-            BelongsTo
-          CollectionAssociation
-            HasMany
+Associations 目录下 -- 实现几个关联方法。
+    builder -- (2)
         HasAndBelongsToMany
+        Association
+            SingularAssociation
+                HasOne
+                BelongsTo
+            CollectionAssociation
+                HasMany
         4 个关联类方法，直接调用
 
-      # 10 个 _Association 文件。实现对关联对象的操作！
-      Association -- (3)
+    # 11 个 _Association 文件。实现对关联对象的操作！
+    Association -- (3)
         SingularAssociation --(3)
-          HasOneAssociation
-            HasOneThroughAssociation
-              include ThroughAssociation
-          BelongsToAssociation
-            BelongsToPolymorphicAssociation
+            HasOneAssociation
+                HasOneThroughAssociation
+                    include ThroughAssociation
+            BelongsToAssociation
+                BelongsToPolymorphicAssociation
         CollectionAssociation --(3)
-          HasManyAssociation
-            HasManyThroughAssociation
-              include ThroughAssociation
-      ThroughAssociation -> HasOneThroughAssociation + HasManyThroughAssociation
+            HasManyAssociation
+                HasManyThroughAssociation
+                    include ThroughAssociation
+    ThroughAssociation -> HasOneThroughAssociation + HasManyThroughAssociation
+    ForeignAssociation -> HasOneAssociation + HasManyAssociation
 
-      # 其它
+    # 其它
 
-      CollectionProxy(*) -> CollectionAssociation
+    CollectionProxy(*) -> CollectionAssociation
         继承于 Relation
 
-      AssociationScope -> CollectionAssociation + SingularAssociation + Association
+    AssociationScope -> CollectionAssociation + SingularAssociation + Association
 
-      JoinDependency(实现 joins) -> FinderMethods + QueryMethods
+    JoinDependency(实现 joins) -> FinderMethods + QueryMethods
         JoinPart
-          JoinBase
-          JoinAssociation
+            JoinBase
+            JoinAssociation
 
-      AliasTracker -> AssociationScope + JoinDependency
+    AliasTracker -> AssociationScope + JoinDependency
 
-      Preloader --(实现 includes, preload, eager_load)
+    Preloader --(实现 includes, preload, eager_load)
         ThroughAssociation
         Association
-          CollectionAssociation
-            HasManyThrough
-              include ThroughAssociation
-            HasMany
-          SingularAssociation
-            BelongsTo
-            HasOne
-            HasOneThrough
-              include ThroughAssociation
+            CollectionAssociation
+                HasMany
+                HasManyThrough
+                    include ThroughAssociation
+            SingularAssociation
+                BelongsTo
+                HasOne
+                HasOneThrough
+                    include ThroughAssociation
+
+Aggregations
+
+AutosaveAssociation
+
+# Reflection 文件
+AbstractReflection
+    ThroughReflection
+    MacroReflection
+        AggregateReflection
+        AssociationReflection
+            HasManyReflection
+            HasOneReflection
+            BelongsToReflection
+            HasAndBelongsToManyReflection
 ```
+

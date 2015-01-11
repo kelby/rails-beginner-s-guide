@@ -10,18 +10,4 @@ Action Dispatch 本身很复杂，但我们使用 Rails 进行开发的过程中
 
 也就是路由机制这部分，它包括：Base、Concerns、HttpHelpers、Resources、Scoping.
 
-除了 Mapper 外，还用到的就只剩：Redirection、Polymorphic Routes、UrlFor.
-
-**Routing 的概念**：
-
-- 除 route_set.rb 外，routing 目录里的其它模块。
-- 对外提供接口。
-
-```ruby
-Mapper
-
-Redirection
-
-UrlFor
-Polymorphic Routes
-```
+除了 Mapper 外，还用到的就只剩：Redirection、Polymorphic Routes、Url For.

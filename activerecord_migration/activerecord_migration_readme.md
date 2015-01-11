@@ -1,4 +1,4 @@
-## Migration 文件下的方法
+## Migration 文件下的内容
 
 重要的如：
 

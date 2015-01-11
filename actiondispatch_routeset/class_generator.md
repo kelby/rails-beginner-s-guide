@@ -1,6 +1,18 @@
-## Generator
+## ~~Generator~~
 
 **url_for 方法的重要组成部分。**
+
+```ruby
+module ActionDispatch
+  module Routing
+    class RouteSet
+      def generate(route_key, options, recall = {})
+        Generator.new(route_key, options, recall, self).generate
+      end
+    end
+  end
+end
+```
 
 各个实例方法：
 
@@ -34,4 +46,3 @@ different_controller?
 ```
 attr_reader :options, :recall, :set, :named_route
 ```
-

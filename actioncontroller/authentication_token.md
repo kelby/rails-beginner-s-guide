@@ -2,7 +2,7 @@
 
 headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
 
-### Controller Methods
+### Controller 方法
 
 提供方法：
 

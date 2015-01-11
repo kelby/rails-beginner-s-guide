@@ -1,4 +1,4 @@
-## Integer
+### Integer
 
 ```
 month, months, multiple_of?

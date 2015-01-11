@@ -39,10 +39,7 @@ user.authenticate('mUc3m00RsqyRe') # => user
 使用 has_secure_password 后，还会自动帮我们添加校验：
 
 ```
-validates_length_of :password
-
-和
-
+validates_length_of       :password
 validates_confirmation_of :password
 ```
 
@@ -58,10 +55,11 @@ cost = BCrypt::Engine.cost
 unencrypted_password = "password"
 # => "password"
 
+# 加密
 password_digest = BCrypt::Password.create(unencrypted_password, cost: cost)
 # => "$2a$10$GGtvADq0jfb9E2wy4Nq0je1ZrJbJrsRSigwtBMlAAfV5dbAEgjt7C"
 
+# 解密
 BCrypt::Password.new(password_digest) == unencrypted_password
 # => true
 ```
-> Note: BCrypt::Password.create 加密，BCrypt::Password.new 解密。

@@ -4,20 +4,20 @@
 
 ```
           ActionController::Rendering
-                    ^
                     |
+                    V
           AbstractController::Rendering
-                    ^
                     |
+                    V
           ActionView::Rendering
-                    ^
                     |
+                    V
           ActionView::Renderer
 ```
 
-**Action Controller 和 Abstract Controller 可以调用这里渲染相关的方法。**
+Action Controller 和 Abstract Controller 可以调用这里渲染相关的方法。
 
-**实例方法**
+### 实例方法：
 
 ```
 view_context
@@ -36,17 +36,9 @@ view_context_class
 
 `render_to_body` 上面几个方法中，惟一的动词，会执行渲染程序。
 
-**类方法**
+**view_context 使用举例：**
 
-```
-view_context_class
-```
-
-并且，ActionController 和 AbstactController 有同名方法，根据 Ruby 的继承规则，它们也可以调用这里的方法。
-
----
-
-此外，通过 view_context 可以在 Controller 里调用 Helper 里的方法。
+通过 `view_context` 可以在 Controller 里调用 Helper 里的方法。
 
 举例一：
 
@@ -85,46 +77,12 @@ module PostsHelper
 end
 ```
 
-当然，还有其它方法，但不在此列举。
+### 类方法：
 
----
-
-部分源代码：
-
-```ruby
-def view_context
-  view_context_class.new(view_renderer, view_assigns, self)
-end
-
-def view_renderer
-  @_view_renderer ||= ActionView::Renderer.new(lookup_context)
-end
-
-def view_context_class
-  @_view_context_class ||= self.class.view_context_class
-end
-
-# view_context_class 等价于 ActionView::Base
-def view_context_class
-  @view_context_class ||= begin
-    include_path_helpers = supports_path?
-    routes  = respond_to?(:_routes)  && _routes
-    helpers = respond_to?(:_helpers) && _helpers
-
-    Class.new(ActionView::Base) do
-      if routes
-        include routes.url_helpers(include_path_helpers)
-        include routes.mounted_helpers
-      end
-
-      if helpers
-        include helpers
-      end
-    end
-  end
-end
+```
+view_context_class
 ```
 
----
+并且，ActionController 和 AbstactController 有同名方法，根据 Ruby 的继承规则，它们也可以调用这里的方法。
 
-它和它下面的 I18nProxy，都是从 Abstract Controller 转移到 Action View.
+当然，还有其它方法，但不在此列举。

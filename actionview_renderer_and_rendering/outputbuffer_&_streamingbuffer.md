@@ -9,3 +9,5 @@ Output Buffer 继承于 Safe Buffer，它封装了一些方法，Rails 视图里
 参考
 
 [YAGNI methods slow us down](http://tenderlovemaking.com/2014/06/04/yagni-methods-slow-us-down.html)
+<br>
+[ActionView Safe Buffer](http://thekaiway.com/2013/08/17/actionview-safe-buffer/)

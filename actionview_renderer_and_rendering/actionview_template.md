@@ -8,20 +8,20 @@ ERBHandler = ActionView::Template::Handlers::ERB.new
 body = "<%= hello %>"
 details = { format: :html }
 
-new_template = ActionView::Template.new(body, "hello template",
-                                        details.fetch(:handler) { ERBHandler },
-                                        {:virtual_path => "hello"}.merge!(details))
-```
+def new_template(body = "<%= hello %>", details = { format: :html })
+  ActionView::Template.new(body, "hello template",
+                           details.fetch(:handler) { ERBHandler },
+                           {:virtual_path => "hello"}.merge!(details))
+end
 
-当然，这些我们平时都接触不到，知道有这么回事即可。
-
-```ruby
 @template = new_template
 @template = new_template("<%= apostrophe %>")
 @template = new_template("<%= apostrophe %> <%== apostrophe %>", format: :text)
 @template = new_template("<%= hello %>",
                          :handler => ActionView::Template::Handlers::Raw.new)
 ```
+
+当然，这些我们平时都接触不到，知道有这么回事即可。
 
 ```ruby
 attr_accessor :locals, :formats, :variants, :virtual_path

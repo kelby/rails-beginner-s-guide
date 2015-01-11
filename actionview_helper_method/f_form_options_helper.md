@@ -1,4 +1,4 @@
-## Form Options Helper
+### Form Options Helper
 
 多用于处理集合。
 
@@ -10,12 +10,9 @@
 
 名字 Form Options Helper 起得有一点不合适。
 
----
-
-
 部分方法需要传递参数 "object"，并不是指 model 对象，可以是非 model 对象！
 
-### 不可或缺
+**不可或缺**
 
 关键词：select
 
@@ -41,7 +38,7 @@ options_for_select(container, selected = nil)
 options_from_collection_for_select(collection, value_method, text_method, selected = nil)
 ```
 
-### 视情况而定
+**视情况而定**
 
 关键词：option
 

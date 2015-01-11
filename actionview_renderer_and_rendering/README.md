@@ -1,11 +1,11 @@
-## 渲染相关(Renderer & Rendering)
+# Action View 渲染相关
 
-渲染是它的老本行。
+渲染是它的老本行，包含：Renderer & Rendering.
 
 每次都要指定模板文件，并且说一遍渲染，不麻烦吗？<br>
 因为模板文件，都在同一目录下，所以我们不必这么麻烦。引进 ActionView 的子模块 Rendering 后我们设置默认的目录即可，并且能自动帮我们"说一遍渲染"。
 
-分为 3 大块：渲染器、模板和上下文。
+分为 4 大块：渲染器、模板、上下文和查找模板对象。(以下只是粗略的分类)
 
 ### 1) 渲染器
 
@@ -28,7 +28,10 @@ Partial Renderer
 Abstract Renderer  
 抽象出来的渲染器
 
-### 2) 模板内容(Template)
+### 2) 模板(Template)
+
+Template  
+视图文件
 
 Type  
 类型(也就是 format)
@@ -54,42 +57,6 @@ Fallback File System Resolver
 Error  
 各种错误
 
-### 3) 上下文(view_context)
-
-View Paths  
-视图文件所在目录
-
-Template  
-视图文件
-
-Rendering  
-渲染(动词)
-
-~~PathSet~~  
-路径集(供 View Paths 使用)
-
-Lookup Context  
-查找上下文
-
-DetailsKey  
-类似 cache key
-
-DetailsCache  
-为 Details 做缓存
-
-~~Context~~  
-上下文  
-为了 Action Controller 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
-(从 Base 里抽取出来的，提供了 @output_buffer, @view_flow 和 @virtual_path)
-
-~~Output Flow & Streaming Flow~~  
-输出流  
-为了支持"streaming 流"！
-
-~~Output Buffer & Streaming Buffer~~  
-输出缓冲区  
-为了支持"streaming 流"！
-
 **处理器***
 
 Handlers  
@@ -107,6 +74,37 @@ ERB 处理器
 Builder  
 XML 处理器
 
-### 4) 查找上下文(lookup_context)
+### 3) 上下文(view_context)
 
-TODO
+Rendering  
+渲染(动词)
+
+~~Context~~  
+上下文  
+为了 Action Controller 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
+(从 Base 里抽取出来的，提供了 @output_buffer, @view_flow 和 @virtual_path)
+
+~~Output Flow & Streaming Flow~~  
+输出流  
+为了支持"streaming 流"！
+
+~~Output Buffer & Streaming Buffer~~  
+输出缓冲区  
+为了支持"streaming 流"！
+
+### 4) 查找模板对象(lookup_context)
+
+View Paths  
+视图文件所在目录
+
+~~PathSet~~  
+路径集(供 View Paths 使用)
+
+DetailsKey  
+类似 cache key
+
+DetailsCache  
+为 Details 做缓存
+
+Lookup Context  
+查找上下文

@@ -1,4 +1,4 @@
-## Secure Random
+### Secure Random
 
 ```
 uuid_from_hash

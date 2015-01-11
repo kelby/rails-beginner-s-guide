@@ -1,8 +1,8 @@
-## 回调及其顺序
+### 回调及其顺序
 
 每个操作，它所对应的回调(按顺序来的)。
 
-### 创建
+#### 创建
 
 ```
 before_validation
@@ -16,7 +16,7 @@ after_save
 after_commit/after_rollback
 ```
 
-### 更新
+#### 更新
 
 ```
 before_validation
@@ -30,7 +30,7 @@ after_save
 after_commit/after_rollback
 ```
 
-### 删除
+#### 删除
 
 ```
 before_destroy
@@ -45,7 +45,7 @@ after_commit/after_rollback
 
 > Note: 执行 create 和 update 操作，都会触发 after_save 回调。但它的顺序始终在 after_create 和 after_update 之后。即使在 model 里它定义在前面，效果一样。
 
-### after_initialize 和 after_find
+#### after_initialize 和 after_find
 
 不管是直接 new 或其它途径，只要有对象被初始化，就会触发 after_initialize 回调。使用它，可以避免重写 initialize 方法。
 
@@ -76,7 +76,7 @@ You have initialized an object!
 
 > Note: 上面例子已经证明，从数据库里查找记录，也会有新的对象创建，所以会有 initialize 过程。
 
-### after_touch
+#### after_touch
 
 对对象执行 touch 更新后，都会运行 after_touch 回调方法。我们可以指定其内容：
 
@@ -127,7 +127,7 @@ An Employee was touched
 
 > Note: after_touch 实际上运用得比较少。执行 touch 操作，除它之外，还会触发 after_commit 和 after_rollback 回调函数。
 
-### 查看某个记录关联的回调及其顺序
+#### 查看某个记录关联的回调及其顺序
 
 以 save 举例：
 

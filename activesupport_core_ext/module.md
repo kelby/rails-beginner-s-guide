@@ -1,4 +1,4 @@
-## Module
+### Module
 
 ```
 alias_attribute

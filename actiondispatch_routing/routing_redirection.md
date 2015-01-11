@@ -2,7 +2,7 @@
 
 `redirect(*args, &block)`
 
-在路由里配置重定向，将发向某路径的请求，重定向到另一路径：
+在 routes.rb 里配置重定向，将发向某路径的请求，重定向到另一路径：
 
 ```ruby
 get "/stories" => redirect("/posts")

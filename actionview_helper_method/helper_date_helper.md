@@ -1,4 +1,4 @@
-## Date Helper
+### Date Helper
 
 ```
 date_select

@@ -3,6 +3,19 @@
 Engine 下有 Railtie，上有 Application.  
 在 Engine 里，可以直接使用 Railtie 提供的方法；在 Application 里，可以直接使用 Engine 提供的方法。
 
+```
+Your Application
+     |
+     V
+ Application
+     |
+     V
+   Engine
+     |
+     V
+  Railtie
+```
+
 可以把一个 Rails 项目当做一个组件，插入到另一个项目里。
 
 可以把 Engine 当做一个不完整的应用，它依赖于 main_app (main_app 表示我们的项目本身，在 Application::Finisher 里定义)。
