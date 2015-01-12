@@ -1,4 +1,4 @@
-## Controller 和 View 里 Model Naming
+## Model Naming
 
 Action Controller 和 Action View 里都有 Model Naming 模块。
 

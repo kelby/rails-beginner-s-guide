@@ -46,10 +46,3 @@ status=
 to_a & prepare!
 to_ary
 ```
-
-除上述方法外，还有：
-
-```
-include ActionDispatch::Http::FilterRedirect
-include ActionDispatch::Http::Cache::Response
-```

@@ -72,6 +72,9 @@ ActionController::Renderers::RENDERERS
 
 通过上面的路径和特别指出的两个 render 方法里面的逻辑，不难看出为什么可以默认渲染 template 或 partial.
 
+Controller 里的 render 是为了返回 self.response_body
+而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣。
+
 ### 其它
 
 只渲染 json，只得到数据。

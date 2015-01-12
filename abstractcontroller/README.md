@@ -8,15 +8,11 @@ Abstract Controller 无论是它自己定义的方法，还是封装 Action View
 
 Abstract Controller 起到了承上启下的作用(所以，有时候它的代码会让你觉得很迷惑)，及 Action Dispatch 到 Action Controller 转换，并且也实现了一些重要的方法，如：Callbacks、Helpers.
 
-Abstract Controller 和 Action Mailer 有继承关联：
+Action Mailer 和 Action Controller 都继承于 Abstract Controller：
 
 ```
 ActionMailer::Base < AbstractController::Base
-```
 
-Abstract Controller 和 Action Controller 有继承关联：
-
-```
 ActionController::Base < ActionController::Metal < AbstractController::Base
 ```
 

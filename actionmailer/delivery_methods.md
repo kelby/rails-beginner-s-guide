@@ -115,7 +115,7 @@ Rails 已有发送程序及 gem 'letter_opener' 就是用这种方式定义，�
 class_attribute :delivery_methods
 
 module ClassMethods
-  # 必须结合 delivery_method :test 使用，存放着已经 deliver 的邮件对象
+  # 必须结合 delivery_method :test 使用，存放着已经 deliver 的邮件对象，测试的时候可用到它。
   delegate :deliveries, :deliveries=, to: Mail::TestMailer
 end
 ```

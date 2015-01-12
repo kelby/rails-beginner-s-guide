@@ -46,7 +46,7 @@ mail.deliver!
 
 上面的例子使用了 Gmail 做为邮件服务器，所以需要用到 Gmail 用户名和密码，实际应用中你可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
 
-> Note: 单独发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
+> Note: 发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
 
 ### 引入其它，为了更好用
 
@@ -76,7 +76,7 @@ class Mailer < ActionMailer::Base
   def daily_email
     @var = "var"
 
-    # 发件人是这里的 from，不是上面 smtp_settings 里设置的任何一个
+    # 发件人是这里的 from，不是上面 smtp_settings 里设置的
     mail(to: "to@gmail.com", from: "test@example.com", subject: "test") do |format|
       format.text
       format.html

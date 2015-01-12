@@ -1,4 +1,4 @@
-### 邮件拦截器及配置发送
+### 拦截器 register_interceptor
 
 为了"开发和测试尽量的接近生产环境"和"知道发送出去的邮件真正的样子"等目的，我们希望在非生产环境下，能够查看邮件发送情况。
 
@@ -70,9 +70,3 @@ end
 ```
 
 上面大概思路已经给出，实际项目如何使用可以自行决定。
-
-参考
-
-[How to implement an email Interceptor for development](http://blog.crowdint.com/2012/02/23/how-to-implement-an-email-interceptor-for-development.html)<br>
-[206: ActionMailer in Rails 3](http://cn.asciicasts.com/episodes/206-actionmailer-in-rails3)<br>
-[Tips for Implementing Emails in Rails](http://www.jacopretorius.net/2013/11/tips-for-implementing-emails-in-rails.html)

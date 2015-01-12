@@ -1,13 +1,4 @@
 ## Model 之外
 
-- Attribute Methods
+TODO
 
-- Dirty
-
-- Secure Password
-
-- Forbidden Attributes Protection
-
-- Serialization
-
-- Callbacks

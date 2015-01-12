@@ -24,8 +24,6 @@ AbstractController::Base
 
 请求到邮件处理 process.
 
-定义了 attachments、default、headers、mail、receive 等常用方法。
-
 创建邮件实例
 (因为 Base include 了多个模块，所以这个实例可以使用这些模块所定义的方法)。
 
@@ -178,7 +176,7 @@ Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
 细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
 
-这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 Mailer 对象。
+这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 MessageDelivery 对象。
 
 ### 其它方法
 
@@ -207,5 +205,3 @@ mailer_name
 ```
 
 `mailer_name` 返回文件名，默认为 anonymous.
-
-[如何使用 Mail](https://github.com/mikel/mail#usage)

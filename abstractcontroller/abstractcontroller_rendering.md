@@ -52,7 +52,7 @@ render template: "products/show"
 render file: "/u/apps/warehouse_app/current/app/views/products/show"
 ```
 
-沉浸文件，默认是没有 layout 的，如果需要，你可以手动指定 `layout: true`
+渲染文件，默认是没有 layout 的，如果需要，你可以手动指定 `layout: true`
 
 5) 不用模板，但效果类似，用 inline
 
