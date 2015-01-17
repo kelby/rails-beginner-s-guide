@@ -11,5 +11,5 @@ from_now & since
 使用举例：
 
 ```ruby
-1.month.ago # equivalent to Time.now.advance(months: -1)
+1.month.ago # 等价于 Time.now.advance(months: -1)
 ```

@@ -58,7 +58,8 @@ a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面
 
 ```ruby
 User.joins(:posts)
-=> SELECT "users".* FROM "users" INNER JOIN "posts" ON "posts"."user_id" = "users"."id"
+=> SELECT "users".* FROM "users" INNER JOIN "posts"
+   ON "posts"."user_id" = "users"."id"
 
 # 第一次调用，需要查询，花销一般
 # 目的：查询主表，关联表仅做为查询条件之一

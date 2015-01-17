@@ -18,11 +18,9 @@
 
 - Deprecation
 
-- Gzip
+- Gzip & ~~JSON~~
 
 - Inflector
-
-- ~~JSON~~
 
 - Key Generator
 

@@ -26,25 +26,25 @@ test
 
 ### Isolation
 
-类方法
+类方法：
 
 ```
 forking_env?
 ```
 
-实例方法
+实例方法：
 
 ```
 run
 ```
 
-**Forking**
+Forking：
 
 ```
 run_in_isolation
 ```
 
-**Subprocess**
+Subprocess：
 
 ```
 run_in_isolation

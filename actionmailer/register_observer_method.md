@@ -1,6 +1,6 @@
 ### 订阅者 register_observer
 
-发送之前、邮件发送之后想做点什么？-- 使用观察者。
+邮件发送之后想做点什么？-- 使用观察者。
 
 类似 register_interceptor，注册订阅者：
 

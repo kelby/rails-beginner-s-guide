@@ -6,7 +6,7 @@
 
 被 Railtie 所调用，又由于继承关系，Engine、Application、AppName 都可用。
 
-### 类方法
+类方法：
 
 ```
 initializer
@@ -16,7 +16,7 @@ initializers
 initializers_chain
 ```
 
-### 实例方法
+实例方法：
 
 ```
 initializers

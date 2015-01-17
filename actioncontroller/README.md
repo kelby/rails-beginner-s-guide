@@ -22,7 +22,7 @@ ActionController::Metal 本身是一个功能极简的 Controller, 但它符合 
 
 如你的 Rails 项目对性能要求比较高，或者说对实时性要求比较高，又或者你的项目做为 API 对外提供服务，那么你可以尝试直接继承使用 Metal.
 
-**Rails Metal is a subset of Rack middleware** 可以参考【Rack 简介】章节了解更多关于 Rack 的内容。
+**Rails Metal is a subset of Rack middleware** 可以参考【Rack - Ruby Web server 接口】章节了解更多关于 Rack 的内容。
 
 ### 论起实际意义，Metal 之外才是真正重要的
 

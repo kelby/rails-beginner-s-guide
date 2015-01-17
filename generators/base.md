@@ -1,6 +1,6 @@
 ## Base √
 
-include Rails::Generators::Actions
+继承于 Thor::Group 并 include Rails::Generators::Actions
 
 ### 类方法
 

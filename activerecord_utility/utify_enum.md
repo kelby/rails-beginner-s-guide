@@ -43,7 +43,8 @@ post.active!
 
 begin transaction
   UPDATE "posts" SET "status" = ?, "updated_at" = ? \n
-  WHERE "posts"."id" = 2  [["status", 0], ["updated_at", "2014-04-20 09:06:53.722202"]]
+  WHERE "posts"."id" = 2  [["status", 0],
+                           ["updated_at", "2014-04-20 09:06:53.722202"]]
 commit transaction
 => true
 

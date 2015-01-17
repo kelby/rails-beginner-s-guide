@@ -1,0 +1,13 @@
+### Finisher 断后
+
+添加 generator templates  
+Ensure autoload once paths as subset  
+添加 builtin route  
+构建 middleware stack  
+**定义 main_app helper**  
+添加 to prepare blocks  
+运行 prepare callbacks  
+Eager load!  
+~~Finisher hook~~  
+设置 routes reloader hook  
+设置 clear dependencies hook

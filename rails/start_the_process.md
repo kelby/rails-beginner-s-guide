@@ -1,4 +1,4 @@
-## Rails 应用启动过程
+### Rails 应用启动过程
 
 1) 入口 config.ru
 
@@ -68,8 +68,6 @@ end
 (Rails.application.send :default_middleware_stack 查看 middleware, 顺序是默认)
 
 8.4) Finisher
-
-上面是我自己归纳的。
 
 ---
 

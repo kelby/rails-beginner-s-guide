@@ -1,7 +1,11 @@
 ### Integer
 
 ```
-month, months, multiple_of?
-ordinal, ordinalize
-year, years
+month & months
+year & years
+
+multiple_of?
+
+ordinal
+ordinalize
 ```

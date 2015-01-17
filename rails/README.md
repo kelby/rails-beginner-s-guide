@@ -1,22 +1,22 @@
-# railties/ 目录
+# railties 目录
 
 ### 结构
 
-#### 1) Application
+#### 1) Railtie
+
+对 Rails 本身的改造。
+
+#### 2) Engine
+
+对 Rails 外围的扩展。
+
+#### 3) Application
 
 初始化为：Bootstrap 在前，Finisher 在后。
 
 与我们应用接头。
 
 实例方法，给 Rails.application 使用。
-
-#### 2) Railtie
-
-对 Rails 本身的改造。
-
-#### 3) Engine
-
-对 Rails 外围的扩展。
 
 ### 内容
 

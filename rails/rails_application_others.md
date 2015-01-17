@@ -2,7 +2,7 @@
 
 它们都放在 application/ 目录下，为了完成某项任务而存在，但两者之间没有联系。
 
-## Default Middleware Stack
+### Default Middleware Stack
 
 `build_stack`
 
@@ -14,7 +14,7 @@
 Rails.application.send(:default_middleware_stack)
 ```
 
-## Routes Reloader
+### Routes Reloader
 
 充分运用了 File Update Checker，当"路由"相关文件有改动时，可以实现自动重新加载。
 

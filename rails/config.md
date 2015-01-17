@@ -6,7 +6,7 @@
 
 被 Railtie 所调用，又由于继承关系，Engine、Application、YourApp 都可用。
 
-### 对外提供的接口
+**实例方法：**
 
 `use`
 

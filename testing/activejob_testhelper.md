@@ -2,6 +2,8 @@
 
 ### Test Helper
 
+实例方法：
+
 ```
 assert_enqueued_with
 assert_performed_with
@@ -23,10 +25,10 @@ perform_enqueued_jobs
 queue_adapter
 ```
 
-以及
+以及：
 
 ```ruby
-delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=, \n
+delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=,
          to: :queue_adapter
 ```
 

@@ -19,6 +19,6 @@ merge!
 ```
 
 ```
-VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend, :order,
-                       :select, :readonly, :group, :having, :from, :lock ]
+VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend,
+                       :order, :select, :readonly, :group, :having, :from, :lock ]
 ```

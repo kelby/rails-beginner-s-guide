@@ -2,18 +2,20 @@
 
 ### Assertions
 
+实例方法：
+
 ```
 html_document
 ```
 
-**Response Assertions**
+Response Assertions：
 
 ```
 assert_redirected_to
 assert_response
 ```
 
-**Routing Assertions**
+Routing Assertions：
 
 ```
 assert_generates
@@ -78,24 +80,24 @@ error? & server_error?
 
 ### Integration Test
 
-**类方法**
-
-```
-app
-```
-
-**实例方法**
+类方法：
 
 ```
 app
 app=
+```
+
+实例方法：
+
+```
+app
 
 document_root_element
 
 url_options
 ```
 
-**Request Helpers**
+Request Helpers：
 
 ```
 delete
@@ -127,7 +129,7 @@ request_via_redirect
 xhr & xml_http_request
 ```
 
-**Session**
+Session：
 
 ```
 cookies
@@ -142,7 +144,7 @@ reset!
 url_options
 ```
 
-**Runner**
+Runner：
 
 ```
 app

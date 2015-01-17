@@ -2,7 +2,7 @@
 
 ### Behavior
 
-**实例方法**
+实例方法：
 
 ```
 build_request
@@ -22,7 +22,7 @@ setup_controller_request_and_response
 xhr & xml_http_request
 ```
 
-**类方法**
+类方法：
 
 ```
 controller_class

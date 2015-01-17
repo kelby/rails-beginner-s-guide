@@ -4,119 +4,247 @@ Thor 和 rake 类似，提供了功能强大的命令行接口。
 
 因为 Rails 的 generator 实际上是封装了 Thor ，所以还有 [Thor Actions](http://rdoc.info/github/erikhuda/thor/master/Thor/Actions.html)
 
-### Actions
+### Actions 实例方法：
 
-`action(instance)`  
-Wraps an action object and call it accordingly to the thor class behavior.
+`action`<br>
+封装一个实例对象，并调用它。
 
-`append_to_file(path, *args, &block) (also: #append_file)`  
-Append text to a file.
+`append_to_file`<br>
+向文件里追加文本内容。
 
-`apply(path, config = {})`  
-Loads an external file and execute it in the instance binding.
+```
+append_to_file 'config/environments/test.rb', 'config.gem "rspec"'
+```
 
-`chmod(path, mode, config = {})`  
-Changes the mode of the given file or directory.
+`apply`<br>
+加载并执行文件。
 
-`comment_lines(path, flag, *args)`  
-Comment all lines matching a given regex.
+```
+apply "recipes/jquery.rb"
+```
 
-`copy_file(source, *args, &block)`  
+`chmod`<br>
+更改文件或目录的权限。
+
+```
+chmod "script/server", 0755
+```
+
+`comment_lines`<br>
+注释指定文件里面符合条件的行。
+
+```
+comment_lines 'config/initializers/session_store.rb', /cookie_store/
+```
+
+`copy_file`<br>
 复制文件。(默认源文件放在 source_root 下)
 
-`create_file(destination, *args, &block) (also: #add_file)`  
-Create a new file relative to the destination root with the given data, which is the return value of a block or a data string.<br>
+```
+copy_file "README", "doc/README"
+```
+
+`create_file & add_file`<br>
 创建新文件。
 
-`create_link(destination, *args, &block) (also: #add_link)`  
-Create a new file relative to the destination root from the given source.
+```
+create_file "config/apache.conf", "your apache config"
+```
 
-`destination_root`  
-Returns the root for this thor class (also aliased as destination root).
+`create_link(destination, *args, &block) (also: #add_link)`<br>
+创建一个链接文件。
 
-`destination_root=(root)`  
-Sets the root for this thor class.
+```
+create_link "config/apache.conf", "/etc/apache.conf"
+```
 
-`directory(source, *args, &block)`  
-Copies recursively the files from source directory to root directory.
+`destination_root`<br>
+返回目标目录。
 
-`empty_directory(destination, config = {})`  
+`destination_root=(root)`<br>
+设置目标目录。
+
+`directory`<br>
+按规则复制整个目录。(并不是直接复制，注意转换规则)
+
+```
+# 源文件、目录如下：
+doc/
+  components/.empty_directory
+  README
+  rdoc.rb.tt
+  %app_name%.rb
+
+# 复制整个目录：
+directory "doc"
+
+# 得到目标文件、目录：
+doc/
+  components/
+  README
+  rdoc.rb
+  blog.rb
+```
+
+`empty_directory`<br>
 创建一个空目录。
 
-`find_in_source_paths(file)`  
-Receives a file or directory and search for it in the source paths.
+```
+empty_directory "doc"
+```
 
-`get(source, *args, &block)`  
-Gets the content at the given address and places it at the given relative destination.
+`find_in_source_paths`<br>
+在源目录里查找文件。
 
-`gsub_file(path, flag, *args, &block)`  
-Run a regular expression replacement on a file.
+`get`<br>
+获取内容并放到文件里。
 
-`in_root`  
-Goes to the root and execute the given block.
+```
+get "http://gist.github.com/103208", "doc/README"
+```
 
-`initialize(args = [], options = {}, config = {})`  
-Extends initializer to add more configuration options.
+`gsub_file`<br>
+按正则替换文件内容。
 
-`inject_into_class(path, klass, *args, &block)`  
-Injects text right after the class definition.
+```
+gsub_file 'README', /rake/, :green do |match|
+  match << " no more. Use thor!"
+end
+```
 
-`insert_into_file(destination, *args, &block) (also: #inject_into_file)`  
-Injects the given content into a file.  
+`in_root`<br>
+到根目录执行 block 里的代码。
+
+`inject_into_class`<br>
+将内容插入到指定的文件，指定的 class 后面。(比 insert_into_file 更精确)
+
+```
+inject_into_class "app/controllers/application_controller.rb", ApplicationController do
+  "  filter_parameter :password\n"
+end
+```
+
+`insert_into_file & inject_into_file`<br>
 将内容插入到指定的文件内。(如：添加 js 文件后，一般会在 application.js 里插入 require 等代码)
 
-`inside(dir = '', config = {}, &block)`  
-Do something in the root or on a provided subfolder.
+```
+insert_into_file "config/environment.rb",
+                 "config.gem :thor",
+                 :after => "Rails::Initializer.run do |config|\n"
+```
 
-`link_file(source, *args, &block)`  
-Links the file from the relative source to the relative destination.
+`inside`<br>
+在根目录或指定的目录里执行 block 里的代码。
 
-`prepend_to_file(path, *args, &block) (also: #prepend_file)`  
-Prepend text to a file.
+`link_file`<br>
+链接文件。
 
-`relative_to_original_destination_root(path, remove_dot = true)`  
-Returns the given path relative to the absolute root (ie, root where the script started).
+```
+link_file "README", "doc/README"
+```
 
-`remove_file(path, config = {}) (also: #remove_dir)`  
-Removes a file at the given location.
+`prepend_to_file & prepend_file`<br>
+在文件开头处追加文本内容。
 
-`run(command, config = {})`  
-Executes a command returning the contents of the command.
+```
+prepend_to_file 'config/environments/test.rb', 'config.gem "rspec"'
+```
 
-`run_ruby_script(command, config = {})`  
-Executes a ruby script (taking into account WIN32 platform quirks).
+`relative_to_original_destination_root`<br>
+以目标为根目录，获取相对路径。
 
-`source_paths`  
-Holds source paths in instance so they can be manipulated.
+`remove_file & remove_dir`<br>
+移除文件。
 
-`template(source, *args, &block)`  
-Gets an ERB template at the relative source, executes it and makes a copy at the relative destination.  
+```
+remove_file 'README'
+```
+
+`run`<br>
+执行某条命令，并返回执行结果。
+
+```
+inside('vendor') do
+  run('ln -s ~/edge rails')
+end
+```
+
+`run_ruby_script`<br>
+运行 Ruby 脚本。(照顾 WIN32 的用户)
+
+`source_paths`<br>
+得到源路径。(方便后续操作)
+
+`template`<br>
 复制示例模板文件，生成新的 ERB 文件。
 
-`thor(command, *args)`  
-Run a thor command.
+`thor`<br>
+运行 thor 命令。
 
-`uncomment_lines(path, flag, *args)`  
-Uncomment all lines matching a given regex.
+```
+thor :list, :all => true, :substring => 'rails'
+```
 
-### Actions 类方法
+`uncomment_lines`<br>
+去掉指定文件里符合条件的行的注释。
 
-`add_runtime_options!`  
-Add runtime options that help actions execution.
+```
+uncomment_lines 'config/initializers/session_store.rb', /active_record/
+```
 
-`source_paths`  
-Hold source paths for one Thor instance.
+### Actions 类方法：
 
-`source_paths_for_search`  
-Returns the source paths in the following order:.
+`add_runtime_options!`<br>
+添加了 force、pretend、quiet、skip 这几个 class_option.
 
-`source_root(path = nil)`  
-Stores and return the source root for this class.
+`source_paths`<br>
+存储并返回定义这个类所在的位置
+
+`source_paths_for_search`<br>
+获取 source_paths、source_root(有的话)、source_paths(父亲的)
+
+`source_root`<br>
+存储并返回定义这个类所在的位置。(Base 已经覆盖此方法)
 
 ### 其它
 
-`argument`  
-Adds an argument to the class and creates an attr_accessor for it.  
+`argument`<br>
 如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
 
-链接 [What Is Thor](http://whatisthor.com/)
+`ClassName#public_instance_method`<br>
+一般的，类名会被当做 namespace，而实例方法会被当做 task，也就是：
+
+```
+class_name:public_instace_method
+```
+
+(实例方法的参数仍被当做参数对待)
+
+`desc`<br>
+对 task 的描述。
+
+`method_option 和 method_options`<br>
+使用 task 时传递的可选参数。
+
+`invoke`<br>
+调用方法(为什么不直接调用？)
+
+`Thor::Group`<br>
+继承于它的话，下面的实例方法会被当成"组"，会按照定义顺序执行。
+
+`class_option 和 class_options`<br>
+使用 task 时传递的可选参数。(配合 Thor::Group 很好)
+
+`namespace`<br>
+定义 namespace (不使用默认以 ClassName 生成的)
+
+`ClassName.start`<br>
+可以把 task 封装成可执行命令，不必用 thor 命令。这是启动命令，通常放在最后。
+
+`option 和 options`<br>
+可选参数(如：thor my_cli:hello --from "Carl Lerche" Kelby 这里的 --from)
+
+链接
+
+[What Is Thor](http://whatisthor.com/)<br>
+[Thor Wiki](https://github.com/erikhuda/thor/wiki)

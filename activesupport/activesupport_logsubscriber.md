@@ -2,17 +2,33 @@
 
 继承于 Subscriber.
 
-提供方法：
+```
+XyzLogSubscriber
+      |
+      V
+LogSubscriber
+      |
+      V
+  Subscriber
+```
+
+类方法：
 
 ```
-color
+flush_all!
+log_subscribers
+logger
+```
 
-finish, flush_all!
-log_subscribers, logger
+实例方法：
+
+```
+finish
+logger
 start
 ```
 
-和
+其它实例方法：
 
 ```
 info
@@ -21,6 +37,13 @@ warn
 error
 fatal
 unknown
+```
+
+
+和
+
+```
+color
 ```
 
 使用举例：

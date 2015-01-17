@@ -18,7 +18,7 @@ assert_field_type
 
 ### Behaviour
 
-**类方法**
+类方法：
 
 ```
 arguments
@@ -28,7 +28,7 @@ destination
 tests
 ```
 
-**实例方法**
+实例方法：
 
 ```
 create_generated_attribute
@@ -38,7 +38,7 @@ generator
 run_generator
 ```
 
-**其它实例方法**
+其它实例方法：
 
 ```
 capture

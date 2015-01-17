@@ -2,7 +2,7 @@
 
 ### Behavior
 
-**实例方法**
+实例方法：
 
 ```
 config
@@ -13,7 +13,7 @@ rendered_views
 setup_with_controller
 ```
 
-**类方法**
+类方法：
 
 ```
 determine_default_helper_class
@@ -24,13 +24,13 @@ helper_method
 tests
 ```
 
-**Locals**
+Locals：
 
 ```
 render
 ```
 
-**Rendered Views Collection**
+Rendered Views Collection：
 
 ```
 add

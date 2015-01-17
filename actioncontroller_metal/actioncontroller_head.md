@@ -25,10 +25,10 @@ render :nothing => true, :status => "201 Created"
 
 |Response Class | HTTP Status Code |	Symbol |
 |--|--|--|
-|Informational|	100|	:continue|
+| 消息 |	100|	:continue|
 ||101 |	:switching_protocols |
 ||102 |	:processing |
-|Success |	200 |	:ok
+| 成功 |	200 |	:ok
 ||201 |	:created |
 | |202 |	:accepted |
 | |203 |	:non_authoritative_information |
@@ -38,7 +38,7 @@ render :nothing => true, :status => "201 Created"
 | |207 |	:multi_status |
 | |208 |	:already_reported |
 | |226 |	:im_used |
-|Redirection |	300 |	:multiple_choices
+| 重定向 |	300 |	:multiple_choices
 | |301 |	:moved_permanently |
 | |302 |	:found |
 | |303 |	:see_other |
@@ -47,7 +47,7 @@ render :nothing => true, :status => "201 Created"
 | |306 |	:reserved |
 | |307 |	:temporary_redirect |
 | |308 |	:permanent_redirect |
-|Client Error |	400	| :bad_request
+| 客户端错误 |	400	| :bad_request
 ||401 |	:unauthorized |
 ||402 |	:payment_required |
 ||403 |	:forbidden |
@@ -72,7 +72,7 @@ render :nothing => true, :status => "201 Created"
 ||428 |	:precondition_required |
 ||429 |	:too_many_requests |
 ||431 |	:request_header_fields_too_large |
-|Server  Error |	500	 | :internal_server_error
+| 服务器错误 |	500	 | :internal_server_error
 ||501 |	:not_implemented |
 ||502 |	:bad_gateway |
 ||503 |	:service_unavailable |

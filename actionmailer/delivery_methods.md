@@ -26,7 +26,7 @@ delivery_method 默认已经有：
 config.action_mailer.delivery_method = :letter_opener
 ```
 
-- 如使用 gem "aws-ses" 配置：
+- 如使用 gem 'aws-ses' 配置：
 
 ```ruby
 ActionMailer::Base.add_delivery_method :ses, AWS::SES::Base,

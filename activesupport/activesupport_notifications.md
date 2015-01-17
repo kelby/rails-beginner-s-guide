@@ -38,8 +38,16 @@ Rails 默认有很多 Instrumentation，你可以不写 instrument 直接 subscr
 
 > Note: 注意使用场景。这里并不是严格的发布者、订阅者模型，你从它们的方法名及默认参数就应该知道。
 
-> Note: 直接查看 Rails 项目里有哪些 instrumenter 可运行命令
-`ActiveSupport::Notifications.instrumenter.instance_variable_get("@notifier").instance_variable_get("@subscribers").map { |s| s.instance_variable_get "@pattern" }`
+可运行以下命令，查看 Rails 项目里有哪些 instrumenter：
+
+```ruby
+fanout = ActiveSupport::Notifications.instrumenter.instance_variable_get("@notifier")
+
+fanout.instance_variable_get("@subscribers").map do |s|
+  s.instance_variable_get "@pattern"
+end
+```
+
 此命令不包含元编程创建的 instrumenter，如 ActionController 就有很多 instrumenter 没有包含在内。
 
 所有方法:

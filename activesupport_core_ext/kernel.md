@@ -1,11 +1,23 @@
 ### Kernel
 
 ```
-breakpoint
-capture, class_eval, concern
-debugger
+breakpoint & debugger
+
+capture & silence
+
+class_eval
+
+concern
+
 enable_warnings
+
 quietly
-silence, silence_stream, silence_warnings, suppress
+
+
+silence_stream
+silence_warnings
+
+suppress
+
 with_warnings
 ```

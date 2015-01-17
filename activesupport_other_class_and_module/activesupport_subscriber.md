@@ -1,7 +1,5 @@
 ## Subscriber
 
-~~区别于 Notifications: 不用发布(instrument)，直接订阅(subscribe)，完全不影响原有代码。~~
-
 ```
      Subscriber
          |

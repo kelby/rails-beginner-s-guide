@@ -1,10 +1,4 @@
-## Conditional Get - HTTP Cache
-
-**页面相关的客户端缓存**
-
-根据 ETag 和 Last-Modified 来决定是否渲染页面，可充分利用客户端(例如浏览器)的缓存，在 Rails 里属于 Controller#action 层面的缓存。
-
-它并不属于应用层面的缓存，因为它用的是状态头和浏览器的特性，这和 Rails.cache 等缓存机制都不一样。
+## Conditional Get 其它
 
 ### 相关概念
 
@@ -49,36 +43,6 @@ X-Content-Type-Options: nosniff
 Content-Type: text/html; charset=utf-8 
 Content-Length: 665 
 ```
-
-### Rails 里相关实现和使用
-
-```ruby
-etag
-
-fresh_when
-
-# 还有
-expires_in
-expires_now
-
-stale?
-```
-
-`etag` 是类方法，对当前 Controller 下面的所有 action 都起作用(区别于 fresh_when)。就相当于一个过滤器，把里面的元素加入到 record_or_options 里。同样影响 ETag 和 last_modify 的值。
-
-`fresh_when` 是实例方法，只对当前 action 起作用。比较关键，影响 ETag 和 last_modify 的值。
-
-`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 Etag With Template Digest 进行处理)
-
-```ruby
-# 默认传递 @post 给 posts/show 模板进行求值，我们希望改变这点，传递 @post 给 widges/show 求值
-fresh_when @post, template: 'widgets/show'
-
-# 只对 @post 求值，不带入模板内容
-fresh_when @post, template: false
-```
-
-支持设置 HTTP header 里的 etag 和 last modified 就意味着当所请求的资源没有更改过时，Rails 可以返回一个的响应。这可以节省你的带宽资源和时间。
 
 ### 和所有缓存一样，怎么生成 cache_key ？
 

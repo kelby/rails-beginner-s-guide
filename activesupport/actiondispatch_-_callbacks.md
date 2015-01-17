@@ -1,7 +1,7 @@
 ## Callbacks 回调的源头
 
 ```ruby
-# 默认过滤类型
+# 默认回调类型有：
 CALLBACK_FILTER_TYPES = [:before, :after, :around]
 
 # 实例方法(必需调用它，回调才有用)

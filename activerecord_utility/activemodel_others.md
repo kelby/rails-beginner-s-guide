@@ -88,7 +88,8 @@ class User < ActiveRecord::Base
 end
 
 >> u = User.create(name: 'Kuldeep')
-=> #<User id: 1, name: "Kuldeep", created_at: "2013-11-25 12:17:49", updated_at: "2013-11-25 12:17:49">
+=> #<User id: 1, name: "Kuldeep",
+          created_at: "2013-11-25 12:17:49", updated_at: "2013-11-25 12:17:49">
 
 >> u.touch
 You have touched an object
@@ -116,7 +117,8 @@ class Company < ActiveRecord::Base
 end
 
 >> @employee = Employee.last
-=> #<Employee id: 1, company_id: 1, created_at: "2013-11-25 17:04:22", updated_at: "2013-11-25 17:05:05">
+=> #<Employee id: 1, company_id: 1,
+              created_at: "2013-11-25 17:04:22", updated_at: "2013-11-25 17:05:05">
 
 # triggers @employee.company.touch
 >> @employee.touch

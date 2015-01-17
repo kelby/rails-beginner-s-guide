@@ -28,7 +28,7 @@ Post.update_counters 3, comments_count: +1
 UPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 \n
 WHERE "posts"."id" = 3
 
-# 新增计数器: 原来没有使用计数器的，现在我们希望添加一个计数器。因为数据已经存在了，我们需要设置正确的数目。
+# 原来没有使用计数器，或因为某种原因计数错误。现在我们要使用或修正计数器。
 # Post.update_counters 3, comments_count: post.comments.count
 ```
 

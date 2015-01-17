@@ -48,7 +48,11 @@ at_noon
 noon
 
 at_with_coercion
-change, , current
+
+change
+
+current
+
 days_in_month
 
 eql?

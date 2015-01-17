@@ -102,3 +102,5 @@ config.console do
   config.console = Pry
 end
 ```
+
+(如果使用 gem 'pry-rails', 默认已经用 pry 代替 irb)

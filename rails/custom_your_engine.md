@@ -128,7 +128,8 @@ resources :articles 自动对应着 `MyEngine::ArticlesController`. 并且不必
 polymorphic_url(MyEngine::Article.new) # => "articles_path"
 
 form_for(MyEngine::Article.new) do
-  text_field :title # => <input type="text" name="article[title]" id="article_title" />
+  text_field :title
+  # => <input type="text" name="article[title]" id="article_title" />
 end
 ```
 

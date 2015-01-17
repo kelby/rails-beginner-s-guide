@@ -143,7 +143,7 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 ### 设置头部消息 headers
 
-使用 `headers` 可以设置邮件的头部消息，例如
+使用 `headers` 可以设置邮件的头部消息，例如：
 
 ```ruby
 headers['X-Special-Domain-Specific-Header'] = "SecretValue"
@@ -152,7 +152,7 @@ headers 'X-Special-Domain-Specific-Header' => "SecretValue",
         'In-Reply-To' => incoming.message_id
 ```
 
-直接调用了 Mail::Message#headers 方法，默认已经有选项
+直接调用了 Mail::Message#headers 方法，默认已经有选项：
 
 ```
 :subject

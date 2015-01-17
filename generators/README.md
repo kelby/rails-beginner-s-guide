@@ -23,4 +23,4 @@ hide_namespaces
 
 该目录下，还有 Rails 自带的 generator 的源代码，它们可供参考。
 
-**源代码所在路径**：railties/lib/rails/generators
+> Note: 源代码放在 railties 子目录里，所在路径：railties/lib/rails/generators

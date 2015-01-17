@@ -1,8 +1,6 @@
 ## Etag With Template Digest
 
-**页面相关的客户端缓存。**
-
-用 Digestor 给当前静态模板(对应 controller_name/action_name)加密，使之构成 Etag 的一部分。
+**用 Digestor 给当前静态模板(对应 controller_name/action_name)加密，使之构成 Etag 的一部分。**
 
 默认是 true，也就是说 Action View 静态内容已经加密(区别于片段缓存里对静态内容的加密)。
 <br>

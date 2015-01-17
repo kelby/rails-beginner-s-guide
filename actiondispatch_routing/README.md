@@ -12,7 +12,4 @@ Action Dispatch 本身很复杂，但我们使用 Rails 进行开发的过程中
 
 除了 Mapper 外，还用到的就只剩：Redirection、Polymorphic Routes、Url For.
 
----
-
-路由相关对外<br>
-指的是除 RouteSet 和 Routes Proxy  外，routing 目录里的其它模块。
+路由相关对外：指的是除 RouteSet 和 Routes Proxy  外，routing 目录里的其它模块。

@@ -31,26 +31,6 @@ session_store
 
 Application 负责执行所有 Railtie 和 Engine 的初始化任务。可分为前期准备任务 Bootstrap，和后期收尾任务 Finisher.
 
-#### Bootstrap 打前锋
 
-~~加载 environment hook~~  
-加载 active support  
-设置 eager load  
-初始化 logger  
-初始化 cache  
-初始化 dependency mechanism  
-~~Bootstrap hook~~
 
-#### Finisher 断后
 
-添加 generator templates  
-Ensure autoload once paths as subset  
-添加 builtin route  
-构建 middleware stack  
-**定义 main_app helper**  
-添加 to prepare blocks  
-运行 prepare callbacks  
-Eager load!  
-~~Finisher hook~~  
-设置 routes reloader hook  
-设置 clear dependencies hook
