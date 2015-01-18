@@ -67,3 +67,44 @@ end
 ### 加入其它模块
 
 参考 ActionController::Base 引入其它模块，以达到目的。
+
+```ruby
+class ApiController < ActionController::Metal # 使用 Metal, 而不是 Base
+  include ActionController::Helpers
+  include ActionController::Redirecting
+  include ActionController::Rendering
+  include ActionController::Renderers::All
+  include ActionController::ConditionalGet
+
+  # 需要响应 .json .xml 等不同格式的话，使用它。
+  include ActionController::MimeResponds
+  include ActionController::RequestForgeryProtection
+  # 如果你需要 SSL
+  include ActionController::ForceSSL
+  include AbstractController::Callbacks
+  # 想要知道 Controller 处理过程中，性能这方面的数据。
+  include ActionController::Instrumentation
+  # 需要转换 params 类型的话，可以使用它。
+  include ActionController::ParamsWrapper
+  include Devise::Controllers::Helpers
+
+  # 在项目里使用路由相关的 helper 方法。
+  include Rails.application.routes.url_helpers
+
+  # 视图文件放在哪？
+  append_view_path "#{Rails.root}/app/views"
+
+  # 需要转换 params 类型的话，可以使用它。
+  # { "person": { "name": "Kelby", "email": "leekelby@gmail.com" }}
+  wrap_parameters format: [:json]
+
+  # 根据客户端决定是否需要。(另，如果客户端不是浏览器的话，它会自动跳过)
+  protect_from_forgery
+end
+```
+
+上述代码，仅供参考。关于各模块及其作用，详情可以参考对应章节。
+
+参考
+
+[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)

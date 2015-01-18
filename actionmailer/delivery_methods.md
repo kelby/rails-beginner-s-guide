@@ -119,8 +119,3 @@ module ClassMethods
   delegate :deliveries, :deliveries=, to: Mail::TestMailer
 end
 ```
-
-参考
-
-[Deliver Email With Amazon SES In A Rails app](http://robots.thoughtbot.com/deliver-email-with-amazon-ses-in-a-rails-app)<br>
-[Custom mail delivery method in Rails 3.x](http://mdushyanth.wordpress.com/2011/08/06/custom-mail-delivery-method-in-rails-3/)

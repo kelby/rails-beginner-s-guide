@@ -36,10 +36,6 @@ end
 
 > Note: 不规范的写法里，也可以直接传递对象。
 
-### Railtie
-
-设置 logger 和配置(如：默认 queue_adapter)
-
 ### Queue Adapters
 
 原来，不同的延迟任务 gem 有各自不同的 self.perform、perform、run、work，现在：

@@ -4,6 +4,8 @@ metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品�
 
 一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
 
+ActionController::Base 在它基础之上添加了多个类和模块，这使得功能得到增多，同时在性能上也会有相应损耗。如果你觉得这些功能不是必需的，或者性能的损耗是不可忍受的，你可以直接使用 Metal.
+
 MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
 举个例子:
@@ -41,10 +43,3 @@ get 'hello', to: HelloController.action(:index)
 顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
 
 > Note: @app 和 env 一直在变，但又一直没变。
-
-参考
-
-[Introducing Rails Metal](http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/)<br>
-[Rails on Rack](http://edgeguides.rubyonrails.org/rails_on_rack.html)<br>
-[Developing api with rails metal](http://www.slideshare.net/artellectual/developing-api-with-rails-metal)<br>
-[Rails Metal](http://railscasts.com/episodes/150-rails-metal)<br>

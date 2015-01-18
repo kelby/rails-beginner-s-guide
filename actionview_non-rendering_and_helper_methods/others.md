@@ -15,18 +15,6 @@
 
 供 Digestor 使用，digest 的时候可以以数组的形式传 dependencies 作为其可选参数。
 
-### ~~Railtie initializer~~
-
-Action View embed authenticity token in remote forms.
-
-Action View logger.
-
-Action View set configs.
-
-Action View caching.
-
-Action View setup action pack.
-
 ### ~~几个比较有意思的 helper 方法~~
 
 本章节将被删除，拆分到对应的章节里。
