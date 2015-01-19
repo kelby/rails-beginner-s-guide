@@ -22,7 +22,7 @@ after
 
 `after` 后置过滤器，在每一个 it 之后执行。(名字无所谓，只是起标识作用而矣)
 
-> before、after 方法和 RSpec 对应，可以使用 setup、teardown 代替。
+> before、after 方法和 RSpec 里的 setup、teardown 方法有对应关系。
 
 除上述方法外，还有：
 

@@ -2,7 +2,9 @@
 
 从上层到底层。
 
+```
 AppName < Application < Engine < Railtie
+```
 
 最直观的就是文件、目录结构，以及配置文件。其次，是默认组件。
 
@@ -31,10 +33,12 @@ Rails.configuration.eager_load_namespaces
  YourAppName::Application]
 ```
 
+这部分，更多信息可以查看"Railtie"下面的【Configuration】章节。
+
 ### 查看应用有哪些 Initializer
 
 ```ruby
-Rails.application.initializers
+Rails.application.initializers.map &:name
 
 => [:load_environment_hook,
  :load_active_support,
@@ -144,3 +148,5 @@ Rails.application.initializers
  :set_clear_dependencies_hook]
  # 以上来自 Finisher
 ```
+
+这部分，更多信息可以查看"其它"下面的【Initializable】章节。

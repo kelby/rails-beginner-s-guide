@@ -60,7 +60,7 @@ post.init_with('attributes' => { 'title' => 'hello world' })
 post.title # => 'hello world'
 ```
 
-**类方法：**
+**类方法一：**
 
 ```
 ===
@@ -79,4 +79,18 @@ initialize_find_by_cache
 initialize_generated_modules
 
 inspect
+```
+
+**类方法二：**
+
+```
+configurations
+configurations=
+
+connection_handler
+connection_handler=
+
+disable_implicit_join_references=
+
+new
 ```

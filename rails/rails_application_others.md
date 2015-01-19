@@ -35,3 +35,5 @@ ensure
   revert
 end
 ```
+
+这部分，更多信息可以查看"Active Support autoload 的类和模块"下面的【File Update Checker】章节。

@@ -71,10 +71,10 @@ a_mailer.attachments
 
 ```ruby
 # 文件名的方式
-mail.attachments['filename.jpg'] # => Mail::Part object or nil
+mail.attachments['filename.jpg'] # => Mail::Part 实例对象或 nil
 
 # 索引的方式
-mail.attachments[0]              # => Mail::Part (first attachment)
+mail.attachments[0]              # => Mail::Part (第一个实例对象)
 ```
 
 只需要指定文件名、文件类型，然后 Rails 会自动帮你计算出 Content-Type, Content-Disposition, Content-Transfer-Encoding 和 base64 编码等附件内容。
