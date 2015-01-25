@@ -1,5 +1,9 @@
 ## Actions
 
+**主要是生成指定类型的文件，或给已有文件添加内容。**
+
+include by Base.
+
 ### 实例方法
 
 ```
@@ -44,6 +48,8 @@ quote
 ### ~~Create Migration~~
 
 被 Migration 调用，但应该不能直接使用。
+
+include by Migration.
 
 **实例方法**
 

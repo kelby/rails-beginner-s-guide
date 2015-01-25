@@ -1,33 +1,11 @@
-## Benchmarkable - 标准库的运用
+## Benchmarkable
+
+**耗时统计**
 
 执行某程序，用了多少时间？
 
-```ruby
-module Benchmarkable
-  # 简单封装和使用标准库
-  def benchmark(message = "Benchmarking", options = {})
-    # 在日志里打印
-    if logger
-      options.assert_valid_keys(:level, :silence)
-      options[:level] ||= :info
-
-      result = nil
-      ms = Benchmark.ms { result = options[:silence] ? silence { yield } : yield }
-      logger.send(options[:level], '%s (%.1fms)' % [ message, ms ])
-      result
-    else
-      # 如果没有日志，就什么也不做
-      yield
-    end
-  end
-end
-
-# 简单封装和使用标准库
-class << Benchmark
-  def ms
-    1000 * realtime { yield }
-  end
-end
+```
+benchmark
 ```
 
 使用举例：
@@ -38,5 +16,6 @@ end
 <% end %>
 ```
 
-gem 'newrelic' 等大致定位，使用 benchmark 实现精确定位。
+可先用 gem 'newrelic' 等大致定位，然后使用 benchmark 实现精确定位。
 
+链接 [校准库 Benchmark](http://ruby-doc.org/stdlib-2.2.0/libdoc/benchmark/rdoc/Benchmark.html)

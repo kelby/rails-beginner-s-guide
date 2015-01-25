@@ -195,17 +195,6 @@ ActionDispatch::Routing::Mapper.ancestors
  ActionDispatch::Routing::Mapper::HttpHelpers,
  ActionDispatch::Routing::Mapper::Base,
 
- Object,
- ActiveSupport::Dependencies::Loadable,
- PP::ObjectMixin,
- JSON::Ext::Generator::GeneratorMethods::Object,
- Kernel,
- BasicObject]
+ # ...,
+ ... ...]
 ```
-
-参考
-
-[Routing Walkthrough Part 1](http://railscasts.com/episodes/231-routing-walkthrough)<br>
-[Under the hood: route recognition in Rails](http://weblog.jamisbuck.org/2006/10/4/under-the-hood-route-recognition-in-rails)<br>
-[Under the hood: route generation in Rails](http://weblog.jamisbuck.org/2006/10/16/under-the-hood-route-generation-in-rails)<br>
-[Under the hood: Rails' routing DSL](http://weblog.jamisbuck.org/2006/10/2/under-the-hood-rails-routing-dsl)<br>

@@ -1,10 +1,12 @@
-## String Inquirer
+## String Inquirer - Rails.env.production?
+
+原来的代码：
 
 ```ruby
 Rails.env == 'production'
 ```
 
-语法糖
+语法糖：
 
 ```ruby
 Rails.env.production?

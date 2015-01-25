@@ -1,6 +1,8 @@
-## 命令行 - rake & rails
+由 rake 和 rails 两部分组成。
 
-### tasks.rb 及 tasks 目录
+## rake
+
+#### tasks.rb 及 tasks 目录
 
 都有单独的 rake 文件，`rake -T` 包含但不限于这下面的命令：
 
@@ -17,22 +19,24 @@ engine(app、db)
 - Code Statistics
 - Code Statistics Calculator
 
-### Source Annotation Extractor
+#### Source Annotation Extractor
 
 rake notes  
 rake notes:optimize
 
-### api
+#### api
 
 rake rdoc (Rails 自身的 API)
 
-### test_unit
+#### test_unit
 
 rake test
 
 还可再细分为 models、helpers、controllers、mailers、integration 和 jobs 等。
 
-### commands
+## rails
+
+#### commands
 
 `rails` 可接以下命令：
 

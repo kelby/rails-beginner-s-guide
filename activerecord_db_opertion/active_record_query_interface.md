@@ -79,18 +79,18 @@ User.joins(:posts).where({ posts: { published: true } })
 
 ```ruby
 User.select([:id, :name])
-=> [#<User id: 1, name: "Oscar">, #<User id: 2,
-           name: "Oscar">, #<User id: 3, name: "Foo">
+=> [#<User id: 1, name: "Bar">, #<User id: 2, name: "Bar">,
+    #<User id: 3, name: "Foo">
 
 User.group(:name)
-=> [#<User id: 3, name: "Foo", ...>, #<User id: 2, name: "Oscar", ...>]
+=> [#<User id: 3, name: "Foo", ...>, #<User id: 2, name: "Bar", ...>]
 ```
 
-group 通常要配合其它查询语句或条件使用，单独使用会有去重效果(根据属性，只包含最后一条数据)。
+group 通常要配合其它查询语句或条件使用，单独使用只会有"去重"效果(record 属性相同的话，只保留最后一个 record 对象)。
 
 `having(opts, *rest)`
 
-和 group 对比：having是筛选条件，group是分组。
+和 group 对比：having 是筛选条件，group 是分组。
 
 ```ruby
 Rails 里 having 不能脱离 group 单独使用。

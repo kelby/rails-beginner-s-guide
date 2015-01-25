@@ -97,3 +97,8 @@ Rails.application.config.database_configuration
 ### Active Support
 
 TODO
+
+### I18n
+
+TODO
+

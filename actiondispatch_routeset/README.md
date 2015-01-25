@@ -33,17 +33,3 @@ end
 ```
 Routes Proxy # 从 RouteSet 里抽取而来
 ```
-
-### 包含以下几个部分
-
-- 各个实例方法
-
-- Dispatcher
-
-- Named Route Collection
-
-- Generator
-
-- Journey
-
-- Routes Proxy

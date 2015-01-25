@@ -1,5 +1,7 @@
 ### Bootstrap 打前锋
 
+include by Application.
+
 ~~加载 environment hook~~  
 加载 active support  
 设置 eager load  

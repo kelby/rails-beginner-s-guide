@@ -18,7 +18,6 @@ class_path
 
 file_path
 
-
 human_name
 
 i18n_scope

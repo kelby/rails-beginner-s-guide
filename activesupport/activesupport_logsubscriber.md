@@ -3,13 +3,13 @@
 继承于 Subscriber.
 
 ```
-XyzLogSubscriber
-      |
-      V
-LogSubscriber
-      |
-      V
-  Subscriber
+Rails 各个模块里的 LogSubscriber
+         |
+         V
+    LogSubscriber
+         |
+         V
+     Subscriber
 ```
 
 类方法：

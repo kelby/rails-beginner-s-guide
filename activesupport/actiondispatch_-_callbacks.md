@@ -1,75 +1,73 @@
-## Callbacks 回调的源头
+## Callback 方法解释及使用
 
-```ruby
-# 默认回调类型有：
-CALLBACK_FILTER_TYPES = [:before, :after, :around]
+这里是 Rails 所有回调的源头。从表面看，它提供以下方法。
 
-# 实例方法(必需调用它，回调才有用)
-run_callbacks(kind, &block)
+类方法：
 
-# 类方法
-set_callback(name, *filter_list, &block)
-skip_callback(name, *filter_list, &block)
-reset_callbacks(name)
-
-## 定义
-define_callbacks(*names)
-
-# 通过 name 产生化学反应：
-"_#{name}_callbacks"
 ```
+define_callbacks
+
+set_callback
+skip_callback
+
+reset_callbacks
+```
+
+实例方法：
+
+```
+run_callbacks
+```
+
+已有回调类型：
+
+```
+CALLBACK_FILTER_TYPES = [:before, :after, :around]
+```
+
+使用过程中，3 个必不可少的方法及其解释如下：
 
 | 方法 | 解释 |
 | -- | -- |
-| define_callbacks | 声明有一个回调 |
-| set_callback | 声明与这个回调有关的回调操作，以及回调操作的先后顺序 |
-| run_callbacks | 第二个参数是个 block，是真正要执行的操作，在执行这个 block 的前后会执行回调操作。<br>执行什么回调？由第一个参数决定，并且这里的回调必须事前由 define_callbacks 声明过。<br>执行这些回调操作的顺序？必须事前由 set_callback 声明过。 |
+| define_callbacks | 定义一条"回调链"。 |
+| set_callback | 把某种类型的"回调"放到"回调链"里。<br>需要 3 个参数：回调链的名字、回调的类型(不传递的话，自动使用 :before)、回调的名字。 |
+| run_callbacks | 在执行代码的前后，执行指定"回调链"相关的"回调"。<br>第一个参数是"回调链"的名字，第二个参数是个 block，里面放真正要执行的代码。|
 
-例子：
+使用举例：
 
 ```ruby
-1  class Report
-2    include ActiveSupport::Callbacks
-3
-4    define_callbacks :print
-5    set_callback :print, :before, :before_print
-6    set_callback :print, :after, :after_print
-7
-8    def print
-9      run_callbacks :print do
-10        p 'print'
-11      end
-12     # 所有真正要执行的操作，以 block 的形式，当做 run_callbacks 的第二个参数。
-13    end
-14
-15    def before_print
-16      p 'before print'
-17    end
-18
-19    def after_print
-20      p 'after print'
-21    end
-22  end
+class Report
+  include ActiveSupport::Callbacks
 
-Report.new.print
+  # 定义一条回调链，名字是 print
+  define_callbacks :print
+  
+  # 把类型为 before，名字为 before_print 的回调，放到 print 回调链里
+  set_callback :print, :before, :before_print
+  # 把类型为 after，名字为 after_print 的回调，放到 print 回调链里
+  set_callback :print, :after, :after_print
+  
+  def print_me
+    # 在执行"真正要执行的代码"的前后，执行 print 回调链里的回调
+    run_callbacks :print do
+      # 真正要执行的代码
+      p 'print me'
+    end
+  end
+
+  # 以下两方法已经放入 print 回调链，所以会被调用。
+
+  def before_print
+    p 'before print'
+  end
+
+  def after_print
+    p 'after print'
+  end
+end
+
+Report.new.print_me
 # => "before print"
-# => "print"
+# => "print me"
 # => "after print"
 ```
-
-第 4 行，声明有一个回调。这里的名字和第 8 行没有关系，只是恰好相同。
-
-第 5 行，
-声明与这个回调(print)有关的回调操作(`before_print`)，以及回调作的先后顺序(before). 这里的回调操作以 before_ 为前缀，这不是要求，只是这里恰好这样。
-
-第 6 行，
-声明与这个回调(print)有关的回调操作(`after_print`)，以及回调操作的先后顺序(after). 这里的回调操作以 after_ 为前缀，这不是要求，只是这里恰好这样。
-
-第 8 行，声明一个方法(操作)... 这个方法所有真正要执行的操作，以 block 的形式，当做 run_callbacks 的第二个参数。
-
-第 9 行，
-第二个参数是个 block，是真正要执行的操作(对应第 10 行)，在执行这个 block 的前后会执行回调操作。执行什么回调？由第一个参数决定，并且这里的回调必须事前由 define_callbacks 声明过。执行这个回调的顺序？必须事前由 set_callback 声明过。
-
-参考
-
-[Dig Deep Into Callbacks in Rails](http://ungsophy.github.io/blog/2012/05/28/dig-deep-into-callbacks-in-rails/)

@@ -100,30 +100,17 @@ end
 
 #### Rails 的乐观锁
 
-默认标识字段是 lock_version，当包含此属性时自动生效。
+**使用举例：**
 
-可以用 locking_column 更换默认的标识字段，如：
+1) 给表添加 `:lock_version` 属性。
 
 ```ruby
-class Person < ActiveRecord::Base
-  self.locking_column = :lock_person
-end
-```
-
-举例：
-
-通常用法：
-
-1) 给表添加 `:lock_version, :integer, default: 0` 属性。
-
-```
-# 首先，添加 lock_version 属性
 add_column :products, :lock_version, :integer, :default => 0, :null => false
 ```
 
-2) 在表单里使用此属性。(此处略)
+2) 在表单里使用此属性。(此处可略)
 
-3) 如果更新的是脏数据，会报错 `StaleObjectError`，可根据这个做相应处理。
+3) 已经生效。如果更新的是脏数据，会报错 `StaleObjectError`，可根据这个做相应处理。
 
 ```ruby
 p1 = Product.find(1)
@@ -136,6 +123,25 @@ p2.name = "should fail"
 p2.save
 # 如果别人想再次更改，(脏数据)不会覆盖已经更新过的数据，而是会报错。
 # => Raises a ActiveRecord::StaleObjectError
+```
+
+**更改约定：**
+
+1) 默认标识字段是 lock_version，当包含此属性时，按照约定乐观锁会"自动生效"。有时候(比如：遗留项目已经使用此字段，但却不是用于"锁")，我们可能需要拒绝"自动生效"，可以配置：
+
+```ruby
+ActiveRecord::Base.lock_optimistically = false
+
+# 或，只针对某个 model
+ClassName.lock_optimistically = false
+```
+
+2) 可以用 `locking_column` 更换默认的标识字段，如：
+
+```ruby
+class Person < ActiveRecord::Base
+  self.locking_column = :lock_person
+end
 ```
 
 > Note: 它是应用级别的锁。

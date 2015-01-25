@@ -78,4 +78,4 @@ decode_data    = crypt2.decrypt_and_verify(encrypted_data)
 source_data == decode_data
 ```
 
-> Note: 注意和下一章节【Key Generator 和 Caching Key Generator】的联系。
+> Note: 注意和【Key Generator 和 Caching Key Generator】章节的联系。

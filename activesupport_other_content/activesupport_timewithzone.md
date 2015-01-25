@@ -45,3 +45,51 @@ t.is_a?(ActiveSupport::TimeWithZone) # => true
 ```
 
 相关：Date, Time, DateTime, DateAndTime 以及 TimeZone.
+
+实例方法：
+
+```
++, -, <=>
+
+acts_like_time?, advance, ago, as_json
+
+between?
+
+comparable_time
+
+dst?
+
+encode_with, eql?
+
+formatted_offset, freeze, future?
+
+getgm, getlocal, getutc, gmt?, gmt_offset, gmtime, gmtoff
+
+hash, httpdate
+
+in_time_zone, inspect, is_a?, isdst, iso8601
+
+kind_of?
+
+localtime
+
+marshal_dump, marshal_load, method_missing
+
+past?, period
+
+respond_to?, respond_to_missing?, rfc2822, rfc822
+
+since, strftime
+
+time
+
+to_a, to_datetime, to_f, to_formatted_s, to_i, to_r, to_s, to_time
+
+today?, tv_sec
+
+utc, utc?, utc_offset
+
+xmlschema
+
+zone
+```

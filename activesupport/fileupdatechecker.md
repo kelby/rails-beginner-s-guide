@@ -12,16 +12,18 @@ Rails 默认有 3 个：
 
 ```ruby
 # 定义
+# 这里的 paths 表示你要监视的文件或目录(所在的路径)。
 i18n_reloader = ActiveSupport::FileUpdateChecker.new(paths) do
-  I18n.reload! # 要执行的内容
+  I18n.reload! # 监视内容有变化时，执行什么操作。
+  # Rails.application.reload_routes!
 end
 
-# 调用
-ActionDispatch::Reloader.to_prepare do
+ActionDispatch::Reloader.to_prepare do # to_prepare 的作用，可参考对应说明。
+  # 调用。如果有更新，则执行操作
   i18n_reloader.execute_if_updated
 end
 
-# 调用
+# 调用。手动执行操作
 i18n_reloader.execute
 ```
 

@@ -1,4 +1,6 @@
-## Inheritance - 单表继承
+## Inheritance
+
+**单表继承**
 
 我们会遇到这样的情况：
 

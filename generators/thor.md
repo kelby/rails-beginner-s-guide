@@ -209,6 +209,8 @@ uncomment_lines 'config/initializers/session_store.rb', /active_record/
 ### 其它
 
 `argument`<br>
+给我们的"命令行"添加参数，并有 attr_accessor<br>
+(注意：这里的参数区别于类或方法里的参数、可选参数)<br>
 如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
 
 `ClassName#public_instance_method`<br>
@@ -243,6 +245,13 @@ class_name:public_instace_method
 
 `option 和 options`<br>
 可选参数(如：thor my_cli:hello --from "Carl Lerche" Kelby 这里的 --from)
+
+`public_task & public_command`<br>
+定义一个实例方法，方法内容就是其父类的私有方法。
+
+```
+public_command :foo
+```
 
 链接
 

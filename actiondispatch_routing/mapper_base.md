@@ -28,14 +28,14 @@ mount 和 root
 ```ruby
 match '/movies/search', => "movies#search"
 # 去掉语法糖，等价
-match '/movies/search', => MoviesController.action(:search).call(env)
+match '/movies/search', => MoviesController.action(:search)
 ```
 
 ```ruby
-# 这是一个 Rack
+# 这是一个 Rack. 所以可以调用 call 方法，传递 env 对象。
 MoviesController.action(:search).call(env)
 
-# 这也是一个 Rack
+# 这也是一个 Rack.
 Proc.new { |env|
   [
     200,
@@ -44,7 +44,7 @@ Proc.new { |env|
   ]
 }
 
-# 这还是一个 Rack
+# 这还是一个 Rack.
 class ApiApp
   def call(env)
     [

@@ -43,3 +43,12 @@ run_generator
 ```
 capture
 ```
+
+### ~~SetupAndTeardown~~
+
+```
+setup
+teardown
+```
+
+> Note: 上述模块们于 generators/testing/ 目录下。

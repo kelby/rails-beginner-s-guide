@@ -18,6 +18,10 @@ source_root
 
 `source_root` generator 示例模板文件(templates)所在位置。
 
+```
+source_root File.expand_path("../templates", __FILE__)
+```
+
 `hook_for` 触发其它的 generator，以 --option 的形式提供。
 
 `desc` 终端里使用对应命令获取帮助(即 --help)会在最后显示此内容。

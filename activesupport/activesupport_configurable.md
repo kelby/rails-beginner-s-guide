@@ -29,6 +29,7 @@ user.config.level          # => 1
 
 `config_accessor`
 以声明的形式，同时定义类方法和实例方法。
+实例对象的值默认继承于类对象，修改某个实例对象的值不影响类对象和其它实例对象的值。
 
 使用举例：
 
@@ -74,15 +75,17 @@ class User
 end
 ```
 
-除此之外，还有：
+除此之外，还有类方法：
 
 ```
-config
+config # Configuration 的实例对象。实例方法 config 和 类方法 config_accessor 调用到它。
 
-configure
+configure # 直接封装 config
 ```
 
-### Configuration
+> Note: 它和 railties 目录下的 Configurable 和 Configuration 都没有关系。目前只发现有 AbstractController::Base 引用到它(其子类由于继承关系，也可以使用)。
+
+### ~~Configuration~~
 
 ```
 # 类方法
@@ -91,3 +94,7 @@ compile_methods!
 # 实例方法
 compile_methods!
 ```
+
+另外，它继承于 ActiveSupport::InheritableOptions
+
+> Note: 不对 module Configurable 之外提供接口，只有这里使用到它。

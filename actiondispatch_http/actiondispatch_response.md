@@ -1,48 +1,7 @@
-## 重点之 Response 
+## Response 
 
-**常用到的 response 等。**
+**常用到的 response，它还有很多方法在这。**
 
-```
-abort
+包含了 FilterRedirect 和 Cache::Response.
 
-await_commit
-await_sent
-
-body
-body=
-body_parts
-
-close
-
-code
-
-commit!
-
-committed?
-
-content_type=
-
-cookies
-
-delete_cookie
-
-location & redirect_url
-location=
-
-message & status_message
-
-response_code
-
-sending!
-sending?
-
-sent!
-sent?
-
-set_cookie
-
-status=
-
-to_a & prepare!
-to_ary
-```
+以及 Mime.

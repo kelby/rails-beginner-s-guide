@@ -34,3 +34,23 @@ module Haml
   end
 end
 ```
+
+---
+
+
+
+### ~~Generated Attribute~~
+
+生成过程中的一些属性判断。
+
+### ~~Erb Generators Base~~
+
+继承于 Rails::Generators::NamedBase
+
+```
+formats
+format
+handler
+
+filename_with_extensions
+```

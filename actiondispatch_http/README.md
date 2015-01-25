@@ -13,15 +13,3 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 request 为 ActionDispatch::Request 的实例对象。
 <br>
 response 为 ActionDispatch::Response 的实例对象。
-
-- **Request**
-
-包含了 Cache::Request、MimeNegotiation(又涉及 Mime)、Parameters、FilterParameters 和 URL.
-
-以及 Headers、Uploaded File 和 URL.
-
-- **Response**
-
-包含了 FilterRedirect 和 Cache::Response.
-
-以及 Mime.

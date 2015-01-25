@@ -1,5 +1,7 @@
 ## Rescuable
 
+类方法：
+
 `rescue_from(*klasses, &block)`
 
 klasses 表示一个或多个异常类。如果有 :with 选项，则用其 value(一般是个方法) 处理；否则，需要传递 block 来处理。
@@ -27,3 +29,11 @@ end
 ```
 
 实现：类似'实例变量的运用'，`rescue_from` 把希望捕捉的异常类放到一个变量(rescue_handlers)里。抛出异常时，会对异常进行检查(rescue_with_handler)，如果抛出的异常恰好被包含在这个变量(rescue_handlers)，则用我们的方式进行处理。
+
+实例方法：
+
+```
+handler_for_rescue
+
+rescue_with_handler
+```

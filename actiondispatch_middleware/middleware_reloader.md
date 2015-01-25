@@ -1,20 +1,35 @@
 ### Reloader
 
-开发环境下，代码更改后，不用重启，自动加载新的代码。
+**保证在请求之前和响应之后做某事**。这里重点是"保证"，具体是什么事，怎么做，不由它决定。
 
-用于是否缓存类和模块，如果不缓存，则每次请求都要加载类和模块。默认开发环境为 false，这样我们更改代码后，不需要重启就能看到效果。而测试、生产环境为 true.
+类方法：
 
-对应 `config.cache_classes = false`
+```
+to_prepare
 
-在每次请求之前，执行：run_callbacks :prepare
+to_cleanup
+```
+
+`to_prepare` 保证在每次请求之前，执行它给的 block.
 <br>
-在每次请求之后，执行：run_callbacks :cleanup
+`to_cleanup` 保证在每次响应之后，执行它给的 block.
 
-注意，它只是调用接口。真正处理不是它完成的。
+实例方法(middleware 的 call 方法会调用它们)：
 
 ```
-define_callbacks :prepare
-define_callbacks :cleanup
+prepare! # 执行 to_prepare 给的 block.
+
+cleanup! # 执行 to_cleanup 给的 block.
 ```
 
-用到了 File Update Checker.
+类方法(作用同上，但我们可以手动调用)：
+
+```
+prepare!
+
+cleanup!
+```
+
+开发环境下，我们会经常更改代码，但我们又希望请求、响应速度加快。此时，可以使用此 middleware，因为它可以帮我们达到愿望。
+
+

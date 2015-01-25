@@ -1,4 +1,5 @@
 ## 其它
 
-TODO
+- ~~Proxy Object~~
 
+- ~~Option Merger~~

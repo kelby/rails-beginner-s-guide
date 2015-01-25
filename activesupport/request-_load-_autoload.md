@@ -1,6 +1,6 @@
-## request, load, autoload 和线程安全
+### request, load, autoload 和线程安全
 
-### require
+#### require
 
 根据给定的**名字**进行加载。第一次加载，返回 `true`; 之后再加载，返回 `false`.
 
@@ -16,7 +16,7 @@ require "db-driver"
 
 链接 http://www.ruby-doc.org/core-2.1.5/Kernel.html#method-i-require
 
-### load
+#### load
 
 根据给定的**文件名**进行加载**并执行**。
 
@@ -28,7 +28,7 @@ require "db-driver"
 
 链接 http://www.ruby-doc.org/core-2.1.5/Kernel.html#method-i-load
 
-### autoload
+#### autoload
 
 自动加载(也叫：延迟加载)，只有在真正用到的时候才会 require.<br>
 对原来的"加载"，进行了再次细分。
@@ -49,7 +49,7 @@ A::B.doit            # autoloads "b"
 <br>
 链接 http://www.ruby-doc.org/core-2.1.5/Module.html#method-i-autoload
 
-### 线程安全
+#### 线程安全
 
 百度百科里对"线程安全"的描述：
 

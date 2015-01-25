@@ -1,6 +1,6 @@
-## view_context - ActionView::Base 的实例对象
+## view_context
 
-**渲染相关里的上下文。**
+**渲染相关里的上下文 - ActionView::Base 的实例对象。**
 
 `view_context` 就是 ActionView::Base 的实例对象。
 <br>

@@ -1,13 +1,17 @@
 ## Tagged Logging
 
-封装了 Ruby 标准的 [Logger](http://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/index.html)，让我们能够给 logger 实例对象打'标签'。
+封装了 Ruby 标准的 [Logger](http://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/index.html)，让我们能够给 logger 实例对象打"标签"。
 
 ```ruby
 logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
 
 logger.tagged('BCX') { logger.info 'Stuff' }
 # => Logs "[BCX] Stuff"
+```
 
+"标签"还可以层层叠加：
+
+```ruby
 logger.tagged('BCX', "Jason") { logger.info 'Stuff' }
 # Logs "[BCX] [Jason] Stuff"
 

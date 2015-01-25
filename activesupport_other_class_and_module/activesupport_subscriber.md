@@ -1,15 +1,5 @@
 ## Subscriber
 
-```
-     Subscriber
-         |
-         V
-    LogSubscriber
-         |
-         V
-Rails 各个模块里的 LogSubscriber
-```
-
 只需继承于它，并定义同名方法，然后 attach_to 即可。
 
 类方法：
