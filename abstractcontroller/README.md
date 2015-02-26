@@ -1,7 +1,8 @@
 # Abstract Controller
 
 - 服务于 Action Controller 和 Action Mailer.
-- 辅助 ActionController::Base 和 ActionMailer::Base 将站场转移到具体的 Controller#action(经过 Metal) 或 Mailer#action.
+- 辅助 ActionMailer::Base 将站场转移到具体的 Mailer#action.
+- 辅助 ActionController::Base 将站场转移到具体的 Controller#action(经过 Metal).
 
 Abstract Controller 无论是它自己定义的方法，还是封装 Action View 和 Action Dispatch 得到的方法，最终都提供给 Action Controller 和 Action Mailer 使用。  
 这些方法(或模块)包含但不限于渲染(模板或局部模板)、Helper相关、回调、Mime、Url For 等。

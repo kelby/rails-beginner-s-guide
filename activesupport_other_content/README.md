@@ -1,3 +1,6 @@
 # Active Support 其它类和模块
 
-TODO
+比如：
+
+Per Thread Registry
+

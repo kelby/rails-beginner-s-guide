@@ -1,7 +1,5 @@
 ## 其它
 
-包含了：Readonly Attributes 和 Translation 等。
-
 ### Readonly Attributes
 
 提供方法：

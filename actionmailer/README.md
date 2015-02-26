@@ -4,7 +4,7 @@ Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
 它依赖于 Rails 内建的其它组件，如：Active Job、Abstract Controller 和 Action View，以及外部 gem 'mail'.
 
-因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。
+因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。"
 
 ### 核心是 gem 'mail'
 
@@ -59,6 +59,7 @@ require 'action_mailer'
 # 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
 ActionMailer::Base.raise_delivery_errors = true
 
+# 使用单独配置文件的话，可以用 config.action_mailer 代替下面的 ActionMailer::Base
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
@@ -118,13 +119,13 @@ Action Mailer 本身并没有"实现"什么功能。最基本，也是最核心�
 
 为了做好、做得上层次，下面是在邮件处理外，Action Mailer "实现"的一些功能：
 
+- 集成(有时我们要的不仅仅只是邮件服务)
+- 拦截器、观察者(发送之前、之后想做点什么？)
 - 测试
 - 日志记录
-- 邮件预览
 - 延迟发送
 - 灵活的配置
 - 内容与模板分离
 - 丰富实用的 helper 方法
+- 邮件预览
 - 自动化(如：rails g mailer)
-- 集成(有时我们要的不仅仅只是邮件服务)
-- 拦截器、观察者(发送之前、之后想做点什么？)

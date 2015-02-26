@@ -1,6 +1,6 @@
 ## Previews & Preview
 
-邮件预览相关。
+**邮件预览相关。**
 
 Previews，对于普通开发者来说主要是配置：
 

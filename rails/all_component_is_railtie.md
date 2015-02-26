@@ -92,7 +92,7 @@ Rails.application.config.database_configuration
 
 ### Active Job
 
-设置 logger 和配置(如：默认 queue_adapter)
+配置默认 queue_adapter 为 :inline
 
 ### Active Support
 
@@ -100,5 +100,5 @@ TODO
 
 ### I18n
 
-TODO
+after_initialize 和 before_eager_load 都执行 initialize_i18n
 

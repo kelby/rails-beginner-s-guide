@@ -2,7 +2,8 @@
 
 ```
 exclude?
-index_by
 many?
+
+index_by
 sum
 ```

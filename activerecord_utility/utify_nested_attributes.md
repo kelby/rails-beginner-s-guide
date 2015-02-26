@@ -2,7 +2,7 @@
 
 方法 `accepts_nested_attributes_for(*attr_names)`
 
-attr_names由：一个或多个属性(association_name) 和 一个或多个可选参数(option)组成。
+attr_names 由：一个或多个属性(association_name) 和 一个或多个可选参数(option)组成。
 
 只接受options：
 
@@ -13,7 +13,7 @@ attr_names由：一个或多个属性(association_name) 和 一个或多个可�
 :update_only
 ```
 
-**当你声明嵌套属性时，Rails会自动帮你定义属性的写方法。**
+**当你声明嵌套属性时，Rails 会自动帮你定义属性的写方法。**
 
 ```ruby
 # 摘录部分代码
@@ -94,3 +94,20 @@ Book.send(:add_autosave_association_callbacks, reflection)
 
 Book.reflect_on_all_autosave_associations
 ```
+
+---
+
+update_only 选项的使用
+
+[accepts_nested_attributes_for is Creating New Records; Gotcha!](http://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through)
+
+invert_of 的另一个作用
+[accepts_nested_attributes_for with Has-Many-Through Relations](http://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through)
+
+allow_destroy 选项的使用
+[【Rails】fields_for と accepts_nested_attributes_for](http://kzy52.com/entry/2013/07/10/200144)
+和此方法配套使用的是 `fields_for` 方法。
+
+[Rails nested form with has_many :through, how to edit attributes of join model?](http://stackoverflow.com/questions/2182428/rails-nested-form-with-has-many-through-how-to-edit-attributes-of-join-model)
+
+[Complex Rails Forms with Nested Attributes](http://www.sitepoint.com/complex-rails-forms-with-nested-attributes/)

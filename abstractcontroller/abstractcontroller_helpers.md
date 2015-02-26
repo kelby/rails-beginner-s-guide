@@ -1,6 +1,6 @@
 ## Helpers
 
-这里的 helper 不是指辅助方法，尽管它们有直接联系。提供方法：helper_method、helper 等。
+**导出、引入辅助方法。**
 
 | 方法 | 解释 |
 | -- | -- |
@@ -29,7 +29,7 @@ helper 'resources/foo'
 
 此外，helper 可以接受并处理一个代码块。(不推荐)
 
-最后要说的提，上述说的参数类型可以混合使用，你可以同时传递符号、字符串、模块和代码块给 helper 方法。
+最后要说的是：上述参数类型可以混合使用，你可以同时传递符号、字符串、模块和代码块给 helper 方法。
 
 ```ruby
 helper(:three, BlindHelper) { def mice() 'mice' end }

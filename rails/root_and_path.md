@@ -1,6 +1,12 @@
 ## 路径 - Root & Path
 
-包括 Root & Path，但只有 Root 对外提供接口。
+包括 Root & Path，但 Root 已经封装了 Path, 并且只有 Root 对外提供接口。
+
+```
+Rails.application.paths
+```
+
+提供方法：
 
 ```
 add
@@ -15,3 +21,13 @@ eager_load
 load_paths
 ```
 
+和
+
+```
+keys
+values
+values_at
+
+[]
+[]=
+```

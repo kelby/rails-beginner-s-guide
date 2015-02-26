@@ -23,22 +23,32 @@ class Post < ActiveRecord::Base
 end
 ```
 
+1 同名类方法(复数形式)
+
 ```ruby
-# 1 同名类方法(复数形式)
 Post.statuses
 # => {"active"=>0, "archived"=>1}
+```
 
-# 2 值(scope)
+
+2 值(scope)
+
+```ruby
 Post.active
 # => SELECT "posts".* FROM "posts"  WHERE "posts"."status" = 0
+```
 
-post = Post.first
+3 值?
 
-# 3 值?
+```ruby
 post.active?
 => false
+```
 
-# 4 值!
+
+4 值!
+
+```ruby
 post.active!
 
 begin transaction
@@ -47,16 +57,27 @@ begin transaction
                            ["updated_at", "2014-04-20 09:06:53.722202"]]
 commit transaction
 => true
+```
 
-# 5 同名实例方法(get)
+5 同名实例方法(get)
+
+```ruby
 post.status
 => "active"
+```
 
-# 6 同名实例方法=(set)
+6 同名实例方法=(set)
+
+```ruby
 post.status = "archived"
 => "archived"
+```
 
-# 7 和同名实例方法(get)作用一样
+7 和同名实例方法(get)作用一样
+
+```ruby
 post.status_before_type_cast
 => "archived"
 ```
+
+> Note: 注意 enum 的字段必须是 integer 类型。<br>但除了保存数据库外，其它地方显示的却是我们定义的字段，也就是说它真正保存在数据库里的是 integer, 但平时我们使用，用的是 string 类型。

@@ -19,13 +19,15 @@ config_accessor :asset_host, :assets_dir, :javascripts_dir,
 
 ### Routes Helpers
 
-**引入 Route 相关的 helper**(这里只是调用，定义在 RouteSet 里)。
+**引入 Route 相关的 helper**(这里只是调用，定义在 RouteSet 里)，然后就能调用和 Routing 相关的 helper 方法。
+
+```
+include Rails.application.routes.url_helpers
+```
 
 `routes.rb` 里定义的每一个路由规则都会有对应的 x_url 和 x_path 等 helper 方法可用，这里 include 了这些 helper.
 
 然后，Action Controller 和 Action Mailer 的 Railtie 又 extend Routes Helpers，所以可用。
-
-> Note: 可以通过 `include Rails.application.routes.url_helpers` 然后调用和 Routing 相关的 helper 方法。
 
 ### ~~Logger~~
 
@@ -33,7 +35,7 @@ config_accessor :asset_host, :assets_dir, :javascripts_dir,
 
 ### ~~Url For~~
 
-包含了 ActionDispatch::Routing::UrlFor，然后又被 ActionMailer 和 ActionController::UrlFor 所调用。
+包含了 ActionDispatch::Routing::UrlFor，然后又被 Action Mailer 和 ActionController::UrlFor 所调用。
 
 这也是 Action Dispatch 和其它 3 个模块都有联系的证据之一。
 

@@ -45,7 +45,7 @@ has_one :dob, ->(dob) { where("Date.new(2000, 01, 01) > ?", dob) }
 | :through | 指定中间表。优先级比 :class_name、:primary_key 和 :foreign_key 要高。|
 | :source | 中间表关联着前者和后者，并且"前者.后者"可拆分成1)"前者.中间表"，2)"中间表.后者"。第 1 步一般不会有误，但如果后者名字不规范，那么在第 2 步"中间表.后者"就会走不下去。用 :source 明确后者对应中间表里的什么关联。|
 | :source_type | 从后者的角度来看，后者与前者的关联应该是 belongs_to. 但如果恰好又是多态，那么后者保存有前者的 id 并指定某个类型. 如果你对按约定生成的类型不满意，可以用 :source_type 指明。|
-| :validate | 设置为 false, 保存前者时不会校验后者。默认就是 false.|
+| :validate | 校验关联对象是否真实存在于数据库里。设置为 false, 保存前者时不会校验后者。默认就是 false.|
 | :autosave | 参考 belongs_to 的解释 |
 | :inverse_of | 参考 belongs_to 的解释 |
 | :required | 参考 belongs_to 的解释 |

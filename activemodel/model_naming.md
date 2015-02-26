@@ -2,13 +2,13 @@
 
 内省机制，主要负责**将对象转换成对应的字符串**。对于我们 Web 开发者来说不常用，但对于配合 Action Controller, Action View 工作很重要。
 
-实例方法
+实例方法：
 
 ```
 model_name
 ```
 
-类方法(调用方式奇怪，一般我们不会使用)
+类方法(调用方式奇怪，一般我们不会使用)：
 
 ```
 param_key
@@ -31,17 +31,11 @@ human
 和
 
 ```
-singular
-plural
-element
-cache_key & collection
+attr_reader :singular, :plural, :element, :collection,
+  :singular_route_key, :route_key, :param_key, :i18n_key,
+  :name
 
-singular_route_key
-route_key
-param_key
-i18n_key
-
-name
+alias_method :cache_key, :collection
 ```
 
 可将字符串转换成对用户更友好的形式展现。

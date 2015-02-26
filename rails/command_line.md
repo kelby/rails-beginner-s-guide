@@ -22,7 +22,7 @@ engine(app、db)
 #### Source Annotation Extractor
 
 rake notes  
-rake notes:optimize
+rake notes:optimize 等。
 
 #### api
 

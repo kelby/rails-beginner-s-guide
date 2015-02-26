@@ -22,6 +22,17 @@ verified == message
 
 主要是 `generate(value)` 和 `verify(signed_message)`，原理很简单，这里不多赘述。
 
+另，验证加密信息是否被篡改：
+
+```ruby
+verifier = ActiveSupport::MessageVerifier.new 's3Krit'
+signed_message = verifier.generate 'a private message'
+verifier.valid_message?(signed_message) # => true
+
+tampered_message = signed_message.chop # 篡改"已经签名"的信息
+verifier.valid_message?(tampered_message) # => false
+```
+
 ## Message Encryptor
 
 和 Message Verifier 本质上没有区别。但使用上会更严格一点，会多一些步骤(相应地，也更安全了一点)，并且它也有调用到 Message Verifier.

@@ -78,11 +78,3 @@ autoload_under
 
 autoloads
 ```
-
-参考
-
-[Eager loading for greater good](http://blog.plataformatec.com.br/2012/08/eager-loading-for-greater-good/)<br>
-[Threading with the AWS SDK for Ruby](http://ruby.awsblog.com/blog/tag/autoload)<br>
-[Ruby on Rails 线程安全代码](http://ruby-china.org/topics/10932)<br>
-[线程安全 - 概述](http://baike.baidu.com/view/1298606.htm#1)  
-[Rails autoloading — how it works, and when it doesn't](http://urbanautomaton.com/blog/2013/08/27/rails-autoloading-hell/)

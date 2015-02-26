@@ -21,14 +21,13 @@ skip_action_callback & skip_filter
 这些回调方法参照物都是 `process_action` 同名方法。
 
 ```ruby
-def process_action(*args)
-  run_callbacks(:process_action) do
-    super
-  end
-end
+set_callback(:process_action, callback, name, options)
+
+set_callback(:process_action, callback, name, options.merge(:prepend => true))
+
+skip_callback(:process_action, callback, name, options)
 ```
 
-具体实现：调用了 ActiveSupport::Callbacks 里的 `define_callbacks`、`set_callback`、`skip_callback` 和 `run_callbacks` 方法。
+具体实现：调用了 ActiveSupport::Callbacks 里的 `define_callbacks`、`set_callback`、`run_callback` 和 `skip_callbacks` 方法。
 
-上面 before, after, around 的 append, prepend, skip 类似，明白其中一个，其它的可以贯通。
-skip_action_callback 意味着 skip: before, after, around.
+另：skip_action_callback 意味着 skip before、after 和 around.

@@ -124,10 +124,10 @@ config.action_mailer.smtp_settings = {
   enable_starttls_auto: true
 }
 
-# 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
+# 邮件发送报错时(比如：邮箱错了)，是否抛异常。开发环境下，可设置为 true
 config.action_mailer.raise_delivery_errors = true
 
-# 默认即是 true
+# 是否真的发邮件，默认已经是 true
 config.action_mailer.perform_deliveries = true
 ```
 

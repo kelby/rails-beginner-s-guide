@@ -24,7 +24,7 @@ alias_method :attr_internal, :attr_internal_accessor
 ```
 alias :cattr_accessor :mattr_accessor
 
-定义一个类属性，同时具备类和实例级别的读、写。
+定义一个类属性，同时具备类和实例级别的读、写。(这里类似全局变量了)
 ```
 
 `delegate`

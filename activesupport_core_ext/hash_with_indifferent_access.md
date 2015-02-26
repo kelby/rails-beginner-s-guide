@@ -15,7 +15,7 @@ rgb['white'] # => '#FFFFFF'
 ```
 
 ```
-[],
+[]
 
 []=
 regular_writer

@@ -110,7 +110,7 @@ module MyEngine
 end
 ```
 
-此时 +FooController+ 仅能使用 `Engine` 里提供的 helper，以及 `MyEngine::Engine.routes` 提供的 url helper.
+此时 FooController 仅能使用 `Engine` 里提供的 helper，以及 `MyEngine::Engine.routes` 提供的 url helper.
 
 另外一个改变就是 Engine 里的路由不必再使用 namespace，举例：
 

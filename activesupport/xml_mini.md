@@ -1,8 +1,13 @@
 ## Xml Mini
 
-Active Support 允许你**使用不同的 XML 解析器**。
+Active Support 允许你**切换使用不同的库进行解析 HTML/XML**.
 
-默认用的是标准的 REXML，不过你可以使用性能更快的 LibXML 或 Nokogiri. (如果你那么在意性能的话)
+默认用的是标准库 REXML，不过你可以使用性能更快的 LibXML 或 Nokogiri. (性能上快得多，不过有极少数不规范的网站可能会解析失败)
+
+```ruby
+ActiveSupport::XmlMini.backend
+# => ActiveSupport::XmlMini_REXML
+```
 
 类方法(对外接口)：
 

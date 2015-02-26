@@ -16,6 +16,12 @@ initializers
 initializers_chain
 ```
 
+可用 `initializers_for` 获取应用里某类 initializer 的名字：
+
+```ruby
+Rails.application.class.initializers_for("web_console").map &:name
+```
+
 **实例方法：**
 
 ```
@@ -28,10 +34,4 @@ run_initializers
 
 ```ruby
 Rails.application.initializers.map &:name
-```
-
-可用 `initializers_for` 获取应用里某类 initializer 的名字：
-
-```ruby
-Rails.application.class.initializers_for("web_console").map &:name
 ```

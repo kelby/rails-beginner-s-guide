@@ -35,8 +35,11 @@
 举例:
 
 ```ruby
+# scope 里面的查询对象默认是被关联对象
 has_many :comments, -> { where(author_id: 1) }
 has_many :employees, -> { joins(:address) }
+
+# scope 里面的查询对象用到自己
 has_many :posts, ->(post) { where("max_post_length > ?", post.length) }
 ```
 
@@ -64,10 +67,10 @@ end
 
 | 参数 | 解释 |
 | -- | -- |
-| :class_name | 解释同上 |
-| :foreign_key | 解释同上 |
-| :foreign_type | 多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
-| :primary_key | 解释同上 |
+| :class_name | 解释同上。关联对象不符合约定 |
+| :foreign_key | 解释同上。自己不符合约定 |
+| :foreign_type | 自己不符合约定。多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
+| :primary_key | 解释同上。自己不符合约定 |
 | :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :as | 解释参考 belongs_to |

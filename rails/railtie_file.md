@@ -25,7 +25,7 @@ class MyRailtie < Rails::Railtie
 end
 ```
 
-> Note: `initializer` 定义于 Rails::nitializable. 它还可以接受 :before 或 :after 做为参数。
+> Note: `initializer` 定义于 Rails::initializable. 它还可以接受 :before 或 :after 做为参数。
 
 ### config
 
@@ -36,8 +36,7 @@ class MyRailtie < Rails::Railtie
   # 配置使用什么 ORM
   config.app_generators.orm :my_railtie_orm
 
-  # Add a to_prepare block which is executed once in production
-  # and before each request in development
+  # to_prepare 里的内容在生产环境上只执行一次，在开发环境下每个请求都会请求一遍。
   config.to_prepare do
     MyRailtie.setup!
   end
@@ -68,12 +67,11 @@ class MyRailtie < Rails::Railtie
 end
 ```
 
-### 其它方法
+### 其它
 
-提供方法：
+类方法：
 
 ```
-config    # 名词
 configure # 动词
 
 # 动词，接 block
@@ -83,13 +81,24 @@ runner
 generators
 
 railtie_name
-railtie_namespace
 
 instance
 subclasses
 
 abstract_railtie? # 默认是 Rails::Railtie、Rails::Engine 和 Rails::Application
+```
 
+实例方法：
+
+```
+config    # 名词
+configure
+railtie_namespace
+```
+
+其它实例方法：
+
+```
 generate_railtie_name
 ```
 

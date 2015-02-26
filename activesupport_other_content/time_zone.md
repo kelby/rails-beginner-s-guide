@@ -21,21 +21,30 @@ zones_map
 实例方法：
 
 ```
-<=>, =~
+<=>
+=~
 
 at
 
 formatted_offset
 
-local, local_to_utc
+local
+local_to_utc
 
 now
 
-parse, period_for_local, period_for_utc
+parse
 
-to_s, today, tomorrow
+period_for_local
+period_for_utc
 
-utc_offset, utc_to_local
+to_s
 
+today
+tomorrow
 yesterday
+
+utc_offset
+
+utc_to_local
 ```

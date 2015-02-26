@@ -37,7 +37,7 @@ end
 然后
 
 ```ruby
-# 注意，可直接引用相关类
+# 注意，这里可直接引用相关类
 config.middleware.insert_before ActionController::ParamsParser,
                              "Scrubber",
                              :routes => [ "/examples/scrubbed" ]
@@ -78,13 +78,11 @@ end
 然后
 
 ```ruby
-# 注意，需以字符串的方式引用
+# 注意，这里以字符串的方式引用
 config.middleware.use "ResponseTimer", "Load Time"
 ```
 
 参考
 
-[Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)<br>
 [Where do you put your Rack middleware files and requires?](http://stackoverflow.com/questions/3428343/where-do-you-put-your-rack-middleware-files-and-requires)<br>
 [Sanitizing POST params with custom Rack middleware](http://pivotallabs.com/sanitizing-post-params-with-custom-rack-middleware/)<br>
-[#151 Rack Middleware](http://railscasts.com/episodes/151-rack-middleware)

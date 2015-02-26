@@ -11,6 +11,8 @@ has_secure_password(options = {})
 ```ruby
 authenticate(unencrypted_password)
 
+attr_reader :password
+
 # 以下两方法和 attr_accessor 类似
 password=(unencrypted_password)
 password_confirmation=(unencrypted_password)

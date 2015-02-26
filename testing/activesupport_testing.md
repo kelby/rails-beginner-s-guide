@@ -27,6 +27,17 @@ test_order
 test_order=
 ```
 
+test_order 支持：
+
+```
+ActiveSupport::TestCase.test_order # => :sorted
+
+:random   # 随机
+:parallel # 并行
+:sorted   # 按字母顺序
+:alpha    # 按字母顺序
+```
+
 ### Assertions
 
 ```
