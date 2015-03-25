@@ -1,7 +1,6 @@
 ## Engine
 
-Engine 下有 Railtie，上有 Application.  
-在 Engine 里，可以直接使用 Railtie 提供的方法；在 Application 里，可以直接使用 Engine 提供的方法。
+Engine 下有 Railtie，上有 Application.
 
 ```
 Your Application
@@ -16,11 +15,13 @@ Your Application
   Railtie
 ```
 
-可以把一个 Rails 项目当做一个组件，插入到另一个项目里。
-
-可以把 Engine 当做一个不完整的应用，它依赖于 main_app (main_app 表示我们的项目本身，在 Application::Finisher 里定义)。
+在 Engine 里，可以直接使用 Railtie 提供的方法；
+<br>
+在 Application 里，可以直接使用 Engine 提供的方法。
 
 **Engine = Ruby Gem + Rails MVC stack elements.**
+
+使用 Engine，可以把一个小型的 Rails 项目当成组件，插入到另一个 Rails 项目里。
 
 和一般 gem 对比，Engine 至少有以下特点：
 

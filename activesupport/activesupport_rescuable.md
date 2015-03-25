@@ -9,7 +9,7 @@ klasses 表示一个或多个异常类。如果有 :with 选项，则用其 valu
 ```ruby
 class ApplicationController < ActionController::Base
   # 一个或多个异常类，有 :with 选项
-  rescue_from User::NotAuthorized, with: :deny_access # self defined exception
+  rescue_from User::NotAuthorized, with: :deny_access # 自定义的异常处理方法
   rescue_from ActiveRecord::RecordInvalid, with: :show_errors
 
   # 一个或多个异常类，传递 block

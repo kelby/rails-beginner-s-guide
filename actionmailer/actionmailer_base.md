@@ -1,10 +1,10 @@
 ## Base
 
-也就是 ActionMailer::Base，我们的 Mailer 类继承的就是它。
+我们 Mailer 类继承的 ActionMailer::Base 指的就是它。
 
 ### 作用
 
-我们 Mailer 类继承的 ActionMailer::Base 就是在这里定义的，它继承于 AbstractController::Base，这也是 Action Mailer 依赖 Abstract Controller 的证据之一。
+它继承于 AbstractController::Base，包含了一些自身及 Abstract Controller 的模块(尽管有的模块它并没有使用到)，作用是为了让它的子类(我们的 Mailer 类)能够"更好用、更实用"。
 
 ```
      YourMailer
@@ -16,7 +16,7 @@
 AbstractController::Base
 ```
 
-包含了一些自身及 Abstract Controller 的模块，尽管有的模块它并没有使用到，而是为了让它的子类(我们的 Mailer 类)能够"更好用、更实用"。
+### 包含内容
 
 包含了一些默认配置 default_params.
 

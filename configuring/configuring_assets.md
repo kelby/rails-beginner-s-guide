@@ -1,6 +1,7 @@
 ### Assets
 
-```
+```ruby
+# 是否禁用 Assets Pipeline
 config.assets.enabled
 
 config.assets.raise_runtime_errors

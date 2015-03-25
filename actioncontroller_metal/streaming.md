@@ -2,9 +2,34 @@
 
 **改变渲染顺序。**
 
-尽量不要和 Live 里的 stream 搅在一起！
+```
+HTTP request -> dynamic content generation -> HTTP response
+```
 
-Rails 默认的渲染过程先是模板，然后才是布局。完成模板，及需要的查询，最后才完成布局。
+变成(这里只是类似)：
+
+```
+HTTP request -> static head generation -> HTTP response
+             -> dynamic content generation -> HTTP response
+```
+
+状况消息加上了：
+
+```
+Transfer-Encoding: chunked
+```
+
+顺序上：使用 Streaming 后，HTML 里的 head 部分会先返回，不受页面内容的影响；
+
+内容上：如果 head 里的内容是依赖于页面生成的，会受影响。
+<br>
+比如：title 是根据页面动态生成的，使用 Streaming 后就会出现缺失的情况，需要更改原有代码。可以改成使用 provide 和 yield；
+<br>
+再比如：将不能动态生成 cookie 和 session
+
+将搞清楚它的解决的问题，和带来的问题再使用。并且，概念不要和【Live】里的 stream 搅在一起！
+
+Rails 默认的渲染过程：先是模板，然后是数据库查询，最后才是布局。
 
 Streaming 可以改变一下顺序，按布局来渲染。布局先显示，对于用户体验可能更好一点，还有就是这会使得 JS 和 CSS 的加载顺序比平时提前。
 

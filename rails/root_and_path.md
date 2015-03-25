@@ -1,4 +1,4 @@
-## 路径 - Root & Path
+## 路径 - Root 和 Path
 
 包括 Root & Path，但 Root 已经封装了 Path, 并且只有 Root 对外提供接口。
 
@@ -31,3 +31,5 @@ values_at
 []
 []=
 ```
+
+这部分内容，偏底层了。

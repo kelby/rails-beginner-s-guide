@@ -130,7 +130,7 @@ recognize_path
 `recognize_path` 使用举例：
 
 ```ruby
-Rails.application.routes.recognize_path  "http://localhost:3000/users/1"
+Rails.application.routes.recognize_path "http://localhost:3000/users/1"
 # => {:controller=>"users", :action=>"show", :id=>"1"}
 ```
 

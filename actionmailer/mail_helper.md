@@ -4,7 +4,6 @@
 
 如：attachments、mailer、message，还有不太实用的 block_format、format_paragraph.
 
-
 | 方法 | 解释 |
 | -- | -- |
 | message() | 表示邮件对象，即 Mail::Message 实例对象 |

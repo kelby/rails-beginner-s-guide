@@ -21,8 +21,10 @@ engine(app、db)
 
 #### Source Annotation Extractor
 
+和上面列举的：
+<br>
 rake notes  
-rake notes:optimize 等。
+rake notes:optimize 等相关。
 
 #### api
 

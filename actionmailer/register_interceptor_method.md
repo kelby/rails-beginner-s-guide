@@ -43,7 +43,6 @@ ActionMailer::Base.register_interceptor(EnvironmentInterceptor)
 或 config/initializers/file_name.rb
 文件里。
 
-
 实现 delivering_email 方法一，
 在最后时刻替换掉要发送到的邮箱。
 

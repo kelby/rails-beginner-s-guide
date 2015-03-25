@@ -53,4 +53,4 @@ method_added(name)
 supports_path?
 ```
 
-`controller_path()` 返回当前 Controller 所在的路径(包括目录、文件名)。例如，YourApp::PostsController 返回"your_app/posts".
+`controller_path` 返回当前 Controller 所在的路径(包括目录、文件名)。例如，YourApp::PostsController 返回"your_app/posts".

@@ -1,8 +1,6 @@
 ## Configuration Middleware Stack Proxy
 
-这里指的是 Rails::Configuration，名字起得不是很好。
-
-我们常用的 `config.middleware` 方法，就是它定义的。
+我们常用的 `config.middleware`，其实是 Middleware Stack Proxy 的实例对象。对应 Rails::Configuration::MiddlewareStackProxy
 
 被 Railtie 所调用，又由于继承关系，Engine、Application、YourApp 都可用。
 

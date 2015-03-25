@@ -1,6 +1,5 @@
 ### Rails 默认已有的 instrumenter
 
-
 **action_mailer**
 
 ```

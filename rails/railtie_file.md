@@ -1,16 +1,18 @@
 ## Railtie 文件下的内容
 
-提供以下方法：
+提供以下实例方法：
 
 ### initializer
 
-继承于 Rails::Railtie 所以有 `initializer` 方法:
+实际上 `initializer` 定义于 Rails::initializable. 它还可以接受 :before 或 :after 做为参数。
+
+Rails::Railtie include 了它，所以对外提供有 `initializer` 方法:
 
 ```ruby
 class MyRailtie < Rails::Railtie
   # initializer 来源于 
   initializer "my_railtie.configure_rails_initialization" do
-    # some initialization behavior
+    # 一些初始化代码
   end
 end
 ```
@@ -24,8 +26,6 @@ class MyRailtie < Rails::Railtie
   end
 end
 ```
-
-> Note: `initializer` 定义于 Rails::initializable. 它还可以接受 :before 或 :after 做为参数。
 
 ### config
 
@@ -72,13 +72,15 @@ end
 类方法：
 
 ```
-configure # 动词
-
 # 动词，接 block
 rake_tasks
 console
 runner
 generators
+```
+
+```
+configure # 动词
 
 railtie_name
 
@@ -94,12 +96,6 @@ abstract_railtie? # 默认是 Rails::Railtie、Rails::Engine 和 Rails::Applicat
 config    # 名词
 configure
 railtie_namespace
-```
-
-其它实例方法：
-
-```
-generate_railtie_name
 ```
 
 部分方法的解释，可以参考已有解释的方法，或参考 Engine 里的方法。

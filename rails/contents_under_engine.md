@@ -29,12 +29,6 @@ railties
 routes
 ```
 
-其它实例方法：
-
-```
-load_config_initializer
-```
-
 类方法：
 
 ```
@@ -46,17 +40,19 @@ find_root
 isolate_namespace
 ```
 
-其它方法：
-
 ```
-delegate :middleware, :root, :paths, to: :config
-delegate :engine_name, :isolated?, to: :class
-
 # 并且
 
 isolated? & isolated
 
 engine_name & railtie_name
+```
+
+其它方法：
+
+```
+delegate :middleware, :root, :paths, to: :config
+delegate :engine_name, :isolated?, to: :class
 ```
 
 ### 有哪些 initializer

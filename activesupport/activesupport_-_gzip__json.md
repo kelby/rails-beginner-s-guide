@@ -1,5 +1,7 @@
 ## Gzip 与 JSON
 
+**Gzip**
+<br>
 封装了标准库 [zlib](http://ruby-doc.org/stdlib-2.1.0/libdoc/zlib/rdoc/index.html)，提供 gzip 压缩/解压缩字符串功能。
 
 ```ruby
@@ -12,7 +14,9 @@ ActiveSupport::Gzip.decompress(gzip)
 # => "compress me!"
 ```
 
-有一个和它类似 JSON
+**JSON**
+<br>
+提供 json 格式的编码/解码。
 
 `encode(value, options = nil)`
 将对象转换成 JSON 格式

@@ -4,13 +4,13 @@ Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
 它依赖于 Rails 内建的其它组件，如：Active Job、Abstract Controller 和 Action View，以及外部 gem 'mail'.
 
-因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。"
+因为是 Rails 内建的组件，所以使用上通常集成于 Rails 项目，但其实它也可以在 Rails 之外使用。
 
 ### 核心是 gem 'mail'
 
 既然是用来处理邮件相关业务，那么核心功能当然就是邮件处理，这部分由 gem 'mail' 完成。
 
-gem 'mail' 可用于邮件处理，包括创建、发送、和接收等。mail 可以直接拿来用:
+gem 'mail' 可用于邮件处理，包括创建、发送、和接收等，示例如下:
 
 ```ruby
 require 'mail'
