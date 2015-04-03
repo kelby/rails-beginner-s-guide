@@ -46,7 +46,7 @@ namespace :admin, as: "sekret" do
 end
 ```
 
-此外：
+4) 此外：
 
 ```ruby
 namespace "admin" do

@@ -1,6 +1,8 @@
 ## Digest
 
+```
 headers["WWW-Authenticate"] = %(Digest realm="#{realm}", qop="auth", algorithm=MD5, nonce="#{nonce}", opaque="#{opaque}")
+```
 
 ### Controller 方法
 

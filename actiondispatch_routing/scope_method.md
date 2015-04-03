@@ -1,6 +1,6 @@
 ### scope
 
-#### 不使用 scope
+#### 一、不使用 scope
 
 ```
 resources :jjs
@@ -17,7 +17,7 @@ resources :jjs
                 PUT    /jjs/:id(.:format)                  jjs#update
                 DELETE /jjs/:id(.:format)                  jjs#destroy
 
-#### 使用 scope 但不传递参数
+#### 二、使用 scope，但不传递参数
 
 ```
 scope "/admin" do
@@ -37,7 +37,7 @@ end
                 DELETE /admin/iis/:id(.:format)            iis#destroy
 
 
-### 使用 scope
+#### 三、使用 scope，并传递参数
 
 接受参数：path、constraints、shallow_path、shallow_prefix、defaults、as、module、controller 等。
 

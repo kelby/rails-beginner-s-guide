@@ -15,9 +15,12 @@
 
 但因为 serialize_argument 支持的类型有多种，其中就包括 GlobalID::Identification. 所以我们可以传递一个"活的对象"进队列，而不只是它的一部分(如：class、id).
 
-使用 Global ID 前后对比：
+使用 Global ID 前后对比。
+
+之前：
 
 ```ruby
+
 class TrashableCleanupJob
   def perform(trashable_class, trashable_id, depth)
     # 出队列/执行的时候需要根据 trashable_class 和 trashable_id 查询相应 trashable
@@ -25,7 +28,11 @@ class TrashableCleanupJob
     trashable.cleanup(depth)
   end
 end
+```
 
+之后：
+
+```ruby
 class TrashableCleanupJob
   def perform(trashable, depth)
     # 出队列/执行的时候直接使用 trashable

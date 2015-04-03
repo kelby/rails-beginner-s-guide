@@ -10,7 +10,7 @@ mount
 root
 ```
 
-#### match
+#### match 方法
 
 这里的 match 只是个同名方法，是个空壳子，详细要看 Resources 里的。
 
@@ -23,7 +23,9 @@ mount 和 root
     match
 ```
 
-#### mount - 挂载一个基于 Rack 的应用到我们的程序。
+#### mount 方法
+
+挂载一个基于 Rack 的应用到我们的程序。
 
 ```ruby
 match '/movies/search', => "movies#search"
@@ -89,7 +91,7 @@ mount(SomeRackApp => "some_route", as: "exciting")
 
 现在，你可以通过 `exciting_path` 或 `exciting_url` 访问到刚才挂载的应用。
 
-#### root
+#### root 方法
 
 实现：
 

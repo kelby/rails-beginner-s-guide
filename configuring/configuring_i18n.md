@@ -9,4 +9,3 @@ config.i18n.enforce_available_locales
 
 config.i18n.load_path
 ```
-

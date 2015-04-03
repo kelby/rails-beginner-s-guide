@@ -3,6 +3,7 @@
 turbolink 要改变编程习惯。
 
 有几个链接不会使用 turblinks.
+<br>
 如：# 开头、非 HTML 链接、target = _blank 以及下面要介绍的。
 <br>
 并且，正常的链接可以关闭 turblinks. 关闭某个链接，或 div 之类的 turbolink 可以给它加上属性：
@@ -14,26 +15,6 @@ turbolinks 原理是监听页面的 click 事件，然后异步的去后台取�
 遇到了问题，下面是回答。
 turbolinks 设计本来就是为了减少加载 css 和 js 如果有公共大量部分 css 和 js 只有少量需要动态加载的，可以在 pageinit 里面写 js 动态加载
 
-```
-1.gem 'turbolinks'
-2.//= require turbolinks
-3.1
-$(document).on 'click', '.edit_task input[type=checkbox]', ->
-  $(this).parent('form').submit()
-
-# 3.2
-ready = ->
-  $(document).on 'click', '.edit_task input[type=checkbox]', ->
-    $(this).parent('form').submit()
-
-$(document).ready(ready)
-$(document).on('page:load', ready)
-
-# 3.3
-$(document).on 'ready page:load', ->
-  $(document).on 'click', '.edit_task input[type=checkbox]', ->
-    $(this).parent('form').submit()
-```
 
 Turbolinks 开启后，网站将成为一个单页应用，页面切换不释放 js 逻辑。这意味着编写前端逻辑的时候需要留意内存泄露或者其他持久页面导致的问题。
 流程：
@@ -126,6 +107,70 @@ page:restore is fired at the end of restore process.
 
 By default, Turbolinks caches 10 of these page loads.
 
+
+$(document).ready
+每次新进的页面（地址栏回车，跳转）或者 刷新都会执行。
+
+$(document).on "page:change
+每次 Turbolinks 工作时执行。
+
+简单的说，一般情况下ready 函数一般只执行一次，而 page:change 在每次页面切换时都会执行。
+
+$(document).ready ->
+  alert "我在 Turbolinks 下只执行一次。"
+$(document).on "page:change", ->
+  alert "我在 Turbolinks 下每次都执行。"
+只要将每次执行的代码和只执行一次的代码分开就可以了。
+
+比如事件委托是发生在 document 上，这个对象只要不刷新就一直存在，所以只执行一遍就可以了
+
+$(document).on 'click', 'body', ->
+然后，比如像每次刷新都要改变body颜色的话，就要使用 page:load
+$(document).on "page:change", ->
+  document.body.style.backgroundColor = '#xxxxx'
+  
+  
+另外，page:change 在第一次加载进页面是不会执行的，可以配合 ready 一起使用：
+$ ->
+$(document).on "page:change", do ->
+  document.body.style.backgroundColor = '#xxxxx'
+  arguments.callee
+
+$(document).ready 依赖于 DOMContentLoaded 事件
+Turbolinks 接管页面后换页不会产生 DOMContentLoaded，所以换页之后 $(document).ready 无效
+Turbolinks 提供了 page:change 取代 $(document).ready
+
+现在第一次加载也会触发 page:change 了，所以 page:change 可以替代 $(document).ready
+
+总结起来，就是原来所有用
+
+$(document).ready ->
+的地方都直接替换成
+
+$(document).on "page:change", ->
+
+
+要注意 turbolinks 会缓存访问过的页面，缓存 restore 的时候也会触发 page:chang，这样的代码在用户后退的时候会重复绑定：
+
+$(document).on 'page:change', ->
+  $('body').on 'click', ->
+    console.log('hit')
+page:change 和 $().ready 逻辑一样，区别是 turbolinks restore 的时候页面带着之前的状态，而传统页面后退的时候是干净的。
+
+知道为啥 page 事件在加载页面时不触发了，原来 我用的不是 page:change 而是 page:load。
+
+page:load 事件对应的是 xhr.onload ，也就是每次完成 AJAX 请求时触发。
+
+而 page:change 是页面切换调用 changePage 时触发，然后 Turbolinks 在 installDocumentReadyPageEventTriggers 函数做了处理，所以可以替代 domready 函数！
+
+奥，还有个 page:load，考虑到 restore 的问题，page:load 才是对应 $().ready
+
+data-no-turbolink 意思是关掉这 div 内的 turbolink 功能。 
+
+发现之前理解错了。Turbolinks 后退的时候是不会执行 script 的。
+
+它真正节约的是 css 和 javascript 在客户端的本地加载时间和执行时间。
+
 参考：
 
 jquery.turbolinks https://github.com/kossnocorp/jquery.turbolinks
@@ -134,6 +179,9 @@ Turbolinks https://github.com/rails/turbolinks
 
 pjax https://github.com/defunkt/jquery-pjax
 
+https://ruby-china.org/topics/17977
+
+https://ruby-china.org/topics/13543
 
 
 

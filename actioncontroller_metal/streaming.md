@@ -2,10 +2,15 @@
 
 **改变渲染顺序。**
 
+Rails 默认的渲染过程：先是模板，然后是数据库查询，最后才是布局。
+
 ```
-HTTP request -> dynamic content generation -> HTTP response
+HTTP request -> dynamic content generation -> static head generation -> HTTP response
 ```
 
+具体一点：它先执行 `yield` 里的内容，渲染模板，最后才是加载 assets/layouts.
+
+Streaming 可以改变一下顺序，按布局来渲染。布局先显示，对于用户体验可能更好一点，还有就是这会使得 JS 和 CSS 的加载顺序比平时提前。
 变成(这里只是类似)：
 
 ```
@@ -27,11 +32,7 @@ Transfer-Encoding: chunked
 <br>
 再比如：将不能动态生成 cookie 和 session
 
-将搞清楚它的解决的问题，和带来的问题再使用。并且，概念不要和【Live】里的 stream 搅在一起！
-
-Rails 默认的渲染过程：先是模板，然后是数据库查询，最后才是布局。
-
-Streaming 可以改变一下顺序，按布局来渲染。布局先显示，对于用户体验可能更好一点，还有就是这会使得 JS 和 CSS 的加载顺序比平时提前。
+使用之前，请搞清楚它要解决的问题，以及带来的新问题。还有，概念不要和【Live】里的 stream 搅在一起！
 
 Streaming 没有对外提供方法，在 `render` 的时候，加上 `:stream` 参数即可：
 

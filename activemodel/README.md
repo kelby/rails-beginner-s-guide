@@ -6,4 +6,8 @@
 
 Active Record 对于需要持久化的数据进行校验或处理，是很强大的。但如果我们不需要持久化数据，或者我们只需要很少的功能，如：提交表单数据在 Web 开发中是比较常见(联系我们，给我们发送反馈意见) - 用户提交信息，无论校验是有效还是无效，都应该得到反馈。Active Record 太重了，使用 Active Model 可以帮助我们减少复杂度。
 
-> Note: 说明一下，Active Model 脱胎于 Active Record，而不是依赖，它可以单独使用；反过来，Active Record 依赖于 Active Model.
+> Note: 
+<br>
+说明一下，Active Model 脱胎于 Active Record，而不是依赖，它可以单独使用；
+<br>
+反过来，Active Record 依赖于 Active Model.

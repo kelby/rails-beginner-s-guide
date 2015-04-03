@@ -1,6 +1,8 @@
 ## Basic
 
+```
 headers["WWW-Authenticate"] = %(Basic realm="#{realm.gsub(/"/, "")}")
+```
 
 ### 类方法
 

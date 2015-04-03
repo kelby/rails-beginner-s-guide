@@ -1,6 +1,6 @@
 ## ~~Collector~~
 
-我们的响应格式 Mime.
+我们在 respond_to 里可以响应的格式 Mime.
 
 Collector 是 Abstact Controller 实现的。Action Controller 有自己的扩展，Active Mailer 也有自己的扩展。
 

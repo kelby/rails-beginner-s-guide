@@ -1,5 +1,7 @@
 ### Http Helpers
 
+**match 方法的语法糖。**
+
 对应 HTTP 请求里的：
 
 ```ruby
@@ -8,16 +10,18 @@ get
 patch
 post
 put
+```
 
-# 并且
+并且：
 
+```
 delete + get + patch + post + put
              |
              V
            match
 ```
 
-只是语法糖，都是封装了 `match`，使用上：
+使用上：
 
 ```ruby
 # 注意 via 参数

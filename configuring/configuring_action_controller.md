@@ -23,4 +23,3 @@ config.action_controller.action_on_unpermitted_parameters
 
 config.action_controller.always_permitted_parameters
 ```
-

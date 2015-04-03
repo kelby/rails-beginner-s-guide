@@ -15,4 +15,3 @@ config.action_view.prefix_partial_path_with_controller_namespace
 
 config.action_view.raise_on_missing_translations
 ```
-

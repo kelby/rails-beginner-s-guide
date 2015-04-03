@@ -11,4 +11,3 @@ config.active_support.use_standard_json_time_format
 
 config.active_support.time_precision
 ```
-

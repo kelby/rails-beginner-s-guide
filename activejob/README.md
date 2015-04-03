@@ -12,16 +12,18 @@
 
 默认使用的 queue_adapter 是 :inline，你可以根据需要自己设置 queue_adapter.
 
-已经支持 Delayed Job、Resque、Sidekiq 等常用延迟任务 gem.
-
 ```ruby
-# 默认 queue adapter
 ActiveJob::Base.queue_adapter = :inline
 # 或
 Rails.application.config.active_job.queue_adapter = :test
+```
 
-# 所有可用 adapter: :backburner, :delayed_job, :qu, :que, 
-# :queue_classic, :resque, :sidekiq, :sneakers, :sucker_punch, :inline, :test
+已经支持 Delayed Job、Resque、Sidekiq 等常用延迟任务 gem. 所有可用 adapter:
+
+```
+:backburner, :delayed_job, :qu, :que, :queue_classic,
+:resque, :sidekiq, :sneakers, :sucker_punch,
+:inline, :test
 ```
 
 ### Queue Name
@@ -42,27 +44,35 @@ end
 
 ### Core
 
-```
-# 实例方法
-serialize
+类方法 `set` 使用举例：
 
-# 类方法
-set # 常用
+```ruby
+# 立即执行，不进入队列
+ProcessPhotoJob.perform_now(photo)
+
+# 资源有空闲的时候(具体不确定)，就会自动执行已经在队列的任务
+MyJob.perform_later record
+
+# 一天之后的这个时候，就会自动执行已经在队列的任务
+MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
+
+# 一周之后的这个时候，就会自动执行已经在队列的任务
+MyJob.set(wait: 1.week).perform_later(record)
+```
+
+实例方法：
+
+```
+serialize
+```
+
+类方法：
+
+```
 deserialize
 ```
 
-使用举例：
-
-```ruby
-# Enqueue a job to be performed as soon the queueing system is free.
-MyJob.perform_later record
-
-# Enqueue a job to be performed tomorrow at noon.
-MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
-
-# Enqueue a job to be performed 1 week from now.
-MyJob.set(wait: 1.week).perform_later(record)
-```
+> Note: set 方法支持可选参数：wait、wait_until、queue
 
 ### Enqueuing 入队与重试
 
@@ -159,7 +169,7 @@ end
 
 其它几个方法类似。
 
-实现上，都是直接封装 `set_callback`
+> Note: 实现上，使用了 ActiveSupport::Callbacks 的 define_callbacks、set_callback、run_callbacks 等方法。
 
 ### 提示
 

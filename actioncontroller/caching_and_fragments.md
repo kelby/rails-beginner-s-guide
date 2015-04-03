@@ -78,8 +78,6 @@ expire_fragment(controller: 'products', action: 'recent',
 参考
 
 [Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)
-
-[Speed Up With Rails Cache](http://rubyer.me/blog/2012/09/04/speed-up-with-rails-cache/)<br>
+<br>
 [Advanced Caching: Part 2 - Using Caching Strategies](http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/)<br>
-[Rails Cache for dummies](http://www.codelearn.org/blog/rails-cache-with-examples)
 

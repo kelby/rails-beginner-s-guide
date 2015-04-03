@@ -1,6 +1,6 @@
 ## ~~Dispatcher~~
 
-**处理向 Rails 其它组件转移。**
+**将 HTTP 请求向 具体的 Controller#action 转移。**
 
 继承于 Routing::Endpoint
 
@@ -16,7 +16,7 @@ module ActionDispatch
 end
 ```
 
-**实例方法**
+**实例方法：**
 
 ```ruby
 dispatcher?
@@ -25,7 +25,7 @@ prepare_params!
 controller
 ```
 
-**私有方法**
+**私有方法：**
 
 ```ruby
 dispatch
@@ -36,7 +36,13 @@ normalize_controller!
 merge_default_action!
 ```
 
-`dispatch` 重要的转发方法，将战场切换到 Controller#action
+最重要的方法是 `dispatch`，将战场切换到 Controller#action
+
+```ruby
+def dispatch(controller, action, env)
+  controller.action(action).call(env)
+end
+```
 
 **每一条路由规则，对应着一个 Dispatcher 实例。**
 

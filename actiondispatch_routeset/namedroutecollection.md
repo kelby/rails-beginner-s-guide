@@ -1,6 +1,6 @@
 ## ~~Named Route Collection~~
 
-**向 Rails 其它组件提供路由相关 helper 方法。**
+**向 Rails 其它组件提供路由相的关 x_path, x_url 方法。**
 
 include Enumerable，所以看到很多同名方法也就不奇怪了。它们意义和使用方式雷同，不再一一解释。
 
@@ -26,7 +26,6 @@ url_helpers_module
 
 route_defined?
 
-helpers
 helper_names
 
 clear! & clear

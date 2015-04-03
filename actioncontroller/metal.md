@@ -1,4 +1,6 @@
-## Metal
+## Metal - 精简的 ActionController::Base
+
+### 概念
 
 metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品。
 
@@ -26,6 +28,56 @@ get 'hello', to: HelloController.action(:index)
 ```
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
+
+### 精简的 ActionController::Base
+
+首先，我们看看 ActionController::Base 引入了哪些模块：
+
+```ruby
+MODULES = [
+  AbstractController::Rendering,
+  AbstractController::Translation,
+  AbstractController::AssetPaths,
+
+  Helpers,
+  UrlFor,
+  Redirecting,
+  ActionView::Layouts,
+  Rendering,
+  Renderers::All,
+  ConditionalGet,
+  EtagWithTemplateDigest,
+  RackDelegation,
+  Caching,
+  MimeResponds,
+  ImplicitRender,
+  StrongParameters,
+
+  Cookies,
+  Flash,
+  RequestForgeryProtection,
+  ForceSSL,
+  Streaming,
+  DataStreaming,
+  HttpAuthentication::Basic::ControllerMethods,
+  HttpAuthentication::Digest::ControllerMethods,
+  HttpAuthentication::Token::ControllerMethods,
+
+  AbstractController::Callbacks,
+
+  Rescue,
+
+  Instrumentation,
+
+  ParamsWrapper
+]
+
+MODULES.each do |mod|
+  include mod
+end
+```
+
+引入了这么多模块，虽然方便了使用。但有的模块，我们用不到。所以，浪费了。
 
 ### 其它
 

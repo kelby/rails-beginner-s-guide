@@ -89,6 +89,9 @@ Rails.application.send :middleware
    Rack::ETag]>
 ```
 
+
+**说明**，默认添加 middleware 可以在 Rails::Application::DefaultMiddlewareStack#build_stack 里查看；而我们手动添加的 middleware 通常在 config/ 下添加。执行middleware 由 ActionController::Metal.action 完成。
+
 在上面例子里，除默认 middleware 外，我们还额外使用了 4 个 middleware. 在实际项目中，你应该可以看到比这多得多的 middleware.
 
 另外，从应用的日常报错上，也能看出应用所使用的 middleware 及其顺序，在此就不贴示例了。

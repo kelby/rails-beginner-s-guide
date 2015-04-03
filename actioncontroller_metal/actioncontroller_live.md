@@ -91,6 +91,16 @@ log_error
 
 Live 可用于构建实时聊天之类等。
 
+### 注意事项
+
+- `content_for` 根据情况，有的要改为 `provide`
+
+- 如果模板里有更改 Headers, cookies, session and flash 的值，将不起作用
+
+- 部分 middleware 将不能再使用，如：Rack::Bug、Rack::Cache 
+
+- 异常报告和 Web server 的支持
+
 参考
 
 [#401 ActionController::Live](http://railscasts.com/episodes/401-actioncontroller-live)
