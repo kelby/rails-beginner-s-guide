@@ -7,8 +7,6 @@
 extend ::AbstractController::Railties::RoutesHelpers.with(app.routes, false)
 include app.routes.mounted_helpers
 
-app.routes.append do
-
 # action_controller/railtie.rb
 include app.routes.mounted_helpers
 extend ::AbstractController::Railties::RoutesHelpers.with(app.routes)

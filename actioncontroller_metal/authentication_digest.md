@@ -4,7 +4,7 @@
 headers["WWW-Authenticate"] = %(Digest realm="#{realm}", qop="auth", algorithm=MD5, nonce="#{nonce}", opaque="#{opaque}")
 ```
 
-### Controller 方法
+**Controller 方法：**
 
 提供方法：
 
@@ -49,7 +49,7 @@ end
 `authenticate_or_request_with_http_digest` 简单的封装了其余两个方法。  
 从名字可知，如果提供的是普通文本则直接接受；如果提供的是 md5 加密，则先(自动)解密再接受。
 
-### 其它方法：
+**其它方法：**
 
 ```
 authenticate

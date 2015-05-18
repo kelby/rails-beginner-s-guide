@@ -1,6 +1,8 @@
 ### Session
 
-包括 CacheStore && CookieStore && MemCacheStore
+**主要是配置 Session 的存储方式。**
+
+可选 Cache Store && Cookie Store && Mem Cache Store
 
 用得最多，并且默认的是 CookieStore.
 

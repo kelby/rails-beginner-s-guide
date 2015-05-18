@@ -72,7 +72,7 @@ render :nothing => true, :status => "201 Created"
 ||428 |	:precondition_required |
 ||429 |	:too_many_requests |
 ||431 |	:request_header_fields_too_large |
-| 服务器错误 |	500	 | :internal_server_error
+| 服务端错误 |	500	 | :internal_server_error
 ||501 |	:not_implemented |
 ||502 |	:bad_gateway |
 ||503 |	:service_unavailable |

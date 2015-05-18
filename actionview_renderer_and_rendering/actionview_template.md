@@ -47,3 +47,25 @@ def initialize(source, identifier, handler, details)
   @compile_mutex     = Mutex.new
 end
 ```
+
+### 本文件下的内容
+
+```
+encode!
+
+inspect
+
+refresh
+
+render
+
+supports_streaming?
+
+type
+```
+
+```
+attr_accessor :locals, :formats, :variants, :virtual_path
+
+attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
+```

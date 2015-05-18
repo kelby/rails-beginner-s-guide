@@ -12,7 +12,7 @@
 etag
 ```
 
-`etag` 把元素加入到 etaggers 里。它只是把元素加入到 etaggers，自身是不影响 HTTP 缓存结果的；因为后面的调用，才影响 HTTP 缓存结果。
+`etag` 把缓存元素加入到 etaggers 里。之后 cache 相关的方法会调用到 etaggers，即调用到这些缓存元素，进而通过它们影响 HTTP 缓存结果。
 <br>
 这里添加的元素对当前 Controller 下所有的 action 都会起作用。
 
@@ -32,7 +32,7 @@ stale?
 
 `stale?` 不只是单纯的询问，它用到了 fresh_when，所以除了返回 boolean 外，还会影响 response.
 
-`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由 Etag With Template Digest 进行处理)
+`fresh_when` 和 `stale?` 都可以传递 `:template` 参数以便指定模板。(这部分由【Etag With Template Digest】进行处理)
 
 `expires_in` 设置 response 里和 HTTP 缓存有关的字段。
 <br>

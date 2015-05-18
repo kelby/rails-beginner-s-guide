@@ -68,10 +68,10 @@ delegate :headers, :status=, :location=, :content_type=,
 
 有 process_action 同名方法。
 
-show_detailed_exceptions? (默认是不 false，但本地请求的话是 true)，可配置 config.consider_all_requests_local
+show_detailed_exceptions? (默认是 false，但本地请求的话是 true)，可配置 config.consider_all_requests_local
 
 rescue_with_handler(封装了 ActiveSupport::Rescuable 的同名方法)
 
 ### ~~Url For~~
 
-定义了 url_options 方法，不会直接使用, 但会影响到 `url_for` 的结果。
+`url_for` 方法的组成部分。

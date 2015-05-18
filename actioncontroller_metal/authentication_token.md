@@ -4,7 +4,7 @@
 headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
 ```
 
-### Controller 方法
+**Controller 方法：**
 
 提供方法：
 
@@ -78,7 +78,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### 其它方法：
+**其它方法：**
 
 ```
 authenticate
@@ -118,7 +118,7 @@ def test_access_granted_from_xml
 end
 ```
 
-**Token 验证的部分特点**
+**Token 验证的部分特点：**
 
 1. 不能直接明文出现在 url 里。
 2. 通过 curl -H 'Authorization: Token token="x"' 传递数据。

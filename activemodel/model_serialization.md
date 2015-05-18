@@ -31,6 +31,7 @@ from_xml
 ```ruby
 person = Person.new
 person.name = "Bob"
+
 person.serializable_hash # => {"name"=>"Bob"}
 person.as_json           # => {"name"=>"Bob"}
 person.to_json           # => "{\"name\":\"Bob\"}"

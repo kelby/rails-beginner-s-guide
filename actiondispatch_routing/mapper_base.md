@@ -91,6 +91,40 @@ mount(SomeRackApp => "some_route", as: "exciting")
 
 现在，你可以通过 `exciting_path` 或 `exciting_url` 访问到刚才挂载的应用。
 
+使用 `mount` 代替`match` 还有一个细节不同，在被挂载的 Rack endpoint 里，映射路由时我们不必加前缀。举例：
+
+不是：
+
+```ruby
+require 'sinatra'
+class ApiApp < Sinatra::Base
+  get '/api' do
+  end
+
+  get "/api/endpoint" do
+  end
+
+  post "/api/endpoint" do
+  end
+end
+```
+
+而是：
+
+```ruby
+require 'sinatra'
+class ApiApp < Sinatra::Base
+  get '/' do
+  end
+
+  get "/endpoint" do
+  end
+
+  post "/endpoint" do
+  end
+end
+```
+
 #### root 方法
 
 实现：
@@ -104,13 +138,3 @@ end
 因为 root 实现基于 match，可以使用相同的可选参数。
 
 建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。
-
-#### 其它方法
-
-```
-default_url_options & default_url_options=
-
-has_named_route?
-
-with_default_scope
-```

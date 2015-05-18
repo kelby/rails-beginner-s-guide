@@ -31,7 +31,7 @@ class Shirt < ActiveRecord::Base
 end
 ```
 
-可以调用 Shirt.red 和 Shirt.dry_clean_only. Shirt.red 功能和 Shirt.where(color: 'red') 一样。
+可以调用 `Shirt.red` 和 `Shirt.dry_clean_only`. `Shirt.red` 功能和 `Shirt.where(color: 'red')` 一样。
 
 也就是说，功能上和以下代码一样:
 
@@ -43,11 +43,11 @@ class Shirt < ActiveRecord::Base
 end
 ```
 
-不同的是 scope 返回的是 Relation，而不是数组. 所以，你可以调用 Shirt.red.first, Shirt.red.count, Shirt.red.where(size: 'small') 等. 但是 Relation 也可以有数组的行为, 如 Shirt.red.each(&block), Shirt.red.first, 和 Shirt.red.inject(memo, &block) 等。
+不同的是 scope 返回的是 Relation，而不是数组. 所以，你可以调用 `Shirt.red.first`, `Shirt.red.count`, `Shirt.red.where(size: 'small')` 等. 但是 Relation 也可以有数组的行为, 如 `Shirt.red.each(&block)`, `Shirt.red.first`, 和 `Shirt.red.inject(memo, &block)` 等。
 
 **scope 可以链式调用**
 
-Shirt.red.dry_clean_only 运行结果是 red 和 dry_clean_only 综合的结果。Shirt.red.dry_clean_only.count 返回的是 red 和 dry_clean_only 综合结果的数目。在这里和 Shirt.red.dry_clean_only.average(:thread_count) 类似。
+`Shirt.red.dry_clean_only` 运行结果是 `red` 和 `dry_clean_only` 综合的结果。`Shirt.red.dry_clean_only.count` 返回的是 `red` 和 `dry_clean_only` 综合结果的数目。在这里和 `Shirt.red.dry_clean_only.average(:thread_count)` 类似。
 
 **scope 是是一步步走下去的**
 

@@ -28,6 +28,7 @@ modules_for_helpers
 另外，有配置：
 
 ```ruby
+# 默认为 true
 config.action_controller.include_all_helpers = false
 ```
 

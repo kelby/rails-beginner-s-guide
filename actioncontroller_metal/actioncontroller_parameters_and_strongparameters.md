@@ -1,38 +1,4 @@
-由两部分组成：Strong Parameters 和 Parameters.
-
-## Strong Parameters
-
-提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
-
-```
-params
-params=
-```
-
-另外，要说明：
-
-```ruby
-params == request.parameters
-=> true
-```
-
-这个对象的值是什么？- 表单数据或传递过来的，加上 :controller 和 :action
-
-```ruby
-Processing by PostsController#create as HTML
-Parameters: {"utf8"=>"✓",
-             "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
-             "post"=>{"title"=>"hello world"},
-             "commit"=>"Create Post"}
-
-params
-=> {"utf8"=>"✓",
-    "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
-    "post"=>{"title"=>"hello world"},
-    "commit"=>"Create Post",
-    "action"=>"create",
-    "controller"=>"posts"}
-```
+由两部分组成：Parameters 和 Strong Parameters.
 
 ## Parameters
 
@@ -100,4 +66,38 @@ Person.first.update!(permitted)
 
 ```
 config.always_permitted_parameters = %w( controller action format )
+```
+
+## Strong Parameters
+
+提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
+
+```
+params
+params=
+```
+
+另外，要说明：
+
+```ruby
+params == request.parameters
+=> true
+```
+
+这个对象的值是什么？- 表单数据或传递过来的，加上 :controller 和 :action
+
+```ruby
+Processing by PostsController#create as HTML
+Parameters: {"utf8"=>"✓",
+             "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
+             "post"=>{"title"=>"hello world"},
+             "commit"=>"Create Post"}
+
+params
+=> {"utf8"=>"✓",
+    "authenticity_token"=>"kJttlgy9ptyuFS5TXrE95HFwKdhf7p74yuFZl73Lvxg=",
+    "post"=>{"title"=>"hello world"},
+    "commit"=>"Create Post",
+    "action"=>"create",
+    "controller"=>"posts"}
 ```

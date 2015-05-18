@@ -84,6 +84,8 @@ User.select([:id, :name])
 
 User.group(:name)
 => [#<User id: 3, name: "Foo", ...>, #<User id: 2, name: "Bar", ...>]
+
+User.where('tag_list != ?', '').group(:tag_list).order('count_all desc').count
 ```
 
 group 通常要配合其它查询语句或条件使用，单独使用只会有"去重"效果(record 属性相同的话，只保留最后一个 record 对象)。

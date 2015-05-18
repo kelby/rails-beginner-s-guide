@@ -4,7 +4,7 @@
 headers["WWW-Authenticate"] = %(Basic realm="#{realm.gsub(/"/, "")}")
 ```
 
-### 类方法
+**类方法：**
 
 ```
 http_basic_authenticate_with
@@ -30,7 +30,7 @@ end
 
 `http_basic_authenticate_with` 应该是最常用的验证方式了吧。
 
-### Controller 方法
+**Controller 方法：**
 
 ```
 authenticate_with_http_basic
@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### 其它方法：
+**其它方法：**
 
 ```
 auth_param

@@ -2,6 +2,10 @@
 
 我们 Mailer 类继承的 ActionMailer::Base 指的就是它。
 
+它是连接 Action Mailer 和 Abstract Controller 的纽带，是连接我们应用与 Action Mailer 的纽带。
+
+同时，它还提供一些对外的接口，供我们直接使用。
+
 ### 作用
 
 它继承于 AbstractController::Base，包含了一些自身及 Abstract Controller 的模块(尽管有的模块它并没有使用到)，作用是为了让它的子类(我们的 Mailer 类)能够"更好用、更实用"。
@@ -197,6 +201,8 @@ register_observers    # 简单封装上面的 register_observer
 ```
 supports_path?
 ```
+
+邮件里的路径不支持相对路径。
 
 实例方法：
 

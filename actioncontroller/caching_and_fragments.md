@@ -74,10 +74,3 @@ expire_fragment(controller: 'products', action: 'recent',
 操作这几个方法的是 controller，而这个几方法操作的是 cache_store.
 
 > Note: ActionView::Helpers::CacheHelper 里的 cache 方法用到了 read_fragment、write_fragment 和 fragment_cache_key.
-
-参考
-
-[Cache Digests 最大化緩存策略](http://blog.xdite.net/posts/2012/09/02/cache-digest-new-strategy/)
-<br>
-[Advanced Caching: Part 2 - Using Caching Strategies](http://hawkins.io/2012/07/advanced_caching_part_2-using_strategies/)<br>
-

@@ -66,7 +66,13 @@ helper 和 helper_method 可以简单理解为一对作用相反的操作。
 除上述两方法外，还有：
 
 ```
-clear_helpers
-
 modules_for_helpers
 ```
+
+`modules_for_helpers` 被上面的 helper 方法所调用。
+
+```
+clear_helpers
+```
+
+`clear_helpers` 只保留与此 Controller 同名的 Helper 模块的辅助方法，其它模块的辅助方法清除掉。

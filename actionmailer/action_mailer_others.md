@@ -60,25 +60,23 @@ create    test/mailers/user_mailer_test.rb
 
 ### ~~Collector~~
 
-和 AbstractController::Collector 相关，也就是和 Mime 相关。
-
 mail 方法可以接收一个代码块，你可以在这里指定渲染模板的格式及内容等：
 
 ```ruby
-mail(to: 'mikel@test.lindsaar.net') do |format|
+mail(to: user.email) do |format|
   format.text
   format.html
 end
 
 # 或
 
-mail(to: 'mikel@test.lindsaar.net') do |format|
-  format.text { render plain: "Hello Mikel!" }
-  format.html { render html: "<h1>Hello Mikel!</h1>".html_safe }
+mail(to: user.email) do |format|
+  format.text { render plain: "Hello World!" }
+  format.html { render html: "<h1>Hello World!</h1>".html_safe }
 end
 ```
 
-也只有在这个时候，这里的 Collector 才有用到。
+也只有在这个时候，这里的 Collector 才有用到。它和 AbstractController::Collector 相关，也就是和 Mime 相关。
 
 > Note: 默认会发送和 mail 所在方法名同名的所有模板，不区分 Mime 格式。这也是我们常用的。
 

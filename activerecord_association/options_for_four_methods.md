@@ -49,6 +49,14 @@
 
 `inverse_of` 通过自己查找到关联对象，然后又通过关联对象找回自己。
 
+有的关联会自动推断 inverse_of，所以用不用其实效果一样。而有的关联加上参数后，不起作用，所以即使设置也没用。可以根据以下代码进行检测：
+
+```ruby
+ModelName.reflections.map do |key, value|
+  p "#{key} inverse_of: #{value.has_inverse?}"
+end
+```
+
 `as` 多态时，自己是什么接口。
 
 `through` 在中间表里，希望关联对象怎么被表示。(听起来是不是有点绕，管得也太多了吧)

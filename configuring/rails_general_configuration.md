@@ -52,6 +52,7 @@ secrets.secret_key_base
 
 config.serve_static_assets
 
+# session 存储方式及限制条件
 config.session_store
 
 config.time_zone

@@ -11,8 +11,7 @@ Rails 默认有 3 个：
 我们定制的可以直接使用 Rails.configuration.file_watcher 放到"其它所有"里，也可以直接调用 ActiveSupport::FileUpdateChecker.
 
 ```ruby
-# 定义
-# 这里的 paths 表示你要监视的文件或目录(所在的路径)。
+# 定义。这里的 paths 表示你要监视的文件或目录(所在的路径)。
 i18n_reloader = ActiveSupport::FileUpdateChecker.new(paths) do
   I18n.reload! # 监视内容有变化时，执行什么操作。
   # Rails.application.reload_routes!
@@ -27,7 +26,7 @@ end
 i18n_reloader.execute
 ```
 
-用 Rails.application.reloaders 查看所有检测器(要先放进来，才能查看)。
+可用 Rails.application.reloaders 查看所有检测器(要先放进来，才能查看)。
 
 ```ruby
 Rails.application.reloaders << i18n_reloader
@@ -38,3 +37,5 @@ Rails.application.reloaders << i18n_reloader
 ```
 updated?
 ```
+
+用于询问监视的文件/目录是否有变化。

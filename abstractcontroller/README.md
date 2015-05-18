@@ -1,6 +1,7 @@
 # Abstract Controller
 
-- 服务于 Action Controller 和 Action Mailer.
+服务于 Action Controller 和 Action Mailer.
+
 - 辅助 ActionMailer::Base 将站场转移到具体的 Mailer#action.
 - 辅助 ActionController::Base 将站场转移到具体的 Controller#action(经过 Metal).
 
@@ -11,7 +12,7 @@ Abstract Controller 起到了承上启下的作用(所以，有时候它的代�
 
 Action Mailer 和 Action Controller 都继承于 Abstract Controller：
 
-```
+```ruby
 ActionMailer::Base < AbstractController::Base
 
 ActionController::Base < ActionController::Metal < AbstractController::Base

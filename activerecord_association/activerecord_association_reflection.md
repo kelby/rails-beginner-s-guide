@@ -99,17 +99,18 @@ source_reflection
 
 chain
 
-nested?
 scope_chain
-has_inverse?
 inverse_of
 polymorphic_inverse_of
 macro
+association_class
+
+nested?
+has_inverse?
 collection?
 validate?
 belongs_to?
 has_one?
-association_class
 polymorphic?
 ```
 

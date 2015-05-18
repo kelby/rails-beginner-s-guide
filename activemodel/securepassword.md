@@ -21,21 +21,21 @@ password_confirmation=(unencrypted_password)
 依赖于 `gem 'bcrypt'`，必须有 `password_digest` 属性(可以没有 `password` 属性)，使用参考：
 
 ```ruby
+# Schema: User(name:string, password_digest:string)
 class User < ActiveRecord::Base
-  has_secure_password validations: false
+  has_secure_password
 end
 
-user = User.new(name: 'david', password: 'mUc3m00RsqyRe')
-user.save
-user.authenticate('notright')      # => false
-user.authenticate('mUc3m00RsqyRe') # => user
-
+user = User.new(name: 'david', password: '', password_confirmation: 'nomatch')
+user.save                                       # => false, 密码不能为空
 user.password = 'mUc3m00RsqyRe'
-user.save                          # => false, confirmation doesn't match
+user.save                                       # => false, 确认密码失败
 user.password_confirmation = 'mUc3m00RsqyRe'
-user.save                          # => true
-user.authenticate('notright')      # => false
-user.authenticate('mUc3m00RsqyRe') # => user
+user.save                                                       # => true
+user.authenticate('notright')                                   # => false
+user.authenticate('mUc3m00RsqyRe')                              # => user
+User.find_by(name: 'david').try(:authenticate, 'notright')      # => false
+User.find_by(name: 'david').try(:authenticate, 'mUc3m00RsqyRe') # => user
 ```
 
 使用 has_secure_password 后，还会自动帮我们添加校验：

@@ -4,8 +4,6 @@
 
 Turbolinks 会接管所有站内链接，用 ajax 请求获得目标页面，然后替换 body 内容。Turbolinks 接管下的网站不用重复解析 js 和 css 文件，这可以达到加速的目的，同时也让整站成为一个单页应用，页面切换不释放之前的页面内容。
 
-涉及：大概原理、带来的问题、解决办法。
-
 使用 turblinks 的话，注意：一，尽量从 AJAX 的角度出发写监听事件；二，尽量使用 turblinks 提供的监听事件。
 
 语法或历史遗留问题，可以使用以下方法：
@@ -114,7 +112,8 @@ after_action :abort_xdomain_redirect
 
 ```ruby
 ActionController::Base.ancestors.select{|a| a.to_s =~ /^Turbolinks/}
- => [Turbolinks::XHRHeaders, Turbolinks::Cookies, Turbolinks::XDomainBlocker, Turbolinks::Redirection] 
+ => [Turbolinks::XHRHeaders, Turbolinks::Cookies,
+     Turbolinks::XDomainBlocker, Turbolinks::Redirection] 
 ```
 
 render 使用的是 Turbolinks.replace
@@ -299,7 +298,6 @@ Turbolinks.cacheCurrentPage();
 # 页面缓存数量达到上限时，触发它：
 page:expire
 
-
 # 效果和 fetch 一样，只不过多了个判断。
 # 如果浏览器支持 turblinks 那么使用 turblinks 的 fetch.
 # 如果浏览器不支持 turblinks 那么使用普通的访问
@@ -319,25 +317,26 @@ Turbolinks.replace
 
 ### 请按照 AJAX 的方式写 JS 代码。
 
-### To prevent browsers from caching Turbolinks requests:
+### 怎样防止浏览器缓存 Turbolinks 请求:
 
 ```ruby
-# Globally
+# 全局
 Turbolinks.disableRequestCaching()
 
-# Per Request
+# 每个请求
 Turbolinks.visit url, cacheRequest: false
 ```
-This works just like jQuery.ajax(url, cache: false), appending "_#{timestamp}" to the GET parameters.
+
+像 jQuery.ajax(url, cache: false), 会被追加 "_#{timestamp}" 到 GET 请求参数里。
 
 ### 如何移除
 
 ```ruby
-# 对于基于 Rails 4.0 的新项目，在 Gemfile 中，移除这一行：
-gem 'turbolinks' # 移除
+在 Gemfile 中，注释这一行：
+gem 'turbolinks'
 
 # 在 app/assets/javascripts/application.js 中，移除这一行：
-//= require turbolinks // 移除
+//= require turbolinks
 ```
 
 ### 如果有 js 逻辑绑定了DOMContentLoaded 事件，就需要为 Turbolinks 做兼容
@@ -358,7 +357,7 @@ gem 'jquery-turbolinks'
 
 ### jquery.turbolinks 实践
 
-```
+```javascript
 /* BAD: don't bind 'document' events while inside $()! */
 $(function() {
   $(document).on('click', 'button', function() { ... })
@@ -370,7 +369,7 @@ $(document).on('click', 'button', function() { ... })
 
 和
 
-```
+```javascript
 // BAD: this will not work.
 $(document).on('ready', function () { /* ... */ });
 
@@ -387,7 +386,7 @@ $(function () { /* ... */ });
 
 例如返回的页面头部有以下内容：
 
-```
+```html
 <link href="/assets/application-9bd64a86adb3cd9ab3b16e9dca67a33a.css" rel="stylesheet" type="text/css" data-turbolinks-track>
 ```
 
@@ -401,7 +400,7 @@ $(function () { /* ... */ });
 
 例如以下标签：
 
-```
+```html
 <a href="/">Home (via Turbolinks)</a>
 <div id="some-div" data-no-turbolink>
   <a href="/">Home (without Turbolinks)</a>
@@ -418,7 +417,7 @@ $(function () { /* ... */ });
 
 例如以下 script 标签存在于 body 之中：
 
-```
+```html
 <script type="text/javascript" data-turbolinks-eval="false">
   console.log("I'm only run once on the initial page load");
 </script>
@@ -436,7 +435,7 @@ Turbolinks 忽略 head 内的变化，细化静态文件按需载入的做法会
 
 例如有两个布局 application 和 admin，那么 js 代码可以这样组织：
 
-```
+```javascript
 app/assets/javascripts/application/
 ├─ ...
 app/assets/javascripts/admin/
@@ -447,8 +446,8 @@ app/assets/javascripts/admin.js.coffee
 
 application.js 和 admin.js 是最终编译出来的 js 文件，内容类似：
 
-```
-# in application.js.coffee
+```javascript
+# application.js.coffee
 #= require jquery
 #= require jquery_ujs
 #= require jquery.turbolinks
@@ -456,7 +455,7 @@ application.js 和 admin.js 是最终编译出来的 js 文件，内容类似：
 ```
 
 ```
-# in admin.js.coffee
+# admin.js.coffee
 #= require jquery
 #= require jquery.turbolinks
 #= require_tree ./admin
@@ -468,7 +467,7 @@ application.js 和 admin.js 是最终编译出来的 js 文件，内容类似：
 
 在 layout 中设置页面 ID：
 
-```
+```html
 <body id="<%= controller_name%>-<%= action_name %>">
   ...
 </body>
@@ -483,7 +482,7 @@ Example:
 
 这样页面特定逻辑就可以根据是否有页面 ID 进行判断（已加载 jquery.turbolinks）：
 
-```
+```javascript
 $ ->
   if($('#topics-show').length)
     # topics show logic
@@ -493,13 +492,13 @@ $ ->
 
 对于垮页面的逻辑，可以根据特定元素的 ID 触发。
 
-```
+```html
 <div id="sidebar">
   ...
 </div>
 ```
 
-```
+```javascript
 $ ->
   if($('#sidebar')).length
     # sidebar logic
@@ -515,7 +514,7 @@ Turbolinks 开启后，网站将成为一个单页应用，页面切换不释放
 
 所有 js 逻辑建议放在匿名空间中执行：
 
-```
+```javascript
 // wrong
 var foo = 'bar'; // 全局变量
 
@@ -527,7 +526,7 @@ var foo = 'bar'; // 全局变量
 
 如果使用 CoffeeScript，那么所有编译结果都已经包裹在匿名空间内：
 
-```
+```javascript
 # right in coffee
 foo = 'bar'
 ```
@@ -538,7 +537,7 @@ foo = 'bar'
 
 如果某个页面设置了定时任务，记得加上退出逻辑。
 
-```
+```javascript
 $ ->
   if $('articles-index').length
     updateInterval = setInterval ->
@@ -553,7 +552,7 @@ $ ->
 
 绑定在 document 和 window 上的事件是在页面切换后是保留的，记得清理。
 
-```
+```javascript
 $ ->
   if $('articles-index').length
     $(window).on 'scroll', ->
@@ -565,9 +564,9 @@ $ ->
 
 ### 原来的 DOM 操作怎么办？并且它们是非幂等的
 
-DOM transformations that are idempotent are best. If you have transformations that are not, bind them to page:load (in addition to the initial page load) instead of page:change (as that would run them again on the cached pages):
+DOM 操作最好是幂等。如果不是幂等的，你可以使用使用 page:load 而不是 page:change
 
-```
+```javascript
 // using jQuery for simplicity
 
 $(document).on("ready page:load", nonIdempotentFunction);

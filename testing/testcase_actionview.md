@@ -24,12 +24,6 @@ helper_method
 tests
 ```
 
-Locals：
-
-```
-render
-```
-
 Rendered Views Collection：
 
 ```

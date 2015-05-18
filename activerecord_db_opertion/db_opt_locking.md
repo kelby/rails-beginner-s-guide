@@ -1,6 +1,6 @@
 ## Locking
 
-锁，分为乐观锁(Optimistic)和悲观锁(Pessimistic).
+锁，分为悲观锁(Pessimistic)和乐观锁(Optimistic).
 
 ### 悲观锁(Pessimistic)
 
@@ -24,14 +24,15 @@ select * from account where name="Erica" for update;
 
 #### Rails 的悲观锁
 
-lock、lock! 和 with_lock.
+相关方法有：`lock`、`lock!` 和 `with_lock`.
 
 其中，lock 和 with_lock 都是封装 lock! 而来。
 
-lock 相当于 lock! 的别名，但调用者可以是 relation 对象。  
+lock 相当于 lock! 的别名，但调用者可以是 relation 对象。
+<br>
 with_lock 和事务捆绑在一起，并且参数可以是代码块。
 
-举例：
+使用举例：
 
 ```ruby
 # 使用 lock，注意生成的 SQL
@@ -86,7 +87,7 @@ end
 
 ### 乐观锁(Optimistic)
 
-#### 相对于悲观锁
+#### 特性
 
 乐观锁(Optimistic Locking) 相对悲观锁而言，乐观锁机制采取了更加宽松的加锁机制。
 
@@ -96,7 +97,7 @@ end
 
 大多是基于数据版本(Version)记录机制实现。
 
-何谓数据版本？即为数据增加一个版本标识，在基于数据库表的版本解决方案中，一般是通过为数据库表增加一个 "version" 字段来实现。读取出数据时，将此版本号一同读出，之后更新时，对此版本号加一。此时，将提交数据的版本数据与数据库表对应记录的当前版本信息进行比对，如果提交的数据版本号大于数据库表当前版本号，则予以更新，否则认为是过期数据。
+何谓数据版本？即为数据增加一个版本标识，在基于数据库表的版本解决方案中，一般是通过为数据库表增加一个 "version" 字段来实现。读取出数据时，将此版本号一同读出，之后更新时，对此版本号 +1. 此时，将提交数据的版本数据与数据库表对应记录的当前版本信息进行比对，如果提交的数据版本号大于数据库表当前版本号，则予以更新，否则认为是过期数据。
 
 #### Rails 的乐观锁
 
@@ -108,7 +109,7 @@ end
 add_column :products, :lock_version, :integer, :default => 0, :null => false
 ```
 
-2) 在表单里使用此属性。(此处可略)
+2) 在表单里使用此属性。(此处略)
 
 3) 已经生效。如果更新的是脏数据，会报错 `StaleObjectError`，可根据这个做相应处理。
 

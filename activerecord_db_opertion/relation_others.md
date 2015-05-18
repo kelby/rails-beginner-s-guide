@@ -1,6 +1,6 @@
 ## 其它
 
-### Finder Methods & Batches 补充
+### ~~Finder Methods & Batches 补充~~
 
 查表操作(数据库读操作)。大部分是SQL层面，一般不可多条件链式查询。
 

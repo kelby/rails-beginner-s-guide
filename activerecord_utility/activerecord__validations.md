@@ -53,6 +53,4 @@ valid? & validate
 validate!
 ```
 
-这里的 `save` 是对 Persistence(持久化)里的 save 方法做的一层包装，在"保存"之前用来做校验工作，并不是真正的保存操作。当传递 validate: false 时，可以跳过此校验。
-
-其它方法意义不变。
+这里的 `save` 是对 Persistence(持久化)里的 save 方法做的一层包装，在"保存"之前用来做校验工作，并不是真正的保存操作。当传递 `validate: false` 时，可以跳过此校验。其它同名实例方法意义类似。

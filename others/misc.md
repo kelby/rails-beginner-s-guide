@@ -111,4 +111,4 @@ k.extend(Mod)   #=> #<Klass:0x401b3bc8>
 k.hello         #=> "Hello from Mod.\n"
 ```
 
-ActiveSupport::Cache 里就用这种方式给 Store 实例对象添加了 LocalCache 相关方法。
+ActiveSupport::Cache 里就用这种方式给 Store 实例对象添加了 Local Cache 相关方法。

@@ -1,7 +1,5 @@
 ### View Paths
 
-这里指的是 ActionView::LookupContext::ViewPaths，区别于 ActionView::ViewPaths
-
 实例方法：
 
 ```
@@ -22,3 +20,5 @@ with_fallbacks
 ```
 template_exists?("form", "posts", true)
 ```
+
+> Note: 区别于【ActionView::ViewPaths】

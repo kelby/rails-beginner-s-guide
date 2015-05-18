@@ -1,8 +1,12 @@
 # Action Dispatch Routing
 
-一切路由规则都可归结为: **map path to the Rack endpoint.**
+一切路由规则都可归结为: **映射路径到 Rack endpoint.**
 
-Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
+这里的 Rack endpoint 指的不仅仅是 Controller#action，其它形式的入口也可以，例如：Engine、Sinatra 应用。
+
+那么，Rack endpoint 是什么？
+<br>
+需要明确 Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
 
 **Rack ~= Rack middleware ~= Rack endpoint ~= Rack application** 
 

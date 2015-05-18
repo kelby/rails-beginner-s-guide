@@ -9,7 +9,7 @@
 
 第 1 点补充：
 
-```
+```javascript
 interface History {
   readonly attribute long length;
   readonly attribute any state;
@@ -23,7 +23,7 @@ interface History {
 
 第 2 点补充：
 
-```
+```coffee
 request ->
 response(title and body) <-
 
@@ -39,7 +39,7 @@ response(only body) <-
 
 第 4 点补充：
 
-```
+```javascript
 $.pjax({
   url: '/authors',
   container: '#main'
@@ -47,4 +47,3 @@ $.pjax({
 ```
 
 PJAX 是指定 dom，而 Turblinks 是整个 body.
-

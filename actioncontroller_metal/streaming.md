@@ -65,8 +65,6 @@ end
 <title><%= yield :title %></title>
 ```
 
-参考
+引出新问题，并不是所有应用服务器(例如默认的 Webkit)都支持。
 
-[#266 HTTP Streaming](http://railscasts.com/episodes/266-http-streaming)
-<br>
-[Streaming with Rails 4](http://www.sitepoint.com/streaming-with-rails-4/)
+> Note: 可用命令 curl -i localhost:3000 查看大致使用效果。

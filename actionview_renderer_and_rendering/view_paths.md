@@ -37,3 +37,5 @@ delegate :template_exists?, :view_paths, :formats, :formats=, :locale, :locale=,
 ```
 
 这里的内容，原来是放在 abstract_controller/rendering.rb 文件里的，后来单独成 view_paths.rb，再后来从 Abstract Controller 移到 Action View.
+
+> Note: 区别于【ActionView::LookupContext::ViewPaths】

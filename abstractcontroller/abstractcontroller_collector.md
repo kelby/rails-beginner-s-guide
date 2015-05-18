@@ -14,7 +14,7 @@ respond_to do |format|
 end
 ```
 
-这里的 html 和 xml.
+这里的 `html` 和 `xml`.
 <br>
 目前 Rails 支持的 MIME(多用途互联网邮件扩展)，有：
 
