@@ -64,7 +64,7 @@ end
 redirect_to user_path(@user), warning: "Incomplete profile"
 ```
 
-两种效果：视图里可以直接有同名 warning 辅助方法，redirect_to 里可直接使用 :warning.
+两种效果：视图里可以直接有同名 `warning` 辅助方法，`redirect_to` 里可直接使用 `:warning`.
 
 它们和 flash[:warning] 或 flash.warning 和 flash: { warning: "Incomplete profile" } 效果一样。
 

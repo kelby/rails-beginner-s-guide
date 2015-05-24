@@ -8,7 +8,7 @@
 
 **view_context**
 
-```
+```ruby
 BlogsController.new.view_context
 => #<#<Class:0x007ff084a6ba90>:0x007ff07b745518
  @_assigns={"_routes"=>nil},
@@ -24,7 +24,7 @@ BlogsController.new.view_context
 
 1) view_context.controller
 
-```
+```ruby
 @_controller=
 #<BlogsController:0x007ff084a6bba8
  @_action_has_layout=true,
@@ -42,7 +42,7 @@ BlogsController.new.view_context
 
 2) view_context.view_renderer
 
-```
+```ruby
 @view_renderer=
  #<ActionView::Renderer:0x007ff07b745cc0
   @lookup_context= ActionView::LookupContext:0x007ff07b7474a8

@@ -83,17 +83,17 @@ render.result(binder)
 => "Helo, Kelby"
 ```
 
-在这里，重要元素有：渲染器(名词)对应着 render，上下文对应着 binder，渲染(动词)对应着 result.
+在这里，重要元素有：渲染器(名词)对应着 `render`，上下文对应着 `binder`，渲染(动词)对应着 `result`.
 
-Rails 里，对应的有：渲染器(名词)对应着 render，上下文对应着 view_context，渲染(动词)对应着 render.
+Rails 里，对应的有：渲染器(名词)对应着 `render`，上下文对应着 `view_context`，渲染(动词)对应着 `render`.
 <br>
-Rails 里模板文件众多，而且可以嵌套使用，为了方便查找模板内容，引入了 lookup_context 的概念。
+Rails 里模板文件众多，而且可以嵌套使用，为了方便查找模板内容，引入了 `lookup_context` 的概念。
 
 ### Rails 使用的是 Erubis
 
 Rails 用的是 gem 'erubis'，不是 Ruby 标准库里的 ERB，不过它们原理类似，不再深入。
 
-### 相关
+链接
 
 [Binding](http://ruby-doc.org/core-2.1.2/Binding.html)<br>
 [ERB](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/erb/rdoc/index.html)<br>

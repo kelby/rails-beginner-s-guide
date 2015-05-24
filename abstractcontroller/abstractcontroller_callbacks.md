@@ -18,7 +18,7 @@ skip_around_action
 skip_action_callback & skip_filter
 ```
 
-这些回调方法参照物都是 `process_action` 同名方法。
+这些回调方法参照物都是 `process_action` 方法。
 
 ```ruby
 set_callback(:process_action, callback, name, options)

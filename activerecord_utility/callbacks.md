@@ -174,49 +174,9 @@ class PictureFile < ActiveRecord::Base
 end
 ```
 
-### Conditional Callbacks
-
-:if 选项
-
-:unless 选项
-
-### 可选参数 :on
-
-### 特殊情况，特殊处理。
-
 ### 怎么取消后面的回调？
 
-返回 false
-
-### prepend
-
-```ruby
-class Topic < ActiveRecord::Base
-  has_many :children, dependent: destroy
-
-  before_destroy :log_children
-
-  private
-    def log_children
-      # Child processing
-    end
-end
-```
-
-已经被删除了，没办法 log_children，可以改为这样：
-
-```ruby
-class Topic < ActiveRecord::Base
-  has_many :children, dependent: destroy
-
-  before_destroy :log_children, prepend: true
-
-  private
-    def log_children
-      # Child processing
-    end
-end
-```
+在方法里返回 `false`
 
 ### 如何理解 around
 

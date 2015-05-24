@@ -25,10 +25,12 @@ class TillController < BankController
 end
 ```
 
+> Note: 没有 layout true 这种写法。
+
 ```ruby
 # nil
 class CommentsController < ApplicationController
-  # Will search for "comments" layout and fallback "application" layout
+  # 始终使用默认的 layout (首先是 comments，然后是 application 的)
   layout nil
 end
 ```

@@ -19,12 +19,12 @@ filter
 
 检测结果：
 
-```
+```ruby
 filtered_env
-=> 一大串 env 相关数据
+# => 一大串 env 相关数据
 
 request.filtered_parameters
-=> {"utf8"=>"✓",
+# => {"utf8"=>"✓",
  "authenticity_token"=>"+.../hHj0C5Ao7CxXYwlejyghpNM3elUVw==",
  "user"=>{"name"=>"kelby", "email"=>""},
  "commit"=>"Create User",
@@ -32,7 +32,7 @@ request.filtered_parameters
  "action"=>"create"}
  
 request.filtered_path 
-=> "/users"
+# => "/users"
 ```
 
 使用举例：

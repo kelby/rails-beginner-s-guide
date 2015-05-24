@@ -28,7 +28,7 @@ Rails Metal is a subset of Rack middleware 可以参考【Rack - Ruby Web server
 
 Metal 仅包含 metal.rb 这个文件，不包含其同名目录。
 
-1) **继承 Abstract Controller 的遗产**
+1) **继承 Abstract Controller 的财富**
 
 直接继承而来。
 

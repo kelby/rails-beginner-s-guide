@@ -29,7 +29,7 @@ self.respond_to? :view_assigns
 
 渲染器 + 模板内容 + 上下文
 
-```
+```ruby
 view_renderer.new(@lookup_context).render(context, options, block)
 ```
 

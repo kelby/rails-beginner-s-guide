@@ -12,7 +12,7 @@ path_parameters
 
 检测结果：
 
-```
+```ruby
 request.parameters
 => {"utf8"=>"✓",
  "authenticity_token"=>"+.../hHj0C5Ao7CxXYwlejyghpNM3elUVw==",

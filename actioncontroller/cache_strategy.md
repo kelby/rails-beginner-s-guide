@@ -68,13 +68,13 @@ views/posts/1-20140421064029939882000/6e30019bd1127688840f7307cbe5cfbc
 
 比如：
 
-```
+```ruby
 cache 'all_available_products', skip_digest: true
 ```
 
 此时：
 
-```
+```ruby
 expire_fragment('all_available_products')
 ```
 

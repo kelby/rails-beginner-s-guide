@@ -20,16 +20,22 @@ format.html{ |variant| variant.phone } # 代码块风格
 
 ### Collector
 
-常用代码：
+扩展了 AbstractController::Collector，常用代码：
 
-```
+```ruby
 respond_to do |format|
   # format.class => ActionController::MimeResponds::Collector
-  # ...
+
+  format.html
+  format.js
 end
 ```
 
-可见，`format` 是其实例对象。
+可见，respond_to 里的 `format` 是其实例对象。
+
+> Note: 想知道这里的 `format.html` 和 `format.js` 等方法是如何生效的，可以参考 Abstract Controller 的【Collector】章节。
+
+提供方法：
 
 ```
 all & any

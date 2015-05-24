@@ -34,7 +34,7 @@ class Scrubber
 end
 ```
 
-然后
+然后：
 
 ```ruby
 # 注意，这里可直接引用相关类
@@ -75,7 +75,7 @@ class ResponseTimer
 end
 ```
 
-然后
+然后：
 
 ```ruby
 # 注意，这里以字符串的方式引用

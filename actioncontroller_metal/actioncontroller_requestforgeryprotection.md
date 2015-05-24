@@ -28,7 +28,7 @@ end
 
 当请求未证实，可选择怎么处理。可选：
 
-```
+```ruby
 :exception     # 抛 ActionController::InvalidAuthenticityToken 异常。
 :reset_session # 重置 session.
 :null_session  # 使用空的 session 代替，但不删除(这是默认选择，可用 :with 指定)

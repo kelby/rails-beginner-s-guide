@@ -75,25 +75,7 @@ ActionController::Renderers::RENDERERS
 Controller 里的 render 是为了返回 self.response_body
 而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣。
 
-### 其它
-
-只渲染 json，只得到数据。
-
-只渲染 js 报错，安全隐患。
-
-Controller 里可以指定渲染 partial，但 View 里不可指定渲染 template.
-
-参考
-
-[method render](http://apidock.com/rails/ActionController/Base/render)<br>
-[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)<br>
-[Action View Partials](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)<br>
-[Rails View Rendering using Naming Convention](http://jonathanhui.com/ruby-rails-3-view)<br>
-[Render Options in Rails 3](https://blog.engineyard.com/2010/render-options-in-rails-3/)<br>
-[Ruby on Rails - Render](http://www.tutorialspoint.com/ruby-on-rails/rails-render.htm)
-
----
-
+### 一些使用举例
 
 1) 不想渲染任何东西，可以使用：
 
@@ -114,13 +96,13 @@ render nothing: true
 
 明确指定要渲染的模板，用 template
 
-```
+```ruby
 render template: "products/show"
 ```
 
 明确指定要渲染的文件，用 file
 
-```
+```ruby
 render file: "/u/apps/warehouse_app/current/app/views/products/show"
 ```
 
@@ -128,7 +110,7 @@ render file: "/u/apps/warehouse_app/current/app/views/products/show"
 
 5) 不用模板，但效果类似，用 inline
 
-```
+```ruby
 render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
 ```
 
@@ -138,13 +120,13 @@ inline 违背了 MVC 模式，实践起来并不友好，不推荐使用。
 
 6) 渲染纯文本，用 plain
 
-```
+```ruby
 render plain: "OK"
 ```
 
 7) 不用模板，但效果类似，用 html
 
-```
+```ruby
 render html: "<strong>Not Found</strong>".html_safe
 ```
 
@@ -152,7 +134,7 @@ render html: "<strong>Not Found</strong>".html_safe
 
 8) 渲染返回 json
 
-```
+```ruby
 render json: @product
 ```
 
@@ -160,7 +142,7 @@ render json: @product
 
 9) 渲染返回 xml
 
-```
+```ruby
 render xml: @product
 ```
 
@@ -168,12 +150,29 @@ render xml: @product
 
 10) 渲染返回 js
 
-```
+```ruby
 render js: "alert('Hello Rails');"
 ```
 
 11) 渲染，但不指定类型，用 body
 
-```
+```ruby
 render body: "raw"
 ```
+
+### 其它
+
+只渲染 json，只得到数据。
+
+只渲染 js 报错，安全隐患。
+
+Controller 里可以指定渲染 partial，但 View 里不可指定渲染 template.
+
+参考
+
+[method render](http://apidock.com/rails/ActionController/Base/render)<br>
+[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)<br>
+[Action View Partials](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)<br>
+[Rails View Rendering using Naming Convention](http://jonathanhui.com/ruby-rails-3-view)<br>
+[Render Options in Rails 3](https://blog.engineyard.com/2010/render-options-in-rails-3/)<br>
+[Ruby on Rails - Render](http://www.tutorialspoint.com/ruby-on-rails/rails-render.htm)

@@ -53,7 +53,7 @@ response_body=
 
 另外，还有：
 
-```
+```ruby
 delegate :headers, :status=, :location=, :content_type=,
          :status, :location, :content_type, :response_code, :to => "@_response"
 ```

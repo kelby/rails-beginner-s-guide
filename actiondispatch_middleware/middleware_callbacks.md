@@ -4,7 +4,7 @@
 
 因为我们 middleware 本身就是链式调用，一个个执行，所以这里的回调意义不大。
 
-```
+```ruby
 define_callbacks :call
 ```
 

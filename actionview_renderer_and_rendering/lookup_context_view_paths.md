@@ -21,4 +21,4 @@ with_fallbacks
 template_exists?("form", "posts", true)
 ```
 
-> Note: 区别于【ActionView::ViewPaths】
+> Note: 区别于【ActionView::ViewPaths】对应的模块。

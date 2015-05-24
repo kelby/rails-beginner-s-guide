@@ -16,7 +16,7 @@ to_cleanup
 
 实例方法(middleware 的 call 方法会调用它们)：
 
-```
+```ruby
 prepare! # 执行 to_prepare 给的 block.
 
 cleanup! # 执行 to_cleanup 给的 block.

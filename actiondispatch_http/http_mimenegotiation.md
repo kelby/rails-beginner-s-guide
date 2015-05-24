@@ -4,7 +4,7 @@
 
 检测结果：
 
-```
+```ruby
 request.accepts
 => [#<Mime::Type:0x007f8a1a498cd8 @string="text/html", @symbol=:html, \n
                                   @synonyms=["application/xhtml+xml"]>,

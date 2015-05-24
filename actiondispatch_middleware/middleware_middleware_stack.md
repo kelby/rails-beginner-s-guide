@@ -1,6 +1,6 @@
 ### ~~Middleware Stack~~
 
-```ruby
+```
 []
 
 build

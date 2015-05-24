@@ -17,8 +17,8 @@ eager_load!
 require "some/library"
 ```
 
-使用 require, 如果此前没有加载过，则加载并返回 true; 如果此前已经加载过，则返回 false.<br>
-(区别于 load，它每次都会加载。没有返回 true/false 的概念)
+使用 `require`, 如果此前没有加载过，则加载并返回 true; 如果此前已经加载过，则返回 false.<br>
+(区别于 `load`，load 每次都会加载。没有返回 true/false 的概念)
 
 ### 使用 require 面临的问题
 
@@ -26,7 +26,7 @@ require 意味着"立即加载所有"，一开始这很美好，但随着项目�
 
 并且，require 不是线程安全的。
 
-### 使用 autoload 自动加载(也叫：延迟加载)
+### 使用 autoload 自动加载(延迟加载)
 
 ```ruby
 module Foo
@@ -34,7 +34,7 @@ module Foo
 end
 ```
 
-使用 autoload，相当于先声明要加载的模块(纪录在 @_autoloads)，真正需要的时候才会加载。
+使用 `autoload`，相当于先声明要加载的模块(纪录在 @_autoloads)，真正需要的时候才会加载。
 
 autoload 本质还是 require, 只是把"加载"细分为"声明 + 加载"。
 

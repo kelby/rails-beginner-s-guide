@@ -1,6 +1,6 @@
 ## Force SSL
 
-**实例方法**
+**实例方法：**
 
 ```
 force_ssl_redirect
@@ -15,7 +15,7 @@ force_ssl_redirect
 上面是实例方法，对单个 action 有用；  
 下面这是类方法，它封装了 force_ssl_redirect，对整个 Controller 有用。
 
-**类方法**
+**类方法：**
 
 ```
 force_ssl

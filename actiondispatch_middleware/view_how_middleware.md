@@ -2,7 +2,7 @@
 
 **命令行里查看**，项目有哪些 middleware:
 
-```
+```ruby
 > rake middleware
 
 use Rack::Sendfile
