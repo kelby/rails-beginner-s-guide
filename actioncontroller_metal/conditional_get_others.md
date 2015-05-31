@@ -46,15 +46,13 @@ Content-Length: 665
 
 ### 和所有缓存一样，怎么生成 cache_key ？
 
-最新，表示没有更改。
-
-什么也没改 
+最新，什么也没改。
 
 ```
 f9d7568ac634fc9ad270f2348d5f3b41
 ```
 
-更改表态内容 
+更改表态内容：
 
 ```
 d9cc40e9e225a3e738c68b01f17ef4b0
@@ -66,7 +64,7 @@ update_attributes 98eac754b15c61f4c8b4f79b7f0a5645
 
 如果 fresh_when 匹配，将直接返回结果给最终用户。但后面的代码并未退出，还会执行，只到遇到结束标识为止。也就是说 Controller#action 后续有代码的话，则还会执行，但 View 里的代码不会执行了
 
-这里区别于响应
+这里区别于响应：
 
 ```
 # 之前，还需要渲染视图
@@ -134,4 +132,4 @@ end
 
 fresh_when 可以通过工具(如：Chrome 插件"Advanced REST client")查看 ETag，检测是否起作用以及是否正确。
 
-> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是 Web 服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态HTML文件。
+> Note: 注意 ETag 和已经被废除 cache_page 的区别，前者是 Web 服务器级别，后者是应用服务器级别。如果页面没有更改，ETag 返回的是 "304 Not Modified"，其他什么都不用干，连网络带宽都省了。而 cache_page 还要读取 public/ 目录下的静态 HTML 文件。

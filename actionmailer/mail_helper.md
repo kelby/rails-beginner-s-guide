@@ -2,7 +2,7 @@
 
 **几个邮件相关的 Helper 方法。**
 
-如：attachments、mailer、message，还有不太实用的 block_format、format_paragraph.
+如：attachments、mailer、message，及不太常用的 block_format、format_paragraph.
 
 | 方法 | 解释 |
 | -- | -- |

@@ -21,7 +21,7 @@ module ActionDispatch
 end
 ```
 
-```
+```ruby
 mount SomeRackApp, at: "some_route"
 ```
 

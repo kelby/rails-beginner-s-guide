@@ -1,5 +1,7 @@
 ## Basic
 
+对应头部字段及内容：
+
 ```
 headers["WWW-Authenticate"] = %(Basic realm="#{realm.gsub(/"/, "")}")
 ```
@@ -28,7 +30,7 @@ end
 
 `http_basic_authenticate_with` 除 :name 和 :password 选项外，一般还可设置 :realm 做为提示信息。它已经封装了 authenticate_or_request_with_http_basic 方法。
 
-`http_basic_authenticate_with` 应该是最常用的验证方式了吧。
+`http_basic_authenticate_with` 最常用的验证方式。
 
 **Controller 方法：**
 

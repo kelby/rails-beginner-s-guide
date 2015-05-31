@@ -1,8 +1,16 @@
-**页面相关的服务端缓存**，由两部分组成：Caching 和 Caching Fragments.
+### 页面相关服务端缓存
 
-## Caching
+片段缓存相关，在这里可以单独拿出来讲。
 
-它几乎什么也没做，只是定义了 cache 同名方法，保证了执行缓存需要的两个条件：perform_caching = true 并且 cache_store 是合法的。
+**页面相关的服务端缓存**，由两个模块组成：Caching 和 Caching Fragments.
+
+## Caching 模块
+
+- cache_store 有没有到位
+- cache 相关 perform_caching 是否使用
+- 视图缓存依赖
+
+除以上外，它几乎什么也没做，定义了 `cache` 同名方法，保证了执行缓存需要的两个条件：`perform_caching = true` 并且 `cache_store` 是合法的。
 
 ```ruby
 def cache(key, options = {}, &block)
@@ -34,12 +42,16 @@ config.action_controller.cache_store = :mem_cache_store,
 config.action_controller.cache_store = MyOwnStore.new('parameter')
 ```
 
+3) view_cache_dependencies
+
+TODO
+
 缓存相关的其它事，自有人来处理，不用它操心。
 
-## Caching Fragments
+## Caching Fragments 模块
 
 对片段缓存的一些操作。<br>
-这里的方法属于中间处理过程，封装对底层的操作(也就是 cache_store)，然后提供接口给我们上层使用(也就是 cache 辅助方法)。
+这里的方法属于中间处理过程，封装对底层的操作(也就是 `cache_store`)，然后提供接口给我们上层使用(也就是 `cache` 辅助方法)。
 
 ```
           cache 辅助方法

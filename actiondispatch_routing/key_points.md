@@ -1,14 +1,13 @@
-### 重中之重：match 和 scope 方法
+### match 和 scope 方法 - 重中之重
 
-从前面各章节，可归纳出路由规则里，重中之重是 match 和 cope 两方法。
+从前面各章节，可归纳出路由规则里， match 和 cope 两方法是重中之重。
 
 `match` 是生成路由规则，`scope` 是影响如何生成路由规则。
 
-和 match 有关的有：get, post, delete, put 等, 只有通过它们才能添加路由规则；
+和 `match` 有关的有：get, post, delete, put 等, 只有通过它们才能添加路由规则；
 <br>
-和 scope 有关的有：namescope, collection, member, resource, resouces 及嵌套路由时自动完成的 nested 等。它们主要工作是调用上面的 match 相关方法，并影响生成路由规则。
+和 `scope` 有关的有：namescope, collection, member, resource, resouces 及嵌套路由时自动完成的 nested 等。它们主要工作是调用上面的 match 相关方法，并影响生成路由规则。
 
 完成路由规则整个任务，match 和 scope 缺一不可。
 
-此外，是嵌套、语法糖、去重复代码等。
-
+它们方法，都在在这两方法的基础上，做封装、语法糖、去重复代码等。

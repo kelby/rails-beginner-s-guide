@@ -18,21 +18,13 @@ HTTP request -> static head generation -> HTTP response
              -> dynamic content generation -> HTTP response
 ```
 
-状况消息加上了：
+头部消息加上了：
 
 ```
 Transfer-Encoding: chunked
 ```
 
-顺序上：使用 Streaming 后，HTML 里的 head 部分会先返回，不受页面内容的影响；
-
-内容上：如果 head 里的内容是依赖于页面生成的，会受影响。
-<br>
-比如：title 是根据页面动态生成的，使用 Streaming 后就会出现缺失的情况，需要更改原有代码。可以改成使用 provide 和 yield；
-<br>
-再比如：将不能动态生成 cookie 和 session
-
-使用之前，请搞清楚它要解决的问题，以及带来的新问题。还有，概念不要和【Live】里的 stream 搅在一起！
+**如何使用？**
 
 Streaming 没有对外提供方法，在 `render` 的时候，加上 `:stream` 参数即可：
 
@@ -47,24 +39,30 @@ end
 
 先返回 HTML 的 head 部分，之后返回 body 部分；而不是像之前全部渲染完全才一起返回 head 和 body.
 <br>
-因为我们一般都把 js 和 css 连接放 head 里，先返回它们有大益。
+一般我们都把 js 和 css 放 head 里，这意味着它们会先于页面内容返回。
 
-引出新问题。body 里定义的 @instance 在 head 里不能用，改成 content_for/yield 也不能用。
-<br>
-使用 provide/yield 解决。
+
+**注意事项：**
+
+注意：使用 Streaming 特性后后，HTML 里的 head 部分会先返回，不受页面内容的影响。
+如果原来的 head 部分依赖于页面，需要做对应修改。
+
+举例：如果 `title` 是根据页面动态生成的，使用 Streaming 后就会出现缺失的情况，需要更改原有代码。可以改成使用 `provide` 和 `yield`；
 
 ```ruby
 # projects/index.html.erb
-
 <% provide :title, "Projects" %>
 ```
 
 ```ruby
 # layouts/application.html.erb
-
 <title><%= yield :title %></title>
 ```
 
-引出新问题，并不是所有应用服务器(例如默认的 Webkit)都支持。
+再举例：使用此特性后，将不能动态生成 `cookie` 和 `session` 内容。
 
-> Note: 可用命令 curl -i localhost:3000 查看大致使用效果。
+再举例：并不是所有应用服务器(例如默认的 Webkit)都支持此特性。
+
+使用之前，请搞清楚它要解决的问题，以及带来的新问题。还有，不要和【Live】里的 `stream` 混淆了。
+
+> Note: 可通过命令 curl -i localhost:3000 查看使用效果。

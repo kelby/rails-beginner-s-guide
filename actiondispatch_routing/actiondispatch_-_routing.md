@@ -1,12 +1,5 @@
 ## Routing 概述：生成、存储、识别
 
-**Routing 的概念**：
-
-- 除 route_set.rb 外，routing 目录里的其它模块。
-- 对外提供接口。
-
-路由三大块：DSL、recognition 和 generation.
-
 ### 描述
 
 1. DSL --> Mapper(Base, Concerns, HttpHelpers, Resources, Scoping)

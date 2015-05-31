@@ -1,6 +1,8 @@
-## 各个实例方法
+## 实例对象和各个实例方法
 
-在 Rails 内部，app.routes 就是 RouteSet 的实例对象。
+### 实例对象
+
+在 Rails 源代码里，`app.routes` 指的是 RouteSet 的实例对象。
 
 ```ruby
 # action_mailer/railtie.rb
@@ -20,7 +22,7 @@ app.routes.append do
 app.routes.define_mounted_helper(:main_app)
 ```
 
-在 Rails 内容，@set 有时候也是 RouteSet 的实例对象，如 Mapper 里：
+在 Rails 源代码里，`@set` 有时候也是 RouteSet 的实例对象，如 Mapper 里：
 
 ```ruby
 # action_dispatch/routing/mapper.rb
@@ -49,9 +51,9 @@ name_for_action
   candidate unless candidate !~ /\A[_a-z]/i || @set.named_routes.key?(candidate)
 ```
 
-也正因为如此，除了 draw 和 add_routes 外，我们可以在代码里搜索，看哪里的代码影响了路由规则的生成。
+也正因为如此，除了 `draw` 和 `add_routes` 外，我们可以在代码里搜索，看哪里的代码影响了路由规则的生成。
 
-```
+```ruby
 attr_accessor :formatter, :set, :named_routes, :default_scope, :router
 attr_accessor :disable_clear_and_finalize, :resources_path_names
 attr_accessor :default_url_options, :request_class
@@ -63,6 +65,8 @@ attr_accessor :default_url_options, :request_class
 # resources_path_names 也就是 default_resources_path_names，默认有：new 和 edit
 # request_class 默认是 ActionDispatch::Request
 ```
+
+### 各个实例方法
 
 ```
 inspect & to_s
@@ -134,7 +138,7 @@ Rails.application.routes.recognize_path "http://localhost:3000/users/1"
 
 通过这一步，外部 URL 已经被转换成了 Rails 能够识别的语言。在这之后，Rails 想怎么处理就怎么处理。
 
-```
+```ruby
 # 使用 Journey 处理我们提供的路由规则，得到 path 这部分
 build_path
 ```
@@ -153,6 +157,8 @@ else
   mapper.instance_exec(&block)
 end
 ```
+
+之后，就是执行【路由常用方法汇总】章节里提到的方法。
 
 `initialize`用到了 NamedRouteCollection， 内容是：
 

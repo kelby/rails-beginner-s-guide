@@ -43,6 +43,8 @@ View 里：
 <%= users_url(host: "example.com") %>
 ```
 
+邮件是要发送出去的，邮件里的 url 不支持使用相对路径。
+
 ### 快速生成 Mailer 和模板
 
 通过以下命令创建 mailer 类和视图：

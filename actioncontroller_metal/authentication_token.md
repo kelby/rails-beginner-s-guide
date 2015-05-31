@@ -1,5 +1,7 @@
 ## Token
 
+对应头部字段及内容：
+
 ```
 headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
 ```

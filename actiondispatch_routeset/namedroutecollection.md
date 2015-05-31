@@ -66,7 +66,7 @@ end
 
 当调用 Named Route Collection 的私有方法 define_url_helper 时会用到，部分内容是：
 
-```
+```ruby
 helper = UrlHelper.create(route, opts, route_key, url_strategy)
 ```
 
@@ -76,7 +76,7 @@ helper = UrlHelper.create(route, opts, route_key, url_strategy)
 
 2) 而 `named_routes` 就是 NamedRouteCollection 的实例对象：
 
-```
+```ruby
 attr_accessor :named_routes
 
 def initialize

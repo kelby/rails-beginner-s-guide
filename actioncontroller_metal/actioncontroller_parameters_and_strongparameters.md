@@ -64,7 +64,7 @@ Person.first.update!(permitted)
 
 配置默认的 permitted parameters
 
-```
+```ruby
 config.always_permitted_parameters = %w( controller action format )
 ```
 
@@ -81,7 +81,7 @@ params=
 
 ```ruby
 params == request.parameters
-=> true
+# => true
 ```
 
 这个对象的值是什么？- 表单数据或传递过来的，加上 :controller 和 :action

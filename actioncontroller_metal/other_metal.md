@@ -6,7 +6,7 @@
 
 ### ~~Implicit Render~~
 
-默认渲染，它的优先级很高。
+默认渲染模板。
 
 ```
 send_action
@@ -16,7 +16,7 @@ default_render
 method_for_action
 ```
 
-假设，我们在 Controller#action 里，没有 render 模板或返回数据 ... 它们就有用了。
+我们在 Controller#action 里，没有 render 模板或返回数据时 ... 就会用到它。
 
 ### ~~Instrumentation~~
 
@@ -33,7 +33,7 @@ send_data
 send_file
 ```
 
-用到了 ActiveSupport::Notifications.instrument 和 Benchmark.ms
+用到了 `ActiveSupport::Notifications.instrument` 和 `Benchmark.ms`
 
 ### ~~Rack Delegation~~
 
@@ -66,12 +66,16 @@ delegate :headers, :status=, :location=, :content_type=,
 
 执行到具体 action 抛异常时会检测是否需要抛异常，如果是的话，抛异常。
 
-有 process_action 同名方法。
+有 `process_action` 同名方法。
 
-show_detailed_exceptions? (默认是 false，但本地请求的话是 true)，可配置 config.consider_all_requests_local
+`show_detailed_exceptions?` (默认是 false，但本地请求的话是 true)，可配置 config.consider_all_requests_local
 
-rescue_with_handler(封装了 ActiveSupport::Rescuable 的同名方法)
+`rescue_with_handler`(封装了 ActiveSupport::Rescuable 的同名方法)
 
 ### ~~Url For~~
 
 `url_for` 方法的组成部分。
+
+### Metal 增强组件和 Middleware 的区别
+
+Middleware 是在请求进入 Controller#action 之前，而 Metal 增强组件是在请求进入 Controller#action 之后。

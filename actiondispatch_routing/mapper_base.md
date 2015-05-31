@@ -12,7 +12,7 @@ root
 
 #### match 方法
 
-这里的 match 只是个同名方法，是个空壳子，详细要看 Resources 里的。
+这里的 `match` 只是个同名方法，是个空壳子，具体实现要看 Resources 里的 `match`.
 
 另外，mount 和 root 本质上，都是封装和扩展 `match` 方法。
 
@@ -137,4 +137,4 @@ end
 
 因为 root 实现基于 match，可以使用相同的可选参数。
 
-建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。
+> 建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。

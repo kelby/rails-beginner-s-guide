@@ -1,5 +1,7 @@
 ## Digest
 
+对应头部字段及内容：
+
 ```
 headers["WWW-Authenticate"] = %(Digest realm="#{realm}", qop="auth", algorithm=MD5, nonce="#{nonce}", opaque="#{opaque}")
 ```

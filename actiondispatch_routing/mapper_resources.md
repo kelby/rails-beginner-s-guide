@@ -5,7 +5,7 @@
 | 方法 | 解释 |
 | -- | -- |
 | resource | 我们的资源不需要集合操作的时候可以使用 |
-| resources | 我们的资源需要集合操作的时候可以使用，用得最多 |
+| resources | 我们的资源需要集合操作的时候可以使用，本方法最常用 |
 | match | 生成路由规则，并添加到 @set 里 |
 
 #### resource
@@ -24,7 +24,7 @@ collection 和 new 和 member
        scope
 ```
 
-在这里：colleciton 完成 create；new 完成 new；member 完成 edit、show、update 和 destroy.
+在这里：`colleciton` 完成 create；`new` 完成 new；`member` 完成 edit、show、update 和 destroy.
 
 #### resources
 
@@ -42,7 +42,7 @@ collection 和 new 和 member
        scope
 ```
 
-在这里：colleciton 完成 index 和 create；new 完成 new；member 完成 edit、show、update 和 destroy.
+在这里：`colleciton` 完成 index 和 create；`new` 完成 new；`member` 完成 edit、show、update 和 destroy.
 
 #### match
 
@@ -56,11 +56,15 @@ match ':controller/:action/:id'
 预留了两个符号，`:controller` 对应着 Controller，`:action` 对应着 action. 也可以接受模式匹配做为参数：
 
 ```ruby
+# 路由
 match 'songs/*category/:title', to: 'songs#show'
 
-# 'songs/rock/classic/stairway-to-heaven' sets
-#  params[:category] = 'rock/classic'
-#  params[:title] = 'stairway-to-heaven'
+# URL
+'songs/rock/classic/stairway-to-heaven'
+
+# 对应：
+params[:category] = 'rock/classic'
+params[:title] = 'stairway-to-heaven'
 ```
 
 为了能够模式匹配，你需要分配一个名字给它们，如果没有分配，路由是不会自动解析的。
@@ -113,12 +117,12 @@ nested 和 root
 
 ```
 namespace
-    |
-    V
-  super (即 Scoping 里的 namespace)
-    |
-    V
-  scope
+   |
+   V
+ super (即 Scoping 里的 namespace)
+   |
+   V
+ scope
 ```
 
 ```

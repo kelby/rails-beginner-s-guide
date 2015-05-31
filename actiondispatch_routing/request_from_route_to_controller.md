@@ -1,8 +1,6 @@
 ## 一步步分析从请求到响应涉及到 Rails 的哪些模块
 
-本文对 Rails 的使用几乎没有帮助，但有利于剖析 Rails 源码，这符合本书的写作目标，故成文。
-
-你可以比较独立的使用 Rails 的各个模块。
+通过本章节，你可以比较独立的使用 Rails 的各个模块，有利于理解 Rails 源码各个模块的主要工作。
 
 ### 纯 Rack 实现
 
@@ -21,7 +19,7 @@ run Proc.new {|env|
 
 可通过 `rackup config.ru` 运行以上代码，默认在 http://localhost:9292/ 可以查看运行结果。
 
-### 引入 ActionDispatch & 纯手动实现 Controller#actions
+### 引入 Action Dispatch & 纯手动实现 Controller#actions
 
 ```ruby
 # config.ru
@@ -56,7 +54,7 @@ end
 run routes
 ```
 
-### 引入 'action_controller'，使用 Metal
+### 引入 Action Controller，使用 Metal
 
 ```ruby
 # config.ru
@@ -85,7 +83,9 @@ end
 run routes
 ```
 
-### 项目使用其它 middleware, Controller 包含其它模块 & Controller 里纯手工打造 View 渲染相关代码
+**注意：**上面已经使用到了 Action Dispatch 里的"各个 Middleware 组件"，但并没有使用到 Action Controller 里的"各个 Metal 增强组件"。
+
+### 引用 Metal 增强组件 & Controller 里纯手工打造 View 渲染相关代码
 
 ```ruby
 # config.ru
@@ -130,7 +130,7 @@ run routes
 Number is: <%= @local_var %>
 ```
 
-### 引进 'action_view'
+### 引进 Action View
 
 ```ruby
 # config.ru
@@ -177,7 +177,11 @@ Number is: <%= @local_var %>
 Content is: <pre><%= env['action_dispatch.request.path_parameters'][:id] %></pre>
 ```
 
+到此，Routing、Controller、View 3者已经到位。Model 我们可以直接调用，不影响这里的整个请求、响应处理过程。
+
 ### 直接使用 ActionController::Base
+
+前面提到过 ActionController::Metal 相当于一个加强版本的 Rack，功能非常有限，实际开发中建议使用继承于它的 ActionController::Base.
 
 ```ruby
 # config.ru
@@ -219,21 +223,17 @@ run routes
 # app/views/mainpage/show.html.erb
 ```
 
-### 汇总以上进化过程
+### 其它
 
-`run` 由应用服务器提供，运行一个 Rack application.
+上述代码：
+<br>
+没有使用 Action Mailer，Active Job, Active Model, Active Record 等；
+<br>
+使用但没感受到 Abstract Controller，Active Support, Railties 等；
+<br>
+没有使用 Engine 等。
 
-1. 纯 Rack 实现
-2. 引入 'action_dispatch', 使用 routes
-3. 纯手动实现 Controller#actions
-4. 引入 'action_controller'，使用 Metal
-5. 项目使用其它 middleware, Controller 包含其它模块
-6. Controller 里纯手工打造 View 渲染相关代码
-7. 引进 'action_view'
-8. 直接使用 ActionController::Base
-
-9. 没有使用 ActionMailer，ActiveJob, ActiveModel, ActiveRecord
-10. 使用但没感受到 AbstractController，ActiveSupport, Railties
+上面代码里的 `run` 方法由应用服务器提供，用于运行一个 Rack application.
 
 参考
 

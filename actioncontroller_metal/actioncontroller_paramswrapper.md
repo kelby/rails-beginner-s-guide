@@ -10,19 +10,19 @@ wrap_parameters
 
 比如，实际发送的是：
 
-```
+```ruby
 {"name": "Konata"}
 ```
 
 预处理过后，可以变成：
 
-```
+```ruby
 {"user": {"name": "Konata"}}
 ```
 
 或变成：
 
-```
+```ruby
 {"name" => "Konata", "user" => {"name" => "Konata"}}
 ```
 

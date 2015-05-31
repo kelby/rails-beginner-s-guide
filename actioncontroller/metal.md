@@ -1,14 +1,22 @@
-## Metal - 精简的 ActionController::Base
+## Metal - 加强的 Rack, 简陋的 Controller
 
-### 概念
+**加强的 Rack:**
 
-metal 里的 middleware_stack 循环执行，metal 之外的东西是附属品。
+意味着它符合 Rack 接口规范，可以直接使用它，创建出来的应用可以看做是一个 Rack application.
 
-一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
+在 Rack 的基础上，它增加了 middleware_stack 的预处理。
+
+和 Rack 一样，它的功能真的很有限。如你的项目做为 API 对外提供服务，不需要那么多功能，你可以尝试。
+
+和 Rack 一样，相对来说它的性能比较高。如你的 Rails 项目对性能要求非常高，你可以尝试。
+
+> Rails Metal is a subset of Rack middleware 可以参考【Rack - Ruby Web server 接口】章节了解更多关于 Rack 的内容。
+
+**简陋的 Controller:**
+
+除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
 ActionController::Base 在它基础之上添加了多个类和模块，这使得功能得到增多，同时在性能上也会有相应损耗。如果你觉得这些功能不是必需的，或者性能的损耗是不可忍受的，你可以直接使用 Metal.
-
-MVC 里的 C 可以做得很精简，ActionController::Metal 就是例子。除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
 举个例子:
 
@@ -29,59 +37,19 @@ get 'hello', to: HelloController.action(:index)
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
-### 精简的 ActionController::Base
+### 主要做的事情
 
-首先，我们看看 ActionController::Base 引入了哪些模块：
+调用 middleware 进行预处理。
 
-```ruby
-MODULES = [
-  AbstractController::Rendering,
-  AbstractController::Translation,
-  AbstractController::AssetPaths,
+像 Rack application 一样小而完整的处理。
 
-  Helpers,
-  UrlFor,
-  Redirecting,
-  ActionView::Layouts,
-  Rendering,
-  Renderers::All,
-  ConditionalGet,
-  EtagWithTemplateDigest,
-  RackDelegation,
-  Caching,
-  MimeResponds,
-  ImplicitRender,
-  StrongParameters,
-
-  Cookies,
-  Flash,
-  RequestForgeryProtection,
-  ForceSSL,
-  Streaming,
-  DataStreaming,
-  HttpAuthentication::Basic::ControllerMethods,
-  HttpAuthentication::Digest::ControllerMethods,
-  HttpAuthentication::Token::ControllerMethods,
-
-  AbstractController::Callbacks,
-
-  Rescue,
-
-  Instrumentation,
-
-  ParamsWrapper
-]
-
-MODULES.each do |mod|
-  include mod
-end
-```
-
-引入了这么多模块，虽然方便了使用。但有的模块，我们用不到。所以，浪费了。
+做出响应。
 
 ### 其它
 
-- 不反对给 Rails 进行瘦身，但不要盲目，要清楚自己在做什么。
+一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
+
+- 直接使用 Metal 时，要清楚自己在做什么。
 
 另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
 

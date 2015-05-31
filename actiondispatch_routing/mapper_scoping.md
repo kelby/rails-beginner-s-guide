@@ -31,16 +31,17 @@ end
 | namespace | 基于 scope，只是设置了 :module => path <br> 本质是设置了 scope 的 :path、:module 和 :as 参数 |
 | controller | 基于 scope，只是设置了 :controller => controller <br>和普通写法差不多，只是把单行改为了多行的形式 |
 | constraints | 基于 scope，只是设置了 :constraints <br>传递的是限制条件，符合条件的请求才会进入里面的路由，进行下一步操作。 |
-| defaults | 基于 scope，只是设置了 :defaults <br>设置默认值|
+| defaults | 基于 scope，只是设置了 :defaults <br>作用是设置默认值|
 
 `scope` 可选参数：
+
 ```ruby
 SCOPE_OPTIONS = [:path, :shallow_path, :as, :shallow_prefix, :module,
-                       :controller, :action, :path_names, :constraints,
-                       :shallow, :blocks, :defaults, :options]
+                 :controller, :action, :path_names, :constraints,
+                 :shallow, :blocks, :defaults, :options]
 ```
 
-`controller` 和 `constraints` 仅做约束条件，不影响路由的'一个罗卜，一个坑'的特性。其它几个方法，看情况。
+`controller` 和 `constraints` 仅做约束条件，不影响路由的'一个萝卜，一个坑'的特性。其它几个方法，看情况有时会影响。
 
 #### 使用举例：
 

@@ -29,4 +29,4 @@ url_for controller: 'tasks', action: 'testing', host: 'example.org',
 # => '/myapp/tasks/testing'
 ```
 
-可选参数的类型可以是：nil、Hash、String、Symbol、Array、Class 等，根据不同参数，可能会用到 Helper Method Builder 里的东西。
+可选参数的类型可以是：nil、Hash、String、Symbol、Array、Class 等，根据不同参数，可能会用到【Polymorphic Routes】Helper Method Builder 里的东西。

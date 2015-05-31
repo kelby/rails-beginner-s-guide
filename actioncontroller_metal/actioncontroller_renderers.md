@@ -32,7 +32,13 @@ ActionController::Renderers.add :csv do |obj, options|
 end
 ```
 
-2) 之后要注册，如 Mime::Type.register "application/csv", :csv (在后面的 Mime Type register 章节还会提及)
+2) 之后要注册：
+
+```ruby
+Mime::Type.register "application/csv", :csv
+```
+
+(在后面的 Mime Type register 章节还会提及)
 
 3) 使用刚才添加的渲染器：
 

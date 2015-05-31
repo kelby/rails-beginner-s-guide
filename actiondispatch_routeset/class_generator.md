@@ -43,6 +43,6 @@ different_controller?
 
 和
 
-```
+```ruby
 attr_reader :options, :recall, :set, :named_route
 ```

@@ -2,7 +2,7 @@
 
 **应用层面的邮件发送。**
 
-YourMailer#action 时已经使用，创建的就是 Message Delivery 实例对象。
+发送邮件时，会调用 YourMailer#action，在这里就会创建 Message Delivery 实例对象。
 
 实例方法：
 
@@ -16,11 +16,13 @@ deliver_later!
 message
 ```
 
-`deliver_later` 和 `deliver_later!` 接受参数 :wait、:wait_until 或 :queue.
+`deliver_now` 和 `deliver_now!` 立即发送邮件。
+<br>
+`deliver_later` 和 `deliver_later!` 延迟发送邮件，可接受参数 :wait、:wait_until 或 :queue.
 
 `message` 表示邮件对象，即 Mail::Message 实例对象。
 
-执行 deliver 操作时，会得先到 message 对象，然后直接调用 gem 'mail' 提供的方法，或加入延迟任务再调用。
+> 无论哪种方式发送邮件，都要先得到 message 对象，调用 deliver 方法，然后调用 gem 'mail' 相关代码实现发送。
 
 通常，我们都是创建邮件并发送：
 

@@ -15,10 +15,9 @@ polymorphic_path
 4. 不用指定具体的路由 helper 方法
 5. 对象类型不确定或嵌套对象
 6. 同样依赖于路由系统
-7. 不要滥用！
-8. 复杂度提高，难以理解。
+7. 使用它会使得复杂度提高，难以理解，所以不要滥用
 
-之前：
+使用之前的做法：
 
 ```ruby
 # 在这里 parent 可以是 post 或 news
@@ -29,7 +28,7 @@ elsif News === parent
 end
 ```
 
-之后：
+使用之后：
 
 ```ruby
 # 使用 post_url(post)
@@ -56,10 +55,14 @@ end
 
 ```ruby
 polymorphic_path([parent, Comment])
-# "/posts/1/comments" 或 "'news/1/comments"
+# "/posts/1/comments"
+# 或
+# "news/1/comments"
 
 polymorphic_url(parent)
-# "http://example.com/posts/1/comments" 或 "http://example.com/news/1/comments"
+# "http://example.com/posts/1/comments"
+# 或
+# "http://example.com/news/1/comments"
 
 其它
 new_polymorphic_path(Post)  # "/posts/new"

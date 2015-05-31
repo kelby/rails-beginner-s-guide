@@ -2,6 +2,10 @@
 
 ### 更多关于 Action Controller
 
+Controller 里的 public方法(也就是action) 会自动对应 Route 里的路由规则。当请求到来时，action 接受请求并处理，最后渲染相应视图模板(Get-and-show)或重定向到另一 action(do-and-redirect).
+
+默认，只有 ApplicationController 直接继承于 ActionController::Base，其它的控制器继承于 ApplicationController. 所以，如果你想在所有 controller 处理之前做一些什么，你可以把它们写在 ApplicationController 里。
+
 ActionController include 了对 metal/ 目录下面的模块，而我们自定义的 Controller 又继承于 ActionController.
 
 自然的，它们的 ClassMethods 就会变成我们自定义 Controller 的类方法，而其它方法则类似实例方法，可运用于 action.
@@ -17,7 +21,7 @@ ActionController include 了对 metal/ 目录下面的模块，而我们自定�
 
 也就是：
 
-```
+```ruby
 klass.helper :all
 ```
 

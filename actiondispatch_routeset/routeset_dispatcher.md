@@ -1,6 +1,6 @@
 ## ~~Dispatcher~~
 
-**将 HTTP 请求向 具体的 Controller#action 转移。**
+**将 HTTP 请求向具体的 Controller#action 转移。**
 
 继承于 Routing::Endpoint
 

@@ -1,14 +1,12 @@
 ## Base
 
-我们 Mailer 类继承的 ActionMailer::Base 指的就是它。
-
-它是连接 Action Mailer 和 Abstract Controller 的纽带，是连接我们应用与 Action Mailer 的纽带。
+它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
 
 同时，它还提供一些对外的接口，供我们直接使用。
 
 ### 作用
 
-它继承于 AbstractController::Base，包含了一些自身及 Abstract Controller 的模块(尽管有的模块它并没有使用到)，作用是为了让它的子类(我们的 Mailer 类)能够"更好用、更实用"。
+它继承于 AbstractController::Base，包含了一些自身及 Abstract Controller 的模块(尽管有的模块它并没有使用到)，作用是为了让它的子类(我们自定义的 Mailer 类)能够"更好用、更实用"。
 
 ```
      YourMailer
@@ -24,7 +22,7 @@ AbstractController::Base
 
 包含了一些默认配置 default_params.
 
-注册拦截器(interceptor)或观察者(observer)。
+注册拦截器(interceptor)或观察者(observer).
 
 请求到邮件处理 process.
 
@@ -46,7 +44,7 @@ AbstractController::Base
 | :reply_to | 回邮地址 |
 | :date |时间|
 
-> NOTE: 想了解更多 header，点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
+> Note: 想了解更多 header 信息，可以点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
 
 使用举例：
 
@@ -137,7 +135,7 @@ config.action_mailer.perform_deliveries = true
 
 它和配置文件里的 `default_options=` 是一样。
 
-在 config/environments 目录下针对不同执行环境会有不同的邮件服务器设置：
+在 config/environments/ 目录下针对不同执行环境会有不同的邮件服务器设置：
 
 ```ruby
 config.action_mailer.default_options = { from: "no-reply@example.org" }
@@ -187,22 +185,18 @@ Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 类方法：
 
 ```ruby
-mailer_name & controller_path
-
 register_interceptor  # 简单封装 Mail.register_interceptor
-register_interceptors # 简单封装上面的 register_interceptor
+register_interceptors # 简单封装上面的 register_interceptor, 可注册多个拦截器。
 
 register_observer     # 简单封装 Mail.register_observer
-register_observers    # 简单封装上面的 register_observer
+register_observers    # 简单封装上面的 register_observer, 可注册多个观察者。
 ```
 
-其它类方法：
+及：
 
 ```
-supports_path?
+mailer_name & controller_path
 ```
-
-邮件里的路径不支持相对路径。
 
 实例方法：
 

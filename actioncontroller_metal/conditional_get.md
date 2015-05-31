@@ -4,7 +4,7 @@
 
 根据 ETag 和 Last-Modified 来决定是否渲染页面，可充分利用客户端(例如浏览器)的缓存，在 Rails 里属于 Controller#action 层面的缓存。
 
-它并不属于应用层面的缓存，因为它用的是状态头和浏览器的特性，这和 Rails.cache 等缓存机制都不一样。
+它和 Rails.cache 等缓存机制都不一样，它用的是状态头和浏览器的特性，并不属于应用层面的缓存。
 
 **类方法：**
 
@@ -12,7 +12,7 @@
 etag
 ```
 
-`etag` 把缓存元素加入到 etaggers 里。之后 cache 相关的方法会调用到 etaggers，即调用到这些缓存元素，进而通过它们影响 HTTP 缓存结果。
+`etag` 把缓存元素加入到 etaggers 里。之后 cache 相关的方法会调用到 etaggers(即调用到这些缓存元素)，进而通过它们影响 HTTP 缓存结果。
 <br>
 这里添加的元素对当前 Controller 下所有的 action 都会起作用。
 

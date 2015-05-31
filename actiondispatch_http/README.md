@@ -10,6 +10,6 @@ Request 和 Response 是连接 ActionController 和 ActionDispatch::Http 主要�
 
 每一个请求都有 request 和 response.
 
-request 为 ActionDispatch::Request 的实例对象。
+`request` 为 ActionDispatch::Request 的实例对象。
 <br>
-response 为 ActionDispatch::Response 的实例对象。
+`response` 为 ActionDispatch::Response 的实例对象。

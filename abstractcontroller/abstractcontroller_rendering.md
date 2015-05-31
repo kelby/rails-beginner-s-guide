@@ -1,7 +1,6 @@
 ## Rendering
 
-Abstact Controller 封装 Action View
-然后，给 Action Controller 和 Active Mailer 使用，而 Action Controller 根据自己情况又可以自己扩展 render.
+Abstact Controller 封装了 Action View 的 Rendering 相关模块，然后给 Action Controller 和 Active Mailer 使用。
 
 ```
 Action Controller & Active Mailer
@@ -13,11 +12,11 @@ Action Controller & Active Mailer
             Action View
 ```
 
+它封装了 Action View 里的 Template Renderer 和 Partial Renderer，提供 render 给 Action Controller, Action Mailer 渲染模板文件或局部模板。
+
 我们在 Controller#actions 里使用的 `render` 就是在这里定义的（尽管它只是简单调用，几乎没做任何事）。
 
-它其实是封装了 Action View 里的 Template Renderer 和 Partial Renderer，提供 render 给 Action Controller, Action Mailer 渲染模板文件或局部模板。
-
-也就是说，真正的渲染工作并不是它做的，它只是封装了 View 里的渲染方法。所以，使用过程中有疑问的，可以查看 View 里对应 render 方法的文档。
+所以，在使用 `render` 过程中有疑问的话，可以查看 View 里对应 render 方法的文档。
 
 除上述方法外，还有：
 
