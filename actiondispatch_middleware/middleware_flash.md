@@ -4,9 +4,9 @@
 
 有 FlashHash 和 FlashNow 两个类。
 
-flash 是 FlashHash 的实例对象；
+`flash` 是 FlashHash 的实例对象；
 <br>
-flash.now 是 FlashNow 的实例对象。
+`flash.now` 是 FlashNow 的实例对象。
 
 ```
 []

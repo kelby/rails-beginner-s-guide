@@ -2,7 +2,7 @@
 
 **middleware 本质就是 Rack app，只是简单封装了一下。**
 
-所以，我们可以定制自己的 Middleware，用来处理 @app 和 env.
+我们可以编写自己的 Middleware，用来处理 @app 和 env.
 
 **举例一**
 

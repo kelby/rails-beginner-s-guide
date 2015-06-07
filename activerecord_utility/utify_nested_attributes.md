@@ -43,7 +43,9 @@ reflection.autosave = true                     # 自动保存
 add_autosave_association_callbacks(reflection) # 回调在自动保存时仍然有效
 ```
 
-对于嵌套的属性，默认你可以执行写操作，但不能删除它们。如果你真的要这么做，也可以通过 `:allow_destroy` 来设置。如：
+**对于嵌套的属性，默认你可以执行写操作，但不能删除它们。**
+
+如果你真的要这么做，也可以通过 `:allow_destroy` 来设置。如：
 
 ```ruby
 class Member < ActiveRecord::Base
@@ -59,7 +61,26 @@ member.save
 member.reload.avatar # => nil
 ```
 
-自动保存多个嵌套属性，有的可能不符合校验，为了处理这种情况。你可以设置 `:reject_if`:
+上面举例是一对一，下面的一对多关系类似：
+
+```ruby
+params = { member: {
+  name: 'joe', posts_attributes: [
+    { title: 'Kari, the awesome Ruby documentation browser!' },
+    { title: 'The egalitarian assumption of the modern citizen' },
+    { title: '', _destroy: '1' } # this will be ignored
+  ]
+}}
+
+member = Member.create(params[:member])
+member.posts.length # => 2
+member.posts.first.title # => 'Kari, the awesome Ruby documentation browser!'
+member.posts.second.title # => 'The egalitarian assumption of the modern citizen'
+```
+
+**自动保存多个嵌套属性，有的可能不符合校验。**
+
+为了处理这种情况。你可以设置 `:reject_if`:
 
 ```ruby
 class Member < ActiveRecord::Base
@@ -83,6 +104,8 @@ member.posts.length # => 2
 member.posts.first.title # => 'Kari, the awesome Ruby documentation browser!'
 member.posts.second.title # => 'The egalitarian assumption of the modern citizen'
 ```
+
+在这里，效果和上面使用 `_destroy: '1'` 有类似之处。
 
 **重现 autosave 创建过程**
 

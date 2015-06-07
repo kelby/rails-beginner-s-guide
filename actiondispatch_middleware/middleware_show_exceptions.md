@@ -6,7 +6,7 @@
 对内调用 Exception Wrapper
 对外调用 Public Exceptions.
 
-```
+```ruby
 # 对内
 wrapper = ExceptionWrapper.new(env, exception)
 

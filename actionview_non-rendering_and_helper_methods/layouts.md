@@ -2,7 +2,7 @@
 
 `layout`
 
-影响渲染的效果，但和渲染不直接相关。
+布局，影响渲染的效果，但和渲染不直接相关。
 
 ```ruby
 # String
@@ -17,15 +17,6 @@ class VaultController < BankController
   layout :access_level_layout
 end
 ```
-
-```ruby
-# false
-class TillController < BankController
-  layout false
-end
-```
-
-> Note: 没有 layout true 这种写法。
 
 ```ruby
 # nil
@@ -47,13 +38,13 @@ class PostsController < ApplicationController
 end
 ```
 
-此外，只有 false 没有 true (要渲染可以直接指明 layout 或者不指明使用默认，但不能使用 true，会报错的):
-
 ```ruby
 # false
 class TillController < BankController
   layout false
 end
 ```
+
+> Note: 没有 layout true 这种写法，会报错的。
 
 此外，还有可选参数 `:only` 和 `:except`

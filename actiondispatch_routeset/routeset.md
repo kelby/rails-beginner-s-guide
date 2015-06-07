@@ -162,7 +162,7 @@ end
 
 `initialize`用到了 NamedRouteCollection， 内容是：
 
-```
+```ruby
 self.named_routes = NamedRouteCollection.new
 ```
 
@@ -170,12 +170,12 @@ self.named_routes = NamedRouteCollection.new
 
 `generate` 用到了 Generator，内容是：
 
-```
+```ruby
 Generator.new(route_key, options, recall, self).generate
 ```
 
 `dispatcher` 用到了 Dispatcher 内容是：
 
-```
+```ruby
 Routing::RouteSet::Dispatcher.new(defaults)
 ```

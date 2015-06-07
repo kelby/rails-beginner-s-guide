@@ -1,3 +1,3 @@
-# Action View 普通方法
+# Action View 其它类和模块
 
 下面这些方法，和渲染没有直接关联，并且严格意义上讲不属于 helper 方法。

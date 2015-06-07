@@ -51,7 +51,7 @@ require 'benchmark'
 # This call creates a connection to our database.
 
 ActiveRecord::Base.establish_connection(
-  :adapter => "mysql",
+  :adapter => "mysql2",
   :host => "127.0.0.1",
   :username => "root", # Note that while this is the default setting for MySQL,
   :password => "", # a properly secured system will have a different MySQL
