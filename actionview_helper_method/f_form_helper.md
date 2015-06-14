@@ -1,10 +1,6 @@
 ### Form Helper
 
-Form Helper 是面向函数<br>
-函数(f对象, 参数)。
-
-Form Builder 是面向对象<br>
-f对象.方法(参数)。
+Form Helper 是面向函数。
 
 前者，更灵活。因为它没有限定对象，有时候我们'需要'这样做，而有时候我们没'必要'。
 

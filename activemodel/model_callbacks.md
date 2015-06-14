@@ -1,4 +1,4 @@
-## Callbacks - 快速定义 before、around 和 after 回调方法
+## Callbacks - 快速定义 3 个回调方法
 
 `define_model_callbacks(*callbacks)` 快速定义 Model 里使用的 3 个回调方法，它们是：before_x、around_x 和 after_x.
 

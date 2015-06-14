@@ -1,6 +1,6 @@
 ## 4 个关联类方法
 
-**对内代表。**
+**对外提供接口。**
 
 Rails 提供了 4 个类方法，用于声明对象与对象之间的关系。它们的意思，理解起来很简单，和字面意思一样，如"Project has one Project Manager" 或 "Project belongs to a Portfolio".   但实际使用过程，还是有很多要注意的。不同的场景，需要不同的参数；并且，它们会引入一些额外的方法，有的和 attr_* 类似，但有的不是。
 
@@ -56,9 +56,3 @@ Project#categories.destroy(category1)
 当不确定参数表示什么意思，使用后有什么效果时，请慎用，可以选择其它确定/有把握的方法代替。
 
 > Note: 当你不确定时，不妨多敲几行代码，以妨万一。
-
-### 注意事项
-
-只有 :has_many, :has_one, :belongs_to 才有可能自动计算 inverse，也就是说 has_and_belongs_to_many 不可以。
-
-若上述声明里包含 :conditions, :through, :polymorphic, :foreign_key 则同样不可以自动计算 inverse.

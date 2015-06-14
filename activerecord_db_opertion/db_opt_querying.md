@@ -1,6 +1,6 @@
 ## Querying
 
-```
+```ruby
 delegate :find, :take, :take!, :first, :first!, :last, :last!, :exists?, :any?,
          :many?, to: :all
 delegate :second, :second!, :third, :third!, :fourth, :fourth!, :fifth, :fifth!,

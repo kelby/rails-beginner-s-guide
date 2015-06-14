@@ -26,7 +26,7 @@ to_xml
 from_xml
 ```
 
-**注意几个转化成 json 方法之间的区别**
+**注意几个转化成 json 方法之间的区别：**
 
 ```ruby
 person = Person.new

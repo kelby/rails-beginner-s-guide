@@ -34,3 +34,26 @@ end
 ```
 
 因为，类和对象的概念，对于视图来说重要性没有那么大。
+
+`view_context` 是 ActionView::Base 的实例对象。
+
+```ruby
+self.class.superclass
+=> ActionView::Base
+```
+
+```ruby
+Class.new(ActionView::Base) do
+  if routes
+    include routes.url_helpers(supports_path)
+    include routes.mounted_helpers
+  end
+
+  if helpers
+    include helpers
+  end
+end
+```
+
+在 ActionView::Rendering 里。
+

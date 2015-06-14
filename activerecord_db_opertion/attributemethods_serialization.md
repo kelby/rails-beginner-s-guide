@@ -26,3 +26,5 @@ post.title[:name]
 ```
 
 存储时，如果类型不符合，会报错。
+
+> 名字和【ActiveRecord::Serialization】相同，注意它们的区别。

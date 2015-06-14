@@ -4,7 +4,7 @@
 
 它主要测试一些"必不可少"的基本方法：
 
-```ruby
+```
 test_errors_aref
 test_model_naming
 test_to_key

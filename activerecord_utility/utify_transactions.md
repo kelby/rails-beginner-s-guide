@@ -29,7 +29,9 @@ Account.transaction do
   balance.save!
   account.save!
 end
+```
 
+```ruby
 # 实例方法
 balance.transaction do
   balance.save!
@@ -37,7 +39,7 @@ balance.transaction do
 end
 ```
 
-`after_commit(*args, &block)` 和 `after_rollback(*args, &block)` 完全一样
+`after_commit(*args, &block)` 和 `after_rollback(*args, &block)` 使用上完全一样。
 
 默认 commit 包括： created, updated, 和 destroyed.
 不过，你可以用可选参数 `:on` 指定其中的一个或多个:
@@ -52,3 +54,5 @@ after_commit :do_bar_baz, on: [:update, :destroy]
 ```
 
 原理，和普通的回调类似。使用 Active Support 提供的 `set_callback(name, *filter_list, &block)` 完成。
+
+使用事务后，其它 destroy、save、save!、touch 等操作时也会对应的受到影响。

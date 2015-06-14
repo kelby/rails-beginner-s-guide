@@ -8,6 +8,5 @@ Active Record 对于需要持久化的数据进行校验或处理，是很强大
 
 > Note: 
 <br>
-说明一下，Active Model 脱胎于 Active Record，而不是依赖，它可以单独使用；
-<br>
-反过来，Active Record 依赖于 Active Model.
+说明一下，Active Model 脱胎于 Active Record，它可以单独使用；
+反过来，Active Record 依赖于 Active Model，不可以单独使用。

@@ -1,14 +1,12 @@
 ## Integration
 
+**类方法：**
+
 ```
 cache_key(*timestamp_names)
 ```
 
-和 Persistence 提供的 `touch(*names)` 配合起来很棒。
-
-也有 `to_param` 但只是同名而矣。
-
-`to_param()`
+**实例方法：**`to_param()`
 
 默认，Rails 生成 URL 时用的是 `primary key`，也就是数据库里的 `id` 属性。例如：
 
@@ -30,7 +28,7 @@ user = User.find_by(name: 'Phusion')
 user_path(user)  # => "/users/Phusion"
 ```
 
-`cache_key(*timestamp_names)`
+**实例方法：**`cache_key(*timestamp_names)`
 
 返回一个能够标识对象的字符串：
 

@@ -1,6 +1,6 @@
 ## Finder Methods
 
-**实例方法**
+**实例方法：**
 
 ```
 exists?
@@ -9,14 +9,15 @@ find
 find_by
 find_by!
 
+take
+take!
+```
+
+和：
+
+```
 first
 first!
-
-fifth
-fifth!
-
-fourth
-fourth!
 
 second
 second!
@@ -24,14 +25,17 @@ second!
 third
 third!
 
+fourth
+fourth!
+
+fifth
+fifth!
+
 forty_two
 forty_two!
 
 last
 last!
-
-take
-take!
 ```
 
-上面的实例方法封装了它们。它们是 protected 方法，所以一般不会直接使用。
+除上述方法外，还有一些 protected 方法，但它们一般不会直接使用到。

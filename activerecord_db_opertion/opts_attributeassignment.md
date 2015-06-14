@@ -1,10 +1,12 @@
 ## Attribute Assignment
 
+给已有对象的属性进行赋值。
+
 ```
 assign_attributes & attributes=
 ```
 
-给 record 对象进行赋值，特点是参数的类型是 Hash 对象(这点和 update_columns、update_attributes 类似，但它不会触发 save 操作)。
+是 update & update_attributes 的底层实现。参数的类型都是 Hash 对象，但它不会触发 save 操作。
 
 使用举例：
 
@@ -20,4 +22,13 @@ cat.attributes # => { "name" => "Gorby", "status" => "sleeping", "created_at" =>
                       "updated_at" => nil }
 ```
 
-与其它方法的对比，可以查看【对比，然后使用合适的方法】。
+区别于直接赋值：
+
+```ruby
+user.is_admin = true
+# 直接赋值，不涉及 ForbiddenAttributesProtection
+
+user.assign_attributes is_admin: true
+# ActiveModel::MassAssignmentSecurity::Error:
+# Can't mass-assign protected attributes: is_admin
+```

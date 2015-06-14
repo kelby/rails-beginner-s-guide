@@ -30,7 +30,7 @@ human
 
 和
 
-```
+```ruby
 attr_reader :singular, :plural, :element, :collection,
   :singular_route_key, :route_key, :param_key, :i18n_key,
   :name

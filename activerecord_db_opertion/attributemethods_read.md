@@ -10,6 +10,10 @@ read_attribute(:name)
 # 等价于
 
 self[:name]
+
+# 等价于
+
+self.name
 ```
 
 数据从 `attributes` 里获取
@@ -26,14 +30,14 @@ self.attributes 里的 image 信息一致
 因为性能，前者要把所有的属性都找出来，然后取 name 属性；
 而后者可以直接获取 name 属性。
 
+## Write
+
+属性名，加后缀 `=` 进行赋值。
+
+区别于 attr_writer, 这里的写和数据库操作有关。
+
 参考
 
 [Prefer self[:attribute] over read_attribute(:attribute)](https://github.com/bbatsov/rails-style-guide#read-attribute)<br>
 [Rails attributes() and read_attribute() method](http://www.shanison.com/2010/07/18/rails-attributes-method/)<br>
-[How Rails' Type Casting Works](http://robots.thoughtbot.com/how-rails-works-type-casting)<br>
-
-## Write
-
-属性名，加后缀 '=' 进行赋值。
-
-区别于 attr_writer, 这里指的是和数据库操作有关的写。
+[How Rails' Type Casting Works](http://robots.thoughtbot.com/how-rails-works-type-casting)

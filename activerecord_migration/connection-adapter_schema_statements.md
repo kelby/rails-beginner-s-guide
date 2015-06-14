@@ -57,7 +57,7 @@ remove_timestamps
 table_alias_for
 ```
 
-其它实例方法
+其它实例方法：
 
 ```
 options_include_default?

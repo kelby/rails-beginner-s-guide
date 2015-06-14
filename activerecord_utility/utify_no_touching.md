@@ -22,7 +22,7 @@ end
 
 除上述外，还有方法：
 
-```
+```ruby
 no_touching?
 
 touch

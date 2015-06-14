@@ -4,7 +4,7 @@
 
 举例，我们数据库里有 `name` 字段，我们想这样存储：
 
-```
+```ruby
 name = { last_name: "Kelby", first_name: "Lee" }
 ```
 
@@ -22,7 +22,7 @@ u.settings[:last_name]  # => 'zk'
 u.settings['last_name'] # => 'zk'
 ```
 
-store 由【Serialization】的 `serialize` 和下面的 store_accessor 两方法组成。
+`store` 由【Serialization】的 `serialize` 和下面的 `store_accessor` 两方法组成。
 
 `store_accessor(store_attribute, *keys)` 给已经存在数据的 store 添加 key.
 

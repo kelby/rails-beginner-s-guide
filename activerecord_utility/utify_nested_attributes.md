@@ -4,7 +4,7 @@
 
 attr_names 由：一个或多个属性(association_name) 和 一个或多个可选参数(option)组成。
 
-只接受options：
+只接受 options：
 
 ```
 :allow_destroy
@@ -118,11 +118,71 @@ Book.send(:add_autosave_association_callbacks, reflection)
 Book.reflect_on_all_autosave_associations
 ```
 
+**update_only - 解决更新关联对象时的困扰**
+
+之前的写法：
+
+```ruby
+# alias.rb
+class Alias < ActiveRecord::Base  
+  belongs_to :user
+  accepts_nested_attributes_for :user
+end  
+```
+
+举例：更新关联对象
+
+```ruby
+# 传递 id
+Alias.first.user.name  
+>> "Alice"
+Alias.first.update_attributes(  
+{
+  :user_attributes => {
+    :id => 1, # <- 这行
+    :name => "Bob"
+  }
+})
+
+Alias.first.user.name  
+>> "Bob"
+
+# 外键用的是传递过来的 id
+Alias.first.user_id  
+>> 1
+
+# 不传递 id
+Alias.first.update_attributes(  
+{
+  :user_attributes => {
+    :name => "Bob"
+  }
+})
+
+# 没有传递外键，则会先删除，然后重新创建关联对象
+Alias.first.user_id  
+>> 2
+```
+
+上述情况，虽然文档上已经写明了。但这违背了我们的直觉，建议加上 `:update_only` 参数。
+
+之后的写法：
+
+```ruby
+# alias.rb
+class Alias < ActiveRecord::Base  
+  belongs_to :user
+  accepts_nested_attributes_for :user, 
+    :update_only => true
+end  
+```
+
+update_only 仅作用于单一关系，对 collection 使用无效。
+
+当然，除上述方法外，还有解决办法就是：
+直接获取，然后操作被关联的对象作。或者，直接通过关联对象进行赋值，然后保存（利用 auto_save 进行自动更新）。
+
 ---
-
-update_only 选项的使用
-
-[accepts_nested_attributes_for is Creating New Records; Gotcha!](http://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through)
 
 invert_of 的另一个作用
 [accepts_nested_attributes_for with Has-Many-Through Relations](http://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through)

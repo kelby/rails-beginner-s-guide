@@ -30,6 +30,12 @@
 除上述方法外，还有：
 
 ```
+to_a
+
+to_sql
+```
+
+```
 eager_loading?
 
 encode_with
@@ -47,10 +53,6 @@ scope_for_create
 scoping
 
 size
-
-to_a
-
-to_sql
 
 uniq_value
 ```

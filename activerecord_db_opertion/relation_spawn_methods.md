@@ -18,7 +18,7 @@ spawn
 merge!
 ```
 
-```
+```ruby
 VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend,
                        :order, :select, :readonly, :group, :having, :from, :lock ]
 ```
