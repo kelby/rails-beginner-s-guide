@@ -26,10 +26,10 @@ Action View 和 Action Controller 渲染的主要入口。
 
 ```
 spacer_template # 配合 collection 和 partical. 在局部模板之间穿插的内容。(为什么不把它们放到局部模板里，而是用这种奇怪的方式？可能是 partical 还被其它人使用，不能直接添加吧)
-layout     # 已编
+layout     # 见下文
 partial    # 渲染以 _ 开头的局部模板
-locals     # 已编
-formats
+locals     # 见下文
+formats    # 格式
 object     # 每一个局部模板都有一个和它同名的变量名可用，使用 object 可设置这个变量的值(类似 locals，但这里只有一个变量，且变量名固定)
 as         # 配合 collection. 渲染一个集合后，默认同名的变量名可能不同，我们需要指定，使用 as 可设置这个变量(类似 object)
 collection # 集合里的每一个元素都要渲染同一个局部模板，所以可以传递一个集合给局部模板。作用和 collection.each 之后再 render 一样的
@@ -159,6 +159,19 @@ render js: "alert('Hello Rails');"
 ```ruby
 render body: "raw"
 ```
+
+### render 单个对象，还是集合
+
+渲染一个集合(传递 :collection)，而不是一个个的渲染对象(传递 :object)。
+
+需要注意：
+
+- 一般要指明 :partial 否则某些情况下会报错。
+- 集合里的元素在局部模板里和局部模板同名变量表示。
+- 可以用 :as 改变这里的同名变量。(渲染单个对象时，也可以用些参数)
+- 额外的参数用 :locals 传递。（上面的同名变量你不用 :as 的话，也可以这么传递）
+
+渲染集合，除了少敲几个字符外，性能也会对应变快一点。
 
 ### 其它
 
