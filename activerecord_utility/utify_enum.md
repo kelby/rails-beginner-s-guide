@@ -1,5 +1,7 @@
 ## Enum
 
+元编程生成一系列的方法：
+
 ```ruby
 definitions.each do |name, values|
   klass.singleton_class.send(:define_method, name.to_s.pluralize)
@@ -15,7 +17,7 @@ definitions.each do |name, values|
     klass.scope value
 ```
 
-假设，我们有 `status` 字段，那么使用 `enum` 方法会引入什么魔法：
+假设，我们有 `status` 字段，使用 `enum` 后会生成什么方法？
 
 ```ruby
 class Post < ActiveRecord::Base
@@ -31,14 +33,14 @@ Post.statuses
 ```
 
 
-2 值(scope)
+2 与 value 同名的 scope 方法
 
 ```ruby
 Post.active
 # => SELECT "posts".* FROM "posts"  WHERE "posts"."status" = 0
 ```
 
-3 值?
+3 value? 询问是否为某值
 
 ```ruby
 post.active?
@@ -46,7 +48,7 @@ post.active?
 ```
 
 
-4 值!
+4 value! 更新为某值
 
 ```ruby
 post.active!
@@ -59,25 +61,29 @@ commit transaction
 => true
 ```
 
-5 同名实例方法(get)
+5 同名实例方 法(get 类型)
 
 ```ruby
 post.status
 => "active"
 ```
 
-6 同名实例方法=(set)
+6 同名实例方法= (set 类型)
 
 ```ruby
 post.status = "archived"
 => "archived"
 ```
 
-7 和同名实例方法(get)作用一样
+7 同名实例方法(get 类型)
 
 ```ruby
 post.status_before_type_cast
 => "archived"
 ```
 
-> Note: 注意 enum 的字段必须是 integer 类型。<br>但除了保存数据库外，其它地方显示的却是我们定义的字段，也就是说它真正保存在数据库里的是 integer, 但平时我们使用，用的是 string 类型。
+注意 enum 的字段在数据库保存的是 integer 类型，但在外表现的却是字符串，我们查询、更新的都以字符串的形式进行。
+
+另外，注意 enum 生成的类方法、实例方法不要与 Active Record 提供的方法，及同一个 Model 下其它 enum 生成的方法有重复。
+<br>
+每个 Model 下面都会有一个叫 defined_enums 的变量用来记录 enum 相关信息。

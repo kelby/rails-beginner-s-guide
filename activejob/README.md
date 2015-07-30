@@ -60,11 +60,7 @@ MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
 MyJob.set(wait: 1.week).perform_later(record)
 ```
 
-实例方法：
-
-```
-serialize
-```
+> Note: set 方法支持可选参数：wait、wait_until、queue
 
 类方法：
 
@@ -72,7 +68,11 @@ serialize
 deserialize
 ```
 
-> Note: set 方法支持可选参数：wait、wait_until、queue
+实例方法：
+
+```
+serialize
+```
 
 ### Enqueuing 入队与重试
 
@@ -123,7 +123,8 @@ perform_later
 
 ```ruby
 # 实例方法
-perform, perform_now
+execute
+perform_now
 
 # 类方法
 perform_now # 简单封装了实例方法 perform_now

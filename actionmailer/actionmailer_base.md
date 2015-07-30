@@ -2,7 +2,7 @@
 
 它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
 
-同时，它还提供一些对外的接口，供我们直接使用。
+它是 Action Mailer 里其它模块的集合中心（其它模块不直接对外提供接口，而是通过它完成）。同时，它还提供一些对外的接口，供我们直接使用。
 
 ### 作用
 
@@ -192,16 +192,10 @@ register_observer     # 简单封装 Mail.register_observer
 register_observers    # 简单封装上面的 register_observer, 可注册多个观察者。
 ```
 
-及：
+方法：
 
 ```
 mailer_name & controller_path
 ```
 
-实例方法：
-
-```
-mailer_name
-```
-
-`mailer_name` 返回文件名，默认为 anonymous.
+返回 Mailer 类的名字，默认与类名同名。

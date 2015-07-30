@@ -2,14 +2,6 @@
 
 我们在 respond_to 里可以响应的格式 Mime.
 
-提供方法：
-
-```
-generate_method_for_mime
-
-method_missing
-```
-
 Collector 是 Abstact Controller 实现的。Action Controller 有自己的扩展，Active Mailer 也有自己的扩展。
 
 对应：
@@ -22,7 +14,7 @@ respond_to do |format|
 end
 ```
 
-调用 `format.html` 和 `format.xml` 等方法调用时会触发 `method_missing`，之后由 `generate_method_for_mime` 生成。
+调用 `format.html` 和 `format.xml` 等方法调用时会触发 `method_missing`，之后由 `generate_method_for_mime` 元编程生成。
 
 目前 Rails 支持的 MIME(多用途互联网邮件扩展)，有：
 

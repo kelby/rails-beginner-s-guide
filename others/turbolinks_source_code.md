@@ -1,6 +1,6 @@
 # 从源代码出发，理解和使用 Turbolinks
 
-简单理解：把原来所有 GET 请求(包括链接、重定向、浏览器的后退)都通过 AJAX 来实现，并且 url 是变化的。
+简单理解概念：把原来所有 GET 请求(包括链接、重定向、浏览器的后退)都通过 AJAX 来实现，并且 url 是变化的。
 
 Turbolinks 会接管所有站内链接，用 ajax 请求获得目标页面，然后替换 body 内容。Turbolinks 接管下的网站不用重复解析 js 和 css 文件，这可以达到加速的目的，同时也让整站成为一个单页应用，页面切换不释放之前的页面内容。
 
@@ -16,7 +16,19 @@ gem 'jquery-turbolinks'
 
 ## Ruby 部分
 
-### 覆盖了 url_for 和 referer 方法，修复普通链接里的 :back
+### 覆盖了 ActionController::Base 里的 redirect_to 和 render 方法
+
+```ruby
+ActionController::Base.ancestors.select{|a| a.to_s =~ /^Turbolinks/}
+ => [Turbolinks::XHRHeaders, Turbolinks::Cookies,
+     Turbolinks::XDomainBlocker, Turbolinks::Redirection] 
+```
+
+render 使用的是 Turbolinks.replace
+<br>
+redirect_to 使用的是 Turbolinks.visit
+
+### 处理 :back 这种情况，使用 X-XHR-Referer 标识
 
 更改了 url_for 方法(会影响到 link_to 等调用到它的方法)
 
@@ -66,14 +78,14 @@ alias_method_chain :call, :turbolinks
 
 ### 其它几点 
 
-**3 个钩子**
+**一，3 个钩子**
 
 ```
 before_action :set_xhr_redirected_to, :set_request_method_cookie
 after_action :abort_xdomain_redirect
 ```
 
-**因为 trublinks 改变了原来 redirect_to 的行为，带来了新的问题，然后它又提供了解决办法：**
+**1) 因为 trublinks 改变了原来 redirect_to 的行为，带来了新的问题，然后它又提供了解决办法：**
 
 ```
   def set_xhr_redirected_to
@@ -83,7 +95,9 @@ after_action :abort_xdomain_redirect
   end
 ```
 
-**对于非 GET 请求，turblinks 是不起作用的(压根就不会初始化)。它怎么记录是非 GET 请求的呢？用 cookies 啊。**
+对应 redirect_to :back 这种情况，使用 X-XHR-Referer 标识；用 X-XHR-Redirected-To 记录重定向的目标地址。
+
+**2) 它怎么记录是非 GET 请求的呢？用 cookies 记录。**
 
 ```
   def set_request_method_cookie
@@ -95,7 +109,9 @@ after_action :abort_xdomain_redirect
   end
 ```
 
-**跨域重定向：**
+对于非 GET 请求，turblinks 是不起作用的。
+
+**3) 跨域重定向：**
 
 ```
   def abort_xdomain_redirect
@@ -108,44 +124,7 @@ after_action :abort_xdomain_redirect
   end
 ```
 
-**重写了 ActionController::Base 的 render, redirect_to 方法：**
-
-```ruby
-ActionController::Base.ancestors.select{|a| a.to_s =~ /^Turbolinks/}
- => [Turbolinks::XHRHeaders, Turbolinks::Cookies,
-     Turbolinks::XDomainBlocker, Turbolinks::Redirection] 
-```
-
-render 使用的是 Turbolinks.replace
-<br>
-redirect_to 使用的是 Turbolinks.visit
-
-```ruby
-def redirect_to(url = {}, response_status = {})
-  turbolinks, options = _extract_turbolinks_options!(response_status)
-
-  value = super(url, response_status)
-
-  if turbolinks || (turbolinks != false && request.xhr? && !request.get?)
-    _perform_turbolinks_response "Turbolinks.visit('#{location}'#{_turbolinks_js_options(options)});"
-  end
-
-  value
-end
-
-def render(*args, &block)
-  render_options = args.extract_options!
-  turbolinks, options = _extract_turbolinks_options!(render_options)
-
-  super(*args, render_options, &block)
-
-  if turbolinks || (turbolinks != false && options.size > 0 && request.xhr? && !request.get?)
-    _perform_turbolinks_response "Turbolinks.replace('#{view_context.j(response.body)}'#{_turbolinks_js_options(options)});"
-  end
-
-  self.response_body
-end
-```
+某种情况下，禁止访问。
 
 ## JS 部分
 
@@ -175,7 +154,7 @@ Public API
   cacheCurrentPage,
   enableTransitionCache,
   disableRequestCaching,
-  ProgressBar: ProgressBarAPI,
+  ProgressBar: ProgressBarAPI (包括：enable, disable, start, addvanceTo, done),
   allowLinkExtensions: Link.allowExtensions,
   supported: browserSupportsTurbolinks,
   EVENTS: clone(EVENTS)
@@ -214,6 +193,8 @@ EVENTS =
   EXPIRE:         'page:expire'
 ```
 
+具体做了什么事，如何实现，可以查看对应源代码，在此不做讨论。
+
 ## 亮点
 
 ### Transition Cache
@@ -247,23 +228,6 @@ Turbolinks.replace(html, options)
 ## 坑及策略
 
 ### 事件的改变
-
-**page:fetch 组成**
-
-运用了 XMLHttpRequest 的实例对象。
-
-```
-rememberReferer    # 记住从哪来
-cacheCurrentPage   # 缓存当前链接
-progressBar?.start # 使用了进度条的话，就给我显示
-
-如果没有开启 Transition Cache，则：
-fetchReplacement
-
-如果开启了 Transition Cache，则：
-fetchHistory     # 注意，这样是为了进一步加快速度
-fetchReplacement # 注意，这一步还是要做的
-```
 
 **点击链接：**
 
@@ -307,15 +271,30 @@ Turbolinks.visit
 Turbolinks.replace
 ```
 
-## 优点汇总
+## JS 要如何更改使用？
 
-1. 除了第一次 GET 请求，其它 GET 请求，页面明显速度
-2. js 和 css 不需要重新加载、编译
-3. 它更像持续进程，而不是垃圾回收
+### jquery.turbolinks 实践，请按照 AJAX 的方式写 JS 代码。
 
-## 其它
+```javascript
+/* 不要这么写 */
+$(function() {
+  $(document).on('click', 'button', function() { ... })
+});
 
-### 请按照 AJAX 的方式写 JS 代码。
+/* 而是这么写 */
+$(document).on('click', 'button', function() { ... })
+```
+
+和
+
+```javascript
+// 不要这么写
+$(document).on('ready', function () { /* ... */ });
+
+// 而是这么写
+$(document).ready(function () { /* ... */ });
+$(function () { /* ... */ });
+```
 
 ### 怎样防止浏览器缓存 Turbolinks 请求:
 
@@ -344,7 +323,9 @@ gem 'turbolinks'
 ```ruby
 # Gemfile:
 gem 'jquery-turbolinks'
+```
 
+```coffee
 # Add it to your JavaScript manifest file, in this order:
 //= require jquery
 //= require jquery.turbolinks
@@ -353,29 +334,6 @@ gem 'jquery-turbolinks'
 // ... your other scripts here ...
 //
 //= require turbolinks
-```
-
-### jquery.turbolinks 实践
-
-```javascript
-/* BAD: don't bind 'document' events while inside $()! */
-$(function() {
-  $(document).on('click', 'button', function() { ... })
-});
-
-/* Good: events are bound outside a $() wrapper. */
-$(document).on('click', 'button', function() { ... })
-```
-
-和
-
-```javascript
-// BAD: this will not work.
-$(document).on('ready', function () { /* ... */ });
-
-// OK: these two are guaranteed to work.
-$(document).ready(function () { /* ... */ });
-$(function () { /* ... */ });
 ```
 
 ## 三个 data-* 属性
@@ -423,7 +381,7 @@ $(function () { /* ... */ });
 </script>
 ```
 
-那么这段代码只有在这个页面是直接访问的时候才会执行。目前还没发现必须使用这个属性的情景。
+那么这段代码只有在这个页面是直接访问的时候才会执行。
 
 ### 与 Assets Pipeline 配合
 
@@ -454,7 +412,7 @@ application.js 和 admin.js 是最终编译出来的 js 文件，内容类似：
 #= require_tree ./application
 ```
 
-```
+```javascript
 # admin.js.coffee
 #= require jquery
 #= require jquery.turbolinks
@@ -606,63 +564,18 @@ update
 
 **各种浏览器不同引起的问题**
 
-**细节**
+如何替换链接？
 
-```
-fetch
-transitionCacheFor
-enableTransitionCache
-disableRequestCaching
-fetchReplacement
-fetchHistory
-cacheCurrentPage
-pagesCached
-constrainPageCacheTo
-replace
-changePage
-findNodes
-findNodesMatchingKeys
-swapNodes
-executeScriptTags
-removeNoscriptTags
-setAutofocusElement
-reflectNewUrl
-reflectRedirectedUrl
-crossOriginRedirect
-rememberReferer
-rememberCurrentUrl
-rememberCurrentState
-manuallyTriggerHashChangeForFirefox
-recallScrollPosition
-resetScrollPosition
-clone
-popCookie
-uniqueId
-triggerEvent
-pageChangePrevented
-processResponse
-extractTitleAndBody
-createDocument
+由 JS 实现。
 
-bypassOnLoadPopstate
-installDocumentReadyPageEventTriggers
-installJqueryAjaxSuccessPageUpdateTrigger
-installHistoryChangeHandler
-initializeTurbolinks
+如何防止丢失 Referer ？
 
-browserSupportsTurbolinks
-# 等价于下面 3 者
-browserSupportsPushState
-browserIsntBuggy
-requestMethodIsSafe
-```
+压根就没有丢失，只是原来的不能用，用新的 X-XHR-Referer
 
 参考：
 
-[Turbolinks 向导](http://chloerei.com/2013/07/14/turbolinks-guide/)
-<br>
-[Turbolinks 后端逻辑分析](http://chloerei.com/2013/06/30/turbolinks-backend/)
-<br>
 [Turbolinks](https://github.com/rails/turbolinks)
 <br>
 [jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks)
+<br>
+[Turbolinks 向导](http://chloerei.com/2013/07/14/turbolinks-guide/)

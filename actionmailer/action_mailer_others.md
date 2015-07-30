@@ -60,6 +60,14 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
+### InlinePreviewInterceptor
+
+Rails 自带的拦截者，可以在线预览邮件。默认没有开启，想使用的话，需要手动启动：
+
+```ruby
+ActionMailer::Base.register_preview_interceptor(ActionMailer::InlinePreviewInterceptor)
+```
+
 ### ~~Collector~~
 
 mail 方法可以接收一个代码块，你可以在这里指定渲染模板的格式及内容等：
@@ -78,7 +86,7 @@ mail(to: user.email) do |format|
 end
 ```
 
-也只有在这个时候，这里的 Collector 才有用到。它和 AbstractController::Collector 相关，也就是和 Mime 相关。
+也只有在这个时候，这里的 Collector 才有用到。它和 AbstractController::Collector Mime 相关。
 
 > Note: 默认会发送和 mail 所在方法名同名的所有模板，不区分 Mime 格式。这也是我们常用的。
 

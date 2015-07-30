@@ -135,6 +135,74 @@ Rails.application.assets.find_asset 'notthere.png'
  => nil
  ```
 
+
+## 二，引入图片：
+
+```
+asset-path("rails.png") becomes "/assets/rails.png"
+asset-url("rails.png") becomes url(/assets/rails.png)
+```
+
+```
+image-path("rails.png") becomes "/assets/rails.png"
+image-url("rails.png") becomes url(/assets/rails.png)
+```
+
+```
+asset-data-url("rails.png") becomes url(data:image/png;base64,iVBORw0K...)
+```
+
+1，在 html.erb 里引入
+2，在 css 里引入
+
+
+## 三，引入 JS & 引入 CSS:
+
+无论哪的文件，都只有上面两种方法。你要做一些改变，而且很小的。
+
+### 1.1，在 html.erb 里引入
+
+```ruby
+# application.rb
+config.assets.precompile += %w(team/manage.css team/manage.js)
+```
+
+```
+# *.html.erb
+javascript_include_tag
+stylesheet_link_tag
+```
+
+### 1.2 在 html.erb 里引入
+
+继承于 application, 不用做什么
+
+```
+//= require redactor-rails-config/config
+//= require twitter/bootstrap
+```
+
+### 2.1，在 css 里引入
+
+```ruby
+# application.rb
+config.assets.precompile += %w(team/manage.css team/manage.js)
+```
+
+```
+# *.html.erb
+javascript_include_tag
+stylesheet_link_tag
+```
+
+### 2.2，在 css 里引入
+
+继承于 application, 不用做什么
+
+```
+*= require jisu_voting
+```
+
 (此方法由 sprockets 提供)
 
 參考：
