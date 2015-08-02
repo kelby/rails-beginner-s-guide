@@ -180,7 +180,7 @@ Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
 这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 MessageDelivery 对象。
 
-### 其它方法
+### 其它
 
 类方法：
 

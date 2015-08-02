@@ -8,8 +8,8 @@ Rack 提供了一个"与 Web服务器打交道"最精简的接口，通过这个
 
 使用这个接口的条件是：传递一个"程序"(你没看错，就是把一个程序当做参数，下文以 app 代替)。并且这个 app 需要同时满足以下条件：
 
-- app.respond_to? :call # => true
-- app 创建过程需要以运行环境做为参数(类型为 Hash，下文以 env 代替运行环境)
+- `app.respond_to? :call` # => true
+- app 创建过程需要以运行环境做为参数(类型为 Hash，下文以 `env` 代替运行环境)
 - app 需要返回一个数组，数组包含 3 个元素，依次是：
 
   - [HTTP status code](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)

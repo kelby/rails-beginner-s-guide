@@ -76,6 +76,6 @@ delegate :headers, :status=, :location=, :content_type=,
 
 `url_for` 方法的组成部分。
 
-### Metal 增强组件和 Middleware 的区别
+### Metal 增强模块和 Middleware 的区别
 
 Middleware 是在请求进入 Controller#action 之前，而 Metal 增强组件是在请求进入 Controller#action 之后。

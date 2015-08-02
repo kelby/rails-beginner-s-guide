@@ -7,7 +7,7 @@ record.errors.class
 => ActiveModel::Errors
 ```
 
-自己写校验方法或者校验器的时候，请务必设置 errors 的值。
+自己写校验方法或者校验器的时候，请务必设置 errors 的值，并且不通过进返回 false.
 
 常用以下方法：
 
@@ -55,6 +55,10 @@ generate_message
 ```
 
 视图里常用写法：
+
+```ruby
+<%= @record.errors.full_message.join(";") %>
+```
 
 ```ruby
 <% if @record.errors[:title].present? %>

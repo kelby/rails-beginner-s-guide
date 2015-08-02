@@ -1,4 +1,4 @@
-### Details Key
+### ~~Details Key~~
 
 ```
 get
@@ -6,7 +6,7 @@ get
 clear
 ```
 
-### Details Cache
+### ~~Details Cache~~
 
 ```
 details_key

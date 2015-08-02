@@ -8,7 +8,7 @@
 
 **渲染的入口。**(它只是调用，真正的渲染工作不是它做的)
 
-render 或 render_body 方法加上它们的参数，决定了使用 Template Renderer、Partial Renderer 还是 Streaming Template Renderer.
+`render` 或 `render_body` 方法加上它们的参数，决定了使用 Template Renderer、Partial Renderer 还是 Streaming Template Renderer.
 
 ```ruby
 # Main render entry point shared by AV and AC.

@@ -15,10 +15,10 @@ extend ::AbstractController::Railties::RoutesHelpers.with(app.routes)
 
 # action_dispatch/routing/mapper.rb
 app.routes.define_mounted_helper(name)
-app.routes.extend Module.new {
+app.routes.extend Module.new { ... }
 
 # rails/application/finisher.rb
-app.routes.append do
+app.routes.append do ... end
 app.routes.define_mounted_helper(:main_app)
 ```
 
@@ -54,9 +54,12 @@ name_for_action
 也正因为如此，除了 `draw` 和 `add_routes` 外，我们可以在代码里搜索，看哪里的代码影响了路由规则的生成。
 
 ```ruby
+# route_set.rb
 attr_accessor :formatter, :set, :named_routes, :default_scope, :router
 attr_accessor :disable_clear_and_finalize, :resources_path_names
 attr_accessor :default_url_options, :request_class
+
+alias :routes :set
 
 # formatter 是 Journey::Formatter 的实例对象
 # set 是 Journey::Routes 的实例对象

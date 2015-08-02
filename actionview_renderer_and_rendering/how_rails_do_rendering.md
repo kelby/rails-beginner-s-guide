@@ -35,7 +35,7 @@ view_renderer.new(@lookup_context).render(context, options, block)
 
 `view_renderer` 指的是渲染器，也就是：TemplateRenderer、PartialRenderer 或 StreamingTemplateRenderer.
 
-`lookup_context` 用来查找模板的。
+`@lookup_context` 用来查找模板的。
 
 `context` 指的是上下文，对应上面的 `view_context`.
 

@@ -2,6 +2,8 @@
 
 Action Dispatch -> Metal -> Abstract Controller -> Action Controller 请求是如何转变的？部分答案在这 ...
 
+Action Dispatch 里转发先到 ActionController::Metal::action, 然后到 ActionController::Metal#dispatch, 接着到 AbstractController::Base#process 也就是这里的 `process` 方法，然后到 `process_action` 和 `send_action & send`，最后到具体的 action 进行处理。
+
 此外，还有一些平时用得不多，但比较有趣的方法。
 
 重要的实例方法有：
@@ -27,8 +29,6 @@ action_methods
 ```
 
 `action_methods` 返回当前类所包含的 action，默认等同于 public_instance_methods. 这里的类可以是 Controller，也可以是 Mailer. 对于 Abstract Controller 来说，它们都是 AbstractController::Base 的子类，概念一样。
-
-Action Dispatch 里转发先到 ActionController::Metal::action, 然后到 ActionController::Metal#dispatch, 接着到 AbstractController::Base#process 也就是这里的 `process` 方法，然后到 `process_action` 和 `send_action & send`，最后到具体的 action 进行处理。
 
 其它实例方法：
 

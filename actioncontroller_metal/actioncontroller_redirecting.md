@@ -32,7 +32,7 @@ redirect_to({ action: 'atom' }, alert: "Something serious happened")
 
 相关、类似功能：
 
-`url_for` 根据给定的参数和 default_url_options 和 routes.rb 里的路由定义这 3 者，生成可用的 url.
+`url_for` 根据给定的参数和 default_url_options 和 routes.rb 里的路由定义，生成可用的 url.
 
 `polymorphic_url` 根据传递的 record 对象，构建可用的 url.
 

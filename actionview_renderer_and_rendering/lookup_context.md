@@ -2,7 +2,7 @@
 
 **包含了一些基本信息，用于查找模板。**
 
-由原来的 Template::Lookup 更改而来，其实叫 Lookup Template Context 才更合适。
+由原来的 Template::Lookup 更改而来，其实名字叫 Lookup Template Context 反正更合适。
 
 ### lookup_context 内容
 

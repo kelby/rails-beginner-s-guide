@@ -44,10 +44,6 @@ config.action_controller.cache_store = MyOwnStore.new('parameter')
 
 3) view_cache_dependencies
 
-TODO
-
-缓存相关的其它事，自有人来处理，不用它操心。
-
 ## Caching Fragments 模块
 
 对片段缓存的一些操作。<br>

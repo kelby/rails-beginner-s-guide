@@ -72,7 +72,6 @@ end
 ```
 
 > Note: 
-<br>
 EachValidator 也继承于 Validator.
 <br>
 但 Rails 所有所有对外提供的校验器，都继承于 EachValidator.

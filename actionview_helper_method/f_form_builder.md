@@ -41,7 +41,7 @@ end
 builder.new(object_name, object, self, options)
 ```
 
-**专用于 f.x 调用。**
+**专用于 f.xxx 调用。**
 
 ```
 button
@@ -73,11 +73,15 @@ submit
 
 time_select
 time_zone_select
+```
 
+另外，还有：
+
+```
 multipart=
-
-emitted_hidden_id?
 
 to_model
 to_partial_path
+
+emitted_hidden_id?
 ```

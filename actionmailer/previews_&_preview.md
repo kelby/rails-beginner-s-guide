@@ -49,3 +49,5 @@ email_exists?
 find
 exists?
 ```
+
+相关使用，可以参考官方文档。

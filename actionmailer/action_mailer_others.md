@@ -4,7 +4,7 @@
 
 Action Mailer 使用模板来创建邮件与 Action Controller 使用模板渲染视图，原理类似。并且，渲染过程都会运用到 Action View 的 Rendering 模块。
 
-Action Mailer 提供我们 mailer 类和视图，mailer 类和 controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
+Action Mailer 提供我们 Mailer 类和视图，Mailer 类和 Controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
 
 ActionMailer::Base 继承于类 AbstractController::Base,
 又包含但不限于以下'外部'模块，根据 Ruby 规则，它们也是可调用的。包括：
@@ -43,7 +43,7 @@ View 里：
 <%= users_url(host: "example.com") %>
 ```
 
-邮件是要发送出去的，邮件里的 url 不支持使用相对路径。
+另，邮件是要发送出去给别人看的，所以邮件里的 url 不支持使用相对路径。
 
 ### 快速生成 Mailer 和模板
 
@@ -60,9 +60,9 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
-### InlinePreviewInterceptor
+### Inline Preview Interceptor
 
-Rails 自带的拦截者，可以在线预览邮件。默认没有开启，想使用的话，需要手动启动：
+Rails 自带的拦截器，可以在线预览邮件。默认没有开启，想使用的话，需要手动启动：
 
 ```ruby
 ActionMailer::Base.register_preview_interceptor(ActionMailer::InlinePreviewInterceptor)

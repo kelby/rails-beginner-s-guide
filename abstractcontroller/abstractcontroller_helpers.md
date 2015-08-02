@@ -7,7 +7,7 @@
 | helper | 把 Helper 方法变成 Controller 方法，针对的是整个 module |
 | helper_method | 把 Controller 方法变成 Helper 方法，针对的是单个 method |
 
-`helper(*args, &block)`
+#### helper(*args, &block)
 
 参数类型，可分为 3 类：String、Symbol，Module，block。这些参数还可以混合使用。
 
@@ -35,7 +35,7 @@ helper 'resources/foo'
 helper(:three, BlindHelper) { def mice() 'mice' end }
 ```
 
-`helper_method(*meths)`
+#### helper_method(*meths)
 
 如下文举例，Controller 里的 current_user 方法，可以在视图里使用：
 

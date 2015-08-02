@@ -1,5 +1,7 @@
 ## Request Forgery Protection
 
+防止跨站请求伪造。
+
 **类方法：**
 
 ```
@@ -24,7 +26,7 @@ end
 ```
 
 `protect_from_forgery`
-可选参数 :only/:except 和 :with 
+可选参数 :only、:except 和 :with 
 
 当请求未证实，可选择怎么处理。可选：
 

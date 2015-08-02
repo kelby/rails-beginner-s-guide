@@ -1,8 +1,10 @@
-## Metal 的增强组件
+## Metal 的增强模块
 
-有一些模块和 Metal 一样也有 `process_action` 方法，并且它们也被 include 进了 Action Controller，并且我们自己定义的类没有这个方法(没有重写)。根据 Ruby 的代码执行规则，执行 process_action 时它们都会被执行(并且这个方法执行顺序先于 Metal 同名的方法)。
+有一些模块和 Metal 一样也有 `process_action` 方法，并且它们也被 include 进了 Action Controller，并且我们自己定义的类没有重写这个方法。
 
-Metal 仅包含 metal.rb 这个文件，不包含其同名目录。
+根据 Ruby 的代码执行规则，执行 process_action 时它们都会被执行(并且这个方法执行顺序先于 Metal 同名的方法)。
+
+源代码里，Metal 仅代表 metal.rb 这个文件，不包括与其同名的 metal 目录。
 
 1) **继承 Abstract Controller 的财富**
 
@@ -14,7 +16,7 @@ Metal 仅包含 metal.rb 这个文件，不包含其同名目录。
 
 包括但不限于：
 
-处理 request、response 相关和 headers 相关。(Metal 也可以做，但这里得到了发扬)
+处理 request、response 相关和 headers 相关。(Metal 也可以做，但这里得到了充分利用)
 
 3) **协作 Action View**
 

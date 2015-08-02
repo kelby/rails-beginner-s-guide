@@ -60,7 +60,7 @@ update_columns 7128cbb34d84aa096ee62d69d1599a32
 update_attributes 98eac754b15c61f4c8b4f79b7f0a5645
 ```
 
-> Note: 默认 动态或静态内容有变，ETag 都会更新；都不改变，才不更新。如果手动设置了 fresh_when 反而会获取到旧数据。
+> Note: 默认动态或静态内容有变，ETag 都会更新；都不改变，才不更新。如果手动设置了 fresh_when 反而会获取到旧数据。
 
 如果 fresh_when 匹配，将直接返回结果给最终用户。但后面的代码并未退出，还会执行，只到遇到结束标识为止。也就是说 Controller#action 后续有代码的话，则还会执行，但 View 里的代码不会执行了
 

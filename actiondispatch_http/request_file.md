@@ -188,7 +188,3 @@ include ActionDispatch::Http::Parameters
 include ActionDispatch::Http::FilterParameters
 include ActionDispatch::Http::URL
 ```
-
-参考
-
-[rails 中取得 URL 信息的一些方法](http://runphpseo.blogspot.jp/2011/07/rails-url.html)

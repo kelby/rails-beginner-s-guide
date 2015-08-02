@@ -55,11 +55,11 @@ get 'hello', to: HelloController.action(:index)
 
 - 为什么能够连续调用，原因：
 
-你看每个 Rack Middleware 的 call 函数的最后一行，是不是都是 @app.call(env)
-这说明，它在调用下一个 middleware 啊。
+你看每个 Rack Middleware 的 `call` 函数的最后一行，是不是都是 `@app.call(env)` ？
+这说明，它在调用下一个 middleware.
 
-它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都 走不通！
+它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都走不通。
 
-顺序是：默认是按 use 的顺序走下去，但 use 时你也是可以指定的。
+顺序是：默认是按 `use` 的顺序走下去，但 use 时你也是可以指定的。
 
-> Note: @app 和 env 一直在变，但又一直没变。
+> Note: @app 和 env 内容一直在变，但本质又一直没变。

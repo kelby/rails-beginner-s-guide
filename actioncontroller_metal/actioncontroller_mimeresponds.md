@@ -20,7 +20,9 @@ format.html{ |variant| variant.phone } # 代码块风格
 
 ### Collector
 
-扩展了 AbstractController::Collector，常用代码：
+扩展了 AbstractController::Collector，并且，增加了对"变种"的支持。
+
+常用代码：
 
 ```ruby
 respond_to do |format|
@@ -47,4 +49,4 @@ negotiate_format
 response
 ```
 
-此外，format.html 等对应着 Collector，而变种 format.html.phone 等对应着 Variant Collector.
+此外，`format.html` 等对应着 Collector，而变种 `format.html.phone` 等对应着 Variant Collector.

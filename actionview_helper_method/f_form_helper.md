@@ -2,7 +2,7 @@
 
 Form Helper 是面向函数。
 
-前者，更灵活。因为它没有限定对象，有时候我们'需要'这样做，而有时候我们没'必要'。
+相对与 Form Builder 它更灵活，因为它没有限定对象。有时候我们'需要'这样做，而有时候我们没'必要'。
 
 form_for 和 fields_for 是另类
 
@@ -10,7 +10,7 @@ form_for 和 fields_for 是另类
 
 名字 Form Helper 起得有一点不合适。
 
-部分方法需要的参数 "object_name"，并不是指 record 对象，可以是非 record 对象！
+部分方法需要的参数 "object_name"，并不特指 record 对象，也可以是非 record 对象。
 
 ```
 check_box

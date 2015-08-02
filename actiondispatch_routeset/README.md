@@ -25,6 +25,7 @@ end
 (准确点：Action Dispatch -> Metal -> Abstract Controller -> Action Controller)
 
 ```ruby
+# route_set.rb
 def dispatch(controller, action, env)
   controller.action(action).call(env)
 end

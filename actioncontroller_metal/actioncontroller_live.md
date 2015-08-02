@@ -33,7 +33,7 @@ end
 
 ### 使用 SSE 
 
-SSE 全称 [Server Sent Event](http://www.html5rocks.com/en/tutorials/eventsource/basics/)
+SSE 全称 [Server Sent Event](http://www.html5rocks.com/en/tutorials/eventsource/basics/)，HTML5 服务器发送事件。
 
 提供方法：
 

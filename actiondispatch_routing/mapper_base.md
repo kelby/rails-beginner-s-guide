@@ -83,7 +83,7 @@ mount ApiApp, :at => '/api'
 mount ApiApp => "api"
 ```
 
-因为 mount 实现基于 match，可以使用相同的可选参数。例如：
+因为 `mount` 实现基于 `match`，可以使用相同的可选参数。例如：
 
 ```ruby
 mount(SomeRackApp => "some_route", as: "exciting")
@@ -135,6 +135,6 @@ def root(options = {})
 end
 ```
 
-因为 root 实现基于 match，可以使用相同的可选参数。
+因为 `root` 实现基于 `match`，可以使用相同的可选参数。
 
 > 建议你把 `root` 放在 `config/routes.rb` 的开头部分，因为 Rails 的匹配规则是从上至下生成的，会优先匹配。

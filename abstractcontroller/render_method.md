@@ -1,5 +1,27 @@
 ## render 方法详解
 
+### 散落各地的 render 方法
+
+搜索了一下，API 里 `render` 同名方法有 8 个，它们分别代表什么意思？
+
+而 Action View 就有 6 个 render 方法(其中 2 个和测试有关)，分别在：
+
+- Helpers::RenderingHelper - render(options = {}, locals = {}, &block)
+
+要使用这个模块，你需要实现 `view_renderer` 方法，这个方法返回一个 ActionView::Renderer 对象。
+
+- PartialRenderer - render(context, options, block)
+
+用于渲染局部模板。
+
+- Renderer - render(context, options)
+
+Action View 和 Action Controller 渲染的主要入口。
+
+- Template - render(view, locals, buffer=nil, &block)
+
+剩下两个在 AbstractController::Rendering 和 ActionController::Instrumentation 里。
+
 ### render 的各个可选参数
 
 ```
@@ -43,10 +65,10 @@ ActionController::Renderers::RENDERERS
 ### render 在 Controller 和 View 是如何工作的
 
 **Controller 里默认渲染的是 template**
-走的路是 ActionController::ImplicitRender -> ActionController::Rendering(属于 Metal 增强组件) -> AbstractController::Rendering(Controller 级别的 render) -> ActionView::Rendering -> ActionView::Renderer#render(到方法)
+走的路是 ActionController::Rendering -> AbstractController::Rendering -> ActionView::Rendering -> ActionView::Renderer#render
 
 **View 里默认渲染的是 partial**
-走的路是 ActionView::Helpers::RenderingHelper#render -> ActionView::Renderer(到模块)
+走的路是 ActionView::Helpers::RenderingHelper#render -> ActionView::Renderer
 
 通过上面的路径和特别指出的两个 render 方法里面的逻辑，不难看出为什么可以默认渲染 template 或 partial.
 

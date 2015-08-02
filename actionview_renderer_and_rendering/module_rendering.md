@@ -17,7 +17,7 @@
 
 Action Controller 和 Abstract Controller 可以调用这里渲染相关的方法。
 
-### 实例方法：
+#### 实例方法：
 
 ```
 view_context
@@ -77,7 +77,7 @@ module PostsHelper
 end
 ```
 
-### 类方法：
+#### 类方法：
 
 ```
 view_context_class

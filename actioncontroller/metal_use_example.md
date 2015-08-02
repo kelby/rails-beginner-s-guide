@@ -37,7 +37,7 @@ Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
 ### 加入 Rendering 模块
 
-默认 ActionController::Metal 是没有提供渲染视图、模板和其它需要明确调用到 response_body=, content_type=, status= 的方法。如果你需要这些，可以引入它们：
+默认 ActionController::Metal 是没有提供渲染视图、模板和其它需要明确调用到 response_body=, content_type=, status= 等方法。如果你需要这些，可以引入它们：
 
 ```ruby
 class HelloController < ActionController::Metal

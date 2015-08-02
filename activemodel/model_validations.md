@@ -79,7 +79,6 @@ validates_with
 | 直接、间接  |    直接 | 间接  | 直接 | 间接 | 直接 |
 
 > Note: 
-<br>
 为了降低理解难度 validates_each 用到的 BlockValidator 不算为校验器；
 <br>
 validates_presence_of 代表着其它与之类似的方法。

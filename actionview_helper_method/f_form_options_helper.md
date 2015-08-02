@@ -10,9 +10,9 @@
 
 名字 Form Options Helper 起得有一点不合适。
 
-部分方法需要传递参数 "object"，并不是指 model 对象，可以是非 model 对象！
+部分方法需要传递参数 "object"，并不特指 record 对象，可以是非 record 对象。
 
-**不可或缺**
+**最常用的几个方法**
 
 关键词：select
 
@@ -36,7 +36,7 @@ options_for_select
 options_from_collection_for_select
 ```
 
-**视情况而定**
+**相对而言，几个不太常用的方法**
 
 关键词：option
 
