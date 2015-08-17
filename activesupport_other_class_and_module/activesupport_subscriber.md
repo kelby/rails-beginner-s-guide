@@ -43,6 +43,6 @@ end
 ActiveRecord::StatsSubscriber.attach_to :active_record
 ```
 
-使用到了 Notifications，也就是说依赖于 Notifications 这里的"订阅"，本质还是 Notifications 的订阅。只是为了方便使用而来的。
+使用到了 Notifications，依赖于 Notifications 里面的"订阅"。本质还是 Notifications 的订阅，只是为了方便使用而创建出来的。
 
 > Note: 原 Notifications 的 instrument 不变，但 subscribe 太麻烦了，所以才有 Subscriber 以及它的各个子类。

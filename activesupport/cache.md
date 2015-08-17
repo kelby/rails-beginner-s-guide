@@ -1,6 +1,6 @@
 ## Cache 缓存的源头
 
-### 类方法：
+#### 类方法：
 
 `expand_cache_key(key, namespace = nil)`
 
@@ -27,12 +27,11 @@ ActiveSupport::Cache.lookup_store(:mem_cache_store)
 # => 返回一个 ActiveSupport::Cache::MemCacheStore 实例对象
 ```
 
-### Store
+#### Store
 
 操作的对象是下面的 entry
 
-是 FileStore, MemCacheStore, MemoryStore, NullStore 以及 LocalStore 的基类
-某些方法需要子类重写才有意义。
+是 FileStore, MemCacheStore, MemoryStore, NullStore 以及 LocalStore 的基类，某些方法需要子类重写才有意义。
 
 **实例方法：**
 
@@ -94,7 +93,9 @@ delete_matched
 
 ```
 clear
+
 read_multi
+
 stats
 ```
 
@@ -117,7 +118,7 @@ pruning?
 
 不使用任何介质进行存储，在开发、测试环境可能有用。
 
-### ~~Local Cache (本地缓存)~~
+#### ~~Local Cache (本地缓存)~~
 
 使用上述的几种介质进行存储，再快，也没有直接使用内存来得快。上述几种介质存储只要实现"本地缓存"，那么在一个 block 里首次调用变量时，会备份它到本地缓存，之后在 block 里再次调用(相同 cache key)，则直接使用本地缓起来存的，在这性能上比之前又更快了一点。
 
@@ -153,6 +154,6 @@ read_entry
 write_entry
 ```
 
-### ~~Entry~~
+#### ~~Entry~~
 
 表示某一条 cache 数据，包含了值和过期时间等信息。

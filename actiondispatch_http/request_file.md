@@ -1,8 +1,8 @@
 ## Request 文件下的内容
 
-对 http://blog.test.example.com:3000/users?name=kelby 以起 GET 请求。
+对 http://blog.test.example.com:3000/users?name=kelby 发起 GET 请求。
 
-在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
+在 new 页面，对 http://blog.test.example.com:3000/users 发起 POST 请求。
 
 **查询、请求参数**
 

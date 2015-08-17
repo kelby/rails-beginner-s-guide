@@ -2,7 +2,7 @@
 
 Engine = Ruby gem + Rails MVC stack elements.
 
-### 一，创建自己的 Engine
+#### 一，创建自己的 Engine
 
 可用命令 `rails plugin new` 创建自己的 Engine.
 <br>
@@ -46,11 +46,11 @@ Rails.application.routes.draw do
 end
 ```
 
-### 二，编写 my_engine/engine.rb  文件内容
+#### 二，编写 my_engine/engine.rb  文件内容
 
 每个 Engine 都会有自己的 engine.rb 文件。里面有自己的 Engine 类，它继承于 ::Rails::Engine
 
-#### 常用方法之 config、initializer
+**1) 常用方法之 config、initializer**
 
 在这文件里，你可以使用 config, initializer 等方法。这点和定制 Railtie 类似，但不同点是：当前 Engine 的配置和初始化，作用域仅限于当前 Engine.
 
@@ -87,7 +87,7 @@ class MyEngine < Rails::Engine
 end
 ```
 
-#### 常用方法之 isolate_namespace
+**2) 常用方法之 isolate_namespace**
 
 默认 Engine 和应用是在一个环境里的，这意味着应用所有 helper 和命名路由都可以在 Engine 里使用。
 
@@ -135,11 +135,11 @@ end
 
 另一个改变是对表名的更改。默认使用 engine_name (在这里是 "my_engine")做为表前缀，也就是说 MyEngine::Article 对应的表名应该是 my_engine_articles
 
-#### 常用方法之 paths
+**3) 常用方法之 paths**
 
 Engine 默认都有自己的文件、目录结构，如果你没有定制，那么就使用默认的：
 
-```
+```ruby
 "app",                 eager_load: true, glob: "*"
 "app/assets",          glob: "*"
 "app/controllers",     eager_load: true
@@ -189,7 +189,7 @@ end
 
 Application 在 Engine 之上，它又有自己的配置和初始化。它配置了 app/ 下的文件、目录会被自动加载，所以像 app/services 会被自动加载。
 
-#### 常用方法之 endpoint
+**4) 常用方法之 endpoint**
 
 Engine 内容也可以是一个 Rack Application. 当你的代码本身是 Rack Application，而又想使用 Engine 的特性时，可以这么做：
 
@@ -212,7 +212,7 @@ Rails.application.routes.draw do
 end
 ```
 
-#### 常用方法之 middleware
+**5) 常用方法之 middleware**
 
 Engine 内容也可以是一个 Middleware. 当你的代码本身是 Middleware，而又想使用 Engine 的特性时，可以这么做：
 
@@ -225,7 +225,7 @@ module MyEngine
 end
 ```
 
-#### 常用方法之 engine_name
+**6) 常用方法之 engine_name**
 
 用几个场景可能会用到 engine name:
 
@@ -243,16 +243,14 @@ module MyEngine
 end
 ```
 
-### 三，编写 Engine 内容
+#### 三，编写 Engine 内容
 
 做了上述两步后，就是编写内容。该做什么事，做什么事；该完成什么功能，完成什么功能。
 
-### 四，在 main_app 引入定制的 Engine
+#### 四，在 main_app 引入定制的 Engine
 
 也就是：
 
 在 config/application.rb (或 Gemfile) 里加载本文件。
 <br>
 在 routes.rb 里 mount MyEngine::Engine
-
-本章开头已讲，不再重复。

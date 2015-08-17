@@ -2,9 +2,9 @@
 
 归结起来，有两种方式可以获得 record 对象：**1) 从数据库里获取 2) 程序新创建**。
 
-前者可以通过各种方法，查询得到，但都是封装了 init_with
+前者可以通过各种方法查询得到，但都是封装了 `init_with`
 <br>
-后者也可以通过各种方法，创建得到，但都是封装了 initialize
+后者也可以通过各种方法创建得到，但都是封装了 `initialize`
 
 ```ruby
 # 查询得到。从 SQL 层面转向到 Ruby 层面
@@ -69,9 +69,9 @@ def initialize(attributes = nil, options = {})
 end
 ```
 
-前者，也就是查询得到，一定有 persisted? # => true
-
-后者，也就是创建得到，一定有 persisted? # => false
+前者，也就是查询得到，一定有 `persisted?` # => true
+<br>
+后者，也就是创建得到，一定有 `persisted?` # => false
 
 其它类似：
 
@@ -82,7 +82,7 @@ dup
 initialize_dup
 ```
 
-clone
+`clone`
 
 ```
 user = User.first
@@ -97,7 +97,7 @@ user.name.object_id == new_user.name.object_id  # => true
 user.name.object_id == user.dup.name.object_id  # => false
 ```
 
-encode_with
+`encode_with`
 
 ```
 class Post < ActiveRecord::Base
@@ -107,7 +107,7 @@ Post.new.encode_with(coder)
 coder # => {"attributes" => {"id" => nil, ... }}
 ```
 
-init_with
+`init_with`
 
 ```
 class Post < ActiveRecord::Base

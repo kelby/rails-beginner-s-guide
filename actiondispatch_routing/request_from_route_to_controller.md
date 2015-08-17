@@ -2,7 +2,7 @@
 
 通过本章节，你可以比较独立的使用 Rails 的各个模块，有利于理解 Rails 源码各个模块的主要工作。
 
-### 纯 Rack 实现
+#### 纯 Rack 实现
 
 ```ruby
 # config.ru
@@ -19,7 +19,7 @@ run Proc.new {|env|
 
 可通过 `rackup config.ru` 运行以上代码，默认在 http://localhost:9292/ 可以查看运行结果。
 
-### 引入 Action Dispatch & 纯手动实现 Controller#actions
+#### 引入 Action Dispatch & 纯手动实现 Controller#actions
 
 ```ruby
 # config.ru
@@ -54,7 +54,7 @@ end
 run routes
 ```
 
-### 引入 Action Controller，使用 Metal
+#### 引入 Action Controller，使用 Metal
 
 ```ruby
 # config.ru
@@ -85,7 +85,7 @@ run routes
 
 **注意：**上面已经使用到了 Action Dispatch 里的"各个 Middleware 组件"，但并没有使用到 Action Controller 里的"各个 Metal 增强组件"。
 
-### 引用 Metal 增强组件 & Controller 里纯手工打造 View 渲染相关代码
+#### 引用 Metal 增强组件 & Controller 里纯手工打造 View 渲染相关代码
 
 ```ruby
 # config.ru
@@ -130,7 +130,7 @@ run routes
 Number is: <%= @local_var %>
 ```
 
-### 引进 Action View
+#### 引进 Action View
 
 ```ruby
 # config.ru
@@ -179,7 +179,7 @@ Content is: <pre><%= env['action_dispatch.request.path_parameters'][:id] %></pre
 
 到此，Routing、Controller、View 3者已经到位。Model 我们可以直接调用，不影响这里的整个请求、响应处理过程。
 
-### 直接使用 ActionController::Base
+#### 直接使用 ActionController::Base
 
 前面提到过 ActionController::Metal 相当于一个加强版本的 Rack，功能非常有限，实际开发中建议使用继承于它的 ActionController::Base.
 
@@ -223,7 +223,7 @@ run routes
 # app/views/mainpage/show.html.erb
 ```
 
-### 其它
+#### 其它
 
 上述代码：
 <br>

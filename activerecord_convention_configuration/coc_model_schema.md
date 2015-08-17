@@ -1,6 +1,6 @@
 ## Model Schema
 
-能过它们可以查看和更改 model 与 table 的对应关系。
+通过它们可以查看和更改 model 与 table 的对应关系。
 
 **类方法：**
 

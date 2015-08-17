@@ -16,7 +16,7 @@ rails generate scaffold_controller
 
 方法：
 
-```
+```ruby
 attr_reader :controller_name, :controller_file_name
 ```
 
@@ -24,11 +24,12 @@ attr_reader :controller_name, :controller_file_name
 
 ```
 controller_class_path
-assign_controller_names!
 controller_file_path
 controller_class_name
 controller_i18n_scope
 
 orm_class
 orm_instance
+
+assign_controller_names!
 ```

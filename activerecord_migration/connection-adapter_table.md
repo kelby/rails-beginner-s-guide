@@ -97,4 +97,3 @@ belongs_to & references
 :binary
 :boolean
 ```
-

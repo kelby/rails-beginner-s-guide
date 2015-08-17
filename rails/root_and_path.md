@@ -2,7 +2,7 @@
 
 包括 Root & Path，但 Root 已经封装了 Path, 并且只有 Root 对外提供接口。
 
-```
+```ruby
 Rails.application.paths
 ```
 

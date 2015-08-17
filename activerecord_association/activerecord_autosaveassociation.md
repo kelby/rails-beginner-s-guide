@@ -6,6 +6,7 @@
 
 ```
 mark_for_destruction
+
 marked_for_destruction?
 ```
 

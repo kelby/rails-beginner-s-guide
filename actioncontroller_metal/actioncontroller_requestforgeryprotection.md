@@ -1,6 +1,6 @@
 ## Request Forgery Protection
 
-防止跨站请求伪造。
+防止 CSRF - 跨站请求伪造。
 
 **类方法：**
 

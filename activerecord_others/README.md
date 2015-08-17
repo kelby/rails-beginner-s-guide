@@ -19,3 +19,7 @@ fixtures/ 相关。
 包括 Database Tasks，及 MySQL Database Tasks、PostgreSQL Database Tasks、SQLite Database Tasks.
 
 - databases.rake (很重要)
+
+- ~~Explain~~
+
+explain 方法的底层实现(尽管是调用数据库的 explain...)

@@ -1,6 +1,8 @@
 ## Active Support
 
-### Test Case
+包含了：Test Case、Assertions、Declarative、Isolation、Setup 和 Teardown 相关类方法、Time Helpers、Log Subscriber Test Helper 等部分。
+
+#### Test Case
 
 ```
 assert_nothing_raised
@@ -38,7 +40,7 @@ ActiveSupport::TestCase.test_order # => :sorted
 :alpha    # 按字母顺序
 ```
 
-### Assertions
+#### Assertions
 
 ```
 assert_difference
@@ -47,13 +49,13 @@ assert_no_difference
 assert_not
 ```
 
-### Declarative
+#### Declarative
 
 ```
 test
 ```
 
-### Isolation
+#### Isolation
 
 类方法：
 
@@ -79,7 +81,7 @@ Subprocess：
 run_in_isolation
 ```
 
-### Setup & Teardown 相关类方法
+#### Setup & Teardown 相关类方法
 
 ```
 setup
@@ -105,7 +107,7 @@ class ExampleTest < ActiveSupport::TestCase
 end
 ```
 
-### Time Helpers
+#### Time Helpers
 
 ```
 travel
@@ -113,7 +115,7 @@ travel_back
 travel_to
 ```
 
-### Log Subscriber - Test Helper
+#### Log Subscriber - Test Helper
 
 ```
 set_logger

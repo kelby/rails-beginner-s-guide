@@ -8,11 +8,11 @@ AppName < Application < Engine < Railtie
 
 最直观的就是文件、目录结构，以及配置文件。其次，是默认组件。
 
-### 默认组件都是 Railtie
+#### 默认组件都是 Railtie
 
 active_record, action_controller, action_view,  action_mailer, rails/test_unit, sprockets 还有 active_model 都属于 Railtie.
 
-### 查看配置有哪些 eager_load_namespaces
+#### 查看配置有哪些 eager_load_namespaces
 
 ```ruby
 Rails.configuration.eager_load_namespaces
@@ -35,7 +35,7 @@ Rails.configuration.eager_load_namespaces
 
 这部分，更多信息可以查看"Railtie"下面的【Configuration】章节。
 
-### 查看应用有哪些 Initializer
+#### 查看应用有哪些 Initializer
 
 ```ruby
 Rails.application.initializers.map &:name

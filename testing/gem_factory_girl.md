@@ -1,6 +1,6 @@
 # Factory Girl
 
-### 可用于构建 record 对象的方法
+#### 可用于构建 record 对象的方法
 
 **构建单个对象：**
 
@@ -13,7 +13,7 @@ build_stubbed
 
 使用举例：
 
-```
+```ruby
 build(:completed_order)
 
 create(:post) do |post|
@@ -36,7 +36,7 @@ build_stubbed_list
 
 使用举例：
 
-```
+```ruby
 build_list(:completed_order, 2)
 create_list(:completed_order, 2)
 
@@ -47,7 +47,7 @@ build_stubbed_list(:user, 15, :admin, :male, name: "John Doe")
 
 链接 [FactoryGirl Syntax Methods](http://www.rubydoc.info/github/thoughtbot/factory_girl/FactoryGirl/Syntax/Methods)
 
-### Getting Started
+#### Getting Started
 
 **Linting Factories**
 
@@ -79,13 +79,11 @@ factory
 
 **Aliases**
 
-定义 factory 时，可选参数 `:aliases` 的使用。
-
-(给 factory 起外号)
+调用 factory 时，可选参数 `:aliases` 的使用(给 factory 起外号)。
 
 **Dependent Attributes**
 
-`{}` 大括号里面再求值。
+`{}` 大括号里面求值(拼接字符串)。
 
 **Transient Attributes**
 
@@ -125,11 +123,7 @@ generate
 
 **Traits**
 
-定义：
-
-```
-trait
-```
+定义：用 `trait` 进行定义。
 
 调用：factory 的可选参数 `:traits` 或直接调用。
 
@@ -139,7 +133,7 @@ trait
 
 默认已经有：
 
-```
+```ruby
 after(:build)
 before(:create)
 after(:create)

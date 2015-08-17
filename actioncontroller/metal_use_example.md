@@ -1,6 +1,6 @@
 ## Metal 使用举例
 
-### 原生的 Metal
+#### 原生的 Metal
 
 在 Rails 里 metal 也属于 middleware，我们可以这么用：
 
@@ -35,7 +35,7 @@ Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
     Started GET "/hello" for 127.0.0.1 at 2014-04-27 08:57:07 +0800
 ```
 
-### 加入 Rendering 模块
+#### 加入 Rendering 模块
 
 默认 ActionController::Metal 是没有提供渲染视图、模板和其它需要明确调用到 response_body=, content_type=, status= 等方法。如果你需要这些，可以引入它们：
 
@@ -52,7 +52,7 @@ class HelloController < ActionController::Metal
 end
 ```
 
-### 加入 Redirection 模块
+#### 加入 Redirection 模块
 
 想使用重定向相关代码，你也需要引入它们：
 
@@ -67,7 +67,7 @@ class HelloController < ActionController::Metal
 end
 ```
 
-### 加入其它模块
+#### 加入其它模块
 
 参考 ActionController::Base 引入其它模块，以达到目的。
 

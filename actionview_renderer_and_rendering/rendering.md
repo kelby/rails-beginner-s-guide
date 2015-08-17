@@ -4,7 +4,7 @@
 
 (但它不直接和模板打交道？谁和模板打交道？)
 
-### Renderer
+#### Renderer
 
 **渲染的入口。**(它只是调用，真正的渲染工作不是它做的)
 
@@ -28,7 +28,7 @@ render_partial(context, options, &block)
 
 > Note: 说明一下，Streaming Template Renderer 用得很少，本说明后文不再重复。
 
-### Abstract Renderer
+#### Abstract Renderer
 
 **具体某个渲染器的抽象类、基类，定义了接口，并提供了几个保护方法给子类使用。**
 
@@ -54,7 +54,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
          :formats, :to => :@lookup_context
 ```
 
-### 1) Template Renderer
+#### 子类 1) Template Renderer
 
 普通的模板渲染器，直接继承于 Abstract Renderer.
 
@@ -64,7 +64,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
 
 借助了 @lookup_context.
 
-### 2) Partial Renderer
+#### 子类 2) Partial Renderer
 
 局部模板渲染器，直接继承于 Abstract Renderer.
 
@@ -72,7 +72,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
 
 借助了 @lookup_context.
 
-### 3) Streaming Template Renderer
+#### 子类 3) Streaming Template Renderer
 
 流模板渲染器，直接继承于 Template Renderer，间接继承于 Abstract Renderer.
 
@@ -80,7 +80,7 @@ delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format
 
 Streaming Template Renderer 用得很少，不做过多介绍。
 
-### template/ 目录
+#### template/ 目录
 
 包含了：error、handlers、html、resolver、text、types 等。<br>
 其中 handlers 又包含了：builder、erb、raw 等。
@@ -101,6 +101,6 @@ Template(最底层的处理)
 
 template/ 目录里的各个 handler，执行的是与 Rails 环境无关的解析、渲染工作。
 
-### 最后
+#### 最后
 
 根据要渲染的内容，render 还有不少的可选参数，比如：:partial、:template、:inline、:file 和 :text，使用的时候需要根据情况挑选使用。

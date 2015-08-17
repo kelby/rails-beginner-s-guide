@@ -1,13 +1,13 @@
 ## Conditional Get 其它
 
-### 相关概念
+#### 相关概念
 
 1) ETag 过程如下：
 
-客户端请求一个页面 A，服务器返回页面 A，并在给 A 加上一个 ETag.<br>
-客户端展现该页面，并将页面连同 ETag 一起缓存。<br>
-客户再次请求页面 A，并将上次请求时服务器返回的 ETag 一起传递给服务器。<br>
-服务器检查该 ETag，并判断出该页面自上次客户端请求之后还未被修改，直接返回响应 304（未修改——Not Modified）和一个空的响应体。
+- 客户端请求一个页面 A，服务器返回页面 A，并在给 A 加上一个 ETag.<br>
+- 客户端展现该页面，并将页面连同 ETag 一起缓存。<br>
+- 客户再次请求页面 A，并将上次请求时服务器返回的 ETag 一起传递给服务器。<br>
+- 服务器检查该 ETag，并判断出该页面自上次客户端请求之后还未被修改，直接返回响应 304（未修改——Not Modified）和一个空的响应体。
 
 2) Last-Modified 过程如下：
 
@@ -44,7 +44,7 @@ Content-Type: text/html; charset=utf-8
 Content-Length: 665 
 ```
 
-### 和所有缓存一样，怎么生成 cache_key ？
+#### 和所有缓存一样，怎么生成 cache_key ？
 
 最新，什么也没改。
 
@@ -74,7 +74,7 @@ Completed 200 OK in 84ms (Views: 10.7ms | ActiveRecord: 2.7ms)
 Completed 304 Not Modified in 3ms (ActiveRecord: 0.1ms)
 ```
 
-### 相关代码
+#### 相关代码
 
 `fresh_when` 方法：
 
@@ -128,7 +128,7 @@ def fresh?(response)
 end
 ```
 
-### 其它
+#### 其它
 
 fresh_when 可以通过工具(如：Chrome 插件"Advanced REST client")查看 ETag，检测是否起作用以及是否正确。
 

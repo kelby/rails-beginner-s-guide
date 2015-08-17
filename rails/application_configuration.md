@@ -20,4 +20,34 @@ attr_writer :log_level
 attr_reader :encoding
 ```
 
+有以下方法：
+
+```
+annotations
+
+colorize_logging
+
+database_configuration
+
+log_level
+
+paths
+
+session_store
+```
+
+`paths` 除了 Engine 包含的文件、目录结构外，这里有：
+
+```ruby
+paths.add "config/database",    with: "config/database.yml"
+paths.add "config/secrets",     with: "config/secrets.yml"
+paths.add "config/environment", with: "config/environment.rb"
+paths.add "lib/templates"
+paths.add "log",                with: "log/#{Rails.env}.log"
+paths.add "public"
+paths.add "public/javascripts"
+paths.add "public/stylesheets"
+paths.add "tmp"
+```
+
 另，自定义的 Railtie 和自定义的 Engine，也可以对外提供 `config` 接口。

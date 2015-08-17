@@ -1,6 +1,6 @@
 ## 实例对象和各个实例方法
 
-### 实例对象
+#### 实例对象
 
 在 Rails 源代码里，`app.routes` 指的是 RouteSet 的实例对象。
 
@@ -69,7 +69,7 @@ alias :routes :set
 # request_class 默认是 ActionDispatch::Request
 ```
 
-### 各个实例方法
+#### 各个实例方法
 
 ```
 inspect & to_s

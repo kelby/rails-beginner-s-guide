@@ -2,12 +2,14 @@
 
 把常见的手动操作，用命令来实现。
 
-执行 generator 时，会按先后顺序执行每一个公共方法。
+执行 generator 时，会按先后顺序执行每一个 public 方法。
 
 **文件、目录、参数、操作！**
 
+使用方式：
+
 ```
-Usage: rails generate GENERATOR [args] [options]
+rails generate GENERATOR [args] [options]
 ```
 
 如果，你记不住这么多命令，不要紧，按按照手动操作，然后自己实现也是可以的。

@@ -8,7 +8,7 @@ parameters & params
 path_parameters
 ```
 
-在 new 页面，对 http://blog.test.example.com:3000/users 以起 POST 请求。
+在 new 页面，对 http://blog.test.example.com:3000/users 发起 POST 请求。
 
 检测结果：
 

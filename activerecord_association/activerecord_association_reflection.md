@@ -11,7 +11,7 @@
 
 提供方法：
 
-### 1) 模块方法
+#### 1) 模块方法
 
 ```
 create
@@ -24,7 +24,7 @@ add_aggregate_reflection
 <br>可以创建 Aggregate Reflection，Has Many Reflection、Has One Reflection 和 Belongs To Reflection 4 种关联；
 <br>如果使用了 :through 则还会自动生成 Through Reflection 关联。
 
-### 2) 类方法
+#### 2) 类方法
 
 ```
 reflections # 所有正常的关联
@@ -38,7 +38,7 @@ reflect_on_association
 reflect_on_aggregation
 ```
 
-### ~~3) Abstract Reflection~~
+#### ~~3) Abstract Reflection~~
 
 ```
 build_association
@@ -50,7 +50,7 @@ class_name
 join_keys
 ```
 
-### ~~4) Macro Reflection~~
+#### ~~4) Macro Reflection~~
 
 继承于 Abstract Reflection
 
@@ -63,7 +63,7 @@ compute_class
 ==
 ```
 
-### ~~5) Association Reflection~~
+#### ~~5) Association Reflection~~
 
 Association Reflection 继承于 Macro Reflection 又继承于 Abstract Reflection
 
@@ -123,7 +123,7 @@ INVALID_AUTOMATIC_INVERSE_OPTIONS = [:conditions, :through, :polymorphic, :forei
 
 另，Has Many Reflection、 Has One Reflection、Belongs To Reflection 和 Has And Belongs To Many Reflection 都继承于 Association Reflection. 它们这几个方法比较少，就不再一一列举。
 
-### ~~6) Aggregate Reflection~~
+#### ~~6) Aggregate Reflection~~
 
 继承于 Macro Reflection
 
@@ -131,7 +131,7 @@ INVALID_AUTOMATIC_INVERSE_OPTIONS = [:conditions, :through, :polymorphic, :forei
 mapping
 ```
 
-### ~~7) Has Many Reflection~~
+#### ~~7) Has Many Reflection~~
 
 继承于 Association Reflection
 
@@ -141,7 +141,7 @@ macro
 collection?
 ```
 
-### ~~8) Has One Reflection~~
+#### ~~8) Has One Reflection~~
 
 继承于 Association Reflection
 
@@ -151,7 +151,7 @@ macro
 has_one?
 ```
 
-### ~~9) Belongs To Reflection~~
+#### ~~9) Belongs To Reflection~~
 
 继承于 Association Reflection
 
@@ -164,7 +164,7 @@ join_keys
 join_id_for
 ```
 
-### ~~10) Has And Belongs To Many Reflection~~
+#### ~~10) Has And Belongs To Many Reflection~~
 
 继承于 Association Reflection
 
@@ -174,7 +174,7 @@ macro
 collection?
 ```
 
-### ~~11) Through Reflection~~
+#### ~~11) Through Reflection~~
 
 继承于 Abstract Reflection
 
@@ -201,7 +201,7 @@ join_id_for
 check_validity!
 ```
 
-### 使用举例
+#### 使用举例
 
 ```ruby
 User.reflections.keys
@@ -239,7 +239,7 @@ Post.reflections[:comments].primary_key_name # => "message_id"
 Post.reflections[:comments].foreign_key      # => "message_id"
 ```
 
-### 其它
+#### 其它
 
 Reflection 虽然很重要，但对于普通 Web 开发者而言，使用场景有限，一般不会直接使用。下面是我想到的一些使用场景，供参考：
 

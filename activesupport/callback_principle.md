@@ -67,7 +67,7 @@ User._save_callbacks
 
 Callback 实例对象，大致如下：
 
-```
+```ruby
 #<ActiveSupport::Callbacks::Callback:0x007fc6f2162248
   @chain_config={:scope=>[:kind]},
   @filter=#<Proc:0x007fc6f2162388@/Users/.../lib/rails/application/finisher.rb:100>,

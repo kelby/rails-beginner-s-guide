@@ -2,7 +2,7 @@
 
 **依赖**
 
-### Class Cache
+#### Class Cache
 
 ```
 [] & get
@@ -18,7 +18,7 @@ safe_get
 store
 ```
 
-### Watch Stack
+#### Watch Stack
 
 ```
 each

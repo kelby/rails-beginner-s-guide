@@ -1,22 +1,12 @@
-# 从源代码出发，理解和使用 Turbolinks
+## Turbolinks 补充
 
 简单理解概念：把原来所有 GET 请求(包括链接、重定向、浏览器的后退)都通过 AJAX 来实现，并且 url 是变化的。
 
-Turbolinks 会接管所有站内链接，用 ajax 请求获得目标页面，然后替换 body 内容。Turbolinks 接管下的网站不用重复解析 js 和 css 文件，这可以达到加速的目的，同时也让整站成为一个单页应用，页面切换不释放之前的页面内容。
-
 使用 turblinks 的话，注意：一，尽量从 AJAX 的角度出发写监听事件；二，尽量使用 turblinks 提供的监听事件。
 
-语法或历史遗留问题，可以使用以下方法：
+#### Ruby 部分
 
-```
-gem 'jquery-turbolinks'
-```
-
-解决。
-
-## Ruby 部分
-
-### 覆盖了 ActionController::Base 里的 redirect_to 和 render 方法
+**重写了 ActionController::Base 里的 redirect_to 和 render 方法**
 
 ```ruby
 ActionController::Base.ancestors.select{|a| a.to_s =~ /^Turbolinks/}
@@ -28,7 +18,7 @@ render 使用的是 Turbolinks.replace
 <br>
 redirect_to 使用的是 Turbolinks.visit
 
-### 处理 :back 这种情况，使用 X-XHR-Referer 标识
+**处理 :back 这种情况，使用 X-XHR-Referer 标识**
 
 更改了 url_for 方法(会影响到 link_to 等调用到它的方法)
 
@@ -59,7 +49,7 @@ end
 alias referrer referer
 ```
 
-### 覆盖了 Redirect 的 call 方法，修复 redirect_to 里的 bug
+**覆盖了 Redirect 的 call 方法，修复 redirect_to 里的 bug**
 
 ```ruby
 def call_with_turbolinks(env)
@@ -76,18 +66,18 @@ alias_method_chain :call, :turbolinks
 
 注意：上面设置了头 X-XHR-Redirected-To
 
-### 其它几点 
+**其它几点 **
 
-**一，3 个钩子**
+一，3 个钩子
 
-```
+```ruby
 before_action :set_xhr_redirected_to, :set_request_method_cookie
 after_action :abort_xdomain_redirect
 ```
 
-**1) 因为 trublinks 改变了原来 redirect_to 的行为，带来了新的问题，然后它又提供了解决办法：**
+1) 因为 trublinks 改变了原来 redirect_to 的行为，带来了新的问题，然后它又提供了解决办法：
 
-```
+```ruby
   def set_xhr_redirected_to
     if session && session[:_turbolinks_redirect_to]
       response.headers['X-XHR-Redirected-To'] = session.delete :_turbolinks_redirect_to
@@ -97,9 +87,9 @@ after_action :abort_xdomain_redirect
 
 对应 redirect_to :back 这种情况，使用 X-XHR-Referer 标识；用 X-XHR-Redirected-To 记录重定向的目标地址。
 
-**2) 它怎么记录是非 GET 请求的呢？用 cookies 记录。**
+2) 它怎么记录是非 GET 请求的呢？用 cookies 记录。
 
-```
+```ruby
   def set_request_method_cookie
     if request.get?
       cookies.delete(:request_method)
@@ -111,9 +101,9 @@ after_action :abort_xdomain_redirect
 
 对于非 GET 请求，turblinks 是不起作用的。
 
-**3) 跨域重定向：**
+3) 跨域重定向：
 
-```
+```ruby
   def abort_xdomain_redirect
     to_uri = response.headers['Location']
     current = request.headers['X-XHR-Referer']
@@ -126,9 +116,9 @@ after_action :abort_xdomain_redirect
 
 某种情况下，禁止访问。
 
-## JS 部分
+#### JS 部分
 
-### 所有对外 API
+**所有对外 API**
 
 ```ruby
 Public API
@@ -160,7 +150,7 @@ Public API
   EVENTS: clone(EVENTS)
 ```
 
-### 配置项：
+**配置项：**
 
 cacheSize 默认缓存 10 个页面
 
@@ -178,7 +168,7 @@ referer 后退链接
 
 xhr 异步请求
 
-### 所有事件：
+**所有事件：**
 
 ```
 EVENTS =
@@ -195,9 +185,9 @@ EVENTS =
 
 具体做了什么事，如何实现，可以查看对应源代码，在此不做讨论。
 
-## 亮点
+#### 亮点
 
-### Transition Cache
+**Transition Cache**
 
 前面不是说过 turblinks 默认可以缓存 10 个页面吗？
 <br>
@@ -209,7 +199,7 @@ EVENTS =
 Turbolinks.enableTransitionCache();
 ```
 
-### Partial replacements
+**Partial replacements**
 
 你可以使用
 
@@ -225,13 +215,13 @@ Turbolinks.replace(html, options)
 
 实现局部替换 HTML 文档内容。
 
-## 坑及策略
+#### 坑及策略
 
-### 事件的改变
+**事件的改变**
 
-**点击链接：**
+1) 点击链接：
 
-```
+```ruby
 page:before-change # 链接刚刚被点击，turblinks 刚准备起作用的状态
 page:fetch         # 从服务端获取内容
 page:receive       # 已经收到服务器返回内容，但还没处理(去掉 header 等)的状态
@@ -240,15 +230,15 @@ page:change        # 已切换到新页面的状态
 page:load          # 整个点击彻底的完成
 ```
 
-**而使用浏览器历史返回上一页：**
+2) 而使用浏览器历史返回上一页：
 
-```
+```ruby
 page:before-unload # 页面已经从缓存里取出，准备切换
 page:change        # 已切换到新页面的状态
 page:restore       # 整个回退彻底的完成
 ```
 
-**其它：**
+3) 其它：
 
 ```
 # 到目前为止，我们就有两类 AJAX 请求了。
@@ -271,9 +261,9 @@ Turbolinks.visit
 Turbolinks.replace
 ```
 
-## JS 要如何更改使用？
+#### JS 要如何更改使用？
 
-### jquery.turbolinks 实践，请按照 AJAX 的方式写 JS 代码。
+**jquery.turbolinks 实践，请按照 AJAX 的方式写 JS 代码。**
 
 ```javascript
 /* 不要这么写 */
@@ -296,7 +286,7 @@ $(document).ready(function () { /* ... */ });
 $(function () { /* ... */ });
 ```
 
-### 怎样防止浏览器缓存 Turbolinks 请求:
+**怎样防止浏览器缓存 Turbolinks 请求:**
 
 ```ruby
 # 全局
@@ -308,17 +298,25 @@ Turbolinks.visit url, cacheRequest: false
 
 像 jQuery.ajax(url, cache: false), 会被追加 "_#{timestamp}" 到 GET 请求参数里。
 
-### 如何移除
+**如何移除**
 
 ```ruby
-在 Gemfile 中，注释这一行：
-gem 'turbolinks'
+# Gemfile
 
-# 在 app/assets/javascripts/application.js 中，移除这一行：
+# 注释这一行：
+gem 'turbolinks'
+```
+
+```ruby
+# app/assets/javascripts/application.js
+
+# 移除这一行：
 //= require turbolinks
 ```
 
-### 如果有 js 逻辑绑定了DOMContentLoaded 事件，就需要为 Turbolinks 做兼容
+**如果有 js 逻辑绑定了DOMContentLoaded 事件，就需要为 Turbolinks 做兼容**
+
+语法或历史遗留问题，可以使用以下方法：
 
 ```ruby
 # Gemfile:
@@ -336,191 +334,23 @@ gem 'jquery-turbolinks'
 //= require turbolinks
 ```
 
-## 三个 data-* 属性
+**几个 data-* 属性**
 
-**data-turbolinks-track**
+data-no-transition-cache
 
-默认情况下，Turbolinks 忽略返回的 head 部分变化，这个属性的作用就是让 Turbolinks 检查 head 内静态文件是否有改变，如有改变则重载页面。
+data-turbolinks-permanent
 
-例如返回的页面头部有以下内容：
+data-no-turbolink
 
-```html
-<link href="/assets/application-9bd64a86adb3cd9ab3b16e9dca67a33a.css" rel="stylesheet" type="text/css" data-turbolinks-track>
-```
+data-method, data-remote, or data-confirm
 
-那么 Turbolinks 会检查当前的页面中是否已经记录这个静态文件，如果已记录的静态文件数量和名字跟新页面的不完全相符，就刷新当前页面。
+data-turbolinks-track
 
-推荐给 head 里面的静态文件链接都加上这个属性，这是为了防止网站的部署更新之后，用户没有刷新页面而一直使用旧的静态文件出现行为或样式异常。
+data-turbolinks-eval
 
-**data-no-turbolink**
+data-turbolinks-temporary
 
-如果点击链接的标签或者父级标签拥有 data-no-turbolink 属性，那么这个标签的点击事件不会触发 Turbolinks 访问。
-
-例如以下标签：
-
-```html
-<a href="/">Home (via Turbolinks)</a>
-<div id="some-div" data-no-turbolink>
-  <a href="/">Home (without Turbolinks)</a>
-</div>
-```
-
-前一个链接会发起 Turbolinks 请求，后一个不会。
-
-如果网站按功能区分了不同的区域，各自使用不同的静态文件，不适合全部打包成一个，那么就在切换这些功能区域的链接上加上这个属性。
-
-**data-turbolinks-eval**
-
-如果一个 script 标签拥有 data-turbolinks-eval 属性，那么这个 script 标签只有在这个页面是直接访问的页面时才会执行，通过 Turbolinks 访问则不会执行。
-
-例如以下 script 标签存在于 body 之中：
-
-```html
-<script type="text/javascript" data-turbolinks-eval="false">
-  console.log("I'm only run once on the initial page load");
-</script>
-```
-
-那么这段代码只有在这个页面是直接访问的时候才会执行。
-
-### 与 Assets Pipeline 配合
-
-**打包成一个，但可以根据不同的模块区分布局**
-
-Turbolinks 忽略 head 内的变化，细化静态文件按需载入的做法会失效。如果前端逻辑不是特别复杂，那么最好打包成一个。
-
-打包成一个也不一定全站只有一个静态 js 和 css，可以根据不同的模块区分布局，每个布局有自己的静态文件，布局页面间的链接加上 data-no-turbolink。
-
-例如有两个布局 application 和 admin，那么 js 代码可以这样组织：
-
-```javascript
-app/assets/javascripts/application/
-├─ ...
-app/assets/javascripts/admin/
-├─ ...
-app/assets/javascripts/application.js.coffee
-app/assets/javascripts/admin.js.coffee
-```
-
-application.js 和 admin.js 是最终编译出来的 js 文件，内容类似：
-
-```javascript
-# application.js.coffee
-#= require jquery
-#= require jquery_ujs
-#= require jquery.turbolinks
-#= require_tree ./application
-```
-
-```javascript
-# admin.js.coffee
-#= require jquery
-#= require jquery.turbolinks
-#= require_tree ./admin
-```
-
-**页面特定的逻辑**
-
-在整站打包一个 js 文件的情况下，可以用以下办法区分页面特定逻辑。
-
-在 layout 中设置页面 ID：
-
-```html
-<body id="<%= controller_name%>-<%= action_name %>">
-  ...
-</body>
-
-<!--
-Example:
-
-<body id="topics-show">
-</body>
-!--
-```
-
-这样页面特定逻辑就可以根据是否有页面 ID 进行判断（已加载 jquery.turbolinks）：
-
-```javascript
-$ ->
-  if($('#topics-show').length)
-    # topics show logic
-```
-
-**区域特定的逻辑**
-
-对于垮页面的逻辑，可以根据特定元素的 ID 触发。
-
-```html
-<div id="sidebar">
-  ...
-</div>
-```
-
-```javascript
-$ ->
-  if($('#sidebar')).length
-    # sidebar logic
-```
-
-### 注意事项
-
-Turbolinks 开启后，网站将成为一个单页应用，页面切换不释放 js 逻辑。这意味着编写前端逻辑的时候需要留意内存泄露或者其他持久页面导致的问题。
-
-**避免全局变量**
-
-在单页面应用中，js 全局变量将真的成为全局变量——除非刷新，否则变量会进入所有访问页面。
-
-所有 js 逻辑建议放在匿名空间中执行：
-
-```javascript
-// wrong
-var foo = 'bar'; // 全局变量
-
-// right
-(function() {
-  var foo = 'bar'; // 匿名空间内的局部变量
-})();
-```
-
-如果使用 CoffeeScript，那么所有编译结果都已经包裹在匿名空间内：
-
-```javascript
-# right in coffee
-foo = 'bar'
-```
-
-所以推荐使用 CoffeeScript。
-
-**清理定时任务**
-
-如果某个页面设置了定时任务，记得加上退出逻辑。
-
-```javascript
-$ ->
-  if $('articles-index').length
-    updateInterval = setInterval ->
-      doSomething()
-    , 10 * 1000
-
-    $(document).one 'page:change', ->
-      clearInterval updateInterval
-```
-
-**清理没有释放的绑定**
-
-绑定在 document 和 window 上的事件是在页面切换后是保留的，记得清理。
-
-```javascript
-$ ->
-  if $('articles-index').length
-    $(window).on 'scroll', ->
-      doSomething()
-
-    $(document).one 'page:change', ->
-      $(window).off 'scroll'
-```
-
-### 原来的 DOM 操作怎么办？并且它们是非幂等的
+**原来的 DOM 操作怎么办？并且它们是非幂等的**
 
 DOM 操作最好是幂等。如果不是幂等的，你可以使用使用 page:load 而不是 page:change
 
@@ -530,8 +360,7 @@ DOM 操作最好是幂等。如果不是幂等的，你可以使用使用 page:l
 $(document).on("ready page:load", nonIdempotentFunction);
 ```
 
-## 其它类和对象
-
+#### 其它类和对象
 
 **Click**
 管理着链接和点击事件，触发时会进行检查。如果符合 trublinks 则用 AJAX 执行请求，否则改用普通的请求。
@@ -545,9 +374,11 @@ $(document).on("ready page:load", nonIdempotentFunction);
 ```
 enable
 disable
+
 start
-advanceTo
 done
+
+advanceTo
 ```
 
 **CSRFToken**
@@ -577,5 +408,3 @@ update
 [Turbolinks](https://github.com/rails/turbolinks)
 <br>
 [jquery.turbolinks](https://github.com/kossnocorp/jquery.turbolinks)
-<br>
-[Turbolinks 向导](http://chloerei.com/2013/07/14/turbolinks-guide/)

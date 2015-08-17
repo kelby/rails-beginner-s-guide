@@ -2,7 +2,7 @@
 
 功能上和 Ruby 内置库 Object Space 类似，但性能上要比它好得多。
 
-```
+```ruby
 class A
   extend ActiveSupport::DescendantsTracker
 end

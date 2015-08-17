@@ -9,6 +9,10 @@ proxy_class
 proxy_class=
 ```
 
+```ruby
+ActiveSupport::Multibyte.proxy_class = CharsForUTF32
+```
+
 ### Chars
 
 Rails 里很多字符串，都会先转换成它的实例对象，然后再处理。
@@ -57,6 +61,10 @@ class String
     ActiveSupport::Multibyte.proxy_class.new(self)
   end
 end
+```
+
+```ruby
+'The Perfect String  '.mb_chars.downcase.strip.normalize # => "the perfect string"
 ```
 
 > Note: Chars 还封装使用了下面的 Unicode.

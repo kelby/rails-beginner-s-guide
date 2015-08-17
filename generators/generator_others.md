@@ -35,11 +35,11 @@ module Haml
 end
 ```
 
-### ~~Generated Attribute~~
+#### ~~Generated Attribute~~
 
 生成过程中的一些属性判断。
 
-### ~~Erb Generators Base~~
+#### ~~Erb Generators Base~~
 
 继承于 Rails::Generators::NamedBase
 

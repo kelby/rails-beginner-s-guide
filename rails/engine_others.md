@@ -1,6 +1,6 @@
 ## 其它
 
-### mount as - 在 Engine 之外使用其路由
+#### mount as - 在 Engine 之外使用其路由
 
 mount(挂载)后 Engine 和应用之间的路由仍然是独立的，你仍然不能在应用里直接使用 Engine 里面的路由。举例：
 
@@ -44,7 +44,7 @@ form_for([my_engine, @user])
 
 这里生成的路由规则类似 `my_engine.user_path(@user)`
 
-### helper - Isolated engine's helpers
+#### helper - Isolated engine's helpers
 
 有时候，你的 Engine 是 Isolated，但你又想使用 Engine 里面定义的 helper，你可以引入某个模块：
 
@@ -64,7 +64,7 @@ end
 
 > Note: 这里引入的只是 helpers 目录下的文件，在 Controller 里定义，然后使用 helper_method 的方法不包含在内。
 
-### Migrations & seed data
+#### Migrations & seed data
 
 Engine 也可以有自己的迁移文件，和普通应用一样，它们位于 `db/migrate` 下面。
 
@@ -82,7 +82,7 @@ Engine 也可以有自己的 seed 文件，它们位于 `db/seeds.rb` 下面。
 MyEngine::Engine.load_seed
 ```
 
-### railties_order
+#### railties_order
 
 场景
 
@@ -120,13 +120,13 @@ main_app 表示我们的项目本身，在 Application::Finisher 里定义，all
 
 > Note: 上面的例子，你也可以用其它手段完成，如 namespace 等。
 
-### 迁移文件
+#### 迁移文件
 
 ```
 rake my_engine:install:migrations
 ```
 
-### 提示
+#### 提示
 
 除了 initializer 外，rake_tasks 也会被复制到 main_app 里。所以，有时候你会看到提示：  
 "Copy migrations from #{railtie_name} to application"

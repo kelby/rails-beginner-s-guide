@@ -1,6 +1,6 @@
 ## Routing 概述：生成、存储、识别
 
-### 描述
+#### 描述
 
 1. DSL --> Mapper(Base, Concerns, HttpHelpers, Resources, Scoping)
 2. 既然维护着一张路由表，如何向表里添加规则？
@@ -45,7 +45,7 @@ end
 
 Journey 就是个打杂的，其它看得见和看不见的功能由它负责。
 
-### 路由的生成、存储、识别
+#### 路由的生成、存储、识别
 
 1) 路由对象的定义和调用方式：
 
@@ -177,7 +177,7 @@ end
 
 8) 附：Mapper 的 ancestors
 
-```
+```ruby
 ActionDispatch::Routing::Mapper.ancestors
 => [ActionDispatch::Routing::Mapper,
 
@@ -189,5 +189,5 @@ ActionDispatch::Routing::Mapper.ancestors
  ActionDispatch::Routing::Mapper::Base,
 
  # ...,
- ... ...]
+ ...]
 ```

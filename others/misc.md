@@ -2,7 +2,7 @@
 
 C < B < A 有时候之所以 B 要 extend A 并不是为了 B 自己使用，而仅仅是为了方便 C
 
-### 继承关系及 ancestors
+#### 继承关系及 ancestors
 
 父类和模块都有此方法，子类没有(重写)此方法，执行顺序：模块按被加载的顺序逆序，最后到父类。
 
@@ -56,7 +56,7 @@ Child.new.do_something
 
 > Note: 以上参考 [modules.rb](https://gist.github.com/andrewberls/8090332)
 
-### inherited 方法
+#### inherited 方法
 
 `inherited(subclass)`
 
@@ -88,7 +88,7 @@ New subclass: Baz
 
 另：继承于一个类，父类的类方法就是子类的类方法，父类的实例方法就是子类的实例方法。
 
-### extend 方法
+#### extend 方法
 
 这里专指：一个对象继承一个模块。作用是：给一个对象添加实例方法(会覆盖原有方法)。
 

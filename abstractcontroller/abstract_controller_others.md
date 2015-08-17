@@ -2,13 +2,13 @@
 
 Abstract Controller 部分模块在前面已经详细介绍了，下面对其余模块做简单描述，有利于对源码的阅读。
 
-### Translation
+#### Translation
 
 I18n 相关的 `translate & t` 和 `localize & l` 方法。
 
 区别于 Active Model 的 Translation 模块。
 
-### Asset Paths
+#### Asset Paths
 
 以声明的形式，定义一些 assset 相关的类方法和实例方法。
 
@@ -17,7 +17,7 @@ config_accessor :asset_host, :assets_dir, :javascripts_dir,
                 :stylesheets_dir, :default_asset_host_protocol, :relative_url_root
 ```
 
-### Routes Helpers
+#### Routes Helpers
 
 **引入 Route 相关的 x_path 和 x_url 辅助方法。**
 
@@ -33,11 +33,11 @@ include Rails.application.routes.url_helpers
 
 然后，Action Controller 和 Action Mailer 的 Railtie 又 extend Routes Helpers，所以可用。
 
-### ~~Logger~~
+#### ~~Logger~~
 
 提供 `logger` 方法打印日志。
 
-### ~~Url For~~
+#### ~~Url For~~
 
 简单封装了 ActionDispatch::Routing::UrlFor，然后给 Active Mailer 和 ActionController::UrlFor 使用。
 

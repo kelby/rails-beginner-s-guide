@@ -2,7 +2,7 @@
 
 `serializable_hash(options = nil)` 序列化操作，提供了 :only, :except 选项。常用的 `as_json` 封装并扩展了它。
 
-使用 Serialization 需要 record.respond_to? :attributes # => true 因为转换的过程使用到相应 model 的 attributes 实例方法。
+使用 Serialization 需要 `record.respond_to? :attributes` # => true 因为转换的过程使用到相应 model 的 attributes 实例方法。
 
 此外，还有相关 module 及方法：
 

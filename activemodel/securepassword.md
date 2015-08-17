@@ -40,7 +40,7 @@ User.find_by(name: 'david').try(:authenticate, 'mUc3m00RsqyRe') # => user
 
 使用 has_secure_password 后，还会自动帮我们添加校验：
 
-```
+```ruby
 validates_length_of       :password
 validates_confirmation_of :password
 ```

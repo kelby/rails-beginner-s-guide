@@ -11,7 +11,7 @@ has_and_belongs_to_many 意味着中间表没有 model. 因此，不能通过 id
 | Primary Key | no | yes|
 | Rich Association | no | yes|
 | Proxy Collection | yes| no|
-| Distinct Selection | yes | ~~no~~ yes|
+| Distinct Selection | yes | yes|
 | Self-Referential | yes | yes|
 | Eager Loading | yes| yes|
 | Polymorphism |  no | yes|

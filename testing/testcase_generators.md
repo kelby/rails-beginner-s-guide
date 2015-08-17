@@ -1,6 +1,6 @@
 ## Generators
 
-### Assertions
+#### Assertions
 
 ```
 assert_class_method
@@ -16,7 +16,7 @@ assert_field_default_value
 assert_field_type
 ```
 
-### Behaviour
+#### Behaviour
 
 类方法：
 
@@ -44,7 +44,7 @@ run_generator
 capture
 ```
 
-### ~~SetupAndTeardown~~
+#### ~~Setup And Teardown~~
 
 ```
 setup

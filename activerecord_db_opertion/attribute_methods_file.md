@@ -15,8 +15,6 @@ attribute_present?
 attributes
 
 has_attribute?
-
-respond_to?
 ```
 
 另外对某个属性 attribute，会有以下方法：

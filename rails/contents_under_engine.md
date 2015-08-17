@@ -1,6 +1,6 @@
 ## Engine 文件下的内容
 
-### 对外提供的接口
+#### 对外提供的接口
 
 实例方法：
 
@@ -55,7 +55,7 @@ delegate :middleware, :root, :paths, to: :config
 delegate :engine_name, :isolated?, to: :class
 ```
 
-### 有哪些 initializer
+#### 有哪些 initializer
 
 设置 load path  
 设置 autoload paths  

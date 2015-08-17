@@ -4,7 +4,7 @@
 
 尽量不要和 Streaming 搅在一起，它们有类似之处，但不要混淆了。
 
-### 默认不使用 SSE
+#### 默认不使用 SSE
 
 默认情况下不使用 SSE，而是 Buffer，举例：
 
@@ -31,7 +31,7 @@ end
 
 建议 web server 使用 gem 'puma'，开发环境下默认使用的 WEBrick 不支持。Unicorn(响应比较快，并且对超时比较严格)、Rainbows! 或 Thin 也可以。
 
-### 使用 SSE 
+#### 使用 SSE 
 
 SSE 全称 [Server Sent Event](http://www.html5rocks.com/en/tutorials/eventsource/basics/)，HTML5 服务器发送事件。
 
@@ -69,7 +69,7 @@ class MyController < ActionController::Base
 end
 ```
 
-### 实例方法
+#### 实例方法
 
 ```
 process
@@ -89,7 +89,7 @@ log_error
 
 `log_error` 记录错误(有的话)。
 
-### 注意事项
+#### 注意事项
 
 - `content_for` 根据情况，有的要改为 `provide`
 

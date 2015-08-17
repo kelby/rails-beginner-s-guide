@@ -180,14 +180,16 @@ Post.includes(:comments).where("comments.visible" => true)
 相关 SQL [SQL Functions](http://www.w3schools.com/sql/sql_functions.asp)<br>
 参考官方文档 [Active Record Query Interface](http://edgeguides.rubyonrails.org/active_record_querying.html)
 
-### 最后
+#### 最后
 
 查表操作(数据库读操作)。大部分是 Ruby 层面，一般可多条件链式查询。
 
-和上面的 Collection Proxy 有类似，区别在于这是对本表操作，而不是对关系表。和下面的 Finder Methods 有类似，区别在于这返回的是 relation，可以链式查询，与 SQL 关联大。
+Query Methods 里的方法和 Collection Proxy 里的方法很类似，区别在于前者主要是对当前表进行操作；而后者主要是对其关系表进行操作。
 
-注意：参数带 block 的，代表已经进入 SQL 层面。
+Query Methods 和 Finder Methods 也有类似之处，区别在于前者返回的是 Relation 对象，可以链式查询；而后者直接返回的已经是结果，不可再链式查询。
 
-要善于使用这里的语句，数据放在数据库和数据放在内存有很大的区别！另外，放在内存和是否返回也有很大的区别！
+另，注意：参数带 block 的，会离开 Ruby 层面，执行 SQL 查询，返回结果。
+
+要善于使用这里的语句，数据放在数据库和数据放在内存有很大的区别；放在内存和是否返回也有很大的区别。
 
 > Note: 返回的多是 Relation，与 SQL 层面较亲；有 find 字样的绝对不是它。

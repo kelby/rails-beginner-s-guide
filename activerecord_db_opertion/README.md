@@ -12,15 +12,11 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - Relation
 
-包括 Spawn Methods、Query Methods、~~Predicate Builder~~、~~Merger~~、Finder Methods、~~Delegation~~、Calculations、Batches
+包括 Spawn Methods、Query Methods、Finder Methods、Calculations、Batches、~~Delegation~~、~~Predicate Builder~~、~~Merger~~
 
 - Querying
 
 - Persistence
-
-- ~~Null Relation~~
-
-- ~~Dynamic Matchers~~
 
 即将被废除的 gem 'activerecord-deprecated_finders'
 
@@ -31,3 +27,7 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 - Attribute Methods
 
 包括 Before Type Cast、Dirty、Primary Key、Query、Read & Write、Serialization、Time Zone Conversion
+
+- ~~Null Relation~~
+
+- ~~Dynamic Matchers~~

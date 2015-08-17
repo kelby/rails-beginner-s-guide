@@ -2,7 +2,7 @@
 
 按条件对数据进行**统计**。
 
-```
+```ruby
 count   # 总数
 average # 平均值
 maximum # 最大值

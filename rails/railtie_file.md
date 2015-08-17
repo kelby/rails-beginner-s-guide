@@ -2,7 +2,7 @@
 
 提供以下实例方法：
 
-### initializer
+#### initializer
 
 实际上 `initializer` 定义于 Rails::initializable. 它还可以接受 :before 或 :after 做为参数。
 
@@ -10,7 +10,7 @@ Rails::Railtie include 了它，所以对外提供有 `initializer` 方法:
 
 ```ruby
 class MyRailtie < Rails::Railtie
-  # initializer 来源于 
+  # initializer 来源于 Rails::initializable
   initializer "my_railtie.configure_rails_initialization" do
     # 一些初始化代码
   end
@@ -27,9 +27,9 @@ class MyRailtie < Rails::Railtie
 end
 ```
 
-### config
+#### config
 
-你可以使用 config 对象，它在所有 Railtie 和你的应用里是共用的。
+你可以使用 `config` 对象，它在所有 Railtie 和你的应用里是共用的。
 
 ```ruby
 class MyRailtie < Rails::Railtie
@@ -45,7 +45,7 @@ end
 
 > Note: `config` 定义于 Configurable. delegate :config, to: :instance
 
-### rake_tasks & generators
+#### rake_tasks & generators
 
 继承于 Rails::Railtie 所以有 `rake_tasks` 方法:
 
@@ -67,7 +67,7 @@ class MyRailtie < Rails::Railtie
 end
 ```
 
-### 其它
+#### 其它
 
 类方法：
 

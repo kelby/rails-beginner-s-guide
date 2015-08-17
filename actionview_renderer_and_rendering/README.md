@@ -7,7 +7,7 @@
 
 分为 4 大块：渲染器、模板、上下文和查找模板对象。(以下只是粗略的分类)
 
-### 1) 渲染器
+#### 1) 渲染器
 
 Template Renderer  
 模板渲染器
@@ -28,11 +28,11 @@ Partial Renderer
 Abstract Renderer  
 抽象出来的渲染器
 
-### 2) 模板(Template)
+#### 2) 模板(Template)
 
 对应文件及同名目录。
 
-### 3) 上下文(view_context)
+#### 3) 上下文(view_context)
 
 Rendering  
 渲染(动词)
@@ -50,7 +50,7 @@ Rendering
 输出缓冲区  
 为了支持"streaming 流"！
 
-### 4) 查找模板对象(lookup_context)
+#### 4) 查找模板对象(lookup_context)
 
 View Paths  
 视图文件所在目录

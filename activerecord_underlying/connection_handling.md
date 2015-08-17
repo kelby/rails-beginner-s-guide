@@ -1,5 +1,7 @@
 ## Connection Handling 连接数据库
 
+用来建立和数据库的连接。(配置、建立连接、日志，其中的建立连接，但连接适配不是它做的。)
+
 ```
 # 根据配置信息进行连接
 establish_connection

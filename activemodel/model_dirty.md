@@ -75,4 +75,4 @@ changes_applied
 clear_changes_information
 ```
 
-Active Record 也有同名模块，它是对这里的 Dirty 的封装，并且它并没有对外提供 API.
+Active Record 也有同名模块，它只是对这里的 Dirty 的封装，并且它并没有对外提供 API.

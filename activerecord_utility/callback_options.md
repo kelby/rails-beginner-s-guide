@@ -73,25 +73,3 @@ class Comment < ActiveRecord::Base
     unless: Proc.new { |comment| comment.article.ignore_comments? }
 end
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

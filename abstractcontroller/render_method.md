@@ -1,6 +1,6 @@
-## render 方法详解
+### render 方法详解
 
-### 散落各地的 render 方法
+#### 散落各地的 render 方法
 
 搜索了一下，API 里 `render` 同名方法有 8 个，它们分别代表什么意思？
 
@@ -22,7 +22,7 @@ Action View 和 Action Controller 渲染的主要入口。
 
 剩下两个在 AbstractController::Rendering 和 ActionController::Instrumentation 里。
 
-### render 的各个可选参数
+#### render 的各个可选参数
 
 ```
 spacer_template # 配合 collection 和 partical. 在局部模板之间穿插的内容。(为什么不把它们放到局部模板里，而是用这种奇怪的方式？可能是 partical 还被其它人使用，不能直接添加吧)
@@ -62,7 +62,7 @@ ActionController::Renderers::RENDERERS
  }> 
 ```
 
-### render 在 Controller 和 View 是如何工作的
+#### render 在 Controller 和 View 是如何工作的
 
 **Controller 里默认渲染的是 template**
 走的路是 ActionController::Rendering -> AbstractController::Rendering -> ActionView::Rendering -> ActionView::Renderer#render
@@ -75,7 +75,7 @@ ActionController::Renderers::RENDERERS
 Controller 里的 render 是为了返回 self.response_body
 而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣。
 
-### 一些使用举例
+#### 一些使用举例
 
 1) 不想渲染任何东西，可以使用：
 
@@ -160,7 +160,7 @@ render js: "alert('Hello Rails');"
 render body: "raw"
 ```
 
-### render 单个对象，还是集合
+#### render 单个对象，还是集合
 
 渲染一个集合(传递 :collection)，而不是一个个的渲染对象(传递 :object)。
 
@@ -173,7 +173,7 @@ render body: "raw"
 
 渲染集合，除了少敲几个字符外，性能也会对应变快一点。
 
-### 其它
+#### 其它
 
 只渲染 json，只得到数据。
 

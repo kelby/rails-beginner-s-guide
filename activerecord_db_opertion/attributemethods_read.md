@@ -35,9 +35,3 @@ self.attributes 里的 image 信息一致
 属性名，加后缀 `=` 进行赋值。
 
 区别于 attr_writer, 这里的写和数据库操作有关。
-
-参考
-
-[Prefer self[:attribute] over read_attribute(:attribute)](https://github.com/bbatsov/rails-style-guide#read-attribute)<br>
-[Rails attributes() and read_attribute() method](http://www.shanison.com/2010/07/18/rails-attributes-method/)<br>
-[How Rails' Type Casting Works](http://robots.thoughtbot.com/how-rails-works-type-casting)

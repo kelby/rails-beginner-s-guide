@@ -37,7 +37,7 @@ get 'hello', to: HelloController.action(:index)
 
 为了让 Route 能够很好转发，action 方法会返回一个有效的 Rack application.
 
-### 主要做的事情
+#### 主要做的事情
 
 调用 middleware 进行预处理。
 
@@ -45,7 +45,7 @@ get 'hello', to: HelloController.action(:index)
 
 做出响应。
 
-### 其它
+#### 其它
 
 一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
 

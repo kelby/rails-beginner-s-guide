@@ -4,7 +4,7 @@
 
 它是 Action Mailer 里其它模块的集合中心（其它模块不直接对外提供接口，而是通过它完成）。同时，它还提供一些对外的接口，供我们直接使用。
 
-### 作用
+#### 作用
 
 它继承于 AbstractController::Base，包含了一些自身及 Abstract Controller 的模块(尽管有的模块它并没有使用到)，作用是为了让它的子类(我们自定义的 Mailer 类)能够"更好用、更实用"。
 
@@ -18,7 +18,7 @@
 AbstractController::Base
 ```
 
-### 包含内容
+#### 包含内容
 
 包含了一些默认配置 default_params.
 
@@ -29,7 +29,7 @@ AbstractController::Base
 创建邮件实例
 (因为 Base include 了多个模块，所以这个实例可以使用这些模块所定义的方法)。
 
-### 邮件(mail)、附件(attachments)
+#### 邮件(mail)、附件(attachments)
 
 `mail(headers = {}, &block)` 表示邮件对象。<br>
 可接收一个代码块做为参数，header(头部)可接受：
@@ -88,7 +88,7 @@ mail.attachments['filename.jpg'] = { mime_type: 'application/x-gzip',
                                      content: File.read('/path/to/filename.jpg') }
 ```
 
-### 设置默认值(default & default_options=)
+#### 设置默认值(default & default_options=)
 
 `default(value = nil)` 是ActionMailer::Base提供的方法，用来设置 default_params，默认已经有：
 
@@ -143,7 +143,7 @@ config.action_mailer.default_options = { from: "no-reply@example.org" }
 
 前者对当前 Controller 及其子类有效，而后者对当前环境下所有 Controller 有效。除了使用的地方不同，导致作用域稍有不同外，两者本质是一样的。
 
-### 设置头部消息 headers
+#### 设置头部消息 headers
 
 使用 `headers` 可以设置邮件的头部消息，例如：
 
@@ -169,18 +169,18 @@ headers 'X-Special-Domain-Specific-Header' => "SecretValue",
 :references
 ```
 
-### 接收邮件 receive
+#### 接收邮件 receive
 
 Rails 处理邮件，不常用，而且会比较耗费资源，所以不推荐。但如果你要用的话，你可以实现 `receive(raw_mail)` 方，唯一的参数就是，接收到的邮件内容。<br>
 Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
-### 创建邮件对象时的魔法
+#### 创建邮件对象时的魔法
 
 细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
 
 这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 MessageDelivery 对象。
 
-### 其它
+#### 其它
 
 类方法：
 

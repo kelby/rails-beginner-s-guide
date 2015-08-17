@@ -4,7 +4,7 @@
 
 由原来的 Template::Lookup 更改而来，其实名字叫 Lookup Template Context 反正更合适。
 
-### lookup_context 内容
+#### lookup_context 内容
 
 基本信息，包括以下 7 项内容：
 
@@ -38,7 +38,7 @@ delegate :formats, :formats=, :locale, :locale=, :view_paths, :view_paths=,
          :to => :lookup_context
 ```
 
-### lookup_context 举例
+#### lookup_context 举例
 
 查看应用根目录下文件及目录：
 
@@ -71,7 +71,7 @@ lookup_context = ActionView::LookupContext.new(FIXTURE_LOAD_PATH, {})
 
 真实情况远比这复杂，`@view_paths` 下有很多的内容。
 
-### 实例方法
+#### 实例方法
 
 ```
 attr_accessor :prefixes, :rendered_format
@@ -88,7 +88,7 @@ locale=
 with_layout_format 
 ```
 
-### 类方法
+#### 类方法
 
 ```
 register_detail

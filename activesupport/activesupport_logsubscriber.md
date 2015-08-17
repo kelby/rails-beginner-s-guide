@@ -16,7 +16,9 @@ Rails 各个模块里的 LogSubscriber
 
 ```
 flush_all!
+
 log_subscribers
+
 logger
 ```
 
@@ -24,8 +26,9 @@ logger
 
 ```
 finish
-logger
 start
+
+logger
 ```
 
 其它实例方法：

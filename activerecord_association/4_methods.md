@@ -46,7 +46,7 @@ Project#categories.delete(category1)
 Project#categories.destroy(category1)
 ```
 
-### 其它
+#### 其它
 
 注意：可选参数 :dependent 在 has_one 和 belongs_to 里，删除关联用的是 delete；而在 has_many 里，删除关联用的是 delete_all.
 这两者要做的事性质上是一样的，但请注意这点区别，并且它们都没有 destroy_all.
@@ -55,4 +55,4 @@ Project#categories.destroy(category1)
 
 当不确定参数表示什么意思，使用后有什么效果时，请慎用，可以选择其它确定/有把握的方法代替。
 
-> Note: 当你不确定时，不妨多敲几行代码，以妨万一。
+> Note: 当你不确定时，不妨多敲几行代码，防止万一。

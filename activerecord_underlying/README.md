@@ -1,14 +1,16 @@
-# Active Record 底层
+# Active Record 底层及其它
 
-知道有，但平时感受不到。
+相对而言较底层，使用 Rails 的话，一般不会直接用到的它们。
 
 - Connection Handling
 
-用来建立和数据库的连接。(配置、建立连接、日志，其中的建立连接，连接适配不是它做的！)
+- Serialization
+
+- Migration DatabaseTasks
+
+- ~~Statement Cache~~
 
 - ~~Explain~~
-
-explain 方法的底层实现(尽管是调用数据库的 explain...)
 
 - ~~Explain Registry~~
 
@@ -21,9 +23,3 @@ explain 方法的底层实现(尽管是调用数据库的 explain...)
 - ~~Runtime Registry~~
 
 - ~~Sanitization~~
-
-- Serialization
-
-包括 XmlSerializer
-
-- Statement Cache

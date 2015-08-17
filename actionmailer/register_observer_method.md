@@ -1,4 +1,4 @@
-### 订阅者 register_observer
+#### 订阅者 register_observer
 
 邮件发送之后想做点什么？-- 使用观察者。
 

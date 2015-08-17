@@ -6,9 +6,9 @@
 
 概念：a.b 或 a.bs 组成一个 Association，把它们看成是一个整体。但前者为 owner，后者为 target.
 
-实现对关联对象的操作！
+实现对关联对象的操作。
 
-### 1) Association
+#### 1) Association
 
 ```
 attr_reader :owner, :target, :reflection
@@ -52,24 +52,27 @@ marshal_load
 initialize_attributes
 ```
 
-### 2) Belongs To Association
+#### 2) Belongs To Association
 
 ```
 handle_dependency
+
 replace
 reset
+
 updated?
+
 decrement_counters
 increment_counters
 ```
 
-### 3) Belongs To Polymorphic Association
+#### 3) Belongs To Polymorphic Association
 
 ```
 klass
 ```
 
-### 4) Collection Association
+#### 4) Collection Association
 
 ```
 reader
@@ -129,37 +132,48 @@ scope
 null_scope?
 ```
 
-### 5) Foreign Association
+#### 5) Foreign Association
 
 ```
 foreign_key_present?
 ```
 
-### 6) Has Many Association
+#### 6) Has Many Association
 
 ```
-:handle_dependency, :insert_record, :empty?
+handle_dependency
+
+insert_record
+
+empty?
 ```
 
-### 7) Has Many Through Association
+#### 7) Has Many Through Association
 
 ```
-:size, :concat, :concat_records, :insert_record
+size
+concat
+
+concat_records
+insert_record
 ```
 
-### 8) Has One Association
+#### 8) Has One Association
 
 ```
-:handle_dependency, :replace, :delete
+handle_dependency
+
+replace
+delete
 ```
 
-### 9) Has One Through Association
+#### 9) Has One Through Association
 
 ```
 replace
 ```
 
-### 10) Singular Association
+#### 10) Singular Association
 
 ```
 reader
@@ -171,9 +185,8 @@ create!
 build
 ```
 
-### 11) Through Association
+#### 11) Through Association
 
 ```
 delegate :source_reflection, :through_reflection, :to => :reflection
 ```
-

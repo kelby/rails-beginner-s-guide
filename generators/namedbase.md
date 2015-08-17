@@ -1,4 +1,4 @@
-## Named Base √
+## Named Base
 
 继承于 Base.
 
@@ -56,6 +56,6 @@ wrap_with_namespace
 
 `check_class_collision` 举例 rails generate controller NAME [action action] [options] 检测这里的 NAME 是否已经被使用，也就是说是否有冲突。(因为后续会创建新的文件，如果冲突的话，之前的文件及内容会被覆盖)
 
-```
+```ruby
 attr_reader :file_name
 ```

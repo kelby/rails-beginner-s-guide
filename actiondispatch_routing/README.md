@@ -1,6 +1,6 @@
 # Action Dispatch Routing
 
-### 先说说 Rack endpoint
+#### 先说说 Rack endpoint
 
 一切路由规则都可归结为: 映射路径到 Rack endpoint.
 
@@ -12,7 +12,7 @@
 
 Rack ~= Rack middleware ~= Rack endpoint ~= Rack application
 
-### 再说 Routing
+#### 再说 Routing
 
 **Routing 包含范围：**
 

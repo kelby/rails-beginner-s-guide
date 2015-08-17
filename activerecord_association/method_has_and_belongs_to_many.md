@@ -1,10 +1,10 @@
 ## has_and_belongs_to_many
 
-### 方法本身表示什么意思。
+#### 方法本身表示什么意思。
 
 指定多对多关系。用中间表来连接前者与后者。如果没有明确的指定中间表的名字，那么默认按前者、后者的字母顺序排序构成中间表。
 
-### 引进了哪些方法，表示什么意思。
+#### 引进了哪些方法，表示什么意思。
 
 | 方法 | 解释 |
 | -- | -- |
@@ -23,7 +23,7 @@
 | collection.build(attributes = {}) | 解释同上 |
 | collection.create(attributes = {}) | 解释同上 |
 
-### 有什么参数，表示什么意思，使用后有什么效果。
+#### 有什么参数，表示什么意思，使用后有什么效果。
 
 普通参数 **Scope**
 
@@ -62,14 +62,14 @@ end
 | 参数 | 解释 |
 | -- | -- |
 | :class_name | 同上 |
-| :join_table | 指定中间表的名字 **WARNING:** 如果你给中间表加了对应的'类'，并且命名不符合约定的话。那么一定要记得在每个 has_and_belongs_to_many 的地方都要设置 join_table |
+| :join_table | 指定中间表的名字 **注意:** 如果你给中间表加了对应的'类'，并且命名不符合约定的话。那么一定要记得在每个 has_and_belongs_to_many 的地方都要设置 join_table |
 | :foreign_key | 同上 |
 | :association_foreign_key | 指定后者所对应的外键，如 Person has_and_belongs_to_many :projects, 则中间表里后者所对应的外键是 “project_id”。如果不符合要求，你使用使用 :association_foreign_key 设置 |
 | :readonly | 设置为 true, 通过前者查询到的后者限制为只读状态，不可更改。但其它方式查询出来的，不受此限制。|
 | :validate | 解释同上。但默认为 true |
 | :autosave | 解释同上 |
 
-### 注意事项。
+#### 注意事项。
 
 - 注意前者与后者的顺序比较方法，如果前几个字符一样，则往后一个个字符比较，如 "paper_boxes" 和 "papers" 生成的中间表名字是 "paper_boxes_papers" 而不是 "papers_paper_boxes". 
 - 你可以用可选参数 :join_table 指定中间表名字。

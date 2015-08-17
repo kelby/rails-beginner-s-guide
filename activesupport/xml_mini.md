@@ -24,7 +24,7 @@ with_backend
 
 此外，还有类方法：
 
-```
+```ruby
 delegate :parse, :to => :backend
 ```
 

@@ -1,10 +1,10 @@
 ## has_one
 
-### 方法本身表示什么意思。
+#### 方法本身表示什么意思。
 
 指定一对一关系。如果，"前者 has_one 后者"，那么'后者'需要包括'前者_id'属性。
 
-### 引进了哪些方法，表示什么意思。
+#### 引进了哪些方法，表示什么意思。
 
 | 方法 | 解释 |
 | -- | -- |
@@ -18,7 +18,7 @@
 
 另，belongs_to 和 has_one 都属于 Singular Association.
 
-### 有什么参数，表示什么意思，使用后有什么效果。
+#### 有什么参数，表示什么意思，使用后有什么效果。
 
 普通参数 **Scope**
 
@@ -50,14 +50,14 @@ has_one :dob, ->(dob) { where("Date.new(2000, 01, 01) > ?", dob) }
 | :inverse_of | 参考 belongs_to 的解释 |
 | :required | 参考 belongs_to 的解释 |
 
-### 注意事项。
+#### 注意事项。
 
 - `:foreign_key 和 primary_key` 针对的是前者。
 - `:through` 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
 - `:source_type` 影响的是数据，不是属性。
 - `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
-- 
-### 对比
+
+#### 其它
 
 使用 primary_key 前后对比：
 

@@ -13,7 +13,7 @@ Computer 有 pc 和 mac
 
 一般说来，单表继承通常用于：属性一样，但行为不一致。
 
-### 是什么？
+#### 是什么？
 
 单表，就是在数据库你只需要一张表。<br>
 继承，就是你的 model 之间存在着继承关系。
@@ -22,7 +22,7 @@ Computer 有 pc 和 mac
 我们可以只用 employees 表，却有 model Manager 和 model Developer，它们都继承于 Employee.<br>
 我们可以只用 computers 表，却有 model Pc 和 model Mac，它们都继承于 Computer.
 
-### 选择
+#### 选择
 
 1. 各子模块属性是一样的。这里要从"面向对象"的角度去看，而不是简单的'属性一样'就能使用。
 
@@ -34,7 +34,7 @@ Computer 有 pc 和 mac
 
 这些方法都有利有弊，选择时，我们尽量选择利大于弊的那一种吧。
 
-### 使用
+#### 使用
 
 单表继承默认使用 `type` 做为标识字段，在表里面新增字段即可，当然，也可以用【Model Schema】里的 `inheritance_column` 自定义标识字段。创建相应对象时，会根据所使用的模块名自动设置它的值。
 

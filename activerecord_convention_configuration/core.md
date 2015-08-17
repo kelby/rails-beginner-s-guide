@@ -4,7 +4,7 @@
 
 **包含时即执行：**
 
-```
+```ruby
 mattr_accessor :logger, instance_writer: false
 
 self.configurations

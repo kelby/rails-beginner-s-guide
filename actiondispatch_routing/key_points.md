@@ -10,4 +10,4 @@
 <br>
 和 `scope` 有关的有：namescope, collection, member, resource, resouces 及嵌套路由时自动完成的 nested 等。它们主要工作是调用上面的 match 相关方法，并影响生成路由规则。
 
-完成路由规则整个任务，match 和 scope 缺一不可。
+完成路由规则整个过程中，match 和 scope 缺一不可。

@@ -1,6 +1,6 @@
 还有两个类: Default Middleware Stack 和 Routes Reloader. 
 
-它们都放在 application/ 目录下，为了完成某项任务而存在，但两者之间没有联系。
+它们都放在 application/ 目录下，为了完成某项任务而存在，但与 Application 没有直接联系。
 
 ### Default Middleware Stack
 

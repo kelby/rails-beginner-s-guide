@@ -22,7 +22,9 @@ class Address
 end
 ```
 
-### 如何使用
+之后即可对 Address 的实例对象进行操作。
+
+#### 如何使用？
 
 Customer 有 balance，address_street、address_city 字段。
 
@@ -143,7 +145,7 @@ customer.address_city   # => "Chicago"
 
 > Note: composed_of 创建的是'值对象'，区别于一般的'实体对象'。值对象没有唯一身份标识，只有所有的值相等，两个值对象才相等；而实体对象，有唯一标识(如：id)，只要唯一标识相等，两个实体对象就相等了。
 
-### 可选参数详解
+#### 可选参数详解
 
 | 参数 | 解释 |
 | -- | -- | -- |

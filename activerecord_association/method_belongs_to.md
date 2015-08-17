@@ -1,10 +1,10 @@
 ## belongs_to
 
-### 方法本身表示什么意思。
+#### 方法本身表示什么意思。
 
 指定一对一关系。如果，"自己 belongs_to 关联对象"，那么自己需要包括"关联对象的外键"。
 
-### 引进了哪些方法，表示什么意思。
+#### 引进了哪些方法，表示什么意思。
 
 | 方法 | 解释 |
 | -- | -- |
@@ -16,7 +16,7 @@
 
 后面几个方法，作用类似，只是细节部分有所不同，使用时注意一下即可。
 
-### 有什么参数，表示什么意思，使用后有什么效果。
+#### 有什么参数，表示什么意思，使用后有什么效果。
 
 普通参数 **Scope**
 
@@ -50,7 +50,7 @@ belongs_to :level, ->(level) { where("game_level > ?", level.current) }
 | :inverse_of | 保证 object_id 相同。通过前者(1)查询到后者，然后再通过后者返过来查询前者(2)。按照直观的理解，(1) 和 (2) 应该是同样的对象，同样的值。但实际情况会发现，它们不一样(可以通过 object_id 确定)！原因是程序没有这么聪明，没法判断它们是一样的(特别是通过中间表查询时)。设置 :inverse_of，可解决这个问题。|
 | :required | 语法糖。原来的做法是 "belongs_to 关联对象" + "validates_presence_of 关联对象"，现改为 "belongs_to 关联对象, required: true"|
 
-### 注意事项。
+#### 注意事项。
 
 - 自己包含了"关联对象_id"属性，注意和下文提到的 has_one 的区别。
 - `:class_name` 不影响 `:foreign_key` "关联对象_id"属性的命名约定。
@@ -65,7 +65,7 @@ belongs_to :level, ->(level) { where("game_level > ?", level.current) }
 - `:inverse_of` 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
 - `:required` "validates_presence_of 关联对象" 和 "validates_presence_of 关联对象_id" 大同小异。前者是真实存在的对象，后者只是字段。
 
-### 对比
+#### 其它
 
 使用 primary_key 前后对比：
 

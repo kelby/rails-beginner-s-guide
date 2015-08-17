@@ -1,6 +1,6 @@
 ## Action Mailer
 
-### Test Helper
+#### Test Helper
 
 默认 Rails 提供两个 helper 方法用于测试：
 
@@ -11,7 +11,7 @@
 
 assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
 
-### Behavior
+#### Behavior
 
 类方法：
 

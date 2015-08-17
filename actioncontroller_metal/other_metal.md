@@ -1,10 +1,14 @@
 ## 其它
 
-### Cookies
+#### Metal 增强模块和 Middleware 的区别
+
+Middleware 是在请求进入 Controller#action 之前，而 Metal 增强组件是在请求进入 Controller#action 之后。
+
+#### Cookies
 
 提供了 `cookies` 方法，本质是 request.cookie_jar
 
-### ~~Implicit Render~~
+#### ~~Implicit Render~~
 
 默认渲染模板。
 
@@ -18,7 +22,7 @@ method_for_action
 
 我们在 Controller#action 里，没有 render 模板或返回数据时 ... 就会用到它。
 
-### ~~Instrumentation~~
+#### ~~Instrumentation~~
 
 当执行以下同名方法时，会发送消息，及有时间记录(以观察性能等指标)。
 
@@ -35,7 +39,7 @@ send_file
 
 用到了 `ActiveSupport::Notifications.instrument` 和 `Benchmark.ms`
 
-### ~~Rack Delegation~~
+#### ~~Rack Delegation~~
 
 ```
 dispatch
@@ -58,11 +62,11 @@ delegate :headers, :status=, :location=, :content_type=,
          :status, :location, :content_type, :response_code, :to => "@_response"
 ```
 
-### ~~Rendering~~
+#### ~~Rendering~~
 
 对一般的 render_to_body 和 render_to_string 稍微做处理。
 
-### ~~Rescue~~
+#### ~~Rescue~~
 
 执行到具体 action 抛异常时会检测是否需要抛异常，如果是的话，抛异常。
 
@@ -72,10 +76,6 @@ delegate :headers, :status=, :location=, :content_type=,
 
 `rescue_with_handler`(封装了 ActiveSupport::Rescuable 的同名方法)
 
-### ~~Url For~~
+#### ~~Url For~~
 
 `url_for` 方法的组成部分。
-
-### Metal 增强模块和 Middleware 的区别
-
-Middleware 是在请求进入 Controller#action 之前，而 Metal 增强组件是在请求进入 Controller#action 之后。

@@ -96,4 +96,3 @@ def clean_backtrace(*args)
   end
 end
 ```
-

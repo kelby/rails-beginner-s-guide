@@ -4,7 +4,7 @@
 
 include by Base.
 
-### 实例方法
+#### 实例方法
 
 ```
 add_source
@@ -37,7 +37,7 @@ route
 vendor
 ```
 
-### 其它实例方法
+#### 其它实例方法
 
 ```
 extify
@@ -45,7 +45,7 @@ log
 quote
 ```
 
-### ~~Create Migration~~
+#### ~~Create Migration~~
 
 被 Migration 调用，但应该不能直接使用。
 

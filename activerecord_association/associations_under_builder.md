@@ -1,6 +1,6 @@
 ## 基本 - builder 目录下的 associations 文件
 
-**关联方法带来的基本的方法。**
+**关联方法带来的基本方法。**
 
 **对内实现。**
 
@@ -14,11 +14,11 @@
                          Association
 ```
 
-### 1) Association
+#### 1) Association
 
 类方法：
 
-```
+```ruby
 class << self
   attr_accessor :extensions
   attr_accessor :valid_options
@@ -61,7 +61,7 @@ check_dependent_options
 add_destroy_callbacks
 ```
 
-### 2) Singular Association
+#### 2) Singular Association
 
 类方法：
 
@@ -77,7 +77,7 @@ define_validations
 valid_options
 ```
 
-### 3) Collection Association
+#### 3) Collection Association
 
 类方法：
 
@@ -105,7 +105,7 @@ define_extensions
 wrap_scope
 ```
 
-### 4) Has One
+#### 4) Has One
 
 类方法：
 
@@ -126,7 +126,7 @@ macro
 valid_options
 ```
 
-### 5) Belongs To
+#### 5) Belongs To
 
 类方法：
 
@@ -156,7 +156,7 @@ add_touch_callbacks
 add_destroy_callbacks
 ```
 
-### 6) Has Many
+#### 6) Has Many
 
 类方法：
 
@@ -171,7 +171,7 @@ macro
 valid_options
 ```
 
-### 7) Has And Belongs To Many
+#### 7) Has And Belongs To Many
 
 实例方法：
 
@@ -190,7 +190,7 @@ middle_options
 belongs_to_options
 ```
 
-### 主要内容
+#### 主要内容
 
 - 创建 reflection
 

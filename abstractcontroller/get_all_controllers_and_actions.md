@@ -1,4 +1,4 @@
-### 获取所有的 Controller 和 action
+#### 获取所有的 Controller 和 action
 
 如何获取当前程序所有的 Controller 和 action ?
 

@@ -1,6 +1,6 @@
 ## Action View
 
-### Behavior
+#### Behavior
 
 实例方法：
 
@@ -35,7 +35,7 @@ rendered_views
 view_rendered?
 ```
 
-### Test Controller
+#### Test Controller
 
 ```
 controller_path=

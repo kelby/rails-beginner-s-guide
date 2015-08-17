@@ -1,6 +1,6 @@
-# Turbolinks 3
+## Turbolinks 3
 
-## Ruby 层面：
+#### Ruby 层面：
 
 	Controller
 		3 个回调方法：设置 X-XHR-Redirected-To，只对 GET 请求有效，某种情况的跨域是不允许的（用到了 X-XHR-Referer）
@@ -24,8 +24,8 @@
 		env['rack.session'][:_turbolinks_redirect_to]
 		controller.request.headers["X-XHR-Referer"]
 
+#### JS 层面：
 
-## JS 层面：
 	定义了几个变量
 	有哪些事件？
 	fetch 是如何实现的？
@@ -48,9 +48,7 @@
 	其它：	ua，requestMethodIsSafe，browserSupportsTurbolinks，browserSupportsCustomEvents
 	@Turbolinks 之 API
 
-
-
-## 文档：
+#### 文档：
 
 	10 个事件
 		整个 load 流程
@@ -69,18 +67,4 @@
 	配置（全局或针对某个请求），让浏览器不要缓存 turbolinks 请求
 	客户端 API (api 是 api，事件是事件，不要搞混了)
 	我们极度依赖 pushState （在这里，做为用户，我们就不要考虑了吧~~）
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

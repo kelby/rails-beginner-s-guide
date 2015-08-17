@@ -1,6 +1,6 @@
 ## Model Schema*
 
-`reset_column_information` 在迁移的时候经常用到。
+`reset_column_information` 定义于 Model Schema，在迁移的时候经常用到。
 
 整个迁移过程，环境只加载一次。但有时候，我们添加了属性，我们希望马上能够填充数据。此时，就需要重新读取 model 的表信息。
 
@@ -21,4 +21,4 @@ class AddPeopleSalary < ActiveRecord::Migration
 end
 ```
 
-其它方法，见【Model Schema - model 与 table】章节描述。
+其它方法，见【Model Schema - model 与 table】章节。

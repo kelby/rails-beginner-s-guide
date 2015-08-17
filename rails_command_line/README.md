@@ -76,7 +76,7 @@ x.method(:method_name).comment
 
 - 下划线( _ )可以显示上条正确命令执行的结果。
 
-- Console 清屏快捷键"Ctrl + L"
+- Console 清屏快捷键"Ctrl + L"或"Command + K"
 
 - **定制自己的 console 方法**
 

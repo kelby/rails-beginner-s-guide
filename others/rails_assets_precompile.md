@@ -1,6 +1,6 @@
-# Rails assets precompile
+## Rails assets precompile
 
-### Assets Pipeline 主要功能
+#### Assets Pipeline 主要功能
 
 合并、压缩、解析 css, js 文件。
 
@@ -10,13 +10,13 @@
 <br>
 解析：你可直接使用 SCSS 和 CoffeeScript, 它们会被解析成 css 和 js.
 
-### Assets Pipeline 相关 gem
+#### Assets Pipeline 相关 gem
 
 Assets Pipeline 的功能主要由重要的组件提供：Sprockets
 <br>
 Sprockets 用来从你的 assets 路径打包压缩你所有的 assets 后包裝成一个文件，然后放到你目的地路径(public/assets).
 
-### Assets Pipeline 怎么关掉?
+#### Assets Pipeline 怎么关掉?
 
 你可以在 `confing/application.rb` 中把他关掉：
 
@@ -24,7 +24,7 @@ Sprockets 用来从你的 assets 路径打包压缩你所有的 assets 后包裝
 config.assets.enabled = false
 ```
 
-### Assets 的结构
+#### Assets 的结构
 
 首先必须了解 Assets 的结构，在 Rails 的目录结构中有三个地方：
 
@@ -42,9 +42,15 @@ config.assets.enabled = false
 Rails.application.config.assets.paths << Emoji.images_path
 ```
 
-你可以在控制台里输入 `Rails.application.config.assets.paths` 来查看所有的 assets 路径。
+你可以在控制台里输入 
 
-### Assets 的载入
+```ruby
+Rails.application.config.assets.paths
+```
+
+来查看所有的 assets 路径。
+
+#### Assets 的载入
 
 主要有两种方式载入：
 <br>
@@ -62,18 +68,7 @@ Rails.application.config.assets.paths << Emoji.images_path
 
 你可以看 Sprockets 的 Readme 來了解更多使用方法。
 
-### Preprocessing
-
-另外就是 Sprockets 在 Tilt 的帮助下有 preprocessing 的功能，例如你可以使用像是 something.js.coffee.erb 这样的文件，Sprockets 会根据文件后缀自动解析成最后的文件，因此你可以在 js 中使用 CoffeeScript 的写法來写 js，并在里面写 ruby code 来输出你想要的东西，例如：
-
-```
-jQuery ->
-  number = <%= 1 + 1 %>
-```
-
-不用我说，我想你也知道会有什么结果。
-
-### Helper
+#### Helper
 
 Assets 提供了很多路径相关的 helper 來让你指向你的 assets:
 
@@ -97,7 +92,26 @@ asset-path("rails.png", image) # => "/assets/rails.png"
 Production
 ```
 
-### 引用方式
+1) 引入图片：
+
+```
+asset-path("rails.png") becomes "/assets/rails.png"
+asset-url("rails.png") becomes url(/assets/rails.png)
+```
+
+```
+image-path("rails.png") becomes "/assets/rails.png"
+image-url("rails.png") becomes url(/assets/rails.png)
+```
+
+```
+asset-data-url("rails.png") becomes url(data:image/png;base64,iVBORw0K...)
+```
+
+1，在 html.erb 里引入
+2，在 css 里引入
+
+#### 引用方式
 
 不推荐使用 url 的方式，但一定要用的话，注意方式：
 
@@ -136,31 +150,14 @@ Rails.application.assets.find_asset 'notthere.png'
  ```
 
 
-## 二，引入图片：
-
-```
-asset-path("rails.png") becomes "/assets/rails.png"
-asset-url("rails.png") becomes url(/assets/rails.png)
-```
-
-```
-image-path("rails.png") becomes "/assets/rails.png"
-image-url("rails.png") becomes url(/assets/rails.png)
-```
-
-```
-asset-data-url("rails.png") becomes url(data:image/png;base64,iVBORw0K...)
-```
-
-1，在 html.erb 里引入
-2，在 css 里引入
 
 
-## 三，引入 JS & 引入 CSS:
+
+2) 引入 JS & 引入 CSS:
 
 无论哪的文件，都只有上面两种方法。你要做一些改变，而且很小的。
 
-### 1.1，在 html.erb 里引入
+1.1，在 html.erb 里引入
 
 ```ruby
 # application.rb
@@ -173,7 +170,7 @@ javascript_include_tag
 stylesheet_link_tag
 ```
 
-### 1.2 在 html.erb 里引入
+1.2 在 html.erb 里引入
 
 继承于 application, 不用做什么
 
@@ -182,7 +179,7 @@ stylesheet_link_tag
 //= require twitter/bootstrap
 ```
 
-### 2.1，在 css 里引入
+2.1，在 css 里引入
 
 ```ruby
 # application.rb
@@ -195,11 +192,11 @@ javascript_include_tag
 stylesheet_link_tag
 ```
 
-### 2.2，在 css 里引入
+2.2，在 css 里引入
 
 继承于 application, 不用做什么
 
-```
+```ruby
 *= require jisu_voting
 ```
 
@@ -208,11 +205,5 @@ stylesheet_link_tag
 參考：
 
 [RailsGuides Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html)
-<br>
-[Asset Pipeline for Dummies](http://coderberry.me/blog/2012/04/24/asset-pipeline-for-dummies/)
-<br>
-[#279 Understanding the Asset Pipeline](http://railscasts.com/episodes/279-understanding-the-asset-pipeline)
-<br>
-[#341 Asset Pipeline in Production](http://railscasts.com/episodes/341-asset-pipeline-in-production)
 <br>
 [一次搞懂 Assets Pipeline](http://gogojimmy.net/2012/07/03/understand-assets-pipline/)

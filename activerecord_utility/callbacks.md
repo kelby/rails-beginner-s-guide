@@ -16,11 +16,11 @@ define_callbacks :commit, :rollback
 
 和 AbstractController::Callbacks::ClassMethods 用元编程生成过滤器的方法名，是两种手法(尽管最终都是基于 ActiveSupport::Callbacks).
 
-### 是什么？
+#### 是什么？
 
 通过钩子的方式，影响对象的生命周期。
 
-### 有哪些？
+#### 有哪些？
 
 共 19 个：
 
@@ -36,7 +36,7 @@ CALLBACKS = [
 ]
 ```
 
-### 怎么使用？
+#### 怎么使用？
 
 调用方式主要有以下几种:
 
@@ -133,9 +133,9 @@ class Napoleon < ActiveRecord::Base
 end
 ```
 
-### 抽取封装回调方法
+#### 抽取封装回调方法
 
-覆盖方法名，重新定义方法内容(注意：这里定义的是实例方法啊，内容不会被执行，其它类再继承才能执行!) √
+覆盖方法名，重新定义方法内容(注意：这里定义的是实例方法啊，内容不会被执行，其它类再继承才能执行!)
 
 ```ruby
 # 1
@@ -174,11 +174,11 @@ class PictureFile < ActiveRecord::Base
 end
 ```
 
-### 怎么取消后面的回调？
+#### 怎么取消后面的回调？
 
 在方法里返回 `false`
 
-### 如何理解 around
+#### 如何理解 around
 
 用 around_save 举例：
 

@@ -9,3 +9,5 @@
 有 ActiveRecord::Serializers::XmlSerializer 提供：
 
 `to_xml` 方法。实现方式：include and extend ActiveModel::Serializers::Xml，并且里面有同名方法。
+
+> Note: 包括了 XmlSerializer.

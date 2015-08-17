@@ -22,14 +22,14 @@ reset_counters(id, *counters)
 考虑到并发，这里并不只是Rails层面的get，然后set。而是在SQL层面"真正执行时"才增量加减(但没有用锁机制)。下面的加一、减一方法都是这样。
 
 ```ruby
-# 注意：跟的是字段名
+# 注意：参数是字段名
 Post.update_counters 3, comments_count: +1
 
 UPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 \n
 WHERE "posts"."id" = 3
 
 # 原来没有使用计数器，或因为某种原因计数错误。现在我们要使用或修正计数器。
-# Post.update_counters 3, comments_count: post.comments.count
+Post.update_counters 3, comments_count: post.comments.count
 ```
 
 `increment_counter(counter_name, id)`
@@ -45,7 +45,7 @@ WHERE "posts"."id" = 3
 上文提到的"新增计数器"，也可用此方法实现。
 
 ```ruby
-# 注意：跟的关系表名(可以是多个)，但不是字段名
+# 注意：参数是关系表名(可以是多个)，而不是字段名
 Post.reset_counters(3, :comments)
   
 SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]

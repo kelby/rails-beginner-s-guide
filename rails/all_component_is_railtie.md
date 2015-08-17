@@ -1,6 +1,6 @@
 ## Rails 默认组件都是 Railtie
 
-### Action Mailer
+#### Action Mailer
 
 初始化：
 
@@ -12,7 +12,7 @@ set_configs
 compile_config_methods
 ```
 
-### Abstract Controller
+#### Abstract Controller
 
 **引入 Route 相关的 helper**(这里只是调用，定义在 RouteSet 里)。
 
@@ -22,11 +22,11 @@ compile_config_methods
 
 > Note: 可以通过 `include Rails.application.routes.url_helpers` 然后调用和 Routing 相关的 helper 方法。
 
-### Action Controller
+#### Action Controller
 
 **initializer**
 
-```
+```bash
 Assets config    # 配置 assets_dir，默认是 public/
 Set helpers path # 默认是 app/helpers/
 Parameters config
@@ -36,7 +36,7 @@ Compile config methods
 
 配置可通过以下方式查看：
 
-```
+```ruby
 Rails.configuration.action_controller
 
 或
@@ -52,11 +52,11 @@ Rails.configuration.action_controller.keys
 #     :stylesheets_dir, :asset_host, :relative_url_root]
 ```
 
-### Action Dispatch
+#### Action Dispatch
 
 初始化 configure 及其它。
 
-### Action View
+#### Action View
 
 ```
 embed authenticity token in remote forms.
@@ -70,7 +70,7 @@ caching.
 setup action pack.
 ```
 
-### Active Model
+#### Active Model
 
 加载 Action Model 相关 I18n
 
@@ -80,25 +80,29 @@ ActiveSupport.on_load(:i18n) do
 end
 ```
 
-### Active Record
+#### Active Record
 
 获取 database.yml 的配置信息：
 
-```
+```ruby
 Rails.application.config.database_configuration
 ```
 
-... ... 还有，待续。
+... ...
 
-### Active Job
+#### Active Job
 
 配置默认 queue_adapter 为 :inline
 
-### Active Support
+#### Active Support
 
-TODO
+```ruby
+active_support.deprecation_behavior
+active_support.initialize_time_zone
+active_support.initialize_beginning_of_week
+active_support.set_configs
+```
 
-### I18n
+#### I18n
 
 after_initialize 和 before_eager_load 都执行 initialize_i18n
-

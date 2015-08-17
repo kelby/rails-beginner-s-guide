@@ -12,7 +12,7 @@ Ruby 慢，人性化；SQL 快，不易读写。
 
 - 如何实现？
 
-运用中间状态，也就是 Relation. 每次查询并不是真正的查询(因为没走到 SQL 层面)，而是保存一个中间状态，当你所有的查询条件都写完了，才进入 SQL 的层面。理论上，这些简单的查询最后都能组合成 SQL 语句！
+运用中间状态，也就是 Relation. 每次查询并不是真正的查询(因为没走到 SQL 层面)，而是保存一个中间状态，当你所有的查询条件都写完了，才进入 SQL 的层面。理论上，这些简单的查询最后都能组合成 SQL 语句。
 
 - 好处？
 
@@ -22,8 +22,7 @@ Ruby 慢，人性化；SQL 快，不易读写。
 
 - 如何区分？
 
-坏消息：还没有好的办法区分它们。
-好消息：大部分时间不必区分它们。
+在控制台里执行一下查询命令，看返回结果的 class (类型)。有 ActiveRecord::Relation、 ActiveRecord::AssociationRelation 和 ClassName::ActiveRecord_Relation 等包含 Relation 字样的就是了。
 
 Relation 就类似没有名字的 scope 。当涉及跨表查询时，使用链式查询可以很大程度的提高效率。更多请查看接口 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
 

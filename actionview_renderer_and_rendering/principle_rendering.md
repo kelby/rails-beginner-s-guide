@@ -2,7 +2,7 @@
 
 先看例子，然后看看非 Rails 是如何渲染的，需要哪几个重要元素。
 
-### 标准库 ERB 举例
+#### 标准库 ERB 举例
 
 ```ruby
 require "erb"
@@ -69,7 +69,7 @@ end
 @user = User.new("Kelby")
 
 # 打包环境
-binder = self.send(:binding) # calling a private method
+binder = self.send(:binding) # 调用 :binding 私有方法
 
 # 模板
 template = "Hello, <%= @user.name %>"
@@ -89,7 +89,7 @@ Rails 里，对应的有：渲染器(名词)对应着 `render`，上下文对应
 <br>
 Rails 里模板文件众多，而且可以嵌套使用，为了方便查找模板内容，引入了 `lookup_context` 的概念。
 
-### Rails 使用的是 Erubis
+#### Rails 使用的是 Erubis
 
 Rails 用的是 gem 'erubis'，不是 Ruby 标准库里的 ERB，不过它们原理类似，不再深入。
 

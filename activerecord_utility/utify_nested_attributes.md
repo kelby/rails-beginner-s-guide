@@ -190,7 +190,3 @@ invert_of 的另一个作用
 allow_destroy 选项的使用
 [【Rails】fields_for と accepts_nested_attributes_for](http://kzy52.com/entry/2013/07/10/200144)
 和此方法配套使用的是 `fields_for` 方法。
-
-[Rails nested form with has_many :through, how to edit attributes of join model?](http://stackoverflow.com/questions/2182428/rails-nested-form-with-has-many-through-how-to-edit-attributes-of-join-model)
-
-[Complex Rails Forms with Nested Attributes](http://www.sitepoint.com/complex-rails-forms-with-nested-attributes/)

@@ -16,7 +16,7 @@ rails plugin new APP_PATH [options]
 
 **创建新 engine**的时候，也会派上大用场。
 
-### ~~Gemfile Entry~~
+#### ~~Gemfile Entry~~
 
 ```
 github

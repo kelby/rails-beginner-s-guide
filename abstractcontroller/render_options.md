@@ -1,6 +1,6 @@
-## render 参数汇总
+### render 参数汇总
 
-### ActionController::Rendering
+#### ActionController::Rendering
 
 ```
 RENDER_FORMATS_IN_PRIORITY = [:body, :text, :plain, :html]
@@ -17,14 +17,14 @@ RENDER_FORMATS_IN_PRIORITY = [:body, :text, :plain, :html]
 
 update - 必需与 block 结合，里面可以放  Prototype 相关代码，会调用到 Erubis 的 JavaScriptGenerator 模块；这是比较老的用法，现在推荐使用 js.erb 的方式。
 
-### AbstractController::Rendering
+#### AbstractController::Rendering
 
 ```
 :variant
 ```
 
 
-### ActionView::Rendering
+#### ActionView::Rendering
 
 ```
 :variant
@@ -41,7 +41,7 @@ update - 必需与 block 结合，里面可以放  Prototype 相关代码，会�
 
 teplate 和 action，也可以根据是否有 "/" 做判断。
 
-### ActionView::Renderer
+#### ActionView::Renderer
 
 ```
 :partial
@@ -49,7 +49,7 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 
 这里的 render 方法，是 AV and AC 的主要入口，如果有 :partial 则渲染的是局部模板；否则，渲染的是普通模板。
 
-### ActionView::PartialRenderer
+#### ActionView::PartialRenderer
 
 ```
 :spacer_template
@@ -63,7 +63,7 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 ```
 
 
-### ActionView::TemplateRenderer
+#### ActionView::TemplateRenderer
 
 ```
 (主要是以下 7 项)
@@ -82,7 +82,7 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 
 type - 需要与 inline 结合，才能使用，默认为 erb.
 
-### ActionView::Helpers::RenderingHelper
+#### ActionView::Helpers::RenderingHelper
 
 ```
 :partial
@@ -94,7 +94,7 @@ type - 需要与 inline 结合，才能使用，默认为 erb.
 
 View 里 render 方法所在地。
 
-### ActionController::Renderers (Metal 增强组件)
+#### ActionController::Renderers (Metal 增强组件)
 
 ```
 :json
@@ -105,8 +105,3 @@ View 里 render 方法所在地。
 ```
 
 callback - 必需与 json 一起才能使用。
-
-
-
-
-

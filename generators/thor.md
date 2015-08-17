@@ -4,7 +4,7 @@ Thor 和 rake 类似，提供了功能强大的命令行接口。
 
 因为 Rails 的 generator 实际上是封装了 Thor ，所以还有 [Thor Actions](http://rdoc.info/github/erikhuda/thor/master/Thor/Actions.html)
 
-### Actions 实例方法：
+#### Actions 实例方法：
 
 `action`<br>
 封装一个实例对象，并调用它。
@@ -192,7 +192,7 @@ thor :list, :all => true, :substring => 'rails'
 uncomment_lines 'config/initializers/session_store.rb', /active_record/
 ```
 
-### Actions 类方法：
+#### Actions 类方法：
 
 `add_runtime_options!`<br>
 添加了 force、pretend、quiet、skip 这几个 class_option.
@@ -206,7 +206,7 @@ uncomment_lines 'config/initializers/session_store.rb', /active_record/
 `source_root`<br>
 存储并返回定义这个类所在的位置。(Base 已经覆盖此方法)
 
-### 其它
+#### 其它
 
 `argument`<br>
 给我们的"命令行"添加参数，并有 attr_accessor<br>
@@ -249,7 +249,7 @@ class_name:public_instace_method
 `public_task & public_command`<br>
 定义一个实例方法，方法内容就是其父类的私有方法。
 
-```
+```ruby
 public_command :foo
 ```
 

@@ -2,9 +2,9 @@
 
 **底层如何实现邮件"发送"？**
 
-Rails 本身没有实现此功能，但提供选择：调用 Rails 已有发送程序，使用已有邮件服务，新增。
+Rails 本身没有实现此功能，但提供了几种方式供我们选择。
 
-### 调用 Rails 已有发送程序
+#### 调用 Rails 已有发送程序
 
 delivery_method 默认已经有：
 
@@ -17,7 +17,7 @@ delivery_method 默认已经有：
 
 我们可以根据需求，选择、配置、使用它们。
 
-### 使用已有邮件服务
+#### 使用已有邮件服务
 
 - 如使用 gem 'letter_opener' 直接配置：
 
@@ -40,7 +40,7 @@ ActionMailer::Base.add_delivery_method :ses, AWS::SES::Base,
 config.action_mailer.delivery_method = :ses
 ```
 
-### "新增"邮件服务
+#### "新增"邮件服务
 
 完全的"新增"邮件服务，难度上比较大。比较实际的做法是"继承"于已有的实现，并且在 Rails 里注册一下，然后使用。
 
@@ -55,8 +55,8 @@ class CustomSmtpDelivery < ::Mail::SMTP
     self.settings = {:address => "smtp.gmail.com",
                      :port => 587,
                      :domain => 'yourdomain',
-                     :user_name => "username",
-                     :password => "password",
+                     :user_name => "gmail_username",
+                     :password => "gmail_password",
                      :authentication => 'plain',
                      :enable_starttls_auto => true,
                      :openssl_verify_mode => nil
@@ -106,7 +106,7 @@ ActionMailer::Base.custom_smtp_delivery_settings = {
 
 Rails 已有发送程序及 gem 'letter_opener' 就是用这种方式定义，之后提供给我们使用的。
 
-### 其它
+#### 其它内容
 
 提供类方法：
 

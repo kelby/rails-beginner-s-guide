@@ -77,7 +77,7 @@ end
 
 除此之外，还有类方法：
 
-```
+```ruby
 config # Configuration 的实例对象。实例方法 config 和 类方法 config_accessor 调用到它。
 
 configure # 直接封装 config

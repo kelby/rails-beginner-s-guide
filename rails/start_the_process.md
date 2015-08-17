@@ -84,11 +84,11 @@ config/application.rb
 
 相关代码：
 
-```
+```ruby
 AppName.initialize!
 ```
 
-```
+```ruby
 run_initializers(group, self)
 
 

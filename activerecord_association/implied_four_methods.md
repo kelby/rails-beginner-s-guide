@@ -1,6 +1,6 @@
 ## 4 个关联类方法的引申
 
-### 注意事项
+#### 注意事项
 
 只有 :has_many, :has_one, :belongs_to 才有可能自动计算 inverse，也就是说 has_and_belongs_to_many 不可以。
 

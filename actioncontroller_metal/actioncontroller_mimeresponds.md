@@ -1,6 +1,6 @@
 ## Mime Responds
 
-### 实例方法
+#### 实例方法
 
 ```
 respond_to
@@ -18,7 +18,7 @@ format.html.phone # 行内风格
 format.html{ |variant| variant.phone } # 代码块风格
 ```
 
-### Collector
+#### Collector
 
 扩展了 AbstractController::Collector，并且，增加了对"变种"的支持。
 

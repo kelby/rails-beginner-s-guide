@@ -7,12 +7,16 @@ String 扩展里的 inflections 全部是直接封装这里的方法而来。
 ```
 pluralize
 singularize
+
 camelize
 underscore
+
 humanize
 titleize
+
 tableize
 classify
+
 dasherize
 demodulize
 deconstantize

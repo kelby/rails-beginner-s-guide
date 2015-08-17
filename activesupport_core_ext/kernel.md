@@ -13,7 +13,6 @@ enable_warnings
 
 quietly
 
-
 silence_stream
 silence_warnings
 

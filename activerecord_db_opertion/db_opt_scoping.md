@@ -9,7 +9,7 @@
 | unscoped | 跳过之前设置的 scope |
 | all | all 方法，默认已经 scope |
 
-### scope
+#### scope
 
 重点说说这个方法。
 
@@ -49,7 +49,7 @@ end
 
 `Shirt.red.dry_clean_only` 运行结果是 `red` 和 `dry_clean_only` 综合的结果。`Shirt.red.dry_clean_only.count` 返回的是 `red` 和 `dry_clean_only` 综合结果的数目。在这里和 `Shirt.red.dry_clean_only.average(:thread_count)` 类似。
 
-**scope 是是一步步走下去的**
+**scope 是一步步走下去的**
 
 ```ruby
 class Person < ActiveRecord::Base
@@ -112,7 +112,7 @@ Article.published.featured.latest_article
 Article.featured.titles
 ```
 
-### default_scope
+#### default_scope
 
 1) 一个参数，需要以 proc 的形式定义：
 
@@ -127,7 +127,7 @@ end
 
 4) 基于第2、3点请慎用。
 
-### 为什么参数要是 proc 类型？
+#### 为什么参数要是 proc 类型？
 
 ```ruby
 scope :recent, -> { where("created_at > ?", 2.day.ago) } 
