@@ -53,7 +53,7 @@ helper.send :extend, UsersHelper
 ApplicationController 实例。
 可以直接使用 ApplicationController 的方法等。
 
-### 其它
+#### 其它
 
 以下有的内容并非 Rails 专有，但很实用，一并列出。
 

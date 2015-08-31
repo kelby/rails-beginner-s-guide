@@ -1,7 +1,7 @@
 ### JavaScript Helper
 
 ```
-escape_javascript & j
+j & escape_javascript
 
 javascript_tag
 ```

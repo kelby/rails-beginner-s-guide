@@ -4,7 +4,7 @@
 
 实例方法：
 
-```
+```ruby
 # 以下方法和 RSpec 对应，可以使用 assert_x 代替
 must_be
 must_be_close_to

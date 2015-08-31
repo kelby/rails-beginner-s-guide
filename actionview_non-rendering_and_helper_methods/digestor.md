@@ -11,10 +11,10 @@ digest
 目前，Rails 里有两个地方调用了它。
 
 1)
-它被 Cache Helper 调用。(也就是说调用 cache helper 方法时，会调用到它)
+Cache Helper 会调用。(也就是说调用 cache helper 方法时，会调用到它)
 
 2)
-此外，Action Controller 里的 Etag With Template Digest 也会调用到它。(可配置将模板 digest 的结果放到 etaggers 里)
+Action Controller 里的 Etag With Template Digest 也会调用。(可配置将模板 digest 的结果放到 etaggers 里)
 
 实例方法：
 

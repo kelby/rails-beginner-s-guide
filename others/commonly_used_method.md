@@ -73,7 +73,7 @@ Foo.new.hello # => "world"
 `attr_internal_writer`
 
 ```
-功能类似 attr_writer，但内部实现有一点点不同。
+功能类似 attr_writer，但内部实现有一点不同。
 ```
 
 `info` `debug` `warn` `error` `fatal` `unknown`

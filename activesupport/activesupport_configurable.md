@@ -1,6 +1,6 @@
 ## Configurable
 
-### 实例方法
+#### 实例方法
 
 `config`
 用 @_config 实例变量来保存配置信息。
@@ -25,7 +25,7 @@ user.config.allowed_access # => true
 user.config.level          # => 1
 ```
 
-### 类方法
+#### 类方法
 
 `config_accessor`
 以声明的形式，同时定义类方法和实例方法。
@@ -85,9 +85,9 @@ configure # 直接封装 config
 
 > Note: 它和 railties 目录下的 Configurable 和 Configuration 都没有关系。目前只发现有 AbstractController::Base 引用到它(其子类由于继承关系，也可以使用)。
 
-### ~~Configuration~~
+#### ~~Configuration~~
 
-```
+```ruby
 # 类方法
 compile_methods!
 

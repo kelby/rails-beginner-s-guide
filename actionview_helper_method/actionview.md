@@ -9,7 +9,7 @@
 
 按照使用方式不同，又可分为三类：
 
-- Form Builder 对 Model 依赖最重，表单对象几乎等价于 Model 对象。
+- Form Builder 对 Model 依赖最重，表单对象几乎等价于 record 对象。
 - Form Helper 和 Form Options Helper 次之。
 - Form Tag Helper 对 Model 依赖最轻，没有表单对象的概念，操作上几乎等价于 HTML（其实就是语法糖）。
 

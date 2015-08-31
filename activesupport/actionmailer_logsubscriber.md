@@ -4,10 +4,10 @@
 
 目前 Rails 侦听以下方法：
 
-```
-deliver - 发送
-receive - 接收
-process - 处理
+```ruby
+deliver # 发送
+receive # 接收
+process # 处理
 ```
 
 除上述方法外，还有：

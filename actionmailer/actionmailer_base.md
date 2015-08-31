@@ -2,7 +2,7 @@
 
 它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
 
-它是 Action Mailer 里其它模块的集合中心（其它模块不直接对外提供接口，而是通过它完成）。同时，它还提供一些对外的接口，供我们直接使用。
+它是 Action Mailer 里其它模块的集合中心（其它模块不直接对外提供接口，而是通过 Base 完成）。同时，它还提供一些对外的接口，供我们直接使用。
 
 #### 作用
 
@@ -178,7 +178,7 @@ Rails 会先创建对应的 Mail 邮件对象，之后才进行后续处理。
 
 细心的你应该发现，我们在 Mailer 类里定义的是实例方法，但创建 mailer 对象用的却是类方法。
 
-这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数对待)创建 MessageDelivery 对象。
+这里隐藏着魔法，当找不到此类方法时，就会调用 Rails 重新实现的 `method_missing` 类方法, 会先检查 action_methods 里是否有同名方法，如果有，则(把此方法当做参数)创建 MessageDelivery 对象。
 
 #### 其它
 

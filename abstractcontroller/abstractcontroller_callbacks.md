@@ -1,6 +1,6 @@
 ## Callbacks
 
-Controller 里的回调。
+Controller 里可用的回调：
 
 ```ruby
 before_action & append_before_action

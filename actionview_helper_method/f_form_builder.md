@@ -2,8 +2,8 @@
 
 Form Builder 是面向对象。
 
-你要修改的是 model 对象，途径是通过表单实现。
-所以，model 对象和表单就必需有某种联系。
+你要修改的是 record 对象，途径是通过表单实现。
+所以，record 对象和表单就必需有某种联系。
 在这里，这种联系由 Form Builder 及其实例对象完成。
 
 **源代码里，有 3 个来源：**
@@ -16,7 +16,7 @@ form_options_helper.rb
 
 大部分是封装 @template
 
-大部分以 f.xxx 的形式调用
+大部分以 f.xxx 的形式调用。
 
 > Note: f 就是 FormBuilder 的实例对象，所以可以调用 FormBuilder 的实例方法。
 
@@ -73,15 +73,4 @@ submit
 
 time_select
 time_zone_select
-```
-
-另外，还有：
-
-```
-multipart=
-
-to_model
-to_partial_path
-
-emitted_hidden_id?
 ```

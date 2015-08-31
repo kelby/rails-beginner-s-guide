@@ -25,4 +25,4 @@ A.direct_descendants
 => [B, C]
 ```
 
-手法：重写 inherited 方法，当发生继承关系时，记录到 @@direct_descendants 里。
+手法：重写 inherited 方法，当发生继承关系时，记录到 `@@direct_descendants` 里。

@@ -1,6 +1,6 @@
 ### 一般配置项
 
-```
+```ruby
 config.after_initialize takes
 
 config.asset_host

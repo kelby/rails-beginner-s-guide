@@ -47,7 +47,7 @@ get 'hello', to: HelloController.action(:index)
 
 #### 其它
 
-一般模块名和同名目录都是有联系的，但 metal 不是，单指的是 metal.rb 这个文件，它和 metal/ 目录下的文件及内容没有关系。
+一般模块名和同名目录都是有联系的，但 metal 不是，它单指的是 metal.rb 这个文件，和 metal/ 目录下的文件及内容没有关系。
 
 - 直接使用 Metal 时，要清楚自己在做什么。
 

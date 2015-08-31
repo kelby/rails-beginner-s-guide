@@ -54,16 +54,35 @@ initialize_dup
 generate_message
 ```
 
-视图里常用写法：
+视图里常用写法举例：
 
 ```ruby
-<%= @record.errors.full_message.join(";") %>
+<%= @record.errors.full_messages.join(";") %>
+
+<%= @record.errors.full_messages.first %>
 ```
 
 ```ruby
 <% if @record.errors[:title].present? %>
   <%= @record.errors[:title].join('') %>
 <% end %>
+```
+
+自己定义的校验举例：
+
+```ruby
+# 用户创建、更新订单（会更改开始工作日期的地方）， 开始工作时间不能早于今天
+before_save :validates_of_beginning_work_date
+
+def validates_of_beginning_work_date
+  if self.beginning_work_date_changed? && (self.beginning_work_date < Time.now.beginning_of_day)
+    # errors 不为空，做提醒。回调返回 false 就不能保存。
+    self.errors.add :beginning_work_date, '不能小于当前时间'
+    return false
+  end
+end
+
+# 注意在 local 里对 beginning_work_date 进行翻译，以便更友好的显示报错信息。
 ```
 
 > Note: 因为 include Enumerable，所以可以看出很多与其同名的方法。

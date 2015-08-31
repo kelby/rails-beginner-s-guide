@@ -5,7 +5,7 @@ rake db:migrate 等迁移命令，定义在 Active Record 的 databases.rake 里
 
 提供接口如下：
 
-```
+```ruby
 create_current    # 对应 rake db:create
 create_all        # 对应 rake db:create:all
 

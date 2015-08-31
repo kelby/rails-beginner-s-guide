@@ -71,7 +71,7 @@ end
 
 类方法：
 
-```
+```ruby
 # 动词，接 block
 rake_tasks
 console
@@ -79,7 +79,7 @@ runner
 generators
 ```
 
-```
+```ruby
 configure # 动词
 
 railtie_name
@@ -92,7 +92,7 @@ abstract_railtie? # 默认是 Rails::Railtie、Rails::Engine 和 Rails::Applicat
 
 实例方法：
 
-```
+```ruby
 config    # 名词
 configure
 railtie_namespace

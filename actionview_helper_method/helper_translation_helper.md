@@ -1,8 +1,8 @@
 ### Translation Helper
 
 ```
-translate & t
-localize  & l
+t & translate
+l & localize
 ```
 
 翻译和本地化。

@@ -2,7 +2,7 @@
 
 实例方法：
 
-```
+```ruby
 assert
 assert_empty
 assert_equal
@@ -51,7 +51,7 @@ flunk
 
 除上述方法外，还有：
 
-```
+```ruby
 capture_io
 capture_subprocess_io
 

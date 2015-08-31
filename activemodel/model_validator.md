@@ -2,7 +2,7 @@
 
 自定义校验器，有两种方式：继承于 Validator 或 EachValidator.
 
-### 继承于 Validator
+#### 继承于 Validator
 
 校验器在整个项目生命周期中只初始化一次。它针对的是整个对象，并且自动执行。这种方式，由 `validates_with` 加校验器名字的方式进行调用。
 
@@ -25,7 +25,7 @@ class Person
 end
 ```
 
-### 继承于 EachValidator
+#### 继承于 EachValidator
 
 实际上，推荐使用这种方式。这种方式，由 `validates` 以参数的方式进行调用。
 

@@ -3,19 +3,15 @@
 #### ActionController::Rendering
 
 ```
-RENDER_FORMATS_IN_PRIORITY = [:body, :text, :plain, :html]
-
 :plain
 :update
 :html
 :nothing
 :body
-:status
+:text
 
 :status, :content_type, :location
 ```
-
-update - 必需与 block 结合，里面可以放  Prototype 相关代码，会调用到 Erubis 的 JavaScriptGenerator 模块；这是比较老的用法，现在推荐使用 js.erb 的方式。
 
 #### AbstractController::Rendering
 
@@ -23,18 +19,16 @@ update - 必需与 block 结合，里面可以放  Prototype 相关代码，会�
 :variant
 ```
 
-
 #### ActionView::Rendering
 
 ```
 :variant
 :formats
 
-:template, :action
-
+:template
+:action
 :partial
-
-:partial, :file, :template
+:file
 
 :prefixes
 ```
@@ -51,6 +45,8 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 
 #### ActionView::PartialRenderer
 
+AbstractRenderer 的子类之一。
+
 ```
 :spacer_template
 :layout
@@ -65,6 +61,8 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 
 #### ActionView::TemplateRenderer
 
+AbstractRenderer 的子类之一。
+
 ```
 (主要是以下 7 项)
 :body
@@ -72,17 +70,16 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 :plain
 :html
 :file
-:inline
+:inline 和 :type
 :template
 
 :layout
 :locals
-:type
 ```
 
-type - 需要与 inline 结合，才能使用，默认为 erb.
-
 #### ActionView::Helpers::RenderingHelper
+
+View 里 render 方法所在地，对外提供接口，处于最外层。
 
 ```
 :partial
@@ -90,18 +87,14 @@ type - 需要与 inline 结合，才能使用，默认为 erb.
 :locals
 ```
 
+作用：根据参数是不是 Hash 类型，参数有没有带 block，决定了如何渲染。
+<br>
 如果不传递 hash，则默认渲染 partial 并且第 2 个及之后的参数做为 locals hash.
 
-View 里 render 方法所在地。
-
-#### ActionController::Renderers (Metal 增强组件)
+#### ActionController::Renderers (Metal 增强模块)
 
 ```
-:json
+:json 和 :callback
 :js
 :xml
-
-:callback
 ```
-
-callback - 必需与 json 一起才能使用。

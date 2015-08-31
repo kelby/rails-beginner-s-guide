@@ -6,7 +6,7 @@
 
 |方法|解释|
 |--|--|
-| bind | 不知道干嘛用|
+| bind | |
 | create_with | 创建一个 record 对象，调用者是 Relation 对象. <br>没找到合适的使用场景<br>设置的是 create_with_value 的值，在很多地方会间接用到它|
 | distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
 | eager_load |后文解释|

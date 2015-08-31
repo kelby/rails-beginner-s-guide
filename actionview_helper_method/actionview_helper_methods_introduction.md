@@ -1,6 +1,6 @@
 ## 与表单非直接相关的辅助方法
 
-Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、number 和 model 对象等。默认它们可以在所有模板上使用。
+Rails 提供了很多的 helper 供我们使用，处理 asset、date、form、number 和 record 对象等。默认它们可以在所有模板上使用。
 
 基于 Tag 实现的 helper, 部分可以到 action_view/helpers/tags 目录下找到相应文件，里面的 render 方法里面有常用的可选参数。
 

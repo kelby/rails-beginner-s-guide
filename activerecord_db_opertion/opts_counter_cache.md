@@ -2,7 +2,7 @@
 
 按要求加减指定计数器的值、统计数目的加一、统计数目的减一、重置计数器的值。
 
-```
+```ruby
 update_counters(id, counters)
 
 # 下面这两个方法基于 update_counters

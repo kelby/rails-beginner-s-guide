@@ -6,7 +6,7 @@
 
 此外，还有相关 module 及方法：
 
-### JSON
+#### JSON
 
 ```ruby
 # 封装了上面的 serializable_hash，并提供 :root 选项 
@@ -16,7 +16,7 @@ as_json
 from_json
 ```
 
-### Xml
+#### Xml
 
 ```ruby
 # 将对象转化成 xml 格式

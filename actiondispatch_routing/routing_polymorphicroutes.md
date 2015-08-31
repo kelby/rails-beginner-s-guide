@@ -10,7 +10,7 @@ polymorphic_path
 ```
 
 1. 不仅仅是多态关联里的'多态'
-2. 可根据参数(model 对象)，自动计算生成 url
+2. 可根据参数(record 对象)，自动计算生成 url
 3. 有几个常用方法是基于它实现的
 4. 不用指定具体的路由 helper 方法
 5. 对象类型不确定或嵌套对象
@@ -87,7 +87,7 @@ polymorphic_path([@user, Document], :action => 'filter', :sort_order => 'this-or
 
 #### 与 url_for 的区别
 
-url_for 比较死板，从它接受的参数就知道了。它不能接受 model 对象 + 可选参数的形式。
+url_for 比较死板，从它接受的参数就知道了。它不能接受 record 对象 + 可选参数的形式。
 
 url_for 不能直接指定 host, 需要在另一个地方指定，它只有调用的份。如果你为了一个 url_for 而更改这个 host 其它方法或其它 url_for 会不会受影响？
 

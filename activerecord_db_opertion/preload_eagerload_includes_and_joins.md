@@ -54,7 +54,7 @@ a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面
 
 #### joins
 
-普通的查询条件，关联对象不需要放到内存。
+普通的查询条件，关联对象不会放到内存。
 
 ```ruby
 User.joins(:posts)

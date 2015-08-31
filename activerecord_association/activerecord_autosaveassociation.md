@@ -23,7 +23,7 @@ reload
 
 除上述方法外，还有私有类方法：
 
-```
+```ruby
 define_non_cyclic_method
 
 # 给指定的关联添加 autosave

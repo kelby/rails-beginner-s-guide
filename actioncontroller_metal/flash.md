@@ -24,7 +24,7 @@ end
 
 ```ruby
 # show.html.erb
-<% if flash[:notice] %>
+<% if flash[:notice].present? %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 ```

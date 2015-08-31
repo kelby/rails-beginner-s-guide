@@ -1,4 +1,4 @@
-# Active Record 其它
+## Active Record 其它
 
 - ~~type~~
 

@@ -4,10 +4,10 @@
 
 #### Test Case
 
-```
+```ruby
 assert_nothing_raised
 
-# test/unit backwards compatibility methods
+# 为了向之前的 test/unit 兼容
 alias :assert_raise :assert_raises
 alias :assert_not_empty :refute_empty
 alias :assert_not_equal :refute_equal
@@ -31,7 +31,7 @@ test_order=
 
 test_order 支持：
 
-```
+```ruby
 ActiveSupport::TestCase.test_order # => :sorted
 
 :random   # 随机
@@ -83,7 +83,7 @@ run_in_isolation
 
 #### Setup & Teardown 相关类方法
 
-```
+```ruby
 setup
 teardown
 

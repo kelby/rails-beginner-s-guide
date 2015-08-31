@@ -1,8 +1,8 @@
 ## 其它
 
-### 为什么有的 helper 我不推荐？
+#### 为什么有的 helper 我不推荐？
 
-也有一些是我的经验之谈，仅供参考。
+以下是我的一些经验之谈，仅供参考。
 
 - 基于其它 helper，并且功能上十分类似；
 - 使用它，写出来的代码反而很丑陋；
@@ -11,11 +11,11 @@
 
 不要迷信 Rails 提供的 helper，有的用起来难读、难懂，还不如自己写。别忘了，设计软件的重点：好读、易维护、以全局观思考。
 
-### ~~Dependency Tracker~~
+#### ~~Dependency Tracker~~
 
 供 Digestor 使用，digest 的时候可以以数组的形式传 dependencies 作为其可选参数。
 
-### ~~几个比较有意思的 helper 方法~~
+#### ~~几个比较有意思的 helper 方法~~
 
 **atom_feed**
 
@@ -31,11 +31,11 @@
 
 **fields_for**
 
-构建表单。区别于 form_for，与 model 对象直接关联不大。
+构建表单。区别于 form_for，与 record 对象直接关联不大。
 
 **form_for**
 
-构建表单。和 model 对象关联比较大。
+构建表单。和 record 对象关联比较大。
 
 **render**
 

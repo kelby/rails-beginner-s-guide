@@ -4,7 +4,7 @@ Abstract Controller 部分模块在前面已经详细介绍了，下面对其余
 
 #### Translation
 
-I18n 相关的 `translate & t` 和 `localize & l` 方法。
+I18n 相关的 `t & translate` 和 `l & localize` 方法。
 
 区别于 Active Model 的 Translation 模块。
 
@@ -29,7 +29,7 @@ include Rails.application.routes.url_helpers
 
 之后，就能调用和 Routing 相关的 helper 方法。
 
-`routes.rb` 里定义的每一个路由规则都会有对应的 x_url 和 x_path 等 helper 方法可用，这里 include 了这些 helper.
+`routes.rb` 里定义的每一个路由规则都会有对应的 x_url 和 x_path 等 helper 方法可用，这里 include 了这些 helper 方法。
 
 然后，Action Controller 和 Action Mailer 的 Railtie 又 extend Routes Helpers，所以可用。
 

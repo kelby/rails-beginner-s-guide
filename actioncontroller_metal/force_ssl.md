@@ -9,7 +9,7 @@ force_ssl_redirect
 重定向到 https 链接, url 会改变。  
 重定向这部分用到了 redirect_to 方法，提供可选参数 :status, :flash, :alert, :notice
 
-如果没有(用参数)指定链接，则用当前链接，但是 https 协议访问。可用于注册、登录等页面。
+如果没有(用参数)指定链接，则用当前链接，但会以 https 协议访问。可用于注册、登录等页面。
 链接这部分用到了 url_for 方法，提供可选参数 :protocol, :host, :domain, :subdomain, :port, :path
 
 上面是实例方法，对单个 action 有用；  

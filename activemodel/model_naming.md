@@ -10,7 +10,7 @@ model_name
 
 类方法(调用方式奇怪，一般我们不会使用)：
 
-```
+```ruby
 param_key
 route_key
 singular_route_key

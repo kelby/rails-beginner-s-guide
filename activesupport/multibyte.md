@@ -13,7 +13,7 @@ proxy_class=
 ActiveSupport::Multibyte.proxy_class = CharsForUTF32
 ```
 
-### Chars
+#### Chars
 
 Rails 里很多字符串，都会先转换成它的实例对象，然后再处理。
 
@@ -69,7 +69,7 @@ end
 
 > Note: Chars 还封装使用了下面的 Unicode.
 
-### Unicode
+#### Unicode
 
 类方法：
 

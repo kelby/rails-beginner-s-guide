@@ -85,7 +85,7 @@ run routes
 
 **注意：**上面已经使用到了 Action Dispatch 里的"各个 Middleware 组件"，但并没有使用到 Action Controller 里的"各个 Metal 增强组件"。
 
-#### 引用 Metal 增强组件 & Controller 里纯手工打造 View 渲染相关代码
+#### 引用 Metal 增强模块 & Controller 里纯手工打造 View 渲染相关代码
 
 ```ruby
 # config.ru

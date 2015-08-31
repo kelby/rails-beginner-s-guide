@@ -16,7 +16,7 @@ end
 
 各个实例方法：
 
-```
+```ruby
 generate
 
 # 以下几个方法 initialize 时被调用

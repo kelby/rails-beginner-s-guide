@@ -129,7 +129,7 @@ class Napoleon < ActiveRecord::Base
   before_destroy do
     # some code
   end
-  ...
+  # ...
 end
 ```
 

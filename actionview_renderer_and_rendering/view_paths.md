@@ -2,17 +2,6 @@
 
 把路径信息放到 PathSet，之后的 lookup_context 需要它们。
 
-**实例方法：**
-
-```ruby
-append_view_path
-prepend_view_path
-
-details_for_lookup
-
-lookup_context
-```
-
 **类方法：**
 
 ```
@@ -28,6 +17,17 @@ view_paths=
 当我们的自己创建或者使用的 gem 引入的文件目录结构和 Rails 默认不一样，但且希望渲染到视图里的模板(局部模板)，就会报错，此方法可以帮助我们。
 
 `prepend_view_path` 和 append_view_path 方法类似。
+
+**实例方法：**
+
+```ruby
+append_view_path
+prepend_view_path
+
+details_for_lookup
+
+lookup_context
+```
 
 **其它：**
 

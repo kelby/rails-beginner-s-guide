@@ -104,7 +104,7 @@ ActionMailer::Base.custom_smtp_delivery_settings = {
 }
 ```
 
-Rails 已有发送程序及 gem 'letter_opener' 就是用这种方式定义，之后提供给我们使用的。
+Rails 已有发送程序及 gem 'letter_opener' 都是用这种方式实现，之后提供给我们使用的。
 
 #### 其它内容
 

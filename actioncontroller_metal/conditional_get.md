@@ -18,7 +18,7 @@ etag
 
 **实例方法：**
 
-```
+```ruby
 fresh_when
 
 # 还有

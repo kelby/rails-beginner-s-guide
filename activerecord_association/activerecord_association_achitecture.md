@@ -1,6 +1,6 @@
 # Associations 关联
 
-```
+```bash
 Associations 文件下
     4 个关联类方法 -- (1)
 

@@ -2,7 +2,7 @@
 
 报错或程序运行反馈信息过多、过杂，找不到关键点？你可以使用 Backtrace Cleaner 过滤无用信息。
 
-### 单独使用
+#### 单独使用
 
 三步即可：
 ```ruby
@@ -26,7 +26,7 @@ bc.clean(exception.backtrace) #
 | remove_filters! | 移除之前的'替换'规则 |
 | remove_silencers! | 移除之前的'删除'规则 | 
 
-### 结合 Rails 使用
+#### 结合 Rails 使用
 
 Rails 启动时就已使用 backtrace_cleaner, 并且抛异常时会对异常消息进行过滤。
 

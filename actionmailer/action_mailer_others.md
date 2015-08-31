@@ -65,7 +65,7 @@ create    test/mailers/user_mailer_test.rb
 Rails 自带的拦截器，可以在线预览邮件。默认没有开启，想使用的话，需要手动启动：
 
 ```ruby
-ActionMailer::Base.register_preview_interceptor(ActionMailer::InlinePreviewInterceptor)
+ActionMailer::Base.register_preview_interceptor ActionMailer::InlinePreviewInterceptor
 ```
 
 #### ~~Collector~~

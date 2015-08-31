@@ -16,7 +16,7 @@ Rack 提供了一个"与 Web服务器打交道"最精简的接口，通过这个
   - [HTTP headers](http://en.wikipedia.org/wiki/List_of_HTTP_headers) (类型为 Hash)
   - [HTTP body data](http://en.wikipedia.org/wiki/HTTP_body_data) (类型能接受 `each` 方法即可)
 
-### 最小的 Rack
+#### 最小的 Rack
 
 ```ruby
 Proc.new { |env|
@@ -28,7 +28,7 @@ Proc.new { |env|
 }
 ```
 
-### 使用举例
+#### 使用举例
 
 ```ruby
 # my_rack_app.rb
@@ -56,7 +56,7 @@ run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
 
 ... 完。
 
-### 再举个例子：
+#### 再举个例子：
 
 可以封装 Rack，得到我们自己的 YourRack，或：
 
@@ -76,7 +76,7 @@ class YourRack
 end
 ```
 
-### 再使用举例
+#### 再使用举例
 
 'rack/contrib' 可以自动加载 Rack 包含的所有组件，以下例子可用 `rackup config.ru` 运行：
 

@@ -2,7 +2,7 @@
 
 `layout`
 
-布局，影响渲染的效果，但和渲染不直接相关。
+布局，影响渲染的效果，但和渲染没有直接关联。
 
 ```ruby
 # String
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 end
 ```
 
-此外，layout 有继承关系：
+layout 有继承关系：
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -45,6 +45,6 @@ class TillController < BankController
 end
 ```
 
-> Note: 没有 layout true 这种写法，会报错的。
-
 此外，还有可选参数 `:only` 和 `:except`
+
+> Note: 没有 layout true 这种写法，会报错的。

@@ -1,6 +1,6 @@
 ### Action Controller Log Subscriber
 
-```
+```ruby
 deep_munge
 
 halted_callback

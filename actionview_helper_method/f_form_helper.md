@@ -4,8 +4,6 @@ Form Helper 是面向函数。
 
 相对与 Form Builder 它更灵活，因为它没有限定对象。有时候我们'需要'这样做，而有时候我们没'必要'。
 
-form_for 和 fields_for 是另类
-
 大部分封装 Tags::Xxx
 
 名字 Form Helper 起得有一点不合适。
@@ -53,3 +51,5 @@ url_field
 
 week_field
 ```
+
+form_for 和 fields_for 是另类。

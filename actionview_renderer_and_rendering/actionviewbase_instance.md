@@ -96,7 +96,7 @@ curl http://dev.shixian.com:3000/hello_world
 Hello from controller context!
 ```
 
-> Note: 本示例仅为了有助于理解 view_context 及理解 Rails 是如何渲染内容的，不可用于实例例子。
+> Note: 本示例仅为了有助于理解 view_context 及理解 Rails 是如何渲染内容的，不可用于实际项目。
 
 参考
 

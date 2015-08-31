@@ -48,7 +48,7 @@ attribute_method_affix prefix: 'restore_', suffix: '!'
 
 下面是对它们的解释
 
-```
+```ruby
 x_changed?     # 返回 true/false, x 属性有没有更改？
 x_change       # 返回一个数组有两个元素，第 1 个为 x 属性更改前的值，第 2 个为 x 属性更改后的值
 x_will_change! # 声明 x 元素已被更改，即使实际上它并没有更改。
@@ -60,7 +60,7 @@ restore_x!     # 消除对 x 属性的更改
 
 除上述方法外，还有
 
-```
+```ruby
 changed?       # 返回 true/false，整个对象有没有被更改？
 changed        # 返回一个数组，所有被更改的属性
 changes        # 返回一个 Hash. key 被更改的元素，value 是一个数组

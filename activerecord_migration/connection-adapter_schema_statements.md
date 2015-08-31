@@ -2,7 +2,7 @@
 
 重要的操作或问询如下(实例方法)：
 
-```
+```ruby
 # index(索引)
 add_index
 remove_index

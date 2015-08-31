@@ -2,26 +2,12 @@
 
 用来建立和数据库的连接。(配置、建立连接、日志，其中的建立连接，但连接适配不是它做的。)
 
-```
+```ruby
 # 根据配置信息进行连接
 establish_connection
 
-# 是否已连接
-connected?
-
 # 连接信息
 connection
-
-# 连接的配置信息
-connection_config
-
-connection_id
-connection_id=
-
-connection_pool
-
-remove_connection
-retrieve_connection
 ```
 
 通过 `establish_connection` 连接数据库，我们不必加载整个 Rails 环境，仅使用数据库操作这部分。
@@ -170,4 +156,22 @@ ActiveRecord::Base.connection.table_exists? 'some_table'
 
 ```ruby
 ActiveRecord::Base.connection.execute "ALTER TABLE some_table CHANGE COLUMN..."
+```
+
+其它方法：
+
+```ruby
+# 连接的配置信息
+connection_config
+
+# 是否已连接
+connected?
+
+connection_id
+connection_id=
+
+connection_pool
+
+remove_connection
+retrieve_connection
 ```

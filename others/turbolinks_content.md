@@ -3,12 +3,14 @@
 #### Ruby 层面：
 
 	Controller
-		3 个回调方法：设置 X-XHR-Redirected-To，只对 GET 请求有效，某种情况的跨域是不允许的（用到了 X-XHR-Referer）
+		3 个回调方法：设置 X-XHR-Redirected-To，只对 GET 请求有效，某种情况的跨域是不允许的
+		（用到了 X-XHR-Referer）
 		重写 referer 方法(用到了 X-XHR-Referer )
 		更改 redirect_to 计算规则（用到了 X-XHR-Referer ）
 		重写 redirect_to 方法，某种情况下使用 Turbolinks.visit 代替
 		重写 render 方法，某种情况下使用 Turbolinks.replace 代替
-		render 和 redirect_to 可以额外处理参数：turbolinks，keep，change，flush （各个参数对应功能可以查看文档）
+		render 和 redirect_to 可以额外处理参数：turbolinks，keep，change，flush
+		（各个参数对应功能可以查看文档）
 	Router
 		加上 _turbolinks_redirect_to（用到了 HTTP_X_XHR_REFERER ）
 	View
@@ -45,7 +47,7 @@
 	进度条
 		也可以做得很复杂
 	进度条之... API
-	其它：	ua，requestMethodIsSafe，browserSupportsTurbolinks，browserSupportsCustomEvents
+	其它：ua，requestMethodIsSafe，browserSupportsTurbolinks，browserSupportsCustomEvents
 	@Turbolinks 之 API
 
 #### 文档：
@@ -58,12 +60,14 @@
 	过滤缓存（配置要不要用即可，配置某个页面不使用）
 	进度条（好看，并且浏览器自带的进度条由于特性没有了）（配置要不要使用，配置样式，手动调用）
 	永久保存（配置即可），例如全局的侧边栏，并且只加载一次
-	配置某个地方的链接不使用 turboolinks，配置除 .html 外其它后缀的链接也加 turbolinks，配置不要所有 redirect_to 都使用 turbolinks 特性只在部分 Controller 单独引入使用
+	配置某个地方的链接不使用 turboolinks，配置除 .html 外其它后缀的链接也加 turbolinks，
+	    配置不要所有 redirect_to 都使用 turbolinks 特性只在部分 Controller 单独引入使用
 	允许使用老的 JS 写法 jquery.turbolinks （引入即可）
 	配置是否检测 JS 或 CSS 为最近版本（假设我们重新部署，md5 变了，有时候 turbolinks 不知道）
 	配置 View 里的 script 只执行一次，还是每次都执行
 	手动调用，明确的指定使用 turbolinks
-	局部替换（也可以配合 data-turbolinks-temporary 一起使用）... 客户端：要手动调用方法；服务端：同样的，要手动调用方法
+	局部替换（也可以配合 data-turbolinks-temporary 一起使用）... 
+	    客户端：要手动调用方法；服务端：同样的，要手动调用方法
 	配置（全局或针对某个请求），让浏览器不要缓存 turbolinks 请求
 	客户端 API (api 是 api，事件是事件，不要搞混了)
 	我们极度依赖 pushState （在这里，做为用户，我们就不要考虑了吧~~）

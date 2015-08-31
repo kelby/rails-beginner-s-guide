@@ -46,7 +46,7 @@ post.cache_key
 
 ```
 <% cache [ 'a_post', post ] do %>
-  … ...
+  ... ...
 <% end %>
 ```
 

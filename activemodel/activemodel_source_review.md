@@ -1,6 +1,6 @@
 ## 其它
 
-### ~~ForbiddenAttributesError~~
+#### ~~ForbiddenAttributesError~~
 
 ```ruby
 class Person < ActiveRecord::Base

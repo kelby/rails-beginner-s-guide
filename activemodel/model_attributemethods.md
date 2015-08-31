@@ -74,7 +74,7 @@ person.me_mateys_profession_is_in_pirate? # => true
 
 **类方法**
 
-```
+```ruby
 attribute_method_prefix
 attribute_method_suffix
 attribute_method_affix

@@ -2,7 +2,7 @@
 
 ActiveSupport::Callbacks 本身可分为几部分。
 
-### Callback Chain 回调链
+#### Callback Chain 回调链
 
 `define_callbacks` 主要作用就是定义一条"回调链"，每一条链都是 Callback Chain 的实例对象。
 
@@ -27,7 +27,7 @@ Rails 没有提供查看所有 callback chain 信息的接口，只能间接查�
 
 比如：
 
-```
+```ruby
 # 所有"回调链"
 callback_chains = ObjectSpace.each_object(ActiveSupport::Callbacks::CallbackChain)
 # 不为空的"回调链"
@@ -61,7 +61,7 @@ end
 User._save_callbacks
 ```
 
-### Callback 回调
+#### Callback 回调
 
 上面提到每一条回调链的 @chain 里包含了它"所有的回调"，这里的每一个"回调"就是一个 Callback 实例对象。
 
@@ -104,9 +104,9 @@ Objects:: 普通的实例对象，但必需有 before_x, around_x, after_x 等"�
 
 这些不同类型的"真正要执行的代码"，之后都会被 Callback 的 `make_lambda` 方法转换成 lambda 对象，再然后处理过程类似。
 
-### 其它
+#### 其它
 
-#### 当 @filter 是一个实例对象，并且恰好有和"回调类型"相同的方法
+**当 @filter 是一个实例对象，并且恰好有和"回调类型"相同的方法**
 
 上面也提到"回调类型"，Rails 默认有 :before、:after 和 :around.
 <br>
@@ -151,7 +151,7 @@ Account.new.save
 define_callbacks :save, scope: [:kind, :name]
 ```
 
-#### Rails 里 Callback 相关的模块及继承关系
+**Rails 里 Callback 相关的模块及继承关系**
 
 ```
 ActiveRecord::Callbacks
@@ -173,7 +173,7 @@ AbstractController::Callbacks
 ActiveSupport::Callbacks
 ```
 
-#### Filters 顺序
+**Filters 顺序**
 
 一条"回调链"上可以有多个"回调"，它们彼此之间不是独立的，有先后顺序。即：
 
@@ -183,7 +183,7 @@ ActiveSupport::Callbacks
 
 - End
 
-#### 定义、运行回调
+**定义、运行回调**
 
 `define_callbacks` 定义的时候会：
 

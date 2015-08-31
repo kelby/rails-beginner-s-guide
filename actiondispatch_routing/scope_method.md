@@ -36,6 +36,7 @@ end
                 PUT    /admin/iis/:id(.:format)            iis#update
                 DELETE /admin/iis/:id(.:format)            iis#destroy
 
+可以看出，只影响最外面的网址。
 
 #### 三、使用 scope，并传递参数
 

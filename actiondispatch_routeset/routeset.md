@@ -71,7 +71,7 @@ alias :routes :set
 
 #### 各个实例方法
 
-```
+```ruby
 inspect & to_s
 routes & set
 

@@ -20,8 +20,11 @@ end
 
 ```ruby
 dispatcher?
+
 serve
+
 prepare_params!
+
 controller
 ```
 

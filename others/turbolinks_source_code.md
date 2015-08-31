@@ -185,7 +185,7 @@ EVENTS =
 
 具体做了什么事，如何实现，可以查看对应源代码，在此不做讨论。
 
-#### 亮点
+#### 一些特性
 
 **Transition Cache**
 
@@ -240,9 +240,9 @@ page:restore       # 整个回退彻底的完成
 
 3) 其它：
 
-```
+```ruby
 # 到目前为止，我们就有两类 AJAX 请求了。
-# 一是 turblink 转换过来的，二是我们编写的真正的。
+# 一是 turblink 转换过来的 AJAX，二是我们编写的、真正的 AJAX.
 # 使用下面这个状态，可以同时监听上述两种 AJAX 引起的页面变化。
 page:update
 
@@ -336,6 +336,7 @@ gem 'jquery-turbolinks'
 
 **几个 data-* 属性**
 
+```
 data-no-transition-cache
 
 data-turbolinks-permanent
@@ -349,6 +350,7 @@ data-turbolinks-track
 data-turbolinks-eval
 
 data-turbolinks-temporary
+```
 
 **原来的 DOM 操作怎么办？并且它们是非幂等的**
 
