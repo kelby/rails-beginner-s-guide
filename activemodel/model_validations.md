@@ -32,7 +32,7 @@ attribute_method?(attribute)
 
 `attribute_method?` 放在这里有点不太合适，它和校验没有多大关系。和 Attribute Methods 反而关系比较大。
 
-#### Helper Methods
+#### 9 个 Helper Methods
 
 9 个校验方法，**语法糖**。 调用方式五(不需要属性，需要校验器；作用于某个具体对象，间接做校验)
 
@@ -69,6 +69,8 @@ validates_with
 
 `valid?` 校验是否通过，只有一个判断规则：当前 record 对象的 errors 值是否为空 errors.empty?  
 所以自己写校验方法或者校验器的时候，请记得设置 errors 的值。
+
+> Rails 5 里 `valid?` 和 `invalid?` 可加类似 `[:create, :update]` 这样的参数进行多个上下文进行校验。
 
 #### 调用方式比较
 

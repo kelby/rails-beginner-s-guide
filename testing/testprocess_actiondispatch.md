@@ -29,6 +29,7 @@ with_routing
 
 ```
 assigns
+
 cookies
 flash
 session
@@ -36,6 +37,8 @@ session
 fixture_file_upload
 redirect_to_url
 ```
+
+> Rails 5 已废除 assigns
 
 #### Test Request
 

@@ -33,3 +33,6 @@ config.action_controller.include_all_helpers = false
 ```
 
 可以设置单个 Controller 只加载和它名字对应的 Helper 模块，而不是所有的 Helper(所有的 helper 方法)。
+
+除上述描述外，因为它 ` include AbstractController::Helpers` 所以它还有两个比较重要的方法可用。
+

@@ -52,6 +52,8 @@ WHERE (posts.desc = "ruby is awesome")
 
 a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面符合条件的 bs
 
+> includes 如果不接 where 查询，则只做预加载，没有过滤的作用。
+
 #### joins
 
 普通的查询条件，关联对象不会放到内存。
@@ -77,6 +79,8 @@ posts.first.comments
 ```
 
 特点，不会查询出关联表的数据，仅做为查询条件。
+
+> joins 即使不接 where 查询，也有过滤作用，默认是 INNER JOIN.
 
 **复杂的 joins**
 

@@ -63,3 +63,15 @@ get 'hello', to: HelloController.action(:index)
 顺序是：默认是按 `use` 的顺序走下去，但 use 时你也是可以指定的。
 
 > Note: @app 和 env 内容一直在变，但本质又一直没变。
+
+不再推荐使用字符串引入 middleware 所以
+
+```
+middleware.use "Foo::Bar"
+```
+
+变为
+
+```
+middleware.use Foo::Bar
+```

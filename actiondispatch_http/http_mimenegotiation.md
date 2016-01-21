@@ -39,3 +39,16 @@ formats=
 variant=
 ```
 
+给“变种”增加了一些新的方法：
+
+```ruby
+request.variant = :phone
+request.variant.phone?  # true
+request.variant.tablet? # false
+
+request.variant = [:phone, :tablet]
+request.variant.phone?                  # true
+request.variant.desktop?                # false
+request.variant.any?(:phone, :desktop)  # true
+request.variant.any?(:desktop, :watch)  # false
+```

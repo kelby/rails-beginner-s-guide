@@ -33,6 +33,14 @@ tampered_message = signed_message.chop # 篡改"已经签名"的信息
 verifier.valid_message?(tampered_message) # => false
 ```
 
+其它方法：
+
+```ruby
+verified
+
+valid_message?
+```
+
 ## Message Encryptor
 
 和 Message Verifier 本质上没有区别。但使用上会更严格一点，会多一些步骤(相应地，也更安全了一点)，并且它也有调用到 Message Verifier.

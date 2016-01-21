@@ -22,3 +22,21 @@ merge!
 VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend,
                        :order, :select, :readonly, :group, :having, :from, :lock ]
 ```
+
+------
+
+一种 merge 转普通查询：
+
+之前
+
+```ruby
+User.joins(:account).merge(Account.where(:active => true))
+```
+
+之后
+
+```ruby
+User.joins(:account).where(:accounts => { :active => true })
+```
+
+并不是所有 merge 都可转换成 where，但能转换的话，请务必优先用 where.

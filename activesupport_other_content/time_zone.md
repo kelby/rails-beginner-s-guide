@@ -42,7 +42,9 @@ to_s
 
 today
 tomorrow
+next_day
 yesterday
+prev_day
 
 utc_offset
 

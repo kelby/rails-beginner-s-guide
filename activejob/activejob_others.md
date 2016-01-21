@@ -1,5 +1,17 @@
 其它多个类或模块，统一在此列举。
 
+### Async Job
+
+已经异步了，再给你一个选择：是否要并发？
+
+```ruby
+Rails.application.config.active_job.queue_adapter = :async
+```
+
+进队列后，任务运用 Ruby 自身的并发。数据放在内存里，运行速度加快了；没有持久化，重启会丢失数据。
+
+一般来说，生产环境你不能使用，但开发与测试或许可以体验。
+
 ### Arguments 参数处理
 
 接受的参数类型很广泛，需要先处理一下。
@@ -61,7 +73,7 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 
 ### Configured Job
 
-配置实例，对应着 Core 的 set 类方法。
+配置实例，Core 里的 set 类方法会用到它。
 
 ### 解析 queue_adapter 及其 API
 

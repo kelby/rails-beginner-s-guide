@@ -16,6 +16,8 @@ end
 
 调用 `format.html` 和 `format.xml` 等方法调用时会触发 `method_missing`，之后由 `generate_method_for_mime` 元编程生成。
 
+另外，如果请求没有指定格式默认会按 format 里顺序执行，所以注意一下顺序。像一些搜索引擎就没有，所以一般的放 `format.html` 在前面。
+
 目前 Rails 支持的 MIME(多用途互联网邮件扩展)，有：
 
 >html

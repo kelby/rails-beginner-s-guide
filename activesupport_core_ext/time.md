@@ -73,4 +73,6 @@ to_s
 use_zone
 zone
 zone=
+
+days_in_year
 ```

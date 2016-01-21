@@ -60,12 +60,16 @@ invoke  test_unit
 create    test/mailers/user_mailer_test.rb
 ```
 
-#### Inline Preview Interceptor
+#### ~~Inline Preview Interceptor~~
 
-Rails 自带的拦截器，可以在线预览邮件。默认没有开启，想使用的话，需要手动启动：
+Rails 自带的拦截器，可以将邮件里的图片 src 转换 data，以方便显示。
+<br>
+原因有多个，其中之一：有的邮件客户端会过滤图片的，通过转换可以提高图片的显示概率。
+
+默认已经使用此拦截器，不想使用的话，需要手动删除：
 
 ```ruby
-ActionMailer::Base.register_preview_interceptor ActionMailer::InlinePreviewInterceptor
+ActionMailer::Base.preview_interceptors.delete(ActionMailer::InlinePreviewInterceptor)
 ```
 
 #### ~~Collector~~
@@ -85,6 +89,8 @@ mail(to: user.email) do |format|
   format.html { render html: "<h1>Hello World!</h1>".html_safe }
 end
 ```
+
+代码块里的 `format` 即为 Collector 的实例对象。
 
 也只有在这个时候，这里的 Collector 才有用到。它和 AbstractController::Collector Mime 相关。
 

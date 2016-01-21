@@ -1,4 +1,4 @@
-## HTTP Cache 之 Response
+## Cache 之 Response
 
 **HTTP Cache 里的 Response 部分。**如：设置 ETag、Cache-Control.
 

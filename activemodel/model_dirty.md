@@ -8,7 +8,6 @@
 * 调用 `define_attribute_methods` 参数是你想跟踪的属性
 * 在改变属性的值之前，调用 `attr_name_will_change!` (把 attr_name 换成真正的属性名)
 * 在改变属性的值之后，调用 `changes_applied`
-* 如果你想重置上次改变的内容，调用 `reset_changes`
 
 举例:
 
@@ -33,7 +32,7 @@ class Person
   end
 
   def reload!
-    reset_changes
+    # reset_changes
   end
 end
 ```
@@ -73,6 +72,9 @@ restore_attributes # 清除更改数据
 
 changes_applied
 clear_changes_information
+
+attribute_previously_changed? # 对已经保存的对象，之前改变了哪些属性
+attribute_previous_change # 改变的属性值是什么
 ```
 
 Active Record 也有同名模块，它只是对这里的 Dirty 的封装，并且它并没有对外提供 API.

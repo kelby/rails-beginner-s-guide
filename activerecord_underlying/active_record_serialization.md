@@ -11,3 +11,5 @@
 `to_xml` 方法。实现方式：include and extend ActiveModel::Serializers::Xml，并且里面有同名方法。
 
 > Note: 包括了 XmlSerializer.
+
+> Rails 5 里 ActiveRecord::Serialization::XmlSerializer 已废除。

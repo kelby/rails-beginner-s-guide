@@ -1,6 +1,6 @@
 ### Action View
 
-```
+```ruby
 config.action_view.field_error_proc provides
 
 config.action_view.default_form_builder

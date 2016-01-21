@@ -95,7 +95,7 @@ url_for 不能直接指定 host, 需要在另一个地方指定，它只有调�
 
 除上述外，还有方法(元编程生成，API 里查看不到)：
 
-```
+```ruby
 # 封装 polymorphic_url 而来
 new_polymorphic_url
 edit_polymorphic_url

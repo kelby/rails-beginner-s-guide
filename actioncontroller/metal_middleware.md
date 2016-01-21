@@ -1,4 +1,4 @@
-## Base 和 Middleware - Metal 的继承者
+## Base - Metal 的继承者
 
 #### Base
 
@@ -54,12 +54,4 @@ end
 
 如果对性能有很高要求，并且知道各个模块作用的话，可以适当去掉某些模块。
 
-#### ~~Middleware~~
-
-这里的 Middleware<sup>1</sup> 不是 Middleware Stack 里面的 middleware<sup>2</sup>，它们只是恰好同名而矣。
-
-它也继承于 Metal (这和 Base 一样)，它最初就是从 Metal 分离而来的。
-
-它证明了 Metal 本身就是一个 middleware<sup>2</sup>，本身就是一个 Rack app.
-
-> Note: 在 Rails 5 里，它已经被删除。
+> 后文讲到的【API】是精简版的 Base，它也是直接继承于 Metal，在 API 模式里可用。

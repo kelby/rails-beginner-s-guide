@@ -8,6 +8,12 @@ Output Buffer 继承于 Safe Buffer，它封装了一些方法，Rails 视图里
 
 基于种种原因，和 Output Buffer 相对的引入了 Streaming Buffer，但它以'流'的形式传递数据到客户端，并且它不继承于 Safe Buffer，所以绕开了一些问题。
 
+举例：
+<br>
+使用"Capture Helper"，会用到"Output Buffer"；
+<br>
+而使用"Streaming Template Renderer"，则会用到"Streaming Buffer"。
+
 参考
 
 [YAGNI methods slow us down](http://tenderlovemaking.com/2014/06/04/yagni-methods-slow-us-down.html)

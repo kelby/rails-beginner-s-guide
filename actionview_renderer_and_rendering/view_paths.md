@@ -29,6 +29,8 @@ details_for_lookup
 lookup_context
 ```
 
+`lookup_context` 之前已经介绍过，很重要的一个方法。
+
 **其它：**
 
 ```ruby

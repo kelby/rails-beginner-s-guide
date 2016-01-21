@@ -61,3 +61,11 @@ getutc
 utc?
 utc_offset
 ```
+
+```
+on_weekend?
+
+next_weekday
+prev_weekday
+```
+

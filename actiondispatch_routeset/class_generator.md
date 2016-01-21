@@ -14,6 +14,8 @@ module ActionDispatch
 end
 ```
 
+生成失败的话，会报 UrlGenerationError 错误。
+
 各个实例方法：
 
 ```ruby

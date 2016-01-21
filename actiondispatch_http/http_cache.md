@@ -1,4 +1,4 @@
-## HTTP Cache 之 Request
+## Cache 之 Request
 
 **HTTP Cache 里的 Request 部分。**如：检测 ETag、Cache-Control
 

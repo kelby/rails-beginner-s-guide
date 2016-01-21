@@ -26,6 +26,9 @@
 | values | 返回规格化的所有查询条件。如果你用的查询条件太多了，可用它来查看 |
 | where_values_hash | 返回所有 where 查询条件，结果并不准确 |
 | reload | reset + load |
+| cache_key | ... |
+| none? | ... |
+| one? | ... |
 
 除上述方法外，还有：
 

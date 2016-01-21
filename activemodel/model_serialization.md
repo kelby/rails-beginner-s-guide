@@ -26,6 +26,8 @@ to_xml
 from_xml
 ```
 
+> 该模块在 Rails 5 已被移除。
+
 **注意几个转化成 json 方法之间的区别：**
 
 ```ruby

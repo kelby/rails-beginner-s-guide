@@ -11,10 +11,6 @@
 
 不要迷信 Rails 提供的 helper，有的用起来难读、难懂，还不如自己写。别忘了，设计软件的重点：好读、易维护、以全局观思考。
 
-#### ~~Dependency Tracker~~
-
-供 Digestor 使用，digest 的时候可以以数组的形式传 dependencies 作为其可选参数。
-
 #### ~~几个比较有意思的 helper 方法~~
 
 **atom_feed**

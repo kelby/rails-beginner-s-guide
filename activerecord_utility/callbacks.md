@@ -22,7 +22,7 @@ define_callbacks :commit, :rollback
 
 #### 有哪些？
 
-共 19 个：
+共 22 个：
 
 ```ruby
 CALLBACKS = [
@@ -32,7 +32,9 @@ CALLBACKS = [
   :before_update, :around_update, :after_update,
   :before_destroy, :around_destroy, :after_destroy,
   :before_validation, :after_validation,
-  :after_commit, :after_rollback
+  :after_commit, :after_rollback,
+  
+  :after_create_commit, :after_update_commit, :after_destroy_commit
 ]
 ```
 

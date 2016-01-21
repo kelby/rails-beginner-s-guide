@@ -104,3 +104,5 @@ Klass.new.salute
 # Aloha!
 # ... End do salute
 ```
+
+> Rails 5 里 `alias_method_chain` 已被移除，因为 Ruby 自带 `prepend` 可以使用。

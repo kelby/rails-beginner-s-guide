@@ -90,7 +90,5 @@ configurations=
 connection_handler
 connection_handler=
 
-disable_implicit_join_references=
-
 new
 ```

@@ -70,10 +70,13 @@ config.always_permitted_parameters = %w( controller action format )
 
 ## Strong Parameters
 
-提供 `params` 这个对象，我们可以对它的属性进行读、写操作。
+我们在 Controller 里常用的 `params` 就是这里提供的。
+
+`params` 实际上是 Parameters 实例对象，我们可以对它的属性进行读、写操作。
 
 ```
 params
+
 params=
 ```
 
@@ -83,6 +86,8 @@ params=
 params == request.parameters
 # => true
 ```
+
+并不表明它和 `request.parameters` 是完全等价的，后者是 ActiveSupport::HashWithIndifferentAccess 实例对象。
 
 这个对象的值是什么？- 表单数据或传递过来的，加上 :controller 和 :action
 
@@ -101,3 +106,9 @@ params
     "action"=>"create",
     "controller"=>"posts"}
 ```
+
+------
+
+## attributes.permitted? 与 ForbiddenAttributesProtection
+
+因 Base 与 API 都有 `include StrongParameters` 并且仅提供 `params` 和 `params=` 方法，所以有理由相信在 Controller 和 View 里通过 params 给 record 对象属性赋值(AttributeAssignment)的话，都会询问一遍是否 `permitted?` 如果包含未被允许更新的字段，会抛 ForbiddenAttributesError 错误。

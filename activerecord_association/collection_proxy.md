@@ -29,7 +29,7 @@ delete_all
 destroy
 destroy_all
 
-distinct
+distinct & uniq
 
 empty?
 
@@ -83,6 +83,4 @@ target
 to_a
 
 to_ary
-
-uniq
 ```

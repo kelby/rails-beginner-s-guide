@@ -1,5 +1,7 @@
 ## Rendering
 
+本质是一样的，只是上下文环境及可选参数不一样了。
+
 Abstact Controller 封装了 Action View 的 Rendering 相关模块，然后给 Action Controller 和 Active Mailer 使用。
 
 ```

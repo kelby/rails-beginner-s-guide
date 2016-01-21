@@ -28,6 +28,7 @@ table_exists?
 # 外键
 add_foreign_key
 remove_foreign_key
+foreign_key_exists?
 
 # 引用(区别于外键，多态也可用)
 add_reference & add_belongs_to
@@ -41,7 +42,8 @@ add_timestamps
 
 assume_migrated_upto_version
 
-change_column_default, change_column_null
+change_column_default
+change_column_null
 
 initialize_schema_migrations_table
 
@@ -55,6 +57,9 @@ native_database_types
 remove_timestamps
 
 table_alias_for
+
+view_exists?(view_name)
+views
 ```
 
 其它实例方法：

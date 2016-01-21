@@ -1,4 +1,4 @@
-## Mime Responds
+## Mime Responds & Collector
 
 #### 实例方法
 
@@ -50,3 +50,12 @@ response
 ```
 
 此外，`format.html` 等对应着 Collector，而变种 `format.html.phone` 等对应着 Variant Collector.
+
+有时候，如果遇到出错 ActionController::UnknownFormat，可考虑响应所有格式：
+
+```ruby
+respond_to do |format|
+  format.html { ... }
+  format.all  {render :text => "Only HTML supported"}
+end
+```

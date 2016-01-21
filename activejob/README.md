@@ -42,6 +42,12 @@ end
 
 通过 `config.active_job.queue_name_prefix=` 可给所有队列名加前缀。
 
+### Queue Priority
+
+类方法 `queue_with_priority` 进行设置，对整个类有效。
+
+可用实例方法 `priority` 获取，由上面统一设置的。
+
 ### Core
 
 类方法 `set` 使用举例：
@@ -60,7 +66,7 @@ MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
 MyJob.set(wait: 1.week).perform_later(record)
 ```
 
-> Note: set 方法支持可选参数：wait、wait_until、queue
+> Note: set 方法支持可选参数：:wait、:wait_until、:queue、:priority
 
 类方法：
 
@@ -72,6 +78,7 @@ deserialize
 
 ```
 serialize
+deserialize
 ```
 
 ### Enqueuing 入队与重试
@@ -123,11 +130,13 @@ perform_later
 
 ```ruby
 # 实例方法
-execute
 perform_now
+execute # 由子类，也就是我们所定义的 Job 实现具体内容
 
 # 类方法
 perform_now # 简单封装了实例方法 perform_now
+
+execute
 ```
 
 使用举例：

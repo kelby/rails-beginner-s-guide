@@ -22,7 +22,9 @@ cat.attributes # => { "name" => "Gorby", "status" => "sleeping", "created_at" =>
                       "updated_at" => nil }
 ```
 
-区别于直接赋值：
+原理上它和直接赋值是一样的（用了元编程一个个属性直接赋值），只是对于要传递的参数多了 ForbiddenAttributesProtection 检查。
+
+对比直接赋值：
 
 ```ruby
 user.is_admin = true

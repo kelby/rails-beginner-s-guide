@@ -190,7 +190,7 @@ through_reflection
 chain
 scope_chain
 join_keys
-source_macro
+
 nested?
 association_primary_key
 source_reflection_names

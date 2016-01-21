@@ -79,6 +79,8 @@ Action View 和 Action Controller 渲染的主要入口。
 :callback # 为使用 json 渲染器时，额外提供的参数。
 ```
 
+> Rails 5 已废除 :nothing 可选参数
+
 #### render 在 Controller 和 View 是如何工作的
 
 **Controller 里默认渲染的是 template**

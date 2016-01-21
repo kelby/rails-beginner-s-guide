@@ -125,3 +125,7 @@ get 'pictures/:id' => 'pictures#show', :constraints => { :id => /[A-Z]\d{5}/ }
 ```
  
 引入 journey 后, 性能及其它各方面都有了很大的改善。
+
+#### 报错 ActionController::UrlGenerationError
+
+当 Formatter 尝试使用 `generate` 将 `params` 传递过来的参数解析，但是解析不了的时候，就会报此错误。

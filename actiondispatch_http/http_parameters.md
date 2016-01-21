@@ -24,6 +24,7 @@ request.parameters
 # 另：
 request.parameters == params
 => true
+# 但它们两者并不是完全等价的
 
 request.path_parameters
 => {:controller=>"users", :action=>"create"}

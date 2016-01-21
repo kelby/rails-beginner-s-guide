@@ -2,6 +2,8 @@
 
 ```
 redirect_to
+
+redirect_back
 ```
 
 重要的部分就是可以根据不同的可选参数，计算出要重定向的 url.
@@ -62,3 +64,5 @@ polymorphic_url
      V
   ... ...
 ```
+
+`redirect_back` 相当于来的 `redirect_to :back` 但它可接受 `:fallback_location` 参数，以应对 Referer 不存在的问题。

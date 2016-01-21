@@ -1,6 +1,16 @@
 ## Request Forgery Protection
 
-防止 CSRF - 跨站请求伪造。
+防止  - 跨站请求伪造。
+
+请求伪造保护。
+
+什么伪造？
+
+跨站请求伪造(CSRF)。
+
+怎么保护？
+
+生成字符串，放 session 里，请求过来时要校验。
 
 **类方法：**
 
@@ -8,7 +18,13 @@
 protect_from_forgery
 ```
 
-使用举例：
+方法里调用了：
+
+```
+before_action :verify_authenticity_token
+```
+
+等内容，使用举例：
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -26,7 +42,7 @@ end
 ```
 
 `protect_from_forgery`
-可选参数 :only、:except 和 :with 
+可选参数 :only、:except、:with 和 :prepend
 
 当请求未证实，可选择怎么处理。可选：
 

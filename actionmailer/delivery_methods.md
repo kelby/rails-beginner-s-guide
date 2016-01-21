@@ -87,6 +87,8 @@ end
 add_delivery_method :custom_smtp_delivery, CustomSmtpDelivery
 ```
 
+另，自带的 smtp、file、sendmail 及 test 已经注册。
+
 3) 配置使用刚才新增的 delivery method：
 
 ```ruby

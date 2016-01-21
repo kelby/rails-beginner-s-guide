@@ -1,32 +1,25 @@
-### 一般配置项
+### 一般常用配置项
 
 ```ruby
-config.after_initialize takes
-
-config.asset_host
-
-config.autoload_once_paths
+# 自动加载目录
 config.autoload_paths
+# 立即加载目录
+config.eager_load_paths
 
+# 立即加载开关。开发环境 false，生产环境 true
+config.eager_load
+
+# 每次 HTTP 请求之间，是否重新加载环境(类、模块)
+# 是，则类似 load; 否，则类似 require
+# 影响控制台里的 reload! 效果
 config.cache_classes
 
-config.action_view.cache_template_loading
-
-config.beginning_of_week
-
+# 缓存存储方式
 config.cache_store
-
-config.colorize_logging
-
-config.consider_all_requests_local
 
 config.console
 
 config.dependency_loading
-
-config.eager_load
-config.eager_load_namespaces
-config.eager_load_paths
 
 config.encoding
 
@@ -36,11 +29,13 @@ config.file_watcher
 
 config.filter_parameters
 
+# 网站是否强制启用 https
 config.force_ssl
 
+# log 格式处理
 config.log_formatter
+# debug、还是 info
 config.log_level
-config.log_tags
 
 config.logger
 
@@ -55,5 +50,6 @@ config.serve_static_assets
 # session 存储方式及限制条件
 config.session_store
 
+# 时区
 config.time_zone
 ```

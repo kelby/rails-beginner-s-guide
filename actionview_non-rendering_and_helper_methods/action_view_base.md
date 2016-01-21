@@ -57,3 +57,34 @@ end
 
 在 ActionView::Rendering 里。
 
+#### 怎么传递实例变量的？
+
+有渲染才有传递实例变量这么一说。
+
+```ruby
+# action_view/rendering.rb
+    def view_context
+      view_context_class.new(view_renderer, view_assigns, self)
+    end
+```
+
+```ruby
+# abstract_controller/rendering.rb
+    def view_assigns
+      # Rails 自带 & 自己管理的一些实例变量
+      protected_vars = _protected_ivars
+      # 此方法由 Ruby 提供，通过它我们可获取 Controller 里我们定义的一些实例变量
+      variables      = instance_variables
+
+      # ...
+    end
+```
+
+初始化 View 的时候，会指派实例变量：
+
+```ruby
+# action_view/base.rb
+    def assign(new_assigns) # :nodoc:
+      @_assigns = new_assigns.each { |key, value| instance_variable_set("@#{key}", value) }
+    end
+```

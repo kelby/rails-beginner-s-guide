@@ -26,7 +26,11 @@ expires_in
 expires_now
 
 stale?
+
+http_cache_forever
 ```
+
+> Rails 5 新增 100 年才过期的 http_cache_forever
 
 `fresh_when` 根据传入的参数，设置 response 里和 HTTP 缓存有关的字段，并完成响应。只对当前 action 起作用，用到了上面提到的 etaggers，影响 ETag 和 last_modify 的值。
 
@@ -53,3 +57,21 @@ fresh_when @post, template: false
 支持设置 HTTP header 里的 etag 和 last modified 就意味着当所请求的资源没有更改过时，Rails 可以返回一个的响应。这可以节省你的带宽资源和时间。
 
 > Note: 一般的，etag 相关设置只是节省了中间数据传输的网络资源，但在服务器上的计算并没有减少。
+
+Rails 5 可传递集合给 fresh_when 或 stale?
+<br />
+例如：
+
+```ruby
+# Before
+def index
+  @articles = Article.all
+  fresh_when(etag: @articles, last_modified: @articles.maximum(:updated_at))
+end
+
+# After
+def index
+  @articles = Article.all
+  fresh_when(@articles)
+end
+```

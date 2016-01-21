@@ -6,7 +6,7 @@
 
 |方法|解释|
 |--|--|
-| bind | |
+| bound_attributes | |
 | create_with | 创建一个 record 对象，调用者是 Relation 对象. <br>没找到合适的使用场景<br>设置的是 create_with_value 的值，在很多地方会间接用到它|
 | distinct & uniq | 通常要配合其它查询方法使用，返回是 Relation. 否则使用的是数组的 uniq 返回的不是 Relation |
 | eager_load |后文解释|
@@ -16,10 +16,12 @@
 | having | having 是分组(group)后的筛选条件，分组后的数据组内再筛选; where 则是在分组前筛选 |
 | includes | 后文解释 |
 | joins | 后文解释 |
+|left_joins & left_outer_joins | |
 | limit | 限制结果数目 |
 | lock | 锁定结果 |
 | none | 返回一个空的 Relation |
 | offset | 类似 from, 但它传递的是"第几条"，并且数据不够的话可循环；而后者传递的是查询条件，不符合条件返回空 |
+| or | | 
 | order | 按条件排序 |
 | preload | 后文解释 |
 | readonly | 查询结果只读，不可写 |
@@ -174,6 +176,14 @@ Post.includes(:comments).where("comments.visible" => true)
 `references` 使用 includes 可以预加载多个关联表，如果后续还有根据关联表进行查询的，需要用 references 指明用哪张关联表。否则，查询会出错。但如果后续的查询是以 hash 的形式提供的话，则不必使用 references 也可以。
 
 `order` 排序。它在 default_scope 之前执行，也就是说 default_scope 有可能会覆盖之前的排序。
+
+`left_outer_joins` 使用举例：
+
+```ruby
+User.left_outer_joins(:posts)
+# => SELECT "users".* FROM "users" LEFT OUTER JOIN "posts" ON
+     "posts"."user_id" = "users"."id"
+```
 
 > Note: 注意区分 Rails 里的 group 和 SQL 里的 group_by
 

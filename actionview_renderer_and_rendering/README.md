@@ -38,17 +38,15 @@ Rendering
 渲染(动词)
 
 ~~Context~~  
-上下文  
-为了 Action Controller 可以创建 ActionView::Base 的实例对象，然后进行渲染模板的工作。  
-(从 Base 里抽取出来的，提供了 @output_buffer, @view_flow 和 @virtual_path)
+部分上下文
+<br>
+它是 `view_context` 很小的组成部分。
 
 ~~Output Flow & Streaming Flow~~  
-输出流  
-为了支持"streaming 流"！
+输出流
 
 ~~Output Buffer & Streaming Buffer~~  
-输出缓冲区  
-为了支持"streaming 流"！
+输出缓冲区
 
 #### 4) 查找模板对象(lookup_context)
 
@@ -66,3 +64,5 @@ DetailsCache
 
 Lookup Context  
 查找上下文
+
+
