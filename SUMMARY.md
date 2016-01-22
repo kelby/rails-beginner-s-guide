@@ -361,7 +361,7 @@
        * [Rails 默认已有的 instrumenter](activesupport/notification_all_instrumenters.md)
    * [Subscriber](activesupport_other_class_and_module/activesupport_subscriber.md)
    * [Log Subscriber](activesupport/activesupport_logsubscriber.md)
-       * [Action Mailer Log Subscriber ](activesupport/actionmailer_logsubscriber.md)
+       * [Action Mailer Log Subscriber](activesupport/actionmailer_logsubscriber.md)
        * [Action Controller Log Subscriber](activesupport/actioncontroller_logsubscriber.md)
        * [Action View Log Subscriber](activesupport/actionview_logsubscriber.md)
        * [Active Record Log Subscriber](activesupport/activerecord_logsubscriber.md)
@@ -449,6 +449,7 @@
        * [Active Model](generators/activemodel.md)
        * [Resource Helpers](generators/resource_helpers.md)
        * [Model Helpers](generators/model_helpers.md)
+* [后记](preface/README.md)
 * [Rails 里所有的配置项](configuring/READEME.md)
    * [一般常用配置项](configuring/rails_general_configuration.md)
    * [Action Mailer](configuring/configuring_action_mailer.md)
@@ -490,5 +491,4 @@
    * [其它](testing/minitest_others.md)
 * [Factory Girl](testing/gem_factory_girl.md)
 * [Error & Exception](error_&_exception/README.md)
-* [后记](preface/README.md)
 
