@@ -87,7 +87,7 @@ post.status_before_type_cast
 另外，注意 enum 生成的类方法、实例方法不要与 Active Record 提供的方法，及同一个 Model 下其它 enum 生成的方法有重复。
 <br>
 每个 Model 下面都会有一个叫 defined_enums 的变量用来记录 enum 相关信息。
-<br>
+
 读取某属性的值，通常有两种方式：
 
 ```ruby
