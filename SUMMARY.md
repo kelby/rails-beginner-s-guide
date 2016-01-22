@@ -449,7 +449,6 @@
        * [Active Model](generators/activemodel.md)
        * [Resource Helpers](generators/resource_helpers.md)
        * [Model Helpers](generators/model_helpers.md)
-* [后记](preface/README.md)
 * [Rails 里所有的配置项](configuring/READEME.md)
    * [一般常用配置项](configuring/rails_general_configuration.md)
    * [Action Mailer](configuring/configuring_action_mailer.md)
@@ -490,5 +489,6 @@
    * [Expectations](testing/minitest_expectations.md)
    * [其它](testing/minitest_others.md)
 * [Factory Girl](testing/gem_factory_girl.md)
+* [后记](preface/README.md)
 * [Error & Exception](error_&_exception/README.md)
 
