@@ -97,3 +97,5 @@ user.name
 
 user[:name]
 ```
+
+一般情况下，它们的值是一样的。但这里的 Enum 
