@@ -489,6 +489,6 @@
    * [Expectations](testing/minitest_expectations.md)
    * [其它](testing/minitest_others.md)
 * [Factory Girl](testing/gem_factory_girl.md)
-* [后记](preface/README.md)
 * [Error & Exception](error_&_exception/README.md)
+* [后记](preface/README.md)
 
