@@ -422,6 +422,7 @@
        * [Configuration](rails/application_configuration.md)
        * [Rails 应用启动过程](rails/start_the_process.md)
        * [其它 - 默认 middleware 和路由加载](rails/rails_application_others.md)
+       * Default Middleware Stack
    * [Application surface](rails/application_surface.md)
        * [提示信息页面](rails/notice_info.md)
        * [路径 - Root 和 Path](rails/root_and_path.md)
