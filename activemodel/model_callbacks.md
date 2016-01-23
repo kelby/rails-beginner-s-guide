@@ -20,7 +20,7 @@ class Person
   after_update  :say_success
 
   # 为了统一，易于理解，这里的方法名应该用：update
-  # 但这并不一定要和 define_model_callbacks 的名字一样，比如这里的示例代码
+  # 但这并不是，比如这里的示例代码
   def update_me
     run_callbacks(:update) do
       p "update_me 真正要执行的代码"
