@@ -15,8 +15,6 @@
 | find_or_create_by! | 根据所给的属性，查询 record 对象；若查询不到，则初始化 |
 | update | 传递参数 ids、attributes，所有指定 id 的 record 对象都会更新<br>用的是自己的 update 方法 |
 | update_all | 更新整个 relation 包含的 record 对象(先查询出来)，参数为更新内容 |
-| values | 返回规格化的所有查询条件。如果你用的查询条件太多了，可用它来查看 |
-| where_values_hash | 返回所有 where 查询条件，结果并不准确 |
 
 和
 
@@ -34,6 +32,8 @@
 | load | 执行查询操作，但返回的是 relation |
 | reload | reset + load |
 | cache_key | ... |
+| values | 返回规格化的所有查询条件。如果你用的查询条件太多了，可用它来查看 |
+| where_values_hash | 返回所有 where 查询条件，结果并不准确 |
 
 除上述方法外，还有：
 
