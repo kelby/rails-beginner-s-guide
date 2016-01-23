@@ -423,7 +423,7 @@
        * [Rails 应用启动过程](rails/start_the_process.md)
        * [Routes Reloader](rails/rails_application_others.md)
        * [Default Middleware Stack](rails/default_middleware_stack.md)
-   * [Application surface](rails/application_surface.md)
+   * [Application 补充](rails/application_surface.md)
        * [提示信息页面](rails/notice_info.md)
        * [路径 - Root 和 Path](rails/root_and_path.md)
        * [rake & rails 命令](rails/command_line.md)
