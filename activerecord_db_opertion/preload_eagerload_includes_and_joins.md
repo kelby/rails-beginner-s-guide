@@ -50,7 +50,7 @@ WHERE (posts.desc = "ruby is awesome")
 
 通过中间表的话，默认也加载。
 
-a.includes(:bs).where(bs.x ...) includes 只包含符合条件的 a 和 a 下面符合条件的 bs
+`a.includes(:bs).where(bs.x ...)` includes 只包含符合条件的 a 和 a 下面符合条件的 bs
 
 > includes 如果不接 where 查询，则只做预加载，没有过滤的作用。
 
