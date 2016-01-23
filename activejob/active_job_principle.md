@@ -91,3 +91,7 @@ Delayed job - Shopify 出品。
 
 
 跑起来稳定、跑起来快、用起来简单。
+
+### 两件事
+
+queueing jobs (via the ActiveJob API) and serialization of ActiveRecord objects (via GlobalID).
