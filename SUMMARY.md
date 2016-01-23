@@ -235,7 +235,7 @@
        * [Secure Password](activemodel/securepassword.md)
        * [Forbidden Attributes Protection](activemodel/forbiddenattributesprotection.md)
        * [Serialization](activemodel/model_serialization.md)
-       * [Callbacks - 快速定义 3 个回调方法](activemodel/model_callbacks.md)
+       * [Callbacks - 快速提供 3 个回调方法](activemodel/model_callbacks.md)
    * [其它](activemodel/activemodel_source_review.md)
 * [Active Record](activerecord/README.md)
 * [Active Record 数据库操作](activerecord_db_opertion/README.md)
