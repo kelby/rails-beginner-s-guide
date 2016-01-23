@@ -16,8 +16,8 @@ Rails.application.config.active_job.queue_adapter = :async
 
 接受的参数类型很广泛，需要先处理一下。
 
-进队列时参数需要 serialize，
-执行前参数需要 deserialize
+进队列时参数需要 `serialize`，
+执行前参数需要 `deserialize`
 
 当然，这都是自动完成的。
 
