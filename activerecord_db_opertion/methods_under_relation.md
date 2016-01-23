@@ -38,6 +38,8 @@ to_a
 to_sql
 ```
 
+一般，我们不需要也不推荐使用 `to_a` 强制转换 relation 成数组；
+
 ```
 eager_loading?
 
