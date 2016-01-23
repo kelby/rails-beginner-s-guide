@@ -19,7 +19,7 @@ prepend_formats
 
 除上述外，还有：
 
-```
+```ruby
 delegate :find_template, :template_exists?, :with_fallbacks, :with_layout_format,
          :formats, :to => :@lookup_context
 ```
