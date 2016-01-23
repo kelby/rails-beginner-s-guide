@@ -16,7 +16,7 @@ type
 
 这里的 `render` 会调用方法，进而渲染对应的模板。
 
-```
+```ruby
 attr_accessor :locals, :formats, :variants, :virtual_path
 
 attr_reader :source, :identifier, :handler, :original_encoding, :updated_at
