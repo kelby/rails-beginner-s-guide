@@ -231,9 +231,6 @@ ActiveRecord::ReadOnlyRecord
 ActiveRecord::Rollback
 ActiveRecord::DangerousAttributeError
 
-Gem::RemoteFetcher::FetchError
-Puma::MiniSSL::SSLError
-Gem::RemoteFetcher::UnknownHostError
 ActiveRecord::MultiparameterAssignmentErrors
 ActiveRecord::UnknownPrimaryKey
 ActiveRecord::ImmutableRelation
