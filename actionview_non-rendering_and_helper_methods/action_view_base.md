@@ -63,9 +63,9 @@ end
 
 ```ruby
 # action_view/rendering.rb
-    def view_context
-      view_context_class.new(view_renderer, view_assigns, self)
-    end
+def view_context
+  view_context_class.new(view_renderer, view_assigns, self)
+end
 ```
 
 ```ruby
