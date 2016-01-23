@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 end
 
 class PostsController < ApplicationController
-  # Will use "application" layout
+  # 继承使用 "application" layout
 end
 ```
 
