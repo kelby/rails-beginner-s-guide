@@ -57,9 +57,14 @@ VideoJob.set(queue: :some_queue).perform_later(Video.last)
 VideoJob.set(wait: 5.minutes).perform_later(Video.last)
 VideoJob.set(wait_until: Time.now.tomorrow).perform_later(Video.last)
 
-VideoJob.set(queue: :some_queue, wait: 5.minutes).perform_later(Video.last)
-VideoJob.set(queue: :some_queue, wait_until: Time.now.tomorrow).perform_later(Video.last)
-VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10).perform_later(Video.last)
+VideoJob.set(queue: :some_queue, wait: 5.minutes)
+  .perform_later(Video.last)
+
+VideoJob.set(queue: :some_queue, wait_until: Time.now.tomorrow)
+  .perform_later(Video.last)
+
+VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10)
+  .perform_later(Video.last)
 ```
 
 `set` 支持可选参数：:wait、:wait_until、:queue、:priority
