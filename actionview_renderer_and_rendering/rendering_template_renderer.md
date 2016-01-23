@@ -1,4 +1,4 @@
-#### 子类 1) Template Renderer
+#### 子类 Template Renderer
 
 普通的模板渲染器，直接继承于 Abstract Renderer.
 
