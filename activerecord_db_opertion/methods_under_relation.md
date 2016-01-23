@@ -2,11 +2,6 @@
 
 | 方法 | 解释 |
 | -- | -- |
-| == | 判断集合是否等价于 relation. <br>这里的集合，并不限于 relation，也可以数组 |
-| any? | 非空？ |
-| empty? |为空？ |
-| blank? | 为空？ |
-| many? | 多个？<br> 也就是 relation.count > 1 |
 | build & new | 新建 record 对象 |
 | create | 新建并保存 record 对象 |
 | create! | 新建并保存 record 对象，如果有异常则报错 |
@@ -33,6 +28,11 @@
 
 | 方法 | 解释 |
 | -- | -- |
+| == | 判断集合是否等价于 relation. <br>这里的集合，并不限于 relation，也可以数组 |
+| any? | 非空？ |
+| empty? |为空？ |
+| blank? | 为空？ |
+| many? | 多个？<br> 也就是 relation.count > 1 |
 | none? | ... |
 | one? | ... |
 
