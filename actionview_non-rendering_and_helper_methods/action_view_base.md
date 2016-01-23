@@ -84,7 +84,7 @@ end
 
 ```ruby
 # action_view/base.rb
-    def assign(new_assigns) # :nodoc:
-      @_assigns = new_assigns.each { |key, value| instance_variable_set("@#{key}", value) }
-    end
+def assign(new_assigns) # :nodoc:
+  @_assigns = new_assigns.each { |key, value| instance_variable_set("@#{key}", value) }
+end
 ```
