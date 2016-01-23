@@ -52,7 +52,7 @@ record
 toJSON
 ```
 
-有专门的 @subscriptions 用来保存 subscription.
+有专门的 `@subscriptions` 用来保存 subscription.
 
 还有各种方法，针对具体某个 subscription 进行各种操作。可订阅某个 Channel，之后在其 Channel 发布消息时，它就能收到了。
 
