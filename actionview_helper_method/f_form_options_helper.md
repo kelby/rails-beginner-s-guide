@@ -16,7 +16,7 @@
 
 关键词：select
 
-```
+```ruby
 select
 
 collection_select
@@ -40,7 +40,7 @@ options_from_collection_for_select
 
 关键词：option
 
-```
+```ruby
 # 和 time_zone 有关
 time_zone_options_for_select
 ```
