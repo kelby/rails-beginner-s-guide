@@ -18,9 +18,9 @@ class Person
   before_update :reset_me
   # around_update ...
   after_update  :say_success
- 
-  # 并不一定要和 define_model_callbacks 的名字一样，比如这里的示例代码
+
   # 但为了统一，易于理解，一般设置它们名字一样
+  # 并不一定要和 define_model_callbacks 的名字一样，比如这里的示例代码
   def update_me
     run_callbacks(:update) do
       p "update_me 真正要执行的代码"
