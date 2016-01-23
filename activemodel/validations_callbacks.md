@@ -10,7 +10,15 @@ class MyModel
 
   before_validation :do_stuff_before_validation
   after_validation  :do_stuff_after_validation
+  
+  def do_stuff_before_validation
+    # ...
+  end
+  
+  def do_stuff_after_validation
+    # ...
+  end
 end
 ```
 
-定义上，使用了 Active Support 提供的回调相关方法；使用上，和 Active Record 里的回调方法类似。
+内部实现使用了 Active Support 提供的回调相关方法；使用上，和 Active Record 里的回调方法类似。
