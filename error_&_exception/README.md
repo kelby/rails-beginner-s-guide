@@ -280,10 +280,7 @@ Encoding::InvalidByteSequenceError
 Encoding::ConverterNotFoundError
 IOError
 EOFError
-IO::EAGAINWaitReadable
-IO::EAGAINWaitWritable
-IO::EINPROGRESSWaitReadable
-IO::EINPROGRESSWaitWritable
+
 LocalJumpError
 Math::DomainError
 StopIteration
