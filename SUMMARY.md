@@ -164,7 +164,7 @@
    * [渲染器介绍](actionview_renderer_and_rendering/rendering.md)
        * [Renderer - 渲染的入口](actionview_renderer_and_rendering/rendering_renderer.md)
        * [0) Abstract Renderer](actionview_renderer_and_rendering/rendering_abstract_renderer.md)
-       * [子类 1) Template Renderer](actionview_renderer_and_rendering/rendering_template_renderer.md)
+       * [子类 Template Renderer](actionview_renderer_and_rendering/rendering_template_renderer.md)
        * [子类 2) Partial Renderer & Collection Caching](actionview_renderer_and_rendering/rendering_partial_renderer.md)
        * [子类 3) Streaming Template Renderer](actionview_renderer_and_rendering/rendering_streaming_template_renderer.md)
    * [Template 内容](actionview_renderer_and_rendering/actionview_template.md)
