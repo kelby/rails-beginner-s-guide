@@ -1,4 +1,4 @@
-#### 子类 2) Partial Renderer & Collection Caching
+#### 子类 Partial Renderer & Collection Caching
 
 局部模板渲染器，直接继承于 Abstract Renderer.
 
