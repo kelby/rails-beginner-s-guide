@@ -44,4 +44,4 @@ person = Person.new
 person.update_me
 ```
 
-上面例子里的 before_update 方法我们并没有显式定义，是 define_model_callbacks 帮我们自动生成的。
+上面例子里的 `before_update` 和 `after_update` 方法我们并没有显式定义，是 define_model_callbacks 帮我们自动生成的。
