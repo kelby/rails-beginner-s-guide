@@ -53,20 +53,16 @@ end
 类方法 `set` 使用举例：
 
 ```ruby
-# 立即执行，不进入队列
-ProcessPhotoJob.perform_now(photo)
+VideoJob.set(queue: :some_queue).perform_later(Video.last)
+VideoJob.set(wait: 5.minutes).perform_later(Video.last)
+VideoJob.set(wait_until: Time.now.tomorrow).perform_later(Video.last)
 
-# 资源有空闲的时候(具体不确定)，就会自动执行已经在队列的任务
-MyJob.perform_later record
-
-# 一天之后的这个时候，就会自动执行已经在队列的任务
-MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
-
-# 一周之后的这个时候，就会自动执行已经在队列的任务
-MyJob.set(wait: 1.week).perform_later(record)
+VideoJob.set(queue: :some_queue, wait: 5.minutes).perform_later(Video.last)
+VideoJob.set(queue: :some_queue, wait_until: Time.now.tomorrow).perform_later(Video.last)
+VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10).perform_later(Video.last)
 ```
 
-> Note: set 方法支持可选参数：:wait、:wait_until、:queue、:priority
+`set` 支持可选参数：:wait、:wait_until、:queue、:priority
 
 类方法：
 
