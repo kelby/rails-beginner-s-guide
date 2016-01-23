@@ -117,7 +117,7 @@ User.preload(:addresses)
 
 通过中间表的话，默认也加载。
 
-a.preload(:bs).where(bs.x ...) preload 包含符合条件的 a 和 a 下面所有的 bs
+`a.preload(:bs).where(bs.x ...)` preload 包含符合条件的 a 和 a 下面所有的 bs
 
 > Note: 实际应该是 a.joins(:bs).where(bs.x ...).preload(:bs)
 
