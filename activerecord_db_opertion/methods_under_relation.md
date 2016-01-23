@@ -27,11 +27,14 @@
 | where_values_hash | 返回所有 where 查询条件，结果并不准确 |
 | reload | reset + load |
 | cache_key | ... |
-| none? | ... |
-| one? | ... |
+
 
 和
 
+| 方法 | 解释 |
+| -- | -- |
+| none? | ... |
+| one? | ... |
 
 除上述方法外，还有：
 
