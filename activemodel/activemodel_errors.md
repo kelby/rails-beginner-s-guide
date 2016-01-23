@@ -65,7 +65,7 @@ generate_message
 自己定义的校验举例：
 
 ```ruby
-# 用户创建、更新订单（会更改开始工作日期的地方）， 开始工作时间不能早于今天
+# 用户创建、更新订单（会更改开始工作日期的地方），开始工作时间不能早于今天
 before_save :validates_of_beginning_work_date
 
 def validates_of_beginning_work_date
