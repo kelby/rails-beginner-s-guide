@@ -1,4 +1,4 @@
-## Model Naming
+## ~~Model Naming~~
 
 Action View 里有 Model Naming 模块。
 
@@ -12,4 +12,4 @@ convert_to_model
 model_name_from_record_or_class
 ```
 
-方便我们把对象转换成 Model 或 model_name 进行处理。
+方便我们把对象转换成 Model 或 model_name 进行处理，但一般我们不会直接使用。
