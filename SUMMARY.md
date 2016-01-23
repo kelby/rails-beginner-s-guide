@@ -166,7 +166,7 @@
        * [0) Abstract Renderer](actionview_renderer_and_rendering/rendering_abstract_renderer.md)
        * [子类 Template Renderer](actionview_renderer_and_rendering/rendering_template_renderer.md)
        * [子类 Partial Renderer & Collection Caching](actionview_renderer_and_rendering/rendering_partial_renderer.md)
-       * [子类 3) Streaming Template Renderer](actionview_renderer_and_rendering/rendering_streaming_template_renderer.md)
+       * [子类 Streaming Template Renderer](actionview_renderer_and_rendering/rendering_streaming_template_renderer.md)
    * [Template 内容](actionview_renderer_and_rendering/actionview_template.md)
        * [template 本文件下的内容](actionview_renderer_and_rendering/template_file.md)
        * [template 目录](actionview_renderer_and_rendering/template_dictory.md)
