@@ -1,4 +1,4 @@
-#### 子类 3) Streaming Template Renderer
+#### 子类 Streaming Template Renderer
 
 流模板渲染器，直接继承于 Template Renderer，间接继承于 Abstract Renderer.
 
