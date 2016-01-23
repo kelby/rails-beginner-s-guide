@@ -1,6 +1,5 @@
 ## Action Cable others
 
-
 ### 命令行生成
 
 generate 生成两文件，"channel.rb" 和 "assets/channel.coffee"
