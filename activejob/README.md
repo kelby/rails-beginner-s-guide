@@ -14,7 +14,7 @@
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
-# 或
+# 或类似
 Rails.application.config.active_job.queue_adapter = :test
 ```
 
