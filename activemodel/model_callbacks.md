@@ -19,7 +19,7 @@ class Person
   # around_update ...
   after_update  :say_success
 
-  # 为了统一，易于理解，这里的方法名应该用：update
+  # 为了统一，易于理解，这里的方法名一般用：update
   # 但这并不是规定死的，也可以不一致，比如这里的示例代码
   def update_me
     run_callbacks(:update) do
