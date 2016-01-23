@@ -72,7 +72,7 @@ end
 # abstract_controller/rendering.rb
 def view_assigns
   # Rails 自带 & 自己管理的一些实例变量
-      protected_vars = _protected_ivars
+  protected_vars = _protected_ivars
   # 此方法由 Ruby 提供，通过它我们可获取 Controller 里我们定义的一些实例变量
   variables      = instance_variables
 
