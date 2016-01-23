@@ -38,7 +38,7 @@ to_a
 to_sql
 ```
 
-一般，我们不需要也不推荐使用 `to_a` 强制转换 Relation 成数组；使用 `to_sql` 可以方便
+一般，我们不需要也不推荐使用 `to_a` 强制转换 Relation 成数组；使用 `to_sql` 可以方便的查看生成的 Sql 语句。
 
 ```
 eager_loading?
