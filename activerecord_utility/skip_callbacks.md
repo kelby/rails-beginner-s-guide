@@ -2,7 +2,7 @@
 
 主要有 4 种方式：
 
-**update_columns**
+**update_columns 和 update_column**
 <br>
 还有 update_column，这些都是直接执行 SQL 语句，不会触发回调方法。
 
