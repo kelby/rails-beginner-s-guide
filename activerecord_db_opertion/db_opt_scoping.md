@@ -138,6 +138,8 @@ end
 
 前面说过 scope 可以链式调用，但如果调用了 `unscoped` 的话，它可以把之前的 scope 给清除掉，包括 default_scope.
 
+示例：
+
 ```ruby
 class Post < ActiveRecord::Base
   def self.default_scope
