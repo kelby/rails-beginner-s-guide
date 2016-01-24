@@ -33,6 +33,7 @@ toggle!
 # 更新 updated_at 或指定字段
 touch
 
+# 更新操作
 update & update_attributes
 update! & update_attributes!
 
