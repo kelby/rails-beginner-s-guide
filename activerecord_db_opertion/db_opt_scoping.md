@@ -136,7 +136,20 @@ end
 
 #### unscoped
 
-前面说过 scope 可以链式调用，
+前面说过 scope 可以链式调用，但如果调用了 `unscoped` 的话，它可以把之前的 scope 给清除掉。
+
+```ruby
+class Post < ActiveRecord::Base
+  def self.default_scope
+    where published: true
+  end
+end
+
+Post.all                                  # Fires "SELECT * FROM posts WHERE published = true"
+Post.unscoped.all                         # Fires "SELECT * FROM posts"
+Post.where(published: false).unscoped.all # Fires "SELECT * FROM posts"
+```
+
 #### all
 
 #### 为什么参数要是 proc 类型？
