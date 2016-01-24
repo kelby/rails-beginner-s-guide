@@ -46,6 +46,16 @@ end
 
 类方法 `queue_with_priority` 进行设置，对整个类有效。
 
+```ruby
+class PublishToFeedJob < ActiveJob::Base
+  queue_with_priority 50
+
+  def perform(post)
+    post.to_feed!
+  end
+end
+```
+
 可用实例方法 `priority` 获取，由上面统一设置的。
 
 ### Core
