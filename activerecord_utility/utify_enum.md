@@ -76,6 +76,7 @@ post.status
 post.status = "archived"
 => "archived"
 ```
+注意：此处一定要区别于 `post[:status]=`
 
 7 同名实例方法(get 类型)
 
