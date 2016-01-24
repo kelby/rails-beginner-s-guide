@@ -4,7 +4,7 @@
 
 **update_columns 和 update_column**
 <br>
-还有 update_column，这些都是直接执行 SQL 语句，不会触发回调方法。
+它们都是直接执行 SQL 语句，不会触发回调方法。
 
 使用举例：
 
