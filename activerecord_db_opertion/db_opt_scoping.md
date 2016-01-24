@@ -136,6 +136,7 @@ end
 
 #### unscoped
 
+前面说过 scope 可以链式调用，
 #### all
 
 #### 为什么参数要是 proc 类型？
