@@ -8,7 +8,7 @@ attribute
 columns
 columns_hash
 
-# 重置 column 信息，迁移时很有有
+# 重置 column 信息，迁移时很有用
 reset_column_information
 ```
 
