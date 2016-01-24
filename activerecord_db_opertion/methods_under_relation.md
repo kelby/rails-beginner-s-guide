@@ -38,14 +38,14 @@
 除上述方法外，还有：
 
 ```
-to_a
-
 to_sql
 ```
 
-一般，我们不需要也不推荐使用 `to_a` 强制转换 Relation 成数组；使用 `to_sql` 可以方便的查看生成的 Sql 语句。
+一般，；使用 `to_sql` 可以方便的查看生成的 Sql 语句。
 
 ```
+to_a
+
 eager_loading?
 
 encode_with
@@ -66,3 +66,5 @@ size
 
 uniq_value
 ```
+
+我们不需要也不推荐使用 `to_a` 强制转换 Relation 成数组。
