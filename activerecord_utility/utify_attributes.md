@@ -2,7 +2,7 @@
 
 提供方法：
 
-```
+```ruby
 attribute
 
 columns
