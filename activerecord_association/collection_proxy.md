@@ -2,14 +2,29 @@
 
 **对外提供接口。**
 
+有破坏行为：
+
 ```
-<<
+<< & push & append
+```
+
+仅是结果：
+
+```
 ==
 
 any?
 
-append
+count
 
+empty?
+
+length
+```
+
+多种查询：
+
+```
 arel
 
 build
@@ -18,7 +33,7 @@ clear
 
 concat
 
-count
+
 
 create
 create!
@@ -31,7 +46,7 @@ destroy_all
 
 distinct & uniq
 
-empty?
+
 
 find
 
@@ -46,7 +61,7 @@ forty_two
 
 include?
 
-length
+
 
 load_target
 
@@ -80,7 +95,5 @@ spawn
 
 target
 
-to_a
-
-to_ary
+to_a & to_ary
 ```
