@@ -38,4 +38,4 @@ object.send(:update_without_callbacks)
 
 **save(:validate => false)**
 
-跳过所有校验。
+跳过 Model 里的所有校验。
