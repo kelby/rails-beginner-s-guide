@@ -73,7 +73,7 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录
 
 ### Configured Job
 
-配置实例，Core 里的 set 类方法会用到它。
+配置实例，Core 里的 set 类方法会用到它。可用于实例化 Job 类，并执行 `perform_now` 或 `perform_later`
 
 ### 解析 queue_adapter 及其 API
 
