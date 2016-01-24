@@ -34,8 +34,6 @@ clear
 
 concat
 
-
-
 create
 create!
 
@@ -46,8 +44,6 @@ destroy
 destroy_all
 
 distinct & uniq
-
-
 
 find
 
@@ -61,8 +57,6 @@ fifth
 forty_two
 
 include?
-
-
 
 load_target
 
@@ -89,10 +83,6 @@ scope & spawn
 scoping
 
 select
-
-
-
-
 
 target
 
