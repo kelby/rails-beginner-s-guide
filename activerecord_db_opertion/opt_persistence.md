@@ -2,7 +2,7 @@
 
 很重要的模块。
 
-```
+```ruby
 # 减一、加一
 decrement
 decrement!
