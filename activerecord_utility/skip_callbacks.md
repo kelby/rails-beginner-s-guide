@@ -12,6 +12,10 @@
 user.update_columns(last_request_at: Time.current)
 ```
 
+**save(:validate => false)**
+
+跳过 Model 里的所有校验。
+
 **skip_callback**
 <br>
 跳过某个回调。
@@ -35,7 +39,3 @@ end
 object.send(:create_without_callbacks)
 object.send(:update_without_callbacks)
 ```
-
-**save(:validate => false)**
-
-跳过 Model 里的所有校验。
