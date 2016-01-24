@@ -68,6 +68,8 @@ post.status
 => "active"
 ```
 
+注意：这里如果用 `post[:status]` 的方式获取属性值，返回的
+
 6 同名实例方法= (set 类型)
 
 ```ruby
