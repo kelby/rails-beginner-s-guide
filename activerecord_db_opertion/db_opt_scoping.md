@@ -145,9 +145,14 @@ class Post < ActiveRecord::Base
   end
 end
 
-Post.all                                  # Fires "SELECT * FROM posts WHERE published = true"
-Post.unscoped.all                         # Fires "SELECT * FROM posts"
-Post.where(published: false).unscoped.all # Fires "SELECT * FROM posts"
+Post.all                                  
+# Fires "SELECT * FROM posts WHERE published = true"
+
+Post.unscoped.all                         
+# Fires "SELECT * FROM posts"
+
+Post.where(published: false).unscoped.all 
+# Fires "SELECT * FROM posts"
 ```
 
 #### all
