@@ -1,4 +1,4 @@
-## Sanitization
+## ~~Sanitization~~
 
 ```
 expand_hash_conditions_for_aggregates
