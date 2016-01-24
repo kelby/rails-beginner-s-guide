@@ -286,12 +286,7 @@ Math::DomainError
 StopIteration
 ThreadError
 FiberError
-Rake::Win32::Win32HomeError
-Gem::Ext::BuildError
-Rake::TaskArgumentError
-Rake::RuleRecursionOverflowError
-TZInfo::InvalidZoneinfoDirectory
-TZInfo::ZoneinfoDirectoryNotFound
+
 ```
 
 其它：
