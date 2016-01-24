@@ -30,6 +30,7 @@ save!
 toggle
 toggle!
 
+# 更新 updated_at 或指定字段
 touch
 
 update & update_attributes
