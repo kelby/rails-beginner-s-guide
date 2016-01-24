@@ -6,6 +6,8 @@
 
 ```
 << & push & append
+
+to_a & to_ary
 ```
 
 仅是结果：
@@ -70,8 +72,6 @@ prepend
 
 proxy_association
 
-push
-
 reload
 
 replace
@@ -84,7 +84,11 @@ scoping
 
 select
 
-target
 
-to_a & to_ary
+```
+
+其它：
+
+```
+target
 ```
