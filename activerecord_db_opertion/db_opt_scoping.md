@@ -159,7 +159,7 @@ Post.where(published: false).unscoped.all
 
 #### all
 
-all 方法，默认已经 scope
+`all` 方法，默认已经 scope
 
 #### 为什么参数要是 proc 类型？
 
