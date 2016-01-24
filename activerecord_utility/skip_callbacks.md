@@ -1,6 +1,6 @@
 ### 跳过回调
 
-主要有 3 种方式：
+主要有 4 种方式：
 
 **update_columns**
 <br>
@@ -35,3 +35,6 @@ end
 object.send(:create_without_callbacks)
 object.send(:update_without_callbacks)
 ```
+
+**save(validates: false)**
+
