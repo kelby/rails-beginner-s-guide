@@ -19,7 +19,7 @@ destroyed?
 new_record?
 persisted?
 
-# 重新加载
+# 重新加载，避免缓存
 reload
 
 save
