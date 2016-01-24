@@ -9,6 +9,7 @@ update_counters(id, counters)
 increment_counter(counter_name, id)
 decrement_counter(counter_name, id)
 
+# 当计数出错时，可校正统计
 reset_counters(id, *counters)
 ```
 
