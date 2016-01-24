@@ -6,6 +6,7 @@
 
 ```
 << & push & append
+prepend
 
 to_a & to_ary
 
@@ -39,6 +40,8 @@ empty?
 length
 size
 
+include?
+
 loaded?
 
 ==
@@ -63,12 +66,6 @@ fourth
 fifth
 forty_two
 
-include?
-
-prepend
-
-proxy_association
-
 scope & spawn
 
 scoping
@@ -86,4 +83,6 @@ arel
 target
 
 load_target
+
+proxy_association
 ```
