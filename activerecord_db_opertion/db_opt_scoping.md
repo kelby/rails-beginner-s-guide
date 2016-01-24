@@ -6,6 +6,11 @@
 | -- | -- |
 | scope | 命名 scope |
 | default_scope | 设置默认 scope |
+
+和
+
+| 方法 | 解释 |
+| -- | -- |
 | all | all 方法，默认已经 scope |
 | unscoped | 跳过之前设置的 scope |
 
