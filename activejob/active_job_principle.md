@@ -94,7 +94,7 @@ Delayed job - Shopify 出品。
 
 ### 两件事
 
-queueing jobs (via the ActiveJob API) and serialization of ActiveRecord objects (via GlobalID).
+任务进队列 (通过 ActiveJob API) 和 序列化 ActiveRecord 对象 (通过 GlobalID).
 
 ```
     |                   | Async | Queues | Delayed    | Priorities | Timeout | Retries |
