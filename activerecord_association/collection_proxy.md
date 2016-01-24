@@ -8,21 +8,27 @@
 << & push & append
 
 to_a & to_ary
+
+reset
+
+replace
+
+reload
 ```
 
 仅是结果：
 
 ```
-==
-
-any?
-
 count
 
+any?
+many?
 empty?
 
 length
 size
+
+==
 ```
 
 查询：
@@ -30,7 +36,7 @@ size
 ```
 arel
 
-build
+new & build
 
 clear
 
@@ -64,25 +70,19 @@ load_target
 
 loaded?
 
-many?
 
-new
 
 prepend
 
 proxy_association
-
-reload
-
-replace
-
-reset
 
 scope & spawn
 
 scoping
 
 select
+
+take
 ```
 
 其它：
