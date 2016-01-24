@@ -159,7 +159,7 @@ Post.where(published: false).unscoped.all
 
 #### all
 
-`all` 方法，本身已经 scope 返回的是 Relation 对象。如果调用别的 scope 则没必要使用它了，因为默认就已经
+`all` 方法，本身已经 scope，返回的是 Relation 对象。如果调用别的 scope 则没必要使用它了，因为默认就已经
 
 #### 为什么参数要是 proc 类型？
 
