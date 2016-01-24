@@ -23,7 +23,7 @@ length
 size
 ```
 
-多种查询：
+查询：
 
 ```
 arel
