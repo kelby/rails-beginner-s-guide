@@ -19,6 +19,7 @@ destroyed?
 new_record?
 persisted?
 
+# 重新加载
 reload
 
 save
