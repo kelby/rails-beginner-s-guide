@@ -1,6 +1,6 @@
 ## Nested Attributes
 
-方法 `accepts_nested_attributes_for(*attr_names)`
+提供类方法 `accepts_nested_attributes_for(*attr_names)`
 
 attr_names 由：一个或多个属性(association_name) 和 一个或多个可选参数(option)组成。
 
