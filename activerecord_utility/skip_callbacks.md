@@ -36,5 +36,6 @@ object.send(:create_without_callbacks)
 object.send(:update_without_callbacks)
 ```
 
-**save(validates: false)**
+**save(:validate => false)**
 
+跳过所有校验。
