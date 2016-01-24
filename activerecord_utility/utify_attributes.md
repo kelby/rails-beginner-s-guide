@@ -8,6 +8,7 @@ attribute
 columns
 columns_hash
 
+# 重置 column 信息
 reset_column_information
 ```
 
