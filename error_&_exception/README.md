@@ -274,18 +274,6 @@ UncaughtThrowError
 ZeroDivisionError
 FloatDomainError
 
-RegexpError
-Encoding::UndefinedConversionError
-Encoding::InvalidByteSequenceError
-Encoding::ConverterNotFoundError
-IOError
-EOFError
-
-LocalJumpError
-Math::DomainError
-StopIteration
-ThreadError
-FiberError
 
 ```
 
