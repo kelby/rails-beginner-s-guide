@@ -3,9 +3,6 @@
 很重要的模块。
 
 ```
-becomes
-becomes!
-
 decrement
 decrement!
 increment
@@ -36,6 +33,9 @@ update_attribute
 
 update_column
 update_columns
+
+becomes
+becomes!
 ```
 
 > Note: 这里大部分是对单个对象的操作。
