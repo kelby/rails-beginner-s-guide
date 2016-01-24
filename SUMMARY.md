@@ -245,7 +245,7 @@
            * [Preload, Eagerload, Includes 和 Joins 等](activerecord_db_opertion/preload_eagerload_includes_and_joins.md)
            * [Query Methods 读取、设置查询方法](activerecord_db_opertion/query_methods_metaprogram.md)
            * [理解 Join](activerecord_db_opertion/understand_join.md)
-           * [关联表复杂查询](activerecord_db_opertion/complex_query.md)
+           * [关联表复杂查询示例](activerecord_db_opertion/complex_query.md)
        * [Spawn Methods](activerecord_db_opertion/relation_spawn_methods.md)
        * [Batches](activerecord_db_opertion/relation_batches.md)
        * [Finder Methods](activerecord_db_opertion/relation_finder_methods.md)
