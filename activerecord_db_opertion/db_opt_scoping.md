@@ -43,7 +43,9 @@ class Shirt < ActiveRecord::Base
 end
 ```
 
-不同的是 scope 返回的是 Relation，而不是数组. 所以，你可以调用 `Shirt.red.first`, `Shirt.red.count`, `Shirt.red.where(size: 'small')` 等. 但是 Relation 也可以有数组的行为, 如 `Shirt.red.each(&block)`, `Shirt.red.first`, 和 `Shirt.red.inject(memo, &block)` 等。
+**scope 返回的是 Relation，而不是数组**
+
+你可以调用 `Shirt.red.first`, `Shirt.red.count`, `Shirt.red.where(size: 'small')` 等. 但是 Relation 也可以有数组的行为, 如 `Shirt.red.each(&block)`, `Shirt.red.first`, 和 `Shirt.red.inject(memo, &block)` 等。
 
 **scope 可以链式调用**
 
