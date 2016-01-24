@@ -20,7 +20,7 @@ Rails.application.config.active_job.queue_adapter = :test
 
 已经支持 Delayed Job、Resque、Sidekiq 等常用延迟任务 gem. 所有可用 adapter:
 
-```
+```ruby
 :backburner, :delayed_job, :qu, :que, :queue_classic,
 :resque, :sidekiq, :sneakers, :sucker_punch,
 :inline, :test
