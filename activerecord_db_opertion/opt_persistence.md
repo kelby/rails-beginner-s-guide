@@ -40,7 +40,7 @@ update_attribute
 update_column
 update_columns
 
-# 单表继承时，子类对象表现出父类
+# 单表继承时，子类对象行为表现像父类对象
 becomes
 becomes!
 ```
