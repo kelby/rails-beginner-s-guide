@@ -14,6 +14,17 @@ reset
 replace
 
 reload
+
+create
+create!
+
+delete
+delete_all
+
+destroy
+destroy_all
+
+clear
 ```
 
 仅是结果：
@@ -28,28 +39,17 @@ empty?
 length
 size
 
+loaded?
+
 ==
 ```
 
 查询：
 
 ```
-arel
-
 new & build
 
-clear
-
 concat
-
-create
-create!
-
-delete
-delete_all
-
-destroy
-destroy_all
 
 distinct & uniq
 
@@ -57,7 +57,6 @@ find
 
 first
 last
-
 second
 third
 fourth
@@ -65,12 +64,6 @@ fifth
 forty_two
 
 include?
-
-load_target
-
-loaded?
-
-
 
 prepend
 
@@ -88,5 +81,9 @@ take
 其它：
 
 ```
+arel
+
 target
+
+load_target
 ```
