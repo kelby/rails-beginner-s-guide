@@ -172,8 +172,7 @@ Alias.first.user_id
 # alias.rb
 class Alias < ActiveRecord::Base  
   belongs_to :user
-  accepts_nested_attributes_for :user, 
-    :update_only => true
+  accepts_nested_attributes_for :user, update_only: true
 end  
 ```
 
