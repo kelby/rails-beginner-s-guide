@@ -22,9 +22,11 @@ persisted?
 # 重新加载，清除缓存
 reload
 
+# 保存操作
 save
 save!
 
+# 反转某 bool 属性的值
 toggle
 toggle!
 
