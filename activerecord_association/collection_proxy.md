@@ -20,6 +20,7 @@ count
 empty?
 
 length
+size
 ```
 
 多种查询：
@@ -83,15 +84,15 @@ replace
 
 reset
 
-scope
+scope & spawn
 
 scoping
 
 select
 
-size
 
-spawn
+
+
 
 target
 
