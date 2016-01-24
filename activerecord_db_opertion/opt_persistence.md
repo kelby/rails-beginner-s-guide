@@ -3,16 +3,19 @@
 很重要的模块。
 
 ```
+# 减一、加一
 decrement
 decrement!
 increment
 increment!
 
+# 删除操作
 delete
 destroy
 destroy!
 destroyed?
 
+# 状态询问
 new_record?
 persisted?
 
