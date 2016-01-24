@@ -36,9 +36,7 @@ touch
 # 更新操作
 update & update_attributes
 update! & update_attributes!
-
 update_attribute
-
 update_column
 update_columns
 
