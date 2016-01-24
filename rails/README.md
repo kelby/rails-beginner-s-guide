@@ -41,9 +41,8 @@ Rails.application.class.ancestors
   Rails::Engine,
   Rails::Railtie,
   Rails::Initializable,
-  Object,
   ... ...
-  ActiveSupport::Dependencies::Loadable,
+  Object,
   ... ...
   Kernel,
   BasicObject] 
