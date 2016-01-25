@@ -19,7 +19,7 @@ config.cache_store
 
 config.console
 
-config.dependency_loading
+config.disable_dependency_loading
 
 config.encoding
 
