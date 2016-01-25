@@ -45,7 +45,8 @@ config.reload_classes_only_on_change
 
 secrets.secret_key_base
 
-config.serve_static_assets
+# 请使用 `public_file_server.enabled`
+config.serve_static_files
 
 # session 存储方式及限制条件
 config.session_store
