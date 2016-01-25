@@ -1,6 +1,6 @@
 ## Serialization
 
-`serialize` 指定某个字段的存储类型(默认是 Array)。
+`serialize` 指定某个字段的存储类型(默认是 YAML)。
 
 这个类型是可序列化的，如：Array，JSON、Hash (此时请注意于【Store】的 `store` 方法的区别)
 
