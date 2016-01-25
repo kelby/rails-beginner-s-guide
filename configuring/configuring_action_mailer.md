@@ -30,17 +30,6 @@ NilClass
 :relative_url_root
 ```
 
-```
-:raise_delivery_errors
-:assets_dir
-:javascripts_dir
-:stylesheets_dir
-:show_previews
-:preview_path
-:asset_host
-:relative_url_root
-```
-
 其它：
 
 ```
