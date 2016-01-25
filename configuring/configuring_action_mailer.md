@@ -1,5 +1,7 @@
 ### Action Mailer
 
+`Rails.configuration.action_mailer.keys`
+
 FalseClass
 
 ```
