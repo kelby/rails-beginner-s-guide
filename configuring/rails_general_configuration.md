@@ -50,6 +50,6 @@ config.serve_static_assets
 # session 存储方式及限制条件
 config.session_store
 
-# 时区
+# 时区，默认为 UTC
 config.time_zone
 ```
