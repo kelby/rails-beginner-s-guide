@@ -1,5 +1,15 @@
 ### Action View
 
+`Rails.configuration.action_view`
+
+TrueClass
+
+```
+:debug_missing_translation
+```
+
+其它：
+
 ```ruby
 config.action_view.field_error_proc provides
 
