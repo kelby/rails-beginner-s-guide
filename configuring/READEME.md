@@ -9,12 +9,14 @@ railties = ['action_mailer', 'active_record', 'action_controller',
 'action_dispatch', 'action_view', 'active_support',
 'i18n', 'assets']
 
-klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
+railties.each do |railtie|
+  klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
 
-klasses.each do |klass|
-  p klass
-  Rails.configuration.action_dispatch.each_pair do |k,v|
-    p k if v.class == klass
+  klasses.each do |klass|
+    p klass
+    Rails.configuration.action_dispatch.each_pair do |k,v|
+      p k if v.class == klass
+    end
   end
 end
 ```
