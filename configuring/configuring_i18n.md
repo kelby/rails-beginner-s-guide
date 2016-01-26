@@ -1,5 +1,14 @@
 ### I18n
 
+Array
+
+```
+:railties_load_path
+:load_path
+```
+
+其它：
+
 ```
 config.i18n.available_locales
 
