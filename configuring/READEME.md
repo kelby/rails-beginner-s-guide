@@ -16,7 +16,7 @@ railties.each do |railtie|
   klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
 
   klasses.each do |klass|
-    p klass
+    puts klass
     Rails.configuration.action_dispatch.each_pair do |k,v|
       p k if v.class == klass
     end
