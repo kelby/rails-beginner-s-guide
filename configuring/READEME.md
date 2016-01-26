@@ -11,6 +11,7 @@ railties = ['action_mailer', 'active_record', 'action_controller',
 
 railties.each do |railtie|
   p railtie.camelize
+  p "=============="
 
   klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
 
