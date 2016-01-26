@@ -227,7 +227,7 @@
        * [Conversion](activemodel/model_conversion.md)
        * [Naming & Name](activemodel/model_naming.md)
        * [Translation](activemodel/model.md)
-   * [Lint Tests](activemodel/model_lint_tests.md)
+       * [Lint Tests](activemodel/model_lint_tests.md)
    * [Model 的增强模块](activemodel/active_model__rails.md)
        * [Attribute Assignment](activerecord_db_opertion/opts_attributeassignment.md)
        * [Attribute Methods](activemodel/model_attributemethods.md)
