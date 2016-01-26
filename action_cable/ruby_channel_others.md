@@ -1,4 +1,4 @@
-# Channel 其它
+## Channel 补充
 
 
 ### Broadcasting
