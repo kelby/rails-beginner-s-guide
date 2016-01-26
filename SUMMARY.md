@@ -146,7 +146,7 @@
        * [Connection](action_cable/action_cable_connection.md)
        * [Connection 补充](action_cable/ruby_connection_others.md)
        * [Server](action_cable/action_cable_server.md)
-       * [Server 其它](action_cable/ruby_server_others.md)
+       * [Server 补充](action_cable/ruby_server_others.md)
        * [Remote Connections](action_cable/article_cable_misc.md)
        * [Action Cable Helper](action_cable/action_cable_helper.md)
    * [Coffee 脚本](action_cable/action_cable_coffee.md)
