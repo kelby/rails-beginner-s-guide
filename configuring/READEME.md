@@ -6,8 +6,7 @@
 
 ```ruby
 railties = ['action_mailer', 'active_record', 'action_controller',
-'action_dispatch', 'action_view', 'active_support',
-'i18n', 'assets']
+  'action_dispatch', 'action_view', 'active_support', 'i18n', 'assets']
 
 railties.each do |railtie|
   p railtie.camelize
