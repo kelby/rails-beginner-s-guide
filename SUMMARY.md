@@ -142,7 +142,7 @@
 * [Action Cable](action_cable/README.md)
    * [Ruby 代码](action_cable/action_cable_source_code.md)
        * [Channel](action_cable/action_cable_channel.md)
-       * [Channel 其它](action_cable/ruby_channel_others.md)
+       * [Channel 补充](action_cable/ruby_channel_others.md)
        * [Connection](action_cable/action_cable_connection.md)
        * [Connection 其它](action_cable/ruby_connection_others.md)
        * [Server](action_cable/action_cable_server.md)
