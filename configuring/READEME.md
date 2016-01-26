@@ -12,12 +12,12 @@ railties.each do |railtie|
   p railtie.camelize
   p "=============="
 
-  klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
+  klasses = Rails.configuration.send(railtie).values.map(&:class).uniq
 
   klasses.each do |klass|
     p klass
 
-    Rails.configuration.action_dispatch.each_pair do |k,v|
+    Rails.configuration.send(railtie).each_pair do |k,v|
       p k if v.class == klass
     end
   end
