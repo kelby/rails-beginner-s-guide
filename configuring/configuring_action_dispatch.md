@@ -54,3 +54,15 @@ Symbol
 :cookies_serializer
 ```
 
+附录：
+
+```ruby
+klasses = Rails.configuration.action_dispatch.values.map &:class
+
+klasses.each do |klass|
+  p klass
+  Rails.configuration.action_dispatch.each_pair do |k,v|
+    p k if v.class == klass
+  end
+end
+```
