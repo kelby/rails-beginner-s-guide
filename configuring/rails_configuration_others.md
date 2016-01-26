@@ -11,10 +11,6 @@ config.eager_load_namespaces
 # 使用它的目录，必须同时使用 autoload_paths
 config.autoload_once_paths
 
-# 每一次请求之间，是否需要重新加载模板
-# 默认和 cache_classes 设置的一样
-config.action_view.cache_template_loading
-
 # 如果你想把周日当做第一天，那也可以
 config.beginning_of_week
 
