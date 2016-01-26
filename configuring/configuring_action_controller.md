@@ -55,8 +55,6 @@ config.action_controller.request_forgery_protection_token
 
 config.action_controller.allow_forgery_protection
 
-config.action_controller.relative_url_root
-
 config.action_controller.permit_all_parameters
 
 config.action_controller.action_on_unpermitted_parameters
