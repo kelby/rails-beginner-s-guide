@@ -2,7 +2,8 @@
 
 FalseClass
 
-```
+```ruby
+# 是否启用 Fragment 缓存
 :perform_caching
 ```
 
@@ -44,7 +45,7 @@ TrueClass
 ```
 config.action_controller.asset_host
 
-# 是否启用 Fragment 缓存
+
 config.action_controller.perform_caching
 
 config.action_controller.default_static_extension
