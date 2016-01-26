@@ -45,9 +45,6 @@ TrueClass
 ```
 config.action_controller.asset_host
 
-
-config.action_controller.perform_caching
-
 config.action_controller.default_static_extension
 
 config.action_controller.default_charset
