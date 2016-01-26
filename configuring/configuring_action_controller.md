@@ -1,5 +1,46 @@
 ### Action Controller
 
+FalseClass
+
+```
+:perform_caching
+```
+
+String
+
+```
+:assets_dir
+:javascripts_dir
+:stylesheets_dir
+```
+
+ActiveSupport::Logger
+
+```
+:logger
+```
+
+ActiveSupport::Cache::NullStore
+
+```
+:cache_store
+```
+
+NilClass
+
+```
+:asset_host
+:relative_url_root
+```
+
+TrueClass
+
+```
+:forgery_protection_origin_check
+```
+
+其它：
+
 ```
 config.action_controller.asset_host
 
