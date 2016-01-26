@@ -17,6 +17,7 @@ railties.each do |railtie|
 
   klasses.each do |klass|
     p klass
+
     Rails.configuration.action_dispatch.each_pair do |k,v|
       p k if v.class == klass
     end
