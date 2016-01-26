@@ -1,5 +1,13 @@
 ### Active Support
 
+Symbol
+
+```
+:deprecation
+```
+
+其它：
+
 ```
 config.active_support.bare
 
