@@ -24,4 +24,8 @@ config.action_view.embed_authenticity_token_in_remote_forms
 config.action_view.prefix_partial_path_with_controller_namespace
 
 config.action_view.raise_on_missing_translations
+
+# 每一次请求之间，是否需要重新加载模板
+# 默认和 cache_classes 设置的一样
+config.action_view.cache_template_loading
 ```
