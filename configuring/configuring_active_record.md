@@ -35,7 +35,5 @@ config.active_record.record_timestamps
 
 config.active_record.partial_writes
 
-config.active_record.maintain_test_schema
-
 config.active_record.dump_schema_after_migration
 ```
