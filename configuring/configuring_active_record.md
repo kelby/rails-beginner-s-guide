@@ -1,5 +1,14 @@
 ### Active Record
 
+TrueClass
+
+```
+:maintain_test_schema
+:belongs_to_required_by_default
+```
+
+其它：
+
 ```
 config.active_record.logger
 
