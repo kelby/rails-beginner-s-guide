@@ -5,6 +5,10 @@
 附录：
 
 ```ruby
+railties = ['action_mailer', 'active_record', 'action_controller',
+'action_dispatch', 'action_view', 'active_support',
+'i18n']
+
 klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
 
 klasses.each do |klass|
