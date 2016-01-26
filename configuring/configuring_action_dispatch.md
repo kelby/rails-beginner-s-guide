@@ -57,7 +57,7 @@ Symbol
 附录：
 
 ```ruby
-klasses = Rails.configuration.action_dispatch.values.map &:class
+klasses = Rails.configuration.action_dispatch.values.map(&:class).uniq
 
 klasses.each do |klass|
   p klass
