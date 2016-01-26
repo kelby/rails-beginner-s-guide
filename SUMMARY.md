@@ -144,7 +144,7 @@
        * [Channel](action_cable/action_cable_channel.md)
        * [Channel 补充](action_cable/ruby_channel_others.md)
        * [Connection](action_cable/action_cable_connection.md)
-       * [Connection 其它](action_cable/ruby_connection_others.md)
+       * [Connection 补充](action_cable/ruby_connection_others.md)
        * [Server](action_cable/action_cable_server.md)
        * [Server 其它](action_cable/ruby_server_others.md)
        * [Remote Connections](action_cable/article_cable_misc.md)
