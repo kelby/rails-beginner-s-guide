@@ -275,7 +275,7 @@
        * [可选参数](activerecord_utility/callback_options.md)
    * [Validations](activerecord_utility/activerecord__validations.md)
    * [Inheritance 单表继承](activerecord_utility/inheritance.md)
-   * [Transactions](activerecord_utility/utify_transactions.md)
+   * [Transactions 事务](activerecord_utility/utify_transactions.md)
    * [Store](activerecord_utility/utify_store.md)
    * [Enum](activerecord_utility/utify_enum.md)
    * [Nested Attributes](activerecord_utility/utify_nested_attributes.md)
