@@ -24,7 +24,7 @@
 
 可执行一系列的查询语句，如：
 
-```
+```ruby
 where(color: :red).select('shirts.*').includes(:washing_instructions)
 ```
 
@@ -54,7 +54,9 @@ end
 
 **scope 可以链式调用**
 
-`Shirt.red.dry_clean_only` 运行结果是 `red` 和 `dry_clean_only` 综合的结果。`Shirt.red.dry_clean_only.count` 返回的是 `red` 和 `dry_clean_only` 综合结果的数目。在这里和 `Shirt.red.dry_clean_only.average(:thread_count)` 类似。
+`Shirt.red.dry_clean_only` 运行结果是 `red` 和 `dry_clean_only` 综合的结果。
+<br>
+`Shirt.red.dry_clean_only.count` 返回的是 `red` 和 `dry_clean_only` 综合结果的数目。在这里和 `Shirt.red.dry_clean_only.average(:thread_count)` 类似。
 
 **scope 是一步步走下去的**
 
