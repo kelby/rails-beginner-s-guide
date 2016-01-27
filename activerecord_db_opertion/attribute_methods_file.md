@@ -6,14 +6,12 @@
 []
 []=
 
-attribute_for_inspect
-
+attributes
 attribute_names
 
+attribute_for_inspect
+
 attribute_present?
-
-attributes
-
 has_attribute?
 ```
 
