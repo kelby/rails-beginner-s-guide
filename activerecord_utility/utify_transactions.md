@@ -1,4 +1,4 @@
-## Transactions
+## Transactions 事务
 
 `transaction(options = {}, &block)` 要么同时成功，往下走；要么同时失败，回滚。
 
