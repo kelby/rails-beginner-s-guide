@@ -274,7 +274,7 @@
        * [跳过回调](activerecord_utility/skip_callbacks.md)
        * [可选参数](activerecord_utility/callback_options.md)
    * [Validations](activerecord_utility/activerecord__validations.md)
-   * [Inheritance](activerecord_utility/inheritance.md)
+   * [Inheritance 单表继承](activerecord_utility/inheritance.md)
    * [Transactions](activerecord_utility/utify_transactions.md)
    * [Store](activerecord_utility/utify_store.md)
    * [Enum](activerecord_utility/utify_enum.md)
