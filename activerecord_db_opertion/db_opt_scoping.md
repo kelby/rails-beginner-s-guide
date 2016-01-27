@@ -132,7 +132,7 @@ end
 ```
 2) 始终起作用，不能覆盖，冲突时取合集。
 
-3) 会影响 initialization 过程。
+3) 会影响 initialization 过程。例如以上示例，默认新创建的对象 published 为 true.
 
 4) 基于第2、3点请慎用。
 
