@@ -177,24 +177,9 @@ MIME::Type::InvalidEncoding
 Erubis::ErubisError
 Erubis::NotSupportedError
 
-Concurrent::ConcurrentUpdateError
 ActionDispatch::Cookies::CookieOverflow
-Concurrent::Error
-Concurrent::ConfigurationError
-Concurrent::CancelledOperationError
-Concurrent::LifecycleError
-Concurrent::ImmutabilityError
-Concurrent::IllegalOperationError
-Concurrent::InitializationError
-Concurrent::MaxRestartFrequencyError
-Concurrent::MultipleAssignmentError
-Concurrent::RejectedExecutionError
-Concurrent::ResourceLimitError
-Concurrent::TimeoutError
 
-Nokogiri::SyntaxError
-Nokogiri::XML::SyntaxError
-URI::GID::MissingModelIdError
+
 ActiveRecord::ConnectionTimeoutError
 ActiveRecord::ExclusiveConnectionTimeoutError
 MultiJson::AdapterError
@@ -247,32 +232,6 @@ WebConsole::DoubleRenderError
 Module::DelegationError
 ActionDispatch::Session::SessionRestoreError
 ActiveRecord::TypeConflictError
-
-Psych::Exception
-Psych::BadAlias
-Psych::DisallowedClass
-Psych::SyntaxError
-URI::Error
-URI::InvalidURIError
-URI::InvalidComponentError
-URI::BadURIError
-Nokogiri::CSS::Tokenizer::ScanError
-Nokogiri::CSS::SyntaxError
-
-TypeError
-ArgumentError
-IndexError
-KeyError
-RangeError
-NameError
-NoMethodError
-RuntimeError
-EncodingError
-Encoding::CompatibilityError
-SystemCallError
-UncaughtThrowError
-ZeroDivisionError
-FloatDomainError
 
 
 ```
