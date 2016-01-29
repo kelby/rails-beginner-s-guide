@@ -7,11 +7,11 @@
 它是 Channel 的头：
 
 ```ruby
-      include Callbacks
-      include PeriodicTimers
-      include Streams
-      include Naming
-      include Broadcasting
+include Callbacks
+include PeriodicTimers
+include Streams
+include Naming
+include Broadcasting
 ```
 
 **内部处理**
