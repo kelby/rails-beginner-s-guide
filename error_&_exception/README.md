@@ -177,6 +177,7 @@ MIME::Type::InvalidEncoding
 Erubis::ErubisError
 Erubis::NotSupportedError
 
+# 配置 session store
 ActionDispatch::Cookies::CookieOverflow
 
 
