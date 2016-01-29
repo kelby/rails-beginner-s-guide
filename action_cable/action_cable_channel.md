@@ -77,4 +77,5 @@ CommentsChannel.broadcast_to(@post, @comment)
 
 Connection 终于有了自己的一点处理能力，虽然小，但你可以选择使用，也可放弃。
 
-常用 `stream_from` 以处理一对一消息；`stop_all_streams` 单方面即可中止服务。
+常用 `stream_from` 以处理一对一消息；`stop_all_streams` 单方面即可中止服务。`stream_for` 和 `stream_from` 类似，只是多了一个空间。
+
