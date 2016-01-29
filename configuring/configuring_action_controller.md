@@ -38,6 +38,9 @@ TrueClass
 
 ```
 :forgery_protection_origin_check
+
+# Helper 方法在所有 View 里都可用
+:include_all_helpers
 ```
 
 其它：
