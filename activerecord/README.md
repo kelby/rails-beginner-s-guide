@@ -1,3 +1,0 @@
-# Active Record
-
-TODO
