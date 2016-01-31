@@ -35,6 +35,7 @@
 | values | 返回规格化的所有查询条件。如果你用的查询条件太多了，可用它来查看 |
 | where_values_hash | 返回所有 where 查询条件，结果并不准确 |
 | to_sql | 一般地，使用 `to_sql` 可以方便的查看生成的 Sql 语句 |
+| size | ... |
 
 除上述方法外，还有：
 
@@ -56,8 +57,6 @@ pretty_print
 scope_for_create
 
 scoping
-
-size
 
 uniq_value
 ```
