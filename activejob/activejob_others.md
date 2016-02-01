@@ -58,7 +58,7 @@ end
 ### Queue Adapters
 
 原来，不同的延迟任务 gem 有各自不同的 self.perform、perform、run、work，现在：
-
+<br>
 都有同名的 self.enqueue 和 self.enqueue_at
 
 ### Logging
