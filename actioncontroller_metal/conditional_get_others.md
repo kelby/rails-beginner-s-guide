@@ -66,7 +66,7 @@ update_attributes 98eac754b15c61f4c8b4f79b7f0a5645
 
 这里区别于响应：
 
-```
+```sh
 # 之前，还需要渲染视图
 Completed 200 OK in 84ms (Views: 10.7ms | ActiveRecord: 2.7ms)
 
