@@ -12,13 +12,13 @@ generate 生成两文件，"channel.rb" 和 "assets/channel.coffee"
 
 自身：
 
-```
+```ruby
   s.add_dependency 'actionpack', version
 ```
 
 其它：
 
-```
+```ruby
   s.add_dependency 'coffee-rails',     '~> 4.1.0'
   s.add_dependency 'faye-websocket',   '~> 0.10.0'
   s.add_dependency 'websocket-driver', '~> 0.6.1'
