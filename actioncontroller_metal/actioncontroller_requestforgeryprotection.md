@@ -20,7 +20,7 @@ protect_from_forgery
 
 方法里调用了：
 
-```
+```ruby
 before_action :verify_authenticity_token
 ```
 
