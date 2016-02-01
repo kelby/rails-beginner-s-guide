@@ -32,7 +32,7 @@ Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 变为：
 
 ```
-    Started GET "/hello" for 127.0.0.1 at 2014-04-27 08:57:07 +0800
+Started GET "/hello" for 127.0.0.1 at 2014-04-27 08:57:07 +0800
 ```
 
 #### 加入 Rendering 模块
