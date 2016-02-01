@@ -3,12 +3,12 @@
 **关联方法带来的高级的方法。**
 
 ```
-BelongsToPolymorphicAssociation
-                   |
-                   V
-  HasOne   &   BelongsTo        HasMany   &   HasAndBelongsToMany
-           |                              |
-           V                              V
+HasOneThroughAssociation BelongsToPolymorphicAssociation  HasManyThroughAssociation
+   |                      |                                 |
+   V                      V                                 V
+  HasOne   &         BelongsTo        HasMany   &   HasAndBelongsToMany
+           |                                    |
+           V                                    V
     SingularAssociation      &     CollectionAssociation
                              |
                              V   
@@ -16,6 +16,7 @@ BelongsToPolymorphicAssociation
 
 # 其它：
 ForeignAssociation
+ThroughAssociation
 ```
 
 **对外提供接口。**
