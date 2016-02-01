@@ -34,9 +34,9 @@ views/posts/1-20140421062215459004000/a357e54a8e1fdeff463f2da17cdc8197
 
 查看一下动态内容的 cache_key，方便对比
 
-```
-# post.cache_key
- => "posts/1-20140421062215459004000"
+```ruby
+post.cache_key
+# => "posts/1-20140421062215459004000"
 ```
 
 更改静态内容(读缓存失败，写缓存；动态内容这部分 Cache Key 不变)
