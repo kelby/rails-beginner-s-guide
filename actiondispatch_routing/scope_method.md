@@ -2,7 +2,7 @@
 
 #### 一、不使用 scope
 
-```
+```ruby
 resources :jjs
 ```
 
