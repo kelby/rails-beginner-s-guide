@@ -100,7 +100,7 @@ token_params_from
 
 传递 token 时，可以传递额外的数据，如：
 
-```
+```sh
 Authorization: Token token="abc", nonce="def"
 ```
 
