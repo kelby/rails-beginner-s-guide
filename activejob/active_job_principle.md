@@ -97,17 +97,17 @@ Delayed job - Shopify 出品。
 任务进队列 (通过 ActiveJob API) 和 序列化 ActiveRecord 对象 (通过 GlobalID).
 
 ```
-    |                   | Async | Queues | Delayed    | Priorities | Timeout | Retries |
-    |-------------------|-------|--------|------------|------------|---------|---------|
-    | Backburner        | Yes   | Yes    | Yes        | Yes        | Job     | Global  |
-    | Delayed Job       | Yes   | Yes    | Yes        | Job        | Global  | Global  |
-    | Qu                | Yes   | Yes    | No         | No         | No      | Global  |
-    | Que               | Yes   | Yes    | Yes        | Job        | No      | Job     |
-    | queue_classic     | Yes   | Yes    | Yes*       | No         | No      | No      |
-    | Resque            | Yes   | Yes    | Yes (Gem)  | Queue      | Global  | Yes     |
-    | Sidekiq           | Yes   | Yes    | Yes        | Queue      | No      | Job     |
-    | Sneakers          | Yes   | Yes    | No         | Queue      | Queue   | No      |
-    | Sucker Punch      | Yes   | Yes    | No         | No         | No      | No      |
-    | Active Job Async  | Yes   | Yes    | Yes        | No         | No      | No      |
-    | Active Job Inline | No    | Yes    | N/A        | N/A        | N/A     | N/A     |
+|                   | Async | Queues | Delayed    | Priorities | Timeout | Retries |
+|-------------------|-------|--------|------------|------------|---------|---------|
+| Backburner        | Yes   | Yes    | Yes        | Yes        | Job     | Global  |
+| Delayed Job       | Yes   | Yes    | Yes        | Job        | Global  | Global  |
+| Qu                | Yes   | Yes    | No         | No         | No      | Global  |
+| Que               | Yes   | Yes    | Yes        | Job        | No      | Job     |
+| queue_classic     | Yes   | Yes    | Yes*       | No         | No      | No      |
+| Resque            | Yes   | Yes    | Yes (Gem)  | Queue      | Global  | Yes     |
+| Sidekiq           | Yes   | Yes    | Yes        | Queue      | No      | Job     |
+| Sneakers          | Yes   | Yes    | No         | Queue      | Queue   | No      |
+| Sucker Punch      | Yes   | Yes    | No         | No         | No      | No      |
+| Active Job Async  | Yes   | Yes    | Yes        | No         | No      | No      |
+| Active Job Inline | No    | Yes    | N/A        | N/A        | N/A     | N/A     |
 ```
