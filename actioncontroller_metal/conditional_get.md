@@ -63,13 +63,13 @@ Rails 5 可传递集合给 fresh_when 或 stale?
 例如：
 
 ```ruby
-# Before
+# 之前
 def index
   @articles = Article.all
   fresh_when(etag: @articles, last_modified: @articles.maximum(:updated_at))
 end
 
-# After
+# 之后
 def index
   @articles = Article.all
   fresh_when(@articles)
