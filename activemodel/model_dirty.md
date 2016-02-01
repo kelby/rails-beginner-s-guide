@@ -39,7 +39,7 @@ end
 
 运用 **Attribute Methods** 生成的方法，能精确跟踪到某属性：
 
-```
+```ruby
 attribute_method_suffix '_changed?', '_change', '_will_change!', '_was'
 
 attribute_method_affix prefix: 'restore_', suffix: '!'
