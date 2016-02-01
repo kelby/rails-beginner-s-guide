@@ -2,7 +2,7 @@
 
 * [Rails 参考手册](README.md)
 * [Active Job](activejob/README.md)
-   * [其它](activejob/activejob_others.md)
+   * [Active Job补充](activejob/activejob_others.md)
    * [Active Job 哲学](activejob/active_job_principle.md)
 * [Action Mailer](actionmailer/README.md)
    * [Base](actionmailer/actionmailer_base.md)
