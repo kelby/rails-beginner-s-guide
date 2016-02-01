@@ -55,7 +55,6 @@
        * [Data Streaming](actioncontroller_metal/metal_data_streaming.md)
        * [Force SSL](actioncontroller_metal/force_ssl.md)
        * [Flash](actioncontroller_metal/flash.md)
-           * [Flash Misc](actioncontroller_metal/flash_misc.md)
        * [Helpers](actioncontroller_metal/metal_helpers.md)
        * [Cookies](actioncontroller_metal/metal_cookies.md)
        * [Implicit Render](actioncontroller_metal/metal_implicit_render.md)
