@@ -2,7 +2,7 @@
 
 对应头部字段及内容：
 
-```
+```ruby
 headers["WWW-Authenticate"] = %(Basic realm="#{realm.gsub(/"/, "")}")
 ```
 
