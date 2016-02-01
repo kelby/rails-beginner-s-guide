@@ -19,7 +19,7 @@ resources :jjs
 
 #### 二、使用 scope，但不传递参数
 
-```
+```ruby
 scope "/admin" do
   resources :iis
 end
