@@ -66,12 +66,12 @@ get 'hello', to: HelloController.action(:index)
 
 不再推荐使用字符串引入 middleware 所以
 
-```
+```ruby
 middleware.use "Foo::Bar"
 ```
 
 变为
 
-```
+```ruby
 middleware.use Foo::Bar
 ```
