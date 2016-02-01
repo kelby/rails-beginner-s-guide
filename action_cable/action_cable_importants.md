@@ -8,7 +8,7 @@ Rails 默认使用的实例是 `ActionCable.server` 除了 Base 提供的实例�
 
 Rails 默认使用 `App.cable` 表示其 Consumer 实例。
 
-```
+```ruby
 @App = {}
 App.cable = ActionCable.createConsumer()
 ```
