@@ -2,6 +2,22 @@
 
 **关联方法带来的高级的方法。**
 
+```
+BelongsToPolymorphicAssociation
+                   |
+                   V
+  HasOne   &   BelongsTo        HasMany   &   HasAndBelongsToMany
+           |                              |
+           V                              V
+    SingularAssociation      &     CollectionAssociation
+                             |
+                             V   
+                         Association
+
+# 其它：
+ForeignAssociation
+```
+
 **对外提供接口。**
 
 概念：a.b 或 a.bs 组成一个 Association，把它们看成是一个整体。但前者为 owner，后者为 target.
