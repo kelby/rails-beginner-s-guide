@@ -6,7 +6,7 @@
 HasOneThroughAssociation BelongsToPolymorphicAssociation  HasManyThroughAssociation
    |                      |                                 |
    V                      V                                 V
-  HasOne   &         BelongsTo      HasAndBelongsToMany     &   HasMany
+  HasOne   &         BelongsTo               HasMany
            |                                    |
            V                                    V
     SingularAssociation      &     CollectionAssociation
