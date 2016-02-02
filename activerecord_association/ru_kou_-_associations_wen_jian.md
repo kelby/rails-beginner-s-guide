@@ -27,3 +27,8 @@ has_and_belongs_to_many
 ```
 association(name)
 ```
+
+通过它调用对应 Association 提供的方法。
+<br>
+通过它调用 CollectionProxy 提供的方法。
+
