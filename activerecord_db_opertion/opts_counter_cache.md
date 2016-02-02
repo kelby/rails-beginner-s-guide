@@ -18,7 +18,7 @@ reset_counters(id, *counters)
 
 之前没有统计数目，新增统计数目，或之前的统计数目存在错误，使用 reset_counters 你可以又快、又准确的得到统计数目。
 
-`update_counters(id, counters)`
+**update_counters(id, counters)**
 
 计数器实现。在它基础上通常有加一、减一操作，但也可以单独使用。
 考虑到并发，这里并不只是Rails层面的get，然后set。而是在SQL层面"真正执行时"才增量加减(但没有用锁机制)。下面的加一、减一方法都是这样。
@@ -34,15 +34,15 @@ WHERE "posts"."id" = 3
 Post.update_counters 3, comments_count: post.comments.count
 ```
 
-`increment_counter(counter_name, id)`
+**increment_counter(counter_name, id)**
 
 给 counter_name 字段进行加一。
 
-`decrement_counter(counter_name, id)`
+**decrement_counter(counter_name, id)**
 
 给 counter_name 字段进行减一。
 
-`reset_counters(id, *counters)`
+**reset_counters(id, *counters)**
 
 上文提到的"新增计数器"，也可用此方法实现。
 
