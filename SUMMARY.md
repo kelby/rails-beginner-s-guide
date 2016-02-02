@@ -303,7 +303,7 @@
        * [Association Scope](activerecord_association/association_associationscope.md)
        * [Join Dependency](activerecord_association/association_joindependency.md)
        * [Preloader](activerecord_association/association_preloader.md)
-   * 入口 - Associations 文件
+   * [入口 - Associations 文件](activerecord_association/ru_kou_-_associations_wen_jian.md)
 * [Active Record 迁移](activerecord_migration/README.md)
    * [Connection Handling 连接数据库](activerecord_underlying/connection_handling.md)
    * [Migration 文件下的内容](activerecord_migration/activerecord_migration_readme.md)
