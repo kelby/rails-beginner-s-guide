@@ -84,7 +84,7 @@ initialize_dup
 
 `clone`
 
-```
+```ruby
 user = User.first
 new_user = user.clone
 user.name               # => "Bob"
@@ -99,7 +99,7 @@ user.name.object_id == user.dup.name.object_id  # => false
 
 `encode_with`
 
-```
+```ruby
 class Post < ActiveRecord::Base
 end
 coder = {}
@@ -109,7 +109,7 @@ coder # => {"attributes" => {"id" => nil, ... }}
 
 `init_with`
 
-```
+```ruby
 class Post < ActiveRecord::Base
 end
 
