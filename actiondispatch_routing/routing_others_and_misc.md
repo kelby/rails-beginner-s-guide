@@ -12,7 +12,7 @@ end
 
 单数 + 具名
 
-```
+```ruby
 resource :profile
 ```
 
