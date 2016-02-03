@@ -20,7 +20,7 @@ Integration
 
 Inheritance 单表继承
 
-Enum
+Enum 枚举
 
 Callbacks
 
