@@ -24,7 +24,7 @@ user.regenerate_token # => true
 user.regenerate_auth_token # => true
 ```
 
-内容实现：
+内部实现：
 
 通过 `before_create` 及属性自带的读写方法完成赋值操作；
 <br>
