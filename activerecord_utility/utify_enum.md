@@ -98,7 +98,7 @@ post.status_before_type_cast
 ```ruby
 user.name
 
-或
+# 或
 
 user[:name]
 ```
