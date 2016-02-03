@@ -2,6 +2,19 @@
 
 **对内实现。**
 
+```
+HasManyReflection & HasOneReflection & BelongsToReflection & HasAndBelongsToManyReflection RuntimeReflection
+                          |                                                                |
+                          V                                                                V
+AggregateReflection & AssociationReflection                              PolymorphicReflection
+                    |                                                       |
+                    V                                                       V
+          MacroReflection &                                     ThroughReflection
+                          |
+                          V
+                AbstractReflection
+```
+
 **延续 build 目录下 association 文件的工作。**
 
 一个很重要的概念，包含了所有的关联信息。
