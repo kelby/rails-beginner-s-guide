@@ -1,6 +1,6 @@
 ## Statement Cache
 
-提供 `create` 类方法：
+提供 `create(connection, block = Proc.new)` 类方法：
 
 ```ruby
 cache = StatementCache.create(Book.connection) do |params|
