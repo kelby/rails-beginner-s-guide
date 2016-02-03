@@ -285,7 +285,7 @@
    * [Readonly Attributes](activerecord_utility/utify_others.md)
    * [Suppressor](activerecord_utility/suppressor.md)
    * [Sanitization](activerecord_utility/action_record_sanitization.md)
-   * Secure Token
+   * [Secure Token](activerecord_utility/secure_token.md)
 * [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
    * [入口 - Associations 文件](activerecord_association/ru_kou_-_associations_wen_jian.md)
    * [builder 目录下的 associations 文件](activerecord_association/associations_under_builder.md)
