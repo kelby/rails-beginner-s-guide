@@ -1,6 +1,6 @@
 ## Secure Token
 
-提供 `has_secure_token` 类方法
+提供 `has_secure_token(attribute = :token)` 类方法
 
 ```ruby
 class User < ActiveRecord::Base
@@ -11,7 +11,7 @@ end
 
 使用它可以给某些属性赋值 SecureRandom::base58 长度的字符串。
 
-它自动生成了几个方法：
+它自动对就的是 `:token` 属性，并生成了对应的 `regenerate_#{attribute}` 方法：
 
 ```ruby
 user = User.new
