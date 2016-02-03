@@ -18,11 +18,11 @@ update_columns
 delete
 destroy
 destroy!
-destroyed?
 
 # 状态询问
 new_record?
 persisted?
+destroyed?
 
 # 更新 updated_at 或指定字段
 touch
