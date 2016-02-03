@@ -18,7 +18,7 @@ Nested Attributes 嵌套属性
 
 Integration
 
-Inheritance
+Inheritance 单表继承
 
 Enum
 
