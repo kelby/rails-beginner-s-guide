@@ -1,4 +1,4 @@
-## Callbacks 的使用
+## Callbacks 回调
 
 基于 Action Model 提供的 `define_model_callbacks` 和 Active Support 提供的 `define_callbacks` 方法，共生成十几个过滤器方法。
 
