@@ -1,4 +1,4 @@
-## Nested Attributes
+## Nested Attributes 嵌套属性
 
 提供类方法 `accepts_nested_attributes_for(*attr_names)`
 
