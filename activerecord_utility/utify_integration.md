@@ -40,7 +40,7 @@ Person.find(5).cache_key(:updated_at, :last_reviewed_at)
 
 **类方法：**`to_param`
 
-和实例方法 `to_param` 类似，使用举例：
+功能上和实例方法 `to_param` 类似，使用举例：
 
 ```ruby
 class User < ActiveRecord::Base
