@@ -1,4 +1,4 @@
-# railties 目录
+# railties
 
 #### 结构
 
