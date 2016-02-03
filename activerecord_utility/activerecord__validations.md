@@ -2,7 +2,7 @@
 
 和 Active Model 里的校验实现原理类似，但有一点不同：这里校验的属性要是关联对象或要从数据库'读'数据。
 
-1) `validates_associated(*attr_names)`
+**1) validates_associated(*attr_names)**
 
 校验是否存在关联(关系)。可以同时校验多个关联(关系)
 
@@ -15,11 +15,11 @@ class Book < ActiveRecord::Base
 end
 ```
 
-2) `validates_presence_of(*attr_names)`
+**2) validates_presence_of(*attr_names)**
 
 校验(数据库里)是否存在着关联对象。
 
-3) `validates_uniqueness_of(*attr_names)`
+**3) validates_uniqueness_of(*attr_names)**
 
 校验属性的值是否唯一。默认是对所有 record 进行校验，可以用 scope 或 conditions 指定约束条件。
 
