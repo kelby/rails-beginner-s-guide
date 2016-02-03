@@ -1,4 +1,4 @@
-## 基本 - builder 目录下的 associations 文件
+## builder 目录下的 associations 文件
 
 **关联方法带来的基本方法。**
 
