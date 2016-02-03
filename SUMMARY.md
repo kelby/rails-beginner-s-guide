@@ -283,7 +283,6 @@
    * [Attributes](activerecord_utility/utify_attributes.md)
    * [Readonly Attributes](activerecord_utility/utify_others.md)
    * [Sanitization](activerecord_utility/action_record_sanitization.md)
-   * [Attribute Assignment](activerecord_utility/attribute_assignment.md)
 * [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
    * [入口 - Associations 文件](activerecord_association/ru_kou_-_associations_wen_jian.md)
    * [基本 - builder 目录下的 associations 文件](activerecord_association/associations_under_builder.md)
