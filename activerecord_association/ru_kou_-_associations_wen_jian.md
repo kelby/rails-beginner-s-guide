@@ -13,7 +13,7 @@ has_and_belongs_to_many
 
 
 ```
--> 对应的 Builder，父 Builder, 再父 Builder …（交叉进行的）
+-> 对应的 Builder，父 Builder, 顶级 Builder …（交叉进行的）
 ```
 
 ```
