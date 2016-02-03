@@ -1,12 +1,6 @@
 ## Integration
 
-**类方法：**
-
-```
-cache_key(*timestamp_names)
-```
-
-**实例方法：**`to_param()`
+**实例方法：**`to_param`
 
 默认，Rails 生成 URL 时用的是 `primary key`，也就是数据库里的 `id` 属性。例如：
 
@@ -42,4 +36,18 @@ Person.find(5).cache_key  # => "people/5-20071224150000" (updated_at available)
 
 ```ruby
 Person.find(5).cache_key(:updated_at, :last_reviewed_at)
+```
+
+**类方法：**`to_param`
+
+和实例方法 `to_param` 类似，使用举例：
+
+```ruby
+class User < ActiveRecord::Base
+  to_param :name
+end
+
+user = User.find_by(name: 'Fancy Pants')
+user.id         # => 123
+user_path(user) # => "/users/123-fancy-pants"
 ```
