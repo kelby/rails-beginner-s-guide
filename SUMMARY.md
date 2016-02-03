@@ -406,7 +406,7 @@
    * [Time With Zone](activesupport_other_content/activesupport_timewithzone.md)
    * [Security Utils](activesupport_other_content/security_utils.md)
    * [Logger Silence](activesupport_other_content/logger.md)
-* [railties 目录](rails/README.md)
+* [railties](rails/README.md)
    * [Railtie](rails/railite.md)
        * [Railtie 文件下的内容](rails/railtie_file.md)
        * [Initializable](rails/initializable.md)
