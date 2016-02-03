@@ -14,7 +14,7 @@ No Touching
 
 Readonly Attributes
 
-Nested Attributes
+Nested Attributes 嵌套属性
 
 Integration
 
