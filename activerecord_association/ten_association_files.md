@@ -1,4 +1,4 @@
-## 高级 - 11 个 Association 文件
+## 11 个 Association 文件
 
 **关联方法带来的高级的方法。**
 
