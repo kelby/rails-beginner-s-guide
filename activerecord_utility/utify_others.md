@@ -1,6 +1,4 @@
-## 其它
-
-#### Readonly Attributes
+## Readonly Attributes
 
 提供方法：
 
