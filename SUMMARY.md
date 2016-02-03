@@ -285,7 +285,7 @@
    * [Sanitization](activerecord_utility/action_record_sanitization.md)
 * [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
    * [入口 - Associations 文件](activerecord_association/ru_kou_-_associations_wen_jian.md)
-   * [基本 - builder 目录下的 associations 文件](activerecord_association/associations_under_builder.md)
+   * [builder 目录下的 associations 文件](activerecord_association/associations_under_builder.md)
    * [Reflection - 保存着关联信息](activerecord_association/activerecord_association_reflection.md)
    * [11 个 Association 文件](activerecord_association/ten_association_files.md)
    * [4 个关联类方法](activerecord_association/4_methods.md)
