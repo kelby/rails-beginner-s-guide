@@ -335,6 +335,7 @@
    * [Serialization](activerecord_underlying/active_record_serialization.md)
    * [Migration DatabaseTasks](activerecord_others/activerecord_migration_databasetasks.md)
    * [Active Record 其它](activerecord_others/README.md)
+   * Statement Cache
 * [Active Support eager_autoload 的类和模块](activesupport/README.md)
    * [autoload & eager_autoload](activesupport/activesupport_-_autoload_-.md)
    * [Backtrace Cleaner](activesupport/activesupport_-_backtracecleaner_-_proc.md)
