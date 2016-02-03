@@ -22,7 +22,7 @@ Inheritance 单表继承
 
 Enum 枚举
 
-Callbacks
+Callbacks 回调
 
 ~~Translation~~
 
