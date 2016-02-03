@@ -9,14 +9,11 @@ SerializationError
 # js, get, not localhost
 ActionController::InvalidCrossOriginRequest
 
-
 ActionMailer::NonInferrableMailerError
 
 DeliveryMailer RuntimeError
 
-
 ActionView::MissingTemplate
-
 
 DeliveryMethods NoMethodError
 
@@ -24,19 +21,11 @@ DeliveryMailer RuntimeError
 
 ActionMailer NonInferrableMailerError
 
-
 ActiveRecord::RecordNotFound
 
 ActiveRecord::ActiveRecordError
 
 ActionController::RoutingError
-
-NameError
-
-Exception
-
-
-
 
 InvalidIdentifiersError
 ```
@@ -85,9 +74,7 @@ ActionController::SessionOverflowError
 ActionController::UnknownHttpMethod
 ActionController::UnknownFormat
 
-Loofah::ScrubberNotFound
 ActiveModel::ForbiddenAttributesError
-Puma::ConnectionError
 
 ActiveModel::StrictValidationFailed
 ActiveModel::UnknownAttributeError
@@ -99,53 +86,21 @@ ActiveRecord::UnknownMigrationVersionError
 ActiveRecord::IllegalMigrationNameError
 ActiveRecord::PendingMigrationError
 ActiveRecord::ConcurrentMigrationError
-OptionParser::ParseError
-OptionParser::AmbiguousOption
-OptionParser::NeedlessArgument
-OptionParser::MissingArgument
-OptionParser::InvalidOption
-OptionParser::InvalidArgument
-OptionParser::AmbiguousArgument
-
-SocketError
 
 ActionDispatch::IllegalStateError
-TZInfo::InvalidCountryCode
 
-Timeout::Error
-
-TZInfo::NoOffsetsDefined
 ActiveRecord::RecordInvalid
 Mail::Field::FieldError
 Mail::Field::ParseError
 Mail::Field::SyntaxError
 
-Concurrent::Transaction::AbortError
-Concurrent::Transaction::LeaveError
-Concurrent::Agent::Error
-Concurrent::Agent::ValidationError
-
 SignedGlobalID::ExpiredMessage
-Sprockets::Error
-Sprockets::ArgumentError
-Sprockets::ContentTypeMismatch
-Sprockets::NotImplementedError
-Sprockets::NotFound
-Sprockets::ConversionError
-Sprockets::FileNotFound
-Sprockets::FileOutsidePaths
-Jbuilder::NullError
-Jbuilder::ArrayError
+
 ActionController::ParameterMissing
 ActionController::UnpermittedParameters
 Rack::Test::Error
 ActiveSupport::DeprecationException
-Logger::Error
-Logger::ShiftingError
-TZInfo::AmbiguousTime
-TZInfo::PeriodNotFound
-TZInfo::InvalidTimezoneIdentifier
-TZInfo::UnknownTimezone
+
 ActiveSupport::Concern::MultipleIncludedBlocks
 Bundler::Dsl::DSLError
 ActiveSupport::MessageVerifier::InvalidSignature
@@ -164,11 +119,7 @@ Rake::CommandLineOptionError
 Rack::QueryParser::ParameterTypeError
 Rack::QueryParser::InvalidParameterError
 ActionController::Live::ClientDisconnected
-Racc::ParseError
-Gem::VerificationError
-Gem::UnsatisfiableDependencyError
-TZInfo::InvalidDataSource
-TZInfo::DataSourceNotFound
+
 ActionDispatch::RemoteIp::IpSpoofAttackError
 ActionView::Helpers::NumberHelper::InvalidNumberError
 Sprockets::Rails::Helper::AssetNotPrecompiled
@@ -222,19 +173,13 @@ ActiveRecord::UnknownPrimaryKey
 ActiveRecord::ImmutableRelation
 ActiveRecord::TransactionIsolationError
 ActiveRecord::MigrationError
-JSON::ParserError
-JSON::NestingError
-JSON::CircularDatastructure
-JSON::GeneratorError
-JSON::MissingUnicodeSupport
+
 WebConsole::Error
 WebConsole::DoubleRenderError
 
 Module::DelegationError
 ActionDispatch::Session::SessionRestoreError
 ActiveRecord::TypeConflictError
-
-
 ```
 
 其它：
