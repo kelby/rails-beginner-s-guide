@@ -1,6 +1,6 @@
 # Active Record 工具
 
-为了完成某项任务而生。
+为了完成某项任务而生。包括但不限于：
 
 Transactions 事务
 
