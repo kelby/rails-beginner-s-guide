@@ -1,6 +1,6 @@
 ## 入口 - Associations 文件
 
-Association 提供 4 个方法：
+Association 提供我们 4 个常用方法：
 
 ```
 has_many
