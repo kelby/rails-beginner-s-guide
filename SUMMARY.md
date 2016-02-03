@@ -268,7 +268,7 @@
    * [Querying](activerecord_db_opertion/db_opt_querying.md)
    * [其它](activerecord_db_opertion/db_opt_others.md)
 * [Active Record 工具](activerecord_utility/README.md)
-   * [Callbacks 的使用](activerecord_utility/callbacks.md)
+   * [Callbacks 回调](activerecord_utility/callbacks.md)
        * [回调及其顺序](activerecord_utility/activemodel_others.md)
        * [跳过回调](activerecord_utility/skip_callbacks.md)
        * [可选参数](activerecord_utility/callback_options.md)
