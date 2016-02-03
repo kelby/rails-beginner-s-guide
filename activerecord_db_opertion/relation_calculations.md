@@ -12,6 +12,7 @@ sum     # 值的总和
 pluck # 获取所有指定的属性
 ids   # 获取所有的 id 属性
 
+# count, sum, average, minimum, 和 maximum 都是封装它而来
 calculate
 ```
 
