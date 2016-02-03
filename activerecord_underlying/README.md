@@ -8,7 +8,7 @@
 
 - Migration DatabaseTasks
 
-- ~~Statement Cache~~
+- Statement Cache
 
 - ~~Explain~~
 
