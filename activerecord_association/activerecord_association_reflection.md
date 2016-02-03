@@ -26,7 +26,7 @@ add_aggregate_reflection
 
 #### 2) 类方法
 
-```
+```ruby
 reflections # 所有正常的关联
 reflect_on_all_associations          # 指定 macro 的 reflections
 reflect_on_all_autosave_associations # 包含 autosave: true 的 reflections
