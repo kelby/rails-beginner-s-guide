@@ -4,9 +4,13 @@
 
 提供方法：
 
-```
+```ruby
+# 声明某些属性只读
 attr_readonly
+```
 
+```ruby
+# 获取所有只读的属性
 readonly_attributes
 ```
 
