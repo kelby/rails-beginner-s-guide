@@ -11,7 +11,7 @@ end
 
 使用它可以给某些属性赋值 SecureRandom::base58 长度的字符串。
 
-它自动对就的是 `:token` 属性，并生成了对应的 `regenerate_#{attribute}` 方法：
+它自动对应的是 `:token` 属性，并生成了对应的 `regenerate_#{attribute}` 方法：
 
 ```ruby
 user = User.new
