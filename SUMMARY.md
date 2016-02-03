@@ -277,7 +277,7 @@
    * [Transactions 事务](activerecord_utility/utify_transactions.md)
    * [Store](activerecord_utility/utify_store.md)
    * [Enum 枚举](activerecord_utility/utify_enum.md)
-   * [Nested Attributes](activerecord_utility/utify_nested_attributes.md)
+   * [Nested Attributes 嵌套属性](activerecord_utility/utify_nested_attributes.md)
    * [Integration](activerecord_utility/utify_integration.md)
    * [No Touching](activerecord_utility/utify_no_touching.md)
    * [Attributes](activerecord_utility/utify_attributes.md)
