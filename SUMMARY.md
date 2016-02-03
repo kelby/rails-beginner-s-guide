@@ -272,7 +272,7 @@
        * [回调及其顺序](activerecord_utility/activemodel_others.md)
        * [跳过回调](activerecord_utility/skip_callbacks.md)
        * [可选参数](activerecord_utility/callback_options.md)
-   * [Validations](activerecord_utility/activerecord__validations.md)
+   * [Validations 校验](activerecord_utility/activerecord__validations.md)
    * [Inheritance 单表继承](activerecord_utility/inheritance.md)
    * [Transactions 事务](activerecord_utility/utify_transactions.md)
    * [Store](activerecord_utility/utify_store.md)
