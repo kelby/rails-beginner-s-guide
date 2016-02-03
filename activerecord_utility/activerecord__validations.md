@@ -1,4 +1,4 @@
-## Validations
+## Validations 校验
 
 和 Active Model 里的校验实现原理类似，但有一点不同：这里校验的属性要是关联对象或要从数据库'读'数据。
 
