@@ -2,9 +2,9 @@
 
 为了完成某项任务而生。
 
-Transactions
+Transactions 事务
 
-- Validations
+- Validations 校验
 
 包括 Associated Validator、Presence Validator、Uniqueness Validator.
 
