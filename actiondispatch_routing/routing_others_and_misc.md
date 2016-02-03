@@ -2,7 +2,7 @@
 
 复数 + 具名：
 
-```
+```ruby
 resources :photos
 
 resources :magazines do
