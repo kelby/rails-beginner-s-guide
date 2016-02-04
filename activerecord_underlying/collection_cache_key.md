@@ -3,7 +3,7 @@
 给 Relation 集合也可以有 cache_key，例如：
 
 ```ruby
-blogs = Blog.where("id > 2")
+blogs = Blog.where("id > 2");
 
 blogs.collection_cache_key
    (0.2ms)  SELECT COUNT(*) AS size, MAX("blogs"."updated_at") AS timestamp FROM "blogs" WHERE (id > 2)
