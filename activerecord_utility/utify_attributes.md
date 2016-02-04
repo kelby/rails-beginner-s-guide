@@ -8,12 +8,6 @@ attribute
 define_attribute
 ```
 
-`columns` 可用于查看数据库里某张表有什么列。如：
-
-```ruby
-Book.columns.map{ |c| c.name }
-```
-
 下面主要讲解 `attribute` 方法。
 
 1) **覆盖原有类型的行为**
