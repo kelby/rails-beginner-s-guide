@@ -337,6 +337,7 @@
    * [Migration DatabaseTasks](activerecord_others/activerecord_migration_databasetasks.md)
    * [Statement Cache](activerecord_underlying/statement_cache.md)
    * [Active Record 其它](activerecord_others/README.md)
+   * Collection Cache Key
 * [Active Support eager_autoload 的类和模块](activesupport/README.md)
    * [autoload & eager_autoload](activesupport/activesupport_-_autoload_-.md)
    * [Backtrace Cleaner](activesupport/activesupport_-_backtracecleaner_-_proc.md)
