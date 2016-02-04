@@ -320,6 +320,7 @@
        * [Table Definition](activerecord_migration/connection-adapter_table_definition.md)
        * [Table](activerecord_migration/connection-adapter_table.md)
        * [Database Statements](activerecord_migration/connection-adapter_database_statements.md)
+   * [Model Schema](activerecord_migration/migration_modelschema.md)
    * [Migrator 其它](activerecord_migration/activerecord_migrator_others.md)
        * [Model Schema](activerecord_migration/migration_modelschema.md)
        * [schema_format](activerecord_migration/schema_format.md)
