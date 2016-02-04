@@ -3,9 +3,11 @@
 给 Relation 集合也可以有 cache_key，例如：
 
 ```ruby
-@users = User.where("name like ?", "%Alberto%")
-@users.cache_key
-# => "/users/query-5942b155a43b139f2471b872ac54251f-3-20150714212107656125000"
+blogs = Blog.where("id > 2")
+
+blogs.collection_cache_key
+   (0.2ms)  SELECT COUNT(*) AS size, MAX("blogs"."updated_at") AS timestamp FROM "blogs" WHERE (id > 2)
+=> "blogs/query-9a5d6ea830ba519707a5aaf189b9a1b1-0"
 ```
 
 `ActiveRecord::Base#cache_key` 封装了它，所以直接用 `cache_key` 也可以。
