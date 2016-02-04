@@ -5,11 +5,7 @@
 ```ruby
 attribute
 
-columns
-columns_hash
-
-# 重置 column 信息，迁移时很有用
-reset_column_information
+define_attribute
 ```
 
 `columns` 可用于查看数据库里某张表有什么列。如：
