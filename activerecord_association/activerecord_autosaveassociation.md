@@ -2,6 +2,23 @@
 
 负责处理自动保存相关一切任务。
 
+在 Builder::Association 里有：
+
+```ruby
+def self.define_callbacks(model, reflection)
+  if dependent = reflection.options[:dependent]
+    check_dependent_options(dependent)
+    add_destroy_callbacks(model, reflection)
+  end
+
+  Association.extensions.each do |extension|
+    extension.build model, reflection
+  end
+end
+```
+
+而 AssociationBuilderExtension 正是 Associations::Builder::Association.extensions 其中之一。
+
 常用实例方法：
 
 ```
