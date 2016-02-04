@@ -2,7 +2,7 @@
 
 负责处理自动保存相关一切任务。
 
-在 Builder::Association 里有：
+在 Builder::Association 里有调用：
 
 ```ruby
 def self.define_callbacks(model, reflection)
