@@ -2,6 +2,16 @@
 
 **关联方法带来的基本方法。**
 
+主要做 5 件事：
+
+```ruby
+define_extensions model, name, &block
+create_reflection model, name, scope, options, extension
+define_accessors model, reflection
+define_callbacks model, reflection
+define_validations model, reflection
+```
+
 **对内实现。**
 
 ```
