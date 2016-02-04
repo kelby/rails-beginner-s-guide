@@ -12,12 +12,22 @@ def self.define_callbacks(model, reflection)
   end
 
   Association.extensions.each do |extension|
+    # 这里构建
     extension.build model, reflection
   end
 end
 ```
 
 而 AssociationBuilderExtension 正是 Associations::Builder::Association.extensions 其中之一。
+
+**有私有类方法：**
+
+```ruby
+# 给指定的关联添加 autosave
+add_autosave_association_callbacks
+```
+
+就是上面这方法添加的回调，非常重要。
 
 常用实例方法：
 
@@ -38,11 +48,8 @@ destroyed_by_association=
 reload
 ```
 
-除上述方法外，还有私有类方法：
+私有类方法：
 
 ```ruby
 define_non_cyclic_method
-
-# 给指定的关联添加 autosave
-add_autosave_association_callbacks
 ```
