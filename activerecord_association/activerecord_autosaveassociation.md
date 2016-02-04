@@ -20,7 +20,7 @@ end
 
 而 AssociationBuilderExtension 正是 Associations::Builder::Association.extensions 其中之一。
 
-**有私有类方法：**
+对应着的**私有类方法：**
 
 ```ruby
 # 给指定的关联添加 autosave
