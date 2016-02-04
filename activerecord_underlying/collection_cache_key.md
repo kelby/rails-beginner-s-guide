@@ -10,4 +10,4 @@ blogs.collection_cache_key
 => "blogs/query-9a5d6ea830ba519707a5aaf189b9a1b1-0"
 ```
 
-`ActiveRecord::Base#cache_key` 封装了它，所以直接用 `cache_key` 也可以。
+`ActiveRecord::Base#cache_key` 封装了它，所以直接用 `cache_key` 即可。
