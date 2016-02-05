@@ -93,7 +93,7 @@ Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
   members.includes(:responses).where.not(responses: { id: nil })
 ```
 
-有时候会有重复查询，看情况加 uniq 条件。
+看情况决定是否要加 uniq 条件。
 
 #### 关联的关联
 
