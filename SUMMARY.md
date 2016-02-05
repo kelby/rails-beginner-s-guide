@@ -433,7 +433,6 @@
        * [Rack Logger](rails/debugger__logger.md)
        * [Generators](rails/generators.md)
    * [Rails 文件下的内容](rails/rails_class_method.md)
-   * [Railties 哲学](rails/railties_principle.md)
 * [Generators](generators/README.md)
    * [Thor](generators/thor.md)
    * [generators 下的目录、文件](generators/generators_directory.md)
