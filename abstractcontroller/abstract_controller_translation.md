@@ -1,4 +1,4 @@
-#### Translation
+## Translation
 
 I18n 相关的 `t & translate` 和 `l & localize` 方法。
 
