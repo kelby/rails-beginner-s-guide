@@ -52,7 +52,7 @@ autoload_paths
 
 想法：反正在开发环境是自动加载，在生产环境是立即加载。
 <br>
-弊端：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。
+弊端：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。除非你不在乎
 
 **require_dependency 如何使用？**
 
