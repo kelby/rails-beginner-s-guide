@@ -1,4 +1,4 @@
-#### 0) Abstract Renderer
+#### 基类 Abstract Renderer
 
 **具体某个渲染器的抽象类、基类，定义了接口，并提供了几个保护方法给子类使用。**
 
