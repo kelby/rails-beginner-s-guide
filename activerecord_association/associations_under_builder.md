@@ -1,8 +1,8 @@
 ## builder 目录下的 associations 文件
 
-**关联方法带来的基本方法。**
+关联方法带来的基本方法。
 
-主要做 5 件事：
+**主要做 5 件事：**
 
 ```ruby
 define_extensions model, name, &block
