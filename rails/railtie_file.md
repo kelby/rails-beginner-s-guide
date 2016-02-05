@@ -93,7 +93,7 @@ abstract_railtie? # 默认是 Rails::Railtie、Rails::Engine 和 Rails::Applicat
 实例方法：
 
 ```ruby
-config    # 名词
+config # 名词
 configure
 railtie_namespace
 ```
