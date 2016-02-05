@@ -2,6 +2,8 @@
 
 #### 单群、复数？
 
+**关键：**includes 对应的是关联名字，where 对应的是表名。
+
 **一对多关系时：**
 
 joins + where 查询会对每个关联进行查询，所以结果会有重复。
@@ -62,8 +64,6 @@ has_one 呢？
 ```ruby
 Person.includes(:contact).where( :contacts => { :person_id => nil } )
 ```
-
-**关键：**includes 对应的是关联名字，where 对应的是表名。
 
 另外一种解法：
 
