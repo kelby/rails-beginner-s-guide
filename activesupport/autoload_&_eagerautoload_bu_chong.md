@@ -34,16 +34,6 @@ autoload_paths
 <br>
 生产环境下只配置自动加载，为了线程安全等考虑，需要再加上立即加载。
 
-为什么不直接对 lib/ 用 eager_load_paths ？
-
-想法：反正在开发环境是自动加载，在生产环境是立即加载。
-
-坏处：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。
-
-require_dependency 如何使用？
-
-initializers 和 tasks 只执行一次。
-
 **根据环境，互相影响：**
 
 在开发环境，使用 eager_load_paths 会影响 autoload_paths，等同于使用 autoload_paths；
@@ -57,3 +47,13 @@ initializers 和 tasks 只执行一次。
 即使是生产环境下，大部分情况使用 autoload_paths  代替 eager_load_paths 也是可以工作的，但会存循环依赖等风险，偶尔会出问题。
 <br>
 所以，如果你要延迟加载，推荐一直使用 eager_load_paths
+
+**为什么不直接对 lib/ 用 eager_load_paths ？**
+
+想法：反正在开发环境是自动加载，在生产环境是立即加载。
+
+坏处：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。
+
+**require_dependency 如何使用？**
+
+initializers 和 tasks 只执行一次。
