@@ -48,10 +48,6 @@ initializers 和 tasks 只执行一次。
 
 使用 autoload_paths 并不会影响 eager_load_paths
 
-### 用 defined?(Blog) 检测
-
-Foo::Bar::Baz 映射 foo/bar/baz.rb 所以你加载 lib/ 即可，不必具体到 lib/**/* 具体了反而不对！
-
 ## ActiveSupport::Dependencies.autoload_paths
 
 Rails 3、Rails 4 使用 autoload_paths 在生产环境也能工作，但偶尔会出问题。名字不按照约定，偶尔也会出问题。存在不确定性。
