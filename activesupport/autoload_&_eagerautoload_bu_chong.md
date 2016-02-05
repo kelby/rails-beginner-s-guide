@@ -38,7 +38,7 @@ autoload_paths
 
 在开发环境，使用 eager_load_paths 会影响 autoload_paths，等同于使用 autoload_paths；
 <br>
-在生产环境不影响，按照它自己的意思运行。
+在生产环境不影响，按照它本来的意思运行。
 
 使用 autoload_paths 始终不影响 eager_load_paths
 
