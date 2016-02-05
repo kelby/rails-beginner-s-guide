@@ -28,7 +28,7 @@ autoload_paths
 
 例外：app/ 既在 autoload_paths, 又在 eager_load_paths
 
-什么情况下，你配置了也没用？
+**什么情况下，你配置了也没用？**
 
 开发环境配置立即加载，仍然按自动加载执行。
 <br>
