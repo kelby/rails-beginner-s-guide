@@ -181,7 +181,7 @@ parse_query
 
 **除上述方法外，还有：**
 
-```
+```ruby
 include ActionDispatch::Http::Cache::Request
 include ActionDispatch::Http::MimeNegotiation
 include ActionDispatch::Http::Parameters
