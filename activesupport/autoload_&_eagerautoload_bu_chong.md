@@ -53,5 +53,5 @@ initializers 和 tasks 只执行一次。
 使用 autoload_paths 始终不影响 eager_load_paths
 
 Rails 3、Rails 4 使用 autoload_paths 在生产环境也能工作，但会存循环依赖等风险，偶尔会出问题。
-
-Rails 5 强制使用 eager_load_paths
+<br>
+延迟依赖，推荐一直使用 eager_load_paths
