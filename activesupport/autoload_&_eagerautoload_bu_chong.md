@@ -44,7 +44,7 @@ require_dependency 如何使用？
 
 initializers 和 tasks 只执行一次。
 
-**互相影响：**
+**根据环境，互相影响：**
 
 使用 eager_load_paths 会影响 autoload_paths。在开发环境，等同于使用 autoload_paths；在生产环境等同于它自己。
 
