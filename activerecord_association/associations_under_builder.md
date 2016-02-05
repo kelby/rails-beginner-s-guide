@@ -12,7 +12,7 @@ define_callbacks model, reflection
 define_validations model, reflection
 ```
 
-**对内实现。**
+**对内实现：**
 
 ```
   HasOne   &   BelongsTo        HasMany   &   HasAndBelongsToMany
