@@ -28,7 +28,7 @@ includes + where 查询到符合条件就自动终止，所以结果没有重复
 
 有 has_and_belongs_to_many 关联
 
-#### 上面是判断 nil
+#### 判断 nil
 
 ```ruby
 class Person
