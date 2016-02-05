@@ -320,7 +320,6 @@
    * [Migrator 其它](activerecord_migration/activerecord_migrator_others.md)
        * [schema_format](activerecord_migration/schema_format.md)
        * [Schema Migration](activerecord_migration/migrator_schema_migration.md)
-       * [Command Recorder](activerecord_migration/command_recorder.md)
 * [Active Record 约定、配置](activerecord_convention_configuration/README.md)
    * [Naming Conventions](activerecord_convention_configuration/coc_naming_conventions.md)
    * [Schema Conventions](activerecord_convention_configuration/coc_schema_conventions.md)
