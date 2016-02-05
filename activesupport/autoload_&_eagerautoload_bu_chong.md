@@ -9,8 +9,6 @@
 
 怎么自动加载？按约定来...
 
-不按约定来呢？
-
 app/ 既在 autoload_paths, 又在 eager_load_paths
 
 ```
