@@ -1,7 +1,5 @@
 ## Server 补充
 
-
-
 ### Base
 
 ActionCable.server
