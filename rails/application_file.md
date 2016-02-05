@@ -2,7 +2,7 @@
 
 **实例方法：**
 
-```
+```ruby
 # 封装上一级的同名方法
 console
 generators
