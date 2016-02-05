@@ -85,12 +85,12 @@ Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 以下几个查询几乎等价：
 
 ```ruby
-  members.includes(:responses).where('responses.id IS NOT NULL')
+members.includes(:responses).where('responses.id IS NOT NULL')
 
-  members.joins(:responses)
+# 之前没有 not 方法，所以要拼接字符串或只做条件，非预加载
+members.includes(:responses).where.not(responses: { id: nil })
 
-  # 之前没有 not 方法，所以要拼接字符串或只做条件，非预加载
-  members.includes(:responses).where.not(responses: { id: nil })
+members.joins(:responses)
 ```
 
 看情况决定是否要加 uniq 条件。
