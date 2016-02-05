@@ -107,8 +107,6 @@ params
     "controller"=>"posts"}
 ```
 
-------
-
 ## attributes.permitted? 与 ForbiddenAttributesProtection
 
 因 Base 与 API 都有 `include StrongParameters` 并且仅提供 `params` 和 `params=` 方法，所以有理由相信在 Controller 和 View 里通过 params 给 record 对象属性赋值(AttributeAssignment)的话，都会询问一遍是否 `permitted?` 如果包含未被允许更新的字段，会抛 ForbiddenAttributesError 错误。
