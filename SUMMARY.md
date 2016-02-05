@@ -458,7 +458,7 @@
    * [Generators](configuring/configuring_generators.md)
    * [Assets](configuring/configuring_assets.md)
    * [Environments](configuring/config_environments.md)
-   * [不怎么常用的设置项](configuring/rails_configuration_others.md)
+   * [设置项补充](configuring/rails_configuration_others.md)
    * [Middleware](configuring/configuring_middleware.md)
 * [其它](others/README.md)
    * [继承心得](others/misc.md)
