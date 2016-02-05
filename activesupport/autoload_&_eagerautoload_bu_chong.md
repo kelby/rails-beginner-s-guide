@@ -9,8 +9,6 @@
 
 怎么自动加载？按约定来...
 
-app/ 既在 autoload_paths, 又在 eager_load_paths
-
 ```
 # 开关
 eager_load
@@ -23,6 +21,10 @@ eager_load_paths
 # 自动(延迟)加载此路径下的文件
 autoload_paths
 ```
+
+app/ 既在 autoload_paths, 又在 eager_load_paths
+
+
 
 什么情况下，你配置了也没用？
 
