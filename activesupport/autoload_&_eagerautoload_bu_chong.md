@@ -9,12 +9,12 @@
 
 怎么自动加载？按约定来...
 
-```
+```ruby
 # 开关
 eager_load
 ```
 
-```
+```ruby
 # 立即加载此路径下的文件
 eager_load_paths
 
