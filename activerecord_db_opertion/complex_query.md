@@ -90,11 +90,7 @@ Person.includes(:contacts).where( :contacts => { :id => nil } )
 Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 ```
 
-
-
-------
-
-#### 下面是判断非 nil
+#### 判断非 nil
 
 以下几个查询几乎等价：
 
