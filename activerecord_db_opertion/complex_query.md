@@ -109,7 +109,7 @@ Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 
 有时候会有重复查询，看情况加 uniq 条件。
 
-**关联的关联：**
+#### 关联的关联
 
 ```ruby
 class Employee < ActiveRecord::Base
