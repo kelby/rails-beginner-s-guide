@@ -1,7 +1,5 @@
 ### Action Dispatch
 
-`Rails.configuration.action_dispatch.keys`
-
 NilClass
 
 ```
