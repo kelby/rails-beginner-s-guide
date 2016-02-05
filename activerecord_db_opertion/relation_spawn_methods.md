@@ -23,9 +23,7 @@ VALID_FIND_OPTIONS = [ :conditions, :include, :joins, :limit, :offset, :extend,
                        :order, :select, :readonly, :group, :having, :from, :lock ]
 ```
 
-------
-
-一种 merge 转普通查询：
+**一种 merge 转普通查询：**
 
 之前
 
