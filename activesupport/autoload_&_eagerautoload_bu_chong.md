@@ -46,7 +46,7 @@ autoload_paths
 
 即使是生产环境下，大部分情况使用 autoload_paths  代替 eager_load_paths 也是可以工作的，但会存循环依赖等风险，偶尔会出问题。
 <br>
-所以，如果你要延迟加载，推荐一直使用 eager_load_paths
+所以，如果你要延迟加载，推荐一直使用 eager_load_paths.
 
 **直接对 lib/ 用 eager_load_paths ？**
 
