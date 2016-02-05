@@ -46,6 +46,6 @@ initializers 和 tasks 只执行一次。
 
 ## ActiveSupport::Dependencies.autoload_paths
 
-Rails 3、Rails 4 使用 autoload_paths 在生产环境也能工作，但偶尔会出问题。名字不按照约定，偶尔也会出问题。存在不确定性。
+Rails 3、Rails 4 使用 autoload_paths 在生产环境也能工作，但会存循环依赖等风险，偶尔会出问题。
 
 Rails 5 强制使用 eager_load_paths
