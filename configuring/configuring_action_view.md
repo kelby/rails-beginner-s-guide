@@ -1,7 +1,5 @@
 ### Action View
 
-`Rails.configuration.action_view`
-
 TrueClass
 
 ```
