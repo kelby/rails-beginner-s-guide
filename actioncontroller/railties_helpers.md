@@ -1,4 +1,4 @@
-#### Railties Helpers
+## Railties Helpers
 
 根据配置及其它因素，决定是否给我们所定义的 Controller 加载所有可用的 helpers.
 
