@@ -16,16 +16,6 @@ includes + where 查询到符合条件就自动终止，所以结果没有重复
 
 没有上述差异，因为它在另一个层面解决了重复问题。
 
-查询自己，用 where 就行了
-
-有 has_one 关联
-
-有 has_many 关联
-
-有 belongs_to 关联
-
-有 has_and_belongs_to_many 关联
-
 #### 判断 nil
 
 ```ruby
