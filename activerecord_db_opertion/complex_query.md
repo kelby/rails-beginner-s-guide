@@ -14,7 +14,7 @@ joins + where 查询会对每个关联进行查询，所以结果会有重复。
 
 includes + where 查询到符合条件就自动终止，所以结果没有重复。
 <br>
-类似自带 uniq 功能。
+相当于自带 uniq 功能。
 
 **一对一关系（has_one 或 belongs_to）**
 
