@@ -113,7 +113,6 @@ end
 ```
 
 ```ruby
-Employee.
-  joins(:company => :addresses).
+Employee.joins(:company => :addresses).
   where(:addresses => { :city => 'Porto Alegre' })
 ```
