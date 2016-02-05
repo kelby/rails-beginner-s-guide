@@ -21,7 +21,7 @@ run_callbacks
 
 已有回调类型：
 
-```
+```ruby
 CALLBACK_FILTER_TYPES = [:before, :after, :around]
 ```
 
