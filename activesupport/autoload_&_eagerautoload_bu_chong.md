@@ -40,7 +40,7 @@ autoload_paths
 <br>
 在生产环境不影响，按照它本来的意思运行。
 
-使用 autoload_paths 始终不影响 eager_load_paths
+使用 autoload_paths 始终不影响 eager_load_paths.
 
 注意：上述表达是不严谨的！
 
