@@ -87,7 +87,6 @@ Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 ```ruby
 members.includes(:responses).where('responses.id IS NOT NULL')
 
-# 之前没有 not 方法，所以要拼接字符串或只做条件，非预加载
 members.includes(:responses).where.not(responses: { id: nil })
 
 members.joins(:responses)
