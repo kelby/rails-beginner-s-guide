@@ -48,11 +48,11 @@ autoload_paths
 <br>
 所以，如果你要延迟加载，推荐一直使用 eager_load_paths
 
-**为什么不直接对 lib/ 用 eager_load_paths ？**
+**直接对 lib/ 用 eager_load_paths ？**
 
 想法：反正在开发环境是自动加载，在生产环境是立即加载。
-
-坏处：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。
+<br>
+弊端：用的是 lib/**/*.rb 模式，生产环境会把多余的 tasks、generators 也立即加载了。
 
 **require_dependency 如何使用？**
 
