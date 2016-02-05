@@ -425,7 +425,7 @@
        * [rake & rails 命令](rails/command_line.md)
        * [rails console 里的小技巧](rails_command_line/README.md)
        * [Routes Reloader](rails/rails_application_others.md)
-   * [路径 - Root 和 Path](rails/root_and_path.md)
+       * [路径 - Root 和 Path](rails/root_and_path.md)
    * [其它](rails/other_sections_of_rails.md)
        * [AppName, Application. Engine, Railtie](rails/appname_application_engine_railite.md)
        * [Configuration Middleware Stack Proxy](rails/config.md)
