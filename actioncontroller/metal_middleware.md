@@ -1,7 +1,5 @@
 ## Base - Metal 的继承者
 
-#### Base
-
 相对于 Metal，它包含了各个控制器上能够使用到的组件。所以使用它时，在性能上会比直接继承使用 Metal 慢得多，但我们可用的功能更丰富了。
 
 我们看看 ActionController::Base 引入了哪些模块：
