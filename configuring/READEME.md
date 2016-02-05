@@ -6,7 +6,7 @@
 <br>
 前者相当于只有一个总开关，只能决定开或关。而后者除了总开关外，还可以有分开关，总开关设置状态后，可以不设置状态（继承），或者设置自己的状态。
 
-附录：
+附录，查看各个 Railtie 所带配置项：
 
 ```ruby
 railties = ['action_mailer', 'active_record', 'action_controller',
