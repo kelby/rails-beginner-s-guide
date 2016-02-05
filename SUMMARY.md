@@ -1,6 +1,6 @@
 # Summary
 
-* [Rails 参考手册](README.md)
+* [Rails 5 参考手册](README.md)
 * [Active Job](activejob/README.md)
    * [Active Job补充](activejob/activejob_others.md)
 * [Action Mailer](actionmailer/README.md)
