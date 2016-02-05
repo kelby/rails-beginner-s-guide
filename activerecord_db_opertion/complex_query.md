@@ -2,6 +2,22 @@
 
 #### 单群、复数？
 
+一对多关系时：
+
+joins + where 查询会对每个关联进行查询，所以结果会有重复。
+<br>
+侧重点在于符合条件的“前者 + 后者”。
+<br>
+使用 uniq 后前者数目和使用 includes 一样。
+
+includes + where 查询到符合条件就自动终止，所以结果没有重复。
+<br>
+侧重点在于符合条件的“前者”。
+<br>
+自带 uniq 功能。
+
+一对一关系（has_one 或 belongs_to）的话，就没有上述差异。因为它在另一个层面解决了重复问题。
+
 查询自己，用 where 就行了
 
 有 has_one 关联
@@ -95,23 +111,9 @@ Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 
 ------
 
-一对多关系时：
 
-joins + where 查询会对每个关联进行查询，所以结果会有重复。
-<br>
-侧重点在于符合条件的“前者 + 后者”。
-<br>
-使用 uniq 后前者数目和使用 includes 一样。
 
-includes + where 查询到符合条件就自动终止，所以结果没有重复。
-<br>
-侧重点在于符合条件的“前者”。
-<br>
-自带 uniq 功能。
-
-一对一关系（has_one 或 belongs_to）的话，就没有上述差异。因为它在另一个层面解决了重复问题。
-
-------
+**关联的关联：**
 
 ```ruby
 class Employee < ActiveRecord::Base
