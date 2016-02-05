@@ -61,12 +61,6 @@ end
 Person.includes(:contacts).where( :contacts => { :person_id => nil } )
 ```
 
-如果把 has_many 改为 has_one 呢？
-
-```ruby
-Person.includes(:contact).where( :contacts => { :person_id => nil } )
-```
-
 另外一种解法：
 
 ```ruby
@@ -78,6 +72,12 @@ Person.includes(:contacts).where( :contacts => { :id => nil } )
 ```ruby
 # 取出所有（去重），不在里面则表示 nil
 Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
+```
+
+如果把 has_many 改为 has_one 呢？
+
+```ruby
+Person.includes(:contact).where( :contacts => { :person_id => nil } )
 ```
 
 #### 判断非 nil
