@@ -285,7 +285,7 @@
 * [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
    * [Associations 文件 - 入口](activerecord_association/ru_kou_-_associations_wen_jian.md)
    * [Builder Associations - 主要做 5 件事](activerecord_association/associations_under_builder.md)
-   * [Reflection - 5 件事里的保存着关联信息](activerecord_association/activerecord_association_reflection.md)
+   * [Reflection - 关联两者](activerecord_association/activerecord_association_reflection.md)
    * [11 个 Association 文件 - 辅助完成剩下的 4 件事](activerecord_association/ten_association_files.md)
    * [4 个关联类方法](activerecord_association/4_methods.md)
        * [belongs_to](activerecord_association/method_belongs_to.md)
