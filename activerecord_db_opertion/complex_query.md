@@ -61,7 +61,7 @@ end
 Person.includes(:contacts).where( :contacts => { :person_id => nil } )
 ```
 
-has_one 呢？
+如果把 has_many 改为 has_one 呢？
 
 ```ruby
 Person.includes(:contact).where( :contacts => { :person_id => nil } )
