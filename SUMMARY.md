@@ -159,7 +159,7 @@
    * [非 Rails 是如何渲染的](actionview_renderer_and_rendering/principle_rendering.md)
    * [渲染器介绍](actionview_renderer_and_rendering/rendering.md)
        * [Renderer - 渲染的入口](actionview_renderer_and_rendering/rendering_renderer.md)
-       * [0) Abstract Renderer](actionview_renderer_and_rendering/rendering_abstract_renderer.md)
+       * [基类 Abstract Renderer](actionview_renderer_and_rendering/rendering_abstract_renderer.md)
        * [子类 Template Renderer](actionview_renderer_and_rendering/rendering_template_renderer.md)
        * [子类 Partial Renderer & Collection Caching](actionview_renderer_and_rendering/rendering_partial_renderer.md)
        * [子类 Streaming Template Renderer](actionview_renderer_and_rendering/rendering_streaming_template_renderer.md)
