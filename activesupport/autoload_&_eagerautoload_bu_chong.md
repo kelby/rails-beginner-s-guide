@@ -50,7 +50,7 @@ initializers 和 tasks 只执行一次。
 <br>
 在生产环境不影响，按照它自己的意思运行。
 
-使用 autoload_paths 并不会影响 eager_load_paths
+使用 autoload_paths 始终不影响 eager_load_paths
 
 Rails 3、Rails 4 使用 autoload_paths 在生产环境也能工作，但会存循环依赖等风险，偶尔会出问题。
 
