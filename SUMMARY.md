@@ -87,7 +87,6 @@
    * [Routing 概述：生成、存储、识别](actiondispatch_routing/actiondispatch_-_routing.md)
    * [一步步分析从请求到响应涉及到 Rails 的哪些模块](actiondispatch_routing/request_from_route_to_controller.md)
    * [endpoint 和 inspector 文件](actiondispatch_routing/routing_others.md)
-   * [Routing others & misc](actiondispatch_routing/routing_others_and_misc.md)
 * [Action Dispatch RouteSet](actiondispatch_routeset/README.md)
    * [实例对象和各个实例方法](actiondispatch_routeset/routeset.md)
    * [Dispatcher](actiondispatch_routeset/routeset_dispatcher.md)
