@@ -22,7 +22,7 @@ eager_load_paths
 autoload_paths
 ```
 
-app/ 既在 autoload_paths, 又在 eager_load_paths
+例外：app/ 既在 autoload_paths, 又在 eager_load_paths
 
 什么情况下，你配置了也没用？
 
