@@ -24,11 +24,11 @@ includes + where 查询到符合条件就自动终止，所以结果没有重复
 
 ```ruby
 class Person
-   has_many :friends
+  has_many :friends
 end
 
 class Friend
-   belongs_to :person
+  belongs_to :person
 end
 ```
 
