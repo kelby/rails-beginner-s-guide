@@ -336,7 +336,7 @@
    * [Active Record 其它](activerecord_others/README.md)
 * [Active Support eager_autoload 的类和模块](activesupport/README.md)
    * [autoload & eager_autoload](activesupport/activesupport_-_autoload_-.md)
-       * autoload & eager_autoload 补充
+       * [autoload & eager_autoload 补充](activesupport/autoload_&_eagerautoload_bu_chong.md)
    * [Backtrace Cleaner](activesupport/activesupport_-_backtracecleaner_-_proc.md)
    * [Benchmarkable](activesupport/actiondispatch_-_benchmarkable_-.md)
    * [Cache 缓存的源头](activesupport/cache.md)
