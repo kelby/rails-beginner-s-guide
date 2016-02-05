@@ -1,5 +1,7 @@
 ### 关联表复杂查询示例
 
+#### 单群、复数？
+
 查询自己，用 where 就行了
 
 有 has_one 关联
@@ -9,6 +11,8 @@
 有 belongs_to 关联
 
 有 has_and_belongs_to_many 关联
+
+#### 上面是判断 nil
 
 ```ruby
 class Person
@@ -70,7 +74,7 @@ Person.includes(:contacts).where( :contacts => { :id => nil } )
 Person.where('id NOT IN (SELECT DISTINCT(person_id) FROM friends)')
 ```
 
-#### 上面是判断 nil
+
 
 ------
 
