@@ -1,4 +1,4 @@
-### 第零梯队 & 第一梯队 Consumer
+### 第一梯队 Consumer
 
 由 Consumer 根据 action-cable-url 得到 url (使用协议 ws)，创建 WebSocket 实例。
 
