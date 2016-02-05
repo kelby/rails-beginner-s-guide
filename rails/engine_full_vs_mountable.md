@@ -25,7 +25,7 @@ main_app 会继承 Engine 的 model、controller、routes 等。
 
 首先，从路由上讲它们是隔离开的：
 
-```
+```ruby
 # my_engine/config/routes.rb
 MyEngine::Engine.routes.draw do
   # ...
