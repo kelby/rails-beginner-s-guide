@@ -1,7 +1,7 @@
 
-## 关于 autoload_paths 和 eager_load_paths
+### 关于 autoload_paths 和 eager_load_paths
 
-原因：
+**原因：**
 
 - 开发环境，启动速度要快（不完整也没关系）
 - 生产环境，项目要完整（启动速度慢点也没关系）
