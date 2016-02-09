@@ -4,7 +4,7 @@
 
 创建项目时，已经默认自动生成：cable.coffee、channel.rb 和 connection.rb.
 
-使用 generate 时生成两文件，"x_channel.rb" 和 "assets/x_channel.coffee"
+使用 rails g channel x 时生成两文件，"x_channel.rb" 和 "assets/x_channel.coffee"
 
 生成的 .rb 文件有默认方法：subscribed 和 unsubscribed，及其它自定义的方法。
 <br>
