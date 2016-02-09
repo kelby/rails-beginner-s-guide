@@ -19,6 +19,8 @@ engine(app、db)
 - Code Statistics
 - Code Statistics Calculator
 
+Rakefile 里的 `Rails.application.load_tasks` 会加载本应用使用到第三方 Railtie 和 Engine，及 Rails 自身(按照约定 lib/tasks 也包含在内)所定义的 rake 任务。
+
 #### Source Annotation Extractor
 
 和上面列举的：
