@@ -12,7 +12,7 @@ broadcasting_for
 
 ### Callbacks
 
-相关操作：
+相关回调操作：
 
 ```
 after_subscribe
