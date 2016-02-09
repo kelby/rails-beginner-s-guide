@@ -2,13 +2,13 @@
 
 ### 命令行生成
 
-generate 生成两文件，"channel.rb" 和 "assets/channel.coffee"
+创建项目时，已经默认自动生成：cable.coffee、channel.rb 和 connection.rb.
+
+使用 generate 时生成两文件，"*_channel.rb" 和 "assets/*_channel.coffee"
 
 生成的 .rb 文件有默认方法：subscribed 和 unsubscribed，及其它自定义的方法。
-
+<br>
 生成的 coffee 文件有默认操作：链接、断开链接、接收到数据，及其它自定义操作。
-
-创建项目时，默认自动生成：cable.coffee、channel.rb 和 connection.rb.
 
 ### 依赖
 
