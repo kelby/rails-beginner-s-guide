@@ -8,6 +8,8 @@ generate 生成两文件，"channel.rb" 和 "assets/channel.coffee"
 
 生成的 coffee 文件有默认操作：链接、断开链接、接收到数据，及其它自定义操作。
 
+创建项目时，默认自动生成：cable.coffee、channel.rb 和 connection.rb.
+
 ### 依赖
 
 自身：
