@@ -25,3 +25,4 @@ disconnect()
 identifiers()
 ```
 
+它只是调用，实际工作由 server 完成。
