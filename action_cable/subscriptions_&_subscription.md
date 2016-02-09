@@ -22,6 +22,8 @@ unsubscribe
 
 常用方法 `perform` 可以在 Coffee 里调用 Channel 里的 action.
 
+Subscription#perform -> send -> Consumer#send -> Connection#send -> WebSocket#send
+
 #### Subscriptions
 
 常用的：
