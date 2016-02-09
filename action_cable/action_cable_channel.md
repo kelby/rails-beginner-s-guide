@@ -20,12 +20,6 @@ include Broadcasting
 
 **对外提供接口**
 
-a channel like a form of controller
-
-but one that's capable of pushing content to the subscriber in addition to simply responding to the subscriber's direct requests.
-
-Channel instances are long-lived. 
-
 ```
 defer_subscription_confirmation!()
 defer_subscription_confirmation?()
