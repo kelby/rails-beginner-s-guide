@@ -21,13 +21,11 @@
 其它：
 
 ```ruby
-  s.add_dependency 'coffee-rails',     '~> 4.1.0'
-  s.add_dependency 'faye-websocket',   '~> 0.10.0'
+  s.add_dependency 'nio4r',            '~> 1.2'
   s.add_dependency 'websocket-driver', '~> 0.6.1'
-  s.add_dependency 'celluloid',        '~> 0.17.2'
-  s.add_dependency 'em-hiredis',       '~> 0.3.0'
-  s.add_dependency 'redis',            '~> 3.0'
 ```
+
+当然了，redis 也是必须的，尽量这里没有声明。
 
 ### Engine
 
