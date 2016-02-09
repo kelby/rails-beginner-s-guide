@@ -7,7 +7,7 @@ config.autoload_paths
 config.eager_load_paths
 
 # 立即加载开关。开发环境 false，生产环境 true
-# 只影响 autoload 配置
+# eager_load 始终是立即加载，它只影响 autoload 配置
 config.eager_load
 
 # 每次 HTTP 请求之间，是否重新加载环境(类、模块)
