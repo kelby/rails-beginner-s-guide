@@ -77,6 +77,8 @@ Connection 终于有了自己的一点处理能力，虽然小，但你可以选
 stream_from -> connection.transmit -> Connection#transmit -> WebSocket#transmit
 ```
 
+另：
+
 ```
 @websocket = ::WebSocket::Driver.websocket?(env) ? ClientSocket.new(env, event_target, stream_event_loop) : nil
 ```
