@@ -4,10 +4,6 @@
 
 ActionCable.server
 
-finding and disconnecting connections
-
-instance used for broadcasting
-
 ```
 disconnect
 
