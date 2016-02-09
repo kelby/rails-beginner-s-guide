@@ -145,7 +145,7 @@
        * [Server 补充](action_cable/ruby_server_others.md)
        * [Remote Connections](action_cable/article_cable_misc.md)
        * [Action Cable Helper](action_cable/action_cable_helper.md)
-       * Subscription Adapter
+       * [Subscription Adapter](action_cable/subscription_adapter.md)
    * [Coffee 脚本](action_cable/action_cable_coffee.md)
        * [第一梯队 Consumer](action_cable/coffee_consumer.md)
        * [第二梯队 Subscriptions & Subscription](action_cable/subscriptions_&_subscription.md)
