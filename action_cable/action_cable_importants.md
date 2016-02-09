@@ -33,4 +33,4 @@ A输入数据，jQuery 监测，发送类似 Ajax 请求；
 
 received...B jQuery 收到数据，进行响应，反应出来到页面。
 
-重要方法：perform, broadcast 和 received.
+重要方法：客户端 perform, 服务端 broadcast 和 received.
