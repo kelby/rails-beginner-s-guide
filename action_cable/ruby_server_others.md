@@ -36,11 +36,11 @@ remove_connection
 ActionCable.server.config
 
 ```ruby
-      attr_accessor :logger, :log_tags
-      attr_accessor :connection_class, :worker_pool_size
-      attr_accessor :redis, :channels_path
-      attr_accessor :disable_request_forgery_protection, :allowed_request_origins
-      attr_accessor :url
+attr_accessor :logger, :log_tags
+attr_accessor :connection_class, :worker_pool_size
+attr_accessor :redis, :channels_path
+attr_accessor :disable_request_forgery_protection, :allowed_request_origins
+attr_accessor :url
 
 channel_paths
 
