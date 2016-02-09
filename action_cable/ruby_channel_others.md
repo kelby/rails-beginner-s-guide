@@ -12,6 +12,8 @@ broadcasting_for
 
 ### Callbacks
 
+相关操作：
+
 ```
 after_subscribe
 after_unsubscribe
@@ -19,8 +21,6 @@ after_unsubscribe
 before_subscribe
 before_unsubscribe
 ```
-
-相关操作。
 
 ### Naming
 
