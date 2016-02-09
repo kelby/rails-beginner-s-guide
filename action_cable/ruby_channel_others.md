@@ -20,7 +20,7 @@ before_subscribe
 before_unsubscribe
 ```
 
-算是附加操作吧。
+相关操作。
 
 ### Naming
 
