@@ -47,7 +47,7 @@ copy_file "README", "doc/README"
 `create_file & add_file`<br>
 创建新文件。
 
-```
+```ruby
 create_file "config/apache.conf", "your apache config"
 ```
 
