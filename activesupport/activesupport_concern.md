@@ -6,7 +6,7 @@
 <br>
 2) 更好的处理模块之间的依赖关系，规避潜在的模块之间的循环依赖。
 
-约定：ClassMethods 自动继承、InstanceMethods 自动包含、class_methods 自动继承、自动使用 class_eval.
+约定：ClassMethods 自动继承、实例方法自动包含、class_methods 自动继承、自动使用 class_eval.
 
 InstanceMethods 后来又改进了，直接包含即可。
 
