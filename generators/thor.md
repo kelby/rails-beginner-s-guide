@@ -156,7 +156,7 @@ prepend_to_file 'config/environments/test.rb', 'config.gem "rspec"'
 `remove_file & remove_dir`<br>
 移除文件。
 
-```
+```ruby
 remove_file 'README'
 ```
 
