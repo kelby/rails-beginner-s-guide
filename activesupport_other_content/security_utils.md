@@ -10,7 +10,7 @@ secure_compare
 
 使用此方法，即使发现两字符串有不同，也不会立即返回结果，而是继续比较下去，确保比较时间是一样的，可预防计时攻击。
 
-MessageVerifier 在 `valid_message?` 的时候就用了它。
+Message Verifier 在 `valid_message?` 的时候就用了它。
 
 参考
 
