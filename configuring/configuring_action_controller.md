@@ -41,6 +41,8 @@ TrueClass
 
 # Helper 方法在所有 View 里都可用
 :include_all_helpers
+
+per_form_csrf_tokens
 ```
 
 其它：
