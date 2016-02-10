@@ -19,14 +19,14 @@ append_to_file 'config/environments/test.rb', 'config.gem "rspec"'
 `apply`<br>
 加载并执行文件。
 
-```
+```ruby
 apply "recipes/jquery.rb"
 ```
 
 `chmod`<br>
 更改文件或目录的权限。
 
-```
+```ruby
 chmod "script/server", 0755
 ```
 
