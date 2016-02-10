@@ -1,6 +1,6 @@
 ## ~~Descendants Tracker~~
 
-查看某个类的子类，功能上和 Ruby 内置库 Object Space 类似，但性能上要比它好得多。
+查看某个类的子类。功能上和 Ruby 内置库 Object Space 类似，但性能上要比它好得多。
 
 ```ruby
 class A
