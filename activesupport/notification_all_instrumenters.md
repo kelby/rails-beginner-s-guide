@@ -2,7 +2,7 @@
 
 **action_mailer**
 
-```
+```ruby
 deliver.action_mailer
 receive.action_mailer
 process.action_mailer
@@ -10,7 +10,7 @@ process.action_mailer
 
 **action_controller**
 
-```
+```ruby
 write_fragment.action_controller
 read_fragment.action_controller
 exist_fragment?.action_controller
@@ -30,7 +30,7 @@ deep_munge.action_controller
 
 **action_view**
 
-```
+```ruby
 render_collection.action_view
 render_partial.action_view
 
@@ -39,7 +39,7 @@ render_template.action_view
 
 **active_job**
 
-```
+```ruby
 perform_start.active_job
 perform.active_job
 
@@ -49,14 +49,14 @@ enqueue.active_job
 
 **active_record**
 
-```
+```ruby
 instantiation.active_record
 sql.active_record
 ```
 
 **active_support**
 
-```
+```ruby
 cache_read.active_support
 cache_generate.active_support
 cache_fetch_hit.active_support
@@ -75,13 +75,13 @@ cache_prune.active_support
 
 **rails**
 
-```
+```ruby
 deprecation.rails
 ```
 
 **railties**
 
-```
+```ruby
 load_config_initializer.railties
 ```
 
