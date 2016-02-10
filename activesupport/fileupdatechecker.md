@@ -26,7 +26,7 @@ end
 i18n_reloader.execute
 ```
 
-可用 Rails.application.reloaders 查看所有检测器(要先放进来，才能查看)。
+可用 `Rails.application.reloaders` 查看所有检测器(要先放进来，才能查看)。
 
 ```ruby
 Rails.application.reloaders << i18n_reloader
