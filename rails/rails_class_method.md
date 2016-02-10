@@ -7,8 +7,8 @@
 | application | 代表我们的应用，它是 AppName::Application 的实例对象 |
 | configuration | 我们应用的配置相关信息，它是 Rails::Application::Configuration 的实例对象 |
 | env | 我们应用所处环境，它是 ActiveSupport::StringInquirer 的实例对象 |
-| backtrace_cleaner | 它是 Rails::BacktraceCleaner 的实例对象 |
 | root | 获取项目 root 路径 |
-| public_path | 获取项目 public/ 路径 |
 | cache | 缓存实例对象 |
 | logger | 日志实例对象 |
+| backtrace_cleaner | 它是 Rails::BacktraceCleaner 的实例对象 |
+| public_path | 获取项目 public/ 路径 |
