@@ -23,7 +23,7 @@ Your Application
 
 使用 Engine，可以把一个小型的 Rails 项目当成组件，插入到另一个 Rails 项目里。
 
-它可以有自己的 MVC、路由、Helper、Assets、Rake、Generator 与配置、初始，甚至是 lib、Migrate 和测试。
+它可以有自己的 MVC、路由、Helper、Assets、Rake、Generator 与配置、初始化，甚至是 lib、Migration 和测试。
 
 **和一般 gem 对比，Engine 至少有以下特点：**
 
