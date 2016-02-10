@@ -19,6 +19,8 @@ initializer 'active_record.initialize_timezone' do
     self.default_timezone = :utc
   end
 end
+```
 
+```ruby
 ActiveSupport.run_load_hooks(:active_record, ActiveRecord::Base)
 ```
