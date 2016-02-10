@@ -12,7 +12,7 @@ Thor 和 rake 类似，提供了功能强大的命令行接口。
 `append_to_file`<br>
 向文件里追加文本内容。
 
-```
+```ruby
 append_to_file 'config/environments/test.rb', 'config.gem "rspec"'
 ```
 
