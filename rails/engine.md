@@ -30,7 +30,3 @@ Your Application
 - 按照约定，遵循 Rails 应用的文件、目录结构
 - 从 Railtie 继承来的那一套方法，可用于配置、初始化
 - 与 Rails 无缝集成
-
-参考
-
-[Rails Engine Patterns](http://www.slideshare.net/AndyMaleh/rails-engine-patterns)
