@@ -127,7 +127,7 @@ end
 `insert_into_file & inject_into_file`<br>
 将内容插入到指定的文件内。(如：添加 js 文件后，一般会在 application.js 里插入 require 等代码)
 
-```
+```ruby
 insert_into_file "config/environment.rb",
                  "config.gem :thor",
                  :after => "Rails::Initializer.run do |config|\n"
