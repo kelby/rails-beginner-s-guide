@@ -1,4 +1,4 @@
-# Active Record 约定、配置
+# Active Record 约定、配置，底层及其它
 
 - Model Schema
 
