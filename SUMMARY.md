@@ -400,7 +400,7 @@
    * [Secure Random](activesupport_core_ext/secure_random.md)
    * [String](activesupport_core_ext/string.md)
    * [URI](activesupport_core_ext/uri.md)
-   * Logger
+   * [Logger](activesupport_core_ext/logger.md)
 * [Active Support 其它类和模块](activesupport_other_content/README.md)
    * [Security Utils](activesupport_other_content/security_utils.md)
    * [Logger Silence](activesupport_other_content/logger.md)
