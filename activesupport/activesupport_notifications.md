@@ -1,6 +1,6 @@
 ## Notifications
 
-怎么使用？
+发布、订阅功能。怎么使用？
 
 - subscribe  - 订阅
 - instrument - 发布
