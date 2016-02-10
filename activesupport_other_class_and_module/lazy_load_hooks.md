@@ -42,9 +42,9 @@ class Say
 end
 
 ActiveSupport.on_load :instance_of_color do
-  puts "The color is #{@name}"
+  puts "Hi #{@name}"
 end
 
-Say.new("yellow")
-# => "The color is yellow"
+Say.new("kelby")
+# => "Hi kelby"
 ```
