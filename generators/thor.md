@@ -99,7 +99,7 @@ empty_directory "doc"
 `get`<br>
 获取内容并放到文件里。
 
-```
+```ruby
 get "http://gist.github.com/103208", "doc/README"
 ```
 
