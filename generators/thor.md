@@ -163,7 +163,7 @@ remove_file 'README'
 `run`<br>
 执行某条命令，并返回执行结果。
 
-```
+```ruby
 inside('vendor') do
   run('ln -s ~/edge rails')
 end
