@@ -139,14 +139,14 @@ insert_into_file "config/environment.rb",
 `link_file`<br>
 链接文件。
 
-```
+```ruby
 link_file "README", "doc/README"
 ```
 
 `prepend_to_file & prepend_file`<br>
 在文件开头处追加文本内容。
 
-```
+```ruby
 prepend_to_file 'config/environments/test.rb', 'config.gem "rspec"'
 ```
 
