@@ -372,7 +372,7 @@
    * [Lazy Load Hooks](activesupport_other_class_and_module/lazy_load_hooks.md)
    * [Descendants Tracker](activesupport/descendants_tracker.md)
    * [Dependencies](activesupport_other_class_and_module/dependencies.md)
-   * Autoload
+   * [Autoload](activesupport_other_class_and_module/autoload.md)
 * [Active Support 核心扩展](activesupport_core_ext/README.md)
    * [Array](activesupport_core_ext/array.md)
    * [Benchmark](activesupport_core_ext/benchmark.md)
