@@ -12,7 +12,7 @@
 
 - ~~Attribute~~
 
-和属性的类型转换有关，在 Attribute Set 里会用到。
+和属性的类型转换有关，在 Attribute Set 里会用到。尽管 Attribute Set 也属于底层。
 
 - ~~Attribute Set~~
 
