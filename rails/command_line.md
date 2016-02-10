@@ -14,7 +14,7 @@ middleware
 misc(secret、about、time)  
 routes  
 tmp  
-rails  
+rails(update、template)  
 engine(app、db)  
 **statistics**(stats)  
 - Code Statistics
