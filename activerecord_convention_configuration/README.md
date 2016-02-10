@@ -41,3 +41,5 @@
 - ~~Runtime Registry~~
 
 - ~~Sanitization~~
+
+- ~~Legacy Yaml Adapter~~
