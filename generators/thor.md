@@ -33,14 +33,14 @@ chmod "script/server", 0755
 `comment_lines`<br>
 注释指定文件里面符合条件的行。
 
-```
+```ruby
 comment_lines 'config/initializers/session_store.rb', /cookie_store/
 ```
 
 `copy_file`<br>
 复制文件。(默认源文件放在 source_root 下)
 
-```
+```ruby
 copy_file "README", "doc/README"
 ```
 
