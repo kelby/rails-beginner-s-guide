@@ -2,4 +2,4 @@
 
 比如：
 
-Per Thread Registry
+~~Per Thread Registry~~
