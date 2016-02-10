@@ -15,6 +15,7 @@ misc(secret、about、time)
 routes  
 tmp  
 rails(update、template)  
+restart  
 engine(app、db)  
 **statistics**(stats)  
 - Code Statistics
