@@ -13,6 +13,8 @@ secure_compare
 Message Verifier 在校验信息 `valid_message?` 的时候就用到了它。
 <br>
 HttpAuthentication Basic 认证的时候就用到了它。
+<br>
+RequestForgeryProtection 在比较 token 的时候也用到了它。
 
 参考
 
