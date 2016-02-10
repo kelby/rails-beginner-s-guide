@@ -14,7 +14,7 @@ execute_hook
 使用举例：
 
 ```ruby
-# on_load 方法触发标识及
+# on_load 方法触发标识及内容
 initializer 'active_record.initialize_timezone' do
   ActiveSupport.on_load(:active_record) do
     self.time_zone_aware_attributes = true
