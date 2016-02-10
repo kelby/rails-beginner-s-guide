@@ -20,6 +20,8 @@ Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我�
 
 - Attribute Assignment
 
+主要工作由 ActiveModel::AttributeAssignment 完成，这里不再赘述。
+
 - Attribute Methods
 
 包括 Before Type Cast、Dirty、Primary Key、Query、Read & Write、Serialization、Time Zone Conversion
