@@ -2,10 +2,6 @@
 
 Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作(也就是各种简单、复杂的读写操作)。
 
-- Locking
-
-包括 Optimistic、Pessimistic
-
 - Scoping
 
 包括 Default、Named
