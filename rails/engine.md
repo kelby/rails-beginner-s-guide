@@ -25,7 +25,7 @@ Your Application
 
 和一般 gem 对比，Engine 至少有以下特点：
 
-- 遵循 Rails 应用的目录结构
+- 遵循 Rails 应用的文件、目录结构
 - 从 Railtie 继承来的那一套方法
 - 与 Rails 无缝集成
 
