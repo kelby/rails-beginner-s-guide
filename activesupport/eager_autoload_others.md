@@ -3,5 +3,3 @@
 - ~~Proxy Object~~
 
 - ~~Option Merger~~
-
-- ~~Multibyte~~
