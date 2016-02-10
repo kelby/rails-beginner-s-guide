@@ -89,7 +89,7 @@ doc/
 `empty_directory`<br>
 创建一个空目录。
 
-```
+```ruby
 empty_directory "doc"
 ```
 
