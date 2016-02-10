@@ -402,7 +402,7 @@
    * [Name Error](activesupport_core_ext/name_error.md)
    * [Logger](activesupport_core_ext/logger.md)
    * [Logger Silence](activesupport_other_content/logger.md)
-   * Regexp
+   * [Regexp](activesupport_core_ext/regexp.md)
 * [Active Support 其它类和模块](activesupport_other_content/README.md)
    * [Security Utils](activesupport_other_content/security_utils.md)
 * [railties](rails/README.md)
