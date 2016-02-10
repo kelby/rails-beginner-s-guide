@@ -7,7 +7,9 @@
 ```
 autoload
 eager_autoload
+```
 
+```
 eager_load!
 ```
 
