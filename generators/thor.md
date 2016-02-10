@@ -216,7 +216,7 @@ uncomment_lines 'config/initializers/session_store.rb', /active_record/
 `ClassName#public_instance_method`<br>
 一般的，类名会被当做 namespace，而实例方法会被当做 task，也就是：
 
-```
+```ruby
 class_name:public_instace_method
 ```
 
