@@ -181,7 +181,7 @@ end
 `thor`<br>
 运行 thor 命令。
 
-```
+```ruby
 thor :list, :all => true, :substring => 'rails'
 ```
 
