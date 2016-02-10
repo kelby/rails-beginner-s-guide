@@ -34,7 +34,7 @@
 
 **4）功能扩展**
 
-通过 Railtie、Engine 实现，特别是 Engine 可以大大方便我们组织代码。
+通过 Railtie、Engine 实现，特别是 Engine 可以大大地方便我们组织代码。
 
 #### 继承关系
 
