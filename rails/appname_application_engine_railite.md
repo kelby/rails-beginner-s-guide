@@ -149,4 +149,4 @@ Rails.application.initializers.map &:name
  # 以上来自 Finisher
 ```
 
-这部分，更多信息可以查看"其它"下面的【Initializable】章节。
+这部分，更多信息可以查看"其它"的【Initializable】章节。
