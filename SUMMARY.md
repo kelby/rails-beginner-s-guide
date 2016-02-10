@@ -318,7 +318,7 @@
        * [Table](activerecord_migration/connection-adapter_table.md)
        * [Database Statements](activerecord_migration/connection-adapter_database_statements.md)
    * [Model Schema](activerecord_migration/migration_modelschema.md)
-   * [Migrator 其它](activerecord_migration/activerecord_migrator_others.md)
+   * [其它](activerecord_migration/activerecord_migrator_others.md)
        * [schema_format](activerecord_migration/schema_format.md)
        * [Schema Migration](activerecord_migration/migrator_schema_migration.md)
 * [Active Record 约定、配置，底层及其它](activerecord_convention_configuration/README.md)
