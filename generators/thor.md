@@ -118,7 +118,7 @@ end
 `inject_into_class`<br>
 将内容插入到指定的文件，指定的 class 后面。(比 insert_into_file 更精确)
 
-```
+```ruby
 inject_into_class "app/controllers/application_controller.rb", ApplicationController do
   "  filter_parameter :password\n"
 end
