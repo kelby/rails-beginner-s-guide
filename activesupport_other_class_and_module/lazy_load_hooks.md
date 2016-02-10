@@ -27,3 +27,22 @@ end
 # run_load_hooks 方法执行
 ActiveSupport.run_load_hooks(:active_record, ActiveRecord::Base)
 ```
+
+单独使用举例：
+
+```ruby
+class Color
+  def initialize(name)
+    @name = name
+
+    ActiveSupport.run_load_hooks(:instance_of_color, self)
+  end
+end
+
+ActiveSupport.on_load :instance_of_color do
+  puts "The color is #{@name}"
+end
+
+Color.new("yellow")
+# => "The color is yellow"
+```
