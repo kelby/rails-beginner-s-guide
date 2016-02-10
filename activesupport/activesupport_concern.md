@@ -10,8 +10,6 @@
 
 约定：ClassMethods 和 class_methods 自动继承、实例方法自动包含、自动使用 class_eval.
 
-InstanceMethods 后来又改进了，直接包含即可。
-
 原来你需要手动写 included 或 extended 里面的代码，有实例方法、类方法的话，也要手动包含或继承；现在按照约定来即可。
 
 以前：
