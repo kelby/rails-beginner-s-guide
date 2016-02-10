@@ -26,6 +26,10 @@ Callbacks 回调
 
 Attributes
 
+Locking
+
+- 包括 Optimistic、Pessimistic
+
 ~~Translation~~
 
 有多个模块是从 Base 抽取而来，它们是：Attribute Assignment、Dynamic Matchers、Inheritance、Integration、Model Schema、Querying、Readonly Attributes、Sanitization、Scoping、Translation
