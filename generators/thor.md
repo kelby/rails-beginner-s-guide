@@ -54,7 +54,7 @@ create_file "config/apache.conf", "your apache config"
 `create_link(destination, *args, &block) (also: #add_link)`<br>
 创建一个链接文件。
 
-```
+```ruby
 create_link "config/apache.conf", "/etc/apache.conf"
 ```
 
