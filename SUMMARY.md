@@ -356,7 +356,7 @@
    * [Deprecation](activesupport/activesupport_deprecation.md)
    * [其它](activesupport/eager_autoload_others.md)
 * [Active Support autoload 的类和模块](activesupport_other_class_and_module/README.md)
-   * [autoload & eager_autoload](activesupport/activesupport_-_autoload_-.md)
+   * [Autoload](activesupport/activesupport_-_autoload_-.md)
        * [autoload & eager_autoload 补充](activesupport/autoload_&_eagerautoload_bu_chong.md)
    * [Lazy Load Hooks](activesupport_other_class_and_module/lazy_load_hooks.md)
    * [Concern](activesupport/activesupport_concern.md)
