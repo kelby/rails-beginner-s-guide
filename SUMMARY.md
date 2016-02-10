@@ -327,7 +327,6 @@
    * [Timestamps](activerecord_convention_configuration/coc_timestamps.md)
    * [Core](activerecord_convention_configuration/core.md)
        * [获取 record 对象](activerecord_convention_configuration/generate_record_object.md)
-   * [Active Record 底层及其它](activerecord_underlying/README.md)
    * [Serialization](activerecord_underlying/active_record_serialization.md)
    * [Migration DatabaseTasks](activerecord_others/activerecord_migration_databasetasks.md)
    * [Statement Cache](activerecord_underlying/statement_cache.md)
