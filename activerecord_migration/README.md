@@ -11,3 +11,5 @@
 - 其它
 
 包括：Model Schema*、Command Recorder、~~Schema Dumper~~ 和 ~~Schema Migration~~.
+
+- ~~Migrator~~
