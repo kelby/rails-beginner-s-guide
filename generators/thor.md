@@ -106,7 +106,7 @@ get "http://gist.github.com/103208", "doc/README"
 `gsub_file`<br>
 按正则替换文件内容。
 
-```
+```ruby
 gsub_file 'README', /rake/, :green do |match|
   match << " no more. Use thor!"
 end
