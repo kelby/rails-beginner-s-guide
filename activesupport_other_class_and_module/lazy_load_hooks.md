@@ -3,11 +3,10 @@
 类方法：
 
 ```
-execute_hook
-
 on_load
-
 run_load_hooks
+
+execute_hook
 ```
 
 使用举例：
