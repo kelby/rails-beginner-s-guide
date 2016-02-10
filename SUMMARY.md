@@ -356,6 +356,7 @@
    * [Multibyte](activesupport/multibyte.md)
    * [Deprecation](activesupport/activesupport_deprecation.md)
    * [其它](activesupport/eager_autoload_others.md)
+   * Array Inquirer
 * [Active Support autoload 的类和模块](activesupport_other_class_and_module/README.md)
    * [Concern](activesupport/activesupport_concern.md)
    * [File Update Checker](activesupport/fileupdatechecker.md)
