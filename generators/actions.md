@@ -55,11 +55,15 @@ include by Migration.
 
 ```
 existing_migration
+
 exists?
 identical?
+
 migration_dir
 migration_file_name
+
 relative_existing_migration
+
 revoke!
 ```
 
