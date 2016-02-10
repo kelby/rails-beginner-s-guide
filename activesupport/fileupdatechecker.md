@@ -8,7 +8,7 @@ Rails 默认有 3 个：
 - routes updater(Routes 相关)
 - file_watcher(其它所有)
 
-我们定制的可以直接使用 Rails.configuration.file_watcher 放到"其它所有"里，也可以直接调用 ActiveSupport::FileUpdateChecker.
+我们定制的可以直接使用 `Rails.configuration.file_watcher` 放到"其它所有"里，也可以直接调用 ActiveSupport::FileUpdateChecker.
 
 ```ruby
 # 定义。这里的 paths 表示你要监视的文件或目录(所在的路径)。
