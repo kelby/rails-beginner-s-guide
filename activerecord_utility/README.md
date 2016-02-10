@@ -26,9 +26,9 @@ Callbacks 回调
 
 Attributes
 
-Locking
+- Locking
 
-- 包括 Optimistic、Pessimistic
+包括 Optimistic、Pessimistic
 
 ~~Translation~~
 
