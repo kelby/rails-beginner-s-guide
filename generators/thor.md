@@ -188,7 +188,7 @@ thor :list, :all => true, :substring => 'rails'
 `uncomment_lines`<br>
 去掉指定文件里符合条件的行的注释。
 
-```
+```ruby
 uncomment_lines 'config/initializers/session_store.rb', /active_record/
 ```
 
