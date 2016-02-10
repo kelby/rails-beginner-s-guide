@@ -24,6 +24,8 @@ env_config
 config_for
 
 secrets
+
+helpers_paths
 ```
 
 **类方法：**
