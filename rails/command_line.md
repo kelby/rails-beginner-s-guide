@@ -7,7 +7,7 @@
 都有单独的 rake 文件，`rake -T` 包含但不限于这下面的命令：
 
 annotations(notes)  
-documentation(doc)  
+~~documentation(doc)~~  
 framework(rails)  
 log  
 middleware  
