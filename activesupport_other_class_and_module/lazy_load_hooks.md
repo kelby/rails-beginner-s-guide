@@ -31,6 +31,8 @@ ActiveSupport.run_load_hooks(:active_record, ActiveRecord::Base)
 单独使用举例：
 
 ```ruby
+require 'active_support/lazy_load_hooks'
+
 class Color
   def initialize(name)
     @name = name
