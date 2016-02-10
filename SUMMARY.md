@@ -334,7 +334,7 @@
    * [Collection Cache Key](activerecord_underlying/collection_cache_key.md)
    * [Attribute Mutation Tracker](activerecord_underlying/attribute_mutation_tracker.md)
    * [Attribute Decorators](activerecord_underlying/attribute_decorators.md)
-   * [Active Record 其它](activerecord_others/README.md)
+   * [其它](activerecord_others/README.md)
 * [Active Support autoload 的类和模块](activesupport_other_class_and_module/README.md)
    * [Autoload](activesupport/activesupport_-_autoload_-.md)
        * [autoload & eager_autoload 补充](activesupport/autoload_&_eagerautoload_bu_chong.md)
