@@ -34,7 +34,7 @@ end
 
 ### Queue Priority
 
-类方法 `queue_with_priority` 进行设置，对整个类有效。
+队列有优先级这个属性，类方法 `queue_with_priority` 进行设置，对整个类有效。
 
 ```ruby
 class PublishToFeedJob < ActiveJob::Base
