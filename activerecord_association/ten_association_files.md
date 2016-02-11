@@ -27,7 +27,7 @@ ThroughAssociation
 
 #### 1) Association
 
-```
+```ruby
 attr_reader :owner, :target, :reflection
 attr_accessor :inversed
 
