@@ -1,4 +1,4 @@
-## API
+## API - Metal 的继承者
 
 精简版的 ActionController::Base，为 API 而生。
 
