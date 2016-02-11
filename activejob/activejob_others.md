@@ -1,5 +1,31 @@
 其它多个类或模块，统一在此列举。
 
+
+### 命令行快捷生成
+
+```bash
+rails generate job NAME [options]
+```
+
+### 异常捕获与处理
+
+使用 Active Support 的异常捕获方法 `rescue_from`
+
+```ruby
+class GuestsCleanupJob < ActiveJob::Base
+  queue_as :default
+ 
+  # 异常捕获
+  rescue_from(ActiveRecord::RecordNotFound) do |exception|
+   # 异常处理
+  end
+ 
+  def perform
+    # ...
+  end
+end
+```
+
 ### Async Job
 
 已经异步了，再给你一个选择：是否要并发？
@@ -80,28 +106,3 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录。
 queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象而来。
 
 而 queue_adapter 所用的 API(enqueue_at、enqueue_in、enqueue 等)，也是从原延迟任务所提供的 API 抽象而来。
-
-### 命令行快捷生成
-
-```bash
-rails generate job NAME [options]
-```
-
-### 异常捕获与处理
-
-使用 Active Support 的异常捕获方法 `rescue_from`
-
-```ruby
-class GuestsCleanupJob < ActiveJob::Base
-  queue_as :default
- 
-  # 异常捕获
-  rescue_from(ActiveRecord::RecordNotFound) do |exception|
-   # 异常处理
-  end
- 
-  def perform
-    # ...
-  end
-end
-```
