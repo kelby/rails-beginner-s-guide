@@ -25,27 +25,6 @@ class GuestsCleanupJob < ActiveJob::Base
 end
 ```
 
-### Async Job
-
-已经异步了，再给你一个选择：是否要并发？
-
-```ruby
-Rails.application.config.active_job.queue_adapter = :async
-```
-
-进队列后，任务运用 Ruby 自身的并发。数据放在内存里，运行速度加快了；没有持久化，重启会丢失数据。
-
-一般来说，生产环境你不能使用，但开发与测试或许可以体验。
-
-### Arguments 参数处理
-
-接受的参数类型很广泛，需要先处理一下。
-
-进队列时参数需要 `serialize`，
-执行前参数需要 `deserialize`
-
-当然，这都是自动完成的。
-
 ### 参数支持 Global ID
 
 一般入队列(enqueue_in、enqueue_at 和 enqueue) 只传能够标识对象的那部分参数(如：class、id)，出队列/执行的时候再根据这些参数获取对象。
@@ -79,6 +58,27 @@ end
 ```
 
 > Note: 不规范的写法里，也可以直接传递对象。
+
+### Async Job
+
+已经异步了，再给你一个选择：是否要并发？
+
+```ruby
+Rails.application.config.active_job.queue_adapter = :async
+```
+
+进队列后，任务运用 Ruby 自身的并发。数据放在内存里，运行速度加快了；没有持久化，重启会丢失数据。
+
+一般来说，生产环境你不能使用，但开发与测试或许可以体验。
+
+### Arguments 参数处理
+
+接受的参数类型很广泛，需要先处理一下。
+
+进队列时参数需要 `serialize`，
+执行前参数需要 `deserialize`
+
+当然，这都是自动完成的。
 
 ### Queue Adapters
 
