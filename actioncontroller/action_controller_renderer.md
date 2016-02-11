@@ -1,6 +1,6 @@
 ## Renderer
 
-Rails 5 新增的类，让渲染模板不再依赖于 Controller.
+让渲染模板不再依赖于 Controller.
 
 ```ruby
 ApplicationController.renderer.render template: '...'
