@@ -1,6 +1,6 @@
 ### Association Relation
 
-Scope `merge` 操作的实现：
+针对 Scope `merge` 操作的实现：
 
 ```ruby
 # Can be overridden (i.e. in ThroughAssociation) to merge in other scopes (i.e. the
