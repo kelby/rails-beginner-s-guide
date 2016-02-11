@@ -8,7 +8,7 @@ ActiveJob::Base.queue_adapter = :inline
 Rails.application.config.active_job.queue_adapter = :test
 ```
 
-已经支持 Resque、Sidekiq、Delayed Job 等常用延迟任务 gem. 所有可用 adapter:
+已经支持 Resque、Sidekiq、Delayed Job 等常用延迟任务 gem，所有可用 adapter:
 
 ```ruby
 :backburner, :delayed_job, :qu, :que, :queue_classic,
