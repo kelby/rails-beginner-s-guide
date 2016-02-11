@@ -82,6 +82,8 @@ serialize
 deserialize
 ```
 
+它们只是后端任务信息的一种方式，在此不必深究。
+
 ### Enqueuing 入队与重试
 
 常用方法：
