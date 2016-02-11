@@ -61,6 +61,6 @@ quoted_table_name
 content_columns
 ```
 
-`quoted_table_name` 可用命令的形式获取 tabel name.
+`quoted_table_name` 可用命令的形式获取 Model 对应的表名。
 
 `sequence_name` 获取序列名。
