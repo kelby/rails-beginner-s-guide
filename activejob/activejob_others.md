@@ -1,6 +1,3 @@
-其它多个类或模块，统一在此列举。
-
-
 ### 命令行快捷生成
 
 ```bash
@@ -25,6 +22,8 @@ class GuestsCleanupJob < ActiveJob::Base
   end
 end
 ```
+
+其它多个类或模块，统一在此列举。
 
 ### Async Job
 
