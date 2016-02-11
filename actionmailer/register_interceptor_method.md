@@ -45,7 +45,7 @@ ActionMailer::Base.register_interceptor(EnvironmentInterceptor)
 或 config/initializers/file_name.rb
 文件里。
 
-实现 delivering_email. 举例一（在最后时刻替换掉要发送到的邮箱）：
+实现 `delivering_email`. 举例一（在最后时刻替换掉要发送到的邮箱）：
 
 ```ruby
 class DevelopmentMailInterceptor
@@ -56,7 +56,7 @@ class DevelopmentMailInterceptor
 end
 ```
 
-实现 delivering_email. 举例二（白名单，群发公司邮箱）：
+实现 `delivering_email`. 举例二（白名单，群发公司邮箱）：
 
 ```ruby
 class WhitelistInterceptor
@@ -69,7 +69,7 @@ class WhitelistInterceptor
 end
 ```
 
-实现 delivering_email. 举例三（非生产环境时，标明发邮件所在的运行环境）：
+实现 `delivering_email`. 举例三（非生产环境时，标明发邮件所在的运行环境）：
 
 ```ruby
 class EnvironmentInterceptor
