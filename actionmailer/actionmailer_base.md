@@ -62,11 +62,11 @@ end
 
 ```ruby
 a_mailer.attachments.class
-=> Mail::AttachmentsList
+# => Mail::AttachmentsList
 
 # 类似数组
 a_mailer.attachments
-=> []
+# => []
 ```
 
 使用举例：
