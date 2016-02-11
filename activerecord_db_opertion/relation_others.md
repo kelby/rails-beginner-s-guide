@@ -15,5 +15,3 @@
 #### ~~Delegation~~
 
 #### ~~Predicate Builder~~
-
-#### ~~Association Relation~~
