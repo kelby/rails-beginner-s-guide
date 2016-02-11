@@ -103,7 +103,7 @@ my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
 ```
 
-执行任务失败，捕捉后，还可以：
+执行任务失败，捕捉后，还可以重试：
 
 ```ruby
 retry_job
