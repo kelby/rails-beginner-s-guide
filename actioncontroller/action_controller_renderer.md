@@ -1,6 +1,6 @@
 ## Renderer
 
-让渲染模板不再依赖于 Controller.
+让渲染模板需要的环境变得更容易，不再依赖于 Controller#action.
 
 ```ruby
 ApplicationController.renderer.render template: '...'
