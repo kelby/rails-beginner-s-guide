@@ -10,11 +10,11 @@
 rails generate channel NAME [method method] [options]
 ```
 
-生成两文件，"name.coffee" 和 "name_channel.rb"
+生成两文件："name_channel.rb"和"name.coffee"
 
-生成的 .coffee 文件有默认操作：链接、断开链接、接收到数据，及其它自定义操作。
-<br>
 生成的 .rb 文件有默认方法：subscribed 和 unsubscribed，及其它自定义的方法。
+<br>
+生成的 .coffee 文件有默认操作：链接、断开链接、接收到数据，及其它自定义操作。
 
 ### 依赖
 
