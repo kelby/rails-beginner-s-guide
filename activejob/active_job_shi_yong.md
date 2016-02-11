@@ -129,6 +129,8 @@ end
 perform_later
 ```
 
+简单封装上面的 `enqueue` 而矣。
+
 ### Execution 执行
 
 ```ruby
