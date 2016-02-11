@@ -1,6 +1,6 @@
 ### Queue Adapter
 
-默认使用的 queue_adapter 是 `:inline`，你可以根据需要自己设置 queue_adapter.
+默认使用的 queue_adapter 是 `:inline`，相当于立即执行。你可以根据需要自己设置 queue_adapter.
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
