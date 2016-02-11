@@ -1,5 +1,7 @@
 ### Association Relation
 
+Scope merge 的实现：
+
 ```ruby
 # Can be overridden (i.e. in ThroughAssociation) to merge in other scopes (i.e. the
 # through association's scope)
