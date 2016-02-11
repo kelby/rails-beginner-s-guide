@@ -89,13 +89,13 @@ email = Mailer.daily_email
 email.deliver_now
 ```
 
-```ruby
+```sh
 # mailer/daily_email.html.erb
 <p>this is an html email</p>
 <p> and this is a variable <%= @var %></p>
 ```
 
-```ruby
+```sh
 # mailer/daily_email.text.erb
 this is a text email
 and this is a variable <%= @var %>
