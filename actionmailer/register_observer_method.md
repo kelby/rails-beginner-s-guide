@@ -15,4 +15,4 @@ end
 ActionMailer::Base.register_observer(MailObserver)
 ```
 
-注意：这里实现的是 delivered_email 方法，而之前实现的是 delivering_email 方法。
+注意：这里实现的是 `delivered_email` 方法，而之前实现的是 `delivering_email` 方法。
