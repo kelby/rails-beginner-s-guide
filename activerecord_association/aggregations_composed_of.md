@@ -48,6 +48,13 @@ Customer#balance, Customer#balance=(money)
 Customer#address, Customer#address=(address)
 ```
 
+除了读、写方法外，composed_of 还创建管理了 Reflection 关联两者：
+
+```ruby
+reflection = ActiveRecord::Reflection.create(:composed_of, part_id, nil, options, self)
+Reflection.add_aggregate_reflection self, part_id, reflection
+```
+
 注意：我们没有 model Money 和 model Address，也没有它们对应的表，所以要实现其对应的 class，类似：
 
 ```ruby
