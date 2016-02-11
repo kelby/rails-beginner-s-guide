@@ -69,7 +69,7 @@ marshal_load
 initialize_attributes
 ```
 
-用到了 AssociationScope、AssociationRelation 等类。
+调用到了 AssociationScope、AssociationRelation 等类。
 
 #### 2) Belongs To Association
 
