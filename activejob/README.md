@@ -1,5 +1,7 @@
 # Active Job
 
+Web 开发过程中，会遇到很多需要延迟处理的任务：发邮件、发短信、
+
 **不同的延迟任务，一样的 API.**
 
 在 Delayed Job、Resque、Sidekiq 等延迟任务之间切换，还要改代码？
