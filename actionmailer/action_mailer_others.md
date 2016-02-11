@@ -4,7 +4,7 @@
 
 Action Mailer 使用模板来创建邮件与 Action Controller 使用模板渲染视图，原理类似。并且，渲染过程都会运用到 Action View 的 Rendering 模块。
 
-Action Mailer 提供我们 Mailer 类和视图，Mailer 类和 Controller 非常相似。它们继承于 ActionMailer::Base 并放在 app/mailers 目录下，它们有自己关联的视图文件在 app/views 目录下。
+Action Mailer 提供我们 Mailer 类和视图。Mailer 类放在 app/mailers 目录下，关联的视图文件在 app/views 目录下。
 
 ActionMailer::Base 继承于类 AbstractController::Base,
 又包含但不限于以下'外部'模块，根据 Ruby 规则，它们也是可调用的。包括：
