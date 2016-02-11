@@ -1,6 +1,6 @@
 ### Queue Adapter
 
-Active Job 本身并不提供真正的后端任务解决方案，它做的主要是适配，你可以选择使用自己需要的。默认使用的 queue_adapter 是 `:inline`，你可以根据需要自己设置 queue_adapter.
+默认使用的 queue_adapter 是 `:inline`，你可以根据需要自己设置 queue_adapter.
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
