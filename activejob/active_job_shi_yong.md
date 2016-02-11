@@ -50,7 +50,7 @@ end
 
 ### Core
 
-类方法 `set` 使用举例：
+设置任务所在队列、队列优先级行。类方法 `set` 使用举例：
 
 ```ruby
 VideoJob.set(queue: :some_queue).perform_later(Video.last)
