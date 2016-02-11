@@ -2,8 +2,8 @@
 
 * [Rails 5 开发进阶(Beta)](README.md)
 * [Active Job](activejob/README.md)
-   * [Active Job 补充](activejob/activejob_others.md)
    * [Active Job 使用](activejob/active_job_shi_yong.md)
+   * [Active Job 补充](activejob/activejob_others.md)
 * [Action Mailer](actionmailer/README.md)
    * [Base](actionmailer/actionmailer_base.md)
        * [拦截器 register_interceptor](actionmailer/register_interceptor_method.md)
