@@ -13,9 +13,6 @@ channel_classes
 # identified_by 指定的标识符
 connection_identifiers
 
-# 断开带有某标识符的连接
-disconnect
-
 # streams/broadcasting 所使用的适配器
 # ActionCable::SubscriptionAdapter::Async 实例
 pubsub
@@ -28,6 +25,9 @@ stream_event_loop
 
 # ActionCable::Server::Worker 实例
 worker_pool
+
+# 断开带有某标识符的连接
+disconnect
 ```
 
 ```ruby
