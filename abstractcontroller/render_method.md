@@ -15,16 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-5) 不用模板，但效果类似，用 inline
-
-```ruby
-render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
-```
-
-默认后面的代码用 ERB 解析，如果需要，你可以手动指定 `type: :builder`
-
-inline 违背了 MVC 模式，实践起来并不友好，不推荐使用。
-
 6) 渲染纯文本，用 plain
 
 ```ruby
