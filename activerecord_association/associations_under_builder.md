@@ -33,7 +33,7 @@ define_validations model, reflection
                          Association
 ```
 
-#### 主要内容
+#### 其它
 
 - 创建 reflection
 
