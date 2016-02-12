@@ -28,7 +28,7 @@ Controller 里的 render 是为了返回 self.response_body
 <%= render partial: "ad", collection: @advertisements %>
 ```
 
-不仅可少敲几个字符外，性能也会对应变快一点。
+不仅可以少敲几个字符，性能也会对应变快一点。
 
 另，渲染集合时 `:partial` 参数，尽量不要省略。
 
