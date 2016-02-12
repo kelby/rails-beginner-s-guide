@@ -144,6 +144,8 @@ AbstractRenderer 的子类之一。
 :file
 
 :inline 和 :type
+
+# 指定
 :template
 
 # 指定布局
