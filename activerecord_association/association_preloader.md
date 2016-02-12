@@ -1,6 +1,6 @@
 ### ~~Preloader~~
 
-根据不同情况实现 includes, preload, eager_load.
+使用 includes, preload, eager_load 进行预加载时，根据查询条件不同，优先选择对性能友好的方式。
 
 ```ruby
 class Author < ActiveRecord::Base
