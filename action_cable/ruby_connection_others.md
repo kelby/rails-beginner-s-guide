@@ -2,6 +2,8 @@
 
 ### Base
 
+这里的"连接"几乎等价于 Websocket 连接。
+
 ```ruby
 # 简单封装 transmit
 beat
