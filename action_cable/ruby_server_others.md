@@ -20,6 +20,7 @@ pubsub
 
 remote_connections
 
+# ActionCable::Connection::StreamEventLoop 实例
 stream_event_loop
 
 # ActionCable::Server::Worker 实例
