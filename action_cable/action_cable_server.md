@@ -10,8 +10,6 @@ send messages to the channel subscribers
 broadcast
 
 broadcaster_for
-
-broadcasting_redis
 ```
 
 常用 `broadcast` 进行广播。
