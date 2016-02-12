@@ -1,10 +1,10 @@
 ## Connection 补充
 
-### Internal Channel
+### ~~Internal Channel~~
 
 空
 
-### Message Buffer
+### ~~Message Buffer~~
 
 ```
 append(message)
@@ -24,7 +24,7 @@ possible?()
 transmit(data)
 ```
 
-### Subscriptions
+### ~~Subscriptions~~
 
 ```
 add(data)
