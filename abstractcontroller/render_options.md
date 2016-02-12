@@ -58,7 +58,9 @@ show.html+phone.erb
 # 指定渲染的格式
 :formats
 
+# 指定要渲染的模板
 :template
+# 指定要渲染的 action，它会重新确认对应的模板
 :action
 :partial
 :file
