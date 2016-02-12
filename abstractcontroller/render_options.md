@@ -193,7 +193,7 @@ View 里 render 方法所在地，对外提供接口，处于最外层。
 直接渲染模板，不依赖于具体 Controller#action 时，可额外传递的参数：
 
 ```ruby
-# 指定请求协议
+# 指定请求是否 HTTPS
 :https
 
 # 指定请求方法
