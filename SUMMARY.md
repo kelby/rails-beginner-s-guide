@@ -311,7 +311,7 @@
        * Association Foreign Association
        * Association Has Many Association
        * Association Has Many Through Association
-       * Association Has One Association
+       * [Association Has One Association](activerecord_association/association_has_one_association.md)
        * Association Has One Through Association
        * Association Singular Association
        * Association Through Association
