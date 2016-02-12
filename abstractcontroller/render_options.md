@@ -99,9 +99,12 @@ AbstractRenderer 的子类之一。
 # 指定渲染格式
 :formats
 
-# 指定要渲染的局部
+# 指定要渲染的局部模板
 :partial
+
+# 传递的对象
 :object
+# 传递的对象别名
 :as
 :collection
 ```
