@@ -25,7 +25,7 @@ Controller 里的 render 是为了返回 self.response_body
 <% end %>
 
 # 建议更改为
-<%= render partial: "ad", locals: { ad: ad } %>
+<%= render partial: "ad", collection: @advertisements %>
 ```
 
 渲染集合，除了少敲几个字符外，性能也会对应变快一点。
