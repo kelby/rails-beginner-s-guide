@@ -13,6 +13,7 @@ connection_identifiers
 
 disconnect
 
+# streams/broadcasting 所使用的适配器
 pubsub
 
 remote_connections
