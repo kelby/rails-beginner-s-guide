@@ -14,7 +14,12 @@
 
 :text
 
-:status, :content_type, :location
+# 指定 status
+:status
+# 指定 content_type
+:content_type
+# 指定 location
+:location
 ```
 
 ```
