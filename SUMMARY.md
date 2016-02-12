@@ -291,6 +291,8 @@
        * Builder Collection Association
        * Builder Has One
        * Builder Belongs To
+       * Builder Has Many
+       * Builder Has And Belongs To Many
    * [Reflection - 核心之关联两者](activerecord_association/activerecord_association_reflection.md)
    * [11 个 Association 文件 - 核心之提供方法](activerecord_association/ten_association_files.md)
    * [4 个关联类方法](activerecord_association/4_methods.md)
