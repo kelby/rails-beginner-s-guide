@@ -18,7 +18,7 @@ has_and_belongs_to_many
 
 步骤二：
 
-```
+```sh
 # 偏向于关联两者
 调用对应的 Reflection，父 Reflection, 再父 Reflection，顶级 Reflection …（交叉进行的）
 
