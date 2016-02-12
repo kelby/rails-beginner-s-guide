@@ -98,6 +98,8 @@ AbstractRenderer 的子类之一。
 
 # 指定渲染格式
 :formats
+
+# 指定要渲染的局部
 :partial
 :object
 :as
