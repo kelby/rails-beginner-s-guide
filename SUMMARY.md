@@ -286,7 +286,7 @@
 * [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
    * [Associations 文件 - 4 个关联方法](activerecord_association/ru_kou_-_associations_wen_jian.md)
    * [Aggregations - composed_of 方法](activerecord_association/aggregations_composed_of.md)
-   * [Builder - 功能的核心](activerecord_association/associations_under_builder.md)
+   * [Builder - 功能的实现](activerecord_association/associations_under_builder.md)
        * [Association](activerecord_association/builder_association.md)
        * [Singular Association](activerecord_association/builder_singular_association.md)
        * [Collection Association](activerecord_association/builder_collection_association.md)
