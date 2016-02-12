@@ -289,7 +289,7 @@
        * [Builder Association](activerecord_association/builder_association.md)
        * Builder Singular Association
        * Builder Collection Association
-       * Builder Has One
+       * [Builder Has One](activerecord_association/builder_has_one.md)
        * Builder Belongs To
        * Builder Has Many
        * Builder Has And Belongs To Many
