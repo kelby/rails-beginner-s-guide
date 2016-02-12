@@ -1,6 +1,6 @@
 ### Capture Helper
 
-存储代码块，yield 调用。
+存储代码块，`yield` 调用。
 
 ```
 content_for
