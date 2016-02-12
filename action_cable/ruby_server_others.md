@@ -6,7 +6,7 @@ ActionCable.server
 
 实例方法：
 
-```
+```ruby
 channel_classes
 
 connection_identifiers
