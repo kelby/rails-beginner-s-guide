@@ -309,7 +309,7 @@
        * [Association Belongs To Polymorphic Association](activerecord_association/association_belongs_to_polymorphic_association.md)
        * [Association Collection Association](activerecord_association/association_collection_association.md)
        * [Association Foreign Association](activerecord_association/association_foreign_association.md)
-       * Association Has Many Association
+       * [Association Has Many Association](activerecord_association/association_has_many_association.md)
        * [Association Has Many Through Association](activerecord_association/association_has_many_through_association.md)
        * [Association Has One Association](activerecord_association/association_has_one_association.md)
        * [Association Has One Through Association](activerecord_association/association_has_one_through_association.md)
