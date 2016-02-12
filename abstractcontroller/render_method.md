@@ -28,7 +28,7 @@ Controller 里的 render 是为了返回 self.response_body
 10) 渲染返回 js
 
 ```ruby
-render js: "alert('Hello Rails');"
+
 ```
 
 11) 渲染，但不指定类型，用 body
