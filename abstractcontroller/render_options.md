@@ -175,7 +175,7 @@ View 里 render 方法所在地，对外提供接口，处于最外层。
 
 #### ActionController::Renderers (Metal 增强模块)
 
-```
+```ruby
 # 渲染内容为 JSON 格式
 :json 和 :callback
 
