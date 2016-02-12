@@ -75,7 +75,8 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 
 #### ActionView::Renderer
 
-```
+```ruby
+# 指定要渲染的局部模板
 :partial
 ```
 
