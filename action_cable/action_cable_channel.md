@@ -77,10 +77,13 @@ unsubscribe_from_channel
 ### Streams
 
 ```
+# pubsub.subscribe
 stream_from
 
+# 封装 stream_from
 stream_for
 
+# pubsub.unsubscribe
 stop_all_streams
 ```
 
