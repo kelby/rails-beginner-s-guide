@@ -89,6 +89,8 @@ AbstractRenderer 的子类之一。
 ```ruby
 # 渲染局部模板时，各个局部模板之间穿插的内容
 :spacer_template
+
+# 布局
 :layout
 :locals
 :formats
