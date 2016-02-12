@@ -310,7 +310,7 @@
        * Association Collection Association
        * Association Foreign Association
        * Association Has Many Association
-       * Association Has Many Through Association
+       * [Association Has Many Through Association](activerecord_association/association_has_many_through_association.md)
        * [Association Has One Association](activerecord_association/association_has_one_association.md)
        * [Association Has One Through Association](activerecord_association/association_has_one_through_association.md)
        * [Association Singular Association](activerecord_association/association_singular_association.md)
