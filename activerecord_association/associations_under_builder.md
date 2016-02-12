@@ -1,6 +1,6 @@
-## Builder Associations - 主要做 5 件事
+##  - 主要做 5 件事
 
-关联方法带来的基本方法。
+实际指的是 Builder Associations，关联方法带来的基本方法。
 
 #### 主要做 5 件事
 
