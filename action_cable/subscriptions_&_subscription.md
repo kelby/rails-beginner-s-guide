@@ -1,4 +1,4 @@
-### 第二梯队 Subscription & Subscriptions
+### Subscription & Subscriptions
 
 #### Subscription
 
