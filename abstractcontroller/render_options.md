@@ -95,6 +95,8 @@ AbstractRenderer 的子类之一。
 
 # 传递变量
 :locals
+
+# 指定渲染格式
 :formats
 :partial
 :object
