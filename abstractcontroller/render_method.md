@@ -30,7 +30,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 可以少敲几个字符，并且 Rails 对渲染集合做了一些优化，性能会变快一点。
 
-另：渲染集合时 `:partial` 参数尽量不要省略。
+另：渲染集合时，尽量不要省略 `:partial` 参数。
 
 #### 其它
 
