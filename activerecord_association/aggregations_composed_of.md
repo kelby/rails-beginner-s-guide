@@ -1,4 +1,4 @@
-## Aggregations - composed_of 的
+## Aggregations - composed_of 的入口
 
 我们在一张表里有几个类似字段，比如 customers 表有 address_street, address_city 字段，用于保存地址信息。好的做法，当然是把它们拆分出来，单独做成 address 表。但如果我们不想/能折分表成的话(改动太大，处理遗留问题等)，使用 `composed_of` 可以实现不用真正折分表，又能起到到分离的作用。
 
