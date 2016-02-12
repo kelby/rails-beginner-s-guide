@@ -122,6 +122,8 @@ render :partial => "person"
 :collection
 ```
 
+参数 `:locals` 也可传递变量，
+
 #### ActionView::TemplateRenderer
 
 AbstractRenderer 的子类之一。
