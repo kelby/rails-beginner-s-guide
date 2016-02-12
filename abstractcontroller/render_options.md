@@ -138,6 +138,7 @@ AbstractRenderer 的子类之一。
 :html
 
 # 渲染文件，一般是可下载的文件(不使用 layout)
+# 你可以手动指定 `layout: true`
 :file
 
 # 直接渲染代码(不使用 layout)，默认使用 ERB 格式。不推荐使用
