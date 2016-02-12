@@ -1,33 +1,5 @@
 ### render 方法详解
 
-#### render 的各个可选参数
-
-```ruby
-
-
-
-
-:html     # 直接渲染代码，默认使用 HTML 格式。不好的实践(实际渲染的是 html, 没有 layout)
-:inline   # 直接渲染代码，默认使用 ERB 格式。不好的实践 (不使用 layout)
-:template # 明确指定渲染哪个模板，一般这个 key 可省，传 value 即可
-:prefixes
-:nothing      # 有时候我们不希望渲染任何东西(渲染的是 text)
-:status       # 对应着 HTTP status code
-:content_type # html, json, xml 都是可以自动识别 content type 的，其它格式可能你需要指定
-:location     # 对应着 HTTP Location header
-:action # 渲染某个 action
-:type   # 必须配合 inline，可以渲染其它类型的代码(默认是 ERB)
-:variant # 变种
-
-:json # 渲染 json
-:js   # 渲染 js
-:xml  # 渲染 json
-
-:callback # 为使用 json 渲染器时，额外提供的参数。
-```
-
-> Rails 5 已废除 :nothing 可选参数
-
 #### render 在 Controller 和 View 是如何工作的
 
 **Controller 里默认渲染的是 template**
