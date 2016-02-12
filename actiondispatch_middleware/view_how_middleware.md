@@ -29,7 +29,7 @@ use Rack::Head
 use Rack::ConditionalGet
 use Rack::ETag
 use ActionView::Digestor::PerRequestDigestCacheExpiry
-run Xxx::Application.routes
+run AppName::Application.routes
 ```
 
 **控制台里查看**，项目有哪些 middleware:
