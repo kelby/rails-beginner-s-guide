@@ -13,10 +13,6 @@
 
 #### ~~几个比较有意思的 helper 方法~~
 
-**render**
-
-渲染。
-
 **content_tag**
 
 用于生成一个闭合的 HTML 标签。很多 helper 方法，都是封装于它。
