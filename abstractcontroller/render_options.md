@@ -84,7 +84,7 @@ show.html+phone.erb
 :partial
 ```
 
-这里的 render 方法，是 AV and AC 的主要入口，如果有 :partial 则渲染的是局部模板；否则，渲染的是普通模板。
+这里的 render 方法，是 AV and AC 的主要入口，如果有 `:partial` 则渲染的是局部模板；否则，渲染的是普通模板。
 
 #### ActionView::PartialRenderer
 
