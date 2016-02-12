@@ -1,6 +1,6 @@
 ### 第二梯队 Connection
 
-操作的 connect，其实就是直接操作 websocket ...
+操作的是 connect，其实就是直接操作 websocket ...
 
 一般地，我们不会直接操作它。
 
