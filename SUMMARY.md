@@ -314,7 +314,7 @@
        * [Association Has One Association](activerecord_association/association_has_one_association.md)
        * [Association Has One Through Association](activerecord_association/association_has_one_through_association.md)
        * [Association Singular Association](activerecord_association/association_singular_association.md)
-       * Association Through Association
+       * [Association Through Association](activerecord_association/association_through_association.md)
    * [4 个关联类方法](activerecord_association/4_methods.md)
        * [belongs_to](activerecord_association/method_belongs_to.md)
        * [has_one](activerecord_association/method_has_one.md)
