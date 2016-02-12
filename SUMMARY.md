@@ -302,7 +302,7 @@
        * Reflection Has One Reflection
        * Reflection Belongs To Reflection
        * Reflection Has And Belongs To Many Reflection
-       * Reflection Through Reflection
+       * [Reflection Through Reflection](activerecord_association/reflection_through_reflection.md)
    * [11 个 Association 文件 - 核心之提供方法](activerecord_association/ten_association_files.md)
    * [4 个关联类方法](activerecord_association/4_methods.md)
        * [belongs_to](activerecord_association/method_belongs_to.md)
