@@ -25,7 +25,7 @@
 ```
 
 ```ruby
-# 渲染 html 格式的内容。不推荐使用
+# 渲染 html 格式的内容。不推荐使用，可用 html.erb 代替
 :html
 # 举例 render html: "<strong>Not Found</strong>".html_safe
 
