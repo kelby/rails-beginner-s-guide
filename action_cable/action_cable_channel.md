@@ -52,7 +52,8 @@ unsubscribed
 defer_subscription_confirmation?
 defer_subscription_confirmation!
 
-subscription_confirmation_sent? subscription_rejected?
+subscription_confirmation_sent?
+subscription_rejected?
 ```
 
 ```
