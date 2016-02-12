@@ -20,9 +20,7 @@ forty_two
 ```
 to_sentence
 
-to_formatted_s
-to_default_s
-to_s
+to_formatted_s & to_default_s & to_s
 
 to_xml
 ```
