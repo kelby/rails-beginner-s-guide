@@ -12,8 +12,4 @@ send
 
 ```
 constructor
-
-inspect
-
-toJSON
 ```
