@@ -64,7 +64,7 @@ show.html+phone.erb
 :action
 # 指定要渲染的局部模板
 :partial
-# 指定要渲染的
+# 指定要渲染的文件
 :file
 
 :prefixes
