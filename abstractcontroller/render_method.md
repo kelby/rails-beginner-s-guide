@@ -1,6 +1,6 @@
 ### 更多关于渲染
 
-#### render 在 Controller 和 View 是如何工作的？
+#### render 在 Controller 和 View 的区别？
 
 **Controller 里默认渲染的是完整的模板(template)**
 
