@@ -1,2 +1,5 @@
-# Association Has One Through Association
+#### 9) Has One Through Association
 
+```
+replace
+```
