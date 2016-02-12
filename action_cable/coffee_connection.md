@@ -7,7 +7,9 @@ send
 open
 close
 reopen
+```
 
+```
 isOpen
 isState
 getState
