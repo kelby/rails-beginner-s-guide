@@ -28,7 +28,7 @@ action_methods
 
 实例方法：
 
-```
+```ruby
 attr_reader :params, :connection, :identifier
 delegate :logger, to: :connection
 ```
