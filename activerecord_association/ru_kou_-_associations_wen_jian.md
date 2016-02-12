@@ -28,6 +28,8 @@ has_and_belongs_to_many
 通过 association（由最初的 Association 提供）调用对应的 Association 提供的方法 …（交叉进行的）
 ```
 
+**关于 association**
+
 另，对内部实现来说非常重要的实例方法：
 
 ```
