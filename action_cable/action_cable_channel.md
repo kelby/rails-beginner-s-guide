@@ -40,17 +40,17 @@ delegate :logger, to: :connection
 ```
 
 ```
-defer_subscription_confirmation?
-defer_subscription_confirmation!
-
-subscription_confirmation_sent? subscription_rejected?
-
 transmit
 
 reject
 
 subscribed
 unsubscribed
+
+defer_subscription_confirmation?
+defer_subscription_confirmation!
+
+subscription_confirmation_sent? subscription_rejected?
 ```
 
 ```
