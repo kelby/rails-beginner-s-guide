@@ -1,6 +1,6 @@
 ### ~~Preloader~~
 
-实现 includes, preload, eager_load.
+根据不同情况实现 includes, preload, eager_load.
 
 ```ruby
 class Author < ActiveRecord::Base
