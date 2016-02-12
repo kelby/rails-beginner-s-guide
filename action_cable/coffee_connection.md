@@ -1,4 +1,4 @@
-### 第二梯队 Connection
+### Connection
 
 表面操作的是 connect，实质是直接操作 websocket ...
 
