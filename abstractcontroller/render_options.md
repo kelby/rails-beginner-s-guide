@@ -12,6 +12,11 @@
 :status, :content_type, :location
 ```
 
+```
+:text
+:nothing
+```
+
 #### AbstractController::Rendering
 
 ```
