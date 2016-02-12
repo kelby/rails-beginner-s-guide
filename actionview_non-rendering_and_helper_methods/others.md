@@ -15,7 +15,6 @@
 
 **fields_for**
 
-构建表单。区别于 form_for，与 record 对象直接关联不大。
 
 **form_for**
 
