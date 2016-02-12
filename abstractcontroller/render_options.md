@@ -111,7 +111,7 @@ AbstractRenderer 的子类之一。
 render :partial => "person"
 ```
 
-则在局部模板内有 `person` 可用
+则在局部模板内有 `person` 可用，它代表什么内容 ，以及如何更改名字。和以下几个参数有关：
 
 ```ruby
 # 传递单个对象时，与局部模板同名的变量
