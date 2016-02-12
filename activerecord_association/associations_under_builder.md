@@ -1,4 +1,4 @@
-## Builder - 功能的核心
+## Builder - 功能的实现
 
 实际指的是 Builder Associations，关联方法带来的基本方法。
 
