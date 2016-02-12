@@ -1,6 +1,6 @@
 ### render 参数汇总与详解
 
-渲染格式、指定内容、传递。
+参数可以分为几类：渲染格式、指定内容、传递变量。
 
 #### ActionController::Rendering
 
