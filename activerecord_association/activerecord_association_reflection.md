@@ -58,18 +58,6 @@ reflect_on_aggregation
 
 
 
-#### ~~9) Belongs To Reflection~~
-
-继承于 Association Reflection
-
-```
-macro
-
-belongs_to?
-
-join_keys
-join_id_for
-```
 
 #### ~~10) Has And Belongs To Many Reflection~~
 
