@@ -2,11 +2,17 @@
 
 #### ActionController::Rendering
 
-```
+```ruby
+# 渲染普通文本，不带格式
 :plain
+
+
 :update
+
 :html
+
 :body
+
 :text
 
 :status, :content_type, :location
