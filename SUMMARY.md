@@ -316,7 +316,7 @@
        * [Has One Through Association](activerecord_association/association_has_one_through_association.md)
        * [Singular Association](activerecord_association/association_singular_association.md)
        * [Through Association](activerecord_association/association_through_association.md)
-   * [4 个关联类方法](activerecord_association/4_methods.md)
+   * [4 个关联方法的使用](activerecord_association/4_methods.md)
        * [belongs_to](activerecord_association/method_belongs_to.md)
        * [has_one](activerecord_association/method_has_one.md)
        * [has_many](activerecord_association/method_has_many.md)
