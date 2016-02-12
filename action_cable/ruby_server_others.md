@@ -17,7 +17,8 @@ open_connections_statistics
 
 ### Configuration
 
-ActionCable.server.config
+实例对象：`ActionCable.server.config`
+
 
 ```ruby
 attr_accessor :logger, :log_tags
