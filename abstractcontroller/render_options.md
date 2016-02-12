@@ -62,7 +62,9 @@ show.html+phone.erb
 :template
 # 指定要渲染的 action，它会重新确认对应的模板
 :action
+# 指定要渲染的局部模板
 :partial
+# 指定要渲染的
 :file
 
 :prefixes
