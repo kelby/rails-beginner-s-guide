@@ -15,11 +15,11 @@
 :html
 # 举例 render html: "<strong>Not Found</strong>".html_safe
 
-# 兼容废除的 :text，默认是普通文本。不推荐使用
-:body
-
 # 渲染普通文本，不带格式。不推荐使用，可用 :plain 代替
 :text
+
+# 兼容废除的 :text，默认是普通文本。不推荐使用
+:body
 
 # 不渲染任何东西，已废除。不推荐使用，可用 :plain 代替
 :nothing
