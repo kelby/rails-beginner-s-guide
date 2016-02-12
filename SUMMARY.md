@@ -148,7 +148,7 @@
        * [Remote Connections](action_cable/article_cable_misc.md)
        * [Action Cable Helper](action_cable/action_cable_helper.md)
    * [Coffee 脚本](action_cable/action_cable_coffee.md)
-       * [第一梯队 Consumer](action_cable/coffee_consumer.md)
+       * [Consumer](action_cable/coffee_consumer.md)
        * [Subscription & Subscriptions](action_cable/subscriptions_&_subscription.md)
        * [Connection](action_cable/coffee_connection.md)
        * [Connection Monitor](action_cable/coffee_connection_monitor.md)
