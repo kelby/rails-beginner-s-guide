@@ -10,13 +10,13 @@
 module MyApplication
   module Business
     class Supplier < ActiveRecord::Base
-       has_one :account
+      has_one :account
     end
   end
  
   module Billing
     class Account < ActiveRecord::Base
-       belongs_to :supplier
+      belongs_to :supplier
     end
   end
 end
