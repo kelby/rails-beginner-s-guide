@@ -13,7 +13,7 @@ provide
 
 使用举例：
 
-```html
+```sh
 # 定义
 <% content_for :navigation do %>
   <li><%= link_to 'Home', action: 'index' %></li>
