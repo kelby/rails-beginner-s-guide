@@ -4,8 +4,6 @@
 
 实现对 scope 的相关操作。
 
-场景举例：
-
 ```ruby
 module MyApplication
   module Business
