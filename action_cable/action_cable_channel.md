@@ -21,6 +21,11 @@ include Broadcasting
 **对外提供接口**
 
 ```
+attr_reader :params, :connection, :identifier
+delegate :logger, to: :connection
+```
+
+```
 action_methods
 
 clear_action_methods!
