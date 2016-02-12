@@ -7,6 +7,7 @@ beat
 
 close
 
+# 不要直接调用，应由 connect、disconnect 
 process
 
 receive
