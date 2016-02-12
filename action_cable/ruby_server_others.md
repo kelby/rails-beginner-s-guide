@@ -22,6 +22,7 @@ remote_connections
 
 stream_event_loop
 
+# ActionCable::Server::Worker 实例
 worker_pool
 ```
 
