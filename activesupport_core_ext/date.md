@@ -7,6 +7,8 @@ compare_with_coercion
 
 acts_like_date?
 
+blank?
+
 advance
 ago
 
