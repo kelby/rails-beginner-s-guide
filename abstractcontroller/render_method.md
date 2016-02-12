@@ -20,7 +20,7 @@ Controller 里的 render 是为了返回 self.response_body
 9) 渲染返回 xml
 
 ```ruby
-render xml: @product
+
 ```
 
 这里的数据会自动转换成 xml 格式，不需要调用 to_xml
