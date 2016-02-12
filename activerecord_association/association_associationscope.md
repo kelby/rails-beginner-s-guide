@@ -25,4 +25,4 @@ end
 restaurants = Restaurant.includes(:positive_reviews).first(5)
 ```
 
-**作用**：为 Collection Association、Singular Associations 和 Association 服务。
+Collection Association、Singular Associations 和 Association 调用了它。
