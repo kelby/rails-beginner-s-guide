@@ -146,7 +146,10 @@ AbstractRenderer 的子类之一。
 :inline 和 :type
 :template
 
+# 指定布局
 :layout
+
+# 传递
 :locals
 ```
 
