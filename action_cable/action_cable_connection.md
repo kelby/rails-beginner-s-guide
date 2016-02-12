@@ -59,12 +59,14 @@ end
 ### Identification
 
 ```
-connection_identifier
-
 identified_by
 ```
 
 常用 `identified_by` 进行身份验证。
+
+```
+connection_identifier
+```
 
 ### Authorization
 
