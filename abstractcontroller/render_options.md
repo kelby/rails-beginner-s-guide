@@ -159,9 +159,13 @@ AbstractRenderer 的子类之一。
 
 View 里 render 方法所在地，对外提供接口，处于最外层。
 
-```
+```ruby
+# 指定局部模板
 :partial
+# 指定布局
 :layout
+
+# 传递变量
 :locals
 ```
 
