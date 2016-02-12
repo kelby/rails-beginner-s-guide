@@ -21,4 +21,4 @@ Author.includes(:books).where(name: ['bell hooks', 'Homer']).to_a
 Author.includes(:books).where(books: {title: 'Illiad'}).to_a
 ```
 
-它们对应的 SQL 差别很大。究竟要执行哪种查询，可以让 Preloader 来判断。
+它们对应的 SQL 差别很大，性能差距也大。究竟要执行哪种查询，可以让 Preloader 来判断。
