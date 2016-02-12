@@ -18,6 +18,7 @@ disconnect
 # streams/broadcasting 所使用的适配器
 pubsub
 
+# ActionCable::RemoteConnections 实例
 remote_connections
 
 # ActionCable::Connection::StreamEventLoop 实例
