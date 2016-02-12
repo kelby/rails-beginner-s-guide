@@ -13,7 +13,7 @@ channel_classes
 # identified_by 指定的标识符
 connection_identifiers
 
-# 断开带有某标识符的链接
+# 断开带有某标识符的连接
 disconnect
 
 # streams/broadcasting 所使用的适配器
