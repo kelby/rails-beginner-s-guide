@@ -67,6 +67,7 @@ show.html+phone.erb
 # 指定要渲染的文件
 :file
 
+# 渲染路径前面部分
 :prefixes
 
 :variant
