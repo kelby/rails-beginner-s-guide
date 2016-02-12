@@ -1,4 +1,4 @@
-## Association 目录 - 核心之提供方法
+## Association 目录 - 实现之提供方法
 
 #### 关系图
 
