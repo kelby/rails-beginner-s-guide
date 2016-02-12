@@ -1,6 +1,6 @@
 ## Association 目录 - 核心之提供方法
 
-**关联方法带来的高级的方法。**
+#### 关系图
 
 ```
 HasOneThroughAssociation BelongsToPolymorphicAssociation  HasManyThroughAssociation
@@ -19,7 +19,7 @@ ForeignAssociation
 ThroughAssociation
 ```
 
-**对外提供接口。**
+**关联方法带来的高级的方法，对外提供接口。**
 
 概念：a.b 或 a.bs 组成一个 Association，把它们看成是一个整体。但前者为 owner，后者为 target.
 
