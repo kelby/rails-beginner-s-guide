@@ -135,7 +135,7 @@ AbstractRenderer 的子类之一。
 # 渲染 html 格式的内容
 :html
 
-# 渲染文件
+# 渲染文件默认不使用 layout
 :file
 
 # 直接渲染代码(不使用 layout)，默认使用 ERB 格式。不推荐使用
