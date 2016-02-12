@@ -31,15 +31,6 @@ ThroughAssociation
 
 
 
-#### 6) Has Many Association
-
-```
-handle_dependency
-
-insert_record
-
-empty?
-```
 
 #### 7) Has Many Through Association
 
