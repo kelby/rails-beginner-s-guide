@@ -139,6 +139,8 @@ AbstractRenderer 的子类之一。
 
 # 渲染 html 格式的内容
 :html
+
+# 渲染文件
 :file
 :inline 和 :type
 :template
