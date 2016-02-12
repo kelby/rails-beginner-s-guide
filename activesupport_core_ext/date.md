@@ -10,8 +10,8 @@ acts_like_date?
 blank?
 
 advance
-ago
 
+ago
 since & in
 
 at_beginning_of_day
