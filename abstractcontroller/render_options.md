@@ -111,7 +111,7 @@ AbstractRenderer 的子类之一。
 
 例如：
 
-```
+```ruby
 render :partial => "person"
 ```
 
