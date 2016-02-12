@@ -15,13 +15,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-8) 渲染返回 json
 
-```ruby
-render json: @product
-```
-
-这里的数据会自动转换成 json 格式，不需要调用 to_json
 
 9) 渲染返回 xml
 
