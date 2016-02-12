@@ -20,6 +20,4 @@ Mapper 这部分，也就是路由机制这部分，这是我们接触得最多�
 
 除了 Mapper 外，用到的还有：Redirection、Polymorphic Routes、Url For.
 
-**Routing 包含范围：**
-
-除 RouteSet、Routes Proxy 和 Journey 外，routing 目录里的其它模块。
+相关文件、目录：除 RouteSet、Routes Proxy 和 Journey 外，routing 目录里的其它模块。
