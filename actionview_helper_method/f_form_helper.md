@@ -52,7 +52,7 @@ url_field
 week_field
 ```
 
-form_for 和 fields_for 是另类。
+form_for 和 fields_for 是另类：
 
 **fields_for**
 
