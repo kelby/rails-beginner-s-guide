@@ -1,6 +1,6 @@
 ## Reflection - 关联两者
 
-#### 对内实现
+#### 关系图
 
 ```
 HasManyReflection & HasOneReflection & BelongsToReflection & HasAndBelongsToManyReflection RuntimeReflection
