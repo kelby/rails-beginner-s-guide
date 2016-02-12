@@ -16,7 +16,9 @@ _dump
 _dump_without_zone
 
 _load
-acts_like_time?, advance, ago, all_day,
+acts_like_time?
+
+advance, ago, all_day,
 
 at_beginning_of_day
 beginning_of_day
