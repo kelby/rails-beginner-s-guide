@@ -28,8 +28,6 @@ before_unsubscribe
 channel_name
 ```
 
-当然，这没什么实质意义。
-
 ### Periodic Timers
 
 ```
