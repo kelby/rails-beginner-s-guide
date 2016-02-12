@@ -51,6 +51,9 @@ transmit
 unsubscribe_from_channel, unsubscribed
 ```
 
+```
+```
+
 默认其子类要重写 `subscribed` 和 `unsubscribed` 方法。
 
 `subscribed` 相当于初始化。
