@@ -1,7 +1,5 @@
 ### ~~Association Scope~~
 
-**作用**：为 Collection Association、Singular Associations 和 Association 服务。
-
 场景"关联的时候，关联表带有 scope"，不使用它的话，生成的 SQL 里能看到有的条件是重复的。Association Scope 解决了这个问题。
 
 ```ruby
@@ -26,3 +24,5 @@ end
 ```ruby
 restaurants = Restaurant.includes(:positive_reviews).first(5)
 ```
+
+**作用**：为 Collection Association、Singular Associations 和 Association 服务。
