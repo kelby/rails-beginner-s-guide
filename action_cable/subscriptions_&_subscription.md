@@ -56,8 +56,6 @@ notifyAll
 sendCommand
 
 record
-
-toJSON
 ```
 
 有专门的 `@subscriptions` 用来保存 subscription.
