@@ -6,7 +6,6 @@
 # 渲染普通文本，不带格式
 :plain
 
-
 :update
 
 :html
