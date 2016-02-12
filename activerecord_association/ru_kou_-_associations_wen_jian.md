@@ -1,4 +1,4 @@
-## Associations 文件 - 入口
+## Associations 文件 - 4 个关联方法入口
 
 Association 提供我们 4 个常用方法：
 
