@@ -56,15 +56,7 @@ reflect_on_aggregation
 
 
 
-#### ~~8) Has One Reflection~~
 
-继承于 Association Reflection
-
-```
-macro
-
-has_one?
-```
 
 #### ~~9) Belongs To Reflection~~
 
