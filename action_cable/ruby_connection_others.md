@@ -6,8 +6,6 @@
 
 ### Message Buffer
 
-不应该直接被调用
-
 ```
 append(message)
 
