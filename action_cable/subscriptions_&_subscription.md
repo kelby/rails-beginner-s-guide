@@ -54,8 +54,6 @@ findAll
 notifyAll
 
 sendCommand
-
-record
 ```
 
 有专门的 `@subscriptions` 用来保存 subscription.
