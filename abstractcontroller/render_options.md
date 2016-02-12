@@ -106,7 +106,7 @@ AbstractRenderer 的子类之一。
 :object
 # 传递的对象别名，更改默认的局部变量名字
 :as
-# 传递的集合
+# 传递的集合，每一项可用局部变量代替
 :collection
 ```
 
