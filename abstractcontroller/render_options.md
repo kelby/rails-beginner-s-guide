@@ -111,6 +111,8 @@ AbstractRenderer 的子类之一。
 render :partial => "person"
 ```
 
+则在局部模板内有 `person` 可用
+
 ```
 # 传递单个对象时，与局部模板同名的变量
 :object
