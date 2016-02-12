@@ -69,8 +69,6 @@ show.html+phone.erb
 
 # 渲染路径前面部分
 :prefixes
-
-:variant
 ```
 
 teplate 和 action，也可以根据是否有 "/" 做判断。
