@@ -14,7 +14,7 @@ Associations 目录下 -- 实现几个关联方法。
                 BelongsTo
             CollectionAssociation
                 HasMany
-        4 个关联类方法，直接调用
+        4 个关联类方法，直接调用它们
 
     # 11 个 _Association 文件。实现对关联对象的操作！
     Association -- (3)
