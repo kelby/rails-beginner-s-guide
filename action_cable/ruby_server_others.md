@@ -7,8 +7,6 @@ ActionCable.server
 实例方法：
 
 ```
-call
-
 channel_classes
 
 connection_identifiers
@@ -22,6 +20,10 @@ remote_connections
 stream_event_loop
 
 worker_pool
+```
+
+```
+config
 ```
 
 类方法：
