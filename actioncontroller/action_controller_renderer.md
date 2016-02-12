@@ -4,6 +4,8 @@
 
 ```ruby
 ApplicationController.renderer.render template: '...'
+
+ApplicationController.renderer.new(method: 'post', https: true)
 ```
 
 原来的那一套渲染流程你是需要依赖于某个 Controller 这大环境的，但有的场景并不需要。
