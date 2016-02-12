@@ -32,15 +32,6 @@ ThroughAssociation
 
 
 
-#### 7) Has Many Through Association
-
-```
-size
-concat
-
-concat_records
-insert_record
-```
 
 #### 8) Has One Association
 
