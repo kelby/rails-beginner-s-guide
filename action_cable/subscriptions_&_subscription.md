@@ -12,7 +12,7 @@ perform
 其它：
 
 ```ruby
-# 实质是 connection.send
+# 实质是 consumer.send -> connection.send
 send
 ```
 
