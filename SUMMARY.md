@@ -321,7 +321,7 @@
        * [has_one](activerecord_association/method_has_one.md)
        * [has_many](activerecord_association/method_has_many.md)
        * [has_and_belongs_to_many](activerecord_association/method_has_and_belongs_to_many.md)
-   * [4 个关联类方法的补充](activerecord_association/implied_four_methods.md)
+   * [4 个关联方法的补充](activerecord_association/implied_four_methods.md)
        * [关联方法的可选参数汇总](activerecord_association/options_for_four_methods.md)
        * [使用关联方法后，Rails 自动生成了哪些方法](activerecord_association/methods_which_give_from_4_association_methods.md)
        * [habtm vs has_many through](activerecord_association/has_and_belongs_to_many_vs_has_many_through.md)
