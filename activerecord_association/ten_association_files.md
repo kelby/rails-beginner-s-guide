@@ -25,10 +25,3 @@ ThroughAssociation
 
 实现对关联对象的操作。
 
-
-
-#### 11) Through Association
-
-```ruby
-delegate :source_reflection, :through_reflection, :to => :reflection
-```
