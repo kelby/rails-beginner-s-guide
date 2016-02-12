@@ -20,21 +20,25 @@ include Broadcasting
 
 **对外提供接口**
 
+类方法：
+
+```
+action_methods
+```
+
+实例方法：
+
 ```
 attr_reader :params, :connection, :identifier
 delegate :logger, to: :connection
 ```
 
 ```
-action_methods
-
 clear_action_methods!
 
 defer_subscription_confirmation!, defer_subscription_confirmation?
 
 method_added
-
-new
 
 perform_action
 
