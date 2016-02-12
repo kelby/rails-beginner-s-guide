@@ -139,7 +139,9 @@ AbstractRenderer 的子类之一。
 :file
 
 # 直接渲染代码(不使用 layout)，默认使用 ERB 格式。不推荐使用
-:inline 和 :type
+:inline
+# 必须配合 inline，可以渲染其它类型的代码
+:type
 
 # 指定模板
 :template
