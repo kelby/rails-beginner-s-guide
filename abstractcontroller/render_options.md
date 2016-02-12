@@ -11,6 +11,7 @@
 
 # 渲染 html 格式的内容
 :html
+# 举例 render html: "<strong>Not Found</strong>".html_safe
 ```
 
 ```ruby
