@@ -3,7 +3,7 @@
 ### Base
 
 ```ruby
-# 封装 transmit
+# 简单封装 transmit
 beat
 
 close
