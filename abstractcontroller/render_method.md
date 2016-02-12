@@ -19,7 +19,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 渲染一个集合(参数 `:collection`)，而不是一个局部模板或对象。
 
-```sh
+```ruby
 <% @advertisements.each do |ad| %>
   <%= render partial: "ad", locals: { ad: ad } %>
 <% end %>
