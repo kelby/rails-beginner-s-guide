@@ -29,7 +29,7 @@ stream_event_loop
 worker_pool
 ```
 
-```
+```ruby
 # ActionCable::Server::Configuration 实例
 config
 ```
