@@ -3,24 +3,10 @@
 #### render 的各个可选参数
 
 ```ruby
-# 仅仅为了返回很简单的数据。这里没有 HTML 状态和 layout
-# (实际渲染的是 text, 没有 layout)
-:plain
 
-# 明确指定渲染哪个文件，一般这个 key 可省，传 value 即可。默认不使用 layout
-# (实际是渲染 template)
-:file
 
-# 必需与 block 结合，里面可以放 Prototype 相关代码，会调用到 Erubis 的
-# JavaScriptGenerator 模块；这是比较老的用法，现在推荐使用 js.erb 的方式。
-:update
 
-:partial  # 渲染以 _ 开头的局部模板
-:formats  # 格式
-:layout   # 默认都是使用当前布局，你可以更改或不使用布局
-:locals   # 传递变量给局部模板，以 Hash 的形式编写，可以传递多个变量，名字自取
-:body # 只返回 content，而不关心 content type. 区别于 :plain 和 :html (实际渲染的是 text)
-:text     # 渲染纯文本内容
+
 :html     # 直接渲染代码，默认使用 HTML 格式。不好的实践(实际渲染的是 html, 没有 layout)
 :inline   # 直接渲染代码，默认使用 ERB 格式。不好的实践 (不使用 layout)
 :template # 明确指定渲染哪个模板，一般这个 key 可省，传 value 即可
