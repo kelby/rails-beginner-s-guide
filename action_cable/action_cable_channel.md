@@ -40,6 +40,7 @@ delegate :logger, to: :connection
 ```
 
 ```
+# 实际上由 connection 完成
 transmit
 
 reject
