@@ -14,10 +14,7 @@ advance
 ago
 since & in
 
-at_beginning_of_day
-beginning_of_day
-midnight
-at_midnight
+at_beginning_of_day & beginning_of_day & midnight & at_midnight
 
 at_end_of_day
 end_of_day
