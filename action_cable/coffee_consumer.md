@@ -6,7 +6,7 @@
 constructor
 ```
 
-一并创建 Subscriptions、Connection 及 ConnectionMonitor 实例。
+一并创建 Subscriptions、Connection 及 Connection Monitor 实例。
 
 ```
 send
