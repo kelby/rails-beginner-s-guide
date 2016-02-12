@@ -17,7 +17,7 @@ forty_two
 
 **Conversions**
 
-```
+```ruby
 to_sentence
 
 to_formatted_s
