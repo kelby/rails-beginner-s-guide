@@ -1,46 +1,5 @@
 ## Server 补充
 
-### Base
-
-实例对象有：`ActionCable.server`
-
-实例方法：
-
-```ruby
-# 所有 Channel 类
-channel_classes
-
-# identified_by 指定的标识符
-connection_identifiers
-
-# streams/broadcasting 所使用的适配器
-# ActionCable::SubscriptionAdapter::Async 实例
-pubsub
-
-# ActionCable::RemoteConnections 实例
-remote_connections
-
-# ActionCable::Connection::StreamEventLoop 实例
-stream_event_loop
-
-# ActionCable::Server::Worker 实例
-worker_pool
-
-# 断开带有某标识符的连接
-disconnect
-```
-
-```ruby
-# ActionCable::Server::Configuration 实例
-config
-```
-
-类方法：
-
-```
-logger
-```
-
 ### Connections
 
 手动添加、移除链接，主要为了方便开发、调试，建议请不要做它用。
