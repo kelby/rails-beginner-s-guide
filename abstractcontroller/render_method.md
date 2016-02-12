@@ -3,23 +3,6 @@
 #### render 的各个可选参数
 
 ```ruby
-# 配合 collection 和 partical. 在局部模板之间穿插的内容。
-# 为什么不把它们放到局部模板里，而是用这种奇怪的方式？
-# 可能是 partical 还被其它人使用，不能直接添加。
-:spacer_template
-
-# 每一个局部模板都有一个和它同名的变量名可用，使用 object 可设置这个变量的值。
-# 类似 :locals，但这里只有一个变量，且变量名固定。
-:object
-
-# 配合 collection. 渲染一个集合后，默认同名的变量名可能不同，我们需要指定，
-# 使用 as 可设置这个变量(类似 :object)
-:as
-
-# 集合里的每一个元素都要渲染同一个局部模板，所以可以传递一个集合给局部模板。
-# 作用和 collection.each :之后再 render 一样的
-:collection
-
 # 仅仅为了返回很简单的数据。这里没有 HTML 状态和 layout
 # (实际渲染的是 text, 没有 layout)
 :plain
