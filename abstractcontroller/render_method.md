@@ -15,14 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-1) 不想渲染任何东西，可以使用：
-
-```ruby
-render nothing: true
-```
-
-此时，默认 status = 200, 你也可以手动指定状态码。
-
 2) 不想渲染任何东西，还可以使用方法：
 
 `head `
