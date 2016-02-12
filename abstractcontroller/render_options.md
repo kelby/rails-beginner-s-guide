@@ -87,7 +87,7 @@ teplate 和 action，也可以根据是否有 "/" 做判断。
 AbstractRenderer 的子类之一。
 
 ```ruby
-# 渲染局部模板时，各个局部模板之间穿插的内容
+# 配合 :collection，渲染局部模板时，各个局部模板之间穿插的内容
 :spacer_template
 
 # 布局
