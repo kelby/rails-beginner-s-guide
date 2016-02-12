@@ -52,7 +52,7 @@ url_field
 week_field
 ```
 
-form_for 和 fields_for 是另类：
+form_for 和 fields_for 是另类，它们都可用于构建表单：
 
 `fields_for`
 构建表单。区别于 form_for，与 record 对象直接关联不大。
