@@ -160,7 +160,7 @@ AbstractRenderer 的子类之一。
 :locals
 ```
 
-```
+```ruby
 # 兼容 :text，默认是普通文本。不推荐使用
 :body
 # 渲染普通文本。不推荐使用
