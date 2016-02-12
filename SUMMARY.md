@@ -312,7 +312,7 @@
        * Association Has Many Association
        * Association Has Many Through Association
        * [Association Has One Association](activerecord_association/association_has_one_association.md)
-       * Association Has One Through Association
+       * [Association Has One Through Association](activerecord_association/association_has_one_through_association.md)
        * Association Singular Association
        * Association Through Association
    * [4 个关联类方法](activerecord_association/4_methods.md)
