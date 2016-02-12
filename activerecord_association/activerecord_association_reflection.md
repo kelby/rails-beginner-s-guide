@@ -54,13 +54,6 @@ reflect_on_aggregation
 
 
 
-#### ~~6) Aggregate Reflection~~
-
-继承于 Macro Reflection
-
-```
-mapping
-```
 
 #### ~~7) Has Many Reflection~~
 
