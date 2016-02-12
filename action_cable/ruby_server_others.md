@@ -19,7 +19,6 @@ open_connections_statistics
 
 实例对象：`ActionCable.server.config`
 
-
 ```ruby
 attr_accessor :logger, :log_tags
 attr_accessor :connection_class, :worker_pool_size
