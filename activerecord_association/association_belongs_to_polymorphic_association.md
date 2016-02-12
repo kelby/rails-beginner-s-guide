@@ -1,2 +1,5 @@
-# Association Belongs To Polymorphic Association
+#### 3) Belongs To Polymorphic Association
 
+```
+klass
+```
