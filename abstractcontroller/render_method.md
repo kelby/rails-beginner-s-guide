@@ -15,7 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-
 8) 渲染返回 json
 
 ```ruby
