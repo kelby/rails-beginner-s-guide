@@ -6,7 +6,7 @@
 
 使用：
 
-```
+```sh
 rails generate channel NAME [method method] [options]
 ```
 
