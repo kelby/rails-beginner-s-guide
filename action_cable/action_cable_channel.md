@@ -26,6 +26,10 @@ include Broadcasting
 action_methods
 ```
 
+```
+
+```
+
 实例方法：
 
 ```ruby
