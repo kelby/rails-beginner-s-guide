@@ -16,22 +16,6 @@ Controller 里的 render 是为了返回 self.response_body
 #### 一些使用举例
 
 
-3) 不想渲染，只想查看结果可以使用 `render_to_string`  
-传递给它的参数和 render 一样，但它始终返回一个字符串。
-
-4) 一些常用可选参数
-
-明确指定要渲染的模板，用 template
-
-```ruby
-render template: "products/show"
-```
-
-明确指定要渲染的文件，用 file
-
-```ruby
-render file: "/u/apps/warehouse_app/current/app/views/products/show"
-```
 
 渲染文件，默认是没有 layout 的，如果需要，你可以手动指定 `layout: true`
 
