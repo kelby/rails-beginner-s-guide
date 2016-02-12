@@ -17,7 +17,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 循环渲染单个对象，还是渲染集合
 
-渲染一个集合(参数 `:collection`)，而不是一个局部模板或对象。
+优先渲染一个集合(参数 `:collection`)，而不是一个局部模板或对象。
 
 ```ruby
 <% @advertisements.each do |ad| %>
