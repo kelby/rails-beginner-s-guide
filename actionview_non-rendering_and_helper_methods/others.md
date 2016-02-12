@@ -13,14 +13,6 @@
 
 #### ~~几个比较有意思的 helper 方法~~
 
-**fields_for**
-
-构建表单。区别于 form_for，与 record 对象直接关联不大。
-
-**form_for**
-
-构建表单。和 record 对象关联比较大。
-
 **render**
 
 渲染。
