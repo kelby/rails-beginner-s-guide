@@ -1,4 +1,4 @@
-### 第二梯队 Connection Monitor
+### Connection Monitor
 
 非常重要的“约定”。
 
