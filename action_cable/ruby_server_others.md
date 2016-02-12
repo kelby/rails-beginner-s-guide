@@ -16,6 +16,7 @@ connection_identifiers
 disconnect
 
 # streams/broadcasting 所使用的适配器
+# ActionCable::SubscriptionAdapter::Async 实例
 pubsub
 
 # ActionCable::RemoteConnections 实例
