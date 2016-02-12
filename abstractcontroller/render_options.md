@@ -68,6 +68,8 @@ show.html+phone.erb
 :file
 
 :prefixes
+
+:variant
 ```
 
 teplate 和 action，也可以根据是否有 "/" 做判断。
