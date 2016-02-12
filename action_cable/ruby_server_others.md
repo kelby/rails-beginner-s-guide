@@ -30,6 +30,7 @@ worker_pool
 ```
 
 ```
+# ActionCable::Server::Configuration 实例
 config
 ```
 
