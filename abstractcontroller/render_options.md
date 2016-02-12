@@ -58,7 +58,6 @@ AbstractRenderer 的子类之一。
 :collection
 ```
 
-
 #### ActionView::TemplateRenderer
 
 AbstractRenderer 的子类之一。
