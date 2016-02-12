@@ -1,2 +1,9 @@
-# Reflection Has And Belongs To Many Reflection
+#### ~~10) Has And Belongs To Many Reflection~~
 
+继承于 Association Reflection
+
+```
+macro
+
+collection?
+```
