@@ -32,7 +32,7 @@ channel_paths
 
 channel_class_names
 
-# 默认使用的是 redis
+# 默认使用的适配器是 redis
 pubsub_adapter
 ```
 
