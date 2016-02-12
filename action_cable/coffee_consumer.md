@@ -8,9 +8,10 @@ constructor
 
 一并创建 Subscriptions、Connection 及 ConnectionMonitor 实例。
 
-这几个实例之间要互相操作的话，通过 Consumer 实例完成。
-
 ```
 send
 ```
+
+这几个实例之间要互相操作的话，通过 Consumer 实例完成。
+
 
