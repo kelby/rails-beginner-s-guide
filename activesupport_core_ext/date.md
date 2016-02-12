@@ -46,4 +46,6 @@ to_time
 tomorrow
 xmlschema
 yesterday
+
+plus_with_duration & + & plus_with_duration
 ```
