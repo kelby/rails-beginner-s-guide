@@ -8,8 +8,6 @@
 constructor
 ```
 
-
-<br>
 这几个实例之间要互相操作的话，通过 Consumer 实例完成。
 
 ```
