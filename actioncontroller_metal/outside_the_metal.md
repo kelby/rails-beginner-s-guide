@@ -8,7 +8,7 @@
 
 1) **继承 Abstract Controller 的财富**
 
-直接继承而来。
+由 Metal 到 Base 继承而来。
 
 2) **使用 Action Dispatch 的资源**
 
