@@ -47,6 +47,8 @@ transmit
 subscribed
 unsubscribed
 
+# 以下几个相当于配置、问询
+
 reject
 
 defer_subscription_confirmation?
