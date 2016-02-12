@@ -13,11 +13,11 @@
 ```
 
 ```ruby
-# 指定 status
+# 指定 Header status
 :status
-# 指定 content_type
+# 指定 Header content_type
 :content_type
-# 指定 location
+# 指定 Header location
 :location
 ```
 
