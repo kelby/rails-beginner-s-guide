@@ -13,10 +13,6 @@
 
 #### ~~几个比较有意思的 helper 方法~~
 
-**cache**
-
-缓存。
-
 **content_for**
 
 存储代码块，yield 调用。
