@@ -29,6 +29,8 @@ attr_accessor :url
 channel_paths
 
 channel_class_names
+
+pubsub_adapter
 ```
 
 ### Worker
