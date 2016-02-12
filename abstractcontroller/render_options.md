@@ -23,8 +23,7 @@
 ```
 
 ```ruby
-# 必需与 block 结合使用，里面可以放 Prototype 相关代码，会调用到 Erubis 的
-# JavaScriptGenerator 模块；这是比较老的用法，现在推荐使用 js.erb 的方式。
+# 必需与 block 结合使用，里面可以放 Prototype 等代码。不推荐使用
 :update
 ```
 
