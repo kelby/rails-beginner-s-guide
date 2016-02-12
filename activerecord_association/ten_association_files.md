@@ -33,14 +33,6 @@ ThroughAssociation
 
 
 
-#### 8) Has One Association
-
-```
-handle_dependency
-
-replace
-delete
-```
 
 #### 9) Has One Through Association
 
