@@ -4,7 +4,7 @@
 
 常用的：
 
-```
+```ruby
 # 封装 send
 perform
 ```
