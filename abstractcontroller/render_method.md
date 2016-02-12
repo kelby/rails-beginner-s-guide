@@ -28,6 +28,8 @@ Controller 里的 render 是为了返回 self.response_body
 
 渲染集合，除了少敲几个字符外，性能也会对应变快一点。
 
+另，渲染集合时 :partial 参数不要省略。
+
 #### 其它
 
 Controller 里可以 render 完整的模板(template)、或局部模板(partial)，但 View 里不可指定渲染完整的模板(template).
