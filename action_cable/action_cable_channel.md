@@ -27,7 +27,9 @@ action_methods
 ```
 
 ```
+method_added
 
+clear_action_methods!
 ```
 
 实例方法：
@@ -38,12 +40,8 @@ delegate :logger, to: :connection
 ```
 
 ```
-clear_action_methods!
-
 defer_subscription_confirmation?
 defer_subscription_confirmation!
-
-method_added
 
 subscription_confirmation_sent? subscription_rejected?
 
