@@ -43,12 +43,13 @@ method_added
 
 reject
 
-subscribed
+
 
 subscription_confirmation_sent? subscription_rejected?
 
 transmit
 
+subscribed
 unsubscribed
 ```
 
