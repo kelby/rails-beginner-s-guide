@@ -48,4 +48,6 @@ xmlschema
 yesterday
 
 plus_with_duration & + & plus_with_duration
+
+minus_without_duration & - & minus_with_duration
 ```
