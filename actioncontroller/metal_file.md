@@ -1,6 +1,6 @@
 ## Metal 文件下的内容
 
-Metal 是请求从路由到 Controller 的中转站，
+Metal 是请求从路由到 Controller 的中转站。
 
 **类方法：**
 
