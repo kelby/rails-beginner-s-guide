@@ -122,7 +122,7 @@ render :partial => "person"
 :collection
 ```
 
-参数 `:locals` 也可传递变量，它们本质是一样的。
+> Note：前面提到的参数 `:locals` 也可传递变量，它们本质是一样的。
 
 #### ActionView::TemplateRenderer
 
