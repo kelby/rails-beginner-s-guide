@@ -304,7 +304,7 @@
        * [Belongs To Reflection](activerecord_association/reflection_belongs_to_reflection.md)
        * [Has And Belongs To Many Reflection](activerecord_association/reflection_has_and_belongs_to_many_reflection.md)
        * [Through Reflection](activerecord_association/reflection_through_reflection.md)
-   * [Association 目录 - 核心之提供方法](activerecord_association/ten_association_files.md)
+   * [Association 目录 - 实现之提供方法](activerecord_association/ten_association_files.md)
        * [Association](activerecord_association/association_association.md)
        * [Belongs To Association](activerecord_association/association_belongs_to_association.md)
        * [Belongs To Polymorphic Association](activerecord_association/association_belongs_to_polymorphic_association.md)
