@@ -4,7 +4,7 @@
 
 实现对 scope 的相关操作。
 
-场景举例：
+场景"关联的时候，关联表带有 scope"，举例：
 
 ```ruby
 class Review < ActiveRecord::Base
