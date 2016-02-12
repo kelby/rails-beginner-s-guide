@@ -20,5 +20,5 @@ provide
 <% end %>
 
 # 调用
-<ul><%= content_for :navigation %></ul>
+<ul><%= yield :navigation %></ul>
 ```
