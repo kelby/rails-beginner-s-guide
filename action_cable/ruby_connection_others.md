@@ -16,6 +16,7 @@ send_async
 
 statistics
 
+# 不要直接调用，应由 Channel 实例对象的 transmit 触发
 transmit
 ```
 
