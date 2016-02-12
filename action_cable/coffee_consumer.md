@@ -12,6 +12,6 @@ constructor
 send
 ```
 
-这几个实例之间要互相操作的话，通过 Consumer 实例完成。
+希望 @webSocket 发送消息，通过 Consumer 实例完成。
 
 
