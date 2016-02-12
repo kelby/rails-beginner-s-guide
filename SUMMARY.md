@@ -151,7 +151,7 @@
        * [第一梯队 Consumer](action_cable/coffee_consumer.md)
        * [第二梯队 Subscription & Subscriptions](action_cable/subscriptions_&_subscription.md)
        * [第二梯队 Connection](action_cable/coffee_connection.md)
-       * [第二梯队 Connection Monitor](action_cable/coffee_connection_monitor.md)
+       * [Connection Monitor](action_cable/coffee_connection_monitor.md)
    * [一些重要的东西](action_cable/action_cable_importants.md)
    * [其它](action_cable/action_cable_others.md)
 * [Action View 渲染相关](actionview_renderer_and_rendering/README.md)
