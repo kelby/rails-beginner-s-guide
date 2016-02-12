@@ -4,20 +4,30 @@
 
 ActionCable.server
 
+实例方法：
+
 ```
-disconnect
-
-remote_connections
-
-worker_pool
+call
 
 channel_classes
 
+connection_identifiers
+
+disconnect
+
 pubsub
 
-redis
+remote_connections
 
-connection_identifiers
+stream_event_loop
+
+worker_pool
+```
+
+类方法：
+
+```
+logger
 ```
 
 ### Connections
