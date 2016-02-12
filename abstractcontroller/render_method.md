@@ -32,6 +32,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 只渲染 json，只得到数据。
 
-只渲染 js 报错，安全隐患。
+页面里渲染 js.erb 有时候会有安全隐患，所以渲染后用 `` 。
 
 Controller 里可以指定渲染 partial，但 View 里不可指定渲染 template.
