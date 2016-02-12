@@ -102,7 +102,7 @@ AbstractRenderer 的子类之一。
 # 指定要渲染的局部模板
 :partial
 
-# 传递的对象
+# 传递单个对象时，与局部模板同名的变量
 :object
 # 传递的对象别名
 :as
