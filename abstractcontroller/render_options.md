@@ -11,9 +11,8 @@
 # 渲染 html 格式的内容
 :html
 
+# 渲染
 :body
-
-:text
 
 # 指定 status
 :status
