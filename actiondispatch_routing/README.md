@@ -14,12 +14,12 @@ Rack ~= Rack middleware ~= Rack endpoint ~= Rack application
 
 这里的 Rack endpoint 指的不仅仅是 Controller#action，其它形式的入口也可以，例如：Engine、Sinatra 应用。
 
-**Routing 包含范围：**
-
-除 RouteSet、Routes Proxy 和 Journey 外，routing 目录里的其它模块。
-
 **Routing 主要包含两部分：**
 
 Mapper 这部分，也就是路由机制这部分，这是我们接触得最多的，它包括：Base、Concerns、HttpHelpers、Resources、Scoping.
 
 除了 Mapper 外，用到的还有：Redirection、Polymorphic Routes、Url For.
+
+**Routing 包含范围：**
+
+除 RouteSet、Routes Proxy 和 Journey 外，routing 目录里的其它模块。
