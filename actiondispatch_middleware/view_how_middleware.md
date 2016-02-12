@@ -3,7 +3,7 @@
 **命令行里查看**，项目有哪些 middleware:
 
 ```ruby
-> rake middleware
+> rails middleware
 
 use Rack::Sendfile
 use ActionDispatch::Static
