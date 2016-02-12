@@ -19,11 +19,11 @@ Controller 里的 render 是为了返回 self.response_body
 
 渲染一个集合(参数 `:collection`)，而不是一个局部模板或对象。
 
-需要注意：
-
-- 集合里的元素在局部模板里和局部模板同名变量表示。
-- 可以用 :as 改变这里的同名变量。(渲染单个对象时，也可以用些参数)
-- 额外的参数用 :locals 传递。（上面的同名变量你不用 :as 的话，也可以这么传递）
+```sh
+<% @advertisements.each do |ad| %>
+  <%= render partial: "ad", locals: { ad: ad } %>
+<% end %>
+```
 
 渲染集合，除了少敲几个字符外，性能也会对应变快一点。
 
