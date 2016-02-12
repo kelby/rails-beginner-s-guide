@@ -13,10 +13,6 @@
 
 #### ~~几个比较有意思的 helper 方法~~
 
-**content_for**
-
-存储代码块，yield 调用。
-
 **fields_for**
 
 构建表单。区别于 form_for，与 record 对象直接关联不大。
