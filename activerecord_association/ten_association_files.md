@@ -30,11 +30,6 @@ ThroughAssociation
 
 
 
-#### 5) Foreign Association
-
-```
-foreign_key_present?
-```
 
 #### 6) Has Many Association
 
