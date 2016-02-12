@@ -11,10 +11,12 @@ class Physician < ActiveRecord::Base
 end
 ```
 
-以下两种查询对应的 joins 语句是不同的：
+以下两种查询：
 
 ```
 @physician.patients.to_a
 
 Physician.joins(:appointments).to_a
 ```
+
+对应的 `joins` 语句是不同的，甚至差距很大，这部分工作由 Join Dependency 判断。
