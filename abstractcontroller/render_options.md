@@ -6,8 +6,6 @@
 # 渲染普通文本，不带格式
 :plain
 
-:update
-
 # 渲染 html 格式的内容
 :html
 
@@ -22,6 +20,10 @@
 :content_type
 # 指定 location
 :location
+```
+
+```
+:update
 ```
 
 ```ruby
