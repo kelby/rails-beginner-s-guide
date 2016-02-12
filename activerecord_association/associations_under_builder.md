@@ -2,7 +2,7 @@
 
 关联方法带来的基本方法。
 
-**主要做 5 件事：**
+#### 主要做 5 件事
 
 ```ruby
 define_extensions model, name, &block
@@ -12,7 +12,7 @@ define_callbacks model, reflection
 define_validations model, reflection
 ```
 
-**对内实现：**
+#### 关系图
 
 ```
   HasOne   &   BelongsTo        HasMany   &   HasAndBelongsToMany
