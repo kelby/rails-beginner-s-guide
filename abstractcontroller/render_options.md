@@ -13,7 +13,7 @@
 :body
 ```
 
-```
+```ruby
 # 指定 status
 :status
 # 指定 content_type
