@@ -155,6 +155,9 @@ AbstractRenderer 的子类之一。
 :locals
 ```
 
+```
+```
+
 #### ActionView::Helpers::RenderingHelper
 
 View 里 render 方法所在地，对外提供接口，处于最外层。
