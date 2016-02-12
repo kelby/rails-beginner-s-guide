@@ -69,11 +69,13 @@ since
 
 seconds_since_midnight, seconds_until_end_of_day
 
-to_default_s
-to_formatted_s
-to_s
-
 days_in_year
+```
+
+```
+to_default_s & to_formatted_s & to_s
+
+formatted_offset
 ```
 
 ```
