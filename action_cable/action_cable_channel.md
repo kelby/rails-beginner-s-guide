@@ -43,11 +43,11 @@ delegate :logger, to: :connection
 # 实际上由 connection 完成
 transmit
 
-reject
-
 # 以下两个由子类实现
 subscribed
 unsubscribed
+
+reject
 
 defer_subscription_confirmation?
 defer_subscription_confirmation!
