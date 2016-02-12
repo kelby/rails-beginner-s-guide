@@ -77,8 +77,6 @@ show.html+phone.erb
 # 类似 render "posts/show"
 ```
 
-teplate 和 action，也可以根据是否有 "/" 做判断。
-
 #### ActionView::Renderer
 
 ```ruby
