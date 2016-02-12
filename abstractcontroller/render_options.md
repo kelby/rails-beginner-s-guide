@@ -52,8 +52,10 @@ show.html+phone.erb
 
 #### ActionView::Rendering
 
-```
+```ruby
+# 指定优先渲染的变种
 :variant
+# 指定渲染的格式
 :formats
 
 :template
