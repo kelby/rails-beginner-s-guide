@@ -44,6 +44,8 @@
 :variant
 ```
 
+例如渲染 show action，但 `request.variant = :phone` 则优先渲染：
+
 ```
 show.html+phone.erb
 ```
