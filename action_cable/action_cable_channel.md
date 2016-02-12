@@ -21,18 +21,26 @@ include Broadcasting
 **对外提供接口**
 
 ```
-defer_subscription_confirmation!()
-defer_subscription_confirmation?()
 
-reject()
+action_methods
 
-subscribed()
-unsubscribed()
+clear_action_methods!
 
-subscription_confirmation_sent?()
-subscription_rejected?()
+defer_subscription_confirmation!, defer_subscription_confirmation?
 
-transmit(data, via: nil)
+method_added
+
+new
+
+perform_action
+
+reject
+
+subscribed, subscription_confirmation_sent?, subscription_rejected?
+
+transmit
+
+unsubscribe_from_channel, unsubscribed
 ```
 
 默认其子类要重写 `subscribed` 和 `unsubscribed` 方法。
