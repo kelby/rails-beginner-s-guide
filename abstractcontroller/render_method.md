@@ -17,7 +17,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### render 单个对象，还是集合
 
-渲染一个集合(传递 `:collection`)，而不是一个个的渲染对象(传递 :object)。
+渲染一个集合(传递 `:collection`)，而不是一个个的渲染对象。
 
 需要注意：
 
