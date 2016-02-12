@@ -196,6 +196,7 @@ View 里 render 方法所在地，对外提供接口，处于最外层。
 
 # 渲染内容为 JS 格式
 :js
+# 举例 render xml: @product
 
 # 渲染内容为 XML 格式
 :xml
