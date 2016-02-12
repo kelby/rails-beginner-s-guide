@@ -58,11 +58,15 @@ end
 
 ### Identification
 
+类方法：
+
 ```
 identified_by
 ```
 
 常用 `identified_by` 进行身份验证。
+
+实例方法：
 
 ```
 connection_identifier
