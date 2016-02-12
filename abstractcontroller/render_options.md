@@ -1,6 +1,6 @@
 ### render 参数汇总
 
-**渲染格式、指定内容、传递参数**
+渲染格式、指定内容、传递参数。
 
 #### ActionController::Rendering
 
