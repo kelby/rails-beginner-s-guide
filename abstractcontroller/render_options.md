@@ -7,6 +7,7 @@
 ```ruby
 # 渲染普通文本，不带格式
 :plain
+# 举例 render plain: "OK"
 
 # 渲染 html 格式的内容
 :html
