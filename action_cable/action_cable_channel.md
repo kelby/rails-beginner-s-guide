@@ -41,10 +41,6 @@ defer_subscription_confirmation!
 
 method_added
 
-
-
-
-
 subscription_confirmation_sent? subscription_rejected?
 
 transmit
