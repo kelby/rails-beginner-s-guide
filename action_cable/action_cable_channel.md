@@ -39,7 +39,7 @@ attr_reader :params, :connection, :identifier
 delegate :logger, to: :connection
 ```
 
-```
+```ruby
 # 实际上由 connection 完成
 transmit
 
