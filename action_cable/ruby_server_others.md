@@ -25,7 +25,9 @@ attr_accessor :connection_class, :worker_pool_size
 attr_accessor :redis, :channels_path
 attr_accessor :disable_request_forgery_protection, :allowed_request_origins
 attr_accessor :url
+```
 
+```
 channel_paths
 
 channel_class_names
