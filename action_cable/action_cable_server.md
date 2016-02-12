@@ -61,3 +61,5 @@ broadcaster_for
 ActionCable.server.broadcast "web_notifications_1",
   { title: 'New things!', body: 'All shit fit for print' }
 ```
+
+实际上广播任务由 server 对应的 pubsub 来完成。
