@@ -72,10 +72,15 @@ seconds_since_midnight, seconds_until_end_of_day
 to_default_s
 to_formatted_s
 to_s
+```
 
+```
 use_zone
 zone
 zone=
 
 days_in_year
+
+find_zone
+find_zone!
 ```
