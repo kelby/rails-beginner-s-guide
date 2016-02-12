@@ -80,11 +80,11 @@ unsubscribe_from_channel
 # pubsub.subscribe
 stream_from
 
-# 封装 stream_from
-stream_for
-
 # pubsub.unsubscribe
 stop_all_streams
+
+# 封装 stream_from
+stream_for
 ```
 
 > Note：由 `pubsub` 完成实际操作。
