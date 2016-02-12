@@ -21,7 +21,6 @@ include Broadcasting
 **对外提供接口**
 
 ```
-
 action_methods
 
 clear_action_methods!
