@@ -54,8 +54,8 @@ week_field
 
 form_for 和 fields_for 是另类：
 
-**fields_for**
+`fields_for`
 构建表单。区别于 form_for，与 record 对象直接关联不大。
 
-**form_for**
+`form_for`
 构建表单。和 record 对象关联比较大。
