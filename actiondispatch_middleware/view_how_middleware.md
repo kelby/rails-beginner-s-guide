@@ -7,13 +7,14 @@
 
 use Rack::Sendfile
 use ActionDispatch::Static
-use Rack::Lock
-use #<ActiveSupport::Cache::Strategy::LocalCache::Middleware:0x007fc0ef0c5aa0>
+use ActionDispatch::LoadInterlock
+use ActiveSupport::Cache::Strategy::LocalCache::Middleware
 use Rack::Runtime
 use Rack::MethodOverride
 use ActionDispatch::RequestId
 use Rails::Rack::Logger
 use ActionDispatch::ShowExceptions
+use WebConsole::Middleware
 use ActionDispatch::DebugExceptions
 use ActionDispatch::RemoteIp
 use ActionDispatch::Reloader
@@ -24,11 +25,11 @@ use ActiveRecord::QueryCache
 use ActionDispatch::Cookies
 use ActionDispatch::Session::CookieStore
 use ActionDispatch::Flash
-use ActionDispatch::ParamsParser
 use Rack::Head
 use Rack::ConditionalGet
 use Rack::ETag
-run AppName::Application.routes
+use ActionView::Digestor::PerRequestDigestCacheExpiry
+run Xxx::Application.routes
 ```
 
 **控制台里查看**，项目有哪些 middleware:
