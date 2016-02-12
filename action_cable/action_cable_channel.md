@@ -45,6 +45,7 @@ transmit
 
 reject
 
+# 以下两个由子类实现
 subscribed
 unsubscribed
 
