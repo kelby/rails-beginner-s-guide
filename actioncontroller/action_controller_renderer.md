@@ -4,7 +4,7 @@
 
 ```ruby
 ApplicationController.renderer.render template: '...'
-# 或
+# 更简短的写法
 ApplicationController.render template: '...'
 
 ApplicationController.renderer.new(method: 'post', https: true)
