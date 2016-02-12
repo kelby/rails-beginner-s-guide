@@ -1,4 +1,4 @@
-### has_and_belongs_to_many vs has_many through
+#### has_and_belongs_to_many vs has_many through
 
 has_and_belongs_to_many 意味着中间表没有 model. 因此，不能通过 id 进行查询，也没有 validate、callback，更加不能直接读取&设置其值。唯一的方便之处是：通过 `<<` 即可创建中间表数据。
 
