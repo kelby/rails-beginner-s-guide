@@ -13,7 +13,7 @@ end
 
 以下两种查询：
 
-```
+```ruby
 @physician.patients.to_a
 
 Physician.joins(:appointments).to_a
