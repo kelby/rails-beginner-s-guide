@@ -4,7 +4,7 @@
 
 实现对 scope 的相关操作。
 
-场景"关联的时候，关联表带有 scope"，举例：
+场景"关联的时候，关联表带有 scope"，不使用它的话，生成的 SQL 里能看到有的条件是重复的。Association Scope 解决了这个问题。
 
 ```ruby
 class Review < ActiveRecord::Base
