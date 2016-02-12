@@ -27,11 +27,6 @@ ThroughAssociation
 
 
 
-#### 3) Belongs To Polymorphic Association
-
-```
-klass
-```
 
 #### 4) Collection Association
 
