@@ -14,7 +14,7 @@ ApplicationController.renderer.new(method: 'post', https: true)
 
 所以，现在拆分出来了。你可以不用依赖于 Controller，这样你能很方便的在 Job、Script 及 web sockets 里调用/渲染模板。
 
-它所使用的依赖环境 `@env` 非常简单，像 Rack 一样，
+它所使用的依赖环境 `@env` 非常简单，像 Rack 一样：
 
 ```ruby
 ApplicationController.renderer.defaults
