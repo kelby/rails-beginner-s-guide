@@ -4,23 +4,6 @@
 
 实现对 scope 的相关操作。
 
-```ruby
-module MyApplication
-  module Business
-    class Supplier < ActiveRecord::Base
-      has_one :account,
-        class_name: "MyApplication::Billing::Account"
-    end
-  end
- 
-  module Billing
-    class Account < ActiveRecord::Base
-      belongs_to :supplier,
-        class_name: "MyApplication::Business::Supplier"
-    end
-  end
-end
-```
 
 ```ruby
 class Review < ActiveRecord::Base
