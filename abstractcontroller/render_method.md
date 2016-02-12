@@ -30,6 +30,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 其它
 
-页面里渲染 js.erb 有时候会有安全隐患，所以渲染后用 `escape_javascript` 处理。
-
 Controller 里可以 render 完整的模板(template)、或局部模板(partial)，但 View 里不可指定渲染完整的模板(template).
+
+页面里渲染 js.erb 有时候会有安全隐患，所以渲染后用 `escape_javascript` 处理。
