@@ -129,11 +129,6 @@ render :partial => "person"
 AbstractRenderer 的子类之一。
 
 ```ruby
-(主要是以下 7 项)
-# 兼容 :text，默认是普通文本。不推荐使用
-:body
-# 渲染普通文本
-:text
 # 渲染普通文本
 :plain
 
@@ -156,6 +151,10 @@ AbstractRenderer 的子类之一。
 ```
 
 ```
+# 兼容 :text，默认是普通文本。不推荐使用
+:body
+# 渲染普通文本
+:text
 ```
 
 #### ActionView::Helpers::RenderingHelper
