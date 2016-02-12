@@ -53,7 +53,7 @@ prepend & unshift
 wrap
 ```
 
-**ArrayInquirer**
+**Array Inquirer**
 
 数组可以调用期望所包含元素结尾加 `?` 以询问是否包含此元素。
 
