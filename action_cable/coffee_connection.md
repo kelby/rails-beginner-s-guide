@@ -22,4 +22,4 @@ events
 disconnect
 ```
 
-它所打开的是 HTML5 自带就有的 WebSocket.
+它所打开的就是 WebSocket 连接。
