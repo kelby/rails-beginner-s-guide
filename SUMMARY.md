@@ -288,7 +288,7 @@
    * [Builder - 功能的核心](activerecord_association/associations_under_builder.md)
        * [Builder Association](activerecord_association/builder_association.md)
        * [Builder Singular Association](activerecord_association/builder_singular_association.md)
-       * Builder Collection Association
+       * [Builder Collection Association](activerecord_association/builder_collection_association.md)
        * [Builder Has One](activerecord_association/builder_has_one.md)
        * Builder Belongs To
        * Builder Has Many
