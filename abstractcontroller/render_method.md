@@ -13,30 +13,6 @@
 Controller 里的 render 是为了返回 self.response_body
 而 View 里的 render 则好像为了渲染而渲染，返回的不再是单纯的 self.response_body。它们只是名字相同而矣。
 
-#### 一些使用举例
-
-
-
-9) 渲染返回 xml
-
-```ruby
-
-```
-
-这里的数据会自动转换成 xml 格式，不需要调用 to_xml
-
-10) 渲染返回 js
-
-```ruby
-
-```
-
-11) 渲染，但不指定类型，用 body
-
-```ruby
-render body: "raw"
-```
-
 #### render 单个对象，还是集合
 
 渲染一个集合(传递 :collection)，而不是一个个的渲染对象(传递 :object)。
