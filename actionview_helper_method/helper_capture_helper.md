@@ -11,7 +11,7 @@ capture
 provide
 ```
 
-其中 capture 和 content_for 作用类似，只是定义和调用稍有不同。
+其中 `capture` 和 `content_for` 作用类似，只是定义和调用稍有不同。
 
 使用举例：
 
