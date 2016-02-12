@@ -297,7 +297,7 @@
        * [关联方法的可选参数汇总](activerecord_association/options_for_four_methods.md)
        * [使用关联方法后，Rails 自动生成了哪些方法](activerecord_association/methods_which_give_from_4_association_methods.md)
        * [habtm vs has_many through](activerecord_association/has_and_belongs_to_many_vs_has_many_through.md)
-   * [Aggregations composed_of](activerecord_association/aggregations_composed_of.md)
+   * [Aggregations - composed_of 的入口](activerecord_association/aggregations_composed_of.md)
    * [其它](activerecord_association/association_others.md)
        * [Autosave Association](activerecord_association/activerecord_autosaveassociation.md)
        * [Alias Tracker](activerecord_association/association_aliastracker.md)
