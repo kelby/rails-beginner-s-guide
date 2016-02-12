@@ -292,7 +292,7 @@
        * [Builder Has One](activerecord_association/builder_has_one.md)
        * [Builder Belongs To](activerecord_association/builder_belongs_to.md)
        * [Builder Has Many](activerecord_association/builder_has_many.md)
-       * Builder Has And Belongs To Many
+       * [Builder Has And Belongs To Many](activerecord_association/builder_has_and_belongs_to_many.md)
    * [Reflection - 核心之关联两者](activerecord_association/activerecord_association_reflection.md)
        * [Reflection Abstract Reflection](activerecord_association/reflection_abstract_reflection.md)
        * Reflection Macro Reflection
