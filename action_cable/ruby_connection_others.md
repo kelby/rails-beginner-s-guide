@@ -48,6 +48,13 @@ unsubscribe_from_all()
 add_tags(*tags)
 
 tag(logger)
+
+debug
+info
+warn
+error
+fatal
+unknown
 ```
 
 ```
