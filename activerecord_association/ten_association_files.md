@@ -27,18 +27,6 @@ ThroughAssociation
 
 
 
-#### 10) Singular Association
-
-```
-reader
-writer
-
-create
-create!
-
-build
-```
-
 #### 11) Through Association
 
 ```ruby
