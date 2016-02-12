@@ -2,7 +2,7 @@
 
 ### Base
 
-ActionCable.server
+实例对象有：`ActionCable.server`
 
 实例方法：
 
