@@ -149,7 +149,7 @@ render plain: "OK"
 render html: "<strong>Not Found</strong>".html_safe
 ```
 
-和 inline 一样，这违背了 MVC 模式，实践起来并不友好，不推荐使用。
+和 :inline 一样，这违背了 MVC 模式，实践起来并不友好，不推荐使用。
 
 8) 渲染返回 json
 
@@ -199,9 +199,3 @@ render body: "raw"
 只渲染 js 报错，安全隐患。
 
 Controller 里可以指定渲染 partial，但 View 里不可指定渲染 template.
-
-参考
-
-[method render](http://apidock.com/rails/ActionController/Base/render)<br>
-[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)<br>
-[Action View Partials](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)<br>
