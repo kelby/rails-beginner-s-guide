@@ -298,7 +298,7 @@
        * [Reflection Macro Reflection](activerecord_association/reflection_macro_reflection.md)
        * [Reflection Association Reflection](activerecord_association/reflection_association_reflection.md)
        * [Reflection Aggregate Reflection](activerecord_association/reflection_aggregate_reflection.md)
-       * Reflection Has Many Reflection
+       * [Reflection Has Many Reflection](activerecord_association/reflection_has_many_reflection.md)
        * [Reflection Has One Reflection](activerecord_association/reflection_has_one_reflection.md)
        * [Reflection Belongs To Reflection](activerecord_association/reflection_belongs_to_reflection.md)
        * [Reflection Has And Belongs To Many Reflection](activerecord_association/reflection_has_and_belongs_to_many_reflection.md)
