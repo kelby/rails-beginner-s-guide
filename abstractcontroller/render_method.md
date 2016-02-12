@@ -1,4 +1,4 @@
-### render 方法详解
+### 更多关于渲染
 
 #### render 在 Controller 和 View 是如何工作的
 
