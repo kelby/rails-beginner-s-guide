@@ -8,6 +8,7 @@
 
 :update
 
+# 渲染 html 格式的内容
 :html
 
 :body
