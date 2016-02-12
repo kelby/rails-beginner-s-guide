@@ -76,7 +76,7 @@ unsubscribe_from_channel
 
 ### Streams
 
-```
+```ruby
 # pubsub.subscribe
 stream_from
 
