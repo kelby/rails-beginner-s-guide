@@ -1,2 +1,0 @@
-# Association Belongs To Association
-
