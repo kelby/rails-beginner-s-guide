@@ -12,6 +12,7 @@ reopen
 ```
 isOpen
 isState
+
 getState
 
 installEventHandlers
