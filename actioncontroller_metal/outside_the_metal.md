@@ -35,4 +35,4 @@ polymorphic_url
 polymorphic_path
 ```
 
-5）处理请求，响应
+5）提供很多方法，允许你在 Controller 或 action 里处理请求，并响应。
