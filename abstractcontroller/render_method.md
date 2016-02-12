@@ -32,6 +32,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 只渲染 json，只得到数据。
 
-页面里渲染 js.erb 有时候会有安全隐患，所以渲染后用 `` 。
+页面里渲染 js.erb 有时候会有安全隐患，所以渲染后用 `escape_javascript` 处理。
 
 Controller 里可以指定渲染 partial，但 View 里不可指定渲染 template.
