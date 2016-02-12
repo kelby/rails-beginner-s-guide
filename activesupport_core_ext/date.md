@@ -12,7 +12,7 @@ blank?
 advance
 ago
 
-in & since
+since & in
 
 at_beginning_of_day
 beginning_of_day
