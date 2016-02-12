@@ -154,7 +154,6 @@
        * [第二梯队 Connection Monitor](action_cable/coffee_connection_monitor.md)
    * [一些重要的东西](action_cable/action_cable_importants.md)
    * [其它](action_cable/action_cable_others.md)
-* [Action View](action_view_basic/README.md)
 * [Action View 渲染相关](actionview_renderer_and_rendering/README.md)
    * [Base](actionview_non-rendering_and_helper_methods/action_view_base.md)
    * [非 Rails 是如何渲染的](actionview_renderer_and_rendering/principle_rendering.md)
