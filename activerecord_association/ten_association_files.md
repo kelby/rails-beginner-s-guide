@@ -26,11 +26,6 @@ ThroughAssociation
 实现对关联对象的操作。
 
 
-#### 9) Has One Through Association
-
-```
-replace
-```
 
 #### 10) Singular Association
 
