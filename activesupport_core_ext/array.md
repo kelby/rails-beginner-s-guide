@@ -64,6 +64,8 @@ wrap
 **其它**
 
 ```
+inquiry
+
 deep_dup
 
 to_param
