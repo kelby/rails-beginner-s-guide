@@ -37,6 +37,8 @@
 :nothing
 ```
 
+> Note：不想渲染任何东西，还可以使用方法 `head`
+
 #### AbstractController::Rendering
 
 ```ruby
