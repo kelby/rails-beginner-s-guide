@@ -297,7 +297,7 @@
        * Reflection Abstract Reflection
        * Reflection Macro Reflection
        * Reflection Association Reflection
-       * Reflection Aggregate Reflection
+       * [Reflection Aggregate Reflection](activerecord_association/reflection_aggregate_reflection.md)
        * Reflection Has Many Reflection
        * [Reflection Has One Reflection](activerecord_association/reflection_has_one_reflection.md)
        * [Reflection Belongs To Reflection](activerecord_association/reflection_belongs_to_reflection.md)
