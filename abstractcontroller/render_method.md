@@ -3,9 +3,11 @@
 #### render 在 Controller 和 View 是如何工作的
 
 **Controller 里默认渲染的是 template**
+
 走的路是 ActionController::Rendering -> AbstractController::Rendering -> ActionView::Rendering -> ActionView::Renderer#render
 
 **View 里默认渲染的是 partial**
+
 走的路是 ActionView::Helpers::RenderingHelper#render -> ActionView::Renderer
 
 通过上面的路径和特别指出的两个 render 方法里面的逻辑，不难看出为什么可以默认渲染 template 或 partial.
