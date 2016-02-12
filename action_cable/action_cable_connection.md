@@ -4,8 +4,6 @@
 
 这里的"连接"几乎等价于 Websocket 连接。
 
-和 Channel 平级，但又被其调用。
-
 ```ruby
 # 简单封装 transmit
 beat
