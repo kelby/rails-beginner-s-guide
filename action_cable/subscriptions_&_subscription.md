@@ -10,7 +10,8 @@ perform
 
 其它：
 
-```
+```ruby
+# connection.send
 send
 
 unsubscribe
