@@ -2,12 +2,12 @@
 
 ### Base
 
-```
+```ruby
 beat
 
 close
 
-# 不要直接调用，应由 connect、disconnect 
+# 不要直接调用，应由 connect、disconnect 触发
 process
 
 receive
