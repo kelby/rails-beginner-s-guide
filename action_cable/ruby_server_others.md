@@ -27,7 +27,7 @@ attr_accessor :disable_request_forgery_protection, :allowed_request_origins
 attr_accessor :url
 ```
 
-```
+```ruby
 channel_paths
 
 channel_class_names
