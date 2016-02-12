@@ -84,7 +84,7 @@ stream_for
 stop_all_streams
 ```
 
-由 `pubsub` 完成实际操作。
+> Note：由 `pubsub` 完成实际操作。
 
 ```ruby
 class CommentsChannel < ApplicationCable::Channel
