@@ -4,7 +4,6 @@
 
 实现对 scope 的相关操作。
 
-
 ```ruby
 class Review < ActiveRecord::Base
   belongs_to :restaurant
