@@ -15,12 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-6) 渲染纯文本，用 plain
-
-```ruby
-
-```
-
 7) 不用模板，但效果类似，用 html
 
 ```ruby
