@@ -28,7 +28,7 @@ Controller 里的 render 是为了返回 self.response_body
 
 渲染集合，除了少敲几个字符外，性能也会对应变快一点。
 
-另，渲染集合时 :partial 参数不要省略。
+另，渲染集合时 `:partial` 参数，尽量不要省略。
 
 #### 其它
 
