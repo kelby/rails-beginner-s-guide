@@ -24,23 +24,6 @@ define_validations model, reflection
                          Association
 ```
 
-
-#### 2) Singular Association
-
-类方法：
-
-```
-define_accessors
-define_constructors
-define_validations
-```
-
-实例方法：
-
-```
-valid_options
-```
-
 #### 3) Collection Association
 
 类方法：
