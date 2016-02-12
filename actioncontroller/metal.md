@@ -1,6 +1,6 @@
 ## Metal - 加强的 Rack, 简陋的 Controller
 
-**加强的 Rack:**
+#### 加强的 Rack
 
 意味着它符合 Rack 接口规范，可以直接使用它，创建出来的应用可以看做是一个 Rack application.
 
@@ -12,7 +12,7 @@
 
 > Rails Metal is a subset of Rack middleware 可以参考【Rack - Ruby Web server 接口】章节了解更多关于 Rack 的内容。
 
-**简陋的 Controller:**
+#### 简陋的 Controller
 
 除了提供一个有效的 Rack 接口外，它几乎没有任何其它功能。
 
