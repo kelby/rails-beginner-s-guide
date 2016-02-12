@@ -8,11 +8,11 @@ Rack endpoint 是什么？
 
 Rack ~= Rack middleware ~= Rack endpoint ~= Rack application
 
+#### 再说 Routing
+
 一切路由规则都可归结为: 映射路径到 Rack endpoint.
 
 这里的 Rack endpoint 指的不仅仅是 Controller#action，其它形式的入口也可以，例如：Engine、Sinatra 应用。
-
-#### 再说 Routing
 
 **Routing 包含范围：**
 
