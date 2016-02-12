@@ -146,6 +146,7 @@ AbstractRenderer 的子类之一。
 # 举例 render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
 # 必须配合 :inline，指定要渲染代码的类型
 :type
+# 举例 type: :builder
 
 # 指定模板
 :template
