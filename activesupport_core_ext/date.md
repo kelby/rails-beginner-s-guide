@@ -1,9 +1,7 @@
 ### Date
 
 ```
-<=>
-compare_without_coercion
-compare_with_coercion
+<=> & compare_without_coercion & compare_with_coercion
 
 acts_like_date?
 
