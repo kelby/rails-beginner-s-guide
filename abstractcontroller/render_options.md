@@ -145,7 +145,7 @@ AbstractRenderer 的子类之一。
 
 :inline 和 :type
 
-# 指定
+# 指定模板
 :template
 
 # 指定布局
