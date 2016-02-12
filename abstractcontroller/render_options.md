@@ -134,7 +134,10 @@ AbstractRenderer 的子类之一。
 :body
 # 渲染普通文本
 :text
+# 渲染普通文本
 :plain
+
+# 渲染 html 格式的内容
 :html
 :file
 :inline 和 :type
