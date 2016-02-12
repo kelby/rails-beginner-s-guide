@@ -39,7 +39,8 @@
 
 #### AbstractController::Rendering
 
-```
+```ruby
+# 指定优先渲染的变种
 :variant
 ```
 
