@@ -26,19 +26,6 @@ ThroughAssociation
 实现对关联对象的操作。
 
 
-#### 2) Belongs To Association
-
-```
-handle_dependency
-
-replace
-reset
-
-updated?
-
-decrement_counters
-increment_counters
-```
 
 #### 3) Belongs To Polymorphic Association
 
