@@ -2,11 +2,11 @@
 
 #### render 在 Controller 和 View 是如何工作的？
 
-**Controller 里默认渲染的是 template**
+**Controller 里默认渲染的是完整的模板(template)**
 
 走的路是 ActionController::Rendering -> AbstractController::Rendering -> ActionView::Rendering -> ActionView::Renderer#render
 
-**View 里默认渲染的是 partial**
+**View 里默认渲染的是局部模板(partial)**
 
 走的路是 ActionView::Helpers::RenderingHelper#render -> ActionView::Renderer
 
