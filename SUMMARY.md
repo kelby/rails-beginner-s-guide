@@ -294,7 +294,7 @@
        * [Belongs To](activerecord_association/builder_belongs_to.md)
        * [Has Many](activerecord_association/builder_has_many.md)
        * [Has And Belongs To Many](activerecord_association/builder_has_and_belongs_to_many.md)
-   * [Reflection - 核心之关联两者](activerecord_association/activerecord_association_reflection.md)
+   * [Reflection - 实现之关联两者](activerecord_association/activerecord_association_reflection.md)
        * [Abstract Reflection](activerecord_association/reflection_abstract_reflection.md)
        * [Macro Reflection](activerecord_association/reflection_macro_reflection.md)
        * [Association Reflection](activerecord_association/reflection_association_reflection.md)
