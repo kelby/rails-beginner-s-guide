@@ -16,7 +16,7 @@ at_beginning_of_day & beginning_of_day & midnight & at_midnight
 
 at_end_of_day & end_of_day
 
-at_midday & at_noon & middle_of_day
+midday & noon & at_midday & at_noon & middle_of_day
 
 at_middle_of_day
 
@@ -30,9 +30,6 @@ find_beginning_of_week!
 inspect
 default_inspect
 readable_inspect
-
-midday
-noon
 
 to_default_s
 to_formatted_s
