@@ -40,18 +40,19 @@ defer_subscription_confirmation!, defer_subscription_confirmation?
 
 method_added
 
-perform_action
-
 reject
 
 subscribed, subscription_confirmation_sent?, subscription_rejected?
 
 transmit
 
-unsubscribe_from_channel, unsubscribed
+unsubscribed
 ```
 
 ```
+perform_action
+
+unsubscribe_from_channel
 ```
 
 默认其子类要重写 `subscribed` 和 `unsubscribed` 方法。
