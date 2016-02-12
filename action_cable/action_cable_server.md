@@ -14,3 +14,7 @@ broadcaster_for
 
 常用 `broadcast` 进行广播。
 
+```ruby
+ActionCable.server.broadcast "web_notifications_1",
+  { title: 'New things!', body: 'All shit fit for print' }
+```
