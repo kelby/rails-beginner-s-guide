@@ -32,6 +32,7 @@ channel_paths
 
 channel_class_names
 
+# 默认使用的是 redis
 pubsub_adapter
 ```
 
