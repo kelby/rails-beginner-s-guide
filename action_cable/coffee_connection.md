@@ -19,8 +19,6 @@ installEventHandlers
 events
 
 disconnect
-
-toJSON
 ```
 
 它所打开的是 HTML5 自带就有的 WebSocket.
