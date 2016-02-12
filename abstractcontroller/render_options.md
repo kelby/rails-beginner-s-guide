@@ -177,7 +177,9 @@ View 里 render 方法所在地，对外提供接口，处于最外层。
 
 ```ruby
 # 渲染内容为 JSON 格式
-:json 和 :callback
+:json 和 
+# 为使用 json 渲染器时，额外提供的参数。
+:callback
 
 # 渲染内容为 JS 格式
 :js
