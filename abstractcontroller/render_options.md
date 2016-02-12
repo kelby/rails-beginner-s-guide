@@ -43,6 +43,10 @@
 :variant
 ```
 
+```
+show.html+phone.erb
+```
+
 #### ActionView::Rendering
 
 ```
