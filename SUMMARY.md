@@ -19,7 +19,7 @@
    * [Helpers](abstractcontroller/abstractcontroller_helpers.md)
    * [Callbacks](abstractcontroller/abstractcontroller_callbacks.md)
    * [Rendering](abstractcontroller/abstractcontroller_rendering.md)
-       * [render 参数汇总](abstractcontroller/render_options.md)
+       * [render 参数汇总与详解](abstractcontroller/render_options.md)
        * [render 方法详解](abstractcontroller/render_method.md)
    * [Translation](abstractcontroller/abstract_controller_translation.md)
    * [Collector](abstractcontroller/abstractcontroller_collector.md)
