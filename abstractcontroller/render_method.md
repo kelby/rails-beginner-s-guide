@@ -18,7 +18,7 @@ Controller 里的 render 是为了返回 self.response_body
 6) 渲染纯文本，用 plain
 
 ```ruby
-render plain: "OK"
+
 ```
 
 7) 不用模板，但效果类似，用 html
