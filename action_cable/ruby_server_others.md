@@ -9,6 +9,10 @@ connections
 
 add_connection
 remove_connection
+
+setup_heartbeat_timer
+
+open_connections_statistics
 ```
 
 ### Configuration
