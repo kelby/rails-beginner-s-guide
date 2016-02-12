@@ -92,6 +92,8 @@ AbstractRenderer 的子类之一。
 
 # 布局
 :layout
+
+# 传递变量
 :locals
 :formats
 :partial
