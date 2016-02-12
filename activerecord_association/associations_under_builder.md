@@ -5,10 +5,19 @@
 #### 主要做 5 件事
 
 ```ruby
+# 调用时传递的 block
 define_extensions model, name, &block
+
+# 关联两者
 create_reflection model, name, scope, options, extension
+
+# 读写访问器
 define_accessors model, reflection
+
+# 和关联有关的回调
 define_callbacks model, reflection
+
+# 和关联有关的校验
 define_validations model, reflection
 ```
 
