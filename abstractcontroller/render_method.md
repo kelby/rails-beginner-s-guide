@@ -25,6 +25,7 @@ Controller 里的 render 是为了返回 self.response_body
 <% end %>
 
 # 建议更改为
+
 <%= render partial: "ad", collection: @advertisements %>
 ```
 
