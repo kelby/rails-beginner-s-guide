@@ -149,7 +149,7 @@ AbstractRenderer 的子类之一。
 # 指定布局
 :layout
 
-# 传递
+# 传递变量
 :locals
 ```
 
