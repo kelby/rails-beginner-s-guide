@@ -12,6 +12,8 @@ blank?
 advance
 ago
 
+in & since
+
 at_beginning_of_day
 beginning_of_day
 midnight
@@ -32,9 +34,6 @@ change
 current
 
 find_beginning_of_week!
-
-in
-since
 
 inspect
 default_inspect
