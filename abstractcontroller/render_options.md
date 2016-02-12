@@ -106,6 +106,7 @@ AbstractRenderer 的子类之一。
 :object
 # 传递的对象别名
 :as
+# 传递的集合
 :collection
 ```
 
