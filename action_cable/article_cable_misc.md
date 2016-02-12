@@ -21,7 +21,9 @@ ActionCable.server.remote_connections.where(current_user: User.find(1)).disconne
 
 ```
 disconnect()
+```
 
+```
 identifiers()
 ```
 
