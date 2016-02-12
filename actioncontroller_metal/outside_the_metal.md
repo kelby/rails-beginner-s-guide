@@ -34,3 +34,5 @@ wrap_parameters
 polymorphic_url
 polymorphic_path
 ```
+
+5）处理请求，响应
