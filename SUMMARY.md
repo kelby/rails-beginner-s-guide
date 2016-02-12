@@ -306,7 +306,7 @@
    * [11 个 Association 文件 - 核心之提供方法](activerecord_association/ten_association_files.md)
        * [Association Association](activerecord_association/association_association.md)
        * [Association Belongs To Association](activerecord_association/association_belongs_to_association.md)
-       * Association Belongs To Polymorphic Association
+       * [Association Belongs To Polymorphic Association](activerecord_association/association_belongs_to_polymorphic_association.md)
        * Association Collection Association
        * [Association Foreign Association](activerecord_association/association_foreign_association.md)
        * Association Has Many Association
