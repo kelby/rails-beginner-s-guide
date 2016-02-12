@@ -1,5 +1,15 @@
 ## Connection 补充
 
+### WebSocket
+
+```
+alive?()
+
+possible?()
+
+transmit(data)
+```
+
 ### ~~Internal Channel~~
 
 空
@@ -12,16 +22,6 @@ append(message)
 process!()
 
 processing?()
-```
-
-### WebSocket
-
-```
-alive?()
-
-possible?()
-
-transmit(data)
 ```
 
 ### ~~Subscriptions~~
