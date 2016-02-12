@@ -15,13 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-7) 不用模板，但效果类似，用 html
-
-```ruby
-
-```
-
-和 :inline 一样，这违背了 MVC 模式，实践起来并不友好，不推荐使用。
 
 8) 渲染返回 json
 
