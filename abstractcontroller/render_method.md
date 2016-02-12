@@ -15,10 +15,6 @@ Controller 里的 render 是为了返回 self.response_body
 
 #### 一些使用举例
 
-
-
-渲染文件，默认是没有 layout 的，如果需要，你可以手动指定 `layout: true`
-
 5) 不用模板，但效果类似，用 inline
 
 ```ruby
