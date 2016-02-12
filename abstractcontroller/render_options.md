@@ -143,6 +143,7 @@ AbstractRenderer 的子类之一。
 
 # 直接渲染代码(不使用 layout)，默认使用 ERB 格式。不推荐使用
 :inline
+# 举例 render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
 # 必须配合 :inline，指定要渲染代码的类型
 :type
 
