@@ -36,7 +36,8 @@ delegate :logger, to: :connection
 ```
 clear_action_methods!
 
-defer_subscription_confirmation!, defer_subscription_confirmation?
+defer_subscription_confirmation?
+defer_subscription_confirmation!
 
 method_added
 
