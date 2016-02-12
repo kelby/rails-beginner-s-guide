@@ -12,8 +12,6 @@ Rack ~= Rack middleware ~= Rack endpoint ~= Rack application
 
 这里的 Rack endpoint 指的不仅仅是 Controller#action，其它形式的入口也可以，例如：Engine、Sinatra 应用。
 
-
-
 #### 再说 Routing
 
 **Routing 包含范围：**
