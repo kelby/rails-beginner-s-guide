@@ -13,7 +13,9 @@
 
 # 兼容废除的 :text，默认是普通文本。不推荐使用
 :body
+```
 
+```
 # 指定 status
 :status
 # 指定 content_type
