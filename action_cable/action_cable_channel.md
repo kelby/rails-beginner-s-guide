@@ -41,13 +41,15 @@ defer_subscription_confirmation!
 
 method_added
 
-reject
+
 
 
 
 subscription_confirmation_sent? subscription_rejected?
 
 transmit
+
+reject
 
 subscribed
 unsubscribed
