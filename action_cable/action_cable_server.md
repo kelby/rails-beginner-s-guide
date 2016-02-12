@@ -4,7 +4,7 @@ Rails 默认使用的实例是 `ActionCable.server` 除了 Base 提供的实例�
 
 ### Broadcasting
 
-send messages to the channel subscribers
+发送消息给指定 channel 的订阅者。
 
 ```
 broadcast
