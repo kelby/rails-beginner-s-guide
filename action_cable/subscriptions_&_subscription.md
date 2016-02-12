@@ -12,7 +12,7 @@ perform
 其它：
 
 ```ruby
-# connection.send
+# 实质是 connection.send
 send
 
 unsubscribe
