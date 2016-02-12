@@ -7,8 +7,10 @@ ActionCable.server
 实例方法：
 
 ```ruby
+# 所有 Channel 类
 channel_classes
 
+# identified_by 指定的标识符
 connection_identifiers
 
 disconnect
