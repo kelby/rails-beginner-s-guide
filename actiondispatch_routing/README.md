@@ -4,7 +4,7 @@
 
 Rack endpoint 是什么？
 <br>
-需要明确 Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等又引申出几个概念。在这里不作讨论和区分，统一对待。也就是说：
+需要明确 Rack 是一个协议，符合这个协议的程序统称为 Rack application. Rack application 根据表现形式、调用方式、作用等又引申出几个概念，其中就包括 Rack endpoint. 在这里不作讨论和区分，统一对待。也就是说：
 
 Rack ~= Rack middleware ~= Rack endpoint ~= Rack application
 
