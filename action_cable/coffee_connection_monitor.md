@@ -33,8 +33,6 @@ disconnectedRecently
 
 visibilityDidChange
 
-toJSON
-
 now
 
 secondsSince
