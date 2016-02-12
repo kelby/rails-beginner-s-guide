@@ -1,5 +1,7 @@
 ### Cache Helper
 
+缓存。
+
 ```
 cache
 
