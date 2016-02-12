@@ -6,7 +6,6 @@
 :plain
 :update
 :html
-:nothing
 :body
 :text
 
