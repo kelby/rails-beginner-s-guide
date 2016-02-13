@@ -82,7 +82,7 @@ Engine 也可以有自己的 seed 文件，它们位于 `db/seeds.rb` 下面。
 MyEngine::Engine.load_seed
 ```
 
-#### Loading priority
+#### 优先加载
 
 场景
 
