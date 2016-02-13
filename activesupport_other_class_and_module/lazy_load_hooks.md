@@ -48,3 +48,6 @@ end
 Say.new("kelby")
 # => "Hi kelby"
 ```
+
+在 Rails 框架里，大量使用了它们。
+
