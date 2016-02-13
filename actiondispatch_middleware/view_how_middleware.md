@@ -71,6 +71,7 @@ Rails.application.send :middleware
   ActionDispatch::RequestId,
   Rails::Rack::Logger,
   ActionDispatch::ShowExceptions,
+
   WebConsole::Middleware,
 
   ActionDispatch::DebugExceptions,
