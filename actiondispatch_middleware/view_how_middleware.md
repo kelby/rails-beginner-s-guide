@@ -2,9 +2,13 @@
 
 **命令行里查看**，项目有哪些 middleware:
 
-```ruby
-> rails middleware
+```sh
+rails middleware
+```
 
+如下：
+
+```
 use Rack::Sendfile
 use ActionDispatch::Static
 use ActionDispatch::LoadInterlock
