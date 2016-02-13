@@ -41,7 +41,8 @@ Rails.application.send :default_middleware_stack
 如下：
 
 ```
-  Rack::Sendfile,
+   Rack::Sendfile,
+
    ActionDispatch::Static,
    ActionDispatch::LoadInterlock,
 
