@@ -69,6 +69,8 @@ print_generators, public_namespaces
 sorted_groups, subclasses
 ```
 
+别名：
+
 ```ruby
 DEFAULT_ALIASES = {
   rails: {
@@ -90,6 +92,8 @@ DEFAULT_ALIASES = {
   }
 }
 ```
+
+默认选项：
 
 ```ruby
 DEFAULT_OPTIONS = {
