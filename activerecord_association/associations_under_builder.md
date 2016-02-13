@@ -14,7 +14,7 @@ create_reflection model, name, scope, options, extension
 # 和关联有关的读写访问器
 define_accessors model, reflection
 
-# 和关联有关的回调
+# 和关联有关的回调(删除、自动保存等)
 define_callbacks model, reflection
 
 # 和关联有关的校验
