@@ -85,6 +85,7 @@ Rails.application.send :middleware
   Rack::Head,
   Rack::ConditionalGet,
   Rack::ETag,
+
   ActionView::Digestor::PerRequestDigestCacheExpiry
 ```
 
