@@ -44,10 +44,14 @@ Rails.application.send :default_middleware_stack
   Rack::Sendfile,
    ActionDispatch::Static,
    ActionDispatch::LoadInterlock,
+
    Rack::Runtime,
    Rack::MethodOverride,
+
    ActionDispatch::RequestId,
+
    Rails::Rack::Logger,
+
    ActionDispatch::ShowExceptions,
    ActionDispatch::DebugExceptions,
    ActionDispatch::RemoteIp,
@@ -56,6 +60,7 @@ Rails.application.send :default_middleware_stack
    ActionDispatch::Cookies,
    ActionDispatch::Session::CookieStore,
    ActionDispatch::Flash,
+
    Rack::Head,
    Rack::ConditionalGet,
    Rack::ETag
