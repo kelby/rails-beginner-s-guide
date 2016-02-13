@@ -6,7 +6,7 @@
 
 若上述声明里包含 :conditions, :through, :polymorphic, :foreign_key 则同样不可以自动计算 inverse.
 
-```
+```ruby
 # 实现关联对象
 
 # 调用时传递的 block
