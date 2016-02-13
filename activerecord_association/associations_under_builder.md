@@ -5,7 +5,7 @@
 #### 主要做 6 件事
 
 ```ruby
-# 实现扩展，调用时传递的 block
+# 实现扩展，调用时传递的 block (一对多、多对多时才可用)
 define_extensions model, name, &block
 
 # 关联两者
