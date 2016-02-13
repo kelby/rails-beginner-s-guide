@@ -33,3 +33,24 @@ values_at
 ```
 
 这部分内容，偏底层了。
+
+另，Path 元编程提供的几个方法，也挺有用的：
+
+```ruby
+
+%w(autoload_once eager_load autoload load_path).each do |m|
+  class_eval <<-RUBY, __FILE__, __LINE__ + 1
+    def #{m}!        # def eager_load!
+      @#{m} = true   #   @eager_load = true
+    end              # end
+                     #
+    def skip_#{m}!   # def skip_eager_load!
+      @#{m} = false  #   @eager_load = false
+    end              # end
+                     #
+    def #{m}?        # def eager_load?
+      @#{m}          #   @eager_load
+    end              # end
+  RUBY
+end
+```
