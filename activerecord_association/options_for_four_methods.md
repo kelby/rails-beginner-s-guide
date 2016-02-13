@@ -26,6 +26,7 @@
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
 |:readonly                             |   V   |   V      |  V    |  √ |
+|:autosave                             |   √   |    √     |    √  |  √ |
 
 **和关联有关的校验：**
 
