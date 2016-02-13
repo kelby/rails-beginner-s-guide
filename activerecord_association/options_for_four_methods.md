@@ -48,6 +48,7 @@
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
 |:readonly                             |   V   |   V      |  V    |  √ |
+|:inverse_of                           |   √   |    √     |    √  |    |
 
 `class_name` 指定关联对象所对应的"类/Model"，默认是"驼峰"转换关联对象的名字。
 
