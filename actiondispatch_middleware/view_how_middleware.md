@@ -10,28 +10,40 @@ rails middleware
 
 ```
 use Rack::Sendfile
+
 use ActionDispatch::Static
 use ActionDispatch::LoadInterlock
+
 use ActiveSupport::Cache::Strategy::LocalCache::Middleware
+
 use Rack::Runtime
 use Rack::MethodOverride
+
 use ActionDispatch::RequestId
+
 use Rails::Rack::Logger
+
 use ActionDispatch::ShowExceptions
+
 use WebConsole::Middleware
+
 use ActionDispatch::DebugExceptions
 use ActionDispatch::RemoteIp
 use ActionDispatch::Reloader
 use ActionDispatch::Callbacks
+
 use ActiveRecord::Migration::CheckPending
 use ActiveRecord::ConnectionAdapters::ConnectionManagement
 use ActiveRecord::QueryCache
+
 use ActionDispatch::Cookies
 use ActionDispatch::Session::CookieStore
 use ActionDispatch::Flash
+
 use Rack::Head
 use Rack::ConditionalGet
 use Rack::ETag
+
 use ActionView::Digestor::PerRequestDigestCacheExpiry
 run AppName::Application.routes
 ```
