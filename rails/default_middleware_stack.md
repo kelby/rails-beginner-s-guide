@@ -11,6 +11,8 @@
 Rails.application.send(:default_middleware_stack)
 ```
 
+结果如下：
+
 ```
 Rack::Sendfile
 
