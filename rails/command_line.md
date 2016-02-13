@@ -1,4 +1,4 @@
-由 rake 和 rails 两部分组成。
+由 rake 和 rails 两部分组成，Rails 5 以后这两个命令统一成了 rails，但 rake 仍然可以使用。
 
 ## rake
 
