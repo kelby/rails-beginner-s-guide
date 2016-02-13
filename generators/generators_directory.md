@@ -70,3 +70,48 @@ print_generators, public_namespaces
 S
 sorted_groups, subclasses
 ```
+
+```
+DEFAULT_ALIASES = {
+  rails: {
+    actions: '-a',
+    orm: '-o',
+    javascripts: '-j',
+    javascript_engine: '-je',
+    resource_controller: '-c',
+    scaffold_controller: '-c',
+    stylesheets: '-y',
+    stylesheet_engine: '-se',
+    scaffold_stylesheet: '-ss',
+    template_engine: '-e',
+    test_framework: '-t'
+  },
+
+  test_unit: {
+    fixture_replacement: '-r',
+  }
+}
+```
+
+```
+DEFAULT_OPTIONS = {
+  rails: {
+    api: false,
+    assets: true,
+    force_plural: false,
+    helper: true,
+    integration_tool: nil,
+    javascripts: true,
+    javascript_engine: :js,
+    orm: false,
+    resource_controller: :controller,
+    resource_route: true,
+    scaffold_controller: :scaffold_controller,
+    stylesheets: true,
+    stylesheet_engine: :css,
+    scaffold_stylesheet: true,
+    test_framework: false,
+    template_engine: :erb
+  }
+}
+```
