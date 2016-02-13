@@ -71,7 +71,7 @@ S
 sorted_groups, subclasses
 ```
 
-```
+```ruby
 DEFAULT_ALIASES = {
   rails: {
     actions: '-a',
@@ -93,7 +93,7 @@ DEFAULT_ALIASES = {
 }
 ```
 
-```
+```ruby
 DEFAULT_OPTIONS = {
   rails: {
     api: false,
