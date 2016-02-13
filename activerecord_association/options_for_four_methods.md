@@ -35,9 +35,6 @@
 |:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
 |:touch                                |       |          |    √  |    |
-|:foreign_type                         |   √   |    √     |    √  |    |
-|:join_table                           |       |          |       |  √ |
-|:association_foreign_key              |       |          |       |  √ |
 |:readonly                             |   V   |   V      |  V    |  √ |
 
 **其它：**
