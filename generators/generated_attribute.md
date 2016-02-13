@@ -1,4 +1,4 @@
-## Generated Attribute
+## ~~Generated Attribute~~
 
 ```
 field_type
