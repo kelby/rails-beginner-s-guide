@@ -20,7 +20,6 @@
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:polymorphic                          |       |          |    √  |    |
-|:touch                                |       |          |    √  |    |
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
 
@@ -31,7 +30,6 @@
 |:validate                             |   √   |    √     |    √  |  √ |
 |:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
-|:touch                                |       |          |    √  |    |
 
 **其它：**
 
