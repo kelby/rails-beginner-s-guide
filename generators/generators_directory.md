@@ -49,7 +49,7 @@ test_unit/
 
 我们在写自己的脚本时，可以参考。
 
-#### 方法
+#### 方法、别名、默认选项值
 
 ```
 api_only!
@@ -93,7 +93,7 @@ DEFAULT_ALIASES = {
 }
 ```
 
-默认选项：
+默认选项值：
 
 ```ruby
 DEFAULT_OPTIONS = {
