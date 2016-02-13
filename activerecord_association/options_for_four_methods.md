@@ -186,3 +186,24 @@ end
   - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 - `:autosave` 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
 - `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
+
+#### has_and_belongs_to_many
+
+
+可选参数 **Options**
+
+| 参数 | 解释 |
+| -- | -- |
+| :class_name | 同上 |
+| :join_table | 指定中间表的名字 **注意:** 如果你给中间表加了对应的'类'，并且命名不符合约定的话。那么一定要记得在每个 has_and_belongs_to_many 的地方都要设置 join_table |
+| :foreign_key | 同上 |
+| :association_foreign_key | 指定后者所对应的外键，如 Person has_and_belongs_to_many :projects, 则中间表里后者所对应的外键是 “project_id”。如果不符合要求，你使用使用 :association_foreign_key 设置 |
+| :readonly | 设置为 true, 通过前者查询到的后者限制为只读状态，不可更改。但其它方式查询出来的，不受此限制。|
+| :validate | 解释同上。但默认为 true |
+| :autosave | 解释同上 |
+
+#### 注意事项。
+
+- 注意前者与后者的顺序比较方法，如果前几个字符一样，则往后一个个字符比较，如 "paper_boxes" 和 "papers" 生成的中间表名字是 "paper_boxes_papers" 而不是 "papers_paper_boxes". 
+- 你可以用可选参数 :join_table 指定中间表名字。
+- 如果前者和后者使用的表名都带有前缀并且还相同，那么中间表的名字也用同样的前缀，剩余部分用再按字母顺序排序。如："catalog_categories" 和 "catalog_products" 生成的中间表是 "catalog_categories_products".
