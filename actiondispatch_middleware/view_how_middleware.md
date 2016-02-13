@@ -36,6 +36,7 @@ run AppName::Application.routes
 
 ```ruby
 Rails.application.send :default_middleware_stack
+
 => #<ActionDispatch::MiddlewareStack:0x007feaf533fbc0
  @middlewares=
   [Rack::Sendfile,
@@ -61,6 +62,7 @@ Rails.application.send :default_middleware_stack
 
 ```ruby
 Rails.application.send :middleware
+
 => #<ActionDispatch::MiddlewareStack:0x007feaf45cc7b8
  @middlewares=
   [Rack::Sendfile,
