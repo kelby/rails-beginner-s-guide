@@ -39,3 +39,6 @@ run_initializers
 ```ruby
 Rails.application.initializers.map &:name
 ```
+
+**Initializer**
+
