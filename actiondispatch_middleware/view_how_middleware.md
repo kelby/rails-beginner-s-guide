@@ -79,6 +79,7 @@ Rails.application.send :middleware
   ActiveRecord::Migration::CheckPending,
   ActiveRecord::ConnectionAdapters::ConnectionManagement,
   ActiveRecord::QueryCache,
+
   ActionDispatch::Cookies,
   ActionDispatch::Session::CookieStore,
   ActionDispatch::Flash,
