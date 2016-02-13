@@ -23,13 +23,6 @@ engine(app、db)
 
 Rakefile 里的 `Rails.application.load_tasks` 会加载本应用使用到第三方 Railtie 和 Engine，及 Rails 自身(按照约定 lib/tasks 也包含在内)所定义的 rake 任务。
 
-#### Source Annotation Extractor
-
-和上面列举的：
-<br>
-rake notes  
-rake notes:optimize 等相关。
-
 可以只查看和某一命名空间有关的 rake 任务，例如和 notes 相关的任务：
 
 ```
@@ -38,6 +31,13 @@ $ rake -T notes
 rake notes
 rake notes:custom
 ```
+
+#### Source Annotation Extractor
+
+和上面列举的：
+<br>
+rake notes  
+rake notes:optimize 等相关。
 
 #### api
 
