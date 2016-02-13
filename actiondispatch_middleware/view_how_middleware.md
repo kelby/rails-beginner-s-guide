@@ -62,9 +62,7 @@ Rails.application.send :default_middleware_stack
 ```ruby
 Rails.application.send :middleware
 
-=> #<ActionDispatch::MiddlewareStack:0x007feaf45cc7b8
- @middlewares=
-  [Rack::Sendfile,
+  Rack::Sendfile,
   ActionDispatch::Static,
   ActionDispatch::LoadInterlock,
   ActiveSupport::Cache::Strategy::LocalCache::Middleware,
@@ -87,7 +85,7 @@ Rails.application.send :middleware
   Rack::Head,
   Rack::ConditionalGet,
   Rack::ETag,
-  ActionView::Digestor::PerRequestDigestCacheExpiry]>
+  ActionView::Digestor::PerRequestDigestCacheExpiry
 ```
 
 
