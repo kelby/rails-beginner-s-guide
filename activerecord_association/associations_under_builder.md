@@ -11,7 +11,7 @@ define_extensions model, name, &block
 # 关联两者
 create_reflection model, name, scope, options, extension
 
-# 对关联对象的读写访问器
+# 和关联有关的读写访问器
 define_accessors model, reflection
 
 # 和关联有关的回调
