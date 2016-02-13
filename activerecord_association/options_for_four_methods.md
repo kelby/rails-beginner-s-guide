@@ -26,6 +26,7 @@
 |:association_foreign_key              |       |          |       |  √ |
 |:readonly                             |   V   |   V      |  V    |  √ |
 |:autosave                             |   √   |    √     |    √  |  √ |
+|:dependent                            |   √   |    √     |    √  |    |
 
 **和关联有关的校验：**
 
