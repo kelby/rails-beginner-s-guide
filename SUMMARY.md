@@ -478,7 +478,7 @@
        * [Active Model](generators/activemodel.md)
        * [Resource Helpers](generators/resource_helpers.md)
        * [Model Helpers](generators/model_helpers.md)
-       * Generated Attribute
+       * [Generated Attribute](generators/generated_attribute.md)
 * [Rails 里所有的配置项](configuring/READEME.md)
    * [一般常用配置项](configuring/rails_general_configuration.md)
    * [Action Mailer](configuring/configuring_action_mailer.md)
