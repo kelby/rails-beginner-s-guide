@@ -7,7 +7,6 @@
 |:class_name                           |   √   |    √     |    √  |  √ |
 |:foreign_key                          |   √   |    √     |    √  |  √ |
 |:primary_key                          |   √   |    √     |    √  |    |
-|:dependent                            |   √   |    √     |    √  |    |
 |:inverse_of                           |   √   |    √     |    √  |    |
 |:as                                   |   √   |    √     |       |    |
 |:through                              |   √   |    √     |       |    |
