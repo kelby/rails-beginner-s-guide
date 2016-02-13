@@ -31,7 +31,33 @@
 
 **和关联有关的校验：**
 
+|      参数                        | has_one | has_many | belongs_to | habtm |
+|----------------------------------|:-----:|:--------:|:--------:|:-----------:|
+|:source                               |   √   |    √     |       |    |
+|:source_type                          |   √   |    √     |       |    |
+|:required                             |   √   |          |    √  |    |
+|:counter_cache                        |       |    √     |    √  |    |
+|:polymorphic                          |       |          |    √  |    |
+|:touch                                |       |          |    √  |    |
+|:foreign_type                         |   √   |    √     |    √  |    |
+|:join_table                           |       |          |       |  √ |
+|:association_foreign_key              |       |          |       |  √ |
+|:readonly                             |   V   |   V      |  V    |  √ |
 
+**其它：**
+
+|      参数                        | has_one | has_many | belongs_to | habtm |
+|----------------------------------|:-----:|:--------:|:--------:|:-----------:|
+|:source                               |   √   |    √     |       |    |
+|:source_type                          |   √   |    √     |       |    |
+|:required                             |   √   |          |    √  |    |
+|:counter_cache                        |       |    √     |    √  |    |
+|:polymorphic                          |       |          |    √  |    |
+|:touch                                |       |          |    √  |    |
+|:foreign_type                         |   √   |    √     |    √  |    |
+|:join_table                           |       |          |       |  √ |
+|:association_foreign_key              |       |          |       |  √ |
+|:readonly                             |   V   |   V      |  V    |  √ |
 
 `class_name` 指定关联对象所对应的"类/Model"，默认是"驼峰"转换关联对象的名字。
 
