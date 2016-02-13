@@ -3,6 +3,8 @@
 ```
 config.filter_parameters
 config.filter_redirect
+# 决定了报错时，是否直接在 Web 上显示错误堆栈信息
+config.consider_all_requests_local
 ```
 
 NilClass
