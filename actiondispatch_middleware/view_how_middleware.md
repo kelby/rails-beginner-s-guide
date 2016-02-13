@@ -36,10 +36,10 @@ run AppName::Application.routes
 
 ```ruby
 Rails.application.send :default_middleware_stack
+```
 
-=> #<ActionDispatch::MiddlewareStack:0x007feaf533fbc0
- @middlewares=
-  [Rack::Sendfile,
+```
+  Rack::Sendfile,
    ActionDispatch::Static,
    ActionDispatch::LoadInterlock,
    Rack::Runtime,
@@ -56,7 +56,7 @@ Rails.application.send :default_middleware_stack
    ActionDispatch::Flash,
    Rack::Head,
    Rack::ConditionalGet,
-   Rack::ETag]>
+   Rack::ETag
 ```
 
 ```ruby
