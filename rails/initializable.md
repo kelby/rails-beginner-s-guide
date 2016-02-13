@@ -40,6 +40,6 @@ run_initializers
 Rails.application.initializers.map &:name
 ```
 
-**Initializer**
+**class Initializer**
 
 所谓的"初始化"，即便它是一个行为，也要结构化，在 Rails 里用 Initializer 表示。
