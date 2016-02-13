@@ -152,7 +152,7 @@ end
 - `:source_type` 影响的是数据，不是属性。
 - `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
 
-#### 
+#### has_many
 
 可选参数 **Options**
 
