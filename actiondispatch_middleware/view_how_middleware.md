@@ -54,7 +54,6 @@ Rails.application.send :default_middleware_stack
    ActionDispatch::Cookies,
    ActionDispatch::Session::CookieStore,
    ActionDispatch::Flash,
-   ActionDispatch::ParamsParser,
    Rack::Head,
    Rack::ConditionalGet,
    Rack::ETag]>
