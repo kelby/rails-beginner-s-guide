@@ -41,7 +41,7 @@ Rails.application.send :default_middleware_stack
  @middlewares=
   [Rack::Sendfile,
    ActionDispatch::Static,
-   ActionDispatch::LoadInterlock
+   ActionDispatch::LoadInterlock,
    Rack::Runtime,
    Rack::MethodOverride,
    ActionDispatch::RequestId,
