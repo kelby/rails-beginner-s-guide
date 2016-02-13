@@ -18,7 +18,7 @@ initializers
 initializers_chain
 ```
 
-`initializer` 负责创建 initializer，并加入 initializers.
+其中，`initializer` 负责创建 initializer，并加入 initializers.
 
 可用 `initializers_for` 获取应用里某类 initializer 的名字：
 
