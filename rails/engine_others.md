@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Engine 外面，使用 `my_engine` 访问 Engine 里面的路由：
+**Engine 外面，使用 `my_engine` 访问 Engine 里面的路由：**
 
 ```ruby
 class FooController < ApplicationController
@@ -22,7 +22,7 @@ class FooController < ApplicationController
 end
 ```
 
-Engine 里面，使用 `main_app` 访问 Engine 外面的路由：
+**Engine 里面，使用 `main_app` 访问 Engine 外面的路由：**
 
 ```ruby
 module MyEngine
