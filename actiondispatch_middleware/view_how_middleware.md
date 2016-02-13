@@ -57,7 +57,9 @@ Rails.application.send :default_middleware_stack
    Rack::Head,
    Rack::ConditionalGet,
    Rack::ETag]>
+```
 
+```ruby
 Rails.application.send :middleware
 => #<ActionDispatch::MiddlewareStack:0x007feaf45cc7b8
  @middlewares=
