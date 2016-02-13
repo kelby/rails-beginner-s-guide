@@ -70,7 +70,7 @@ Engine 也可以有自己的迁移文件，和普通应用一样，它们位于 
 
 你可以运行以下命令，将 Engine 里的迁移文件复制到应用里：
 
-```ruby
+```sh
 rake ENGINE_NAME:install:migrations
 ```
 
@@ -122,7 +122,7 @@ main_app 表示我们的项目本身，在 Application::Finisher 里定义，all
 
 #### 迁移文件
 
-```
+```sh
 rake my_engine:install:migrations
 ```
 
