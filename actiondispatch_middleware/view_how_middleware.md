@@ -70,6 +70,7 @@ Rails.application.send :middleware
   Rack::MethodOverride,
   ActionDispatch::RequestId,
   Rails::Rack::Logger,
+
   ActionDispatch::ShowExceptions,
 
   WebConsole::Middleware,
