@@ -1,5 +1,9 @@
 ### Action Dispatch
 
+```
+config.filter_parameters
+```
+
 NilClass
 
 ```
