@@ -48,3 +48,25 @@ test_unit/
 ```
 
 我们在写自己的脚本时，可以参考。
+
+#### 方法
+
+```
+
+A
+api_only!
+F
+fallbacks
+H
+help, hidden_namespaces, hide_namespace, hide_namespaces
+I
+invoke
+L
+levenshtein_distance
+N
+no_color!
+P
+print_generators, public_namespaces
+S
+sorted_groups, subclasses
+```
