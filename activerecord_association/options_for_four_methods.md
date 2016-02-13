@@ -33,8 +33,6 @@
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:validate                             |   √   |    √     |    √  |  √ |
-|:source                               |   √   |    √     |       |    |
-|:source_type                          |   √   |    √     |       |    |
 |:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
 |:polymorphic                          |       |          |    √  |    |
