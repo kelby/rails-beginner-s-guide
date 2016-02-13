@@ -43,3 +43,16 @@ create
 ```
 initialize!
 ```
+
+```
+require 'active_support/key_generator'
+require 'active_support/message_verifier'
+require 'rails/engine'
+
+autoload :Bootstrap
+autoload :Configuration
+autoload :DefaultMiddlewareStack
+autoload :Finisher
+autoload :Railties
+autoload :RoutesReloader
+```
