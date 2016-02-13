@@ -6,6 +6,8 @@
 
 若上述声明里包含 :conditions, :through, :polymorphic, :foreign_key 则同样不可以自动计算 inverse.
 
+#### 所有目标，总结起来就这几个
+
 ```ruby
 # 实现关联对象
 
