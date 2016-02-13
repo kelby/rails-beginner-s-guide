@@ -64,33 +64,7 @@ Rails.application.send :middleware
 
 => #<ActionDispatch::MiddlewareStack:0x007feaf45cc7b8
  @middlewares=
-  [Rack::Sendfile,
-   ActionDispatch::Static,
-   Rack::Lock,
-   # 1
-   #<ActiveSupport::Cache::Strategy::LocalCache::Middleware:0x007feaf519dda8>,
-   Rack::Runtime,
-   Rack::MethodOverride,
-   ActionDispatch::RequestId,
-   Rails::Rack::Logger,
-   ActionDispatch::ShowExceptions,
-   ActionDispatch::DebugExceptions,
-   ActionDispatch::RemoteIp,
-   ActionDispatch::Reloader,
-   ActionDispatch::Callbacks,
-   # 2
-   ActiveRecord::Migration::CheckPending,
-   # 3
-   ActiveRecord::ConnectionAdapters::ConnectionManagement,
-   # 4 允许 ActiveRecord 查询缓存
-   ActiveRecord::QueryCache,
-   ActionDispatch::Cookies,
-   ActionDispatch::Session::CookieStore,
-   ActionDispatch::Flash,
-   ActionDispatch::ParamsParser,
-   Rack::Head,
-   Rack::ConditionalGet,
-   Rack::ETag]>
+  [Rack::Sendfile, ActionDispatch::Static, ActionDispatch::LoadInterlock, ActiveSupport::Cache::Strategy::LocalCache::Middleware, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, WebConsole::Middleware, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActiveRecord::Migration::CheckPending, ActiveRecord::ConnectionAdapters::ConnectionManagement, ActiveRecord::QueryCache, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, Rack::Head, Rack::ConditionalGet, Rack::ETag, ActionView::Digestor::PerRequestDigestCacheExpiry]>
 ```
 
 
