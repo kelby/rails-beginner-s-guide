@@ -17,7 +17,6 @@
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
-|:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
 |:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
