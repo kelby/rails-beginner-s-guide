@@ -9,8 +9,7 @@
 
 **类方法：**
 
-```ruby
-# 
+```
 initializer
 
 initializers_for
