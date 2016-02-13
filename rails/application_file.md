@@ -44,7 +44,7 @@ create
 initialize!
 ```
 
-**明确使用到的其它在或模块**
+**明确使用到的其它类或模块**
 
 ```
 require 'active_support/key_generator'
