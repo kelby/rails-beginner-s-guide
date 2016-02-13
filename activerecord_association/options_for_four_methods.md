@@ -202,7 +202,7 @@ end
 | :validate | 解释同上。但默认为 true |
 | :autosave | 解释同上 |
 
-#### 注意事项。
+**注意事项：**
 
 - 注意前者与后者的顺序比较方法，如果前几个字符一样，则往后一个个字符比较，如 "paper_boxes" 和 "papers" 生成的中间表名字是 "paper_boxes_papers" 而不是 "papers_paper_boxes". 
 - 你可以用可选参数 :join_table 指定中间表名字。
