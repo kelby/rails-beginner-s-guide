@@ -63,11 +63,15 @@ Rails.application.send :default_middleware_stack
 Rails.application.send :middleware
 
   Rack::Sendfile,
+
   ActionDispatch::Static,
   ActionDispatch::LoadInterlock,
+
   ActiveSupport::Cache::Strategy::LocalCache::Middleware,
+
   Rack::Runtime,
   Rack::MethodOverride,
+
   ActionDispatch::RequestId,
 
   Rails::Rack::Logger,
