@@ -19,8 +19,6 @@ reload_routes!
 
 initialized?
 
-env_config
-
 config_for
 
 helpers_paths
@@ -29,6 +27,8 @@ find_root
 ```
 
 ```
+env_config
+
 secrets
 ```
 
