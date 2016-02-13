@@ -44,6 +44,8 @@ create
 initialize!
 ```
 
+**使用到的其它在或模块**
+
 ```
 require 'active_support/key_generator'
 require 'active_support/message_verifier'
