@@ -34,7 +34,6 @@
 |:validate                             |   √   |    √     |    √  |  √ |
 |:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
-|:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
 |:foreign_type                         |   √   |    √     |    √  |    |
 |:join_table                           |       |          |       |  √ |
