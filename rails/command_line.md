@@ -74,7 +74,7 @@ update
   - dbconsole
   - new
 
-还有:
+以:
   - destroy
   - plugin new
   - runner
