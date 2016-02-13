@@ -19,6 +19,8 @@ define_callbacks model, reflection
 
 # 和关联有关的校验
 define_validations model, reflection
+
+# 对关联对象的增删查改
 ```
 
 #### 关系图
