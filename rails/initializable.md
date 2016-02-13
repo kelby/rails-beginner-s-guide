@@ -10,7 +10,7 @@
 **类方法：**
 
 ```ruby
-# 创建 initializer，并加入 initializers
+# 
 initializer
 
 initializers_for
@@ -18,6 +18,8 @@ initializers_for
 initializers
 initializers_chain
 ```
+
+`initializer` 负责创建 initializer，并加入 initializers.
 
 可用 `initializers_for` 获取应用里某类 initializer 的名字：
 
