@@ -59,5 +59,5 @@ Path 元编程提供的几个方法，也挺有用的：
 end
 ```
 
-Path 行为和数组有点类似，并且它还 `include Enumerable`，所以部分操作也可用。
+另，Path 行为和数组有点类似，并且它还 `include Enumerable`，所以部分操作也可用。
 
