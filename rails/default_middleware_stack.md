@@ -9,7 +9,9 @@
 
 ```ruby
 Rails.application.send(:default_middleware_stack)
+```
 
+```
 Rack::Sendfile
 
 ActionDispatch::Static
