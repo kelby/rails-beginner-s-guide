@@ -54,3 +54,6 @@ values_at
   RUBY
 end
 ```
+
+Path 行为和数组有点类似，并且它还 `include Enumerable`，所以部分操作也可用。
+
