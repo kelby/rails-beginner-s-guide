@@ -56,7 +56,9 @@ api_only!
 
 fallbacks
 
-help, hidden_namespaces, hide_namespace, hide_namespaces
+help
+
+hidden_namespaces & hide_namespace & hide_namespaces
 
 invoke
 
