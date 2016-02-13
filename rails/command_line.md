@@ -30,6 +30,15 @@ Rakefile 里的 `Rails.application.load_tasks` 会加载本应用使用到第三
 rake notes  
 rake notes:optimize 等相关。
 
+可以只查看和某一命名空间有关的 rake 任务，例如：
+
+```
+$ rake -T notes
+
+rake notes
+rake notes:custom
+```
+
 #### api
 
 rake rdoc (Rails 自身的 API)
