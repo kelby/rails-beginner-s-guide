@@ -12,6 +12,7 @@
 ```ruby
 # 创建 initializer，并加入 initializers
 initializer
+
 initializers_for
 
 initializers
