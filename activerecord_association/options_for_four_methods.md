@@ -22,9 +22,6 @@
 |:counter_cache                        |       |    √     |    √  |    |
 |:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
-|:foreign_type                         |   √   |    √     |    √  |    |
-|:join_table                           |       |          |       |  √ |
-|:association_foreign_key              |       |          |       |  √ |
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
 
