@@ -146,7 +146,7 @@ end
 | :inverse_of | 参考 belongs_to 的解释 |
 | :required | 参考 belongs_to 的解释 |
 
-#### 注意事项。
+**注意事项：**
 
 - `:foreign_key 和 primary_key` 针对的是前者。
 - `:through` 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
