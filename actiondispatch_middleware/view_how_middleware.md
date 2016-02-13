@@ -64,7 +64,28 @@ Rails.application.send :middleware
 
 => #<ActionDispatch::MiddlewareStack:0x007feaf45cc7b8
  @middlewares=
-  [Rack::Sendfile, ActionDispatch::Static, ActionDispatch::LoadInterlock, ActiveSupport::Cache::Strategy::LocalCache::Middleware, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, Rails::Rack::Logger, ActionDispatch::ShowExceptions, WebConsole::Middleware, ActionDispatch::DebugExceptions, ActionDispatch::RemoteIp, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActiveRecord::Migration::CheckPending, ActiveRecord::ConnectionAdapters::ConnectionManagement, ActiveRecord::QueryCache, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, Rack::Head, Rack::ConditionalGet, Rack::ETag, ActionView::Digestor::PerRequestDigestCacheExpiry]>
+  [Rack::Sendfile,
+  ActionDispatch::Static,
+  ActionDispatch::LoadInterlock,
+  ActiveSupport::Cache::Strategy::LocalCache::Middleware,
+  Rack::Runtime,
+  Rack::MethodOverride,
+  ActionDispatch::RequestId,
+  Rails::Rack::Logger,
+  ActionDispatch::ShowExceptions,
+  WebConsole::Middleware,
+  ActionDispatch::DebugExceptions,
+  ActionDispatch::RemoteIp,
+  ActionDispatch::Reloader,
+  ActionDispatch::Callbacks,
+  ActiveRecord::Migration::CheckPending, ActiveRecord::ConnectionAdapters::ConnectionManagement,
+  ActiveRecord::QueryCache, ActionDispatch::Cookies,
+  ActionDispatch::Session::CookieStore,
+  ActionDispatch::Flash,
+  Rack::Head,
+  Rack::ConditionalGet,
+  Rack::ETag,
+  ActionView::Digestor::PerRequestDigestCacheExpiry]>
 ```
 
 
