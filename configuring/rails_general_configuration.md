@@ -28,8 +28,6 @@ config.exceptions_app
 
 config.file_watcher
 
-config.filter_parameters
-
 # 网站是否强制启用 https
 config.force_ssl
 
