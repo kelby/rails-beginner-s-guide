@@ -39,3 +39,5 @@ config.middleware.delete ActionDispatch::Flash
 除以上方法外，还有：
 
 `unshift`
+
+运用上述方法，我们可以增加、删除，改变 middleware 顺序。
