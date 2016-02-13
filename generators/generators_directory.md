@@ -66,7 +66,9 @@ levenshtein_distance
 
 no_color!
 
-print_generators, public_namespaces
+print_generators
+
+public_namespaces
 
 sorted_groups, subclasses
 ```
