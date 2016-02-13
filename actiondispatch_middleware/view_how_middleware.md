@@ -61,7 +61,9 @@ Rails.application.send :default_middleware_stack
 
 ```ruby
 Rails.application.send :middleware
+```
 
+```
   Rack::Sendfile,
 
   ActionDispatch::Static,
