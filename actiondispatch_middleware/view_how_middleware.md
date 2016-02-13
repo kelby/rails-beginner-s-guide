@@ -82,6 +82,7 @@ Rails.application.send :middleware
   ActionDispatch::Cookies,
   ActionDispatch::Session::CookieStore,
   ActionDispatch::Flash,
+
   Rack::Head,
   Rack::ConditionalGet,
   Rack::ETag,
