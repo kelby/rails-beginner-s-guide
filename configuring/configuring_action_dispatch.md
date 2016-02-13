@@ -1,6 +1,6 @@
 ### Action Dispatch
 
-```
+```ruby
 config.filter_parameters
 config.filter_redirect
 
