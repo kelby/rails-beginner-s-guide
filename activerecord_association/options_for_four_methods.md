@@ -26,7 +26,6 @@
 |:foreign_type                         |   √   |    √     |    √  |    |
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
-|:readonly                             |   V   |   V      |  V    |  √ |
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
 
@@ -38,7 +37,6 @@
 |:required                             |   √   |          |    √  |    |
 |:counter_cache                        |       |    √     |    √  |    |
 |:touch                                |       |          |    √  |    |
-|:readonly                             |   V   |   V      |  V    |  √ |
 
 **其它：**
 
