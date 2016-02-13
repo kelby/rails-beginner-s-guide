@@ -29,6 +29,10 @@
 |:association_foreign_key              |       |          |       |  √ |
 |:readonly                             |   V   |   V      |  V    |  √ |
 
+**和关联有关的校验：**
+
+
+
 `class_name` 指定关联对象所对应的"类/Model"，默认是"驼峰"转换关联对象的名字。
 
 `foreign_key` 在自己的表里，用什么字段表示/存储关联对象的"外键"，默认是"关联对象_id"
