@@ -38,6 +38,8 @@ run AppName::Application.routes
 Rails.application.send :default_middleware_stack
 ```
 
+如下：
+
 ```
   Rack::Sendfile,
    ActionDispatch::Static,
@@ -62,6 +64,8 @@ Rails.application.send :default_middleware_stack
 ```ruby
 Rails.application.send :middleware
 ```
+
+如下：
 
 ```
   Rack::Sendfile,
