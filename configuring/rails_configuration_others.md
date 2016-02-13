@@ -20,7 +20,4 @@ config.colorize_logging
 # 给 log 打标签
 # 子域名或多服务器时可考虑
 config.log_tags
-
-# 决定了报错时，是否直接在 Web 上显示错误堆栈信息
-config.consider_all_requests_local
 ```
