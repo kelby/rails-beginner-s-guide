@@ -17,9 +17,7 @@ all_paths
 
 autoload_once
 autoload_paths
-
 eager_load
-
 load_paths
 ```
 
