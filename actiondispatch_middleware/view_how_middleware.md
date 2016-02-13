@@ -76,6 +76,7 @@ Rails.application.send :middleware
   ActionDispatch::RemoteIp,
   ActionDispatch::Reloader,
   ActionDispatch::Callbacks,
+
   ActiveRecord::Migration::CheckPending,
   ActiveRecord::ConnectionAdapters::ConnectionManagement,
   ActiveRecord::QueryCache,
