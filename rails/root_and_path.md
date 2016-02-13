@@ -2,6 +2,8 @@
 
 包括 Root & Path，但 Root 已经封装了 Path, 并且只有 Root 对外提供接口。
 
+#### Root
+
 ```ruby
 Rails.application.paths
 ```
@@ -34,7 +36,9 @@ values_at
 
 这部分内容，偏底层了。
 
-另，Path 元编程提供的几个方法，也挺有用的：
+#### Path
+
+Path 元编程提供的几个方法，也挺有用的：
 
 ```ruby
 
