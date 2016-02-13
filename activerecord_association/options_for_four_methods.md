@@ -12,6 +12,9 @@
 |:through                              |   √   |    √     |       |    |
 |:source                               |   √   |    √     |       |    |
 |:source_type                          |   √   |    √     |       |    |
+|:foreign_type                         |   √   |    √     |    √  |    |
+|:join_table                           |       |          |       |  √ |
+|:association_foreign_key              |       |          |       |  √ |
 
 **和关联有关的回调(删除、自动保存等)：**
 
