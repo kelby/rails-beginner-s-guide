@@ -273,9 +273,6 @@ inverse_of
 
 #### has_one
 
-
-
-
 #### has_many
 
 #### has_and_belongs_to_many
