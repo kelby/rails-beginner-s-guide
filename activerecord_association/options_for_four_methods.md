@@ -86,7 +86,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:validate                             |   √   |    √     |    √  |  √ |
-|:required                             |   √   |          |    √  |    |       |
+|:required                             |   √   |          |    √  |    |       
 
 **其它：**
 
