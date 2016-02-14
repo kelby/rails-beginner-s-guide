@@ -166,8 +166,6 @@ end
 
 `required` 要求有关联对象存在于数据库。
 
-`association_foreign_key` 在中间表里，希望关联对象用什么字段做为外键。(听起来是不是有点绕，管得也太多了吧)
-
 `readonly` 所有关联对象为只读。
 
 #### belongs_to
