@@ -123,7 +123,6 @@ join_table
 指定中间表的名字 **注意:** 如果你给中间表加了对应的'类'，并且命名不符合约定的话。那么一定要记得在每个 has_and_belongs_to_many 的地方都要设置 join_table
 
 - 注意前者与后者的顺序比较方法，如果前几个字符一样，则往后一个个字符比较，如 "paper_boxes" 和 "papers" 生成的中间表名字是 "paper_boxes_papers" 而不是 "papers_paper_boxes". 
-- 你可以用可选参数 :join_table 指定中间表名字。
 - 如果前者和后者使用的表名都带有前缀并且还相同，那么中间表的名字也用同样的前缀，剩余部分用再按字母顺序排序。如："catalog_categories" 和 "catalog_products" 生成的中间表是 "catalog_categories_products".
 ```
 
