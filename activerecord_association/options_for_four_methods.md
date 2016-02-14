@@ -74,6 +74,7 @@ through
 ```
 在中间表里，希望关联对象怎么被表示。(听起来是不是有点绕，管得也太多了吧)
 指定中间表。优先级比 :class_name、:primary_key 和 :foreign_key 要高。
+实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
