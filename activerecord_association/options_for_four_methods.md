@@ -245,7 +245,6 @@ end
 | :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :validate | 同上。但默认是 true |
-| :autosave |  |
 | :inverse_of | 解释同上 |
 
 **注意事项：**
