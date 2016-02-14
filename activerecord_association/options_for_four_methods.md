@@ -137,6 +137,16 @@ dependent
 1 belongs_to 只有 destroy 和 delete<br>
 2 has_many 有 destroy、delete_all、nullify、restrict_with_exception 和 restrict_with_error<br>
 3 has_one  有 destroy、delete、nullify、restrict_with_exception 和 restrict_with_error
+
+  - `:destroy` 删除(destroy)所有被关联对象。
+
+  - `:delete_all` 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
+
+  - `:nullify` 设置后者的"前者_id"属性为 nil. 不会触发回调。
+
+  - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
+
+  - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
