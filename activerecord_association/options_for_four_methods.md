@@ -196,6 +196,8 @@ association_foreign_key
 在中间表里，希望关联对象用什么字段做为外键。(听起来是不是有点绕，管得也太多了吧)
 
 指定后者所对应的外键，如 Person has_and_belongs_to_many :projects, 则中间表里后者所对应的外键是 “project_id”。如果不符合要求，你使用使用 :association_foreign_key 设置
+
+主要用途：has_and_belongs_to_many 时 belongs_to 部分的 foreign_key
 ```
 
 autosave
