@@ -73,20 +73,20 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:join_table              |               |        |  √     |  √     |
 |:association_foreign_key |               |        |        |        |
 |:table_name              |               |        |  √     |  √     |
-|:autosave                |         √     |   √    |  √     |  √     |
-|:dependent               |         √     |   √    |  √     |  √     |
+|:autosave                |    √          |   √    |  √     |  √     |
+|:dependent               |    √          |   √    |  √     |  √     |
 |:before_add              |               |        |  √     |  √     |
 |:after_add               |               |        |  √     |  √     |
 |:before_remove           |               |        |  √     |  √     |
 |:after_remove            |               |        |  √     |  √     |
-|:validate                |         √     |   √    |  √     |  √     |
-|:required                |         √     |   √    |        |        |
-|:counter_cache           |         √     |        |  √     |  √     |
-|:polymorphic             |         √     |        |        |        |
-|:touch                   |         √     |        |        |        |
-|:inverse_of              |         √     |   √    |  √     |  √     |
-|:anonymous_class         |         √     |   √    |  √     |  √     |
-|:optional                |         √     |        |        |        |
+|:validate                |    √          |   √    |  √     |  √     |
+|:required                |    √          |   √    |        |        |
+|:counter_cache           |    √          |        |  √     |  √     |
+|:polymorphic             |    √          |        |        |        |
+|:touch                   |    √          |        |        |        |
+|:inverse_of              |    √          |   √    |  √     |  √     |
+|:anonymous_class         |    √          |   √    |  √     |  √     |
+|:optional                |    √          |        |        |        |
 |:extend                  |               |        |  √     |  √     |
 |:index_errors            |               |        |        |        |
 
