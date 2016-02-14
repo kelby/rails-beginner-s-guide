@@ -346,3 +346,9 @@ anonymous_class
 ```
 Reflection 那边用到，忽略。
 ```
+
+before_add、after_add、before_remove 和 after_remove
+
+```
+```
+
