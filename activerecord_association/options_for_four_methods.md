@@ -191,6 +191,8 @@ counter_cache
 1 belongs_to 里设置为 true 表明使用 counter. (字段使用默认)<br>
 2 belongs_to 里设置 counter 字段。<br>
 3 has_many   里设置 counter 字段。
+
+设置为 true 后，自己被创建或删除，会改变关联对象里"计数器的值"。默认是 false，也就是不起作用。
 ```
 
 touch
