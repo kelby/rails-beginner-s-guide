@@ -127,6 +127,8 @@ autosave
 ```
 保存自己时，自动保存关联对象。
 如果在 model 里使用了 accepts_nested_attributes_for，则对应 `:autosave` 始终为 true.
+
+设置为 true, 保存自己的时候，同时保存它的关联对象(用的是 before_save)。设置为 false 还可分为两种情况：前者为 new_record，则保存自己时会自动保存关联对象；否则上述自动操作都不会被执行。
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
