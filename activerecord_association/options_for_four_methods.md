@@ -323,3 +323,10 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception]
 ```
 #### has_and_belongs_to_many
+
+在 has_many 的基础上多了：
+
+```
+
+```
+
