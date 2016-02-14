@@ -78,8 +78,8 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
-|:autosave                             |   √   |    √     |    √  |  √ |
-|:dependent                            |   √   |    √     |    √  |    |
+|:autosave                             |   √   |    √     |    √  |  √  |
+|:dependent                            |   √   |    √     |    √  |     |
 |:before_add                           |       |          |       |  √  |
 |:after_add                            |       |          |       |  √  |
 |:before_remove                        |       |          |       |  √  |
