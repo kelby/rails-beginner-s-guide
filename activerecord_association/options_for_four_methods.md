@@ -218,8 +218,7 @@ readonly
 
 | 参数 | 解释 |
 | -- | -- |
-| :dependent | |
-| :counter_cache | 设置为 true 后，自己被创建或删除，会改变关联对象里"计数器的值"。默认是 false，也就是不起作用。|
+
 | :polymorphic | 声明此关联是多态的。|
 | :validate | 设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。|
 | :touch | 设置为 true, 保存或 destroy 自己的时候，关联对象的 updated_at/on 属性会被更新。|
