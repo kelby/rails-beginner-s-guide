@@ -104,9 +104,9 @@ class_name
 foreign_key
 
 ```
-belongs_to - 外键存在在自己表里外，其余方法存在于关联里。
+belongs_to - 默认是"关联对象_id"，外键存在在自己表里。
 
-
+其它 - 
 ```
 
 primary_key
