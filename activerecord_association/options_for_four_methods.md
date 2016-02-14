@@ -278,12 +278,6 @@ readonly
 
 #### has_and_belongs_to_many
 
-可选参数 **Options**
-
-| 参数 | 解释 |
-| -- | -- |
-| :validate | 解释同上。但默认为 true |
-
 **注意事项：**
 
 - 注意前者与后者的顺序比较方法，如果前几个字符一样，则往后一个个字符比较，如 "paper_boxes" 和 "papers" 生成的中间表名字是 "paper_boxes_papers" 而不是 "papers_paper_boxes". 
