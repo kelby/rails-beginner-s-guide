@@ -70,7 +70,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:through                              |   √   |    √     |       |
 |:source                               |   √   |    √     |       |
 |:source_type                          |   √   |    √     |       |
-|:join_table                           |       |          |       |
+|:join_table                           |       |    √     |       |
 |:association_foreign_key              |       |          |       |
 |:table_name                           |       |    √     |       |
 |:autosave                             |   √   |    √     |    √  |
