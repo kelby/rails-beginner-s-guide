@@ -105,6 +105,8 @@ foreign_key
 ```
 在自己的表里，用什么字段表示/存储关联对象的"外键"，默认是"关联对象_id"
 :foreign_key 和 primary_key 针对的都是前者。
+
+关联对象所对应的""
 ```
 
 primary_key
