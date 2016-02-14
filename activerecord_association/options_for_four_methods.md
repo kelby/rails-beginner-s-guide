@@ -240,7 +240,7 @@ end
 
 | 参数 | 解释 |
 | -- | -- |
-| :foreign_type | 自己不符合约定。多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
+| :foreign_type |  |
 | :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :validate | 同上。但默认是 true |
