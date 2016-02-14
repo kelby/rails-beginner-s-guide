@@ -172,6 +172,8 @@ validate
 类似 validate_presence_of :关联对象
 
 设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。
+
+对于是否是 new_record 在做 valid? 时，会造成迷惑。牢记，`:validate` 意味着对前者和后者都有"保存"操作。如果校验失败，则本次保存失败。
 ```
 
 inverse_of
