@@ -6,22 +6,7 @@
 
 #### 引进了哪些方法，表示什么意思。
 
-| 方法 | 解释 |
-| -- | -- |
-| collection(force_reload = false) | 解释同上 |
-| collection<<(object, …) | 解释同上 |
-| collection.delete(object, …) | 解释同上 |
-| collection.destroy(object, …) | 解释同上。但不会删除对象，只会删除连接表。 |
-| collection=objects | 解释同上 |
-| collection_singular_ids | 解释同上 |
-| collection_singular_ids=ids | 解释同上 |
-| collection.clear | 移除关联，也就是中间表数据。并没有删除后者。|
-| collection.empty? | 解释同上 |
-| collection.size | 解释同上 |
-| collection.find(id) | 解释同上 |
-| collection.exists?(…) | 解释同上 |
-| collection.build(attributes = {}) | 解释同上 |
-| collection.create(attributes = {}) | 解释同上 |
+...
 
 #### 有什么参数，表示什么意思，使用后有什么效果。
 
