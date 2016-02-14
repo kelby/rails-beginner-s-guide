@@ -171,7 +171,7 @@ validate
 
 ```
 
-`inverse_of`
+inverse_of
 
 ```
 通过自己查找到关联对象，然后又通过关联对象找回自己。
