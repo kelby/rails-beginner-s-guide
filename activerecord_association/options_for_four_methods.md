@@ -244,12 +244,6 @@ inverse_of
 
 #### belongs_to
 
-可选参数 **Options**
-
-| 参数 | 解释 |
-| -- | -- |
-| :required | 语法糖。原来的做法是 "belongs_to 关联对象" + "validates_presence_of 关联对象"，现改为 "belongs_to 关联对象, required: true"|
-
 **注意事项：**
 
 - 自己包含了"关联对象_id"属性，注意和下文提到的 has_one 的区别。
