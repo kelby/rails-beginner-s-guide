@@ -72,7 +72,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:source_type                          |   √   |    √     |       |    |
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
-
+|:table_name                           |       |    √     |       |  √ |
 #### 和关联有关的回调(删除、自动保存等)：
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
