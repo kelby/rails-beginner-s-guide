@@ -235,6 +235,12 @@ polymorphic
 如果你同时使用了 `:counter_cache`，建议在后者的 model 里把计数器设置为 attr_readonly.
 ```
 
+
+inverse_of
+
+```
+```
+
 #### belongs_to
 
 可选参数 **Options**
