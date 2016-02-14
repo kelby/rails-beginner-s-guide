@@ -274,8 +274,6 @@ inverse_of
 | :inverse_of | 参考 belongs_to 的解释 |
 | :required | 参考 belongs_to 的解释 |
 
-**注意事项：**
-
 #### has_many
 
 #### has_and_belongs_to_many
