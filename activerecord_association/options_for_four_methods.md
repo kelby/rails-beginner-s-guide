@@ -82,7 +82,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:dependent                            |   √   |    √     |    √  |    |
 | after_add                            |       |          |       |  √  |
 
-**和关联有关的校验：**
+#### 和关联有关的校验：
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
