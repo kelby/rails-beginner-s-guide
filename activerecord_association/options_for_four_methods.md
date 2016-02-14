@@ -142,11 +142,6 @@ autosave
 
 类似 validate_presence_of :关联对象
 
-`dependent` 分为几种情况：
-
-1 belongs_to 只有 destroy 和 delete<br>
-2 has_many 有 destroy、delete_all、nullify、restrict_with_exception 和 restrict_with_error<br>
-3 has_one  有 destroy、delete、nullify、restrict_with_exception 和 restrict_with_error
 
 `inverse_of` 通过自己查找到关联对象，然后又通过关联对象找回自己。
 
