@@ -77,6 +77,12 @@ through
 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
 ```
 
+source
+
+```
+必须和 through 配合使用，自己在中间表里用什么表示。(类似 :as)
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
