@@ -1,5 +1,65 @@
 #### 关联方法的可选参数汇总
 
+
+#### belongs_to
+
+valid_options
+
+```
+ActiveRecord::Associations::Builder::BelongsTo.valid_options nil
+
+[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional]
+```
+
+valid_dependent_options
+
+```
+ActiveRecord::Associations::Builder::BelongsTo.valid_dependent_options
+
+[:destroy, :delete]
+```
+
+#### has_one
+
+valid_options
+
+```
+ActiveRecord::Associations::Builder::HasTo.valid_options through: 'fakers'
+
+[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :as, :through, :source, :source_type]
+```
+
+valid_dependent_options
+
+```
+ActiveRecord::Associations::Builder::HasOne.valid_dependent_options
+
+[:destroy, :delete, :nullify, :restrict_with_error, :restrict_with_exception]
+```
+
+#### has_many
+
+valid_options
+
+```
+ActiveRecord::Associations::Builder::HasMany.valid_options nil
+
+[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors]
+```
+
+valid_dependent_options
+
+```
+ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
+
+[:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception]
+```
+#### has_and_belongs_to_many
+
+和 has_many 一样。
+
+
+
 **实现关联对象：**
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
@@ -268,61 +328,3 @@ inverse_of
 
 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
 ```
-
-#### belongs_to
-
-valid_options
-
-```
-ActiveRecord::Associations::Builder::BelongsTo.valid_options nil
-
-[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional]
-```
-
-valid_dependent_options
-
-```
-ActiveRecord::Associations::Builder::BelongsTo.valid_dependent_options
-
-[:destroy, :delete]
-```
-
-#### has_one
-
-valid_options
-
-```
-ActiveRecord::Associations::Builder::HasTo.valid_options through: 'fakers'
-
-[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :as, :through, :source, :source_type]
-```
-
-valid_dependent_options
-
-```
-ActiveRecord::Associations::Builder::HasOne.valid_dependent_options
-
-[:destroy, :delete, :nullify, :restrict_with_error, :restrict_with_exception]
-```
-
-#### has_many
-
-valid_options
-
-```
-ActiveRecord::Associations::Builder::HasMany.valid_options nil
-
-[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors]
-```
-
-valid_dependent_options
-
-```
-ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
-
-[:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception]
-```
-#### has_and_belongs_to_many
-
-和 has_many 一样。
-
