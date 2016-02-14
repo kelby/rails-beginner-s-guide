@@ -100,7 +100,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:inverse_of                           |   √   |    √     |    √  |    |       |
 
 
-#### 详解
+#### 详解：
 
 class_name
 
