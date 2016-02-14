@@ -167,7 +167,7 @@ foreign_type
 多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) 
 ```
 
-:optional
+optional
 
 ```
 belongs_to 默认会检测其关联的对象是否存在，如果不存在则不能保存自己。设置为 false 后，则没有上述特性。
