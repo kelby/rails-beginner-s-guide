@@ -268,3 +268,14 @@ inverse_of
 
 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
 ```
+
+#### belongs_to
+
+#### has_one
+
+```
+```
+
+#### has_many
+
+#### has_and_belongs_to_many
