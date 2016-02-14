@@ -82,6 +82,9 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:dependent                            |   √   |    √     |    √  |    |
 |:before_add                            |       |          |       |  √  |
 |:after_add                            |       |          |       |  √  |
+|:before_remove                            |       |          |       |  √  |
+|:after_remove                            |       |          |       |  √  |
+
 
 #### 和关联有关的校验：
 
