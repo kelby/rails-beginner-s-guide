@@ -151,6 +151,8 @@ dependent
   - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
 
   - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
+  
+如果设置为 :destroy, 自己被 destroy 时，关联对象会被 destroy. 如果设置为 :delete, 自己被 destroy 时，关联对象会被 delete. 注意：自己被 delete, 始终不影响关联对象。
 ```
 
 validate
