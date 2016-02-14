@@ -75,10 +75,10 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:table_name                           |       |    √     |       |
 |:autosave                             |   √   |    √     |    √  |
 |:dependent                            |   √   |    √     |    √  |
-|:before_add                           |       |          |       |
-|:after_add                            |       |          |       |
-|:before_remove                        |       |          |       |
-|:after_remove                         |       |          |       |
+|:before_add                           |       |    √     |       |
+|:after_add                            |       |    √     |       |
+|:before_remove                        |       |    √     |       |
+|:after_remove                         |       |    √     |       |
 |:validate                             |   √   |    √     |    √  |
 |:required                             |   √   |          |    √  |
 |:counter_cache                        |       |    √     |    √  |
