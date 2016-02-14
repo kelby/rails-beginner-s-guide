@@ -191,9 +191,7 @@ counter_cache
 3 has_many   里设置 counter 字段。
 ```
 
-`polymorphic` 多态。
-
-`touch` 
+touch
 
 ```
 1 设置为 true，更新自己后，更新关联对象的 updated_at/on 字段。<br>
