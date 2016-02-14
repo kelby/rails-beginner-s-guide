@@ -104,8 +104,8 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:inverse_of                           |   √   |    √     |    √  |    |       
 | :anonymous_class                     |   √   |    √     |   √   |    |       
 | :optional                            |       |          |   √   |    |
-|:extend                            |           |    √     |       |    |
-|:index_errors                      |           |          |       |    |
+|:extend                               |       |    √     |       |    |
+|:index_errors                         |       |    √     |       |    |
 
 #### 详解：
 
