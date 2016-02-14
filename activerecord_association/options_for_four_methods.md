@@ -96,6 +96,8 @@ source_type
 foreign_type
 
 ```
+1 对于 has_one 和 has_many，用什么字段做为自己的外键。<br>
+2 对于 belongs_to，用什么字段做为关联对象的外键。
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
