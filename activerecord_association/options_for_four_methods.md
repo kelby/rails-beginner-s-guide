@@ -279,6 +279,11 @@ valid_options
 [:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :as, :through, :source, :source_type]
 ```
 
+valid_dependent_options
+
+```
+```
+
 #### has_many
 
 #### has_and_belongs_to_many
