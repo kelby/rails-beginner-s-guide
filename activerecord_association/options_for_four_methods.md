@@ -181,7 +181,7 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-`counter_cache`
+counter_cache
 
 ```
 分为几种情况：
