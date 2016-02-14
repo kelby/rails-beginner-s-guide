@@ -84,7 +84,6 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:counter_cache                        |       |    √     |    √  |
 |:polymorphic                          |       |          |    √  |
 |:touch                                |       |          |    √  |
-|:readonly                             |       |    √     |    √  |
 |:inverse_of                           |   √   |    √     |    √  |
 |:anonymous_class                      |   √   |    √     |    √  |
 |:optional                             |       |          |    √  |
