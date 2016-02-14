@@ -106,7 +106,7 @@ foreign_key
 ```
 belongs_to - 默认是"关联对象_id"，外键存在在自己表里。
 
-其它 - 声明自己在关联表里的外键。
+has_many 等 - 声明自己在关联表里的外键。
 ```
 
 primary_key
