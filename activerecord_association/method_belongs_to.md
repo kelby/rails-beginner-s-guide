@@ -6,13 +6,7 @@
 
 #### 引进了哪些方法，表示什么意思。
 
-| 方法 | 解释 |
-| -- | -- |
-| association(force_reload = false) | 类似 attr_reader. 如果没有的话，返回 nil. |
-| association=(associate) | 类似 attr_writer. |
-| build_association(attributes = {}) | 构建并返回关联对象。这里关联对象还"未保存"在数据库。|
-| create_association(attributes = {}) | 创建并返回关联对象。这里关联对象会被"保存"在数据库(如果校验没有问题的话) |
-| create_association!(attributes = {}) | 和 create_association 类似, 但如果创建失败会报错 ActiveRecord::RecordInvalid. |
+...
 
 后面几个方法，作用类似，只是细节部分有所不同，使用时注意一下即可。
 
