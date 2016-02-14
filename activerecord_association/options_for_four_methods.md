@@ -106,7 +106,7 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-`source` 必须和 through 配合使用，自己在中间表里用什么表示。(类似 :as)
+
 
 `source_type` 必须和 polymorphic 配合使用。多态时希望自己用什么做为类型。
 
