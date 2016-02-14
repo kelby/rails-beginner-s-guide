@@ -327,6 +327,6 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 在 has_many 的基础上多了：
 
 ```
-
+[:through, :source, :before_add, :after_add, :before_remove, :after_remove, :autosave, :validate, :join_table, :class_name, :extend]
 ```
 
