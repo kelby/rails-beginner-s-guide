@@ -173,6 +173,11 @@ optional
 belongs_to 默认会检测其关联的对象是否存在，如果不存在则不能保存自己。设置为 false 后，则没有上述特性。
 ```
 
+extend
+
+```
+```
+
 join_table
 
 ```
