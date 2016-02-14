@@ -266,9 +266,6 @@ inverse_of
 - 自己包含了"关联对象_id"属性，注意和下文提到的 has_one 的区别。
 - 当关联对象与自己的关系是 has_many 时，请慎用 `:dependent`. 因为关联对象被同时删除的话，意味着自己的兄弟将成为孤儿(没有关联对象可关联)。
 - 综上两条注意事项，有两种情况建议在后者的 model 里手动把计数器设置为 attr_readonly.
-- `:touch` 
-- `:inverse_of` 
-- `:inverse_of` 
 
 #### has_one
 
