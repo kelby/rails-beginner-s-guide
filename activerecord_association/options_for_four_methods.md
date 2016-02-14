@@ -269,6 +269,14 @@ inverse_of
 
 #### has_one
 
+可选参数 **Options**
+
+| 参数 | 解释 |
+| -- | -- |
+| :source | |
+| :source_type | 
+
+
 
 #### has_many
 
