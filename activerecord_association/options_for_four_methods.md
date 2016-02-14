@@ -80,10 +80,10 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
-|:before_add                            |       |          |       |  √  |
+|:before_add                           |       |          |       |  √  |
 |:after_add                            |       |          |       |  √  |
-|:before_remove                            |       |          |       |  √  |
-|:after_remove                            |       |          |       |  √  |
+|:before_remove                        |       |          |       |  √  |
+|:after_remove                         |       |          |       |  √  |
 
 
 #### 和关联有关的校验：
