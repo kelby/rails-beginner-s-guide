@@ -350,6 +350,6 @@ Reflection 那边用到，忽略。
 before_add、after_add、before_remove 和 after_remove
 
 ```
-和普通的回调差不多，只是定义的位置不同而矣。
+作用于集合，和普通的回调差不多，只是定义的位置不同而矣。
 ```
 
