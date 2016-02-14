@@ -75,6 +75,8 @@ through
 在中间表里，希望关联对象怎么被表示。(听起来是不是有点绕，管得也太多了吧)
 指定中间表。优先级比 :class_name、:primary_key 和 :foreign_key 要高。
 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
+
+指定中间表。优先级比 :class_name, :primary_key 和 :foreign_key 要高。<br> 如果对应的关联是 belongs_to 则，关联表会被自动更新、创建、删除。否则，关联表为只读状态，也就是说创建后你就只能手动维护，不会自动更新、删除。 <br> 如果你要更改关联，最好配置一下 :inverse_of 选项，以便被关联对象及时更新与其父亲的关系。
 ```
 
 source
