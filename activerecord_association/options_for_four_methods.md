@@ -280,7 +280,7 @@ inverse_of
 | 参数 | 解释 |
 | -- | -- |
 | :foreign_type |  |
-| :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
+| :dependent |  |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :validate | 同上。但默认是 true |
 | :inverse_of | 解释同上 |
