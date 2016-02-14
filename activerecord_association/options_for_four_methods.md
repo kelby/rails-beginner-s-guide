@@ -180,7 +180,7 @@ validate
 ModelName.reflections.map do |key, value|
   p "#{key} inverse_of: #{value.has_inverse?}"
 end
-```
+
 ```
 
 `counter_cache` 分为几种情况：
