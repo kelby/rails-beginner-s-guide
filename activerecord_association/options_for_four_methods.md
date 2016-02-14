@@ -86,8 +86,8 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:touch                                |       |          |    √  |         |
 |:readonly                             |       |    √     |    √  | √       |
 |:inverse_of                           |   √   |    √     |    √  |         |       
-|:anonymous_class                      |   √   |    √     |   √   |         |       
-|:optional                             |       |          |   √   |         |
+|:anonymous_class                      |   √   |    √     |    √  |         |       
+|:optional                             |       |          |    √  |         |
 |:extend                               |       |    √     |       |         |
 |:index_errors                         |       |    √     |       |         |
 
