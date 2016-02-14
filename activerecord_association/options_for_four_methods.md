@@ -125,6 +125,7 @@ association_foreign_key
 autosave
 
 ```
+保存自己时，自动保存关联对象。
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
@@ -137,8 +138,6 @@ autosave
 6 校验关联是否成立，并且关联对象是否存在。
 
 类似 validate_presence_of :关联对象
-
-`autosave` 保存自己时，自动保存关联对象。
 
 `dependent` 分为几种情况：
 
