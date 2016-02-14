@@ -334,3 +334,9 @@ inverse_of
 
 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
 ```
+
+index_errors
+
+```
+默认为 false. 设置了 autosave 它才管用。
+```
