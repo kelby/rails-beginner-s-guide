@@ -282,6 +282,7 @@ valid_options
 valid_dependent_options
 
 ```
+[:destroy, :delete, :nullify, :restrict_with_error, :restrict_with_exception]
 ```
 
 #### has_many
