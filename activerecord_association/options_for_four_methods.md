@@ -103,7 +103,7 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-`through` 在中间表里，希望关联对象怎么被表示。(听起来是不是有点绕，管得也太多了吧)
+
 
 `source` 必须和 through 配合使用，自己在中间表里用什么表示。(类似 :as)
 
