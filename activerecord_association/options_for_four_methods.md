@@ -274,7 +274,6 @@ readonly
 
 
 
-- `:autosave` 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
 
 #### has_and_belongs_to_many
 
