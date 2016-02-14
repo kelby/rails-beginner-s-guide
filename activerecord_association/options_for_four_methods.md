@@ -38,7 +38,7 @@
 |:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
 |:readonly                             |   V   |   V      |  V    |  √ |
-|:inverse_of                           |   √   |    √     |    √  |    |
+|:inverse_of                           |   √   |    √     |    √  |    |       |
 
 class_name
 
