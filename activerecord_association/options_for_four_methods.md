@@ -97,6 +97,7 @@ class_name
 ```
 指定关联对象所对应的"类/Model"，默认是"驼峰"转换关联对象的名字。
 不符合约定时，用 :class_name 指明。
+
 :class_name 不影响 :foreign_key "关联对象_id"属性的命名约定。
 ```
 
