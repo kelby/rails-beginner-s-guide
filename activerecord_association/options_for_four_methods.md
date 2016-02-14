@@ -261,11 +261,6 @@ inverse_of
 
 #### belongs_to
 
-**注意事项：**
-
-
-- 综上两条注意事项，有两种情况建议在后者的 model 里手动把计数器设置为 attr_readonly.
-
 #### has_one
 
 可选参数 **Options**
