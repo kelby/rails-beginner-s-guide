@@ -176,6 +176,7 @@ belongs_to 默认会检测其关联的对象是否存在，如果不存在则不
 extend
 
 ```
+作用和 extension 类似。
 ```
 
 join_table
