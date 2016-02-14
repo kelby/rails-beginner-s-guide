@@ -99,6 +99,9 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:readonly                             |   V   |   V      |  V    |  √ |
 |:inverse_of                           |   √   |    √     |    √  |    |       |
 
+
+#### 详解
+
 class_name
 
 ```
