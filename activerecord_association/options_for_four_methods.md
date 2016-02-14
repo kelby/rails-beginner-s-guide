@@ -227,6 +227,8 @@ required
 要求有关联对象存在于数据库。
 
 语法糖。原来的做法是 "belongs_to 关联对象" + "validates_presence_of 关联对象"，现改为 "belongs_to 关联对象, required: true"
+
+"validates_presence_of 关联对象" 和 "validates_presence_of 关联对象_id" 大同小异。前者是真实存在的对象，后者只是字段。
 ```
 
 readonly
