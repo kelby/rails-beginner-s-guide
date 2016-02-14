@@ -131,6 +131,14 @@ autosave
 设置为 true, 保存自己的时候，同时保存它的关联对象(用的是 before_save)。设置为 false 还可分为两种情况：前者为 new_record，则保存自己时会自动保存关联对象；否则上述自动操作都不会被执行。
 ```
 
+dependent
+
+```
+1 belongs_to 只有 destroy 和 delete<br>
+2 has_many 有 destroy、delete_all、nullify、restrict_with_exception 和 restrict_with_error<br>
+3 has_one  有 destroy、delete、nullify、restrict_with_exception 和 restrict_with_error
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
