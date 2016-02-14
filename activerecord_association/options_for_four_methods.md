@@ -135,7 +135,6 @@ end
 **注意事项：**
 
 - 自己包含了"关联对象_id"属性，注意和下文提到的 has_one 的区别。
-- `:class_name` 不影响 `:foreign_key` "关联对象_id"属性的命名约定。
 - 当关联对象与自己的关系是 has_many 时，请慎用 `:dependent`. 因为关联对象被同时删除的话，意味着自己的兄弟将成为孤儿(没有关联对象可关联)。
 - `:counter_cache` 计数器是根据"前者对应的 table_name + count"生成的，如里不符合"约定"，可以用 :counter_cache 指明。自定义计数器名字的时候，建议把此属性声明为 attr_readonly. 综上，:counter_cache 可以设置为 true、false、或自定义的名字。
 - `:polymorphic` 如果你同时使用了 `:counter_cache`，建议在后者的 model 里把计数器设置为 attr_readonly.
