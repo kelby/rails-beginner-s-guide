@@ -119,9 +119,6 @@ end
 ```
 
 
-
-`source_type` 必须和 polymorphic 配合使用。多态时希望自己用什么做为类型。
-
 `counter_cache` 分为几种情况：
 
 1 belongs_to 里设置为 true 表明使用 counter. (字段使用默认)<br>
