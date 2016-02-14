@@ -217,6 +217,11 @@ readonly
 设置为 true, 通过前者查询到的后者限制为只读状态，不可更改。但其它方式查询出来的，不受此限制。
 ```
 
+polymorphic
+
+```
+```
+
 #### belongs_to
 
 可选参数 **Options**
