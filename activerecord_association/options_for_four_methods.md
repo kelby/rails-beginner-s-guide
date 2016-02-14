@@ -155,7 +155,6 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-
 `counter_cache` 分为几种情况：
 
 1 belongs_to 里设置为 true 表明使用 counter. (字段使用默认)<br>
