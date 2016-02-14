@@ -168,7 +168,6 @@ validate
 6 校验关联是否成立，并且关联对象是否存在。
 
 类似 validate_presence_of :关联对象
-
 ```
 
 inverse_of
