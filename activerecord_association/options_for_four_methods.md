@@ -282,7 +282,6 @@ readonly
 
 | 参数 | 解释 |
 | -- | -- |
-| :readonly | |
 | :validate | 解释同上。但默认为 true |
 
 **注意事项：**
