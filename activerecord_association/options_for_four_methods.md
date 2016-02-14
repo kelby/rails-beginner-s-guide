@@ -89,6 +89,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:optional                |         |       √    |        |        |
 |:extend                  |         |            |  √     |  √     |
 |:index_errors            |         |            |        |        |
+
 #### 详解：
 
 class_name
