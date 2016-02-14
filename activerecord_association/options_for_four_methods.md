@@ -55,6 +55,11 @@ foreign_key
 :foreign_key 和 primary_key 针对的都是前者。
 ```
 
+primary_key
+
+```
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
