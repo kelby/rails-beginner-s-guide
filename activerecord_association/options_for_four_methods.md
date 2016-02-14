@@ -208,7 +208,6 @@ end
 | :dependent | 可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误 |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
 | :through | 指定中间表。优先级比 :class_name, :primary_key 和 :foreign_key 要高。<br> 如果对应的关联是 belongs_to 则，关联表会被自动更新、创建、删除。否则，关联表为只读状态，也就是说创建后你就只能手动维护，不会自动更新、删除。 <br> 如果你要更改关联，最好配置一下 :inverse_of 选项，以便被关联对象及时更新与其父亲的关系。 |
-| :source_type | 从后者的角度来看，后者与前者的关联应该是 belongs_to. 但如果恰好又是多态，那么后者保存有前者的 id 并指定某个类型. 如果你对按约定生成的类型不满意，可以用 :source_type 指明。 |
 | :validate | 同上。但默认是 true |
 | :autosave | 设置为 true，保存父亲对象时，其关联对象同时被保存。设置为 false, 对关联对象不做任何操作。默认，只有被关联对象为 new_record 时才会自动保存。<br> 使用 accepts_nested_attributes_for 会自动设置 :autosave 为 true. |
 | :inverse_of | 解释同上 |
