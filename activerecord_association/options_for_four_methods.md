@@ -59,7 +59,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 和 has_many 一样。
 
 
-**实现关联对象：**
+#### 实现关联对象：
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
