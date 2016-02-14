@@ -230,7 +230,6 @@ end
 
   - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 - `:autosave` 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
-- `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
 
 #### has_and_belongs_to_many
 
