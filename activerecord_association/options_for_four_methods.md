@@ -98,6 +98,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:readonly                             |       |   V      |    V  | √  |
 |:inverse_of                           |   √   |    √     |    √  |    |       |
 | :anonymous_class                     |   √   |          |   √   |    |       |
+| :optional                            |       |          |   √   |    |
 
 #### 详解：
 
