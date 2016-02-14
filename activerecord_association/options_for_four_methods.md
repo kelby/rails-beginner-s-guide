@@ -169,7 +169,10 @@ validate
 
 ```
 
-`inverse_of` 通过自己查找到关联对象，然后又通过关联对象找回自己。
+`inverse_of`
+
+```
+通过自己查找到关联对象，然后又通过关联对象找回自己。
 
 有的关联会自动推断 inverse_of，所以用不用其实效果一样。而有的关联加上参数后，不起作用，所以即使设置也没用。可以根据以下代码进行检测：
 
@@ -177,6 +180,7 @@ validate
 ModelName.reflections.map do |key, value|
   p "#{key} inverse_of: #{value.has_inverse?}"
 end
+```
 ```
 
 `counter_cache` 分为几种情况：
