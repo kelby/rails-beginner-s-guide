@@ -170,6 +170,8 @@ validate
 6 校验关联是否成立，并且关联对象是否存在。
 
 类似 validate_presence_of :关联对象
+
+设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。
 ```
 
 inverse_of
