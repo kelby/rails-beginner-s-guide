@@ -153,7 +153,10 @@ dependent
   - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 ```
 
-`validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
+validate
+
+```
+保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
 2 不设置 validate，但设置了 autosave, 或 has_many 和 habtm 关联。<br>
@@ -164,6 +167,7 @@ dependent
 
 类似 validate_presence_of :关联对象
 
+```
 
 `inverse_of` 通过自己查找到关联对象，然后又通过关联对象找回自己。
 
