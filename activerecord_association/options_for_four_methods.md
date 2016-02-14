@@ -248,7 +248,6 @@ end
 
 | 参数 | 解释 |
 | -- | -- |
-| :association_foreign_key | 指定后者所对应的外键，如 Person has_and_belongs_to_many :projects, 则中间表里后者所对应的外键是 “project_id”。如果不符合要求，你使用使用 :association_foreign_key 设置 |
 | :readonly | 设置为 true, 通过前者查询到的后者限制为只读状态，不可更改。但其它方式查询出来的，不受此限制。|
 | :validate | 解释同上。但默认为 true |
 | :autosave | 解释同上 |
