@@ -88,7 +88,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:inverse_of                           |   √   |    √     |    √  |  √      |       
 |:anonymous_class                      |   √   |    √     |    √  |  √      |       
 |:optional                             |       |          |    √  |         |
-|:extend                               |       |    √     |       |         |
+|:extend                               |       |    √     |       |  √      |
 |:index_errors                         |       |    √     |       |         |
 
 #### 详解：
