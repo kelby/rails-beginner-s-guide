@@ -181,11 +181,15 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-`counter_cache` 分为几种情况：
+`counter_cache`
+
+```
+分为几种情况：
 
 1 belongs_to 里设置为 true 表明使用 counter. (字段使用默认)<br>
 2 belongs_to 里设置 counter 字段。<br>
 3 has_many   里设置 counter 字段。
+```
 
 `polymorphic` 多态。
 
