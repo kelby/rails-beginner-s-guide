@@ -69,26 +69,26 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:as                      |   √     |     |  √     |
 |:through                 |   √     |     |  √     |
 |:source                  |   √     |     |  √     |
-|:source_type             |   √    |     |  √     |
-|:join_table              |        |     |  √     |
-|:association_foreign_key |         |     |        |
-|:table_name              |         |     |  √     |
-|:autosave                |   √     |  √  |  √     |
-|:dependent               |   √     |  √  |  √     |
-|:before_add              |         |     |  √     |
-|:after_add               |         |     |  √     |
-|:before_remove           |         |     |  √     |
-|:after_remove            |         |     |  √     |
-|:validate                |   √     |  √  |  √     |
-|:required                |   √     |  √  |        |
-|:counter_cache           |         |  √  |  √     |
-|:polymorphic             |         |  √  |        |
-|:touch                   |         |  √  |        |
-|:inverse_of              |   √     |  √  |  √     |
-|:anonymous_class         |   √     |  √  |  √     |
-|:optional                |         |  √  |        |
-|:extend                  |         |     |  √     |
-|:index_errors            |         |     |        |
+|:source_type             |   √     |       |  √     |
+|:join_table              |         |     |    √     |
+|:association_foreign_key |         |       |        |
+|:table_name              |         |       |  √     |
+|:autosave                |   √     |    √  |  √     |
+|:dependent               |   √     |    √  |  √     |
+|:before_add              |         |       |  √     |
+|:after_add               |         |       |  √     |
+|:before_remove           |         |       |  √     |
+|:after_remove            |         |       |  √     |
+|:validate                |   √     |    √  |  √     |
+|:required                |   √     |    √  |        |
+|:counter_cache           |         |    √  |  √     |
+|:polymorphic             |         |    √  |        |
+|:touch                   |         |     √  |        |
+|:inverse_of              |   √     |     √  |  √     |
+|:anonymous_class         |   √     |     √  |  √     |
+|:optional                |         |     √  |        |
+|:extend                  |         |        |  √     |
+|:index_errors            |         |        |        |
 
 #### 详解：
 
