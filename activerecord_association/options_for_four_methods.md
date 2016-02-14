@@ -76,9 +76,9 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
 |:before_add                           |       |          |       |  √ |
-|:after_add                            |       |          |       |  √  |
-|:before_remove                        |       |          |       |  √  |
-|:after_remove                         |       |          |       |  √  |
+|:after_add                            |       |          |       |  √ |
+|:before_remove                        |       |          |       |  √ |
+|:after_remove                         |       |          |       |  √ |
 |:validate                             |   √   |    √     |    √  |  √ |
 |:required                             |   √   |          |    √  |    |       
 |:counter_cache                        |       |    √     |    √  |    |
