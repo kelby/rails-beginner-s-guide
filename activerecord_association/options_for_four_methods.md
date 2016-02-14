@@ -203,6 +203,8 @@ touch
 ```
 1 设置为 true，更新自己后，更新关联对象的 updated_at/on 字段。<br>
 2 设置为其它字段，则更新自己后，额外更新关联对象的 updated_at/on 和其它字段。
+
+设置为 true, 保存或 destroy 自己的时候，关联对象的 updated_at/on 属性会被更新。
 ```
 
 required
