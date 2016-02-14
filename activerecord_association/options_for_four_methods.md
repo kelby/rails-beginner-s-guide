@@ -114,6 +114,11 @@ join_table
 指定中间表的名字 **注意:** 如果你给中间表加了对应的'类'，并且命名不符合约定的话。那么一定要记得在每个 has_and_belongs_to_many 的地方都要设置 join_table
 ```
 
+association_foreign_key
+
+```
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
