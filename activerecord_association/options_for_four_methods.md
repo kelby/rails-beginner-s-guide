@@ -79,7 +79,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:autosave                             |   √   |    √     |    √  |  √ |
 |:dependent                            |   √   |    √     |    √  |    |
-| after_add                            |       |          |       |  √  |
+|:after_add                            |       |          |       |  √  |
 
 #### 和关联有关的校验：
 
