@@ -283,12 +283,6 @@ inverse_of
 | :foreign_type |  |
 | :dependent |  |
 | :counter_cache | 定制用什么字段保存关联表的统计数目 |
-| :validate | 同上。但默认是 true |
-| :inverse_of | 解释同上 |
-
-**注意事项：**
-
-
 
 
 #### has_and_belongs_to_many
