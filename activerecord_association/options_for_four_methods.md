@@ -307,6 +307,8 @@ ActiveRecord::Associations::Builder::HasOne.valid_dependent_options
 
 #### has_many
 
+valid_options
+
 ```
 ActiveRecord::Associations::Builder::HasMany.valid_options nil
 
