@@ -73,7 +73,7 @@ primary_key
 
 `autosave` 保存自己时，自动保存关联对象。
 
-`primary_key` 查询关联对象的时候，用自己的哪个字段做为条件。
+
 
 `dependent` 分为几种情况：
 
