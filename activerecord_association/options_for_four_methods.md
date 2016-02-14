@@ -65,12 +65,12 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
 |:class_name                           |   √   |    √     |    √  |  √ |
 |:foreign_key                          |   √   |    √     |    √  |  √ |
+|:foreign_type                         |   √   |    √     |    √  |    |
 |:primary_key                          |   √   |    √     |    √  |    |
 |:as                                   |   √   |    √     |       |    |
 |:through                              |   √   |    √     |       |    |
 |:source                               |   √   |    √     |       |    |
 |:source_type                          |   √   |    √     |       |    |
-|:foreign_type                         |   √   |    √     |    √  |    |
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
 
