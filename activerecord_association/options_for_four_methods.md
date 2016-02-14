@@ -69,6 +69,11 @@ as
 多态时用到，声明多态的接口。通常和 belongs_to 里的 :polymorphic 配对使用。
 ```
 
+through
+
+```
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
