@@ -96,8 +96,8 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
 |:readonly                             |       |   V      |    V  | √  |
-|:inverse_of                           |   √   |    √     |    √  |    |       |
-| :anonymous_class                     |   √   |          |   √   |    |       |
+|:inverse_of                           |   √   |    √     |    √  |    |       
+| :anonymous_class                     |   √   |          |   √   |    |       
 | :optional                            |       |          |   √   |    |
 
 #### 详解：
