@@ -238,16 +238,8 @@ end
 
 **注意事项：**
 
-- `:dependent` 可选参数
-  - `:destroy` 删除(destroy)所有被关联对象。
 
-  - `:delete_all` 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
 
-  - `:nullify` 设置后者的"前者_id"属性为 nil. 不会触发回调。
-
-  - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
-
-  - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 - `:autosave` 以 before_save 的形式来调用，所以会受到其它 before_save 回调方法的影响。
 
 #### has_and_belongs_to_many
