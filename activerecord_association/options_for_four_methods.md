@@ -277,6 +277,12 @@ valid_options
 [:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional]
 ```
 
+valid_dependent_options
+
+```
+[:destroy, :delete]
+```
+
 #### has_one
 
 valid_options
