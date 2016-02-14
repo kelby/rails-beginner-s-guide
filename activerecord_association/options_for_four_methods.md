@@ -204,7 +204,11 @@ required
 要求有关联对象存在于数据库。
 ```
 
-`readonly` 所有关联对象为只读。
+`readonly
+
+```
+所有关联对象为只读。
+```
 
 #### belongs_to
 
