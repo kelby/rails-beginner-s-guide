@@ -81,6 +81,7 @@ source
 
 ```
 必须和 through 配合使用，自己在中间表里用什么表示。(类似 :as)
+配合 :through 使用，当查询关联表数据时用哪张表的字段。例如 has_many :subscribers, through: :subscriptions，如果不指定，默认会查询 :subscribers 或 :subscriber 表
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
