@@ -73,9 +73,9 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:join_table                           |       |          |       |  √ |
 |:association_foreign_key              |       |          |       |  √ |
 |:table_name                           |       |    √     |       |  √ |
-|:autosave                             |   √   |    √     |    √  |  √  |
-|:dependent                            |   √   |    √     |    √  |     |
-|:before_add                           |       |          |       |  √  |
+|:autosave                             |   √   |    √     |    √  |  √ |
+|:dependent                            |   √   |    √     |    √  |    |
+|:before_add                           |       |          |       |  √ |
 |:after_add                            |       |          |       |  √  |
 |:before_remove                        |       |          |       |  √  |
 |:after_remove                         |       |          |       |  √  |
