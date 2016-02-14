@@ -314,4 +314,10 @@ ActiveRecord::Associations::Builder::HasMany.valid_options nil
 
 [:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors]
 ```
+
+```
+ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
+
+[:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception]
+```
 #### has_and_belongs_to_many
