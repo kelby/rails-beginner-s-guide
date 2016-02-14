@@ -26,7 +26,7 @@ define_validations model, reflection
 #### 关系图
 
 ```
-  HasOne   &   BelongsTo        HasMany   &   
+  HasOne   &   BelongsTo               HasMany
            |                              |
            V                              V
     SingularAssociation      &     CollectionAssociation
