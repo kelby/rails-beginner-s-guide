@@ -274,6 +274,7 @@ inverse_of
 #### has_one
 
 ```
+[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :as, :through, :source, :source_type]
 ```
 
 #### has_many
