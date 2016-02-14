@@ -264,7 +264,7 @@ inverse_of
 - 综上两条注意事项，有两种情况建议在后者的 model 里手动把计数器设置为 attr_readonly.
 - `:touch` 如果你不是设置成 true, 而是传递一个符号 :symbol，那么这个符号会被更新为当前时间。
 - `:inverse_of` 
-- `:inverse_of` 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
+- `:inverse_of` 
 
 #### has_one
 
