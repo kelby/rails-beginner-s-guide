@@ -75,8 +75,6 @@ primary_key
 
 `autosave` 保存自己时，自动保存关联对象。
 
-
-
 `dependent` 分为几种情况：
 
 1 belongs_to 只有 destroy 和 delete<br>
