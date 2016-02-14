@@ -292,6 +292,8 @@ ActiveRecord::Associations::Builder::BelongsTo.valid_dependent_options
 valid_options
 
 ```
+ActiveRecord::Associations::Builder::BelongsTo.valid_options nil
+
 [:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :as, :through, :source, :source_type]
 ```
 
