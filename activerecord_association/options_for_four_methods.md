@@ -183,7 +183,6 @@ end
 
 **注意事项：**
 
-- `:through` 实现关联时用到了 reflection 的代码，所以 has_one 或 belongs_to 关联要使用中间表，只能通过 :through 这一种方式，区别于 has_many :through 和 has_and_belongs_to_many.
 - `:source_type` 影响的是数据，不是属性。
 - `:foreign_type` 没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
 
