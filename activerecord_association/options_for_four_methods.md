@@ -121,7 +121,6 @@ primary_key
 as
 
 ```
-多态时，自己是什么接口。
 多态时用到，声明多态的接口。和 belongs_to 里的 :polymorphic 配对使用。
 ```
 
