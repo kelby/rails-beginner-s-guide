@@ -216,7 +216,7 @@ readonly
 
 | 参数 | 解释 |
 | -- | -- |
-| :dependent | 如果设置为 :destroy, 自己被 destroy 时，关联对象会被 destroy. 如果设置为 :delete, 自己被 destroy 时，关联对象会被 delete. 注意：自己被 delete, 始终不影响关联对象。|
+| :dependent | |
 | :counter_cache | 设置为 true 后，自己被创建或删除，会改变关联对象里"计数器的值"。默认是 false，也就是不起作用。|
 | :polymorphic | 声明此关联是多态的。|
 | :validate | 设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。|
