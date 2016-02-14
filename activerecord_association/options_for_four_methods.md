@@ -95,7 +95,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:counter_cache                        |       |    √     |    √  |    |
 |:polymorphic                          |       |          |    √  |    |
 |:touch                                |       |          |    √  |    |
-|:readonly                             |   V   |   V      |  V    |  √ |
+|:readonly                             |       |   V      |  V    |  √ |
 |:inverse_of                           |   √   |    √     |    √  |    |       |
 | :anonymous_class                     |   √   |          |       |    |       |
 
