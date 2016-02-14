@@ -60,36 +60,36 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 
 #### 实现关联对象：
 
-|      参数                        | has_one | has_many 和 habtm | belongs_to | habtm |
-|----------------------------------|:-----:|:--------:|:--------:|:-----------:|
-|:class_name                           |   √   |    √     |    √  |  √      |
-|:foreign_key                          |   √   |    √     |    √  |  √      |
-|:foreign_type                         |   √   |    √     |    √  |         |
-|:primary_key                          |   √   |    √     |    √  |         |
-|:as                                   |   √   |    √     |       |         |
-|:through                              |   √   |    √     |       |         |
-|:source                               |   √   |    √     |       |         |
-|:source_type                          |   √   |    √     |       |         |
-|:join_table                           |       |          |       |  √      |
-|:association_foreign_key              |       |          |       |  √      |
-|:table_name                           |       |    √     |       |  √      |
-|:autosave                             |   √   |    √     |    √  |  √      |
-|:dependent                            |   √   |    √     |    √  |         |
-|:before_add                           |       |          |       |  √      |
-|:after_add                            |       |          |       |  √      |
-|:before_remove                        |       |          |       |  √      |
-|:after_remove                         |       |          |       |  √      |
-|:validate                             |   √   |    √     |    √  |  √      |
-|:required                             |   √   |          |    √  |         |       
-|:counter_cache                        |       |    √     |    √  |         |
-|:polymorphic                          |       |          |    √  |         |
-|:touch                                |       |          |    √  |         |
-|:readonly                             |       |    √     |    √  |  √      |
-|:inverse_of                           |   √   |    √     |    √  |  √      |       
-|:anonymous_class                      |   √   |    √     |    √  |  √      |       
-|:optional                             |       |          |    √  |         |
-|:extend                               |       |    √     |       |  √      |
-|:index_errors                         |       |    √     |       |  √      |
+|      参数                        | has_one | has_many 和 habtm | belongs_to |
+|----------------------------------|:-----:|:--------:|:--------:|
+|:class_name                           |   √   |    √     |    √  |
+|:foreign_key                          |   √   |    √     |    √  |
+|:foreign_type                         |   √   |    √     |    √  |
+|:primary_key                          |   √   |    √     |    √  |
+|:as                                   |   √   |    √     |       |
+|:through                              |   √   |    √     |       |
+|:source                               |   √   |    √     |       |
+|:source_type                          |   √   |    √     |       |
+|:join_table                           |       |          |       |
+|:association_foreign_key              |       |          |       |
+|:table_name                           |       |    √     |       |
+|:autosave                             |   √   |    √     |    √  |
+|:dependent                            |   √   |    √     |    √  |
+|:before_add                           |       |          |       |
+|:after_add                            |       |          |       |
+|:before_remove                        |       |          |       |
+|:after_remove                         |       |          |       |
+|:validate                             |   √   |    √     |    √  |
+|:required                             |   √   |          |    √  |
+|:counter_cache                        |       |    √     |    √  |
+|:polymorphic                          |       |          |    √  |
+|:touch                                |       |          |    √  |
+|:readonly                             |       |    √     |    √  |
+|:inverse_of                           |   √   |    √     |    √  |
+|:anonymous_class                      |   √   |    √     |    √  |
+|:optional                             |       |          |    √  |
+|:extend                               |       |    √     |       |
+|:index_errors                         |       |    √     |       |
 
 #### 详解：
 
