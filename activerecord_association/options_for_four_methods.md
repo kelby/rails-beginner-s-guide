@@ -261,7 +261,6 @@ inverse_of
 - `:touch` 如果你不是设置成 true, 而是传递一个符号 :symbol，那么这个符号会被更新为当前时间。
 - `:inverse_of` 带来额外的好处：1. 不用重复查询，节省了性能；2. 因为对象的 object_id 都是一样的，保证了数据一致性；3. 注意顺序前者查询后者，然后后者反向查询前者；需要注意：第 2 次"查询"不是数据库查询，会存在操作脏数据的风险。
 - `:inverse_of` 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
-- `:required` "validates_presence_of 关联对象" 和 "validates_presence_of 关联对象_id" 大同小异。前者是真实存在的对象，后者只是字段。
 
 #### has_one
 
