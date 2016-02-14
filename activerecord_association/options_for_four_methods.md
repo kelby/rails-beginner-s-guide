@@ -276,13 +276,6 @@ inverse_of
 
 #### has_many
 
-可选参数 **Options**
-
-| 参数 | 解释 |
-| -- | -- |
-| :foreign_type |  |
-| :dependent |  |
-| :counter_cache | 定制用什么字段保存关联表的统计数目 |
 
 
 #### has_and_belongs_to_many
