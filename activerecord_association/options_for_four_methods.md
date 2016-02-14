@@ -126,6 +126,7 @@ autosave
 
 ```
 保存自己时，自动保存关联对象。
+如果在 model 里使用了 accepts_nested_attributes_for，则对应 `:autosave` 始终为 true.
 ```
 
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
