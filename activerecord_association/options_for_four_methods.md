@@ -183,7 +183,6 @@ end
 | :counter_cache | 设置为 true 后，自己被创建或删除，会改变关联对象里"计数器的值"。默认是 false，也就是不起作用。|
 | :polymorphic | 声明此关联是多态的。|
 | :validate | 设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。|
-| :autosave | 设置为 true, 保存自己的时候，同时保存它的关联对象(用的是 before_save)。设置为 false 还可分为两种情况：前者为 new_record，则保存自己时会自动保存关联对象；否则上述自动操作都不会被执行。|
 | :touch | 设置为 true, 保存或 destroy 自己的时候，关联对象的 updated_at/on 属性会被更新。|
 | :inverse_of | 保证 object_id 相同。通过前者(1)查询到后者，然后再通过后者返过来查询前者(2)。按照直观的理解，(1) 和 (2) 应该是同样的对象，同样的值。但实际情况会发现，它们不一样(可以通过 object_id 确定)！原因是程序没有这么聪明，没法判断它们是一样的(特别是通过中间表查询时)。设置 :inverse_of，可解决这个问题。|
 | :required | 语法糖。原来的做法是 "belongs_to 关联对象" + "validates_presence_of 关联对象"，现改为 "belongs_to 关联对象, required: true"|
