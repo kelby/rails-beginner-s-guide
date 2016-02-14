@@ -71,7 +71,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:source                  |   √     |            |  √     |  √     |
 |:source_type             |   √     |            |  √     |  √     |
 |:join_table              |         |            |  √     |  √     |
-|:association_foreign_key |         |            |        |        |
+|:association_foreign_key |         |            |        |  √     |
 |:table_name              |         |            |  √     |  √     |
 |:autosave                |   √     |       √    |  √     |  √     |
 |:dependent               |   √     |       √    |  √     |  √     |
