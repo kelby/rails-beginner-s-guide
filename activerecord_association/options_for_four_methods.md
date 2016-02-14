@@ -176,7 +176,7 @@ validate
 
 有的关联会自动推断 inverse_of，所以用不用其实效果一样。而有的关联加上参数后，不起作用，所以即使设置也没用。可以根据以下代码进行检测：
 
-```ruby
+
 ModelName.reflections.map do |key, value|
   p "#{key} inverse_of: #{value.has_inverse?}"
 end
