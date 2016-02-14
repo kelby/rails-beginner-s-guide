@@ -88,7 +88,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:anonymous_class         |    √          |   √    |  √     |  √     |
 |:optional                |    √          |        |        |        |
 |:extend                  |               |        |  √     |  √     |
-|:index_errors            |               |        |        |        |
+|:index_errors            |               |        |  √     |  √     |
 
 #### 详解：
 
