@@ -122,6 +122,11 @@ association_foreign_key
 指定后者所对应的外键，如 Person has_and_belongs_to_many :projects, 则中间表里后者所对应的外键是 “project_id”。如果不符合要求，你使用使用 :association_foreign_key 设置
 ```
 
+autosave
+
+```
+```
+
 `validate` 保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
 1 设置了 validate<br>
