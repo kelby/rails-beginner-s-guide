@@ -141,11 +141,6 @@ end
 1 设置为 true，更新自己后，更新关联对象的 updated_at/on 字段。<br>
 2 设置为其它字段，则更新自己后，额外更新关联对象的 updated_at/on 和其它字段。
 
-`foreign_type`
-
-1 对于 has_one 和 has_many，用什么字段做为自己的外键。<br>
-2 对于 belongs_to，用什么字段做为关联对象的外键。
-
 `join_table` 中间表。
 
 `required` 要求有关联对象存在于数据库。
