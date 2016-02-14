@@ -338,5 +338,5 @@ inverse_of
 index_errors
 
 ```
-默认为 false. 设置了 autosave 它才管用。
+默认为 false. 设置了 autosave 它才管用。条件很复杂，忽略。
 ```
