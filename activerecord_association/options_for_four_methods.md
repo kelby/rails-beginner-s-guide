@@ -220,6 +220,7 @@ readonly
 polymorphic
 
 ```
+声明此关联是多态的
 ```
 
 #### belongs_to
