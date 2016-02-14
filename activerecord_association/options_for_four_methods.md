@@ -166,7 +166,6 @@ end
 
 | 参数 | 解释 |
 | -- | -- |
-| :class_name | 后者对应着的'类名'. 当按照"约定"找不到这个'类'的时候，用 :class_name 指明。 |
 | :dependent | 删除前者时，对后者进行什么操作。1) :destroy, 删除后者，会触发回调；2) :delete, 删除后者，不会触发回调；3) ::nullify, 把后者里的"前者_id"属性设置为 nil, 不会触发回调；4) :restrict_with_exception, 如果有后者的关联对象，报异常；5) :restrict_with_error 如果有后者的关联对象，报错。|
 | :foreign_type | 多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) |
 | :primary_key* | 凡是通过前者查询后者。传递的是前者的主键所对应的值，也就是 id 字段的值，如果觉得不合适，可以用 :primary_key 指明字段。 |
