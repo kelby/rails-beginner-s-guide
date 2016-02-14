@@ -278,8 +278,6 @@ inverse_of
 
 #### has_many
 
-
-
 #### has_and_belongs_to_many
 
 **注意事项：**
