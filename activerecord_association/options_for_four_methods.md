@@ -62,8 +62,8 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 
 |      参数                        | has_one | has_many | belongs_to | habtm |
 |----------------------------------|:-----:|:--------:|:--------:|:-----------:|
-|:class_name                           |   √   |    √     |    √  |  √         |
-|:foreign_key                          |   √   |    √     |    √  |  √         |
+|:class_name                           |   √   |    √     |    √  |  √      |
+|:foreign_key                          |   √   |    √     |    √  |  √      |
 |:foreign_type                         |   √   |    √     |    √  |         |
 |:primary_key                          |   √   |    √     |    √  |         |
 |:as                                   |   √   |    √     |       |         |
