@@ -97,7 +97,7 @@ ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 |:touch                                |       |          |    √  |    |
 |:readonly                             |       |   V      |    V  | √  |
 |:inverse_of                           |   √   |    √     |    √  |    |       
-| :anonymous_class                     |   √   |          |   √   |    |       
+| :anonymous_class                     |   √   |    √      |   √   |    |       
 | :optional                            |       |          |   √   |    |
 
 #### 详解：
