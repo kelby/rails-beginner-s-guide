@@ -1,4 +1,4 @@
-#### 6) Has Many Association
+#### ~~6) Has Many Association~~
 
 ```
 handle_dependency
