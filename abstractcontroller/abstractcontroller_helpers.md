@@ -39,8 +39,6 @@ helper(:three, BlindHelper) { def mice() 'mice' end }
 
 #### helper_method(*meths)
 
-在 Controller 里重新定义、实现了一个相同的方法。
-
 如下文举例，Controller 里的 current_user 方法，可以在视图里使用：
 
 ```ruby
