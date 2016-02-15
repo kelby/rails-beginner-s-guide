@@ -13,8 +13,6 @@ valid_dependent_options
 
 ```
 ActiveRecord::Associations::Builder::BelongsTo.valid_dependent_options
-
-[:destroy, :delete]
 ```
 
 #### has_one
