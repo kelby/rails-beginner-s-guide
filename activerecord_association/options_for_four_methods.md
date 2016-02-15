@@ -27,8 +27,6 @@ valid_dependent_options
 
 ```
 ActiveRecord::Associations::Builder::HasOne.valid_dependent_options
-
-[:destroy, :delete, :nullify, :restrict_with_error, :restrict_with_exception]
 ```
 
 #### has_many
