@@ -1,4 +1,4 @@
-#### 4) Collection Association
+#### ~~4) Collection Association~~
 
 ```
 reader
