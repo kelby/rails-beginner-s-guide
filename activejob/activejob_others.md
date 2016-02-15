@@ -57,7 +57,7 @@ class TrashableCleanupJob
 end
 ```
 
-> Note: 不规范的写法里，也可以直接传递对象。
+> Note: 以前也可以直接传递对象，但那是不规范的写法。
 
 ### 获取任务的部分信息
 
