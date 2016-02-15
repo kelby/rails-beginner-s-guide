@@ -98,11 +98,11 @@ enqueue
 my_job_instance.enqueue
 
 # 目前，只接受以下几种参数
-# 若延迟 gem 本身不支持定时，会提示 wait、wait_until 不可用
 my_job_instance.enqueue wait: 5.minutes
 my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
 my_job_instance.enqueue priority: 10
+# 若延迟 gem 本身不支持定时，会提示 wait、wait_until 不可用
 ```
 
 执行任务失败，捕捉后，还可以重试：
