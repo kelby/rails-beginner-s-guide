@@ -2,7 +2,7 @@
 
 Controller 和 Mailer "渲染"的入口，并负责转递实例变量。
 
-渲染任务，Abstact Controller 做的只是最外层的封装。具体由 Action View 的 Rendering 相关模块，然后给 Action Controller 和 Active Mailer 使用。
+渲染，Abstact Controller 做的只是最外层的封装。具体由 Action View 的 Rendering 相关模块完成，然后给 Action Controller 和 Active Mailer 使用。
 
 ```
 Action Controller & Active Mailer
