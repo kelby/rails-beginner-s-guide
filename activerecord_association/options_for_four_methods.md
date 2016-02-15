@@ -7,8 +7,6 @@ valid_options
 
 ```
 ActiveRecord::Associations::Builder::BelongsTo.valid_options nil
-
-[:class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional]
 ```
 
 valid_dependent_options
