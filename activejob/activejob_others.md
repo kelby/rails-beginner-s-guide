@@ -28,6 +28,13 @@ end
 ### 获取任务的部分信息
 
 ```ruby
+@arguments  = arguments
+@job_id     = SecureRandom.uuid
+@queue_name = self.class.queue_name
+@priority   = self.class.priority
+```
+
+```ruby
 # Job arguments
 attr_accessor :arguments
 attr_writer :serialized_arguments
