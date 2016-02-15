@@ -61,7 +61,7 @@ end
 <% if logged_in? %>Welcome, <%= current_user.name %><% end %>
 ```
 
-实现方式：以元编程的形式定义同名方法，然后 send 调用原 helper 方法。
+**实现方式：**以元编程的形式定义同名方法，然后 send 调用原 helper 方法。
 
 helper 和 helper_method 可以简单理解为一对作用相反的操作。
 
