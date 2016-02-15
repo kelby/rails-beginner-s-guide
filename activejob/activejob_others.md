@@ -46,9 +46,6 @@ attr_accessor :scheduled_at
 # Job Identifier
 attr_accessor :job_id
 
-# Priority that the job will have (lower is more priority).
-attr_writer :priority
-
 # ID optionally provided by adapter
 attr_accessor :provider_job_id
 
