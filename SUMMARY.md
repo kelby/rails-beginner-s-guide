@@ -439,7 +439,7 @@
        * [Configuration](rails/configuration.md)
        * [定制自己的 Railtie](rails/custom_your_railtie.md)
    * [Railtie 补充](rails/railtie_bu_chong.md)
-   * [Rails 默认组件都是 Railtie](rails/all_component_is_railtie.md)
+       * [Rails 默认组件都是 Railtie](rails/all_component_is_railtie.md)
    * [Engine](rails/engine.md)
        * [Engine 文件下的内容](rails/contents_under_engine.md)
        * [Configuration](rails/engine_-_configuration.md)
