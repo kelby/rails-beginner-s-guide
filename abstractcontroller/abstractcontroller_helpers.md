@@ -9,6 +9,8 @@
 
 #### helper(*args, &block)
 
+功能和 `include` 类似，只是稍微智能了一点。
+
 参数类型，可分为 3 类：String、Symbol，Module，block。这些参数还可以混合使用。
 
 - 当参数是模块名时，直接 include 此模块 (没有 requires )
