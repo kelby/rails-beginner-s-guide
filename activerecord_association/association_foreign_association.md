@@ -1,4 +1,4 @@
-#### 5) Foreign Association
+#### ~~5) Foreign Association~~
 
 ```
 foreign_key_present?
