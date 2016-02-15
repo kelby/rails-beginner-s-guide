@@ -97,7 +97,7 @@ enqueue
 ```ruby
 my_job_instance.enqueue
 
-# 目前，只接受以下 3 种参数
+# 目前，只接受以下几种参数
 my_job_instance.enqueue wait: 5.minutes
 my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
