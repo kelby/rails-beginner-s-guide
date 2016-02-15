@@ -462,7 +462,7 @@ config.assets.enabled = false
 Rails.application.config.assets
 ```
 
-> Note：它只管目录，引入资源文件的话，还得自己或 gem 添加。
+> Note：它只管加载目录，引入资源文件的话，还得自己或 gem 添加。
 
 **Deploy 的小技巧**
 
