@@ -41,7 +41,7 @@ helper(:three, BlindHelper) { def mice() 'mice' end }
 
 以元编程的形式定义同名 Helper 方法，然后 send 调用原 Controller 里的方法。
 
-如下文举例，Controller 里的 current_user 方法，可以在视图里使用：
+如下文举例，Controller 里有 `current_user` 方法，可以在视图里使用：
 
 ```ruby
 class ApplicationController < ActionController::Base
