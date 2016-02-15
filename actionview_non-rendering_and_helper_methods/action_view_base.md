@@ -1,4 +1,4 @@
-## Base
+## Base - 为渲染打基础
 
 不同于其它几个组件，对外提供的接口是 Action View 模块本身，而不是 ActionView::Base 类。
 
