@@ -105,7 +105,7 @@ my_job_instance.enqueue priority: 10
 # 若延迟 gem 本身不支持定时，会提示 wait、wait_until 不可用
 ```
 
-执行任务失败，捕捉后，还可以重试：
+入队列、执行任务失败，捕捉后，还可以重试：
 
 ```ruby
 retry_job
