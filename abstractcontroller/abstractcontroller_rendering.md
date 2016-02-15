@@ -1,8 +1,8 @@
 ## Rendering
 
-本质是一样的，只是上下文环境及可选参数不一样了。
+Controller 和 Mailer "渲染"的入口，并负责转递实例变量。
 
-Abstact Controller 封装了 Action View 的 Rendering 相关模块，然后给 Action Controller 和 Active Mailer 使用。
+渲染任务，Abstact Controller 做的只是最外层的封装。具体由 Action View 的 Rendering 相关模块，然后给 Action Controller 和 Active Mailer 使用。
 
 ```
 Action Controller & Active Mailer
