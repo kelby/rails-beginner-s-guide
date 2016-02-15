@@ -1,4 +1,4 @@
-#### 2) Singular Association
+#### ~~2) Singular Association~~
 
 类方法：
 
