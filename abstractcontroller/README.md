@@ -12,3 +12,4 @@ Abstract Controller 做的事情很有限，但却很无私。
 - 辅助 ActionMailer::Base 将站场转移到具体的 Mailer#action.
 
 准备及转移工作在之前已经完成了，它只是在最后一步，调用具体 action.
+
