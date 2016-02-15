@@ -101,6 +101,7 @@ my_job_instance.enqueue
 my_job_instance.enqueue wait: 5.minutes
 my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
+my_job_instance.enqueue priority: 10
 ```
 
 执行任务失败，捕捉后，还可以重试：
