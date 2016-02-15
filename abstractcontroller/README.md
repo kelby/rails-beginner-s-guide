@@ -5,7 +5,7 @@
 - 辅助 ActionController::Base 将站场转移到具体的 Controller#action(经过 Metal).
 - 辅助 ActionMailer::Base 将站场转移到具体的 Mailer#action.
 
-准备及转移工作在之前已经处理了，它只是在最后一步，调用执行具体 action.
+准备及转移工作在之前已经了，它只是在最后一步，调用执行具体 action.
 
 Abstract Controller 起到了承上启下的作用，无论是它自己定义的方法，还是封装 Action View 和 Action Dispatch 得到的方法，最终都提供给 Action Controller 和 Action Mailer 使用。
 
