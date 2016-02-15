@@ -98,6 +98,7 @@ enqueue
 my_job_instance.enqueue
 
 # 目前，只接受以下几种参数
+# 由于部分延迟 gem 不支持定时，wait、wait_until 可能不可用，会有提示
 my_job_instance.enqueue wait: 5.minutes
 my_job_instance.enqueue queue: :important
 my_job_instance.enqueue wait_until: Date.tomorrow.midnight
