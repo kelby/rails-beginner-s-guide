@@ -1,4 +1,4 @@
-#### 10) Singular Association
+#### ~~10) Singular Association~~
 
 ```
 reader
