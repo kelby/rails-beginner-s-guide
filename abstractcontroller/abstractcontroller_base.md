@@ -1,7 +1,5 @@
 ## Base
 
-Action Dispatch -> Metal -> Abstract Controller -> Action Controller 请求是如何转变的？部分答案在这 ...
-
 Action Dispatch 里转发先到 ActionController::Metal::action, 然后到 ActionController::Metal#dispatch, 接着到 AbstractController::Base#process 也就是这里的 `process` 方法，然后到 `process_action` 和 `send_action & send`，最后到具体的 action 进行处理。
 
 此外，还有一些平时用得不多，但比较有趣的方法。
