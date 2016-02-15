@@ -39,6 +39,8 @@ helper(:three, BlindHelper) { def mice() 'mice' end }
 
 #### helper_method(*meths)
 
+以元编程的形式在 Controller 里定义同名方法，然后 send 调用原 helper 方法。
+
 如下文举例，Controller 里的 current_user 方法，可以在视图里使用：
 
 ```ruby
@@ -60,8 +62,6 @@ end
 ```ruby
 <% if logged_in? %>Welcome, <%= current_user.name %><% end %>
 ```
-
-**实现方式：**以元编程的形式定义同名方法，然后 send 调用原 helper 方法。
 
 helper 和 helper_method 可以简单理解为一对作用相反的操作。
 
