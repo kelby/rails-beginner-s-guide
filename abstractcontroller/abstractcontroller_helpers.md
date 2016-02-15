@@ -39,7 +39,7 @@ helper(:three, BlindHelper) { def mice() 'mice' end }
 
 #### helper_method(*meths)
 
-以元编程的形式在 Controller 里定义同名方法，然后 send 调用原 helper 方法。
+以元编程的形式定义同名 Helper 方法，然后 send 调用原 Controller 里的方法。
 
 如下文举例，Controller 里的 current_user 方法，可以在视图里使用：
 
