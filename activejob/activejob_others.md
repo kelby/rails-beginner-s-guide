@@ -27,6 +27,8 @@ end
 
 ### 获取任务的部分信息
 
+所带参数、任务id、所在队列名、优先级等：
+
 ```ruby
 @arguments  = arguments
 @job_id     = SecureRandom.uuid
