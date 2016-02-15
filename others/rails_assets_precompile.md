@@ -454,6 +454,16 @@ config.assets.enabled = false
 
 ### 其它
 
+**查看所有 assets 目录**
+
+当使用第三方 gem 引入 assets 资源的时候，使用它可以让我们看到加入了哪些目录。
+
+```
+Rails.application.config.assets
+```
+
+> Note：它只管目录，引入资源文件的话，还得自己或 gem 添加。
+
 **Deploy 的小技巧**
 
 1）本地编译 - 有好也有坏。反正我是不推荐。
