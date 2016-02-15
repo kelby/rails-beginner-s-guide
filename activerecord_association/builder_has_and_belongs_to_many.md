@@ -1,4 +1,4 @@
-#### 7) Has And Belongs To Many
+#### ~~7) Has And Belongs To Many~~
 
 实例方法：
 
