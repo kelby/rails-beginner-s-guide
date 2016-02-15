@@ -25,6 +25,32 @@ class GuestsCleanupJob < ActiveJob::Base
 end
 ```
 
+### 获取任务的部分信息
+
+```ruby
+# Job arguments
+attr_accessor :arguments
+attr_writer :serialized_arguments
+
+# Timestamp when the job should be performed
+attr_accessor :scheduled_at
+
+# Job Identifier
+attr_accessor :job_id
+
+# Queue in which the job will reside.
+attr_writer :queue_name
+
+# Priority that the job will have (lower is more priority).
+attr_writer :priority
+
+# ID optionally provided by adapter
+attr_accessor :provider_job_id
+
+# I18n.locale to be used during the job.
+attr_accessor :locale
+```
+
 ### 参数支持 Global ID
 
 一般入队列(enqueue_in、enqueue_at 和 enqueue) 只传能够标识对象的那部分参数(如：class、id)，出队列/执行的时候再根据这些参数获取对象。
