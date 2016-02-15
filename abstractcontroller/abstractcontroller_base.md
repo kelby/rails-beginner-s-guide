@@ -63,3 +63,11 @@ action_method?
 
 method_for_action
 ```
+
+Action Mailer 和 Action Controller 都继承于 Abstract Controller：
+
+```ruby
+ActionMailer::Base < AbstractController::Base
+
+ActionController::Base < ActionController::Metal < AbstractController::Base
+```
