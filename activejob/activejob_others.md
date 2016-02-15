@@ -39,16 +39,12 @@ end
 ```ruby
 # Job arguments
 attr_accessor :arguments
-attr_writer :serialized_arguments
 
 # Timestamp when the job should be performed
 attr_accessor :scheduled_at
 
 # Job Identifier
 attr_accessor :job_id
-
-# Queue in which the job will reside.
-attr_writer :queue_name
 
 # Priority that the job will have (lower is more priority).
 attr_writer :priority
