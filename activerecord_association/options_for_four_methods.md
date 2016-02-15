@@ -41,9 +41,8 @@ valid_dependent_options
 
 ```
 ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
-
-[:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception]
 ```
+
 #### has_and_belongs_to_many
 
 和 has_many 一样。
