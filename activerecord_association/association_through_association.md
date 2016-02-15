@@ -1,4 +1,3 @@
-
 #### 11) Through Association
 
 ```ruby
