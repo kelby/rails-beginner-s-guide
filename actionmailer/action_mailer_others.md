@@ -99,3 +99,4 @@ end
 #### ~~Delivery Job~~
 
 使用 Active Job，配置以便延迟发送邮件。
+
