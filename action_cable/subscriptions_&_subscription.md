@@ -4,6 +4,8 @@
 
 传递消息，以及真正干活的好手。
 
+**传递消息**
+
 常用的：
 
 ```ruby
@@ -30,7 +32,9 @@ unsubscribe
 Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send -> WebSocket#send
 ```
 
-此外，我们还可(和普通 JS 一样)在它的基础上自定义方法，进行调用。
+**真正干活**
+
+我们还可(和普通 JS 一样)在它的基础上自定义方法，进行调用。
 
 #### Subscriptions
 
