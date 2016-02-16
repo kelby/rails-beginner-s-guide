@@ -1,4 +1,4 @@
-#### ~~2) Belongs To Association~~
+#### ~~Belongs To Association~~
 
 ```
 handle_dependency
