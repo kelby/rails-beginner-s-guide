@@ -38,6 +38,8 @@ Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send ->
 create
 ```
 
+通过它可创建 Subscription 实例。
+
 其它：
 
 ```
