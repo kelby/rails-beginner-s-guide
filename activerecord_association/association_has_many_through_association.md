@@ -1,4 +1,4 @@
-#### ~~7) Has Many Through Association~~
+#### ~~Has Many Through Association~~
 
 ```
 size
