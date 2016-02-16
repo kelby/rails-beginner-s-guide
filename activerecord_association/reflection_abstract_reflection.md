@@ -1,4 +1,4 @@
-#### ~~3) Abstract Reflection~~
+#### ~~Abstract Reflection~~
 
 ```
 build_association
