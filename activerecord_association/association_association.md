@@ -1,4 +1,4 @@
-#### ~~1) Association~~
+#### ~~Association~~
 
 ```ruby
 attr_reader :owner, :target, :reflection
