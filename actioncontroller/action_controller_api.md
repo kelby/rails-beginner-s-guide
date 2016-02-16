@@ -12,26 +12,37 @@
 它和 ActionController::Base 本质上是一样的，对比来说，它去掉了很多不必要的 Metal 增强组件，所以性能会比较快：
 
 ```ruby
-AbstractController::Translation
-AbstractController::AssetPaths
-```
+MODULES = [
+  AbstractController::Rendering,
 
-```ruby
-ActionView::Layouts
-```
+  UrlFor,
+  Redirecting,
+  ApiRendering,
+  Renderers::All,
+  ConditionalGet,
+  BasicImplicitRender,
+  StrongParameters,
 
-```ruby
-ActionController::Helpers
-ActionController::EtagWithTemplateDigest
-ActionController::Caching
-ActionController::MimeResponds
-ActionController::ImplicitRender
-ActionController::Cookies
-ActionController::Flash
-ActionController::FormBuilder
-ActionController::RequestForgeryProtection
-ActionController::Streaming
-ActionController::HttpAuthentication::Basic::ControllerMethods
-ActionController::HttpAuthentication::Digest::ControllerMethods
-ActionController::HttpAuthentication::Token::ControllerMethods
+  ForceSSL,
+  DataStreaming,
+
+  # Before callbacks should also be executed as early as possible, so
+  # also include them at the bottom.
+  AbstractController::Callbacks,
+
+  # Append rescue at the bottom to wrap as much as possible.
+  Rescue,
+
+  # Add instrumentations hooks at the bottom, to ensure they instrument
+  # all the methods properly.
+  Instrumentation,
+
+  # Params wrapper should come before instrumentation so they are
+  # properly showed in logs
+  ParamsWrapper
+]
+
+MODULES.each do |mod|
+  include mod
+end
 ```
