@@ -102,9 +102,9 @@ class ExampleTest < ActiveSupport::TestCase
 end
 ```
 
-```
-# 文档没写，但还有：
+文档没写，但还有：
 
+```
 before_setup
 after_teardown
 ```
