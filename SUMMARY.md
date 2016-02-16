@@ -83,7 +83,7 @@
        * [Scope、Mapping、Constraints](actiondispatch_routing/mapper_others.md)
        * [match 和 scope 方法 - 重中之重](actiondispatch_routing/key_points.md)
        * [路由常用方法汇总](actiondispatch_routing/common_instance_methods.md)
-   * [Routing 其它](actiondispatch_routing/routing_qi_ta.md)
+   * [其它](actiondispatch_routing/routing_qi_ta.md)
        * [Polymorphic Routes](actiondispatch_routing/routing_polymorphicroutes.md)
        * [Url For](actiondispatch_routing/routing_urlfor.md)
        * [Routing 概述：生成、存储、识别](actiondispatch_routing/actiondispatch_-_routing.md)
