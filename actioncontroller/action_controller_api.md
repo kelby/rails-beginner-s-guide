@@ -29,7 +29,7 @@ MODULES = [
   # 回调
   AbstractController::Callbacks,
 
-  # Append rescue at the bottom to wrap as much as possible.
+  # 异常
   Rescue,
 
   # Add instrumentations hooks at the bottom, to ensure they instrument
