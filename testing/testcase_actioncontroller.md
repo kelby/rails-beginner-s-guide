@@ -27,16 +27,3 @@ missing? & not_found?
 error? & server_error?
 ```
 
-#### Template Assertions
-
-> Rails 5 已废除。
-
-```
-assert_template
-```
-
-此外，还包含了：Test Request、Test Response、Live Test Response、Test Session.
-<br>
-这几个类作用上比较小，再此不做讲解。
-
-> ActionController::TestCase 在 Rails 5.1 将会被完全移除，使用 ActionDispatch::IntegrationTest 代替。
