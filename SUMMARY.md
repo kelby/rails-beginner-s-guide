@@ -151,7 +151,7 @@
        * [Subscription Adapter](action_cable/subscription_adapter.md)
    * [Coffee 脚本](action_cable/action_cable_coffee.md)
        * [Consumer](action_cable/coffee_consumer.md)
-       * [Subscription & Subscriptions](action_cable/subscriptions_&_subscription.md)
+       * [Subscription](action_cable/subscriptions_&_subscription.md)
        * [Coffee Subscriptions](action_cable/coffee_subscriptions.md)
        * [Connection](action_cable/coffee_connection.md)
        * [Connection Monitor](action_cable/coffee_connection_monitor.md)
