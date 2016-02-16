@@ -19,6 +19,14 @@ process
 
 > Rails 5 新增 xhr 虽然是语法糖，但用起来很舒心，不是吗？
 
+#### Live Test Response
+
+```
+success? & successful?
+missing? & not_found?
+error? & server_error?
+```
+
 #### Template Assertions
 
 > Rails 5 已废除。
