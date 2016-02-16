@@ -1,4 +1,4 @@
-## 客户羰 - Coffee 脚本
+## 客户端 - Coffee 脚本
 
 我们用脚本生成 Channel 时，一般地都有对应的 Coffee 脚本。
 
