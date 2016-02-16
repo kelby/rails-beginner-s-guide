@@ -4,6 +4,10 @@
 
 我们看看 ActionController::Base 引入了哪些模块：
 
+```
+ActionController::Base::MODULES
+```
+
 ```ruby
 MODULES = [
   AbstractController::Rendering,
