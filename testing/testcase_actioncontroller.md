@@ -12,7 +12,7 @@ put
 delete
 head
 
-xhr
+xhr & xml_http_request
 
 process
 ```
