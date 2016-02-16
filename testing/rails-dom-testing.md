@@ -22,5 +22,4 @@ assert_select_encoded '#out-of-your-element'
 
 # assert elements within an html email exists
 assert_select_email '#you-got-mail'
-
 ```
