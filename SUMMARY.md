@@ -111,6 +111,7 @@
        * [Load Interlock](actiondispatch_middleware/loadinterlock.md)
    * [定制 Middleware](actiondispatch_middleware/custom_middleware.md)
    * [Middleware Stack](actiondispatch_middleware/middleware_middleware_stack.md)
+   * Middleware intro
 * [Action Dispatch Http](actiondispatch_http/README.md)
    * [Request](actiondispatch_http/actiondispatch_request.md)
        * [Request 文件下的内容](actiondispatch_http/request_file.md)
