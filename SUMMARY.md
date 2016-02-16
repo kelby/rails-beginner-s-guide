@@ -88,7 +88,7 @@
    * [Routing 概述：生成、存储、识别](actiondispatch_routing/actiondispatch_-_routing.md)
    * [一步步分析从请求到响应涉及到 Rails 的哪些模块](actiondispatch_routing/request_from_route_to_controller.md)
    * [endpoint 和 inspector 文件](actiondispatch_routing/routing_others.md)
-   * Routing 其它
+   * [Routing 其它](actiondispatch_routing/routing_qi_ta.md)
 * [Action Dispatch Middleware](actiondispatch_middleware/README.md)
    * [Rack - Ruby Web server 接口](actiondispatch_middleware/rack.md)
    * [查看项目用了哪些 Middleware](actiondispatch_middleware/view_how_middleware.md)
