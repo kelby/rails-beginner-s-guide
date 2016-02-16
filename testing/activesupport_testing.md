@@ -145,3 +145,9 @@ class SyncLogSubscriberTest < ActiveSupport::TestCase
   end
 end
 ```
+
+#### Constant Lookup
+
+```ruby
+```
+
