@@ -28,7 +28,7 @@ unsubscribe
 Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send -> WebSocket#send
 ```
 
-此外，我们还可在它的基础上自定义方法(和普通 JS 一样)，进行调用。
+此外，我们还可(和普通 JS 一样)在它的基础上自定义方法，进行调用。
 
 #### Subscriptions
 
