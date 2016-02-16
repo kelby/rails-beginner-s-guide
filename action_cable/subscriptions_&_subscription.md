@@ -1,7 +1,5 @@
 ### Subscription
 
-#### Subscription
-
 传递消息，以及真正干活的好手。
 
 **传递消息**
