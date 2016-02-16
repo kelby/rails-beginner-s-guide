@@ -1,4 +1,4 @@
-#### ~~3) Belongs To Polymorphic Association~~
+#### ~~Belongs To Polymorphic Association~~
 
 ```
 klass
