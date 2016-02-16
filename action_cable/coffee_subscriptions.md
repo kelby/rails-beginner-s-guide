@@ -1,7 +1,5 @@
 ### Subscriptions
 
-#### Subscriptions
-
 Subscription 的集结地，有专门的 `@subscriptions` 用来保存 subscription.
 
 常用的：
