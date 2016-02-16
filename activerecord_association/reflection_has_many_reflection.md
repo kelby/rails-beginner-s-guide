@@ -1,4 +1,4 @@
-#### ~~7) Has Many Reflection~~
+#### ~~Has Many Reflection~~
 
 继承于 Association Reflection
 
