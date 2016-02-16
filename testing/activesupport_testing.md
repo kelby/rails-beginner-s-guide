@@ -155,5 +155,7 @@ determine_constant_from_test_name
 #### Deprecation
 
 ```
+assert_deprecated
+assert_not_deprecated
 ```
 
