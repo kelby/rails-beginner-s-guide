@@ -11,6 +11,9 @@
 
 它和 ActionController::Base 本质上是一样的，对比来说，它去掉了很多不必要的 Metal 增强组件，所以性能会比较快：
 
+```
+```
+
 ```ruby
 MODULES = [
   AbstractController::Rendering,
