@@ -9,15 +9,15 @@ Action Mailer 提供我们 Mailer 类和视图。Mailer 类放在 app/mailers �
 ActionMailer::Base 继承于类 AbstractController::Base,
 又包含但不限于以下'外部'模块，根据 Ruby 规则，它们也是可调用的。包括：
 
-| 模块 | 作用 |
-| -- | -- |
-| ActionMailer::DeliveryMethods | 邮件发送 |
-| ActionMailer::Previews | 邮件预览 |
-| AbstractController::Rendering | 渲染 |
-| AbstractController::Helpers | 引进、输出辅助方法 |
-| AbstractController::Translation | I18n 相关 |
-| AbstractController::Callbacks | 支持回调 |
-| ActionView::Layouts | 视图布局等 |
+ 模块 | 作用 
+ -- | -- 
+ ActionMailer::DeliveryMethods | 邮件发送 
+ ActionMailer::Previews | 邮件预览 
+ AbstractController::Rendering | 渲染 
+ AbstractController::Helpers  引进、输出辅助方法 
+ AbstractController::Translation | I18n 相关 
+ AbstractController::Callbacks | 支持回调 
+ ActionView::Layouts | 视图布局等 
 
 
 `C < B < A` 
