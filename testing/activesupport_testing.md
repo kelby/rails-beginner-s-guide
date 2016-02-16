@@ -149,5 +149,6 @@ end
 #### Constant Lookup
 
 ```ruby
+determine_constant_from_test_name
 ```
 
