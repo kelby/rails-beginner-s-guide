@@ -1,4 +1,4 @@
-#### ~~8) Has One Association~~
+#### ~~Has One Association~~
 
 ```
 handle_dependency
