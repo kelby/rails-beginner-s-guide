@@ -509,7 +509,7 @@
    * [Action View](testing/testcase_actionview.md)
    * [Active Job](testing/activejob_testhelper.md)
    * [Generators](testing/testcase_generators.md)
-   * rails-dom-testing
+   * [rails-dom-testing](testing/rails-dom-testing.md)
 * [MiniTest](testing/test_minitest.md)
    * [Spec DSL](testing/minitest_spec.md)
    * [Assertions](testing/minitest_assertions.md)
