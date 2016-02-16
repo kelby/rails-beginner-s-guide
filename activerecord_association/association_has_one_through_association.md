@@ -1,4 +1,4 @@
-#### ~~9) Has One Through Association~~
+#### ~~Has One Through Association~~
 
 ```ruby
 # 直接替换关联对象的话，如果创建、删除
