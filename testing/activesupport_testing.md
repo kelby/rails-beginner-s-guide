@@ -86,11 +86,6 @@ run_in_isolation
 ```ruby
 setup
 teardown
-
-# 文档没写，但还有：
-
-before_setup
-after_teardown
 ```
 
 使用举例：
@@ -105,6 +100,13 @@ class ExampleTest < ActiveSupport::TestCase
     # ...
   end
 end
+```
+
+```
+# 文档没写，但还有：
+
+before_setup
+after_teardown
 ```
 
 #### Time Helpers
