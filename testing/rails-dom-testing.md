@@ -10,6 +10,8 @@ assert_dom_equal '<h1>Lingua França</h1>', '<h1>Lingua França</h1>'
 assert_dom_not_equal '<h1>Portuguese</h1>', '<h1>Danish</h1>'
 ```
 
+Selector Assertions
+
 ```ruby
 # implicitly selects from the document_root_element
 css_select '.hello' # => Nokogiri::XML::NodeSet of elements with hello class
