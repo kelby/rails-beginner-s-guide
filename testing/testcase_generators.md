@@ -12,8 +12,8 @@ assert_no_file & assert_no_directory
 assert_migration
 assert_no_migration
 
-assert_field_default_value
 assert_field_type
+assert_field_default_value
 ```
 
 #### Behaviour
