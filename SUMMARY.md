@@ -154,7 +154,7 @@
        * [Subscription & Subscriptions](action_cable/subscriptions_&_subscription.md)
        * [Connection](action_cable/coffee_connection.md)
        * [Connection Monitor](action_cable/coffee_connection_monitor.md)
-       * Coffee Subscriptions
+       * [Coffee Subscriptions](action_cable/coffee_subscriptions.md)
    * [一些重要的东西](action_cable/action_cable_importants.md)
    * [其它](action_cable/action_cable_others.md)
 * [Action View 渲染相关](actionview_renderer_and_rendering/README.md)
