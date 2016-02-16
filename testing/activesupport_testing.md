@@ -146,6 +146,12 @@ class SyncLogSubscriberTest < ActiveSupport::TestCase
 end
 ```
 
+#### File Fixtures
+
+```
+file_fixture
+```
+
 #### Constant Lookup
 
 ```ruby
