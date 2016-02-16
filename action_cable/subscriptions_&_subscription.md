@@ -22,13 +22,13 @@ unsubscribe
 
 创建 subscription 需要 channel.
 
-自己几乎什么也不能做，仅有的方法也是通过操作 @consumer 或 @subscriptions 达到目的。
-
 常用方法 `perform` 可以在 Coffee 里调用 Channel 里的 action.
 
 ```
 Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send -> WebSocket#send
 ```
+
+此外，我们还可在它的基础上自定义方法(和普通 JS 一样)，进行调用。
 
 #### Subscriptions
 
