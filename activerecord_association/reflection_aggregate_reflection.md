@@ -1,4 +1,4 @@
-#### ~~6) Aggregate Reflection~~
+#### ~~Aggregate Reflection~~
 
 继承于 Macro Reflection
 
