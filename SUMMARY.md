@@ -107,7 +107,7 @@
        * [Session](actiondispatch_middleware/middleware_session.md)
        * [Callbacks](actiondispatch_middleware/middleware_callbacks.md)
        * [Load Interlock](actiondispatch_middleware/loadinterlock.md)
-   * [Middleware intro](actiondispatch_middleware/middleware_intro.md)
+   * [Middleware](actiondispatch_middleware/middleware_intro.md)
        * [Rack - Ruby Web server 接口](actiondispatch_middleware/rack.md)
        * [查看项目用了哪些 Middleware](actiondispatch_middleware/view_how_middleware.md)
        * [定制 Middleware](actiondispatch_middleware/custom_middleware.md)
