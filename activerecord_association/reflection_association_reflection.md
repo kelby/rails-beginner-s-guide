@@ -1,4 +1,4 @@
-#### ~~5) Association Reflection~~
+#### ~~Association Reflection~~
 
 Association Reflection 继承于 Macro Reflection 又继承于 Abstract Reflection
 
