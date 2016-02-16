@@ -1,2 +1,2 @@
-# Coffee Subscriptions
+### Subscriptions
 
