@@ -34,7 +34,7 @@ Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send ->
 
 **真正干活**
 
-我们还可(和普通 JS 一样)在它的基础上自定义方法，进行调用。
+我们可以(和普通 JS 一样)在它的基础上自定义方法，进行调用。
 
 #### Subscriptions
 
