@@ -1,4 +1,4 @@
-#### PolymorphicReflection
+#### Polymorphic Reflection
 
 ```
 klass
