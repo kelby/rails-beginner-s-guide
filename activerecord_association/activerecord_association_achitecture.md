@@ -65,6 +65,7 @@ AutosaveAssociation
 # Reflection 文件
 AbstractReflection
     ThroughReflection
+        PolymorphicReflection
     MacroReflection
         AggregateReflection
         AssociationReflection
