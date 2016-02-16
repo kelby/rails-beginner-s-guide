@@ -64,7 +64,7 @@ user_agent=
 
 #### Test Response
 
-```
+```ruby
 from_response
 
 # response successful?
