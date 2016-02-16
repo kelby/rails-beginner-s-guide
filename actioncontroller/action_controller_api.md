@@ -29,11 +29,10 @@ MODULES = [
   # 回调
   AbstractController::Callbacks,
 
-  # 异常
+  # 异常处理
   Rescue,
 
-  # Add instrumentations hooks at the bottom, to ensure they instrument
-  # all the methods properly.
+  # 性能等监测
   Instrumentation,
 
   # Params wrapper should come before instrumentation so they are
