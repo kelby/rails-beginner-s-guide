@@ -26,5 +26,5 @@ events
 ```
 
 不过我们很少直接使用它。
-<br>
-需要发消息的话，可以让 Subscription 调用，然后通过 Consumer 中转，最后才由 Connection 进行发送。
+
+客户端需要发消息给服务端的话，可以让 Subscription 调用，然后通过 Consumer 中转，最后才由 Connection 进行发送。
