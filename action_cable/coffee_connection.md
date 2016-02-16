@@ -9,7 +9,7 @@ close
 reopen
 ```
 
-它所打开、链接的就是 WebSocket 连接。
+它所打开、连接的就是 WebSocket 连接。
 
 ```
 isOpen
