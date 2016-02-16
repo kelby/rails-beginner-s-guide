@@ -28,6 +28,7 @@ with_routing
 #### Test Process
 
 ```
+# Rails 5 已废除 assigns
 assigns
 
 cookies
@@ -37,8 +38,6 @@ session
 fixture_file_upload
 redirect_to_url
 ```
-
-> Rails 5 已废除 assigns
 
 #### Test Request
 
