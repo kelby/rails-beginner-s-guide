@@ -149,7 +149,7 @@
        * [Remote Connections](action_cable/article_cable_misc.md)
        * [Action Cable Helper](action_cable/action_cable_helper.md)
        * [Subscription Adapter](action_cable/subscription_adapter.md)
-   * [Coffee 脚本](action_cable/action_cable_coffee.md)
+   * [客户端 - Coffee 脚本](action_cable/action_cable_coffee.md)
        * [Consumer](action_cable/coffee_consumer.md)
        * [Subscription](action_cable/subscriptions_&_subscription.md)
        * [Connection](action_cable/coffee_connection.md)
