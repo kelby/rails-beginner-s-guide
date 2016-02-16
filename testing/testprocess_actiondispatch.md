@@ -27,7 +27,7 @@ with_routing
 
 #### Test Process
 
-```
+```ruby
 # Rails 5 已废除 assigns
 assigns
 
