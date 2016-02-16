@@ -1,4 +1,4 @@
-### Subscription & Subscriptions
+### Subscription
 
 #### Subscription
 
