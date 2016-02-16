@@ -19,6 +19,7 @@ ActionMailer::Base 继承于类 AbstractController::Base,
 | AbstractController::Callbacks | 支持回调 |
 | ActionView::Layouts | 视图布局等 |
 
+
 `C < B < A` 
 
 有时候 B 要 extend A，并不是为了 B 自己使用，而是为了方便 C. ActionMailer::Base 部分代码充当的角色和 B 一样，它自己却没有使用，而是为了方便我们自定义的 Mailer 类调用。
