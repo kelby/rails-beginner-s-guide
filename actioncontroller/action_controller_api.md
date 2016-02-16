@@ -26,17 +26,12 @@ MODULES = [
   ForceSSL,
   DataStreaming,
 
-  # 回调
   AbstractController::Callbacks,
 
-  # 异常处理
   Rescue,
 
-  # 性能等监测
   Instrumentation,
 
-  # Params wrapper should come before instrumentation so they are
-  # properly showed in logs
   ParamsWrapper
 ]
 
