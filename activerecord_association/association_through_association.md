@@ -1,4 +1,4 @@
-#### ~~11) Through Association~~
+#### ~~Through Association~~
 
 ```ruby
 delegate :source_reflection, :through_reflection, :to => :reflection
