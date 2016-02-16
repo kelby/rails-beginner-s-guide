@@ -1,6 +1,6 @@
 ## rails-dom-testing
 
-从 ActionView 分离出来的 gem，主要负责 DomAssertions 和 SelectorAssertions.
+从 ActionView 分离出来的 gem，主要由以下两部分构成：
 
 Dom Assertions
 
