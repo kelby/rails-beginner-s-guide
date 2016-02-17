@@ -1,6 +1,6 @@
 ## Channel
 
-常在，可直接调用。类似 Controller ... 外部请求过来，MVC 里最先由它处理。
+可直接调用。类似 Controller ... 外部请求过来，MVC 里最先由它处理。
 
 ### Base
 
