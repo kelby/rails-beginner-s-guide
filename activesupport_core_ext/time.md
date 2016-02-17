@@ -30,8 +30,7 @@ beginning_of_day
 at_midnight
 midnight
 
-at_beginning_of_hour
-beginning_of_hour
+at_beginning_of_hour & beginning_of_hour
 
 at_beginning_of_minute & beginning_of_minute
 
