@@ -16,6 +16,7 @@ module ApplicationCable
   end
 end
 
+# 查询、断开连接等
 ActionCable.server.remote_connections.where(current_user: User.find(1)).disconnect
 ```
 
