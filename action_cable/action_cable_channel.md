@@ -16,7 +16,7 @@ include Broadcasting
 
 **内部处理**
 
-它结构比 Controller 简单，相当于 Action Controller 里的 Metal.
+Channel 整体结构比 Controller 简单，相当于 Action Controller 里的 Metal.
 
 它有类方法 `action_methods`、实例方法 `perform_action` 和私有方法 `dispatch_action`
 
