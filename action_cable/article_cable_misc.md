@@ -1,6 +1,6 @@
 ## Remote Connections
 
-针对使用了 `identified_by` 的连接，对其进行批量处理，例如：查询、断开连接等。
+针对使用了 `identified_by` 的连接，对其进行批量处理。
 
 第一部分：
 
