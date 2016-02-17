@@ -212,8 +212,11 @@ uncomment_lines 'config/initializers/session_store.rb', /active_record/
 给我们的"命令行"添加参数，并有 attr_accessor<br>
 (注意：这里的参数区别于类或方法里的参数、可选参数)<br>
 
-```
-如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
+如命令：
+
+```sh
+# 这里的 [method method] 这部分
+rails g mailer NAME [method method] [options]
 ```
 
 `ClassName#public_instance_method`<br>
