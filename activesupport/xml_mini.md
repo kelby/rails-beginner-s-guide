@@ -32,7 +32,7 @@ delegate :parse, :to => :backend
 
 可选择处理模块：
 
-```
+```sh
 XmlMini_JDOM
 XmlMini_LibXML
 XmlMini_LibXMLSAX
