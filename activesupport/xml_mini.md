@@ -30,7 +30,7 @@ delegate :parse, :to => :backend
 
 `parse` 是主要对外接口。前台保持它不变即可，后台可随意更改解析器。
 
-可选择处理模块：
+可选择的库：
 
 ```sh
 XmlMini_JDOM
