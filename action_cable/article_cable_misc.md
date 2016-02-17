@@ -23,11 +23,11 @@ ActionCable.server.remote_connections.where(current_user: User.find(1)).disconne
 第二部分：
 
 ```
-disconnect()
+disconnect
 ```
 
 ```
-identifiers()
+identifiers
 ```
 
 它们只是调用，实际工作由 `server` 完成。
