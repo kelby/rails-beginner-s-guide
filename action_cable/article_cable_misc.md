@@ -1,6 +1,6 @@
 ## Remote Connections
 
-使用 `identified_by` 标记后的处理。
+针对使用 `identified_by` 的连接，对其进行处理。
 
 第一部分：
 
