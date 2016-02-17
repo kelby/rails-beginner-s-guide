@@ -36,3 +36,6 @@ delegate :parse, :to => :backend
 gem 'libxml-ruby', '=0.9.7'
 XmlMini.backend = 'LibXML'
 ```
+
+另，Rails 里的数组和哈希的 `to_xml` 也用到了它进行转换处理。
+
