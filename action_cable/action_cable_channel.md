@@ -4,7 +4,7 @@
 
 ### Base
 
-身份地位相当于 Action Controller 里的 Metal.
+身份地位相当于 Action Controller 里的 Metal + Abstract Controller 里的 Base.
 
 另外，它是 Channel 的头：
 
