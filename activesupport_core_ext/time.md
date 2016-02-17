@@ -16,11 +16,6 @@ compare_without_coercion
 
 ===,
 
-_dump
-_dump_without_zone
-
-_load
-
 acts_like_time?
 
 advance, ago, all_day,
