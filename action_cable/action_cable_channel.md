@@ -22,6 +22,8 @@ Channel 整体结构比 Controller 简单，这里的 Base 就相当于 Action C
 
 它有类方法 `action_methods`、实例方法 `perform_action` 和私有方法 `dispatch_action` 等。Action Dispatch 转发请求过来后，主要由它进行处理，转给具体的 Channel#action.
 
+区别也是有的，这边的请求不需要 Middleware 进行处理，所以它没有调用到。
+
 **对外提供接口**
 
 类方法：
