@@ -53,7 +53,7 @@ t.is_a?(ActiveSupport::TimeWithZone) # => true
 
 acts_like_time?, advance, ago, as_json
 
-between?
+between?, blank?
 
 comparable_time
 
