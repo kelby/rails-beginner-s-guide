@@ -211,7 +211,10 @@ uncomment_lines 'config/initializers/session_store.rb', /active_record/
 `argument`<br>
 给我们的"命令行"添加参数，并有 attr_accessor<br>
 (注意：这里的参数区别于类或方法里的参数、可选参数)<br>
+
+```
 如命令 rails g mailer NAME [method method] [options] 这里的 [method method] 这部分。
+```
 
 `ClassName#public_instance_method`<br>
 一般的，类名会被当做 namespace，而实例方法会被当做 task，也就是：
