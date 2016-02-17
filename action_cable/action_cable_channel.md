@@ -6,7 +6,7 @@
 
 身份地位相当于 Action Controller 里的 Metal.
 
-它是 Channel 的头：
+另外，它是 Channel 的头：
 
 ```ruby
 include Callbacks
