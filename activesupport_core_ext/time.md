@@ -1,6 +1,10 @@
 ### Time
 
 ```
+acts_like_time?
+```
+
+```
 -
 minus_with_coercion
 minus_without_coercion
