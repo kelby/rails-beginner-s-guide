@@ -59,7 +59,7 @@ comparable_time
 
 dst?
 
-encode_with, eql?
+eql?
 
 formatted_offset, freeze, future?
 
