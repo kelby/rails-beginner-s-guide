@@ -75,6 +75,8 @@ localtime
 
 marshal_dump, marshal_load, method_missing
 
+name
+
 past?, period
 
 respond_to?, respond_to_missing?, rfc2822, rfc822
