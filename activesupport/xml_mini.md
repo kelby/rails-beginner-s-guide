@@ -38,6 +38,7 @@ XmlMini_LibXML
 XmlMini_LibXMLSAX
 XmlMini_Nokogiri
 XmlMini_NokogiriSAX
+# 这是默认的
 XmlMini_REXML
 ```
 
