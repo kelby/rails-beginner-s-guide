@@ -18,7 +18,7 @@ include Broadcasting
 
 Channel 整体结构比 Controller 简单，这里的 Base 就相当于 Action Controller 里的 Metal.
 
-它有类方法 `action_methods`、实例方法 `perform_action` 和私有方法 `dispatch_action`
+它有类方法 `action_methods`、实例方法 `perform_action` 和私有方法 `dispatch_action` 等。Action Dispatch 转发请求过来后，主要由它进行处理，然后转入到具体的 Channel#action.
 
 **对外提供接口**
 
