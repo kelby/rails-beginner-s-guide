@@ -42,7 +42,6 @@ midday
 
 at_middle_of_day
 middle_of_day
-
 at_noon
 noon
 
