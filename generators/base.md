@@ -15,6 +15,8 @@ remove_hook_for
 hook_for
 
 source_root
+
+class_option
 ```
 
 `source_root` generator 示例模板文件(templates)所在位置。
