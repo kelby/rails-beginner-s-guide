@@ -30,6 +30,17 @@ delegate :parse, :to => :backend
 
 `parse` 是主要对外接口。前台保持它不变即可，后台可随意更改解析器。
 
+可选择处理模块：
+
+```
+XmlMini_JDOM
+XmlMini_LibXML
+XmlMini_LibXMLSAX
+XmlMini_Nokogiri
+XmlMini_NokogiriSAX
+XmlMini_REXML
+```
+
 使用示例：
 
 ```ruby
