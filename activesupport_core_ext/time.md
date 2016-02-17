@@ -33,11 +33,9 @@ midnight
 at_beginning_of_hour
 beginning_of_hour
 
-at_beginning_of_minute
-beginning_of_minute
+at_beginning_of_minute & beginning_of_minute
 
-at_end_of_day
-end_of_day
+at_end_of_day & end_of_day
 
 at_end_of_hour
 end_of_hour
