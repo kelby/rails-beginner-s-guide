@@ -60,3 +60,6 @@ unknown
 ```
 log(type, message)
 ```
+
+### ~~Client Socket~~
+
