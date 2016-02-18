@@ -4,7 +4,7 @@
 <br>
 同时，它还**提供一些对外的接口**，供我们直接使用。
 <br>
-与底层打交道，或隐藏魔法。
+此外，它还起到**承上启下**的作用。
 
 它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
 
