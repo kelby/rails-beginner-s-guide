@@ -4,7 +4,7 @@
 <br>
 同时，它还**提供一些对外的接口**，供我们直接使用。
 <br>
-此外，它还起到**承上启下**的作用。
+此外，它还起到**承上启下**的作用。例如与底层其它模块交互，负责将请求转向具体的 Mailer#action.
 
 它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
 
