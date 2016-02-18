@@ -10,6 +10,7 @@ image_tag
 image_alt
 
 favicon_link_tag
+
 auto_discovery_link_tag
 
 audio_tag
