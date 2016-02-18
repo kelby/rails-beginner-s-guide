@@ -1,6 +1,6 @@
 ## Base
 
-它是 Action Mailer 里其它模块的**集合中心**（其它模块不直接对外提供接口，而是通过 Base 完成）。同时，它还提供一些对外的接口，供我们直接使用。
+它是 Action Mailer 里其它模块的**集合中心**（其它模块不直接对外提供接口，而是通过 Base 完成）。同时，它还**提供一些对外的接口**，供我们直接使用。
 
 
 它是我们自定义 Mailer 的父类，是连接我们应用与 Action Mailer 的纽带，是 Action Mailer 连接 Abstract Controller 的纽带。
