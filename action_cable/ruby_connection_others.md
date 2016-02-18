@@ -12,7 +12,7 @@ transmit(data)
 
 ### ~~Internal Channel~~
 
-表示，带有同一 identifier 的 connection.
+表示带有同一 identifier 的 connection.
 
 ### ~~Message Buffer~~
 
