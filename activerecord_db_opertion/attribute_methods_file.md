@@ -25,7 +25,10 @@ attribute
 
 # 在 Write 模块里定义
 attribute=
+```
 
+```ruby
 # 在 Query 模块里定义
 attribute?
 ```
+
