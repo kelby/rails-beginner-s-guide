@@ -38,7 +38,9 @@ attribute?
 # 如果要覆盖的话，通常会修改以下方法
 user.name
 user.name=
+```
 
+```ruby
 # 以下方法不会覆盖，仍然得到原来的值
 user[:name]
 user[:name]=
