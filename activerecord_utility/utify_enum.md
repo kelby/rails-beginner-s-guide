@@ -93,7 +93,7 @@ post.status_before_type_cast
 
 每个 Model 下面都会有一个叫 defined_enums 的变量用来记录 enum 相关信息。
 
-读取某属性的值，通常有两种方式：
+读取、设置某属性的值，通常有两种方式：
 
 ```ruby
 user.name
