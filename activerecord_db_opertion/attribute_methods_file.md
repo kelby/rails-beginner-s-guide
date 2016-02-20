@@ -39,7 +39,7 @@ attribute?
 user.name
 user.name=
 
-# 而，以下方法不会覆盖，仍然得到原来的值
+# 以下方法不会覆盖，仍然得到原来的值
 user[:name]
 user[:name]=
 ```
