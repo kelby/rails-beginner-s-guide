@@ -97,10 +97,12 @@ post.status_before_type_cast
 
 ```ruby
 user.name
+user.name=
 
 # 或
 
 user[:name]
+user[:name]=
 ```
 
 一般情况下，它们的值是一样的。但这里的 Enum 打开了 `user.name` 方法，变换了返回结果，这会导致两者的值不一样。
