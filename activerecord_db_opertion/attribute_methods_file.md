@@ -32,3 +32,15 @@ attribute=
 attribute?
 ```
 
+一般情况下，如果要覆盖某个属性的读、写方法的话，覆盖的通常是 Read/Write 下的方法，也就是：
+
+```ruby
+# 如果要覆盖的话，通常会修改以下方法
+user.name
+user.name=
+
+# 而，以下方法不会覆盖，仍然得到原来的值
+user[:name]
+user[:name]=
+```
+
