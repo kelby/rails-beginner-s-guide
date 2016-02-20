@@ -46,4 +46,4 @@ user[:name]
 user[:name]=
 ```
 
-像 `Enum#enum` 和 `CarrierWave#mount_uploader` 就是这样。
+像 `Enum.enum` 和 `CarrierWave.mount_uploader` 就是这样。
