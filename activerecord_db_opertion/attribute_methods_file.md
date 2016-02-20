@@ -34,7 +34,7 @@ attribute=
 attribute?
 ```
 
-#### 覆盖读写
+#### 覆盖读写方法
 
 一般情况下，如果要覆盖某个属性的读、写方法的话，覆盖的通常是 Read/Write 下的方法，也就是：
 
@@ -51,3 +51,8 @@ user[:name]=
 ```
 
 像 Enum 提供的 `enum` 和 CarrierWave 提供的 `mount_uploader` 都是这样做的。
+
+#### Active Model 下的 Attribute Methods
+
+它与我们平常使用到的读写方法，没有直接联系。
+
