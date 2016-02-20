@@ -21,5 +21,6 @@ delegate :pluck, :ids, to: :all
 
 ```
 find_by_sql
+
 count_by_sql
 ```
