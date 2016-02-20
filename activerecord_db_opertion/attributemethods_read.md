@@ -25,8 +25,8 @@ self.name
 `self.attributes` 里的 `image` 信息一致。
 
 那为什么不用 `attributes[:name]` 而用 `read_attribute[:name]` ?
-因为性能，前者要把所有的属性都找出来，然后取 name 属性；
-而后者可以直接获取 name 属性。
+因为性能，前者要把所有的属性都找出来，然后取 `name` 属性；
+而后者可以直接获取 `name` 属性。
 
 ## Write
 
