@@ -46,4 +46,4 @@ user[:name]
 user[:name]=
 ```
 
-以上为习惯做法，通常情况下它们返回的值是一样的。像 `Enum#enum` 和 `CarrierWave#mount_uploader` 就是这样。
+像 `Enum#enum` 和 `CarrierWave#mount_uploader` 就是这样。
