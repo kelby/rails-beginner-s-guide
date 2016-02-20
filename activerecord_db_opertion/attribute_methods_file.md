@@ -54,7 +54,7 @@ user[:name]=
 
 像 Enum 提供的 `enum` 和 CarrierWave 提供的 `mount_uploader` 都是这样做的。
 
-**Active Model 下的 Attribute Methods**
+**区别于 Active Model 下的 Attribute Methods**
 
 它与我们平常使用到的读写方法，没有直接联系。
 
