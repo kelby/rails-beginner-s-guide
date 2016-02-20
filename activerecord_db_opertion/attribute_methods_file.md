@@ -23,7 +23,7 @@ attribute_present?
 has_attribute?
 ```
 
-另外对某个属性 attribute，会有以下方法：
+另外对某个属性 attribute，其它相关模块还会有以下方法：
 
 ```ruby
 # 在 Read 模块里定义
