@@ -16,9 +16,7 @@ self[:name]
 self.name
 ```
 
-数据从 `attributes` 里获取
-
-不同于直接 self.name 它获取的是真实数据。
+数据从 `attributes` 里获取，不同于直接 self.name 它获取的是真实数据。
 
 如果字段用于存储图片信息，并且我们有默认图片，则没有图片时：
 self.image 返回的是默认图片信息，
