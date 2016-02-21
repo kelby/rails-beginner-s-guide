@@ -5,7 +5,7 @@
 默认 Rails 提供两个 helper 方法用于测试：
 
 |方法|解释|
-|--|--|
+|----|----|
 |assert_emails | 断言已经发送的邮件数|
 |assert_no_emails | 断言没有邮件发送出去(可用 assert_emails 0 代替)|
 | assert_enqueued_emails | 断言邮件已进队列 |
