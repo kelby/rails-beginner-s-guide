@@ -2,10 +2,10 @@
 
 **导出、引入辅助方法。**
 
-| 方法 | 解释 |
-| -- | -- |
-| helper | 把 Helper 方法变成 Controller 方法，针对的是整个 module |
-| helper_method | 把 Controller 方法变成 Helper 方法，针对的是单个 method |
+ 方法 | 解释 
+ -- | -- 
+ helper | 把 Helper 方法变成 Controller 方法，针对的是整个 module 
+ helper_method | 把 Controller 方法变成 Helper 方法，针对的是单个 method 
 
 #### helper(*args, &block)
 
