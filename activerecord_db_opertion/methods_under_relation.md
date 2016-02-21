@@ -1,7 +1,7 @@
 ## Relation 文件下的方法
 
 | 方法 | 解释 |
-| -- | -- |
+| --- | --- |
 | build & new | 新建 record 对象 |
 | create | 新建并保存 record 对象 |
 | create! | 新建并保存 record 对象，如果有异常则报错 |
