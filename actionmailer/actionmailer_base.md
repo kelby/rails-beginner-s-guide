@@ -38,15 +38,15 @@ AbstractController::Base
 `mail(headers = {}, &block)` 表示邮件对象。<br>
 可接收一个代码块做为参数，header(头部)可接受：
 
-| 参数 | 含义 |
-| :-- | -- |
-| :subject | 主题 |
-| :from | 发件人 |
-| :to | 收件人 |
-| :cc | 抄送 |
-| :bcc | 密送 |
-| :reply_to | 回邮地址 |
-| :date |时间|
+ 参数 | 含义 
+ :-- | -- 
+ :subject | 主题 
+ :from | 发件人 
+ :to | 收件人 
+ :cc | 抄送 
+ :bcc | 密送 
+ :reply_to | 回邮地址 
+ :date |时间
 
 > Note: 想了解更多 header 信息，可以点击 [Email#Header_fields](http://en.wikipedia.org/wiki/Email#Header_fields)
 
