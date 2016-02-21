@@ -41,8 +41,7 @@ end
 
 Rails 的 where 查询也有类似 Mass Assignment 保护。
 
-------
 
-其实，它主要针对的是：在 Controller 和 View 里通过 `params` 给 record 对象属性赋值(AttributeAssignment)
+它主要针对的是：在 Controller 和 View 里通过 `params` 给 record 对象属性赋值(AttributeAssignment)
 
 注意，这里做了判断，并不是强制执行，所以和 ActionController 算不上强耦合。
