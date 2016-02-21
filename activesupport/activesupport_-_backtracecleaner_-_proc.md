@@ -21,7 +21,7 @@ bc.clean(exception.backtrace) #
 除以上例子使用到的方法外，还有：
 
 | 方法 | 参数 |
-|--|--|
+|----|----|
 | filter & clean | 执行过滤。参数是要处理的信息 |
 | remove_filters! | 移除之前的'替换'规则 |
 | remove_silencers! | 移除之前的'删除'规则 | 
