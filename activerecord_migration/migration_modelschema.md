@@ -5,13 +5,15 @@
 **常用类方法：**
 
 ```
+reset_column_information
+```
+
+```
 column_names
 column_defaults
 
 inheritance_column
 inheritance_column=
-
-reset_column_information
 
 table_name
 table_name=
