@@ -8,9 +8,9 @@ endpoint 文件下的内容：
 
 inspector 文件下的内容：
 
-| 类 | 解释 |
-| -- | -- |
-| Route Wrapper        | 被 Routes Inspector 调用。|
-| Routes Inspector     | 被 middleware Debug Exceptions 和 rake routes 调用。|
-| Html Table Formatter | 格式化 HTML 里的路由信息，给人阅读的。|
-| Console Formatter   | 格式化控制台里的路由信息，给人阅读的。|
+ 类 | 解释 
+ -- | -- 
+ Route Wrapper        | 被 Routes Inspector 调用。
+ Routes Inspector     | 被 middleware Debug Exceptions 和 rake routes 调用。
+ Html Table Formatter | 格式化 HTML 里的路由信息，给人阅读的。
+ Console Formatter   | 格式化控制台里的路由信息，给人阅读的。
