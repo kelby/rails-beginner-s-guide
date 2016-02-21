@@ -3,14 +3,14 @@
 命名约定：
 
 | 属性 | 解释 |
-| -- | -- |
+| --- | --- |
 | Foreign keys | 外键。前者 belongs_to 后者，根据后者所对应的表名，为前者生成"后者_id"属性。 |
 | Primary keys | 主键。默认使用"id"属性，迁移时自动完成。 |
 
 除上述属性外，约定还有:
 
 | 属性 | 解释 |
-| -- | -- |
+| --- | --- |
 | created_at | 创建 record 的时间戳 |
 | updated_at | 最后修改 record 的时间戳 |
 | created_on | 创建 record 的时间 |
