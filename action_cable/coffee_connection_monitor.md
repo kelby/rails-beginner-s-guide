@@ -4,7 +4,7 @@
 
 常用方法如：
 
-```
+```ruby
 # 配置
 
 @pollInterval:
