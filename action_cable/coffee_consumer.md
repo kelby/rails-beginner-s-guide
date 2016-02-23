@@ -1,6 +1,6 @@
 ### Consumer
 
-**创建各个相关的实例对象**
+**创建各个相关的实例对象。**
 
 由 Consumer 根据 action-cable-url 得到 url (使用协议 ws)，创建 WebSocket 实例。
 
