@@ -1,5 +1,7 @@
 ### Consumer
 
+创建各个相关的实例对象，并间接具有发送 @webSocket 消息的能力。
+
 **创建各个相关的实例对象。**
 
 由 Consumer 根据 action-cable-url 得到 url (使用协议 ws)，创建 WebSocket 实例。
