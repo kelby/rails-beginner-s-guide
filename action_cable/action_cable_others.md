@@ -36,3 +36,14 @@ rails generate channel NAME [method method] [options]
 ### Engine
 
 实现方式是：Engine
+
+### 其它
+
+websockets + threads
+
+own server process
+
+not need to be a multi-threaded application server
+
+Rack socket
+
