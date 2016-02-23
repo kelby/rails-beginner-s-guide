@@ -12,7 +12,7 @@ constructor
 
 一并创建 Subscriptions、Connection 及 Connection Monitor 实例。
 
-**并间接具有可以发送 @webSocket 消息的能力。**
+**并间接具有发送 @webSocket 消息的能力。**
 
 ```
 send
