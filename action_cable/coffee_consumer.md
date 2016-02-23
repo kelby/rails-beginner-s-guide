@@ -16,5 +16,5 @@ constructor
 send
 ```
 
-想让 @webSocket 发送消息，可以通过 Consumer 实例完成(尽管它是封装的 Connection 对象)。
+想通过 `@webSocket` 发送消息，可以通过 Consumer 实例完成(尽管它是封装的 Connection 对象)。
 
