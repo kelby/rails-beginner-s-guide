@@ -5,6 +5,7 @@
 常用方法如：
 
 ```
+# 配置
 
 @pollInterval:
   min: 3
