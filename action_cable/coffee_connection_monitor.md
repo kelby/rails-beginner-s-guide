@@ -2,17 +2,18 @@
 
 轮询机制，通过浏览器自带特性就能实现，非常重要的“约定”。
 
-常用方法如：
+配置：
 
 ```ruby
-# 配置
-
 @pollInterval:
   min: 3
   max: 30
 
 @staleThreshold: 6
 ```
+
+常用方法如：
+
 
 ```
 connected
