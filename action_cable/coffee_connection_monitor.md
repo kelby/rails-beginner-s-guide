@@ -5,6 +5,15 @@
 常用方法如：
 
 ```
+
+@pollInterval:
+  min: 3
+  max: 30
+
+@staleThreshold: 6
+```
+
+```
 connected
 disconnected
 
