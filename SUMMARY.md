@@ -155,7 +155,7 @@
        * [Connection](action_cable/coffee_connection.md)
        * [Subscriptions](action_cable/coffee_subscriptions.md)
        * [Connection Monitor](action_cable/coffee_connection_monitor.md)
-       * Action Cable 文件下的内容
+       * [Action Cable 文件下的内容](action_cable/action_cable_wen_jian_xia_de_nei_rong.md)
    * [一些重要的东西](action_cable/action_cable_importants.md)
    * [其它](action_cable/action_cable_others.md)
 * [Action View 渲染相关](actionview_renderer_and_rendering/README.md)
