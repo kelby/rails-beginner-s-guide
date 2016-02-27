@@ -14,7 +14,9 @@ create
 
 ```
 constructor
+```
 
+```
 add
 remove
 reject
