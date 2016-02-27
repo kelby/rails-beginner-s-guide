@@ -30,7 +30,7 @@ unsubscribe
 Subscription#perform -> Subscription#send -> Consumer#send -> Connection#send -> WebSocket#send
 ```
 
-**真正干活**
+**回调响应，及真正干活**
 
 我们可以(和普通 JS 一样)在它的基础上自定义方法，进行调用。
 
