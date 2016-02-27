@@ -7,7 +7,7 @@
 常用的：
 
 ```ruby
-# 封装 send
+# 封装下面的 send
 perform
 ```
 
