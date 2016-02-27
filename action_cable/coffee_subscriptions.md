@@ -1,6 +1,6 @@
 ### Subscriptions
 
-Subscription 的集结地，有专门的 `@subscriptions` 用来保存、 subscription.
+Subscription 的集结地，有专门的 `@subscriptions` 用来保存、管理 subscription.
 
 常用的：
 
