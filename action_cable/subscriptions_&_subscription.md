@@ -2,7 +2,7 @@
 
 传递消息，以及真正干活的好手。
 
-**传递消息到 Channel#actino**
+**传递消息到 Channel#action**
 
 常用的：
 
