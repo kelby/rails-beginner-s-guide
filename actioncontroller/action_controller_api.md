@@ -47,3 +47,11 @@ end
 ### 配置 api_only
 
 
+路由资源默认生成几个 action
+
+是否加载 View 相关的 dependencies rake
+
+是否采用几个 middleware
+
+generator 少生成几个目录
+
