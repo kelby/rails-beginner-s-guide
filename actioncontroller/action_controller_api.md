@@ -43,3 +43,7 @@ MODULES.each do |mod|
   include mod
 end
 ```
+
+### 配置 api_only
+
+
