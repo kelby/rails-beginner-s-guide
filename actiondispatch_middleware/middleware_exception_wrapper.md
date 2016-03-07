@@ -16,7 +16,9 @@ ActionDispatch::ExceptionWrapper.rescue_responses
   "ActiveRecord::StaleObjectError"=>:conflict,
   "ActiveRecord::RecordInvalid"=>:unprocessable_entity,
   "ActiveRecord::RecordNotSaved"=>:unprocessable_entity}
-  
+```
+
+```ruby
 ActionDispatch::ExceptionWrapper.rescue_templates
 => {"ActionView::MissingTemplate"=>"missing_template",
   "ActionController::RoutingError"=>"routing_error",
