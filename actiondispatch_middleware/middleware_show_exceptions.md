@@ -11,7 +11,7 @@
 wrapper = ExceptionWrapper.new(env, exception)
 ```
 
-```
+```ruby
 # 对外
 config.exceptions_app || ActionDispatch::PublicExceptions.new(Rails.public_path)
 response = @exceptions_app.call(env)
