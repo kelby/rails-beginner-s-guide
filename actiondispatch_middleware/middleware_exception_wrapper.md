@@ -20,6 +20,7 @@ ActionDispatch::ExceptionWrapper.rescue_responses
 
 ```ruby
 ActionDispatch::ExceptionWrapper.rescue_templates
+
 => {"ActionView::MissingTemplate"=>"missing_template",
   "ActionController::RoutingError"=>"routing_error",
   "AbstractController::ActionNotFound"=>"unknown_action",
