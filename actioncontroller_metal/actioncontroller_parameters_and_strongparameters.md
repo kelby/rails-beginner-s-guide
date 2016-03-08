@@ -62,6 +62,12 @@ Person.first.update!(permitted)
 # => #<Person id: 1, name: "Francesco", age: 22, role: "user">
 ```
 
+可以直接使用 ``
+
+```ruby
+@user.update_attributes(params[:user].permit!)
+``
+
 配置默认的 permitted parameters
 
 ```ruby
