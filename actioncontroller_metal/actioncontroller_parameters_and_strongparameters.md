@@ -22,7 +22,9 @@ permitted?
 permitted=
 
 []
+```
 
+```
 delete, dup
 
 each & each_pair
