@@ -58,7 +58,9 @@ end
 
 其它方法：
 
-```
+```ruby
+attr_reader :server, :env, :subscriptions, :logger, :worker_pool
+delegate :event_loop, :pubsub, to: :server
 ```
 
 另外，它提供的一些 protected 方法也很实用：
