@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def deny_access
-      ...
+      # ...
     end
 
     def show_errors(exception)
