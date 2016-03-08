@@ -16,6 +16,18 @@ ActiveRecord::Schema.define(version: 20380119000001) do
 end
 ```
 
+再举例：
+
+```ruby
+require 'active_record'
+ActiveRecord::Base.establish_connection( adapter: 'sqlite3', database: ":memory:" )
+ActiveRecord::Schema.define(version: 1) { create_table(:articles) { |t| t.string :title } }
+
+class Article < ActiveRecord::Base; end
+
+Article.create title: 'Quick brown fox'
+```
+
 其它方法：
 
 ```
