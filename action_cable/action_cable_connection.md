@@ -61,9 +61,6 @@ end
 ```
 request
 cookies
-
-attr_reader :websocket
-attr_reader :message_buffer
 ```
 
 ### Identification
