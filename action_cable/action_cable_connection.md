@@ -56,7 +56,7 @@ end
 <br>
 `appear` 和 `away` 可以直接调用。
 
-另外，它提供的一些和 Http 请求相关的方法也很实用：
+另外，它提供的一些 protected 方法也很实用：
 
 ```
 request
