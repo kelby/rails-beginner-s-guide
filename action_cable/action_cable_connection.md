@@ -60,10 +60,11 @@ end
 
 ```
 request
+
 cookies
 ```
 
-这里的 `request` 是 ActionDispatch::Request 的实例对象，所以通过它也可以获取一些和请求有关的数据。
+这里的 `request` 是 ActionDispatch::Request 的实例对象，所以通过它也可以获取到一些和请求有关的数据。
 
 ### Identification
 
