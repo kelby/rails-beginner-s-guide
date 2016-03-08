@@ -63,6 +63,12 @@ attr_reader :server, :env, :subscriptions, :logger, :worker_pool
 delegate :event_loop, :pubsub, to: :server
 ```
 
+例如，使用 `logger`
+
+```ruby
+logger.add_tags current_user.name
+```
+
 另外，它提供的一些 protected 方法也很实用：
 
 ```
