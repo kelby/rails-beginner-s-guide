@@ -45,6 +45,8 @@ valid_message?
 
 和 Message Verifier 本质上没有区别。但使用上会更严格一点，会多一些步骤(相应地，也更安全了一点)，并且它也有调用到 Message Verifier.
 
+还有一个优点，Message Encryptor 生成的字符串会比较短，比 Message Verifier 生成的更适合直接放到 url 里。
+
 使用举例:
 
 ```ruby
