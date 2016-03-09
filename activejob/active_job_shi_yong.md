@@ -154,6 +154,7 @@ MyJob.new(*args).perform_now
 MyJob.perform_now("mike")
 ```
 
+使用 `perform_now` 效果和没有使用异步一样，代码会立即执行
 ### Callbacks 回调
 
 比某些延迟 gem 多做了一点点，除了队列&执行本身外，还可以有回调：
