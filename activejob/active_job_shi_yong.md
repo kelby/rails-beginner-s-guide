@@ -154,7 +154,7 @@ MyJob.new(*args).perform_now
 MyJob.perform_now("mike")
 ```
 
-使用 `perform_now` 效果和没有使用异步一样，代码会立即执行，在这开发环境会很实用。
+使用 `perform_now` 代码会立即执行，在这开发环境会很实用。
 
 ### Callbacks 回调
 
