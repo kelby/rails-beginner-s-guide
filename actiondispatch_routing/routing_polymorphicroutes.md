@@ -39,7 +39,7 @@ polymorphic_url([user, :blog, post])  # => "http://example.com/users/1/blog/post
 polymorphic_url(Comment)              # => "http://example.com/comments"
 ```
 
-> Note：以数组的形式，传递参数也可以。
+> Note：比较常用的方式是以数组的形式传递参数。
 
 当然，多态关联也可用：
 
