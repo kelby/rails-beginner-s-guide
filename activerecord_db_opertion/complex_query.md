@@ -118,12 +118,20 @@ Employee.joins(:company => :addresses).
 
 #### 关联对象的数量
 
-一对一原理上是不会发生的，但实际上，如果没有删除关系对象的话，也会有：
+**一对一**
+
+直接上是不会发生的，但实际上，如果没有删除关系对象的话，也会有：
 
 group + having
 
 ```ruby
-Order.joins( :request_refunds ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
+Order.joins( :request_refund ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
 ```
 
+**一对多**
 
+group + having
+
+```ruby
+Order.joins( :request_refund ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
+```
