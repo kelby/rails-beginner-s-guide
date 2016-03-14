@@ -133,5 +133,5 @@ Order.joins( :request_refund ).group( 'orders.id' ).having( 'count( order_id ) >
 group + having
 
 ```ruby
-Order.joins( :request_refund ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
+Order.joins( :request_refunds ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
 ```
