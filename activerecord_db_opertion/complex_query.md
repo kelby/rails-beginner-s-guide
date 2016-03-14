@@ -142,7 +142,7 @@ counter_cache
 belongs_to :project, counter_cache: true
 ```
 
-当使用了 `counter_cache` 时可以先运行 `reset_counters` 确保数据准确，然后运用：
+当使用了 `counter_cache` 时可以先运行 `reset_counters` 确保数据准确，然后运用计数器：
 
 ```ruby
 Project.where( 'vacancies_count > ?', 1 )
