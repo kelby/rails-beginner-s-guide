@@ -1,6 +1,6 @@
 # Action Dispatch Middleware
 
-**middleware 在路由转发之后，Controller#action 接收之前，对环境和应用进行处理。**
+**Middleware - 在路由转发之后，Controller#action 接收之前，对环境和应用进行处理。**
 
 路由转发(Dispatcher#dispatch) --> 中间地带(middleware) --> 控制器(Controller#action)。
 
