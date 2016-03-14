@@ -135,3 +135,11 @@ group + having
 ```ruby
 Order.joins( :request_refunds ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
 ```
+
+
+belongs_to :project, counter_cache:true
+then this will work, too:
+```
+Project.where( 'vacancies_count > ?', 1 )
+```
+
