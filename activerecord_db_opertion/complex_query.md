@@ -118,3 +118,8 @@ Employee.joins(:company => :addresses).
 
 #### 关联对象的数量
 
+```
+Customer.joins(:purchases).group("customers.id").having("count(purchases.id) > ?",0)
+```
+
+
