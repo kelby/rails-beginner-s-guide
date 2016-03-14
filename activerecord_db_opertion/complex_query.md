@@ -115,3 +115,6 @@ end
 Employee.joins(:company => :addresses).
   where(:addresses => { :city => 'Porto Alegre' })
 ```
+
+#### 关联对象的数量
+
