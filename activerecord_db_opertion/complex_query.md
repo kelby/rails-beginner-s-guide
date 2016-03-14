@@ -118,7 +118,7 @@ Employee.joins(:company => :addresses).
 
 #### 关联对象的数量
 
-一对一：
+一对一原理上是不会发生的，但实际上，如果没有删除关系对象的话，也会有：
 
 group + having
 
