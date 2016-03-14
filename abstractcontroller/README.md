@@ -8,8 +8,8 @@ Abstract Controller 做的事情很有限，但却很无私。
 
 它服务于 Action Controller 和 Action Mailer.
 
-- 辅助 ActionController::Base 将站场转移到具体的 Controller#action(经过 Metal).
-- 辅助 ActionMailer::Base 将站场转移到具体的 Mailer#action.
+- 辅助 ActionController::Base 将战场转移到具体的 Controller#action(经过 Metal).
+- 辅助 ActionMailer::Base 将战场转移到具体的 Mailer#action.
 
 准备及转移工作在之前已经完成了，它只是在最后一步，调用具体 action.
 
