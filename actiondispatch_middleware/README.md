@@ -2,7 +2,7 @@
 
 **middleware 在路由转发之后，Controller#action 接收之前！**
 
-路由转发(Dispatcher#dispatch) --> 中间地带(middleware) --> 控制器。
+路由转发(Dispatcher#dispatch) --> 中间地带(middleware) --> 控制器(Controller#action)。
 
 已经进入 Rails, 但还没正式进入我们应用，这时候需要做一些事。
 
