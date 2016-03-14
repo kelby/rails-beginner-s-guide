@@ -139,8 +139,10 @@ Order.joins( :request_refunds ).group( 'orders.id' ).having( 'count( order_id ) 
 counter_cache
 
 ```ruby
-belongs_to :project, counter_cache:true
+belongs_to :project, counter_cache: true
 ```
+
+当使用了 `counter_cache` 时可以先运行 `reset_counters` 确保数据准确，然后运用：
 
 ```ruby
 Project.where( 'vacancies_count > ?', 1 )
