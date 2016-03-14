@@ -118,8 +118,10 @@ Employee.joins(:company => :addresses).
 
 #### 关联对象的数量
 
+一对一：
+
 ```ruby
-Customer.joins(:purchases).group("customers.id").having("count(purchases.id) > ?",0)
+Order.joins( :request_refund ).group( 'orders.id' ).having( 'count( order_id ) > 1' )
 ```
 
 
