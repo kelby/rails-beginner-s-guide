@@ -148,3 +148,8 @@ belongs_to :project, counter_cache: true
 Project.where( 'vacancies_count > ?', 1 )
 ```
 
+#### 统计并排序
+
+```ruby
+users = User.where('tag_list != ?', '').group(:tag_list).order('count_all desc').count
+```
