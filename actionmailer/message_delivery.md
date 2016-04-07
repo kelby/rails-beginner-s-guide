@@ -43,4 +43,12 @@ message.deliver_now
 message = Notifier.welcome(david).message
 ```
 
+其它使用示例：
+
+```ruby
+Notifier.welcome(User.first).deliver_later
+Notifier.welcome(User.first).deliver_later(wait: 1.hour)
+Notifier.welcome(User.first).deliver_later(wait_until: 10.hours.from_now)
+```
+
 > Note: 这里的邮件"发送"，指的是我们应用层面的"发送"。至于 Rails 底层如何实现邮件"发送"，参考【Delivery Methods】章节。
