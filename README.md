@@ -34,6 +34,3 @@
 
 邮箱：leekelby@gmail.com  
 
-#### 给自己来个广告
-
-[实现网](http://shixian.com?f=k_book) 一个靠谱的工程师、设计师兼职预约平台。
