@@ -15,3 +15,7 @@ cache_fragment_name
 
 说说这里的 `cache` 过程。
 
+```
+ActionView::Helpers::CacheHelper -> AbstractController::Caching::Fragments -> ActiveSupport::Cache
+```
+
