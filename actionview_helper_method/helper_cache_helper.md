@@ -13,7 +13,7 @@ cache_unless
 cache_fragment_name
 ```
 
-说说这里的 `cache` 过程。
+调用 `cache` 这个 helper 方法，生成 `cache_key` 的主要流程。
 
 ```
 ActionView::Helpers::CacheHelper -> AbstractController::Caching::Fragments -> ActiveSupport::Cache
