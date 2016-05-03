@@ -36,3 +36,4 @@
 
 #### 更新说明
 
+视图里的 `cache` Helper 方法是如果生成最终 `cache_key` 的？
