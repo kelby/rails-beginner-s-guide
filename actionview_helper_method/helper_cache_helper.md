@@ -19,3 +19,5 @@ cache_fragment_name
 ActionView::Helpers::CacheHelper -> AbstractController::Caching::Fragments -> ActiveSupport::Cache
 ```
 
+开启 `perform_caching` 并且对于静态页面 Digestor 等自行脑补。
+
