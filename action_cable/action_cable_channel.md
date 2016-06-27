@@ -47,6 +47,14 @@ attr_reader :params, :connection, :identifier
 delegate :logger, to: :connection
 ```
 
+```
+perform_action
+
+unsubscribe_from_channel
+```
+
+`perform_action` public_send 后执行我们自定义的 action.
+
 ```ruby
 # 实际上由 connection 完成
 transmit
@@ -64,12 +72,6 @@ defer_subscription_confirmation!
 
 subscription_confirmation_sent?
 subscription_rejected?
-```
-
-```
-perform_action
-
-unsubscribe_from_channel
 ```
 
 默认其子类要重写 `subscribed` 和 `unsubscribed` 方法。
