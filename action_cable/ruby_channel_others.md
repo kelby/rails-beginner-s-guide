@@ -17,8 +17,8 @@ broadcasting_for
 相关回调操作：
 
 ```
-after_subscribe
-after_unsubscribe
+after_subscribe & on_subscribe
+after_unsubscribe & on_unsubscribe
 
 before_subscribe
 before_unsubscribe
