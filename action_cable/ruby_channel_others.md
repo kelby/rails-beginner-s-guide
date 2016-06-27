@@ -43,4 +43,6 @@ Chats::AppearancesChannel.channel_name # => 'chats:appearances'
 periodically(callback, every:)
 ```
 
+可以在 Channel 里使用的类方法，周期性的执行某个指定的回调或 action.
+
 算是一个配置，也不是真正执行。
