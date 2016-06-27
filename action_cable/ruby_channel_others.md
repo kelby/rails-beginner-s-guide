@@ -2,6 +2,8 @@
 
 ### Broadcasting
 
+类方法：
+
 ```
 broadcast_to(model, message)
 
