@@ -30,7 +30,7 @@ before_unsubscribe
 channel_name
 ```
 
-获取通道名字：
+通过此方法，可以获取通道名字：
 
 ```ruby
 ChatChannel.channel_name # => 'chat'
