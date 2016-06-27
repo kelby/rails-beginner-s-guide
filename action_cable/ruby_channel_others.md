@@ -33,8 +33,8 @@ channel_name
 获取通道名字：
 
 ```ruby
-          ChatChannel.channel_name # => 'chat'
-          Chats::AppearancesChannel.channel_name # => 'chats:appearances'
+ChatChannel.channel_name # => 'chat'
+Chats::AppearancesChannel.channel_name # => 'chats:appearances'
 ```
 
 ### Periodic Timers
