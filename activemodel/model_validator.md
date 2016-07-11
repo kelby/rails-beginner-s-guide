@@ -9,7 +9,7 @@
 
 任何继承于 ActiveModel::Validator 的校验器都要实现 `validate` 方法，此方法接收要校验的 record 做为参数。然后，通过 `validates_with` 方法可以使用刚才定义的校验器。
 
-```
+```ruby
 class MyValidator < ActiveModel::Validator
   # 继承于 Validator，需要实现 validate
   def validate(record)
