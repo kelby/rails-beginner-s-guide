@@ -272,6 +272,7 @@
        * [回调及其顺序](activerecord_utility/activemodel_others.md)
        * [跳过回调](activerecord_utility/skip_callbacks.md)
        * [可选参数](activerecord_utility/callback_options.md)
+       * [after_save 与 after_commit 各自存在的坑](activerecord_utility/after_save_and_after_commit_abuse.md)
    * [Nested Attributes 嵌套属性](activerecord_utility/utify_nested_attributes.md)
    * [Inheritance 单表继承](activerecord_utility/inheritance.md)
    * [Transactions 事务](activerecord_utility/utify_transactions.md)
