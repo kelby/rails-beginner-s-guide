@@ -579,3 +579,5 @@ Rails.application.config.assets.class
 => Sprockets::Railtie::OrderedOptions
 ```
 
+我们接触比较多的是其中的 `paths` 和 `precompile` 对应的数据。
+
