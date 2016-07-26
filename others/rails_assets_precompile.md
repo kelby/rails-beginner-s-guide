@@ -566,9 +566,16 @@ Web 服务器支持的话，不妨一试：
 
 ### Debug
 
-```
+```ruby
 Rails.application.config.assets
 ```
 
 查看资源情况。
+
+它属于：
+
+```ruby
+Rails.application.config.assets.class
+=> Sprockets::Railtie::OrderedOptions
+```
 
