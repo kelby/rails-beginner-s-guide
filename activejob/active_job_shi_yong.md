@@ -1,6 +1,6 @@
 ### Queue Adapter
 
-默认使用的 queue_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue_adapter.
+默认使用的 queue\_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue\_adapter.
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
@@ -18,7 +18,7 @@ Rails.application.config.active_job.queue_adapter = :test
 
 ### Queue Name
 
-任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue_name 是 "default"
+任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue\_name 是 "default"
 
 可以定制：
 
@@ -34,7 +34,7 @@ end
 
 ### Queue Priority
 
-队列有优先级这个属性，优先级的会被先执行。类方法 `queue_with_priority` 可以进行设置，对整个类有效：
+队列有优先级这个属性，优先级高的会被先执行。类方法 `queue_with_priority` 可以进行设置，对整个类有效：
 
 ```ruby
 class PublishToFeedJob < ActiveJob::Base
@@ -67,7 +67,7 @@ VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10)
   .perform_later(Video.last)
 ```
 
-`set` 支持可选参数：:wait、:wait_until、:queue、:priority
+`set` 支持可选参数：:wait、:wait\_until、:queue、:priority
 
 > Note：可以不使用 `set` 直接调用 `perform_later` 进队列，然后等待执行。
 
@@ -188,11 +188,12 @@ end
 
 其它几个方法类似。
 
-> Note: 实现上，使用了 ActiveSupport::Callbacks 的 define_callbacks、set_callback、run_callbacks 等方法。
+> Note: 实现上，使用了 ActiveSupport::Callbacks 的 define\_callbacks、set\_callback、run\_callbacks 等方法。
 
 ### 提示
 
-创建任务、进队列、执行任务这几个步骤，尽管我们可以区分开，但很多时候它们是交织在一起的(从 API 上就能看出)，我们可以不严格区分。
+创建任务、进队列、执行任务这几个步骤，尽管我们可以区分开，但很多时候它们是交织在一起的\(从 API 上就能看出\)，我们可以不严格区分。
 
 使用 Active Job 有利必有弊，可能面临以下问题：  
 原 gem 本身的特性没能充分发挥，灵活性降低，和其它 gem 的集成会变复杂。
+
