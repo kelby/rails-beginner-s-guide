@@ -172,3 +172,11 @@ scope :recent, -> { where("created_at > ?", 2.day.ago) }
 可以看到这里的 `2.day.ago` 是动态生成的，每一次执行的时候才知道结果。不使用 proc 类型的话，这里立即执行，就和想像中的结果不同了。
 
 > Note: 并不是所有的方法都可以做为 scope 的内容，更多内容 [Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
+
+#### scope 可以调用的时候带参数
+
+```ruby
+ scope :find_lazy, -> (id) { where(:id => id) }
+```
+
+注意，使用后不能再进行链式调用。
