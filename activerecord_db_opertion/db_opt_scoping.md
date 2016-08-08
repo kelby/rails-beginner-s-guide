@@ -176,7 +176,7 @@ scope :recent, -> { where("created_at > ?", 2.day.ago) }
 #### scope 可以调用的时候带参数
 
 ```ruby
- scope :find_lazy, -> (id) { where(:id => id) }
+scope :find_lazy, -> (id) { where(:id => id) }
 ```
 
 注意，使用后不能再进行链式调用。
