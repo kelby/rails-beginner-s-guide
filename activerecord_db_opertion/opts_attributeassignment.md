@@ -3,10 +3,10 @@
 给已有对象的属性进行赋值。
 
 ```
-assign_attributes & attributes=
+assign_attributes
 ```
 
-是 update & update_attributes 的底层实现。参数的类型都是 Hash 对象，但它不会触发 `save` 操作。
+是 update & update\_attributes 的底层实现。参数的类型都是 Hash 对象，但它不会触发 `save` 操作。
 
 使用举例：
 
@@ -34,3 +34,5 @@ user.assign_attributes is_admin: true
 # ActiveModel::MassAssignmentSecurity::Error:
 # Can't mass-assign protected attributes: is_admin
 ```
+
+我们几乎不会直接使用 `assign_attributes` 给对象赋值。
