@@ -7,8 +7,10 @@
 ```
 test_errors_aref
 test_model_naming
+
 test_to_key
 test_to_param
+
 test_to_partial_path
 
 test_persisted?
