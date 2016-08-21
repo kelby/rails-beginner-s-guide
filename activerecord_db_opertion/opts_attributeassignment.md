@@ -6,7 +6,7 @@
 assign_attributes
 ```
 
-是 update & update\_attributes 的底层实现。参数的类型都是 Hash 对象，但它不会触发 `save` 操作。
+是 update & update_attributes 的底层实现。参数的类型都是 Hash 对象，但它不会触发 `save` 操作。
 
 使用举例：
 
