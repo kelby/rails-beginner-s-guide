@@ -1,6 +1,6 @@
 ## Attribute Assignment
 
-给已有对象的属性进行赋值。
+以 Hash 的形式给某个对象赋值，并且传递的属性经过 ForbiddenAttributesProtection 检查。
 
 ```
 assign_attributes
