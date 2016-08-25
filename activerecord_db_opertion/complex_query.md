@@ -157,5 +157,5 @@ users = User.where('tag_list != ?', '').group(:tag_list).order('count_all desc')
 #### 按指定的数组顺序排列
 
 ```ruby
-Model.where(id: ids).order("field(id, #{ids})")
+Model.where(id: ids).order("field(id, #{ids.joins(',')})")
 ```
