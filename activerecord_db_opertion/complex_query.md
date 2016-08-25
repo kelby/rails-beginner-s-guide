@@ -153,3 +153,9 @@ Project.where( 'vacancies_count > ?', 1 )
 ```ruby
 users = User.where('tag_list != ?', '').group(:tag_list).order('count_all desc').count
 ```
+
+#### 按指定的数组顺序排列
+
+```ruby
+Model.where('id in (?)', ids).order("field(id, #{order})")
+```
