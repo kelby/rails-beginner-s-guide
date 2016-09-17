@@ -135,3 +135,7 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录。
 queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象而来。
 
 而 queue_adapter 所用的 API(enqueue_at、enqueue_in、enqueue 等)，也是从原延迟任务所提供的 API 抽象而来。
+
+### 弊端及混合使用注意事项
+
+它是对 Resque、Sidekiq 等的封装，对比其文档，可以看出部分功能牺牲掉，部分特性被砍掉了。
