@@ -26,5 +26,5 @@ provide
 
 # 或
 
-<ul><%=  :navigation %></ul>
+<ul><%= content_for :navigation %></ul>
 ```
