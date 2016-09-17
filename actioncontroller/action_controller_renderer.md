@@ -14,7 +14,7 @@ ApplicationController.renderer.new(method: 'post', https: true)
 
 所以，现在拆分出来了。你可以不用依赖于 Controller，这样你能很方便的在 Job、Script 及 web sockets 里调用/渲染模板。
 
-`renderer` 渲染器：
+`renderer` 获取渲染器实例：
 
 ```ruby
 ApplicationController.renderer
