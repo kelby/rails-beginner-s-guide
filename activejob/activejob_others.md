@@ -120,6 +120,8 @@ around_enqueue、around_perform 和 before_enqueue 有日志记录；
 <br>
 enqueue、enqueue_at、perform_start、perform 等过程也有日志记录。
 
+默认和 Rails 应用使用同一日志。
+
 ### Identifier
 
 每个任务都有全局唯一的 job_id
