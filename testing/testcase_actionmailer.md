@@ -13,7 +13,7 @@
 
 assert_emails 和 assert_no_emails 两者本质都是封装 assert_equal.
 
-#### Behavior
+#### ~~Behavior~~
 
 类方法：
 
