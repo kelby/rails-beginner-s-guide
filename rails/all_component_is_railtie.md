@@ -93,7 +93,9 @@ Rails.application.config.database_configuration
 #### Active Job
 
 ```
-
+logger
+set_configs
+set_reloader_hook
 ```
 
 另，配置默认 queue_adapter 为 :inline
