@@ -154,6 +154,7 @@
         * [Remote Connections](action_cable/article_cable_misc.md)
         * [Action Cable Helper](action_cable/action_cable_helper.md)
         * [Subscription Adapter](action_cable/subscription_adapter.md)
+        * [Subscription Adapter 补充](action_cable/subscription-adapter-补充.md)
     * [客户端 - Coffee 脚本](action_cable/action_cable_coffee.md)
         * [Action Cable 文件下的内容](action_cable/action_cable_wen_jian_xia_de_nei_rong.md)
         * [Consumer](action_cable/coffee_consumer.md)
