@@ -139,3 +139,9 @@ queue_adapter 是 Delayed Job、Resque、Sidekiq 等不同的延迟任务抽象�
 ### 弊端及混合使用注意事项
 
 它是对 Resque、Sidekiq 等的封装，对比其文档，可以看出部分功能牺牲掉，部分特性被砍掉了。
+
+当你想要这部分功能、特性，而又同时使用着 Active Job 则需注意：
+
+1）这些底层的 gem 传递的是 id，而 Active Job 因为有 GlobalID 支持可以传 record 对象。
+
+2）部分功能、特性 Active Job 是没有的，定义、调用的时候需要特别注意，因为有的地方即使你用错了，它也不会报错。
