@@ -26,7 +26,7 @@ Action Controller & Active Mailer
 view_assigns
 ```
 
-`view_assigns` 通过它可以查看 Controller 和 Mailer 传递给 View 的实例变量及其内容。在 ActionView::Rendering 里被调用。
+`view_assigns` 通过它可以查看 Controller 和 Mailer 传递给 View 的实例变量及其内容。在 ActionView::Rendering 里被调用。(通过 Ruby 自带的 instance_variables、instance_variable_get 得到)
 
 ```
 render_to_body
