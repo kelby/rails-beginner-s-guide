@@ -68,5 +68,5 @@ ActionCable.server.broadcast "web_notifications_1",
 
 ActionCable.server 用于广播，它包括标识及数据。
 
-ApplicationCable::Channel 用于接收数据并处理。
+ApplicationCable::Channel 用于接收数据并处理，特定的 Channel 一般只接收有特定标识的 server 发过来的请求。
 
