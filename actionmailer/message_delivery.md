@@ -14,6 +14,12 @@ deliver_later
 deliver_later!
 ```
 
+和
+
+```
+message
+```
+
 `deliver_now` 和 `deliver_now!` 立即发送邮件。
 <br>
 `deliver_later` 和 `deliver_later!` 延迟发送邮件，可接受参数 :wait、:wait_until 或 :queue.
