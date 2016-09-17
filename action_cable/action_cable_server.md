@@ -2,6 +2,8 @@
 
 Rails 默认使用的实例是 `ActionCable.server` 除了 Base 提供的实例方法外，它还可调用 Broadcasting 和 Connections 提供的方法。
 
+服务端向客户端发送 ws 请求。
+
 ### Base
 
 实例对象有：`ActionCable.server`
