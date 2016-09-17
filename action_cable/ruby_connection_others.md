@@ -67,3 +67,4 @@ unsubscribe_from_all()
 
 ### ~~Stream Event Loop~~
 
+### ~~Faye Client Socket~~
