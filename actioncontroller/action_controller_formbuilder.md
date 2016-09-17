@@ -7,6 +7,7 @@
 ```ruby
 class AdminFormBuilder < ActionView::Helpers::FormBuilder
   def special_field(name)
+    # ...
   end
 end
 ```
