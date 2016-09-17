@@ -44,4 +44,4 @@ broadcastings 对通道的某些操作（活的）
 
 重要方法：客户端 perform, 服务端 broadcast 和 received.
 
-服务端、客户端均可发送 ws 请求，简单的只有一次 ws 请求，复杂一点的有两次 ws 请求。
+服务端、客户端均可发送 ws 请求；简单的只有一次 ws 请求，复杂一点的有两次 ws 请求。
