@@ -69,4 +69,6 @@ unsubscribe_from_all()
 
 ### ~~Faye Client Socket~~
 
-### FayeEventLoop
+### ~~Faye Event Loop~~
+
+### ~~Subscriptions~~
