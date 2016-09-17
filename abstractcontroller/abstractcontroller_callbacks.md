@@ -15,7 +15,7 @@ around_action & append_around_action
 prepend_around_action
 skip_around_action
 
-skip_action_callback & skip_filter
+skip_action_callback & skip_filter # 将被废除
 ```
 
 这些回调方法参照物都是 `process_action` 方法。
