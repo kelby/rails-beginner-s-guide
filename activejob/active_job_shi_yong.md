@@ -1,6 +1,6 @@
 ### Queue Adapter
 
-配置使用哪种后端任务、队列管理方式。默认使用的 queue\_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue\_adapter.
+定义：配置使用哪种后端任务、队列管理方式。默认使用的 queue\_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue\_adapter.
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
@@ -18,7 +18,7 @@ Rails.application.config.active_job.queue_adapter = :test
 
 ### Queue Name
 
-任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue_name 是 "default"
+定义：任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue_name 是 "default"
 
 可以定制：
 
@@ -36,7 +36,7 @@ end
 
 ### Queue Priority
 
-队列有优先级这个属性，优先级高的会被先执行。类方法 `queue_with_priority` 可以进行设置，对整个类有效：
+定义：队列有优先级这个属性，优先级高的会被先执行。类方法 `queue_with_priority` 可以进行设置，对整个类有效：
 
 ```ruby
 class PublishToFeedJob < ActiveJob::Base
@@ -52,7 +52,7 @@ end
 
 ### Core
 
-设置任务所在队列、队列优先级行。类方法 `set` 使用举例：
+调用：设置任务所在队列、队列优先级行。类方法 `set` 使用举例：
 
 ```ruby
 VideoJob.set(queue: :some_queue).perform_later(Video.last)
@@ -89,6 +89,8 @@ deserialize
 它们只是后端任务信息的一种方式，在此不必深究。
 
 ### Enqueuing 入队与重试
+
+调用。
 
 常用方法：
 
@@ -137,6 +139,8 @@ perform_later
 
 ### Execution 执行
 
+调用。
+
 ```ruby
 # 实例方法
 perform_now
@@ -159,6 +163,8 @@ MyJob.perform_now("mike")
 使用 `perform_now` 代码会立即执行，在这开发环境会很实用。
 
 ### Callbacks 回调
+
+定义 + 自动调用。
 
 比某些延迟 gem 多做了一点点，除了队列&执行本身外，还可以有回调：
 
