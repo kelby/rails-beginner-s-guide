@@ -1,6 +1,6 @@
 # Action Dispatch Routing 顶层
 
-提供接口，让我们定义路由。
+提供接口，让我们定义应用相关路由。
 
 #### 先说说 Rack endpoint
 
