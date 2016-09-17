@@ -43,3 +43,5 @@ broadcastings 对通道的某些操作（活的）
 结束。
 
 重要方法：客户端 perform, 服务端 broadcast 和 received.
+
+简单的只有一次 ws 请求，复杂一点的有两次 ws 请求。
