@@ -23,4 +23,9 @@ provide
 
 # 调用
 <ul><%= yield :navigation %></ul>
+
+# 或
+
+<ul><%= yield :navigation %></ul>
+
 ```
