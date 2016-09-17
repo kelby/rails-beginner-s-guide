@@ -14,6 +14,7 @@
         * [Delivery Methods](actionmailer/delivery_methods.md)
         * [Previews & Preview](actionmailer/previews_&_preview.md)
         * [DeliveryJob](actionmailer/deliveryjob.md)
+        * [Collector](actionmailer/collector.md)
 * [Abstract Controller](abstractcontroller/README.md)
     * [Base](abstractcontroller/abstractcontroller_base.md)
         * [获取所有的 Controller 和 action](abstractcontroller/get_all_controllers_and_actions.md)
