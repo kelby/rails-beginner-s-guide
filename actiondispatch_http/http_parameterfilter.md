@@ -11,7 +11,7 @@ env["action_dispatch.parameter_filter"] = [:password]
 
 **实例方法：**
 
-```
+```ruby
 filter
 
 # 具体包含下面 3 项内容：
