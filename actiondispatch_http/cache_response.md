@@ -14,6 +14,11 @@ date=
 date?
 
 etag=
+weak_etag=
+strong_etag=
+etag?
+weak_etag?
+strong_etag?
 
 last_modified
 last_modified=
