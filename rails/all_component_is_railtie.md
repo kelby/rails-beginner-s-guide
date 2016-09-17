@@ -92,7 +92,11 @@ Rails.application.config.database_configuration
 
 #### Active Job
 
-配置默认 queue_adapter 为 :inline
+```
+
+```
+
+另，配置默认 queue_adapter 为 :inline
 
 #### Active Support
 
