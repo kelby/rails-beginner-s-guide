@@ -2,7 +2,7 @@
 
 `default_form_builder`
 
-可以更改表单构造器。
+可以更改表单构造器。（表单本身也是一个对象，通过 Form Builder 添加更多方法）
 
 ```ruby
 class AdminFormBuilder < ActionView::Helpers::FormBuilder
