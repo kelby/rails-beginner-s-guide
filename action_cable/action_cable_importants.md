@@ -27,11 +27,20 @@ broadcastings 对通道的某些操作（活的）
 
 ### 流程
 
-1）A输入数据，jQuery 监测，发送类似 Ajax 请求；
-1）或由服务端 server.broadcast 直接发送请求。
+1）A输入数据，jQuery 监测，发送类似 Ajax 请求；服务器收到，服务器处理后，发送 ws 请求
+1）或由服务端 server.broadcast 直接发送 ws 请求
 
-2）客户端直接使用 JQuery 处理
-2）客户端 @perform...channel 里的 action 处理，响应...server broadcast 或 Streams；
+发送的 ws 请求，要有标识及数据。
+
+2）客户端始终在等待 ws 请求
+3）客户端收到 ws 请求，根据标识由对应的 Channel js 处理
+
+此处有分支
+
+4）客户端直接使用 JQuery 处理，不需要再请求服务器
+4）客户端 @perform 发送 ws 请求，对应 Channel rb 里的 action 处理，再响应...server broadcast 或 Streams；
+
+结束。
 
 received...B jQuery 收到数据，进行响应，反应出来到页面。
 
