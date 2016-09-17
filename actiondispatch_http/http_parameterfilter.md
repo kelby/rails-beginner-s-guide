@@ -13,6 +13,12 @@ env["action_dispatch.parameter_filter"] = [:password]
 
 ```
 filter
+
+# 具体包含下面 3 项内容：
+
+filtered_parameters
+filtered_env
+filtered_path
 ```
 
 在 new 页面，对 http://blog.test.example.com:3000/users 发起 POST 请求。
