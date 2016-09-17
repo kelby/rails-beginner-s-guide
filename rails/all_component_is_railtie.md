@@ -98,7 +98,7 @@ set_configs
 set_reloader_hook
 ```
 
-另，配置默认 queue_adapter 为 :inline
+另，配置默认 queue_adapter 由默认的 :inline 改为了 :async
 
 #### Active Support
 
