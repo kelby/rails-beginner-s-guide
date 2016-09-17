@@ -128,7 +128,7 @@ enqueue、enqueue_at、perform_start、perform 等过程也有日志记录。
 
 ### Configured Job
 
-可实例化自定义的 Job 类，然后调用 perform_now 或 perform_later. Core 里的 set 类方法会用到它。
+可实例化自定义的 Job 类，然后调用 perform_now 或 perform_later. Core 里的 set 类方法会用到它，主要作用是处理各个参数，起到配置作用。
 
 ### 解析 queue_adapter 及其 API
 
