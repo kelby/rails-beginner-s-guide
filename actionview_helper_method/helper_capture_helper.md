@@ -26,5 +26,5 @@ provide
 
 # 或
 
-<ul><%= yield :navigation %></ul>
+<ul><%=  :navigation %></ul>
 ```
