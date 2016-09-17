@@ -63,3 +63,10 @@ ActionCable.server.broadcast "web_notifications_1",
 ```
 
 实际上广播任务由 server 对应的 `pubsub` 来完成。
+
+### 广播与接收一般要对应
+
+ActionCable.server 用于广播，它包括标识及数据。
+
+ApplicationCable::Channel 用于接收数据并处理。
+
