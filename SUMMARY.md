@@ -30,6 +30,7 @@
         * [Routes Helpers](abstractcontroller/abstract_controller_routes_helpers.md)
         * [Logger](abstractcontroller/abstract_controller_logger.md)
         * [Url For](abstractcontroller/abstract_controller_url_for.md)
+    * [Caching](abstractcontroller/caching.md)
 * [Action Controller](actioncontroller/README.md)
     * [Metal - 加强的 Rack, 简陋的 Controller](actioncontroller/metal.md)
         * [Metal 文件下的内容](actioncontroller/metal_file.md)
