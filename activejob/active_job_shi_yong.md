@@ -1,6 +1,6 @@
 ### Queue Adapter
 
-默认使用的 queue\_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue\_adapter.
+配置使用哪种后端任务、队列管理方式。默认使用的 queue\_adapter 是 `:inline`，处理方式是立即执行任务。你需要自己设置 queue\_adapter.
 
 ```ruby
 ActiveJob::Base.queue_adapter = :inline
@@ -194,6 +194,7 @@ end
 
 创建任务、进队列、执行任务这几个步骤，尽管我们可以区分开，但很多时候它们是交织在一起的\(从 API 上就能看出\)，我们可以不严格区分。
 
-使用 Active Job 有利必有弊，可能面临以下问题：  
+使用 Active Job 有利必有弊，可能面临以下问题：
+
 原 gem 本身的特性没能充分发挥，灵活性降低，和其它 gem 的集成会变复杂。
 
