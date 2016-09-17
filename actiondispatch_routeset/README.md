@@ -1,5 +1,7 @@
 # Action Dispatch RouteSet 底层
 
+Routing 定义应用的路由后，由 RouteSet 底层实现。
+
 本章节偏低层，如果你不能掌握，可以先跳过。
 
 #### RouteSet 概述
