@@ -35,7 +35,7 @@ Preview，主要是对内的实现，是我们自定义 YourPreview 的父类，
 
 > Note: 邮件预览，在 Rails 里也遵守 MVC. M 是 ActionMailer::Preview，V 是 rails/mailers/，C 是 Rails::MailersController
 
-提供类方法：
+~~提供类方法：~~
 
 ```
 all
