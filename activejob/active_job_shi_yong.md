@@ -69,7 +69,7 @@ VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10)
   .perform_later(Video.last)
 ```
 
-`set` 支持可选参数：:wait、:wait\_until、:queue、:priority，它的具体实现由  完成。
+`set` 支持可选参数：:wait、:wait\_until、:queue、:priority，它的具体实现由 ConfiguredJob 完成。
 
 > Note：可以不使用 `set` 直接调用 `perform_later` 进队列，然后等待执行。
 
