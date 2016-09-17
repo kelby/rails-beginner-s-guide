@@ -16,7 +16,7 @@ as_json
 from_json
 ```
 
-#### Xml
+#### ~~Xml~~
 
 ```ruby
 # 将对象转化成 xml 格式
