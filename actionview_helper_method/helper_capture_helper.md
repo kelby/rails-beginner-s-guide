@@ -25,6 +25,5 @@ provide
 <ul><%= yield :navigation %></ul>
 
 # 或
-
 <ul><%= content_for :navigation %></ul>
 ```
