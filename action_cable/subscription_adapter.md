@@ -12,3 +12,5 @@ unsubscribe(channel, message_callback)
 
 shutdown
 ```
+
+在 Server#pubsub 时会用到它来临时存储数据。
