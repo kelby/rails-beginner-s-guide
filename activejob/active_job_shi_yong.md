@@ -26,7 +26,9 @@ Rails.application.config.active_job.queue_adapter = :test
 class MyJob < ActiveJob::Base
   queue_as :my_jobs
 
-  # ...
+  def perform(record)
+    # ...
+  end
 end
 ```
 
