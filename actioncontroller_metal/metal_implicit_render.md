@@ -3,8 +3,6 @@
 默认渲染模板。
 
 ```
-send_action
-
 default_render
 
 method_for_action
