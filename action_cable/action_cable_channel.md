@@ -2,6 +2,8 @@
 
 可直接调用。类似 Controller ... 外部请求过来，MVC 里最先由它处理。
 
+它处理从客户端过来的 ws 请求。
+
 ### Base
 
 完成请求转发，由 Action Dispatch 到具体的 Channel#action. 
