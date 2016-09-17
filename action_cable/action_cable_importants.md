@@ -42,6 +42,4 @@ broadcastings 对通道的某些操作（活的）
 
 结束。
 
-received...B jQuery 收到数据，进行响应，反应出来到页面。
-
 重要方法：客户端 perform, 服务端 broadcast 和 received.
