@@ -26,6 +26,14 @@ delegate :enqueued_jobs, :enqueued_jobs=, :performed_jobs, :performed_jobs=,
          to: :queue_adapter
 ```
 
+和其它测试一样，你也可以自己编写前后过滤器：
+
+```
+before_setup
+
+after_teardown
+```
+
 默认测试环境下使用 queue_adapter 是 test，类似：
 
 ```ruby
