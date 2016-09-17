@@ -8,7 +8,6 @@
 digest
 
 tree
-
 ```
 
 目前，Rails 里有两个地方调用了它。
