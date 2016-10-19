@@ -20,6 +20,7 @@ request.content_mime_type
 request.content_type
 => "application/x-www-form-urlencoded"
 
+# = formats.first
 request.format
 => #<Mime::Type:0x007f8a1a498cd8 @string="text/html", @symbol=:html, \n
                                  @synonyms=["application/xhtml+xml"]>
