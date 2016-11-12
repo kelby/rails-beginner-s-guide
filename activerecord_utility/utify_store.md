@@ -42,7 +42,7 @@ User.stored_attributes[:name] # [:last_name, :first_name, :nickname]
 
 > Note: 通过 store 的属性来读/写 key，这里的 key 可以不在 accessors 范围里。如果不在范围里，则不能直接读/写 key，并且 stored_attributes 查看不到。
 
-存数组用【AttributeMethods Serialization】章节里的 `serialize` 方法
+存数组用上一章节【AttributeMethods Serialization】里的 `serialize` 方法
 
 ```ruby
 class Comment < ActiveRecord::Base
