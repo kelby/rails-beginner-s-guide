@@ -137,6 +137,13 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.perform_deliveries = true
 ```
 
+````ruby
+# 遇到以下报错，可考虑：
+# Net::SMTPAuthenticationError: 535 #5.7.0 Authentication failed
+
+:openssl_verify_mode => 'none'
+```
+
 它和配置文件里的 `default_options=` 是一样。
 
 在 config/environments/ 目录下针对不同执行环境会有不同的邮件服务器设置：
