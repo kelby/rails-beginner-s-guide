@@ -177,6 +177,10 @@ scope :recent, -> { where("created_at > ?", 2.day.ago) }
 
 ```ruby
 scope :find_lazy, -> (id) { where(:id => id) }
+
+# 带默认值
+scope :recent_applies, ->(day=3){ where("created_at > ?", day.days.ago) }
+
 ```
 
 注意，使用后不能再进行链式调用。
