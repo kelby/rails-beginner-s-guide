@@ -338,7 +338,7 @@ before\_add、after\_add、before\_remove 和 after\_remove
 
 关系比较复杂的时候，不好写。我建议先从简单、可确定的入手，然后进行下一步。
 
-例如：
+例如自关联，或者通过关联表实现关联，通常：
 
 表里有 `xxx_id` 等外键的，通常就是 `belongs_to`
 
