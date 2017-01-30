@@ -340,8 +340,8 @@ before\_add、after\_add、before\_remove 和 after\_remove
 
 例如：自关联，或者通过关联表实现关联，通常：
 
-表里有 `xxx_id` 等外键的，通常就是 `belongs_to`
+- 表里有 `xxx_id` 等外键的，通常就是 `belongs_to`
 
-然后对应其关联的就是 `has_many`
+- 然后对应其关联的就是 `has_many`
 
-再之后就是 `through`
+- 再之后就是 `through`
