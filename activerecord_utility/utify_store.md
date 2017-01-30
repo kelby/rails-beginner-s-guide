@@ -1,6 +1,6 @@
 ## Store
 
-`store(store_attribute, options = {})` 以 JSON(也可以理解为 Hash)的形式存储某字段。
+`store(store_attribute, options = {})` 以 JSON\(也可以理解为 Hash\)的形式存储某字段。
 
 举例，我们数据库里有 `name` 字段，我们想这样存储：
 
@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-它主要是增加了和 key 同名的读/写(实例)方法。
+它主要是增加了和 key 同名的读/写\(实例\)方法。
 
 `stored_attributes` 查询一个字段有哪些可用的 key.
 
@@ -40,7 +40,7 @@ end
 User.stored_attributes[:name] # [:last_name, :first_name, :nickname]
 ```
 
-> Note: 通过 store 的属性来读/写 key，这里的 key 可以不在 accessors 范围里。如果不在范围里，则不能直接读/写 key，并且 stored_attributes 查看不到。
+> Note: 通过 store 的属性来读/写 key，这里的 key 可以不在 accessors 范围里。如果不在范围里，则不能直接读/写 key，并且 stored\_attributes 查看不到。
 
 存数组用上一章节【AttributeMethods Serialization】里的 `serialize` 方法
 
@@ -54,3 +54,6 @@ comment.stuff = ['some', 'stuff', 'as array']
 comment.save
 comment.stuff # => ['some', 'stuff', 'as array']
 ```
+
+
+
