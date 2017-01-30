@@ -1,87 +1,86 @@
 #### 关联方法的可选参数汇总
 
+#### belongs\_to
 
-#### belongs_to
-
-valid_options
+valid\_options
 
 ```
 ActiveRecord::Associations::Builder::BelongsTo.valid_options nil
 ```
 
-valid_dependent_options
+valid\_dependent\_options
 
 ```
 ActiveRecord::Associations::Builder::BelongsTo.valid_dependent_options
 ```
 
-#### has_one
+#### has\_one
 
-valid_options
+valid\_options
 
 ```
 ActiveRecord::Associations::Builder::HasOne.valid_options through: 'fakers'
 ```
 
-valid_dependent_options
+valid\_dependent\_options
 
 ```
 ActiveRecord::Associations::Builder::HasOne.valid_dependent_options
 ```
 
-#### has_many
+#### has\_many
 
-valid_options
+valid\_options
 
 ```
 ActiveRecord::Associations::Builder::HasMany.valid_options nil
 ```
 
-valid_dependent_options
+valid\_dependent\_options
 
 ```
 ActiveRecord::Associations::Builder::HasMany.valid_dependent_options
 ```
 
-#### has_and_belongs_to_many
+#### has\_and\_belongs\_to\_many
 
-和 has_many 一样。
+和 has\_many 一样。
 
 #### 实现关联对象：
 
-|      参数                | belongs_to | has_one | has_many | habtm |
-|-------------------------|:-----------:|:----------:|:--------:|:--------:|
-|:class_name              |    √          |   √    |  √     |  √     |
-|:foreign_key             |    √          |   √    |  √     |  √     |
-|:foreign_type            |    √          |   √    |  √     |  √     |
-|:primary_key             |    √          |   √    |  √     |  √     |
-|:as                      |               |   √    |  √     |  √     |
-|:through                 |               |   √    |  √     |  √     |
-|:source                  |               |   √    |  √     |  √     |
-|:source_type             |               |   √    |  √     |  √     |
-|:join_table              |               |        |  √     |  √     |
-|:association_foreign_key |               |        |        |  √     |
-|:table_name              |               |        |  √     |  √     |
-|:autosave                |    √          |   √    |  √     |  √     |
-|:dependent               |    √          |   √    |  √     |  √     |
-|:before_add              |               |        |  √     |  √     |
-|:after_add               |               |        |  √     |  √     |
-|:before_remove           |               |        |  √     |  √     |
-|:after_remove            |               |        |  √     |  √     |
-|:validate                |    √          |   √    |  √     |  √     |
-|:required                |    √          |   √    |        |        |
-|:counter_cache           |    √          |        |  √     |  √     |
-|:polymorphic             |    √          |        |        |        |
-|:touch                   |    √          |        |        |        |
-|:inverse_of              |    √          |   √    |  √     |  √     |
-|:anonymous_class         |    √          |   √    |  √     |  √     |
-|:optional                |    √          |        |        |        |
-|:extend                  |               |        |  √     |  √     |
-|:index_errors            |               |        |  √     |  √     |
+| 参数 | belongs\_to | has\_one | has\_many | habtm |
+| --- | :---: | :---: | :---: | :---: |
+| :class\_name | √ | √ | √ | √ |
+| :foreign\_key | √ | √ | √ | √ |
+| :foreign\_type | √ | √ | √ | √ |
+| :primary\_key | √ | √ | √ | √ |
+| :as |  | √ | √ | √ |
+| :through |  | √ | √ | √ |
+| :source |  | √ | √ | √ |
+| :source\_type |  | √ | √ | √ |
+| :join\_table |  |  | √ | √ |
+| :association\_foreign\_key |  |  |  | √ |
+| :table\_name |  |  | √ | √ |
+| :autosave | √ | √ | √ | √ |
+| :dependent | √ | √ | √ | √ |
+| :before\_add |  |  | √ | √ |
+| :after\_add |  |  | √ | √ |
+| :before\_remove |  |  | √ | √ |
+| :after\_remove |  |  | √ | √ |
+| :validate | √ | √ | √ | √ |
+| :required | √ | √ |  |  |
+| :counter\_cache | √ |  | √ | √ |
+| :polymorphic | √ |  |  |  |
+| :touch | √ |  |  |  |
+| :inverse\_of | √ | √ | √ | √ |
+| :anonymous\_class | √ | √ | √ | √ |
+| :optional | √ |  |  |  |
+| :extend |  |  | √ | √ |
+| :index\_errors |  |  | √ | √ |
 
 #### 详解：
 
-class_name
+class\_name
 
 ```
 指定关联对象所对应的"类/Model"，默认是"驼峰"转换关联对象的名字。
@@ -90,7 +89,7 @@ class_name
 :class_name 不影响 :foreign_key "关联对象_id"属性的命名约定。
 ```
 
-foreign_key
+foreign\_key
 
 ```
 belongs_to - 默认是"关联对象_id"，外键存在在自己表里。
@@ -98,7 +97,7 @@ belongs_to - 默认是"关联对象_id"，外键存在在自己表里。
 has_many 等 - 声明自己在关联对象里的外键。
 ```
 
-primary_key
+primary\_key
 
 ```
 查询关联对象的时候，用自己的哪个字段做为条件。
@@ -133,7 +132,7 @@ source
 中间表关联着前者和后者，并且"前者.后者"可拆分成1)"前者.中间表"，2)"中间表.后者"。第 1 步一般不会有误，但如果后者名字不规范，那么在第 2 步"中间表.后者"就会走不下去。用 :source 明确后者对应中间表里的什么关联。
 ```
 
-source_type
+source\_type
 
 ```
 必须和 polymorphic 配合使用。多态时希望自己用什么做为类型。
@@ -142,20 +141,18 @@ source_type
 从后者的角度来看，后者与前者的关联应该是 belongs_to. 但如果恰好又是多态，那么后者保存有前者的 id 并指定某个类型. 如果你对按约定生成的类型不满意，可以用 :source_type 指明。
 ```
 
-foreign_type
+foreign\_type
 
-```
-1 对于 has_one 和 has_many，用什么字段做为自己的外键。<br>
-2 对于 belongs_to，用什么字段做为关联对象的外键，字段保存在前者。
+    1 对于 has_one 和 has_many，用什么字段做为自己的外键。<br>
+    2 对于 belongs_to，用什么字段做为关联对象的外键，字段保存在前者。
 
-指定用什么"字段"保存关联对象的"多态信息"，保存在自己的表里，多态时用到。默认用"关联对象_type"这个字段，不符合约定时，用 :foreign_type 指明。
+    指定用什么"字段"保存关联对象的"多态信息"，保存在自己的表里，多态时用到。默认用"关联对象_type"这个字段，不符合约定时，用 :foreign_type 指明。
 
-没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
+    没有这个选项之前，这个字段只能根据 `:as` 生成，不能自定义。
 
-自己不符合约定。多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来)
+    自己不符合约定。多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来)
 
-多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) 
-```
+    多态时，在关联对象的表里，用什么字段来存储父亲对象的类型(默认是 x_type，根据 :as 而来) 
 
 optional
 
@@ -169,7 +166,7 @@ extend
 作用和 extension 类似。
 ```
 
-join_table
+join\_table
 
 ```
 中间表。
@@ -180,7 +177,7 @@ join_table
 - 如果前者和后者使用的表名都带有前缀并且还相同，那么中间表的名字也用同样的前缀，剩余部分用再按字母顺序排序。如："catalog_categories" 和 "catalog_products" 生成的中间表是 "catalog_categories_products".
 ```
 
-association_foreign_key
+association\_foreign\_key
 
 ```
 在中间表里，希望关联对象用什么字段做为外键。(听起来是不是有点绕，管得也太多了吧)
@@ -205,52 +202,48 @@ autosave
 
 dependent
 
-```
-1 belongs_to 只有 destroy 和 delete<br>
-2 has_many 有 destroy、delete_all、nullify、restrict_with_exception 和 restrict_with_error<br>
-3 has_one  有 destroy、delete、nullify、restrict_with_exception 和 restrict_with_error
+    1 belongs_to 只有 destroy 和 delete<br>
+    2 has_many 有 destroy、delete_all、nullify、restrict_with_exception 和 restrict_with_error<br>
+    3 has_one  有 destroy、delete、nullify、restrict_with_exception 和 restrict_with_error
 
-  - `:destroy` 删除(destroy)所有被关联对象。
+      - `:destroy` 删除(destroy)所有被关联对象。
 
-  - `:delete_all` 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
+      - `:delete_all` 和 destroy 类似，也是删除所有被关联对象。但区别在于，此删除操作不会触发回调。
 
-  - `:nullify` 设置后者的"前者_id"属性为 nil. 不会触发回调。
+      - `:nullify` 设置后者的"前者_id"属性为 nil. 不会触发回调。
 
-  - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
+      - `:restrict_with_exception` 有关联对象则抛异常。并且后面与之的无关代码也不能再运行。
 
-  - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
-  
-如果设置为 :destroy, 自己被 destroy 时，关联对象会被 destroy. 如果设置为 :delete, 自己被 destroy 时，关联对象会被 delete. 注意：自己被 delete, 始终不影响关联对象。
+      - `:restrict_with_error` 有关联对象则设置对象的 errors 信息。并且后面与之无关的代码还能运行。
 
-删除前者时，对后者进行什么操作。1) :destroy, 删除后者，会触发回调；2) :delete, 删除后者，不会触发回调；3) ::nullify, 把后者里的"前者_id"属性设置为 nil, 不会触发回调；4) :restrict_with_exception, 如果有后者的关联对象，报异常；5) :restrict_with_error 如果有后者的关联对象，报错
+    如果设置为 :destroy, 自己被 destroy 时，关联对象会被 destroy. 如果设置为 :delete, 自己被 destroy 时，关联对象会被 delete. 注意：自己被 delete, 始终不影响关联对象。
 
-可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误
+    删除前者时，对后者进行什么操作。1) :destroy, 删除后者，会触发回调；2) :delete, 删除后者，不会触发回调；3) ::nullify, 把后者里的"前者_id"属性设置为 nil, 不会触发回调；4) :restrict_with_exception, 如果有后者的关联对象，报异常；5) :restrict_with_error 如果有后者的关联对象，报错
 
-当关联对象与自己的关系是 has_many 时，请慎用 `:dependent`. 因为关联对象被同时删除的话，意味着自己的兄弟将成为孤儿(没有关联对象可关联)。
-```
+    可选 :destroy，也就是使用 destroy 删除所有关联对象；可选 :delete_all，也就是使用 delete 删除所有关联对象；可选 :nullify，把外键设为 nil，但不删除对象；可选 :restrict_with_exception，有关联对象则抛异常；可选 :restrict_with_error，有关联对象则抛错误
+
+    当关联对象与自己的关系是 has_many 时，请慎用 `:dependent`. 因为关联对象被同时删除的话，意味着自己的兄弟将成为孤儿(没有关联对象可关联)。
 
 validate
 
-```
-保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
+    保存自己的时候，校验内存里的关联对象(不是相应字段)是否存在于数据库里。
 
-1 设置了 validate<br>
-2 不设置 validate，但设置了 autosave, 或 has_many 和 habtm 关联。<br>
-3 方法名是：autosave_association 里的 :"validate_associated_records_for_#{关联对象}"<br>
-4 内容是 :validate_collection_association 或 :validate_single_association<br>
-5 后面使用 validate 进行执行<br>
-6 校验关联是否成立，并且关联对象是否存在。
+    1 设置了 validate<br>
+    2 不设置 validate，但设置了 autosave, 或 has_many 和 habtm 关联。<br>
+    3 方法名是：autosave_association 里的 :"validate_associated_records_for_#{关联对象}"<br>
+    4 内容是 :validate_collection_association 或 :validate_single_association<br>
+    5 后面使用 validate 进行执行<br>
+    6 校验关联是否成立，并且关联对象是否存在。
 
-类似 validate_presence_of :关联对象
+    类似 validate_presence_of :关联对象
 
-设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。
+    设置为 true, 保存自己的时候，会先校验它的关联对象。默认是 false, 也就是不校验。
 
-对于是否是 new_record 在做 valid? 时，会造成迷惑。牢记，`:validate` 意味着对前者和后者都有"保存"操作。如果校验失败，则本次保存失败。
+    对于是否是 new_record 在做 valid? 时，会造成迷惑。牢记，`:validate` 意味着对前者和后者都有"保存"操作。如果校验失败，则本次保存失败。
 
-校验关联对象是否真实存在于数据库里。设置为 false, 保存前者时不会校验后者。默认就是 false.
-```
+    校验关联对象是否真实存在于数据库里。设置为 false, 保存前者时不会校验后者。默认就是 false.
 
-inverse_of
+inverse\_of
 
 ```
 通过自己查找到关联对象，然后又通过关联对象找回自己。
@@ -262,7 +255,7 @@ ModelName.reflections.map do |key, value|
 end
 ```
 
-counter_cache
+counter\_cache
 
 ```
 分为几种情况：
@@ -309,13 +302,11 @@ readonly
 
 polymorphic
 
-```
-声明此关联是多态的
+    声明此关联是多态的
 
-如果你同时使用了 `:counter_cache`，建议在后者的 model 里把计数器设置为 attr_readonly.
-```
+    如果你同时使用了 `:counter_cache`，建议在后者的 model 里把计数器设置为 attr_readonly.
 
-inverse_of
+inverse\_of
 
 ```
 保证 object_id 相同。通过前者(1)查询到后者，然后再通过后者返过来查询前者(2)。按照直观的理解，(1) 和 (2) 应该是同样的对象，同样的值。但实际情况会发现，它们不一样(可以通过 object_id 确定)！原因是程序没有这么聪明，没法判断它们是一样的(特别是通过中间表查询时)。设置 :inverse_of，可解决这个问题。
@@ -325,21 +316,27 @@ inverse_of
 通常情况下，不用设置，会自动转换。但使用了以下参数，则不会自动转换：:through、:as、:polymorphic 和 :conditions；遇到单复数不规则，有时候也不会自动转换
 ```
 
-index_errors
+index\_errors
 
 ```
 默认为 false. 设置了 autosave 它才管用。条件很复杂，忽略。
 ```
 
-anonymous_class
+anonymous\_class
 
 ```
 Reflection 那边用到，忽略。
 ```
 
-before_add、after_add、before_remove 和 after_remove
+before\_add、after\_add、before\_remove 和 after\_remove
 
 ```
 作用于集合，和普通的回调差不多，只是定义的位置不同而矣。
 ```
+
+#### 心得
+
+关系比较复杂的时候，不好写。建议从
+
+
 
