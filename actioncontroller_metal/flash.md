@@ -72,6 +72,8 @@ redirect_to user_path(@user), warning: "Incomplete profile"
 
 alert 和 notice 默认已经使用 add_flash_types
 
+经验：默认 Rails 提供了上述类型的 flash，实际情况中一般是不够用的（至少对应红、黄、绿）3种级别的消息。所以，建议您用同样的方法添加自己的 flash.
+
 #### flash.now[:flash_type]
 
 也许，你还看过一种写法 `flash.now[:flash_type]`
