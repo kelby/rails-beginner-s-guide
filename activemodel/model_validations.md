@@ -34,6 +34,7 @@ attribute_method?(attribute)
 
 
 经验：牢记 `validate` 发生在 `save` 之前，如果你喜欢用 `before_save` 之类的进行检验，记得加上 `return false`
+或者改变习惯，用 `validate :validate_method` 类似写法进行校验。
 
 #### 9 个 Helper Methods
 
