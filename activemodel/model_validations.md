@@ -32,6 +32,9 @@ attribute_method?(attribute)
 
 `attribute_method?` 放在这里有点不太合适，它和校验没有多大关系。和 Attribute Methods 反而关系比较大。
 
+
+经验：牢记 `validate` 发生在 `save` 之前，如果你喜欢用 `before_save` 之类的进行检验，记得加上 `return false`
+
 #### 9 个 Helper Methods
 
 9 个校验方法，**语法糖**。 调用方式五(不需要属性，需要校验器；作用于某个具体对象，间接做校验)
