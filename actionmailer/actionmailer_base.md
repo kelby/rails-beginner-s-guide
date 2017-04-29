@@ -124,7 +124,7 @@ config.action_mailer.smtp_settings = {
   port: 587,
   domain: 'your_domain.com',
   # 完整的邮箱地址
-  username: 'your_email@gmail.com',
+  user_name: 'your_email@gmail.com',
   password: 'your_gmail_password',
   authentication: 'plain',
   enable_starttls_auto: true
