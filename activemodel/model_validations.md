@@ -90,3 +90,9 @@ validates_with
 validates_presence_of 代表着其它与之类似的方法。
 
 上面说的都是类级别的校验，如果需要针对某个实例对象单独做额外的校验，可以使用实例方法 validates_with，参数和同名类方法一样。
+
+#### 使用 validate
+
+之前版本可以在 before_save 等方法里，设置 `record.errors.add :xxx` 然后 `return false` 做校验，中断后续操作。
+
+Rails 5 之后默认关掉了这个功能，即不会中断后续操作。推荐使用 `validate :method_name` 在 `method_name` 写对应校验代码。
