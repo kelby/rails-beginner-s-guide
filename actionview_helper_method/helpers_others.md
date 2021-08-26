@@ -2,15 +2,16 @@
 
 **在 model 里，使用 helper 方法？**
 
-1) 直接使用：
+1\) 直接使用：
 
 ```ruby
 OrdersController.helpers.order_number(@order)
 ApplicationController.helpers.helper_method
 ActionController::Base.helpers.sanitize(str)
+app.helper_method
 ```
 
-2) 先引入，再使用：
+2\) 先引入，再使用：
 
 ```ruby
 include ActionView::Helpers::DateHelper
@@ -25,3 +26,6 @@ include ActionView::Helpers
 2. 直接写 HTML，大脑不必转一圈；
 3. 前端工程师不懂 Ruby，就看不懂；
 4. 维护的时候也遇到上述 3 点困境。
+
+
+
