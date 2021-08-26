@@ -11,7 +11,7 @@ ActionController::Base.helpers.sanitize(str)
 app.helper_method
 
 # Engine
-Path::To::EngineName.routes.url_helpers.player_stats_path
+ModuleName::To::EngineName.routes.url_helpers.player_stats_path
 ```
 
 2\) 先引入，再使用：
