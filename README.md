@@ -49,6 +49,7 @@
 * actionview
 
 * activejob
+
 * activemodel
 * activerecord
 * activestorage
@@ -83,13 +84,13 @@ activestorage
 
 Rails 优势：
 
-* Ruby 的快乐编程
+* Ruby 的快乐编程，以及黑魔法
 
 * 代码和命令行工具
 
 * 最佳实践
 
-* 理念
+* 理念，约定优于配置、不要重复你自己
 
 
 
