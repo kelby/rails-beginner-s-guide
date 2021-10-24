@@ -47,6 +47,7 @@
   * action\_dispatch
 
 * actionview
+
 * activejob
 * activemodel
 * activerecord
@@ -79,4 +80,16 @@ actionmailer
 activejob
 
 activestorage
+
+Rails 优势：
+
+* Ruby 的快乐编程
+
+* 代码和命令行工具
+
+* 最佳实践
+
+* 理念
+
+
 
