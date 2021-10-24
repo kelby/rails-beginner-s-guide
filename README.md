@@ -41,9 +41,11 @@
 * actionmailer
 
 * action\_pack
+
   * abstract\_controller
   * action\_controller
   * action\_dispatch
+
 * actionview
 * activejob
 * activemodel
@@ -52,7 +54,7 @@
 * activesupport
 * railties
 
-底**层：**
+**基础库：**
 
 activesupport
 
