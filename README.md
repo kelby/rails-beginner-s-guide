@@ -53,6 +53,7 @@
 * activemodel
 
 * activerecord
+
 * activestorage
 * activesupport
 * railties
@@ -84,6 +85,8 @@ activejob
 activestorage
 
 Rails 优势：
+
+* Ruby 一切皆对象，给程序员很大的自由
 
 * Ruby 的快乐、高效编程，以及黑魔法
 
