@@ -51,6 +51,7 @@
 * activejob
 
 * activemodel
+
 * activerecord
 * activestorage
 * activesupport
@@ -84,7 +85,7 @@ activestorage
 
 Rails 优势：
 
-* Ruby 的快乐编程，以及黑魔法
+* Ruby 的快乐、高效编程，以及黑魔法
 
 * 代码和命令行工具
 
