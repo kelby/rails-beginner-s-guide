@@ -1,45 +1,48 @@
-# Active Record 约定、配置，底层及其它
+# Active Record 约定、配置，底层及Model
 
-- Model Schema
+* Model Schema
 
-- Naming Conventions
+* Naming Conventions
 
-- Schema Conventions
+* Schema Conventions
 
-- Timestamps
+* Timestamps
 
-- Core
+* Core
 
-- ~~Attribute~~
+* ~~Attribute~~
 
 和属性的类型转换有关，在 Attribute Set 里会用到。尽管 Attribute Set 也属于底层。
 
-- ~~Attribute Set~~
+* ~~Attribute Set~~
 
-- ~~Attribute Decorators~~
+* ~~Attribute Decorators~~
 
 相对而言较底层，使用 Rails 的话，一般不会直接用到的它们：
 
-- Connection Handling
+* Connection Handling
 
-- Serialization
+* Serialization
 
-- Migration DatabaseTasks
+* Migration DatabaseTasks
 
-- Statement Cache
+* Statement Cache
 
-- ~~Explain~~
+* ~~Explain~~
 
-- ~~Explain Registry~~
+* ~~Explain Registry~~
 
-- ~~Explain Subscriber~~
+* ~~Explain Subscriber~~
 
-- ~~Query Cache~~
+* ~~Query Cache~~
 
-- ~~Result~~
+* ~~Result~~
 
-- ~~Runtime Registry~~
+* ~~Runtime Registry~~
 
-- ~~Sanitization~~
+* ~~Sanitization~~
 
-- ~~Legacy Yaml Adapter~~
+* ~~Legacy Yaml Adapter~~
+
+
+
