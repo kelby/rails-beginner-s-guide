@@ -1,4 +1,4 @@
-# Action Dispatch Http
+# Action Dispatch Http 作用：请求、响应
 
 **在一次完整的 HTTP 里，提供客户端的 request 对象，和服务端的 response 对象。**
 
