@@ -1,6 +1,4 @@
 # Action Controller
 
-controller.rb 里所有语法。
-
-
+controller.rb 里绝大多数语法。
 
