@@ -1,4 +1,4 @@
 # Action Controller
 
-controller.rb 里绝大多数语法。
+controller.rb 里绝大多数方法。
 
