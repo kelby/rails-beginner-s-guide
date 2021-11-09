@@ -1,4 +1,4 @@
-# Generators
+# Rails Generators 代码生成器
 
 把常见的手动操作，用命令来实现。
 
@@ -17,3 +17,6 @@ rails generate GENERATOR [args] [options]
 该目录下，还有 Rails 自带的 generator 的源代码，它们可供参考。
 
 > Note: 源代码放在 railties 子目录里，所在路径：railties/lib/rails/generators
+
+
+

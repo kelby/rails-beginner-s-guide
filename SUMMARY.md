@@ -479,7 +479,7 @@
     * [Backtrace Cleaner](rails/backtrace_cleaner.md)
     * [Rack Logger](rails/debugger__logger.md)
     * [Generators](rails/generators.md)
-* [Generators](generators/README.md)
+* [Rails Generators 代码生成器](generators/README.md)
   * [Thor](generators/thor.md)
   * [generators 下的目录、文件](generators/generators_directory.md)
   * [Base](generators/base.md)
