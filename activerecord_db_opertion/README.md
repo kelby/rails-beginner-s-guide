@@ -1,31 +1,34 @@
-# Active Record 数据库增删查改
+# Active Record 数据库操作：增删查改
 
-Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作(也就是各种简单、复杂的读写操作)。
+Web 应用使用到数据库，而管理数据库使用的是 SQL 语言。我们不需要专门去学习 SQL，只需要用 Ruby 语言，写 Ruby 代码就能实现数据库的相关操作\(也就是各种简单、复杂的读写操作\)。
 
-- Scoping
+* Scoping
 
 包括 Default、Named
 
-- Relation
+* Relation
 
 包括 Spawn Methods、Query Methods、Finder Methods、Calculations、Batches、~~Delegation~~、~~Predicate Builder~~、~~Merger~~
 
-- Querying
+* Querying
 
-- Persistence
+* Persistence
 
-即将被废除的 gem 'activerecord-deprecated_finders'
+即将被废除的 gem 'activerecord-deprecated\_finders'
 
-- Counter Cache
+* Counter Cache
 
-- Attribute Assignment
+* Attribute Assignment
 
 主要工作由 ActiveModel::AttributeAssignment 完成，这里不再赘述。
 
-- Attribute Methods
+* Attribute Methods
 
 包括 Before Type Cast、Dirty、Primary Key、Query、Read & Write、Serialization、Time Zone Conversion
 
-- ~~Null Relation~~
+* ~~Null Relation~~
 
-- ~~Dynamic Matchers~~
+* ~~Dynamic Matchers~~
+
+
+
