@@ -1,4 +1,4 @@
-# Associations 关联关系
+# Associations 数据库表的关联关系
 
 ```bash
 Associations 文件下
