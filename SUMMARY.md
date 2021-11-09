@@ -282,7 +282,7 @@
   * [Nested Attributes 嵌套属性](activerecord_utility/utify_nested_attributes.md)
   * [Inheritance 单表继承](activerecord_utility/inheritance.md)
   * [Transactions 事务](activerecord_utility/utify_transactions.md)
-  * [Locking](activerecord_db_opertion/db_opt_locking.md)
+  * [Locking 锁](activerecord_db_opertion/db_opt_locking.md)
   * [Enum 枚举](activerecord_utility/utify_enum.md)
   * [Store](activerecord_utility/utify_store.md)
   * [Validations 校验](activerecord_utility/activerecord__validations.md)

@@ -1,4 +1,4 @@
-## Locking
+## Locking 锁
 
 锁，分为悲观锁(Pessimistic)和乐观锁(Optimistic).
 对比的话，可以笼统的理解悲观锁是数据库层面，而乐观锁是应用层面。
