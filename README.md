@@ -57,6 +57,7 @@
 * activestorage
 
 * activesupport
+
 * railties
 
 **基础库：**
@@ -96,6 +97,22 @@ Rails 优势：
 * 最佳实践
 
 * 理念，约定优于配置、不要重复你自己
+
+#### Ruby & Rails 学习资源
+
+《Programming Ruby》（镐头书）
+
+《Ruby 编程语言》（燕子书）
+
+《Ruby 元编程》
+
+Rails 指南 https://guides.rubyonrails.org/
+
+Rails API https://api.rubyonrails.org/
+
+Rails 源码 https://github.com/rails/rails
+
+
 
 
 
