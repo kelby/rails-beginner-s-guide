@@ -294,7 +294,7 @@
   * [Readonly Attributes](activerecord_utility/utify_others.md)
   * [Suppressor](activerecord_utility/suppressor.md)
   * [Sanitization](activerecord_utility/action_record_sanitization.md)
-* [Active Record 关联](activerecord_association/activerecord_association_achitecture.md)
+* [Active Record 关联关系](activerecord_association/activerecord_association_achitecture.md)
   * [Associations 文件 - 4 个关联方法](activerecord_association/ru_kou_-_associations_wen_jian.md)
   * [Aggregations - composed\_of 方法](activerecord_association/aggregations_composed_of.md)
   * [Builder - 功能的实现](activerecord_association/associations_under_builder.md)
