@@ -1,4 +1,4 @@
-# Action Dispatch Routing 顶层
+# Action Dispatch Routing 顶层（表现层）
 
 提供接口，让我们定义应用相关路由。
 
