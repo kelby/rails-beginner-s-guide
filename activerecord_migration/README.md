@@ -1,4 +1,4 @@
-# Active Record 数据库表/字段迁移
+# Active Record 数据库表/字段的迁移
 
 * Migration
 

@@ -345,7 +345,7 @@
     * [Join Dependency](activerecord_association/association_joindependency.md)
     * [Preloader](activerecord_association/association_preloader.md)
     * [Association Relation](activerecord_association/association_relation.md)
-* [Active Record 数据库表/字段迁移](activerecord_migration/README.md)
+* [Active Record 数据库表/字段的迁移](activerecord_migration/README.md)
   * [Connection Handling 连接数据库](activerecord_underlying/connection_handling.md)
   * [Migration 文件下的内容](activerecord_migration/activerecord_migration_readme.md)
     * [控制台里迁移、回滚等命令](activerecord_migration/migration_rollback.md)
