@@ -1,5 +1,7 @@
 # Action Dispatch Http 作用：请求、响应
 
+网络层-->请求-->（应用层：应用逻辑）-->响应-->网络层
+
 **在一次完整的 HTTP 里，提供客户端的 request 对象，和服务端的 response 对象。**
 
 它和 Web 服务器的关系比较近，影响的主要是 http 相关的部分(也就是 request 和 response)，和我们的业务逻辑没有直接关联。
