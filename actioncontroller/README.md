@@ -1,3 +1,6 @@
 # Action Controller
 
-TODO
+controller.rb 里所有语法。
+
+
+
