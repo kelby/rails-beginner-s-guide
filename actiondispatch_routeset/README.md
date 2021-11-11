@@ -1,4 +1,4 @@
-# Action Dispatch RouteSet 底层
+# Action Dispatch RouteSet 底层思路
 
 Routing 定义应用的路由后，由 RouteSet 底层实现。
 
@@ -6,11 +6,11 @@ Routing 定义应用的路由后，由 RouteSet 底层实现。
 
 #### RouteSet 概述
 
-- 特指 route_set.rb 及 routes_proxy.rb 两文件
-- 本身就充满魔法，是 Routing 里的一个模块。
-- 还是内外沟通的桥梁。
-- 内指 Journey.
-- 外指对外的接口及 routing 目录里的其它内容。
+* 特指 route\_set.rb 及 routes\_proxy.rb 两文件
+* 本身就充满魔法，是 Routing 里的一个模块。
+* 还是内外沟通的桥梁。
+* 内指 Journey.
+* 外指对外的接口及 routing 目录里的其它内容。
 
 ```ruby
 require 'action_dispatch'
@@ -23,8 +23,8 @@ routes.draw do
 end
 ```
 
-从 Action Dispatch 转换站场到 Action Controller.
-(准确点：Action Dispatch -> Metal -> Abstract Controller -> Action Controller)
+从 Action Dispatch 转换站场到 Action Controller.  
+\(准确点：Action Dispatch -&gt; Metal -&gt; Abstract Controller -&gt; Action Controller\)
 
 ```ruby
 # route_set.rb
@@ -38,3 +38,6 @@ end
 ```ruby
 Routes Proxy # 从 RouteSet 里抽取而来
 ```
+
+
+

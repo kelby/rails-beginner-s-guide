@@ -136,7 +136,7 @@
     * [Rack Cache](actiondispatch_http/rack_cache.md)
     * [Mime Type register](actiondispatch_http/mime_type_register.md)
     * [Session](actiondispatch_http/request_session.md)
-* [Action Dispatch RouteSet 底层实现路由](actiondispatch_routeset/README.md)
+* [Action Dispatch RouteSet 底层思路](actiondispatch_routeset/README.md)
   * [实例对象和各个实例方法](actiondispatch_routeset/routeset.md)
   * [Named Route Collection](actiondispatch_routeset/namedroutecollection.md)
   * [Dispatcher](actiondispatch_routeset/routeset_dispatcher.md)
