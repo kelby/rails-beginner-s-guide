@@ -1,4 +1,4 @@
-# railties
+# railties 核心：初始化、组件化
 
 #### 结构
 
