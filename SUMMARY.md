@@ -188,7 +188,7 @@
   * [View Paths](actionview_renderer_and_rendering/view_paths.md)
   * [其它](actionview_renderer_and_rendering/render_relate_others.md)
     * [Output Buffer & Streaming Buffer](actionview_renderer_and_rendering/outputbuffer_&_streamingbuffer.md)
-* [Action View 提供的辅助方法](actionview_helper_method/README.md)
+* [Action View 提供的 Helper 方法](actionview_helper_method/README.md)
   * [与表单直接相关的辅助方法](actionview_helper_method/actionview.md)
     * [Form Builder](actionview_helper_method/f_form_builder.md)
       * [扩展 Form Builder](actionview_helper_method/use_and_extend_formbuilder.md)
