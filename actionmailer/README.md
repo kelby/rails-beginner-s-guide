@@ -1,4 +1,4 @@
-# Action Mailer
+# Action Mailer 发邮件
 
 Action Mailer 是 Rails 内建的组件，用来处理邮件相关业务。
 
@@ -44,13 +44,13 @@ end
 mail.deliver!
 ```
 
-上面的例子使用了 Gmail 做为邮件服务器，所以需要用到 Gmail 用户名和密码，实际应用中你可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail#usage](https://github.com/mikel/mail#usage)
+上面的例子使用了 Gmail 做为邮件服务器，所以需要用到 Gmail 用户名和密码，实际应用中你可以在本地搭建或使用其它第三方邮件服务器。更多示例，可以参考 [mail\#usage](https://github.com/mikel/mail#usage)
 
 > Note: 发送邮件，还可以使用标准库 [Net::SMTP](http://ruby-doc.org/stdlib-2.1.2/libdoc/net/smtp/rdoc/Net/SMTP.html)
 
 #### 引入其它，为了更好用
 
-直接使用 gem 'mail'，创建、发送邮件等最最基本的功能是实现了，但并不好用。缺少灵活的配置，内容与模板没有分离等。Action Mailer 改善了它们，举例单独使用 action_mailer：
+直接使用 gem 'mail'，创建、发送邮件等最最基本的功能是实现了，但并不好用。缺少灵活的配置，内容与模板没有分离等。Action Mailer 改善了它们，举例单独使用 action\_mailer：
 
 ```ruby
 # mailer.rb
@@ -105,7 +105,7 @@ and this is a variable <%= @var %>
 
 #### 引入其它，为了更实用
 
-通常，除了邮件发送外，我们还需要其它功能，这就有一个"集成"的过程。我们希望能够测试、能够自动化、能够预览邮件等。我们想用 Rails 其它组件提供的 render, before_action, url_for 以及丰富的 helper 方法。
+通常，除了邮件发送外，我们还需要其它功能，这就有一个"集成"的过程。我们希望能够测试、能够自动化、能够预览邮件等。我们想用 Rails 其它组件提供的 render, before\_action, url\_for 以及丰富的 helper 方法。
 
 运行下面命令即可自动生成邮件模板：
 
@@ -119,13 +119,16 @@ Action Mailer 本身并没有"实现"什么功能。最基本，也是最核心�
 
 为了做好、做得上层次，下面是在邮件处理外，Action Mailer "实现"的一些功能：
 
-- 集成现有服务(有时我们要的不仅仅只是邮件服务)
-- 拦截器、观察者(发送之前、之后想做点什么？)
-- 测试
-- 日志记录
-- 延迟发送
-- 灵活的配置
-- 内容与模板分离
-- 丰富实用的 helper 方法
-- 邮件预览
-- 自动化(如：rails g mailer)
+* 集成现有服务\(有时我们要的不仅仅只是邮件服务\)
+* 拦截器、观察者\(发送之前、之后想做点什么？\)
+* 测试
+* 日志记录
+* 延迟发送
+* 灵活的配置
+* 内容与模板分离
+* 丰富实用的 helper 方法
+* 邮件预览
+* 自动化\(如：rails g mailer\)
+
+
+
