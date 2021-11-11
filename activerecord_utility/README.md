@@ -1,4 +1,4 @@
-# Active Record 工具（数据库特性及Model）
+# Active Record 数据库特性及 Model
 
 为了完成某项任务而生。包括但不限于：
 

@@ -1,4 +1,4 @@
-# Active Record 约定、配置，底层及Model
+# Active Record 数据库连接：底层适配，约定、配置
 
 * Model Schema
 
