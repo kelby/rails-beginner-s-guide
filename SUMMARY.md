@@ -33,7 +33,7 @@
   * [Caching](abstractcontroller/caching.md)
   * [Caching & Caching Fragments](actioncontroller/caching_and_fragments.md)
     * [默认片段缓存策略](actioncontroller/cache_strategy.md)
-* [Action Controller](actioncontroller/README.md)
+* [Action Controller - Rack 增强扩展](actioncontroller/README.md)
   * [Metal - 加强的 Rack, 简陋的 Controller](actioncontroller/metal.md)
     * [Metal 文件下的内容](actioncontroller/metal_file.md)
     * [Middleware Stack](actioncontroller/metal_middlewarestack.md)
