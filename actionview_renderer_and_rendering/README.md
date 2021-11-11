@@ -1,4 +1,4 @@
-# Action View 渲染相关
+# Action View 布局、渲染相关
 
 包括"渲染器(n)"和"渲染(v)"，即：Renderer & Rendering.
 
