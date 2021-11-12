@@ -1,10 +1,10 @@
-## Metal - 加强的 Rack, 简陋的 Controller
+## Metal - 增强的 Rack, 简陋的 Controller
 
 #### 加强的 Rack
 
 意味着它符合 Rack 接口规范，可以直接使用它，创建出来的应用可以看做是一个 Rack application.
 
-在 Rack 的基础上，它增加了 middleware_stack 的预处理。
+在 Rack 的基础上，它增加了 middleware\_stack 的预处理。
 
 和 Rack 一样，它的功能真的很有限。如你的项目做为 API 对外提供服务，不需要那么多功能，你可以尝试。
 
@@ -28,7 +28,7 @@ class HelloController < ActionController::Metal
 end
 ```
 
-在路由里添加相应代码，将请求转发到刚才的 HelloController#index 进行处理:
+在路由里添加相应代码，将请求转发到刚才的 HelloController\#index 进行处理:
 
 ```ruby
 # config/routes.rb
@@ -49,13 +49,13 @@ get 'hello', to: HelloController.action(:index)
 
 一般模块名和同名目录都是有联系的，但 metal 不是，它单指的是 metal.rb 这个文件，和 metal/ 目录下的文件及内容没有关系。
 
-- 直接使用 Metal 时，要清楚自己在做什么。
+* 直接使用 Metal 时，要清楚自己在做什么。
 
 另外，要清楚的知道各个组件有什么用，添加是为了什么，去掉又会有什么影响。
 
-- 为什么能够连续调用，原因：
+* 为什么能够连续调用，原因：
 
-你看每个 Rack Middleware 的 `call` 函数的最后一行，是不是都是 `@app.call(env)` ？
+你看每个 Rack Middleware 的 `call` 函数的最后一行，是不是都是 `@app.call(env)` ？  
 这说明，它在调用下一个 middleware.
 
 它们是一条封闭的链接，一直走下去，最后又会回到开头处，并且中间只要有一处断了，那整条链子就都走不通。
@@ -75,3 +75,6 @@ middleware.use "Foo::Bar"
 ```ruby
 middleware.use Foo::Bar
 ```
+
+
+
