@@ -30,7 +30,7 @@
     * [Spawn Methods](activerecord_db_opertion/relation_spawn_methods.md)
     * [Batches 批量查询](activerecord_db_opertion/relation_batches.md)
     * [Finder Methods](activerecord_db_opertion/relation_finder_methods.md)
-    * [Calculations](activerecord_db_opertion/relation_calculations.md)
+    * [Calculations 统计计算](activerecord_db_opertion/relation_calculations.md)
     * [其它](activerecord_db_opertion/relation_others.md)
   * [Collection Proxy](activerecord_association/collection_proxy.md)
   * [Scoping](activerecord_db_opertion/db_opt_scoping.md)
