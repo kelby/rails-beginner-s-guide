@@ -102,7 +102,7 @@
     * [Join Dependency](activerecord_association/association_joindependency.md)
     * [Preloader](activerecord_association/association_preloader.md)
     * [Association Relation](activerecord_association/association_relation.md)
-* [Active Record 数据库特性及 Model](activerecord_utility/README.md)
+* [Active Record 数据库特性及功能模块](activerecord_utility/README.md)
   * [Callbacks 回调](activerecord_utility/callbacks.md)
     * [回调及其顺序](activerecord_utility/activemodel_others.md)
     * [跳过回调](activerecord_utility/skip_callbacks.md)

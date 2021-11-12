@@ -1,8 +1,14 @@
-# Active Record 数据库特性及 Model
+# Active Record 数据库特性及功能模块
 
-为了完成某项任务而生。包括但不限于：
+**和数据库特性有关**，如：事务、锁。
 
 Transactions 事务
+
+Locking，包括 Optimistic、Pessimistic
+
+**为了完成某项任务而生的功能模块，和 Active Model 类似**。包括但不限于：
+
+
 
 * Validations 校验
 
@@ -25,10 +31,6 @@ Enum 枚举
 Callbacks 回调
 
 Attributes
-
-* Locking
-
-包括 Optimistic、Pessimistic
 
 ~~Translation~~
 
