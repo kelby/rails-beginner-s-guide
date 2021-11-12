@@ -18,7 +18,7 @@ Rails.application.config.active_job.queue_adapter = :test
 
 ### Queue Name
 
-定义：任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue_name 是 "default"
+定义：任务都是先进队列里，队列都有名字的，方便管理。默认使用的 queue\_name 是 "default"
 
 可以定制：
 

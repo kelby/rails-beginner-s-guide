@@ -1,6 +1,6 @@
 # Abstract Controller
 
-Abstract Controller 做的事情很有限，但却很无私。
+Abstract Controller 做的事情很有限，Controller 和 Mailer 的共同部分、基础模块。
 
 > 我们可以看到 Mailer 和 Controller 在形式上有很多相似的部分，可以简单理解这部分由 Abstract 完成。
 
