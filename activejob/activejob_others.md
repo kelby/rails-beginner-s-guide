@@ -114,6 +114,8 @@ Rails.application.config.active_job.queue_adapter = :async
 <br>
 都有同名的 self.enqueue 和 self.enqueue_at
 
+`config.active_job.queue_adapter` 配置真正队列 gem.
+
 ### Logging
 
 around_enqueue、around_perform 和 before_enqueue 有日志记录；
