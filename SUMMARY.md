@@ -46,7 +46,7 @@
     * [数据更新方法对比](activerecord_db_opertion/db_opt_set_attribute.md)
     * [对比，然后使用合适的方法](activerecord_db_opertion/use_low-level_methods.md)
     * [多个 save 方法](activerecord_db_opertion/multiple_save.md)
-  * [Counter Cache](activerecord_db_opertion/opts_counter_cache.md)
+  * [Counter Cache 计数器](activerecord_db_opertion/opts_counter_cache.md)
   * [Querying](activerecord_db_opertion/db_opt_querying.md)
   * [其它](activerecord_db_opertion/db_opt_others.md)
 * [Active Record 数据库关联关系](activerecord_association/activerecord_association_achitecture.md)
