@@ -34,59 +34,27 @@
 
 邮箱：leekelby@gmail.com
 
-#### Rails 源代码划分
+#### Rails 源码模块划分及本书结构
 
-* actioncable
+先按 MVC 模块进行讲述，其中涉及路由模块，之后是基础模块，再之后是其它模块。
 
-* actionmailer
+Model 模块：Active Model 和 Active Record.
 
-* action\_pack
+View 模块：Action View.
 
-  * abstract\_controller
-  * action\_controller
-  * action\_dispatch
+Controller 模块：Abstract Controller 和 Action Controller.
 
-* actionview
+路由模块：Action Dispatch.
 
-* activejob
+扩展模块：Active Support.
 
-* activemodel
+核心模块：Railtie.
 
-* activerecord
+前端模块：Turbolinks 和 Webpacker.
 
-* activestorage
+测试模块：MiniTest.
 
-* activesupport
-
-* railties
-
-**基础库：**
-
-activesupport
-
-railties
-
-**MVC：**
-
-activemodel
-
-activerecord
-
-actionview
-
-action\_pack
-
-**特殊业务：**
-
-actioncable
-
-actionmailer
-
-activejob
-
-activestorage
-
-Rails 优势：
+#### Rails 优势：
 
 * Ruby 一切皆对象，给程序员很大的自由
 
@@ -106,13 +74,9 @@ Rails 优势：
 
 《Ruby 元编程》
 
-Rails 指南 https://guides.rubyonrails.org/
+Rails 指南 [https://guides.rubyonrails.org/](https://guides.rubyonrails.org/)
 
-Rails API https://api.rubyonrails.org/
+Rails API [https://api.rubyonrails.org/](https://api.rubyonrails.org/)
 
-Rails 源码 https://github.com/rails/rails
-
-
-
-
+Rails 源码 [https://github.com/rails/rails](https://github.com/rails/rails)
 
