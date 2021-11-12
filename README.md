@@ -36,7 +36,7 @@
 
 #### Rails 源码模块划分及本书结构
 
-先按 MVC 模块进行讲述，其中涉及路由模块，之后是基础模块，再之后是其它模块。
+先按 MVC 模块进行讲述，其中涉及路由模块，之后是基础模块，再之后是一些可选模块，最后是其它模块。
 
 Model 模块：Active Model 和 Active Record.
 
@@ -49,6 +49,8 @@ Controller 模块：Abstract Controller 和 Action Controller.
 扩展模块：Active Support.
 
 核心模块：Railtie.
+
+可选模块：Action Mailer, Active Job, Action Cable 和 Active Storage.
 
 前端模块：Turbolinks 和 Webpacker.
 
