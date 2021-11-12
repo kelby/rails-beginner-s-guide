@@ -28,7 +28,7 @@
       * [Query Methods 读取、设置查询方法](activerecord_db_opertion/query_methods_metaprogram.md)
       * [关联表复杂查询示例](activerecord_db_opertion/complex_query.md)
     * [Spawn Methods](activerecord_db_opertion/relation_spawn_methods.md)
-    * [Batches](activerecord_db_opertion/relation_batches.md)
+    * [Batches 批量查询](activerecord_db_opertion/relation_batches.md)
     * [Finder Methods](activerecord_db_opertion/relation_finder_methods.md)
     * [Calculations](activerecord_db_opertion/relation_calculations.md)
     * [其它](activerecord_db_opertion/relation_others.md)
