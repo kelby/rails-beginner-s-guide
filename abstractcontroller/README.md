@@ -8,7 +8,7 @@ Abstract Controller 做的事情很有限，Controller 和 Mailer 的共同部�
 
 这些方法\(或模块\)包含但不限于渲染\(模板或局部模板\)、Helpers、Callbacks、Mime、Url For 等。
 
-它服务于 Action Controller 和 Action Mailer.
+它服务于 Action Controller 和 Action Mailer，**找到真正的 action**.
 
 * 辅助 ActionController::Base 将战场转移到具体的 Controller\#action\(经过 Metal\).
 * 辅助 ActionMailer::Base 将战场转移到具体的 Mailer\#action.
